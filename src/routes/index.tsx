@@ -88,7 +88,7 @@ function Hero() {
             Incubated in Cambridge · Delivered Globally
           </div>
           <h1 className="mt-8 text-[2.75rem] font-bold leading-[1.02] text-forest md:text-6xl lg:text-[5rem]">
-            World-class experiences that make <em className="font-normal italic text-gold">learning happen.</em>
+            World-class experiences that make <span className="text-gold">learning happen.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground">
             We partner with top-tier university ecosystems to design immersive
@@ -259,7 +259,7 @@ function KeyAreas() {
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Six focus areas</p>
             <h2 className="mt-5 max-w-2xl text-[2.25rem] font-bold leading-[1.1] md:text-[2.75rem]">
-              Our key areas of <em className="font-normal italic text-gold">experiential</em> learning.
+              Our key areas of <span className="text-gold">experiential</span> learning.
             </h2>
           </div>
           <p className="max-w-sm text-[14px] leading-[1.65] text-primary-foreground/70">
@@ -414,7 +414,7 @@ function CambridgeOrigin() {
         <div className="lg:col-span-7 lg:pl-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Where it began</p>
           <h2 className="mt-5 text-[2.5rem] font-bold leading-[1.05] md:text-[3.5rem]">
-            Rooted in <em className="font-normal italic text-gold">Cambridge.</em> Written for the world.
+            Rooted in <span className="text-gold">Cambridge.</span> Written for the world.
           </h2>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.7] text-primary-foreground/75">
             Eight centuries of intellectual tradition. A living network of
