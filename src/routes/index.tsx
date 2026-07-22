@@ -191,28 +191,48 @@ function Marquee() {
 
 function About() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-28">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-        <div className="lg:col-span-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
-          <h2 className="mt-5 text-[2.25rem] font-bold leading-[1.1] text-forest md:text-[2.75rem]">
-            An education company built for a borderless world.
+    <section className="relative mx-auto max-w-7xl px-6 py-28">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-5">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-gold" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
+          </div>
+          <h2 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-forest md:text-[2.75rem]">
+            An education company built for a <span className="text-gold">borderless</span> world.
           </h2>
+          <div className="mt-10 grid grid-cols-2 gap-6 border-t border-forest/10 pt-8">
+            {[
+              ["10+", "Years of practice"],
+              ["24", "Countries reached"],
+              ["40+", "University partners"],
+              ["4", "Global hubs"],
+            ].map(([k, v]) => (
+              <div key={v}>
+                <p className="text-2xl font-bold text-forest">{k}</p>
+                <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{v}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="space-y-6 text-[17px] leading-[1.7] text-muted-foreground lg:col-span-8 lg:pt-4">
-          <p>
-            Incubated in Cambridge for a global audience, Global Education Lab
-            strengthens every part of the learning community — school leaders,
-            business leaders, teachers and students — through immersive
-            experiences, leadership programmes, and skill-building workshops.
+        <div className="lg:col-span-7 lg:pt-2">
+          <p className="text-[22px] font-medium leading-[1.4] text-forest md:text-[26px]">
+            "Incubated in Cambridge for a global audience — we strengthen every part of the learning community through immersive experiences, leadership programmes and skill-building workshops."
           </p>
-          <p>
+          <div className="mt-8 h-px w-full bg-forest/10" />
+          <p className="mt-8 text-[16px] leading-[1.75] text-muted-foreground">
             We bring global best practices into local contexts. By creating
             spaces for dialogue, observation and cross-border collaboration,
             we help organisations rethink how they teach and lead — building
             a more connected, future-ready approach to learning across
             classrooms, communities and cultures.
           </p>
+          <a
+            href="#programmes"
+            className="mt-10 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest underline-offset-8 hover:underline"
+          >
+            Our philosophy <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
