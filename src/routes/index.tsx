@@ -52,8 +52,8 @@ function Nav() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a href="/" className="flex items-center gap-2">
-          <span className="font-serif text-2xl leading-none text-forest">
-            global<span className="italic text-gold">edu</span>lab
+          <span className="font-serif text-[1.6rem] font-medium leading-none tracking-tight text-forest">
+            Global<span className="text-gold">.</span>Edu<span className="text-gold">.</span>Lab
           </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex">
@@ -61,7 +61,7 @@ function Nav() {
             <a
               key={l}
               href="#"
-              className="text-sm font-medium text-forest/80 transition-colors hover:text-forest"
+              className="text-[13px] font-medium tracking-[0.01em] text-forest/75 transition-colors hover:text-forest"
             >
               {l}
             </a>
@@ -69,7 +69,7 @@ function Nav() {
         </nav>
         <a
           href="#"
-          className="hidden items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-forest-deep md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep md:inline-flex"
         >
           Apply Now <ArrowUpRight className="h-4 w-4" />
         </a>
@@ -83,14 +83,14 @@ function Hero() {
     <section className="relative overflow-hidden bg-cream">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 pb-24 pt-16 md:pt-24 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6 lg:pt-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background/60 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-forest/70">
+          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-forest/70">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Incubated in Cambridge · Delivered Globally
           </div>
-          <h1 className="mt-8 font-serif text-5xl leading-[0.98] tracking-tight text-forest md:text-7xl lg:text-[5.5rem]">
-            World-class <span className="italic text-gold">experiences</span> that make learning happen.
+          <h1 className="mt-8 font-serif text-[2.75rem] font-light leading-[1.02] text-forest md:text-6xl lg:text-[5rem]">
+            World-class experiences that make <em className="font-normal italic text-gold">learning happen.</em>
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground">
             We partner with top-tier university ecosystems to design immersive
             programmes that place you at the centre of real-world challenges.
             The learning isn't taught — it emerges through what you do, who
@@ -99,13 +99,13 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
               Start your learning journey <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#programmes"
-              className="inline-flex items-center gap-2 text-sm font-medium text-forest underline-offset-8 hover:underline"
+              className="inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-forest underline-offset-8 hover:underline"
             >
               Explore programmes
             </a>
@@ -117,8 +117,8 @@ function Hero() {
               ["150+", "Organisations served"],
             ].map(([k, v]) => (
               <div key={v}>
-                <dt className="font-serif text-3xl text-forest md:text-4xl">{k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{v}</dd>
+                <dt className="font-serif text-3xl font-normal text-forest md:text-4xl">{k}</dt>
+                <dd className="mt-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
               </div>
             ))}
           </dl>
@@ -147,14 +147,14 @@ function Hero() {
                   ))}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-forest">Cohort 2026 · Now open</p>
-                  <p className="text-xs text-muted-foreground">Cambridge · Finland · Singapore · India</p>
+                  <p className="text-[13px] font-semibold tracking-tight text-forest">Cohort 2026 · Now open</p>
+                  <p className="mt-0.5 text-[11px] tracking-wide text-muted-foreground">Cambridge · Finland · Singapore · India</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="absolute -left-6 top-10 hidden rounded-2xl border border-forest/10 bg-background p-4 shadow-xl md:block">
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-forest/70">
+            <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-forest/70">
               <Globe2 className="h-4 w-4 text-gold" /> 24 countries
             </div>
           </div>
@@ -175,12 +175,12 @@ function Marquee() {
   ];
   return (
     <div className="border-y border-border/70 bg-background py-8">
-      <p className="mb-6 text-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
+      <p className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
         Partnered with the world's leading university ecosystems
       </p>
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-6 text-forest/70">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 text-forest/70">
         {items.map((i) => (
-          <span key={i} className="font-serif text-lg md:text-xl">
+          <span key={i} className="font-serif text-lg font-normal tracking-tight md:text-xl">
             {i}
           </span>
         ))}
@@ -194,12 +194,12 @@ function About() {
     <section className="mx-auto max-w-7xl px-6 py-28">
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold">About GEL</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight text-forest md:text-5xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
+          <h2 className="mt-5 font-serif text-[2.25rem] font-light leading-[1.1] text-forest md:text-[2.75rem]">
             An education company built for a borderless world.
           </h2>
         </div>
-        <div className="space-y-6 text-lg leading-relaxed text-muted-foreground lg:col-span-8 lg:pt-4">
+        <div className="space-y-6 text-[17px] leading-[1.7] text-muted-foreground lg:col-span-8 lg:pt-4">
           <p>
             Incubated in Cambridge for a global audience, Global Education Lab
             strengthens every part of the learning community — school leaders,
@@ -257,12 +257,12 @@ function KeyAreas() {
       <div className="mx-auto max-w-7xl px-6 py-28">
         <div className="flex flex-col items-end justify-between gap-6 md:flex-row">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-gold">Six focus areas</p>
-            <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight md:text-5xl">
-              Our key areas of <span className="italic text-gold">experiential</span> learning.
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Six focus areas</p>
+            <h2 className="mt-5 max-w-2xl font-serif text-[2.25rem] font-light leading-[1.1] md:text-[2.75rem]">
+              Our key areas of <em className="font-normal italic text-gold">experiential</em> learning.
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-primary-foreground/70">
+          <p className="max-w-sm text-[14px] leading-[1.65] text-primary-foreground/70">
             Six pillars, one philosophy: learning that emerges from doing, in
             environments where world-class practice is the everyday norm.
           </p>
@@ -274,8 +274,8 @@ function KeyAreas() {
               className="group relative bg-forest p-8 transition-colors hover:bg-forest-deep"
             >
               <Icon className="h-8 w-8 text-gold" strokeWidth={1.4} />
-              <h3 className="mt-8 font-serif text-2xl">{title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{body}</p>
+              <h3 className="mt-8 font-serif text-[1.5rem] font-normal leading-tight">{title}</h3>
+              <p className="mt-3 text-[14px] leading-[1.65] text-primary-foreground/70">{body}</p>
               <ArrowUpRight className="absolute right-6 top-6 h-5 w-5 text-primary-foreground/40 opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
           ))}
@@ -315,8 +315,8 @@ function WhoWeServe() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-28">
       <div className="mb-16 max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.25em] text-gold">Who we serve</p>
-        <h2 className="mt-4 font-serif text-4xl leading-tight text-forest md:text-5xl">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Who we serve</p>
+        <h2 className="mt-5 font-serif text-[2.25rem] font-light leading-[1.1] text-forest md:text-[2.75rem]">
           Four communities, one shared belief in what learning can be.
         </h2>
       </div>
@@ -341,14 +341,14 @@ function WhoWeServe() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-xs uppercase tracking-[0.25em] text-gold">{g.tag}</p>
-              <h3 className="mt-4 font-serif text-3xl leading-tight text-forest md:text-4xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">{g.tag}</p>
+              <h3 className="mt-5 font-serif text-[1.85rem] font-light leading-[1.15] text-forest md:text-[2.15rem]">
                 {g.title}
               </h3>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">{g.body}</p>
+              <p className="mt-5 text-[16px] leading-[1.7] text-muted-foreground">{g.body}</p>
               <a
                 href="#"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-forest underline-offset-8 hover:underline"
+                className="mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-forest underline-offset-8 hover:underline"
               >
                 Learn more <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -375,18 +375,18 @@ function Impact() {
     <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex items-end justify-between">
-          <h2 className="max-w-xl font-serif text-4xl leading-tight text-forest md:text-5xl">
+          <h2 className="max-w-xl font-serif text-[2.25rem] font-light leading-[1.1] text-forest md:text-[2.75rem]">
             Our global impact, in numbers.
           </h2>
-          <p className="hidden max-w-xs text-sm text-muted-foreground md:block">
+          <p className="hidden max-w-xs text-[14px] leading-[1.65] text-muted-foreground md:block">
             A decade of building bridges between classrooms, boardrooms and campuses around the world.
           </p>
         </div>
         <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-forest/10 bg-forest/10 md:grid-cols-4">
           {stats.map(([k, v]) => (
             <div key={v + k} className="bg-cream p-8">
-              <dt className="font-serif text-4xl text-forest md:text-5xl">{k}</dt>
-              <dd className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{v}</dd>
+              <dt className="font-serif text-[2.25rem] font-normal text-forest md:text-[2.75rem]">{k}</dt>
+              <dd className="mt-2 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
             </div>
           ))}
         </dl>
@@ -412,11 +412,11 @@ function CambridgeOrigin() {
           </div>
         </div>
         <div className="lg:col-span-7 lg:pl-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold">Where it began</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">
-            Rooted in <span className="italic text-gold">Cambridge.</span> Written for the world.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Where it began</p>
+          <h2 className="mt-5 font-serif text-[2.5rem] font-light leading-[1.05] md:text-[3.5rem]">
+            Rooted in <em className="font-normal italic text-gold">Cambridge.</em> Written for the world.
           </h2>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-primary-foreground/75">
+          <p className="mt-8 max-w-xl text-[17px] leading-[1.7] text-primary-foreground/75">
             Eight centuries of intellectual tradition. A living network of
             researchers, founders and educators. GEL was built inside that
             ecosystem — and carries its rigour into every programme, whether
@@ -429,8 +429,8 @@ function CambridgeOrigin() {
               ["Partner Network", "40+ university partners"],
             ].map(([k, v]) => (
               <div key={k}>
-                <p className="font-serif text-2xl">{k}</p>
-                <p className="mt-1 text-sm text-primary-foreground/60">{v}</p>
+                <p className="font-serif text-[1.35rem] font-normal leading-tight">{k}</p>
+                <p className="mt-1.5 text-[13px] text-primary-foreground/60">{v}</p>
               </div>
             ))}
           </div>
@@ -446,14 +446,14 @@ function Gallery() {
     <section className="mx-auto max-w-7xl px-6 py-28">
       <div className="mb-12 flex items-end justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-gold">Gallery</p>
-          <h2 className="mt-4 max-w-xl font-serif text-4xl leading-tight text-forest md:text-5xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Gallery</p>
+          <h2 className="mt-5 max-w-xl font-serif text-[2.25rem] font-light leading-[1.1] text-forest md:text-[2.75rem]">
             Programmes, coming to life.
           </h2>
         </div>
         <a
           href="#"
-          className="hidden items-center gap-2 text-sm font-medium text-forest underline-offset-8 hover:underline md:inline-flex"
+          className="hidden items-center gap-2 text-[13px] font-medium tracking-wide text-forest underline-offset-8 hover:underline md:inline-flex"
         >
           See all <ArrowUpRight className="h-4 w-4" />
         </a>
@@ -485,24 +485,24 @@ function CTA() {
       <div className="relative overflow-hidden rounded-[2.5rem] bg-forest px-8 py-20 text-primary-foreground md:px-16 md:py-24">
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
         <div className="relative max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold">Apply now · Cohort 2026</p>
-          <h2 className="mt-5 font-serif text-4xl leading-tight md:text-6xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Apply now · Cohort 2026</p>
+          <h2 className="mt-5 font-serif text-[2.5rem] font-light leading-[1.05] md:text-[3.5rem]">
             Ready to learn where the world's best learn?
           </h2>
-          <p className="mt-6 max-w-xl text-lg text-primary-foreground/75">
+          <p className="mt-6 max-w-xl text-[17px] leading-[1.7] text-primary-foreground/75">
             Speak to our team about the right programme for you, your school or
             your organisation. Applications for the 2026 cohorts are open.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-forest-deep transition-all hover:bg-gold/90"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[13px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold/90"
             >
               Start your journey <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary-foreground/10"
+              className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-primary-foreground/10"
             >
               Book a discovery call
             </a>
@@ -524,21 +524,21 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <span className="font-serif text-3xl text-forest">
-              global<span className="italic text-gold">edu</span>lab
+            <span className="font-serif text-[1.9rem] font-medium leading-none tracking-tight text-forest">
+              Global<span className="text-gold">.</span>Edu<span className="text-gold">.</span>Lab
             </span>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-sm text-[14px] leading-[1.7] text-muted-foreground">
               Immersive learning experiences, incubated in Cambridge — designed
               for leaders, educators and students shaping what comes next.
             </p>
           </div>
           {cols.map(([title, items]) => (
             <div key={title} className="lg:col-span-2">
-              <p className="text-xs uppercase tracking-[0.25em] text-forest/60">{title}</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-forest/60">{title}</p>
               <ul className="mt-5 space-y-3">
                 {items.map((i) => (
                   <li key={i}>
-                    <a href="#" className="text-sm text-forest/85 hover:text-forest">
+                    <a href="#" className="text-[14px] text-forest/85 transition-colors hover:text-forest">
                       {i}
                     </a>
                   </li>
@@ -548,9 +548,9 @@ function Footer() {
           ))}
           <div className="lg:col-span-1" />
         </div>
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[12px] text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Global Education Lab. All rights reserved.</p>
-          <p className="uppercase tracking-[0.2em]">Cambridge · Global</p>
+          <p className="font-medium uppercase tracking-[0.22em]">Cambridge · Global</p>
         </div>
       </div>
     </footer>
