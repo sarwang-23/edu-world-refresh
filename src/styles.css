@@ -84,7 +84,7 @@
   --secondary: oklch(0.94 0.03 85);
   --secondary-foreground: oklch(0.32 0.09 155);
   --muted: oklch(0.95 0.018 85);
-  --muted-foreground: oklch(0.45 0.03 155);
+  --muted-foreground: oklch(0.35 0.04 155);
   --accent: oklch(0.78 0.12 78);
   --accent-foreground: oklch(0.22 0.05 155);
   --gold: oklch(0.72 0.13 78);
@@ -164,6 +164,6 @@
     font-family: var(--font-sans);
     font-weight: 700;
     letter-spacing: -0.025em;
-    color: var(--forest-deep);
+
   }
 }
