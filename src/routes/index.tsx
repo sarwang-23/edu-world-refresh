@@ -47,7 +47,13 @@ function Index() {
 }
 
 function Nav() {
-  const links = ["Programmes", "Who We Serve", "Gallery", "Insights", "Contact"];
+  const links: { label: string; href: string }[] = [
+    { label: "Programmes", href: "#" },
+    { label: "Who We Serve", href: "#" },
+    { label: "Global Ventures", href: "/global-ventures" },
+    { label: "Gallery", href: "#" },
+    { label: "Contact", href: "#" },
+  ];
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -59,11 +65,11 @@ function Nav() {
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
             <a
-              key={l}
-              href="#"
+              key={l.label}
+              href={l.href}
               className="text-[13px] font-medium tracking-[0.01em] text-forest/75 transition-colors hover:text-forest"
             >
-              {l}
+              {l.label}
             </a>
           ))}
         </nav>
