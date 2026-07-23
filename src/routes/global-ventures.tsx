@@ -42,6 +42,7 @@ function GlobalVenturesPage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Nav />
       <Hero />
+      <Metrics />
       <WhatWeDo />
       <Portfolio />
       <WhyUs />
@@ -95,25 +96,25 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-32">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-36">
         <div className="md:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-forest/70">
             <Globe2 className="h-3.5 w-3.5 text-gold" /> Global Ventures
           </span>
-          <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-forest-deep md:text-7xl">
+          <h1 className="mt-6 text-5xl font-bold leading-[1.02] tracking-[-0.03em] text-forest-deep md:text-[5.5rem]">
             Launch. Expand.<br />
-            <span className="text-gold">Scale Globally.</span>
+            <span className="relative inline-block">
+              <span className="relative z-10 text-forest-deep">Scale </span>
+              <span className="relative z-10 italic text-gold">Globally.</span>
+              <span className="absolute -bottom-2 left-0 h-3 w-full bg-gold/25" />
+            </span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-forest/80 md:text-xl">
             Global Ventures is the business growth and international expansion arm of{" "}
             <span className="font-semibold text-forest-deep">Global Education Lab</span>, dedicated
             to helping Indian startups, businesses and innovation-led ventures establish and scale
             in the United Kingdom and Europe.
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-forest/70">
-            We bridge the gap between ambitious Indian entrepreneurs and global markets — providing
-            the expertise, network and infrastructure needed to build successful international
-            businesses.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -129,13 +130,17 @@ function Hero() {
               Talk to Our Team
             </a>
           </div>
+          <div className="mt-10 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-forest/60">
+            <span className="h-px w-10 bg-forest/30" />
+            India · United Kingdom · Europe
+          </div>
         </div>
         <div className="relative md:col-span-5">
-          <div className="relative overflow-hidden rounded-3xl border border-border/60 shadow-2xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl">
             <img
               src={businessLeadersImg}
               alt="International business leaders"
-              className="h-full w-full object-cover"
+              className="h-[520px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 to-transparent p-6">
               <p className="text-xs uppercase tracking-[0.2em] text-gold">From India to the World</p>
@@ -144,7 +149,35 @@ function Hero() {
               </p>
             </div>
           </div>
+          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-border/70 bg-background p-5 shadow-xl md:block">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-forest/60">
+              Active Corridor
+            </p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-forest-deep">IN → UK · EU</p>
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+const metrics = [
+  { k: "12+", v: "Years of cross-border practice" },
+  { k: "50+", v: "Ventures supported" },
+  { k: "20+", v: "Investor & VC partners" },
+  { k: "3", v: "Continents of operation" },
+];
+
+function Metrics() {
+  return (
+    <section className="border-b border-border/60 bg-background">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-16 md:grid-cols-4 md:py-20">
+        {metrics.map((m) => (
+          <div key={m.v} className="border-l border-forest/15 pl-5">
+            <p className="text-4xl font-bold tracking-tight text-forest-deep md:text-5xl">{m.k}</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-forest/60">{m.v}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -312,14 +345,46 @@ function WhyUs() {
 
 function Vision() {
   return (
-    <section className="border-b border-border/60 bg-background">
-      <div className="mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">Our Vision</p>
-        <p className="mt-8 font-serif text-3xl leading-snug tracking-tight text-forest-deep md:text-5xl">
-          To become the leading gateway for Indian innovation to reach global markets — building
-          internationally successful companies, accelerating research commercialisation and creating
-          a thriving cross-border entrepreneurial ecosystem.
-        </p>
+    <section className="relative overflow-hidden border-b border-border/60 bg-background">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:22px_22px]" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid gap-12 md:grid-cols-12 md:items-start">
+          <div className="md:col-span-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+              Our Vision
+            </p>
+            <div className="mt-4 h-px w-16 bg-gold" />
+            <h2 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-forest-deep md:text-5xl">
+              A gateway<br />built for<br />
+              <span className="italic text-gold">global scale.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="relative rounded-3xl border border-border/60 bg-cream/50 p-10 md:p-14">
+              <span className="absolute -top-6 left-8 font-serif text-8xl leading-none text-gold/70">
+                &ldquo;
+              </span>
+              <p className="text-2xl font-medium leading-[1.35] tracking-tight text-forest-deep md:text-[2rem]">
+                To become the leading gateway for{" "}
+                <span className="text-gold">Indian innovation</span> to reach global markets —
+                building internationally successful companies, accelerating research
+                commercialisation and creating a thriving cross-border entrepreneurial ecosystem.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-forest/10 pt-6">
+                {["Global Companies", "Research Commercialisation", "Cross-Border Ecosystem"].map(
+                  (t) => (
+                    <div key={t} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-forest/70">
+                        {t}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
