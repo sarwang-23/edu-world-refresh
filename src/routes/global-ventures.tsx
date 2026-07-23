@@ -100,7 +100,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-36">
         <div className="md:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-forest/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-sm font-medium uppercase tracking-[0.18em] text-forest/70">
             <Globe2 className="h-3.5 w-3.5 text-gold" /> Global Ventures
           </span>
           <h1 className="mt-6 text-5xl font-bold leading-[1.02] tracking-[-0.03em] text-forest-deep md:text-[5.5rem]">
@@ -131,7 +131,7 @@ function Hero() {
               Talk to Our Team
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-forest/60">
+          <div className="mt-10 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.22em] text-forest/60">
             <span className="h-px w-10 bg-forest/30" />
             India · United Kingdom · Europe
           </div>
@@ -231,7 +231,7 @@ function WhatWeDo() {
     <section id="what-we-do" className="border-b border-border/60 bg-background">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
             What We Do
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-forest-deep md:text-5xl">
@@ -289,7 +289,7 @@ function Portfolio() {
     <section className="border-b border-border/60 bg-forest-deep text-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
             Our Portfolio
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -348,7 +348,7 @@ function WhyUs() {
     <section className="border-b border-border/60 bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="mb-16">
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
             Why Global Ventures
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-forest-deep md:text-5xl max-w-3xl">
@@ -385,7 +385,7 @@ function Vision() {
       <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="grid gap-12 md:grid-cols-12 md:items-start">
           <div className="md:col-span-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
               Our Vision
             </p>
             <div className="mt-4 h-px w-16 bg-gold" />
@@ -431,7 +431,7 @@ function CTA() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
               From India to the World
             </p>
             <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-6xl">

@@ -89,7 +89,7 @@ function Hero() {
     <section className="relative overflow-hidden bg-cream">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 pb-24 pt-16 md:pt-24 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6 lg:pt-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-forest/70">
+          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background/60 px-4 py-1.5 text-sm font-medium uppercase tracking-[0.22em] text-forest/70">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Incubated in Cambridge · Delivered Globally
           </div>
@@ -124,7 +124,7 @@ function Hero() {
             ].map(([k, v]) => (
               <div key={v}>
                 <dt className="text-3xl font-bold text-forest md:text-4xl">{k}</dt>
-                <dd className="mt-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
+                <dd className="mt-1.5 text-sm font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
               </div>
             ))}
           </dl>
@@ -154,13 +154,13 @@ function Hero() {
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold tracking-tight text-forest">Cohort 2026 · Now open</p>
-                  <p className="mt-0.5 text-[11px] tracking-wide text-muted-foreground">Cambridge · Finland · Singapore · India</p>
+                  <p className="mt-0.5 text-sm tracking-wide text-muted-foreground">Cambridge · Finland · Singapore · India</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="absolute -left-6 top-10 hidden rounded-2xl border border-forest/10 bg-background p-4 shadow-xl md:block">
-            <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-forest/70">
+            <div className="flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-forest/70">
               <Globe2 className="h-4 w-4 text-gold" /> 24 countries
             </div>
           </div>
@@ -181,7 +181,7 @@ function Marquee() {
   ];
   return (
     <div className="border-y border-border/70 bg-background py-8">
-      <p className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
+      <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
         Partnered with the world's leading university ecosystems
       </p>
       <div className="relative overflow-hidden flex w-full">
@@ -204,7 +204,7 @@ function About() {
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-gold" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
           </div>
           <h2 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-forest md:text-[2.75rem]">
             An education company built for a <span className="text-gold">borderless</span> world.
@@ -218,7 +218,7 @@ function About() {
             ].map(([k, v]) => (
               <div key={v}>
                 <p className="text-2xl font-bold text-forest">{k}</p>
-                <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{v}</p>
+                <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">{v}</p>
               </div>
             ))}
           </div>
@@ -285,7 +285,7 @@ function KeyAreas() {
       <div className="mx-auto max-w-7xl px-6 py-28">
         <div className="flex flex-col items-end justify-between gap-6 md:flex-row">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Six focus areas</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Six focus areas</p>
             <h2 className="mt-5 max-w-2xl text-[2.25rem] font-bold leading-[1.1] md:text-[2.75rem]">
               Our key areas of <span className="text-gold">experiential</span> learning.
             </h2>
@@ -343,7 +343,7 @@ function WhoWeServe() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-28">
       <div className="mb-16 max-w-3xl">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Who we serve</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Who we serve</p>
         <h2 className="mt-5 text-[2.25rem] font-bold leading-[1.1] text-forest md:text-[2.75rem]">
           Four communities, one shared belief in what learning can be.
         </h2>
@@ -369,7 +369,7 @@ function WhoWeServe() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">{g.tag}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">{g.tag}</p>
               <h3 className="mt-5 text-[1.85rem] font-bold leading-[1.15] text-forest md:text-[2.15rem]">
                 {g.title}
               </h3>
@@ -414,7 +414,7 @@ function Impact() {
           {stats.map(([k, v]) => (
             <div key={v + k} className="bg-cream p-8">
               <dt className="text-[2.25rem] font-bold text-forest md:text-[2.75rem]">{k}</dt>
-              <dd className="mt-2 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
+              <dd className="mt-2 text-sm font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
             </div>
           ))}
         </dl>
@@ -440,7 +440,7 @@ function CambridgeOrigin() {
           </div>
         </div>
         <div className="lg:col-span-7 lg:pl-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Where it began</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Where it began</p>
           <h2 className="mt-5 text-[2.5rem] font-bold leading-[1.05] md:text-[3.5rem]">
             Rooted in <span className="text-gold">Cambridge.</span> Written for the world.
           </h2>
@@ -474,7 +474,7 @@ function Gallery() {
     <section className="mx-auto max-w-7xl px-6 py-28">
       <div className="mb-12 flex items-end justify-between">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Gallery</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Gallery</p>
           <h2 className="mt-5 max-w-xl text-[2.25rem] font-bold leading-[1.1] text-forest md:text-[2.75rem]">
             Programmes, coming to life.
           </h2>
@@ -513,7 +513,7 @@ function CTA() {
       <div className="relative overflow-hidden rounded-[2.5rem] bg-forest px-8 py-20 text-primary-foreground md:px-16 md:py-24">
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
         <div className="relative max-w-3xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">Apply now · Cohort 2026</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Apply now · Cohort 2026</p>
           <h2 className="mt-5 text-[2.5rem] font-bold leading-[1.05] md:text-[3.5rem]">
             Ready to learn where the world's best learn?
           </h2>
@@ -562,7 +562,7 @@ export function Footer() {
           </div>
           {cols.map(([title, items]) => (
             <div key={title} className="lg:col-span-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-forest/60">{title}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-forest/60">{title}</p>
               <ul className="mt-5 space-y-3">
                 {items.map((i) => (
                   <li key={i}>
