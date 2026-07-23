@@ -46,8 +46,8 @@ function Index() {
   );
 }
 
-function Nav() {
-  const links = ["Programmes", "Who We Serve", "Gallery", "Insights", "Contact"];
+export function Nav() {
+  const links = ["Programmes", "Who We Serve", "Global Ventures", "Gallery", "Contact"];
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -60,7 +60,7 @@ function Nav() {
           {links.map((l) => (
             <a
               key={l}
-              href="#"
+              href={l === "Global Ventures" ? "/global-ventures" : "#"}
               className="text-[13px] font-medium tracking-[0.01em] text-forest/75 transition-colors hover:text-forest"
             >
               {l}
@@ -533,7 +533,7 @@ function CTA() {
   );
 }
 
-function Footer() {
+export function Footer() {
   const cols = [
     ["Programmes", ["Education Leaders", "Business Leaders", "K-12 Teachers", "Students"]],
     ["Company", ["About", "Insights", "Gallery", "Contact"]],

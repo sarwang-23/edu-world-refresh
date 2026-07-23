@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
+  id: '/global-ventures',
+  path: '/global-ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/global-ventures': typeof GlobalVenturesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/global-ventures': typeof GlobalVenturesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/global-ventures': typeof GlobalVenturesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/global-ventures'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/global-ventures'
+  id: '__root__' | '/' | '/global-ventures'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GlobalVenturesRoute: typeof GlobalVenturesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/global-ventures': {
+      id: '/global-ventures'
+      path: '/global-ventures'
+      fullPath: '/global-ventures'
+      preLoaderRoute: typeof GlobalVenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GlobalVenturesRoute: GlobalVenturesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
