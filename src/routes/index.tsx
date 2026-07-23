@@ -31,7 +31,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <Nav />
       <Hero />
       <Marquee />
       <About />
@@ -43,44 +42,6 @@ function Index() {
       <CTA />
       <Footer />
     </div>
-  );
-}
-
-export function Nav() {
-  const links: { label: string; href: string }[] = [
-    { label: "Programmes", href: "#" },
-    { label: "Who We Serve", href: "#" },
-    { label: "Global Ventures", href: "/global-ventures" },
-    { label: "Gallery", href: "#" },
-    { label: "Contact", href: "#" },
-  ];
-  return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="/" className="flex items-center gap-2">
-          <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">
-            Global<span className="text-gold">.</span>Edu<span className="text-gold">.</span>Lab
-          </span>
-        </a>
-        <nav className="hidden items-center gap-9 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="text-[13px] font-medium tracking-[0.01em] text-forest/75 transition-colors hover:text-forest"
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="#"
-          className="hidden items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep md:inline-flex"
-        >
-          Apply Now <ArrowUpRight className="h-4 w-4" />
-        </a>
-      </div>
-    </header>
   );
 }
 

@@ -10,11 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
+import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as TeachersRouteImport } from './routes/teachers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
+  id: '/business-leaders',
+  path: '/business-leaders',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
@@ -22,31 +31,81 @@ const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
   path: '/global-ventures',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchoolLeadersRoute = SchoolLeadersRouteImport.update({
+  id: '/school-leaders',
+  path: '/school-leaders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentsRoute = StudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeachersRoute = TeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/business-leaders': typeof BusinessLeadersRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/school-leaders': typeof SchoolLeadersRoute
+  '/students': typeof StudentsRoute
+  '/teachers': typeof TeachersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/business-leaders': typeof BusinessLeadersRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/school-leaders': typeof SchoolLeadersRoute
+  '/students': typeof StudentsRoute
+  '/teachers': typeof TeachersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/business-leaders': typeof BusinessLeadersRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/school-leaders': typeof SchoolLeadersRoute
+  '/students': typeof StudentsRoute
+  '/teachers': typeof TeachersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/global-ventures'
+  fullPaths:
+    | '/'
+    | '/business-leaders'
+    | '/global-ventures'
+    | '/school-leaders'
+    | '/students'
+    | '/teachers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/global-ventures'
-  id: '__root__' | '/' | '/global-ventures'
+  to:
+    | '/'
+    | '/business-leaders'
+    | '/global-ventures'
+    | '/school-leaders'
+    | '/students'
+    | '/teachers'
+  id:
+    | '__root__'
+    | '/'
+    | '/business-leaders'
+    | '/global-ventures'
+    | '/school-leaders'
+    | '/students'
+    | '/teachers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BusinessLeadersRoute: typeof BusinessLeadersRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
+  SchoolLeadersRoute: typeof SchoolLeadersRoute
+  StudentsRoute: typeof StudentsRoute
+  TeachersRoute: typeof TeachersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +117,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/business-leaders': {
+      id: '/business-leaders'
+      path: '/business-leaders'
+      fullPath: '/business-leaders'
+      preLoaderRoute: typeof BusinessLeadersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/global-ventures': {
       id: '/global-ventures'
       path: '/global-ventures'
@@ -65,12 +131,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GlobalVenturesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/school-leaders': {
+      id: '/school-leaders'
+      path: '/school-leaders'
+      fullPath: '/school-leaders'
+      preLoaderRoute: typeof SchoolLeadersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students': {
+      id: '/students'
+      path: '/students'
+      fullPath: '/students'
+      preLoaderRoute: typeof StudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teachers': {
+      id: '/teachers'
+      path: '/teachers'
+      fullPath: '/teachers'
+      preLoaderRoute: typeof TeachersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BusinessLeadersRoute: BusinessLeadersRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
+  SchoolLeadersRoute: SchoolLeadersRoute,
+  StudentsRoute: StudentsRoute,
+  TeachersRoute: TeachersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

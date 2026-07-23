@@ -1,0 +1,163 @@
+import { createFileRoute } from '@tanstack/react-router'
+import { ArrowUpRight, Compass, GraduationCap, Map } from 'lucide-react'
+import studentsImg from '../assets/students.jpg'
+
+export const Route = createFileRoute('/students')({
+  component: Students,
+})
+
+function Students() {
+  return (
+    <div className="flex min-h-screen flex-col pt-16">
+      <Hero />
+      <Overview />
+      <OngoingProgrammes />
+      <CallToAction />
+    </div>
+  )
+}
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-forest text-cream">
+      <div className="absolute inset-0 z-0">
+        <img
+          src={studentsImg}
+          alt="Students"
+          className="h-full w-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
+            For Students & Young Learners
+          </p>
+          <h1 className="mt-6 font-serif text-5xl leading-tight md:text-7xl">
+            Build global exposure and confidence.
+          </h1>
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl">
+            Explore world-class programmes for students aged 14–17 and undergraduates, including summer camps, short-term residential experiences, and online courses.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Overview() {
+  return (
+    <section className="border-b border-border/60 bg-cream">
+      <div className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-16 md:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
+              Immersive Learning
+            </p>
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-forest-deep md:text-4xl">
+              Equipping students with critical thinking skills and entrepreneurial mindsets.
+            </h2>
+            <div className="mt-12 grid grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-4xl font-serif text-gold">14-17</h3>
+                <p className="mt-2 text-sm text-forest/70 uppercase tracking-widest font-semibold">Age Group</p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-serif text-gold">Global</h3>
+                <p className="mt-2 text-sm text-forest/70 uppercase tracking-widest font-semibold">Perspectives</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <p className="text-lg leading-relaxed text-forest/85">
+              Our programmes are designed to prepare young learners for the future. From online programmes to immersive residential camps, we provide students with global exposure.
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-forest/85">
+              Build your academic confidence through hands-on, immersive, future-ready learning opportunities that challenge you to grow beyond the classroom.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function OngoingProgrammes() {
+  const programmes = [
+    {
+      title: "Summer Leadership Camp",
+      date: "July 2026",
+      desc: "A hands-on residential camp focused on leadership and team-building.",
+      icon: <Map className="h-6 w-6" />,
+      link: "https://www.globaledulab.com/studentprogrammes"
+    },
+    {
+      title: "Global Entrepreneurship Journey",
+      date: "August 2026",
+      desc: "Learn to build a startup from scratch with international mentors.",
+      icon: <Compass className="h-6 w-6" />,
+      link: "https://www.globaledulab.com/studentprogrammes"
+    },
+    {
+      title: "Academic Readiness Course",
+      date: "Ongoing",
+      desc: "Online courses to prepare undergraduates for top-tier university applications.",
+      icon: <GraduationCap className="h-6 w-6" />,
+      link: "https://www.globaledulab.com/studentprogrammes"
+    }
+  ]
+
+  return (
+    <section className="bg-background py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
+            Our Ongoing Programmes
+          </p>
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-forest-deep md:text-5xl">
+            Upcoming Student Experiences
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {programmes.map((p, idx) => (
+            <a key={idx} href={p.link} target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between rounded-3xl border border-forest/10 bg-cream/30 p-8 transition-all hover:bg-cream/60 hover:shadow-lg">
+              <div>
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-forest/5 text-forest">
+                  {p.icon}
+                </div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold">
+                  {p.date}
+                </p>
+                <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep group-hover:text-gold transition-colors">
+                  {p.title}
+                </h3>
+                <p className="mt-4 text-forest/70 leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
+              <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-xs group-hover:text-gold transition-colors">
+                Read More <ArrowUpRight className="h-4 w-4" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CallToAction() {
+  return (
+    <section className="border-t border-border/60 bg-forest py-24 text-center">
+      <div className="mx-auto max-w-3xl px-6">
+        <h2 className="font-serif text-4xl text-cream md:text-5xl">Start your journey today</h2>
+        <p className="mt-6 text-lg text-cream/80">Join our diverse cohort of young global leaders.</p>
+        <button className="mt-10 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+          Apply Now
+        </button>
+      </div>
+    </section>
+  )
+}
