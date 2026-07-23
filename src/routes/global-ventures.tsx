@@ -345,14 +345,46 @@ function WhyUs() {
 
 function Vision() {
   return (
-    <section className="border-b border-border/60 bg-background">
-      <div className="mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">Our Vision</p>
-        <p className="mt-8 font-serif text-3xl leading-snug tracking-tight text-forest-deep md:text-5xl">
-          To become the leading gateway for Indian innovation to reach global markets — building
-          internationally successful companies, accelerating research commercialisation and creating
-          a thriving cross-border entrepreneurial ecosystem.
-        </p>
+    <section className="relative overflow-hidden border-b border-border/60 bg-background">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:22px_22px]" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid gap-12 md:grid-cols-12 md:items-start">
+          <div className="md:col-span-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+              Our Vision
+            </p>
+            <div className="mt-4 h-px w-16 bg-gold" />
+            <h2 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-forest-deep md:text-5xl">
+              A gateway<br />built for<br />
+              <span className="italic text-gold">global scale.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="relative rounded-3xl border border-border/60 bg-cream/50 p-10 md:p-14">
+              <span className="absolute -top-6 left-8 font-serif text-8xl leading-none text-gold/70">
+                &ldquo;
+              </span>
+              <p className="text-2xl font-medium leading-[1.35] tracking-tight text-forest-deep md:text-[2rem]">
+                To become the leading gateway for{" "}
+                <span className="text-gold">Indian innovation</span> to reach global markets —
+                building internationally successful companies, accelerating research
+                commercialisation and creating a thriving cross-border entrepreneurial ecosystem.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-forest/10 pt-6">
+                {["Global Companies", "Research Commercialisation", "Cross-Border Ecosystem"].map(
+                  (t) => (
+                    <div key={t} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-forest/70">
+                        {t}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
