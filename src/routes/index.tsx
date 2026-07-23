@@ -184,12 +184,14 @@ function Marquee() {
       <p className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
         Partnered with the world's leading university ecosystems
       </p>
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 text-forest/70">
-        {items.map((i) => (
-          <span key={i} className="font-semibold text-base tracking-tight md:text-xl">
-            {i}
-          </span>
-        ))}
+      <div className="relative overflow-hidden flex w-full">
+        <div className="animate-marquee items-center text-forest/70">
+          {[...items, ...items, ...items, ...items].map((i, idx) => (
+            <span key={`${i}-${idx}`} className="mx-6 whitespace-nowrap font-semibold text-base tracking-tight md:text-xl">
+              {i}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
