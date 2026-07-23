@@ -46,11 +46,7 @@ function Index() {
   );
 }
 
-<<<<<<< HEAD
 export function Nav() {
-  const links = ["Programmes", "Who We Serve", "Global Ventures", "Gallery", "Contact"];
-=======
-function Nav() {
   const links: { label: string; href: string }[] = [
     { label: "Programmes", href: "#" },
     { label: "Who We Serve", href: "#" },
@@ -58,7 +54,6 @@ function Nav() {
     { label: "Gallery", href: "#" },
     { label: "Contact", href: "#" },
   ];
->>>>>>> e362b4e380f74aaa4dadd6403417e05a8880f3b2
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -70,13 +65,8 @@ function Nav() {
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
             <a
-<<<<<<< HEAD
-              key={l}
-              href={l === "Global Ventures" ? "/global-ventures" : "#"}
-=======
               key={l.label}
               href={l.href}
->>>>>>> e362b4e380f74aaa4dadd6403417e05a8880f3b2
               className="text-[13px] font-medium tracking-[0.01em] text-forest/75 transition-colors hover:text-forest"
             >
               {l.label}

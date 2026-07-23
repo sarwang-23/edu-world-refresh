@@ -9,15 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 
-const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
-  id: '/global-ventures',
-  path: '/global-ventures',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -57,13 +51,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/global-ventures': {
-      id: '/global-ventures'
-      path: '/global-ventures'
-      fullPath: '/global-ventures'
-      preLoaderRoute: typeof GlobalVenturesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -88,3 +75,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
