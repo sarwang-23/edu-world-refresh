@@ -373,6 +373,7 @@ function WhyUs() {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }
