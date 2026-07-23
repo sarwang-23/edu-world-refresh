@@ -42,6 +42,7 @@ function GlobalVenturesPage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Nav />
       <Hero />
+      <Metrics />
       <WhatWeDo />
       <Portfolio />
       <WhyUs />
