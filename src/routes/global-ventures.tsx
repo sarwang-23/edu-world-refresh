@@ -297,23 +297,6 @@ function Stats() {
 
   return (
     <section className="bg-white border-t border-b border-forest/10 py-12 relative z-10 overflow-hidden flex">
-      <style>
-        {`
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-25%); }
-          }
-          .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 15s linear infinite;
-          }
-          .animate-marquee:hover {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
-      
       <div className="animate-marquee">
         {marqueeGroup}
         {marqueeGroup}
