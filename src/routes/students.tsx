@@ -90,21 +90,21 @@ function OngoingProgrammes() {
       date: "July 2026",
       desc: "A hands-on residential camp focused on leadership and team-building.",
       icon: <Map className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/studentprogrammes"
+      link: "/programmes/student-camps"
     },
     {
       title: "Global Entrepreneurship Journey",
       date: "August 2026",
       desc: "Learn to build a startup from scratch with international mentors.",
       icon: <Compass className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/studentprogrammes"
+      link: "/programmes/student-camps"
     },
     {
       title: "Academic Readiness Course",
       date: "Ongoing",
       desc: "Online courses to prepare undergraduates for top-tier university applications.",
       icon: <GraduationCap className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/studentprogrammes"
+      link: "/programmes/student-camps"
     }
   ]
 
