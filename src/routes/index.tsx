@@ -162,34 +162,43 @@ function Marquee() {
 function About() {
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-28">
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-gold" />
-            <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">About GEL</p>
+      <div className="flex flex-col gap-12 lg:gap-16">
+        {/* Top Row */}
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold" />
+              <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">About GEL</p>
+            </div>
+            <h2 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-forest md:text-[2.75rem]">
+              An education company built for a <span className="text-gold">borderless</span> world.
+            </h2>
           </div>
-          <h2 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-forest md:text-[2.75rem]">
-            An education company built for a <span className="text-gold">borderless</span> world.
-          </h2>
-          <div className="mt-12 grid grid-cols-2 gap-8 border-t border-forest/10 pt-10">
-            {[
-              ["10+", "Years of practice"],
-              ["24", "Countries reached"],
-              ["40+", "University partners"],
-              ["4", "Global hubs"],
-            ].map(([k, v]) => (
-              <div key={v}>
-                <p className="text-2xl font-bold text-forest">{k}</p>
-                <p className="mt-1 text-[13px] font-bold uppercase tracking-[0.18em] text-forest/60">{v}</p>
-              </div>
-            ))}
+          <div className="lg:col-span-7 lg:mt-[3.5rem]">
+            <p className="text-[22px] font-medium leading-[1.45] text-forest md:text-[26px]">
+              "Incubated in Cambridge for a global audience — we strengthen every part of the learning community through immersive experiences, leadership programmes and skill-building workshops."
+            </p>
           </div>
         </div>
-        <div className="lg:col-span-7">
-          <p className="text-[22px] font-medium leading-[1.45] text-forest md:text-[26px]">
-            "Incubated in Cambridge for a global audience — we strengthen every part of the learning community through immersive experiences, leadership programmes and skill-building workshops."
-          </p>
-          <div className="mt-12 border-t border-forest/10 pt-10">
+
+        {/* Bottom Row */}
+        <div className="grid grid-cols-1 items-start gap-12 border-t border-forest/10 pt-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <div className="grid grid-cols-2 gap-8">
+              {[
+                ["10+", "Years of practice"],
+                ["24", "Countries reached"],
+                ["40+", "University partners"],
+                ["4", "Global hubs"],
+              ].map(([k, v]) => (
+                <div key={v}>
+                  <p className="text-2xl font-bold text-forest">{k}</p>
+                  <p className="mt-1 text-[13px] font-bold uppercase tracking-[0.18em] text-forest/60">{v}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="lg:col-span-7">
             <p className="text-base leading-[1.75] text-forest/80">
               We bring global best practices into local contexts. By creating
               spaces for dialogue, observation and cross-border collaboration,
@@ -198,8 +207,8 @@ function About() {
               classrooms, communities and cultures.
             </p>
             <a
-              href="#programmes"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.15em] text-forest transition-all hover:bg-forest/5"
+              href="#"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.15em] text-primary-foreground transition-all hover:bg-forest-deep hover:text-white"
             >
               Our philosophy <ArrowUpRight className="h-4 w-4" />
             </a>
