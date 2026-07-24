@@ -90,28 +90,28 @@ function OngoingProgrammes() {
       date: "15-16 May 2026",
       desc: "Experience the world-renowned Finnish education system with immersive school visits.",
       icon: <Globe2 className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/finland"
+      link: "/programmes/finland"
     },
     {
       title: "London School Leadership Programme",
       date: "18-21 January 2026",
       desc: "Engage with top educational leaders and explore innovative practices in London.",
       icon: <Users className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/llp-1"
+      link: "/programmes/llp"
     },
     {
       title: "Cambridge School Leadership Programme",
       date: "12-14 March 2026",
       desc: "A collaborative workshop environment at the historic University of Cambridge.",
       icon: <GraduationCap className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/cslp"
+      link: "/programmes/cslp"
     },
     {
       title: "Bali Green School Programme",
       date: "12-16 May 2026",
       desc: "Learn about sustainability and forward-thinking curriculum design in Bali.",
       icon: <BookOpen className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/baligreenschool-1"
+      link: "/programmes/bali"
     }
   ]
 

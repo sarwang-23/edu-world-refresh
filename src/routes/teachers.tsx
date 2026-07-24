@@ -90,21 +90,21 @@ function OngoingProgrammes() {
       date: "Self-Paced",
       desc: "Advance your teaching skills with our self-paced online teacher training workshop.",
       icon: <Video className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/forteachers"
+      link: "/programmes/teacher-training"
     },
     {
       title: "Classroom Innovation Masterclass",
       date: "Monthly",
       desc: "Interactive webinars focusing on integrating tech into daily curriculum.",
       icon: <Presentation className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/forteachers"
+      link: "/programmes/teacher-training"
     },
     {
       title: "Pedagogy Excellence Workshop",
       date: "Quarterly",
       desc: "Deep dive into research-backed teaching strategies and student engagement methods.",
       icon: <BookOpen className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/forteachers"
+      link: "/programmes/teacher-training"
     }
   ]
 

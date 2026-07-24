@@ -17,6 +17,7 @@ import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgrammesZeroToOneRouteImport } from './routes/programmes.zero-to-one'
 import { Route as ProgrammesTeacherTrainingRouteImport } from './routes/programmes.teacher-training'
+import { Route as ProgrammesStudentCampsRouteImport } from './routes/programmes.student-camps'
 import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
 import { Route as ProgrammesHouseOfLordsRouteImport } from './routes/programmes.house-of-lords'
 import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
@@ -65,6 +66,11 @@ const ProgrammesTeacherTrainingRoute =
     path: '/programmes/teacher-training',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProgrammesStudentCampsRoute = ProgrammesStudentCampsRouteImport.update({
+  id: '/programmes/student-camps',
+  path: '/programmes/student-camps',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
   id: '/programmes/llp',
   path: '/programmes/llp',
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/programmes/gilp'
     | '/programmes/house-of-lords'
     | '/programmes/llp'
+    | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
   fileRoutesByTo: FileRoutesByTo
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/programmes/gilp'
     | '/programmes/house-of-lords'
     | '/programmes/llp'
+    | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
   id:
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/programmes/gilp'
     | '/programmes/house-of-lords'
     | '/programmes/llp'
+    | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
   fileRoutesById: FileRoutesById
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   ProgrammesGilpRoute: typeof ProgrammesGilpRoute
   ProgrammesHouseOfLordsRoute: typeof ProgrammesHouseOfLordsRoute
   ProgrammesLlpRoute: typeof ProgrammesLlpRoute
+  ProgrammesStudentCampsRoute: typeof ProgrammesStudentCampsRoute
   ProgrammesTeacherTrainingRoute: typeof ProgrammesTeacherTrainingRoute
   ProgrammesZeroToOneRoute: typeof ProgrammesZeroToOneRoute
 }
@@ -271,6 +284,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesTeacherTrainingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/student-camps': {
+      id: '/programmes/student-camps'
+      path: '/programmes/student-camps'
+      fullPath: '/programmes/student-camps'
+      preLoaderRoute: typeof ProgrammesStudentCampsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes/llp': {
       id: '/programmes/llp'
       path: '/programmes/llp'
@@ -329,6 +349,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgrammesGilpRoute: ProgrammesGilpRoute,
   ProgrammesHouseOfLordsRoute: ProgrammesHouseOfLordsRoute,
   ProgrammesLlpRoute: ProgrammesLlpRoute,
+  ProgrammesStudentCampsRoute: ProgrammesStudentCampsRoute,
   ProgrammesTeacherTrainingRoute: ProgrammesTeacherTrainingRoute,
   ProgrammesZeroToOneRoute: ProgrammesZeroToOneRoute,
 }
