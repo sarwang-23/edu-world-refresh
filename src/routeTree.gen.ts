@@ -17,6 +17,7 @@ import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgrammesZeroToOneRouteImport } from './routes/programmes.zero-to-one'
 import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
+import { Route as ProgrammesHouseOfLordsRouteImport } from './routes/programmes.house-of-lords'
 import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
 import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
 import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
@@ -62,6 +63,11 @@ const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
   path: '/programmes/llp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesHouseOfLordsRoute = ProgrammesHouseOfLordsRouteImport.update({
+  id: '/programmes/house-of-lords',
+  path: '/programmes/house-of-lords',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesGilpRoute = ProgrammesGilpRouteImport.update({
   id: '/programmes/gilp',
   path: '/programmes/gilp',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
+  '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
+  '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
+  '/programmes/house-of-lords': typeof ProgrammesHouseOfLordsRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/programmes/cslp'
     | '/programmes/finland'
     | '/programmes/gilp'
+    | '/programmes/house-of-lords'
     | '/programmes/llp'
     | '/programmes/zero-to-one'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/programmes/cslp'
     | '/programmes/finland'
     | '/programmes/gilp'
+    | '/programmes/house-of-lords'
     | '/programmes/llp'
     | '/programmes/zero-to-one'
   id:
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/programmes/cslp'
     | '/programmes/finland'
     | '/programmes/gilp'
+    | '/programmes/house-of-lords'
     | '/programmes/llp'
     | '/programmes/zero-to-one'
   fileRoutesById: FileRoutesById
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   ProgrammesCslpRoute: typeof ProgrammesCslpRoute
   ProgrammesFinlandRoute: typeof ProgrammesFinlandRoute
   ProgrammesGilpRoute: typeof ProgrammesGilpRoute
+  ProgrammesHouseOfLordsRoute: typeof ProgrammesHouseOfLordsRoute
   ProgrammesLlpRoute: typeof ProgrammesLlpRoute
   ProgrammesZeroToOneRoute: typeof ProgrammesZeroToOneRoute
 }
@@ -244,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesLlpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/house-of-lords': {
+      id: '/programmes/house-of-lords'
+      path: '/programmes/house-of-lords'
+      fullPath: '/programmes/house-of-lords'
+      preLoaderRoute: typeof ProgrammesHouseOfLordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes/gilp': {
       id: '/programmes/gilp'
       path: '/programmes/gilp'
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgrammesCslpRoute: ProgrammesCslpRoute,
   ProgrammesFinlandRoute: ProgrammesFinlandRoute,
   ProgrammesGilpRoute: ProgrammesGilpRoute,
+  ProgrammesHouseOfLordsRoute: ProgrammesHouseOfLordsRoute,
   ProgrammesLlpRoute: ProgrammesLlpRoute,
   ProgrammesZeroToOneRoute: ProgrammesZeroToOneRoute,
 }
