@@ -108,7 +108,7 @@ function CollaboratorsBar() {
   const items = [...partners, ...partners, ...partners, ...partners]
 
   return (
-    <section className="border-b border-border/50 bg-cream py-8 overflow-hidden">
+    <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
       <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
         IN COLLABORATION WITH
       </p>
@@ -482,7 +482,7 @@ function DelegationConcierge() {
   ]
 
   return (
-    <section id="delegations" className="border-b border-border/60 bg-cream py-24">
+    <section id="delegations" className="border-b border-border/60 bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
@@ -497,7 +497,7 @@ function DelegationConcierge() {
 
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
             {items.map((item, idx) => (
-              <div key={idx} className="rounded-2xl border border-forest/10 bg-cream/40 p-6">
+              <div key={idx} className="rounded-2xl border border-forest/10 bg-white shadow-sm p-6">
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest/10">
                   {item.icon}
                 </div>
