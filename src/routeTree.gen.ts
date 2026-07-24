@@ -15,6 +15,7 @@ import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgrammesZeroToOneRouteImport } from './routes/programmes.zero-to-one'
 import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
 import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
 import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
@@ -49,6 +50,11 @@ const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesZeroToOneRoute = ProgrammesZeroToOneRouteImport.update({
+  id: '/programmes/zero-to-one',
+  path: '/programmes/zero-to-one',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/programmes/finland': typeof ProgrammesFinlandRoute
   '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
+  '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/programmes/finland'
     | '/programmes/gilp'
     | '/programmes/llp'
+    | '/programmes/zero-to-one'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/programmes/finland'
     | '/programmes/gilp'
     | '/programmes/llp'
+    | '/programmes/zero-to-one'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/programmes/finland'
     | '/programmes/gilp'
     | '/programmes/llp'
+    | '/programmes/zero-to-one'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   ProgrammesFinlandRoute: typeof ProgrammesFinlandRoute
   ProgrammesGilpRoute: typeof ProgrammesGilpRoute
   ProgrammesLlpRoute: typeof ProgrammesLlpRoute
+  ProgrammesZeroToOneRoute: typeof ProgrammesZeroToOneRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -215,6 +228,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/zero-to-one': {
+      id: '/programmes/zero-to-one'
+      path: '/programmes/zero-to-one'
+      fullPath: '/programmes/zero-to-one'
+      preLoaderRoute: typeof ProgrammesZeroToOneRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programmes/llp': {
@@ -267,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgrammesFinlandRoute: ProgrammesFinlandRoute,
   ProgrammesGilpRoute: ProgrammesGilpRoute,
   ProgrammesLlpRoute: ProgrammesLlpRoute,
+  ProgrammesZeroToOneRoute: ProgrammesZeroToOneRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
