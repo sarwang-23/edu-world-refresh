@@ -73,14 +73,14 @@
 :root {
   --radius: 0.625rem;
   /* Cambridge-inspired: deep forest green, warm cream, gold accents */
-  --background: oklch(0.98 0.012 90);
+  --background: oklch(0.965 0.018 90);
   --foreground: oklch(0.22 0.05 155);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.05 155);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.05 155);
   --primary: oklch(0.32 0.09 155);
-  --primary-foreground: oklch(0.98 0.012 90);
+  --primary-foreground: oklch(0.965 0.018 90);
   --secondary: oklch(0.94 0.03 85);
   --secondary-foreground: oklch(0.32 0.09 155);
   --muted: oklch(0.95 0.018 85);
@@ -90,7 +90,7 @@
   --gold: oklch(0.72 0.13 78);
   --forest: oklch(0.28 0.08 155);
   --forest-deep: oklch(0.18 0.06 155);
-  --cream: oklch(0.96 0.02 88);
+  --cream: oklch(0.95 0.025 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.88 0.02 90);
@@ -173,6 +173,11 @@
   100% { transform: translateX(-25%); }
 }
 
+@keyframes marquee-rtl {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-marquee {
   display: flex;
   width: max-content;
@@ -181,4 +186,17 @@
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4s ease-in-out 2s infinite;
 }

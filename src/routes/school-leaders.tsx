@@ -1,5 +1,23 @@
+import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { ArrowUpRight, GraduationCap, Users, Globe2, BookOpen } from 'lucide-react'
+import {
+  ArrowUpRight,
+  GraduationCap,
+  Users,
+  Globe2,
+  BookOpen,
+  Compass,
+  Award,
+  CheckCircle2,
+  MapPin,
+  Calendar,
+  Building2,
+  FileText,
+  ShieldCheck,
+  Languages,
+  Utensils,
+  Quote,
+} from 'lucide-react'
 import schoolLeadersImg from '../assets/school-leaders.jpg'
 
 export const Route = createFileRoute('/school-leaders')({
@@ -8,146 +26,108 @@ export const Route = createFileRoute('/school-leaders')({
 
 function SchoolLeaders() {
   return (
-    <div className="flex min-h-screen flex-col pt-16">
+    <div className="flex min-h-screen flex-col font-sans text-foreground bg-cream">
       <Hero />
-      <Overview />
-      <OngoingProgrammes />
-      <CallToAction />
+      <CollaboratorsBar />
+      <WhyLeadersTravel />
+      <StatsBar />
+      <ProgrammesCohorts />
+      <EndToEndJourney />
+      <Testimonials />
+      <DelegationConcierge />
+      <FinalCTA />
     </div>
   )
 }
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-forest text-cream">
-      <div className="absolute inset-0 z-0">
-        <img
-          src={schoolLeadersImg}
-          alt="School Leaders"
-          className="h-full w-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-            For School Leaders & Educators
-          </p>
-          <h1 className="mt-6 font-serif text-5xl leading-tight md:text-7xl">
-            Transforming education through global exposure.
+    <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-16 md:pb-24">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start">
+        <div className="lg:col-span-7">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-forest/70">
+            <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries
+          </span>
+          <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
+            The world's finest classrooms, <span className="italic text-gold">opened to you.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl">
-            Discover programmes and resources designed for school leaders to drive innovation, improve learning outcomes, and build future-ready institutions.
+          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
+            Global Education Lab curates immersive leadership programmes for school owners, principals and trustees — connecting them with Cambridge academics, Finnish policymakers, and pioneering institutions across four continents.
           </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#cohorts"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+            >
+              Explore 2026 Cohorts <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#delegations"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+            >
+              Delegate Support
+            </a>
+          </div>
+          <div className="mt-10 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.22em] text-forest/60">
+            <span className="h-px w-10 bg-forest/30" />
+            Cambridge · Finland · London · Bali
+          </div>
         </div>
-      </div>
-    </section>
-  )
-}
 
-function Overview() {
-  return (
-    <section className="border-b border-border/60 bg-cream">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-16 md:grid-cols-2 lg:gap-24">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-              Our Impact
-            </p>
-            <h2 className="mt-6 text-3xl font-bold leading-tight text-forest-deep md:text-4xl">
-              Since 2022, Global Education Lab has organised over 10 international conferences and leadership programmes.
-            </h2>
-            <div className="mt-12 grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-4xl font-serif text-gold">150+</h3>
-                <p className="mt-2 text-sm text-forest/70 uppercase tracking-widest font-semibold">Organisations Impacted</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-serif text-gold">5+</h3>
-                <p className="mt-2 text-sm text-forest/70 uppercase tracking-widest font-semibold">Countries Across Globe</p>
-              </div>
+        <div className="relative lg:col-span-5 lg:mt-14">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl shadow-forest/15">
+            <img
+              src={schoolLeadersImg}
+              alt="School Leaders & Educators"
+              className="h-[480px] w-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
+              <p className="mt-1 text-xl font-semibold text-cream">
+                Empowering leaders across world-class ecosystems.
+              </p>
             </div>
           </div>
-          <div className="flex flex-col justify-center">
-            <p className="text-lg leading-relaxed text-forest/85">
-              Our carefully curated programmes take school owners, trustees, and senior administrators to international education ecosystems where they can observe and experience best practices first-hand.
-            </p>
-            <p className="mt-6 text-lg leading-relaxed text-forest/85">
-              From school visits in Finland and Estonia to collaborative workshops in Cambridge, participants gain actionable insights on pedagogy, school leadership, curriculum design, and education innovation — returning home equipped to lead transformation within their institutions.
-            </p>
-          </div>
         </div>
       </div>
     </section>
   )
 }
 
-function OngoingProgrammes() {
-  const programmes = [
-    {
-      title: "Finland Education Programme",
-      date: "15-16 May 2026",
-      desc: "Experience the world-renowned Finnish education system with immersive school visits.",
-      icon: <Globe2 className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/finland"
-    },
-    {
-      title: "London School Leadership Programme",
-      date: "18-21 January 2026",
-      desc: "Engage with top educational leaders and explore innovative practices in London.",
-      icon: <Users className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/llp-1"
-    },
-    {
-      title: "Cambridge School Leadership Programme",
-      date: "12-14 March 2026",
-      desc: "A collaborative workshop environment at the historic University of Cambridge.",
-      icon: <GraduationCap className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/cslp"
-    },
-    {
-      title: "Bali Green School Programme",
-      date: "12-16 May 2026",
-      desc: "Learn about sustainability and forward-thinking curriculum design in Bali.",
-      icon: <BookOpen className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/baligreenschool-1"
-    }
+function CollaboratorsBar() {
+  const partners = [
+    "University of Cambridge",
+    "Finnish Ministry of Education",
+    "House of Lords",
+    "Green School Bali",
+    "British Council",
+    "INSEAD Alumni",
   ]
+  // Duplicate 4× for seamless loop
+  const items = [...partners, ...partners, ...partners, ...partners]
 
   return (
-    <section className="bg-background py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-            Our Ongoing Programmes
-          </p>
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-forest-deep md:text-5xl">
-            Upcoming Leadership Experiences
-          </h2>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          {programmes.map((p, idx) => (
-            <a key={idx} href={p.link} target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between rounded-3xl border border-forest/10 bg-cream/30 p-8 transition-all hover:bg-cream/60 hover:shadow-lg">
-              <div>
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-forest/5 text-forest">
-                  {p.icon}
-                </div>
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold">
-                  {p.date}
-                </p>
-                <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep group-hover:text-gold transition-colors">
-                  {p.title}
-                </h3>
-                <p className="mt-4 text-forest/70 leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-              <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-xs group-hover:text-gold transition-colors">
-                Read More <ArrowUpRight className="h-4 w-4" />
-              </div>
-            </a>
+    <section className="border-b border-border/50 bg-cream py-8 overflow-hidden">
+      <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
+        IN COLLABORATION WITH
+      </p>
+      <div className="relative flex overflow-hidden">
+        <div
+          className="flex min-w-full shrink-0 gap-x-14 items-center"
+          style={{
+            animation: 'marquee-rtl 25s linear infinite',
+            willChange: 'transform',
+          }}
+        >
+          {items.map((partner, idx) => (
+            <span
+              key={idx}
+              className="whitespace-nowrap text-sm font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
+            >
+              {partner}
+              <span className="ml-14 text-gold/40 select-none">✦</span>
+            </span>
           ))}
         </div>
       </div>
@@ -155,15 +135,409 @@ function OngoingProgrammes() {
   )
 }
 
-function CallToAction() {
+function WhyLeadersTravel() {
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+
+  const features = [
+    {
+      icon: <Globe2 className="h-6 w-6 text-gold" />,
+      title: "A truly global cohort",
+      desc: "Sit alongside heads-of-school from India, the UAE, Nigeria, Vietnam, Kenya and beyond. The delegation is the classroom.",
+    },
+    {
+      icon: <GraduationCap className="h-6 w-6 text-gold" />,
+      title: "Faculty from world-leading systems",
+      desc: "Sessions led by Cambridge academics, Finnish system architects, and headteachers of internationally-ranked schools.",
+    },
+    {
+      icon: <BookOpen className="h-6 w-6 text-gold" />,
+      title: "Study visits, not seminars",
+      desc: "Every programme is built around live school walkthroughs, classroom observations and closed-door leadership dialogues.",
+    },
+    {
+      icon: <Award className="h-6 w-6 text-gold" />,
+      title: "Certificate of participation",
+      desc: "A co-branded certificate from Global Education Lab and the host institution — recognised by international boards.",
+    },
+  ]
+
   return (
-    <section className="border-t border-border/60 bg-forest py-24 text-center">
+    <section className="border-b border-border/60 py-24" style={{ backgroundColor: '#FBF8F0' }}>
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Header: stacked, left-aligned */}
+        <div className="mb-14 max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">
+            WHY LEADERS TRAVEL WITH US
+          </p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-forest-deep md:text-5xl">
+            Built for principals with an <span className="font-serif italic text-gold">international ambition.</span>
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-forest/75 md:text-lg">
+            Our programmes are designed for schools that intend to compete on the world stage — whether you run a K-12 in Lagos, an international school in Ho Chi Minh City, or a growing group of academies in the Gulf. What you take home is not a workshop deck; it is a redesigned operating model.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f, idx) => {
+            const isSelected = selectedIdx === idx
+            return (
+              <div
+                key={idx}
+                onClick={() => setSelectedIdx(isSelected ? null : idx)}
+                className={`cursor-pointer rounded-2xl border p-8 transition-all duration-200 select-none ${
+                  isSelected
+                    ? 'border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.02]'
+                    : 'border-forest/10 bg-white hover:shadow-md hover:border-gold/30'
+                }`}
+              >
+                <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
+                  isSelected ? 'bg-gold/15' : 'bg-forest/10'
+                }`}>
+                  {f.icon}
+                </div>
+                <h3 className="text-lg font-bold text-forest-deep">{f.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-forest/75">{f.desc}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function StatsBar() {
+  const stats = [
+    { k: "20+", v: "COUNTRIES REPRESENTED" },
+    { k: "150+", v: "SCHOOLS & INSTITUTIONS" },
+    { k: "4", v: "CONTINENTS VISITED" },
+    { k: "96%", v: "WOULD RECOMMEND" },
+  ]
+  // Duplicate 4× for seamless loop
+  const items = [...stats, ...stats, ...stats, ...stats]
+
+  return (
+    <section className="border-y border-cream/10 bg-forest-deep py-14 text-cream overflow-hidden">
+      <div className="relative flex overflow-hidden">
+        <div
+          className="flex min-w-full shrink-0 items-center gap-x-20"
+          style={{
+            animation: 'marquee-rtl 18s linear infinite',
+            willChange: 'transform',
+          }}
+        >
+          {items.map((s, idx) => (
+            <div key={idx} className="flex flex-col items-center shrink-0">
+              <p className="font-sans text-4xl font-bold tracking-tight text-gold md:text-5xl">{s.k}</p>
+              <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.2em] text-cream/70 whitespace-nowrap">{s.v}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ProgrammesCohorts() {
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+
+  const programmes = [
+    {
+      tag: "FLAGSHIP",
+      delegates: "32 DELEGATES",
+      title: "Cambridge School Leadership Programme",
+      location: "Cambridge, UK",
+      date: "12–14 March 2026",
+      desc: "Three days inside one of the world's most storied university towns. Sessions with Cambridge faculty, college dinners, and school visits across the East of England.",
+      link: "https://www.globaledulab.com/cslp",
+    },
+    {
+      tag: "STUDY VISIT",
+      delegates: "24 DELEGATES",
+      title: "Finland Education Programme",
+      location: "Helsinki & Espoo",
+      date: "15–16 May 2026",
+      desc: "Inside the world's most-studied schooling system. Meet the architects of Finnish education policy and observe pedagogy in comprehensive schools.",
+      link: "https://www.globaledulab.com/finland",
+    },
+    {
+      tag: "POLICY",
+      delegates: "28 DELEGATES",
+      title: "London School Leadership Programme",
+      location: "London, UK",
+      date: "18–21 January 2026",
+      desc: "A week inside Britain's education policy engine — from the House of Lords to independent school boards and multi-academy trusts.",
+      link: "https://www.globaledulab.com/llp-1",
+    },
+    {
+      tag: "SUSTAINABILITY",
+      delegates: "20 DELEGATES",
+      title: "Bali Green School Programme",
+      location: "Ubud, Indonesia",
+      date: "12–16 May 2026",
+      desc: "Learn how the Green School re-imagined the classroom. Sustainability, project-based learning and curriculum design — inside a living campus.",
+      link: "https://www.globaledulab.com/baligreenschool-1",
+    },
+  ]
+
+  return (
+    <section id="cohorts" className="border-b border-border/60 bg-cream py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-14 max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">2026 COHORTS</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
+            Four programmes. One passport.
+          </h2>
+          <p className="mt-5 text-sm text-forest/75 leading-relaxed">
+            Attend one, or combine two in the same academic year. Delegations welcomed from schools, groups and ministries.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {programmes.map((p, idx) => {
+            const isSelected = selectedIdx === idx
+            return (
+              <div
+                key={idx}
+                onClick={() => setSelectedIdx(isSelected ? null : idx)}
+                className={`cursor-pointer flex flex-col justify-between rounded-3xl border p-8 transition-all duration-200 select-none ${
+                  isSelected
+                    ? 'border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.01]'
+                    : 'border-forest/10 bg-white hover:shadow-md hover:border-gold/30'
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.2em] text-forest/60 mb-6">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-gold transition-colors ${
+                      isSelected ? 'bg-gold/15' : 'bg-forest/5'
+                    }`}>
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {p.tag}
+                    </span>
+                    <span>{p.delegates}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-forest-deep">{p.title}</h3>
+
+                  <div className="mt-3 flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-gold">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3.5 w-3.5" /> {p.location}
+                    </span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" /> {p.date}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-sm leading-relaxed text-forest/80">{p.desc}</p>
+                </div>
+
+                <div className="mt-8 border-t border-forest/10 pt-6">
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-cream transition-all hover:bg-forest-deep hover:shadow-md"
+                  >
+                    View the Programme <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function EndToEndJourney() {
+  const steps = [
+    {
+      step: "01",
+      title: "Enquire from anywhere",
+      desc: "Complete a short expression of interest. We respond within 48 hours in English, Arabic, French, Hindi or Bahasa.",
+    },
+    {
+      step: "02",
+      title: "Delegation call",
+      desc: "A 30-minute video call with our admissions team to align on your school context and travelling group.",
+    },
+    {
+      step: "03",
+      title: "Visa & travel support",
+      desc: "We issue formal invitation letters, guide the visa route (UK, Schengen, Indonesia) and recommend vetted travel partners.",
+    },
+    {
+      step: "04",
+      title: "Arrive & immerse",
+      desc: "Airport pickup, curated hotels, English-language programming, and a dedicated relationship manager on the ground.",
+    },
+  ]
+
+  return (
+    <section className="border-b border-border/60 py-24" style={{ backgroundColor: '#FBF8F0' }}>
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO ARRIVAL</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
+            An international journey we handle end-to-end.
+          </h2>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, idx) => (
+            <div key={idx} className="relative flex flex-col">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="font-serif text-3xl font-bold text-gold">{s.step}</span>
+                <div className="h-px flex-1 bg-forest/20" />
+              </div>
+              <h3 className="text-base font-bold text-forest-deep">{s.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-forest/75">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Testimonials() {
+  const reviews = [
+    {
+      quote:
+        '"The Cambridge programme reframed how our board thinks about school leadership. We came as visitors and left as peers."',
+      author: "Dr. Aisha Rahman",
+      role: "CHAIR OF TRUSTEES — CRESCENT INTERNATIONAL SCHOOL, DUBAI",
+    },
+    {
+      quote:
+        '"Finland was not a study tour — it was a mirror. Six months on, we have rebuilt our primary curriculum around what we saw."',
+      author: "Kwame Mensah",
+      role: "HEAD OF SCHOOL — ACHIMOTA LEARNING GROUP, ACCRA",
+    },
+    {
+      quote:
+        '"For our senior team, the London programme was worth every mile. The access GEL arranged was extraordinary."',
+      author: "Priya Venkatesh",
+      role: "FOUNDER-PRINCIPAL — SATTVA ACADEMIES, BENGALURU",
+    },
+  ]
+
+  return (
+    <section className="bg-forest py-24 text-cream">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
+            Trusted by school leaders across four continents.
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {reviews.map((r, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col justify-between rounded-2xl border border-cream/15 bg-forest-deep/60 p-8 backdrop-blur-sm"
+            >
+              <div>
+                <Quote className="h-8 w-8 text-gold/40 mb-4" />
+                <p className="text-sm leading-relaxed text-cream/90 italic">{r.quote}</p>
+              </div>
+
+              <div className="mt-8 border-t border-cream/10 pt-4">
+                <p className="text-sm font-bold text-gold">{r.author}</p>
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function DelegationConcierge() {
+  const items = [
+    {
+      icon: <FileText className="h-5 w-5 text-gold" />,
+      title: "Travel & visa letters",
+      desc: "Formal invitation letters and endorsement documents for UK, Schengen and Indonesian visa applications.",
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-gold" />,
+      title: "Vetted logistics",
+      desc: "Airport pickup, insured transport, and pre-approved hotel blocks within walking distance of every venue.",
+    },
+    {
+      icon: <Languages className="h-5 w-5 text-gold" />,
+      title: "Multilingual admissions",
+      desc: "Enquiries answered in English, Arabic, French, Hindi and Bahasa. Interpreters on request.",
+    },
+    {
+      icon: <Utensils className="h-5 w-5 text-gold" />,
+      title: "Dietary & faith needs",
+      desc: "Halal, vegetarian, Kosher, and Jain menus at every meal. Prayer rooms arranged near the venue.",
+    },
+  ]
+
+  return (
+    <section id="delegations" className="border-b border-border/60 bg-cream py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-12 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-5">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FOR INTERNATIONAL DELEGATIONS</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
+              Everything you need — before you board.
+            </h2>
+            <p className="mt-6 text-sm text-forest/80 leading-relaxed">
+              Bringing a leadership team across borders is a serious undertaking. Our concierge desk manages the details so your team arrives ready to learn, not exhausted from logistics.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+            {items.map((item, idx) => (
+              <div key={idx} className="rounded-2xl border border-forest/10 bg-cream/40 p-6">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest/10">
+                  {item.icon}
+                </div>
+                <h3 className="text-base font-bold text-forest-deep">{item.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-forest/75">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FinalCTA() {
+  return (
+    <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-serif text-4xl text-cream md:text-5xl">Ready to transform your school?</h2>
-        <p className="mt-6 text-lg text-cream/80">Join our network of global education leaders today.</p>
-        <button className="mt-10 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
-          Apply Now
-        </button>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
+          Reserve your delegation for the 2026 season.
+        </h2>
+        <p className="mt-6 text-sm leading-relaxed text-cream/80 max-w-xl mx-auto">
+          Cohorts are capped and fill six to nine months in advance. Register your school today and our admissions team will be in touch within two working days.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+          <a
+            href="#cohorts"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
+          >
+            ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
+          </a>
+          <a
+            href="#cohorts"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
+          >
+            OR VIEW ALL PROGRAMMES →
+          </a>
+        </div>
       </div>
     </section>
   )

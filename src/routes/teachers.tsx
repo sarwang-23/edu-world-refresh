@@ -19,27 +19,53 @@ function Teachers() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-forest text-cream">
-      <div className="absolute inset-0 z-0">
-        <img
-          src={teachersImg}
-          alt="Teachers"
-          className="h-full w-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-            For K-12 Teachers
-          </p>
-          <h1 className="mt-6 font-serif text-5xl leading-tight md:text-7xl">
-            Advance your teaching skills.
+    <section className="relative overflow-hidden border-b border-border/60 bg-cream">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-12 md:py-24 lg:gap-8">
+        <div className="md:col-span-7 lg:pt-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-sm font-medium uppercase tracking-[0.18em] text-forest/70">
+            <BookOpen className="h-3.5 w-3.5 text-gold" /> For K-12 Teachers & Educators
+          </span>
+          <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
+            Advance your <span className="italic text-gold">teaching skills.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl">
+          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
             Learn innovative strategies, classroom techniques, and practical tools to enhance student engagement and improve learning outcomes.
           </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#ongoing-programmes"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+            >
+              Explore Programmes <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#overview"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+            >
+              Professional Development
+            </a>
+          </div>
+          <div className="mt-10 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.22em] text-forest/60">
+            <span className="h-px w-10 bg-forest/30" />
+            1000+ Educators · 100k+ Students Impacted
+          </div>
+        </div>
+
+        <div className="relative md:col-span-5">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl shadow-forest/15">
+            <img
+              src={teachersImg}
+              alt="Teachers"
+              className="h-[480px] w-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-gold">Pedagogical Excellence</p>
+              <p className="mt-1 text-xl font-semibold text-cream">
+                Transforming classrooms with research-backed strategies.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -48,7 +74,7 @@ function Hero() {
 
 function Overview() {
   return (
-    <section className="border-b border-border/60 bg-cream">
+    <section id="overview" className="border-b border-border/60 bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-16 md:grid-cols-2 lg:gap-24">
           <div>
@@ -100,16 +126,16 @@ function OngoingProgrammes() {
       link: "https://www.globaledulab.com/forteachers"
     },
     {
-      title: "Pedagogy Excellence Workshop",
+      title: "Pedagogy & Assessment Workshops",
       date: "Quarterly",
-      desc: "Deep dive into research-backed teaching strategies and student engagement methods.",
+      desc: "Deep-dive workshops into modern assessment strategies and active learning.",
       icon: <BookOpen className="h-6 w-6" />,
       link: "https://www.globaledulab.com/forteachers"
     }
   ]
 
   return (
-    <section className="bg-background py-24">
+    <section id="ongoing-programmes" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">

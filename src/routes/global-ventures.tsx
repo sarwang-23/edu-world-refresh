@@ -57,7 +57,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-36">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-14 px-6 pb-24 md:grid-cols-12 md:pb-36">
         <div className="md:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-sm font-medium uppercase tracking-[0.18em] text-forest/70">
             <Globe2 className="h-3.5 w-3.5 text-gold" /> Global Ventures
@@ -95,7 +95,7 @@ function Hero() {
             India · United Kingdom · Europe
           </div>
         </div>
-        <div className="relative md:col-span-5">
+        <div className="relative md:col-span-5 md:mt-14">
           <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl">
             <img
               src={businessLeadersImg}

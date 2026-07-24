@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Compass, Sparkles, Rocket, Lightbulb, Leaf, Users, Globe2 } from "lucide-react";
 import heroImg from "@/assets/hero-classroom.jpg";
 import cambridgeImg from "@/assets/cambridge.jpg";
@@ -39,6 +39,7 @@ function Index() {
       <Impact />
       <CambridgeOrigin />
       <Gallery />
+      <ImpactRow2 />
       <CTA />
       <Footer />
     </div>
@@ -48,8 +49,8 @@ function Index() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 pb-24 pt-16 md:pt-24 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-6 lg:pt-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-6 pb-24 lg:grid-cols-12 lg:gap-16 xl:gap-24">
+        <div className="lg:col-span-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background/60 px-4 py-1.5 text-sm font-medium uppercase tracking-[0.22em] text-forest/70">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Incubated in Cambridge · Delivered Globally
@@ -71,8 +72,8 @@ function Hero() {
               Start your learning journey <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
-              href="#programmes"
-              className="inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-forest underline-offset-8 hover:underline"
+              href="#who-we-serve"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
             >
               Explore programmes
             </a>
@@ -91,7 +92,7 @@ function Hero() {
           </dl>
         </div>
 
-        <div className="relative lg:col-span-6">
+        <div className="relative lg:col-span-6 lg:mt-16">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={heroImg}
@@ -101,7 +102,7 @@ function Hero() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-forest-deep/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-background/95 p-5 backdrop-blur">
+            <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-background/95 p-5 backdrop-blur animate-float">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   {[businessLeadersImg, teachersImg, studentsImg].map((s, i) => (
@@ -120,7 +121,7 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute -left-6 top-10 hidden rounded-2xl border border-forest/10 bg-background p-4 shadow-xl md:block">
+          <div className="absolute -left-6 top-10 hidden rounded-2xl border border-forest/10 bg-background p-4 shadow-xl md:block animate-float-delayed">
             <div className="flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-forest/70">
               <Globe2 className="h-4 w-4 text-gold" /> 24 countries
             </div>
@@ -161,16 +162,16 @@ function Marquee() {
 function About() {
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-28">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-gold" />
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">About GEL</p>
+            <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">About GEL</p>
           </div>
           <h2 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-forest md:text-[2.75rem]">
             An education company built for a <span className="text-gold">borderless</span> world.
           </h2>
-          <div className="mt-10 grid grid-cols-2 gap-6 border-t border-forest/10 pt-8">
+          <div className="mt-12 grid grid-cols-2 gap-8 border-t border-forest/10 pt-10">
             {[
               ["10+", "Years of practice"],
               ["24", "Countries reached"],
@@ -179,29 +180,30 @@ function About() {
             ].map(([k, v]) => (
               <div key={v}>
                 <p className="text-2xl font-bold text-forest">{k}</p>
-                <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">{v}</p>
+                <p className="mt-1 text-[13px] font-bold uppercase tracking-[0.18em] text-forest/60">{v}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="lg:col-span-7 lg:pt-2">
-          <p className="text-[22px] font-medium leading-[1.4] text-forest md:text-[26px]">
+        <div className="lg:col-span-7">
+          <p className="text-[22px] font-medium leading-[1.45] text-forest md:text-[26px]">
             "Incubated in Cambridge for a global audience — we strengthen every part of the learning community through immersive experiences, leadership programmes and skill-building workshops."
           </p>
-          <div className="mt-8 h-px w-full bg-forest/10" />
-          <p className="mt-8 text-[16px] leading-[1.75] text-muted-foreground">
-            We bring global best practices into local contexts. By creating
-            spaces for dialogue, observation and cross-border collaboration,
-            we help organisations rethink how they teach and lead — building
-            a more connected, future-ready approach to learning across
-            classrooms, communities and cultures.
-          </p>
-          <a
-            href="#programmes"
-            className="mt-10 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest underline-offset-8 hover:underline"
-          >
-            Our philosophy <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <div className="mt-12 border-t border-forest/10 pt-10">
+            <p className="text-base leading-[1.75] text-forest/80">
+              We bring global best practices into local contexts. By creating
+              spaces for dialogue, observation and cross-border collaboration,
+              we help organisations rethink how they teach and lead — building
+              a more connected, future-ready approach to learning across
+              classrooms, communities and cultures.
+            </p>
+            <a
+              href="#programmes"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.15em] text-forest transition-all hover:bg-forest/5"
+            >
+              Our philosophy <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -244,14 +246,12 @@ function KeyAreas() {
   return (
     <section id="programmes" className="bg-forest text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-28">
-        <div className="flex flex-col items-end justify-between gap-6 md:flex-row">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Six focus areas</p>
-            <h2 className="mt-5 max-w-2xl text-[2.25rem] font-bold leading-[1.1] md:text-[2.75rem]">
-              Our key areas of <span className="text-gold">experiential</span> learning.
-            </h2>
-          </div>
-          <p className="max-w-sm text-[14px] leading-[1.65] text-primary-foreground/70">
+        <div className="max-w-3xl">
+          <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">Six focus areas</p>
+          <h2 className="mt-5 text-[2.25rem] font-bold leading-[1.1] md:text-[2.75rem]">
+            Our key areas of <span className="text-gold">experiential</span> learning.
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-primary-foreground/80 md:text-lg">
             Six pillars, one philosophy: learning that emerges from doing, in
             environments where world-class practice is the everyday norm.
           </p>
@@ -281,30 +281,34 @@ function WhoWeServe() {
       tag: "01 · Education Leaders",
       title: "For school owners and trustees.",
       body: "Global exposure programmes that showcase best practices worldwide — inspiring fresh ideas for building future-ready schools and universities.",
+      link: "/school-leaders",
     },
     {
       img: businessLeadersImg,
       tag: "02 · Business Leaders",
       title: "For CXOs and senior executives.",
       body: "Executive leadership programmes that deliver cutting-edge insights, AI and strategy tools, and the global networks to accelerate transformation.",
+      link: "/business-leaders",
     },
     {
       img: teachersImg,
       tag: "03 · K-12 Teachers",
       title: "For educators shaping classrooms.",
       body: "Practical, research-backed training that enhances pedagogy, classroom innovation and teacher leadership — so educators create meaningful impact.",
+      link: "/teachers",
     },
     {
       img: studentsImg,
       tag: "04 · Students & Young Learners",
       title: "For the next generation.",
       body: "From online programmes to immersive residential camps — global exposure, critical thinking and entrepreneurial mindsets for the future.",
+      link: "/students",
     },
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 py-28">
+    <section id="who-we-serve" className="mx-auto max-w-7xl px-6 py-28">
       <div className="mb-16 max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Who we serve</p>
+        <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">Who we serve</p>
         <h2 className="mt-5 text-[2.25rem] font-bold leading-[1.1] text-forest md:text-[2.75rem]">
           Four communities, one shared belief in what learning can be.
         </h2>
@@ -330,17 +334,17 @@ function WhoWeServe() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">{g.tag}</p>
+              <p className="text-lg md:text-xl font-bold uppercase tracking-[0.25em] text-gold">{g.tag}</p>
               <h3 className="mt-5 text-[1.85rem] font-bold leading-[1.15] text-forest md:text-[2.15rem]">
                 {g.title}
               </h3>
-              <p className="mt-5 text-[16px] leading-[1.7] text-muted-foreground">{g.body}</p>
-              <a
-                href="#"
-                className="mt-8 inline-flex items-center gap-2 text-[13px] font-medium tracking-wide text-forest underline-offset-8 hover:underline"
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">{g.body}</p>
+              <Link
+                to={g.link}
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Learn more <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </article>
         ))}
@@ -361,24 +365,46 @@ function Impact() {
     ["100,000+", "Students impacted"],
   ];
   return (
-    <section className="bg-cream">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="flex items-end justify-between">
-          <h2 className="max-w-xl text-[2.25rem] font-bold leading-[1.1] text-forest md:text-[2.75rem]">
-            Our global impact, in numbers.
-          </h2>
-          <p className="hidden max-w-xs text-[14px] leading-[1.65] text-muted-foreground md:block">
-            A decade of building bridges between classrooms, boardrooms and campuses around the world.
-          </p>
-        </div>
-        <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-forest/10 bg-forest/10 md:grid-cols-4">
-          {stats.map(([k, v]) => (
-            <div key={v + k} className="bg-cream p-8">
-              <dt className="text-[2.25rem] font-bold text-forest md:text-[2.75rem]">{k}</dt>
-              <dd className="mt-2 text-sm font-medium uppercase tracking-[0.16em] text-muted-foreground">{v}</dd>
+    <section className="border-y border-border/70 bg-background py-12">
+      <p className="mb-8 text-center text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
+        Our global impact, in numbers
+      </p>
+      <div className="relative flex w-full overflow-hidden">
+        <div className="animate-marquee flex w-max min-w-full items-center">
+          {[...stats.slice(0, 4), ...stats.slice(0, 4), ...stats.slice(0, 4), ...stats.slice(0, 4)].map(([k, v], i) => (
+            <div key={i} className="mx-8 flex items-center gap-3 whitespace-nowrap">
+              <span className="text-[2.25rem] font-bold text-forest md:text-[2.75rem]">{k}</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">{v}</span>
             </div>
           ))}
-        </dl>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ImpactRow2() {
+  const stats = [
+    ["1000+", "Educators trained"],
+    ["50+", "Mentors & coaches"],
+    ["100+", "Awards given"],
+    ["500+", "Learners engaged"],
+    ["15+", "Successful programmes"],
+    ["150+", "Organisations served"],
+    ["1000+", "Educators"],
+    ["100,000+", "Students impacted"],
+  ];
+  return (
+    <section className="border-y border-border/70 bg-background py-12">
+      <div className="relative flex w-full overflow-hidden">
+        <div className="animate-marquee flex w-max min-w-full items-center" style={{ animationDirection: "reverse" }}>
+          {[...stats.slice(4), ...stats.slice(4), ...stats.slice(4), ...stats.slice(4)].map(([k, v], i) => (
+            <div key={i} className="mx-8 flex items-center gap-3 whitespace-nowrap">
+              <span className="text-[2.25rem] font-bold text-forest md:text-[2.75rem]">{k}</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground">{v}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
