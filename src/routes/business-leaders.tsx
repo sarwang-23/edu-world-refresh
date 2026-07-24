@@ -116,21 +116,21 @@ function OngoingProgrammes() {
       date: "14-18 September 2026",
       desc: "In-person at University of Cambridge, preparing Indian CXOs to lead global growth.",
       icon: <TrendingUp className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/indialeadership"
+      link: "/programmes/gilp"
     },
     {
       title: "Global Impact of Cambridge Startups",
       date: "15 October 2025",
       desc: "Exclusive invite-only event at the House of Lords.",
       icon: <Building2 className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/events/house-of-lords%3A-global-impact-of-cambridge-startups"
+      link: "/programmes/house-of-lords"
     },
     {
       title: "Zero-To-One Ideation Weekend",
       date: "19-21 June 2026",
       desc: "In-person at Judge Business School, fostering entrepreneurial mindsets.",
       icon: <Lightbulb className="h-6 w-6" />,
-      link: "https://www.globaledulab.com/event/zero-to-one"
+      link: "/programmes/zero-to-one"
     }
   ]
 
