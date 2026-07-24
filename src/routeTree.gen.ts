@@ -15,6 +15,7 @@ import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
 
 const TeachersRoute = TeachersRouteImport.update({
   id: '/teachers',
@@ -46,6 +47,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesFinlandRoute = ProgrammesFinlandRouteImport.update({
+  id: '/programmes/finland',
+  path: '/programmes/finland',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/programmes/finland': typeof ProgrammesFinlandRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/programmes/finland': typeof ProgrammesFinlandRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/programmes/finland': typeof ProgrammesFinlandRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/programmes/finland'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/programmes/finland'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/programmes/finland'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   SchoolLeadersRoute: typeof SchoolLeadersRoute
   StudentsRoute: typeof StudentsRoute
   TeachersRoute: typeof TeachersRoute
+  ProgrammesFinlandRoute: typeof ProgrammesFinlandRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/finland': {
+      id: '/programmes/finland'
+      path: '/programmes/finland'
+      fullPath: '/programmes/finland'
+      preLoaderRoute: typeof ProgrammesFinlandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,17 +182,8 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolLeadersRoute: SchoolLeadersRoute,
   StudentsRoute: StudentsRoute,
   TeachersRoute: TeachersRoute,
+  ProgrammesFinlandRoute: ProgrammesFinlandRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
