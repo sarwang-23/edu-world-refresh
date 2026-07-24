@@ -9,31 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
-import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
-import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
-import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
+import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
+import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
+import { Route as IndexRouteImport } from './routes/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
-  id: '/business-leaders',
-  path: '/business-leaders',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
-  id: '/global-ventures',
-  path: '/global-ventures',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchoolLeadersRoute = SchoolLeadersRouteImport.update({
-  id: '/school-leaders',
-  path: '/school-leaders',
+const TeachersRoute = TeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentsRoute = StudentsRouteImport.update({
@@ -41,9 +26,24 @@ const StudentsRoute = StudentsRouteImport.update({
   path: '/students',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeachersRoute = TeachersRouteImport.update({
-  id: '/teachers',
-  path: '/teachers',
+const SchoolLeadersRoute = SchoolLeadersRouteImport.update({
+  id: '/school-leaders',
+  path: '/school-leaders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
+  id: '/global-ventures',
+  path: '/global-ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
+  id: '/business-leaders',
+  path: '/business-leaders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -110,32 +110,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/business-leaders': {
-      id: '/business-leaders'
-      path: '/business-leaders'
-      fullPath: '/business-leaders'
-      preLoaderRoute: typeof BusinessLeadersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/global-ventures': {
-      id: '/global-ventures'
-      path: '/global-ventures'
-      fullPath: '/global-ventures'
-      preLoaderRoute: typeof GlobalVenturesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/school-leaders': {
-      id: '/school-leaders'
-      path: '/school-leaders'
-      fullPath: '/school-leaders'
-      preLoaderRoute: typeof SchoolLeadersRouteImport
+    '/teachers': {
+      id: '/teachers'
+      path: '/teachers'
+      fullPath: '/teachers'
+      preLoaderRoute: typeof TeachersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/students': {
@@ -145,11 +124,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/teachers': {
-      id: '/teachers'
-      path: '/teachers'
-      fullPath: '/teachers'
-      preLoaderRoute: typeof TeachersRouteImport
+    '/school-leaders': {
+      id: '/school-leaders'
+      path: '/school-leaders'
+      fullPath: '/school-leaders'
+      preLoaderRoute: typeof SchoolLeadersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global-ventures': {
+      id: '/global-ventures'
+      path: '/global-ventures'
+      fullPath: '/global-ventures'
+      preLoaderRoute: typeof GlobalVenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-leaders': {
+      id: '/business-leaders'
+      path: '/business-leaders'
+      fullPath: '/business-leaders'
+      preLoaderRoute: typeof BusinessLeadersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
