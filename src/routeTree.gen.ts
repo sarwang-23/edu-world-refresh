@@ -15,6 +15,7 @@ import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
 import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
 import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
 
@@ -48,6 +49,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
+  id: '/programmes/llp',
+  path: '/programmes/llp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesFinlandRoute = ProgrammesFinlandRouteImport.update({
   id: '/programmes/finland',
   path: '/programmes/finland',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/teachers': typeof TeachersRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/teachers': typeof TeachersRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/teachers': typeof TeachersRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/llp'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/llp'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/llp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   TeachersRoute: typeof TeachersRoute
   ProgrammesCslpRoute: typeof ProgrammesCslpRoute
   ProgrammesFinlandRoute: typeof ProgrammesFinlandRoute
+  ProgrammesLlpRoute: typeof ProgrammesLlpRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/llp': {
+      id: '/programmes/llp'
+      path: '/programmes/llp'
+      fullPath: '/programmes/llp'
+      preLoaderRoute: typeof ProgrammesLlpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes/finland': {
       id: '/programmes/finland'
       path: '/programmes/finland'
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   TeachersRoute: TeachersRoute,
   ProgrammesCslpRoute: ProgrammesCslpRoute,
   ProgrammesFinlandRoute: ProgrammesFinlandRoute,
+  ProgrammesLlpRoute: ProgrammesLlpRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
