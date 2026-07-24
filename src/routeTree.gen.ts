@@ -16,6 +16,7 @@ import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
+import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
 import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
 import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
 import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
@@ -55,6 +56,11 @@ const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
   path: '/programmes/llp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesGilpRoute = ProgrammesGilpRouteImport.update({
+  id: '/programmes/gilp',
+  path: '/programmes/gilp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesFinlandRoute = ProgrammesFinlandRouteImport.update({
   id: '/programmes/finland',
   path: '/programmes/finland',
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
   '/programmes/finland': typeof ProgrammesFinlandRoute
+  '/programmes/gilp': typeof ProgrammesGilpRoute
   '/programmes/llp': typeof ProgrammesLlpRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/programmes/bali'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/gilp'
     | '/programmes/llp'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/programmes/bali'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/gilp'
     | '/programmes/llp'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/programmes/bali'
     | '/programmes/cslp'
     | '/programmes/finland'
+    | '/programmes/gilp'
     | '/programmes/llp'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   ProgrammesBaliRoute: typeof ProgrammesBaliRoute
   ProgrammesCslpRoute: typeof ProgrammesCslpRoute
   ProgrammesFinlandRoute: typeof ProgrammesFinlandRoute
+  ProgrammesGilpRoute: typeof ProgrammesGilpRoute
   ProgrammesLlpRoute: typeof ProgrammesLlpRoute
 }
 
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesLlpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/gilp': {
+      id: '/programmes/gilp'
+      path: '/programmes/gilp'
+      fullPath: '/programmes/gilp'
+      preLoaderRoute: typeof ProgrammesGilpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes/finland': {
       id: '/programmes/finland'
       path: '/programmes/finland'
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgrammesBaliRoute: ProgrammesBaliRoute,
   ProgrammesCslpRoute: ProgrammesCslpRoute,
   ProgrammesFinlandRoute: ProgrammesFinlandRoute,
+  ProgrammesGilpRoute: ProgrammesGilpRoute,
   ProgrammesLlpRoute: ProgrammesLlpRoute,
 }
 export const routeTree = rootRouteImport
