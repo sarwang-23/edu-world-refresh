@@ -8,8 +8,8 @@ export function Nav() {
     { label: "Global Ventures", href: "/global-ventures" },
     { label: "Gallery", href: "#" },
     { label: "Blog", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Insights", href: "#" },
+    { label: "Contact", href: "/contact" },
+    { label: "Insights", href: "/insights" },
   ]
 
   const programmes = [

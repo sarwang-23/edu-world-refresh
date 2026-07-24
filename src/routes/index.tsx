@@ -142,7 +142,7 @@ function Marquee() {
     "MIT Media Lab",
   ];
   return (
-    <div className="border-y border-border/70 bg-background py-8">
+    <div className="border-y border-border/70 bg-white py-8">
       <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
         Partnered with the world's leading university ecosystems
       </p>
@@ -374,7 +374,7 @@ function Impact() {
     ["100,000+", "Students impacted"],
   ];
   return (
-    <section className="border-y border-border/70 bg-background py-12">
+    <section className="border-y border-border/70 bg-white py-12">
       <p className="mb-8 text-center text-sm font-medium uppercase tracking-[0.28em] text-muted-foreground">
         Our global impact, in numbers
       </p>
@@ -404,7 +404,7 @@ function ImpactRow2() {
     ["100,000+", "Students impacted"],
   ];
   return (
-    <section className="border-y border-border/70 bg-background py-12">
+    <section className="border-y border-border/70 bg-white py-12">
       <div className="relative flex w-full overflow-hidden">
         <div className="animate-marquee flex w-max min-w-full items-center" style={{ animationDirection: "reverse" }}>
           {[...stats.slice(4), ...stats.slice(4), ...stats.slice(4), ...stats.slice(4)].map(([k, v], i) => (

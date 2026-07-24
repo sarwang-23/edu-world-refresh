@@ -141,7 +141,7 @@ function Metrics() {
   );
 
   return (
-    <section className="border-b border-border/60 bg-background overflow-hidden py-16 md:py-20 flex">
+    <section className="border-b border-border/60 bg-white overflow-hidden py-16 md:py-20 flex">
       <div className="animate-marquee">
         {marqueeGroup}
         {marqueeGroup}
@@ -187,7 +187,7 @@ const services = [
 
 function WhatWeDo() {
   return (
-    <section id="what-we-do" className="border-b border-border/60 bg-background">
+    <section id="what-we-do" className="border-b border-border/60 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
