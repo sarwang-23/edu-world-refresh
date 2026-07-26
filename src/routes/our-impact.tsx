@@ -1,19 +1,17 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Users, GraduationCap, Leaf, Globe, Rocket, Award, Heart, BookOpen } from 'lucide-react'
+import { ArrowUpRight, Users, GraduationCap, Leaf, Globe, Rocket, Award, Heart, BookOpen, Quote, Sparkles } from 'lucide-react'
 import heroImg from '@/assets/hero-classroom.jpg'
 import s1 from '@/assets/students.jpg'
 import s2 from '@/assets/school-leaders.jpg'
 import s3 from '@/assets/business-leaders.jpg'
 import s4 from '@/assets/teachers.jpg'
+import { Footer } from './index'
 
 export const Route = createFileRoute('/our-impact')({
   head: () => ({
     meta: [
-      { title: 'Our Impact — Building a Better Tomorrow, Together | Global Edu Lab' },
-      { name: 'description', content: 'GEL\u2019s programmes empower learners, support communities and drive innovation for a more inclusive and sustainable future. See the measurable impact we are creating.' },
-      { property: 'og:title', content: 'Our Impact — Global Education Lab' },
-      { property: 'og:description', content: 'Measurable impact. Lasting change. Stories, numbers and Sustainable Development Goals we\u2019re advancing.' },
-      { property: 'og:type', content: 'website' },
+      { title: 'Our Impact | Global Education Lab' },
+      { name: 'description', content: 'Measurable impact. Lasting change.' },
     ],
   }),
   component: Page,
@@ -21,74 +19,110 @@ export const Route = createFileRoute('/our-impact')({
 
 function Page() {
   return (
-    <div className="flex min-h-screen flex-col pt-16">
+    <div className="flex min-h-screen flex-col font-sans text-foreground bg-background">
       <Hero />
-      <Stats />
       <Stories />
-      <SDGs />
+      <Stats />
+      <Testimonials />
       <Numbers />
+      <SDGs />
+      <GlobalNetwork />
       <CTA />
+      <Footer />
     </div>
   )
 }
 
 function Hero() {
-  const pills = [
-    { icon: <Users className="h-5 w-5" />, t: 'Stronger Communities' },
-    { icon: <GraduationCap className="h-5 w-5" />, t: 'Empowered Individuals' },
-    { icon: <Leaf className="h-5 w-5" />, t: 'Sustainable Futures' },
-    { icon: <Globe className="h-5 w-5" />, t: 'Global Connections' },
-  ]
   return (
-    <section className="relative overflow-hidden bg-cream">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-24 lg:grid-cols-2 lg:py-32">
-        <div className="flex flex-col justify-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Measurable Impact.<br/>Lasting Change.</p>
-          <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-forest-deep md:text-6xl">
-            Building a better<br/>tomorrow, <span className="text-forest">together</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-forest/75">
-            GEL&rsquo;s programmes empower learners, support communities and drive innovation for a more inclusive and sustainable future. Here&rsquo;s the impact we&rsquo;re creating — together.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            {pills.map((p) => (
-              <span key={p.t} className="inline-flex items-center gap-2 rounded-2xl border border-forest/10 bg-background px-4 py-3 text-sm font-semibold text-forest-deep">
-                <span className="text-forest">{p.icon}</span> {p.t}
-              </span>
-            ))}
-          </div>
+    <section className="relative border-b border-border/60 bg-cream">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-6 pb-20 pt-0 md:grid-cols-12 md:pb-28">
+        
+        {/* Left Content */}
+        <div className="md:col-span-7 lg:col-span-7 xl:col-span-7 pr-0 md:pr-4">
+           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
+             <Sparkles className="h-3.5 w-3.5 text-gold" /> MEASURABLE IMPACT
+           </span>
+           <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-forest-deep md:text-[3.5rem] lg:text-[4rem] xl:text-[5rem]">
+             Building a better<br />
+             tomorrow, <span className="italic font-serif text-gold">together.</span>
+           </h1>
+           
+           <div className="mt-8 flex flex-col gap-5 border-l-2 border-forest/15 pl-6">
+             <p className="max-w-xl text-lg leading-relaxed text-forest/80 md:text-xl">
+               GEL's programmes empower learners, support communities and drive innovation for a more inclusive and sustainable future. Here's the impact we're creating — together.
+             </p>
+             <p className="max-w-xl text-base leading-relaxed text-forest/70">
+               By bridging the gap between academia and real-world application, we cultivate a global ecosystem of changemakers equipped to tackle tomorrow's most pressing challenges.
+             </p>
+           </div>
+           
+           <div className="mt-12 flex flex-wrap items-center gap-4">
+             <a href="#stats" className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:bg-forest-deep">
+               View Our Impact <ArrowUpRight className="h-4 w-4" />
+             </a>
+           </div>
+
+           <div className="mt-24 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.22em] text-forest/60">
+             <span className="h-px w-10 bg-forest/30" />
+             EMPOWERING COMMUNITIES GLOBALLY
+           </div>
         </div>
-        <div className="relative">
-          <img src={heroImg} alt="Impact" className="h-full w-full rounded-3xl object-cover shadow-2xl" />
+
+        {/* Right Image */}
+        <div className="relative md:col-span-5 md:pl-2 mt-10 md:mt-8">
+           <div className="relative overflow-hidden rounded-[2.5rem] border border-border/60 shadow-2xl group">
+             <img src={heroImg} alt="Impact" className="h-[500px] md:h-[650px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" />
+             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/50 to-transparent p-10">
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold mb-3">Impact Since 2019</p>
+                <p className="text-3xl md:text-4xl font-serif italic text-cream leading-tight pb-1">
+                  Education that<br />travels.
+                </p>
+             </div>
+           </div>
         </div>
+
       </div>
     </section>
   )
 }
 
 function Stats() {
-  const items = [
-    { icon: <Users className="h-6 w-6" />, n: '5,000+', l: 'Learners Empowered' },
-    { icon: <Rocket className="h-6 w-6" />, n: '120+', l: 'Startups Supported' },
-    { icon: <Globe className="h-6 w-6" />, n: '25+', l: 'Countries Represented' },
-    { icon: <Award className="h-6 w-6" />, n: '35+', l: 'Startups Pitched by Learners' },
-    { icon: <Heart className="h-6 w-6" />, n: '10,000+', l: 'Lives Impacted (Est.)' },
-  ]
+  const stats = [
+    { num: "5,000+", label: "LEARNERS EMPOWERED" },
+    { num: "120+", label: "STARTUPS SUPPORTED" },
+    { num: "25+", label: "COUNTRIES REPRESENTED" },
+    { num: "35+", label: "STARTUPS PITCHED" },
+    { num: "10,000+", label: "LIVES IMPACTED (EST.)" },
+  ];
+
   return (
-    <section className="border-y border-border/60 bg-background py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-forest-deep md:text-4xl">Our Impact at a Glance</h2>
-          <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {items.map((s) => (
-            <div key={s.l} className="rounded-3xl border border-forest/10 bg-cream/40 p-8 text-center">
-              <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-forest text-cream">{s.icon}</div>
-              <p className="mt-5 text-3xl font-bold text-forest-deep md:text-4xl">{s.n}</p>
-              <p className="mt-2 text-sm font-semibold text-forest/70">{s.l}</p>
-            </div>
-          ))}
+    <section className="border-b border-border/60 bg-forest-deep overflow-hidden">
+      <div className="mx-auto max-w-7xl py-8 md:py-12 text-center relative">
+        <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold mb-8 px-6">
+          OUR GLOBAL IMPACT, IN NUMBERS
+        </p>
+        
+        <div className="relative flex overflow-hidden group">
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r from-forest-deep to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l from-forest-deep to-transparent" />
+          
+          <div 
+            className="flex w-max hover:[animation-play-state:paused]"
+            style={{ animation: 'marquee-rtl 35s linear infinite' }}
+          >
+            {[...Array(3)].map((_, arrayIndex) => (
+              <div key={arrayIndex} className="flex items-center gap-x-10 md:gap-x-16 px-5 md:px-8">
+                {stats.map((stat, i) => (
+                  <div key={`${arrayIndex}-${i}`} className="flex items-center gap-4 text-left">
+                    <span className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-cream">{stat.num}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-cream/70 max-w-[90px] leading-snug">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -97,29 +131,52 @@ function Stats() {
 
 function Stories() {
   const items = [
-    { img: s1, t: 'From Student to Changemaker', d: 'Riya co-founded a sustainability startup after her GEL experience and is now creating real impact in her community.', link: 'Read Riya\u2019s Story' },
-    { img: s2, t: 'Ideas into Impact', d: 'Arjun and his team developed a solution that has helped over 2,000 young people access quality education.', link: 'Read Arjun\u2019s Story' },
-    { img: s3, t: 'A Global Mindset', d: 'For Musa, GEL was more than a programme — it was the start of a global network and lifelong opportunities.', link: 'Read Musa\u2019s Story' },
-    { img: s4, t: 'Building a Better Tomorrow', d: 'With the skills and confidence gained through GEL, Aisha is driving change for a more inclusive future.', link: 'Read Aisha\u2019s Story' },
+    { img: s2, tag: 'FOUNDER', t: 'Ideas into Impact', d: 'Arjun and his team developed a solution that has helped over 2,000 young people access quality education.', link: 'Read Arjun\'s Story' },
+    { img: s3, tag: 'ALUMNI', t: 'A Global Mindset', d: 'For Musa, GEL was more than a programme — it was the start of a global network.', link: 'Read Musa\'s Story' },
+    { img: s4, tag: 'EDUCATOR', t: 'Building a Better Tomorrow', d: 'With skills gained through GEL, Aisha is driving change for a more inclusive future.', link: 'Read Aisha\'s Story' },
   ]
   return (
-    <section className="bg-cream/60 py-24">
+    <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 text-center">
-          <h2 className="text-4xl font-bold text-forest-deep md:text-5xl">Stories That Inspire</h2>
-          <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
+        <div className="mb-20">
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— Voices of Change</span>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Stories that <span className="font-serif italic text-gold">inspire.</span></h2>
+          <p className="mt-6 text-sm font-medium text-forest/70 max-w-lg leading-relaxed">Real people, real outcomes — hear journeys that show what our programmes make possible.</p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((s) => (
-            <article key={s.t} className="overflow-hidden rounded-3xl border border-forest/10 bg-background transition-transform hover:-translate-y-1">
-              <img src={s.img} alt={s.t} className="h-52 w-full object-cover" />
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-forest-deep">{s.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-forest/70">{s.d}</p>
-                <a href="#" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">{s.link} <ArrowUpRight className="h-4 w-4" /></a>
-              </div>
-            </article>
-          ))}
+
+        <div className="grid gap-8 lg:grid-cols-12">
+          {/* Main Story */}
+          <div className="lg:col-span-5 relative group overflow-hidden rounded-[2.5rem] border border-border/60 shadow-2xl flex flex-col justify-end min-h-[550px] lg:min-h-full">
+             <img src={s1} alt="Student" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent" />
+             <div className="relative p-10 md:p-12">
+                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">Participant</span>
+                <h3 className="text-3xl md:text-4xl font-bold text-cream mb-5 leading-tight">From Student to Changemaker</h3>
+                <p className="text-cream/80 text-sm md:text-base leading-relaxed mb-8">Riya co-founded a sustainability startup after her GEL experience and is now creating real impact in her community.</p>
+                <a href="#" className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link">
+                  Read Riya's Story <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                </a>
+             </div>
+          </div>
+
+          {/* List of Stories */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            {items.map((s) => (
+              <article key={s.t} className="flex flex-col sm:flex-row gap-8 p-6 md:p-8 rounded-[2.5rem] border border-forest/10 bg-white hover:border-gold/40 hover:shadow-xl transition-all duration-300 group">
+                <div className="sm:w-56 shrink-0 overflow-hidden rounded-2xl border border-border/60">
+                  <img src={s.img} alt={s.t} className="h-40 sm:h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div className="flex flex-col justify-center py-2">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-3">— {s.tag}</span>
+                  <h3 className="text-2xl font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors">{s.t}</h3>
+                  <p className="text-sm text-forest/70 leading-relaxed mb-6">{s.d}</p>
+                  <a href="#" className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link">
+                    {s.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -127,38 +184,50 @@ function Stories() {
 }
 
 function SDGs() {
-  const goals = [
-    { n: 4, t: 'Quality Education', color: 'bg-[#c5192d]' },
-    { n: 5, t: 'Gender Equality', color: 'bg-[#ff3a21]' },
-    { n: 8, t: 'Decent Work and Economic Growth', color: 'bg-[#a21942]' },
-    { n: 9, t: 'Industry, Innovation and Infrastructure', color: 'bg-[#fd6925]' },
-    { n: 13, t: 'Climate Action', color: 'bg-[#3f7e44]' },
-    { n: 17, t: 'Partnerships for the Goals', color: 'bg-[#19486a]' },
+  const sdgs = [
+    { num: 4, label: 'Quality Education' },
+    { num: 5, label: 'Gender Equality' },
+    { num: 8, label: 'Decent Work & Economic Growth' },
+    { num: 9, label: 'Industry, Innovation & Infrastructure' },
+    { num: 13, label: 'Climate Action' },
+    { num: 17, label: 'Partnerships for the Goals' },
   ]
   return (
-    <section className="bg-background py-20">
-      <div className="mx-auto max-w-7xl px-6 rounded-3xl border border-forest/10 bg-cream/50 p-8 md:p-12 grid gap-10 lg:grid-cols-[320px_1fr] items-center">
-        <div>
-          <h2 className="text-2xl font-bold text-forest-deep md:text-3xl">Advancing the Global Goals</h2>
-          <p className="mt-4 leading-relaxed text-forest/75">Our programmes align with the United Nations Sustainable Development Goals to create a positive and lasting impact worldwide.</p>
-          <a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold">Learn more <ArrowUpRight className="h-4 w-4" /></a>
-        </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {goals.map((g) => (
-            <div key={g.n} className={`${g.color} rounded-xl p-4 text-white`}>
-              <p className="text-2xl font-bold">{g.n}</p>
-              <p className="mt-2 text-xs font-bold uppercase leading-tight">{g.t}</p>
-              <BookOpen className="mt-3 h-6 w-6 opacity-80" />
-            </div>
-          ))}
-        </div>
+    <section className="bg-forest-deep py-24 md:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+         <div className="max-w-2xl mb-16">
+           <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">GLOBAL GOALS</span>
+           <h2 className="mt-4 text-4xl font-bold tracking-tight text-cream md:text-[3.5rem] leading-[1.1] mb-6">
+             Advancing the<br />
+             <span className="font-serif italic text-gold">Global Goals.</span>
+           </h2>
+           <p className="text-sm text-cream/60 max-w-2xl">
+             Our programmes align with the United Nations Sustainable Development Goals to create a positive and lasting impact worldwide.
+           </p>
+         </div>
+         
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           {sdgs.map((sdg) => (
+             <div key={sdg.num} className="bg-[#0A2215]/50 rounded-[1.5rem] border border-white/5 p-8 flex flex-col justify-between min-h-[180px] hover:bg-[#0A2215]/80 hover:border-gold/20 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group">
+               <div className="flex justify-between items-start mb-4">
+                 <div className="w-10 h-10 rounded-xl bg-forest flex items-center justify-center border border-white/5 shadow-inner group-hover:scale-110 transition-transform">
+                   <Globe className="h-4 w-4 text-gold" />
+                 </div>
+                 <span className="text-3xl font-serif italic font-bold text-gold/80 group-hover:text-gold transition-colors">
+                   {sdg.num < 10 ? `0${sdg.num}` : sdg.num}
+                 </span>
+               </div>
+               <h3 className="text-lg font-bold text-cream leading-snug">{sdg.label}</h3>
+             </div>
+           ))}
+         </div>
       </div>
     </section>
   )
 }
 
 function Numbers() {
-  const rows = [
+  const regions = [
     { label: 'UK & Europe', pct: 40 },
     { label: 'Asia', pct: 30 },
     { label: 'Africa', pct: 15 },
@@ -179,47 +248,180 @@ function Numbers() {
     { label: 'Scaling Stage', pct: 10 },
   ]
   const max = Math.max(...growth.map((g) => g.v))
+
   return (
-    <section className="border-y border-border/60 bg-cream/50 py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 text-center">
-          <h2 className="text-4xl font-bold text-forest-deep md:text-5xl">Impact in Numbers</h2>
-          <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-forest/10 bg-background p-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-forest/70">Learners by Region</h3>
-            <ul className="mt-6 space-y-3">
-              {rows.map((r) => (
-                <li key={r.label}>
-                  <div className="flex justify-between text-sm font-semibold text-forest-deep"><span>{r.label}</span><span>{r.pct}%</span></div>
-                  <div className="mt-2 h-2 rounded-full bg-forest/10"><div className="h-full rounded-full bg-forest" style={{ width: `${r.pct}%` }} /></div>
-                </li>
-              ))}
-            </ul>
+    <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60">
+       <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— The Data</span>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Impact in <span className="font-serif italic text-gold">numbers.</span></h2>
           </div>
-          <div className="rounded-3xl border border-forest/10 bg-background p-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-forest/70">Programme Growth</h3>
-            <div className="mt-6 flex h-48 items-end gap-3">
-              {growth.map((g) => (
-                <div key={g.y} className="flex flex-1 flex-col items-center gap-2">
-                  <div className="w-full rounded-t-lg bg-gradient-to-t from-forest to-gold" style={{ height: `${(g.v / max) * 100}%` }} />
-                  <span className="text-xs font-semibold text-forest/70">{g.y}</span>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/50 md:pb-2 border-b border-forest/10 pb-1">Source: GEL Programme Records</p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Chart 1 */}
+          <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
+            <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest-deep">Learners by Region</h3>
+              <span className="text-[9px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">Five Regions</span>
+            </div>
+            <div className="flex flex-col gap-10 relative z-10">
+              <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-r-gold border-t-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:rotate-45">
+                 <div className="absolute inset-0 m-auto h-16 w-16 rounded-full bg-[#FAFAF8] shadow-inner flex items-center justify-center">
+                    <div className="h-2 w-2 rounded-full bg-gold animate-pulse" />
+                 </div>
+              </div>
+              <ul className="space-y-4 w-full">
+                {regions.map((r, i) => (
+                  <li key={r.label} className="flex justify-between items-center text-[12px] font-bold text-forest-deep group/item">
+                    <span className="flex items-center gap-3">
+                      <span className={`w-2 h-2 rounded-full shadow-sm transition-transform group-hover/item:scale-150 ${i === 0 ? 'bg-forest' : i === 1 ? 'bg-gold' : 'bg-forest/20'}`} />
+                      <span className="group-hover/item:text-gold transition-colors">{r.label}</span>
+                    </span>
+                    <span className="font-serif italic text-forest-deep text-sm">{r.pct}%</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Chart 2 */}
+          <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-forest/5 rounded-full blur-3xl group-hover:bg-forest/10 transition-colors duration-500" />
+            <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest-deep">Programme Growth</h3>
+              <span className="text-[9px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
+            </div>
+            <div className="flex h-[200px] items-end justify-between gap-3 relative mt-10 z-10">
+               <div className="absolute inset-0 border-b border-l border-forest/10" />
+              {growth.map((g, i) => (
+                <div key={g.y} className="flex flex-col items-center gap-4 relative z-10 w-full group/bar">
+                  <div 
+                    className={`w-full max-w-[12px] rounded-t-sm shadow-sm transition-all duration-500 group-hover/bar:bg-gold ${i === growth.length - 1 ? 'bg-gold' : 'bg-forest/15'}`} 
+                    style={{ height: `${(g.v / max) * 100}%` }} 
+                  >
+                    {i === growth.length - 1 && <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(200,160,90,0.8)] animate-pulse" />}
+                  </div>
+                  <span className="text-[9px] font-bold text-forest/40 group-hover/bar:text-gold transition-colors">{g.y}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-3xl border border-forest/10 bg-background p-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-forest/70">Startups Supported</h3>
-            <ul className="mt-6 space-y-3">
-              {stages.map((r) => (
-                <li key={r.label}>
-                  <div className="flex justify-between text-sm font-semibold text-forest-deep"><span>{r.label}</span><span>{r.pct}%</span></div>
-                  <div className="mt-2 h-2 rounded-full bg-forest/10"><div className="h-full rounded-full bg-gold" style={{ width: `${r.pct}%` }} /></div>
-                </li>
-              ))}
-            </ul>
+
+          {/* Chart 3 */}
+          <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
+            <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest-deep">Startups Supported</h3>
+              <span className="text-[9px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">By Stage</span>
+            </div>
+            <div className="flex flex-col gap-10 relative z-10">
+              <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-b-gold border-r-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:-rotate-45">
+                 <div className="absolute inset-0 m-auto h-16 w-16 rounded-full bg-[#FAFAF8] shadow-inner flex items-center justify-center">
+                   <div className="h-2 w-2 rounded-full bg-forest animate-pulse" />
+                 </div>
+              </div>
+              <ul className="space-y-4 w-full">
+                {stages.map((r, i) => (
+                  <li key={r.label} className="flex justify-between items-center text-[12px] font-bold text-forest-deep group/item">
+                     <span className="flex items-center gap-3">
+                      <span className={`w-2 h-2 rounded-full shadow-sm transition-transform group-hover/item:scale-150 ${i === 0 ? 'bg-forest' : i === 1 ? 'bg-gold' : 'bg-forest/20'}`} />
+                      <span className="group-hover/item:text-gold transition-colors">{r.label}</span>
+                    </span>
+                    <span className="font-serif italic text-forest-deep text-sm">{r.pct}%</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+        </div>
+       </div>
+    </section>
+  )
+}
+
+function Testimonials() {
+  const testimonials = [
+    { q: "The ecosystem approach adopted by GEL is truly transformative. It doesn't just educate; it builds bridges between continents.", a: "Dr. Sarah Jenkins", r: "University of Oxford" },
+    { q: "Our partnership with GEL has accelerated our research commercialisation beyond our initial expectations.", a: "Marcus Thorne", r: "Tech Innovators Alliance" }
+  ]
+  
+  return (
+    <section className="bg-cream py-24 md:py-32 border-b border-border/60 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-20 text-center flex flex-col items-center">
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— What They Say</span>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Perspectives on <span className="font-serif italic text-gold">impact.</span></h2>
+          <div className="mt-8 h-px w-24 bg-gold/60" />
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((t, i) => (
+             <div key={i} className="rounded-[2.5rem] border border-forest/10 bg-white p-12 relative shadow-xl hover:shadow-2xl transition-shadow duration-500">
+                <Quote className="absolute top-12 right-12 h-16 w-16 text-forest/5" />
+                <p className="text-2xl md:text-3xl font-serif italic text-forest-deep leading-relaxed mb-10 relative z-10">"{t.q}"</p>
+                <div className="flex items-center gap-4">
+                   <div className="h-12 w-12 rounded-full bg-forest/10 flex items-center justify-center text-forest font-serif italic text-xl">{t.a.charAt(0)}</div>
+                   <div>
+                     <p className="text-sm font-bold text-forest-deep">{t.a}</p>
+                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/50 mt-1">{t.r}</p>
+                   </div>
+                </div>
+             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function GlobalNetwork() {
+  const nodes = [
+    { id: 'uk', label: 'Cambridge (HQ)', x: 25, y: 35, isMain: true },
+    { id: 'ny', label: 'New York', x: 15, y: 40 },
+    { id: 'dubai', label: 'Dubai', x: 55, y: 55 },
+    { id: 'singapore', label: 'Singapore', x: 75, y: 65 },
+    { id: 'tokyo', label: 'Tokyo', x: 85, y: 35 },
+  ]
+  return (
+    <section className="bg-cream py-24 md:py-32 relative overflow-hidden border-b border-border/60">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-center text-center mb-20">
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— Global Reach</span>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Connecting <span className="font-serif italic text-gold">continents.</span></h2>
+          <p className="mt-8 max-w-2xl text-lg text-forest/70 leading-relaxed">From Cambridge to the world, our network spans over 25 countries, fostering cross-border collaboration and innovation.</p>
+        </div>
+        
+        <div className="relative mx-auto max-w-5xl h-[400px] md:h-[500px] bg-forest-deep rounded-[2.5rem] border border-white/10 shadow-2xl p-10 overflow-hidden group">
+           <div className="absolute inset-0 [background-image:linear-gradient(var(--cream)_1px,transparent_1px),linear-gradient(90deg,var(--cream)_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.03]" />
+           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gold/10 rounded-full blur-[80px] group-hover:bg-gold/20 transition-colors duration-1000" />
+           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cream/5 rounded-full blur-[80px]" />
+
+           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+             <path d="M 25,35 Q 20,25 15,40" fill="none" stroke="var(--gold)" strokeWidth="0.2" strokeDasharray="1 1" className="opacity-40" />
+             <path d="M 25,35 Q 40,25 55,55" fill="none" stroke="var(--gold)" strokeWidth="0.2" strokeDasharray="1 1" className="opacity-40" />
+             <path d="M 55,55 Q 65,70 75,65" fill="none" stroke="var(--gold)" strokeWidth="0.2" strokeDasharray="1 1" className="opacity-40" />
+             <path d="M 55,55 Q 70,30 85,35" fill="none" stroke="var(--gold)" strokeWidth="0.2" strokeDasharray="1 1" className="opacity-40" />
+           </svg>
+
+           {nodes.map(n => (
+              <div key={n.id} className="absolute flex flex-col items-center gap-2 group/node cursor-pointer" style={{ left: `${n.x}%`, top: `${n.y}%`, transform: 'translate(-50%, -50%)' }}>
+                 <div className={`absolute rounded-full animate-ping opacity-50 ${n.isMain ? 'w-8 h-8 bg-gold' : 'w-4 h-4 bg-cream'}`} style={{ animationDuration: '3s' }} />
+                 <div className={`rounded-full relative z-10 transition-transform duration-300 group-hover/node:scale-150 ${n.isMain ? 'w-4 h-4 bg-gold shadow-[0_0_15px_rgba(200,160,90,0.8)]' : 'w-2.5 h-2.5 bg-cream shadow-[0_0_8px_rgba(250,248,240,0.6)]'}`} />
+                 
+                 <span className="opacity-0 group-hover/node:opacity-100 transition-opacity duration-300 text-[10px] font-bold uppercase tracking-widest text-forest-deep bg-cream px-3 py-1.5 rounded-full shadow-lg absolute top-6 z-20 pointer-events-none whitespace-nowrap">
+                   {n.label}
+                 </span>
+              </div>
+           ))}
+
+           <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-forest-deep border border-forest/50 shadow-2xl rounded-2xl p-5 max-w-[200px]">
+              <div className="text-3xl font-serif italic text-gold mb-1">25+</div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-cream/70">Countries in our network</div>
+           </div>
         </div>
       </div>
     </section>
@@ -228,15 +430,26 @@ function Numbers() {
 
 function CTA() {
   return (
-    <section className="bg-forest py-20 text-cream">
-      <div className="mx-auto max-w-7xl px-6 grid items-center gap-8 md:grid-cols-[1fr_auto]">
-        <div>
-          <h2 className="text-3xl font-bold md:text-4xl">Together, we create impact that lasts</h2>
-          <p className="mt-4 max-w-xl text-cream/75">Join our global community of learners, innovators and changemakers building a more inclusive and sustainable future.</p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">Explore Programmes <ArrowUpRight className="h-4 w-4" /></Link>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-cream px-6 py-3 text-sm font-bold uppercase tracking-widest text-cream transition-colors hover:bg-cream hover:text-forest">Get Involved <ArrowUpRight className="h-4 w-4" /></Link>
+    <section className="bg-forest-deep py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
+          <div className="max-w-2xl">
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— Get Involved</span>
+            <h2 className="mt-6 text-4xl font-bold tracking-tight text-cream md:text-[4.5rem] leading-[1.1]">
+              Together, we create<br />impact that <span className="font-serif italic text-gold">lasts.</span>
+            </h2>
+            <p className="mt-6 text-sm text-cream/60 max-w-2xl">
+              Join our global community of learners, innovators and changemakers. Let's start the conversation.
+            </p>
+          </div>
+          
+          <div className="flex flex-col items-start lg:items-end gap-6">
+             <Link to="/contact" className="group relative inline-flex items-center gap-8 rounded-2xl bg-gold px-8 py-6 text-sm font-bold tracking-wide text-forest-deep transition-all hover:bg-white hover:scale-105 shadow-xl hover:shadow-2xl">
+                Get Involved
+                <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+             </Link>
+             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cream/50 pl-4 lg:pl-0">hello@globaledulab.com</span>
+          </div>
         </div>
       </div>
     </section>

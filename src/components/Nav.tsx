@@ -6,11 +6,9 @@ export function Nav() {
   
   const links = [
     { label: "Global Ventures", href: "/global-ventures" },
+    { label: "Our Impact", href: "/our-impact" },
     { label: "About", href: "/about" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Blog", href: "#" },
     { label: "Contact", href: "/contact" },
-    { label: "Insights", href: "/insights" },
   ]
 
   const programmes = [
@@ -18,6 +16,11 @@ export function Nav() {
     { label: "Business Leaders", href: "/business-leaders" },
     { label: "Students", href: "/students" },
     { label: "Teachers", href: "/teachers" },
+  ]
+
+  const explore = [
+    { label: "Gallery", href: "/gallery" },
+    { label: "Insights", href: "/insights" },
   ]
 
   return (
@@ -40,6 +43,7 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
+          {/* Programmes Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer">
             <span className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname.startsWith('/school-leaders') || 
@@ -59,6 +63,29 @@ export function Nav() {
                     className="rounded-lg px-4 py-2 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                   >
                     {p.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Explore Dropdown (Gallery + Insights) */}
+          <div className="group relative flex items-center gap-1 cursor-pointer">
+            <span className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+                location.pathname.startsWith('/gallery') || 
+                location.pathname.startsWith('/insights') ? "text-forest" : "text-forest/75"
+              }`}>
+              Explore
+            </span>
+            <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
+            <div className="absolute top-full left-0 pt-4 hidden w-40 flex-col group-hover:flex">
+              <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
+                {explore.map((e) => (
+                  <Link
+                    key={e.label}
+                    to={e.href}
+                    className="rounded-lg px-4 py-2 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                  >
+                    {e.label}
                   </Link>
                 ))}
               </div>
