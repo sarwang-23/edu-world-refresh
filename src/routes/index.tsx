@@ -35,8 +35,8 @@ function Index() {
       <Hero />
       <FeaturesStrip />
       <OurProgrammes />
-      <ImpactSoFar />
       <CambridgeOrigin />
+      <ImpactSoFar />
       <Voices />
       <CTA />
       <Footer />
@@ -48,9 +48,9 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 pb-20 pt-10 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-6">
-          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.02] text-forest md:text-6xl lg:text-[5.5rem]">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 pt-10 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-7">
+          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>
@@ -76,7 +76,7 @@ function Hero() {
           </p>
         </div>
 
-        <div className="relative lg:col-span-6 lg:mt-6">
+        <div className="relative lg:col-span-5">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={heroImg}
@@ -101,17 +101,22 @@ function FeaturesStrip() {
     { icon: <Handshake className="h-7 w-7" />, title: "Meaningful Partnerships", desc: "Collaborating with institutions, industry and ecosystems." },
   ];
   return (
-    <div className="border-y border-border/70 bg-white py-10">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
-          {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-start gap-3">
-              <div className="text-forest/70">{f.icon}</div>
-              <h4 className="text-[13px] font-bold text-forest-deep">{f.title}</h4>
-              <p className="text-[11px] text-forest/60 leading-relaxed">{f.desc}</p>
-            </div>
-          ))}
-        </div>
+    <div className="border-y border-border/70 bg-white py-10 overflow-hidden">
+      <div
+        className="flex w-max"
+        style={{
+          animation: "marquee 22s linear infinite",
+        }}
+        onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
+        onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
+      >
+        {[...features, ...features, ...features].map((f, i) => (
+          <div key={i} className="flex flex-col items-start gap-3 mx-10 min-w-[220px]">
+            <div className="text-forest/70">{f.icon}</div>
+            <h4 className="text-[13px] font-bold text-forest-deep">{f.title}</h4>
+            <p className="text-[11px] text-forest/60 leading-relaxed max-w-[180px]">{f.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -122,67 +127,122 @@ function OurProgrammes() {
     {
       img: studentsImg,
       tag: "Student Programmes",
-      tagBg: "bg-forest-deep",
-      desc: "Summer Schools, STEM & Entrepreneurship courses and skill-building programmes for young learners.",
+      number: "01",
+      headline: "Young Leaders & Innovators",
+      desc: "Summer Schools, STEM & Entrepreneurship courses and skill-building programmes for the next generation of changemakers.",
       link: "/students",
+      accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
     {
       img: businessLeadersImg,
       tag: "Executive Education",
-      tagBg: "bg-forest-deep",
-      desc: "Leadership programmes for CEOs and senior leaders including the Global Innovation Leaders to Programme.",
+      number: "02",
+      headline: "Executive & Leadership Growth",
+      desc: "Leadership programmes for CEOs and senior leaders including the Global Innovation Leaders Programme.",
       link: "/business-leaders",
+      accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
     {
       img: heroImg,
       tag: "Entrepreneurship",
-      tagBg: "bg-forest-deep",
-      desc: "Ideation weekends, connections, mentorship and access to Cambridge's innovation ecosystem.",
+      number: "03",
+      headline: "Startup & Innovation Hub",
+      desc: "Ideation weekends, mentorship and direct access to Cambridge's world-class innovation ecosystem.",
       link: "/entrepreneurship",
+      accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
     {
       img: schoolLeadersImg,
       tag: "Institutional Solutions",
-      tagBg: "bg-forest-deep",
-      desc: "Customised programmes, capacity building and partnerships for organisations and universities.",
+      number: "04",
+      headline: "Bespoke Institutional Partnerships",
+      desc: "Customised programmes, capacity building and strategic partnerships for organisations and universities.",
       link: "/school-leaders",
+      accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
   ];
 
   return (
-    <section className="bg-[#F7F5F0] py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 flex items-end justify-between">
+    <section className="bg-[#F7F5F0] py-24 relative overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:40px_40px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Section Header */}
+        <div className="mb-16 flex items-end justify-between">
           <div>
-            <h2 className="text-[2rem] font-bold text-forest-deep md:text-[2.5rem]">Our Programmes</h2>
-            <p className="mt-2 text-sm text-forest/60">High-impact learning for every stage of your journey.</p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-10 bg-gold" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
+            </div>
+            <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
+              Our Programmes
+            </h2>
+            <p className="mt-2 text-sm text-forest/60 font-medium">High-impact learning for every stage of your journey.</p>
           </div>
-          <Link to="/programmes" className="hidden items-center gap-2 text-[13px] font-bold uppercase tracking-[0.1em] text-forest hover:text-gold transition-colors md:inline-flex">
-            View all Programmes <ArrowUpRight className="h-4 w-4" />
+          <Link
+            to="/programmes"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white hover:bg-forest transition-all duration-300"
+          >
+            View All Programmes <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
 
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {programmes.map((p, i) => (
             <Link
               key={i}
               to={p.link}
-              className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-forest/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+              style={{ minHeight: 420 }}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.tag} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <span className={`absolute top-3 left-3 ${p.tagBg} px-3 py-1 rounded-md text-[9px] font-bold uppercase tracking-[0.15em] text-gold`}>
+              {/* Full-bleed image */}
+              <img
+                src={p.img}
+                alt={p.tag}
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              {/* Dark gradient overlay — always visible at bottom */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${p.accent}`} />
+              {/* Extra darkening on hover */}
+              <div className="absolute inset-0 bg-forest-deep/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+
+              {/* Tag badge — top left */}
+              <div className="relative z-10 p-5 flex justify-between items-start">
+                <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[8px] font-bold uppercase tracking-[0.18em] text-gold">
                   {p.tag}
                 </span>
+                <span className="text-[11px] font-bold text-white/30 font-mono mt-1">{p.number}</span>
               </div>
-              <div className="flex flex-col flex-1 p-5">
-                <p className="text-xs text-forest/70 leading-relaxed mb-4 flex-1">{p.desc}</p>
-                <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-gold flex items-center gap-1">
-                  Explore <ArrowUpRight className="h-3 w-3" />
-                </span>
+
+              {/* Content — pinned to bottom */}
+              <div className="relative z-10 mt-auto p-5">
+                <h3 className="text-[15px] font-bold text-white leading-snug mb-3 group-hover:text-gold transition-colors duration-300">
+                  {p.headline}
+                </h3>
+                <p className="text-[10px] text-white/70 leading-relaxed mb-5 max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
+                  {p.desc}
+                </p>
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-gold">
+                  Explore
+                  <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:scale-110 transition-all duration-300">
+                    <ArrowUpRight className="h-3 w-3 text-gold group-hover:text-forest-deep transition-colors duration-300" />
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Mobile CTA */}
+        <div className="mt-10 flex justify-center md:hidden">
+          <Link
+            to="/programmes"
+            className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-[12px] font-bold uppercase tracking-wider text-white transition-all hover:bg-forest-deep"
+          >
+            View All Programmes <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -191,38 +251,67 @@ function OurProgrammes() {
 
 function ImpactSoFar() {
   const stats = [
-    ["5,000+", "Learners Empowered"],
-    ["120+", "Startups Supported"],
-    ["25+", "Countries Represented"],
-    ["35+", "Startups Pitched"],
-    ["10,000+", "Lives Impacted (Est.)"],
+    { icon: <Users className="h-6 w-6" />, value: "5,000+", label: "Learners Empowered", desc: "Across programmes globally" },
+    { icon: <Rocket className="h-6 w-6" />, value: "120+", label: "Startups Supported", desc: "From ideation to scale" },
+    { icon: <Globe2 className="h-6 w-6" />, value: "25+", label: "Countries", desc: "Represented in our community" },
+    { icon: <Leaf className="h-6 w-6" />, value: "10,000+", label: "Lives Impacted", desc: "Estimated direct reach" },
+    { icon: <Handshake className="h-6 w-6" />, value: "15+", label: "University Partners", desc: "World-class institutions" },
+    { icon: <GraduationCap className="h-6 w-6" />, value: "35+", label: "Startups Pitched", desc: "At Cambridge Demo Days" },
   ];
+
   return (
-    <section className="bg-white py-16 border-y border-border/60">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-4">
-            <h2 className="text-[2rem] font-bold text-forest-deep md:text-[2.5rem] leading-tight">Our Impact So Far</h2>
-            <p className="mt-4 text-sm text-forest/70 leading-relaxed">Creating measurable change across communities and borders.</p>
-            <Link to="/our-impact" className="mt-6 inline-flex items-center gap-2 rounded-full border border-forest/20 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-forest-deep hover:text-white transition-all">
-              Explore Our Impact <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          </div>
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-0 md:divide-x divide-forest/10">
-              {stats.map(([v, l], i) => (
-                <div key={i} className="flex flex-col items-center text-center px-4">
-                  <span className="text-[1.8rem] font-bold text-forest-deep md:text-[2rem]">{v}</span>
-                  <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-forest/50 mt-2 leading-tight">{l}</span>
-                </div>
-              ))}
+    <section className="bg-white border-y border-forest/10 py-12 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="h-px w-8 bg-gold" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
             </div>
+            <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep leading-tight tracking-tight">
+              Our Impact So Far
+            </h2>
           </div>
+          <Link
+            to="/our-impact"
+            className="inline-flex w-fit items-center gap-3 rounded-full bg-forest-deep px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shrink-0"
+          >
+            Explore Our Impact <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Scrolling strip — same style as FeaturesStrip */}
+      <div className="border-t border-forest/8 pt-10">
+        <div
+          className="flex w-max"
+          style={{ animation: "marquee 26s linear infinite" }}
+          onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
+          onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
+        >
+          {[...stats, ...stats, ...stats].map((s, i) => (
+            <div key={i} className="flex items-center">
+              <div className="flex flex-col items-start gap-3 mx-10 min-w-[200px]">
+                <div className="text-forest/70">{s.icon}</div>
+                <div>
+                  <div className="text-[1.6rem] font-bold text-forest-deep leading-none tabular-nums">{s.value}</div>
+                  <div className="text-[11px] font-bold text-forest-deep mt-1.5">{s.label}</div>
+                  <div className="text-[10px] text-forest/50 mt-0.5">{s.desc}</div>
+                </div>
+              </div>
+              {/* Vertical separator */}
+              <div className="h-14 w-px bg-forest/10 shrink-0" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+
+
+
 
 function CambridgeOrigin() {
   return (
@@ -270,44 +359,154 @@ function CambridgeOrigin() {
 function Voices() {
   const testimonials = [
     {
-      q: "The GEL was a game changer. The Cambridge ecosystem, combined with high-quality peer learning, was truly invaluable.",
+      q: "The GEL was a game changer. The Cambridge ecosystem, combined with high-quality peer learning, was truly invaluable. A transformational experience unlike anything else.",
       a: "Neha Aran",
       r: "MD, Consumer Goods Company",
+      tag: "Executive Education",
       img: teachersImg,
+      featured: true,
     },
     {
       q: "Zero to One gave me the clarity, tools and network to turn an idea into a viable startup. The mentors were incredible!",
       a: "Arjun Mehta",
       r: "Co-founder, MedVise AI",
+      tag: "Zero to One",
       img: studentsImg,
+      featured: false,
     },
     {
       q: "This student programme opened my eyes to the power of innovation and leadership. I left with confidence and lasting friendships.",
       a: "Emily Chen",
       r: "GSP Participant",
+      tag: "Student Programme",
       img: schoolLeadersImg,
+      featured: false,
     },
   ];
+
+  const [featured, ...rest] = testimonials;
+
   return (
-    <section className="bg-[#F7F5F0] py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-[2rem] font-bold text-forest-deep md:text-[2.5rem]">Voices from Our Community</h2>
+    <section className="bg-cream py-28 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6">
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-8 bg-gold" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+            </div>
+            <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
+              Voices from Our{" "}
+              <span className="italic font-serif text-forest">Community</span>
+            </h2>
+          </div>
+          <p className="text-sm text-forest/55 max-w-[260px] leading-relaxed md:text-right hidden">
+            Real stories from learners, leaders and innovators.
+          </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-2xl p-8 border border-forest/10 hover:shadow-md transition-shadow">
-              <span className="text-2xl text-gold font-serif leading-none">"</span>
-              <p className="mt-2 text-[13px] text-forest/80 leading-relaxed mb-8 italic">{t.q}</p>
-              <div className="flex items-center gap-3 mt-auto">
-                <img src={t.img} alt={t.a} className="w-10 h-10 rounded-full object-cover" />
-                <div>
-                  <p className="text-[12px] font-bold text-forest-deep">{t.a}</p>
-                  <p className="text-[10px] text-forest/50 uppercase tracking-[0.1em] mt-0.5">{t.r}</p>
+
+        {/* Asymmetric Layout */}
+        <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[5fr_4fr] gap-6">
+
+          {/* Featured Card — image with dark green overlay */}
+          <div className="group relative rounded-3xl overflow-hidden min-h-[520px] flex flex-col justify-end shadow-2xl">
+            {/* Background — Cambridge looks much better */}
+            <img src={cambridgeImg} alt="Cambridge" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            {/* Gradient: transparent top, dark green bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/60 to-forest-deep/20" />
+
+            {/* Content pinned to bottom */}
+            <div className="relative z-10 p-10 pb-10">
+
+              {/* Stars */}
+              <div className="flex gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-gold text-base">★</span>
+                ))}
+              </div>
+
+              {/* Big quote mark */}
+              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
+
+              <p className="text-[16px] text-white/95 leading-[1.75] font-light mb-8 max-w-md">
+                {featured.q}
+              </p>
+
+              {/* Divider */}
+              <div className="h-px bg-white/20 mb-6 w-16" />
+
+              {/* Author Row */}
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-forest border-2 border-gold/50 flex items-center justify-center text-white font-bold text-lg">
+                      {featured.a[0]}
+                    </div>
+                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-gold border-2 border-forest-deep" />
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-bold text-white">{featured.a}</p>
+                    <p className="text-[10px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
+                  </div>
                 </div>
+                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[9px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                  {featured.tag}
+                </span>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Two stacked cards on right */}
+          <div className="flex flex-col gap-6">
+            {rest.map((t, i) => (
+              <div
+                key={i}
+                className="group flex-1 flex flex-col bg-white rounded-3xl p-8 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              >
+                {/* Top row */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, si) => (
+                      <span key={si} className="text-gold text-sm">★</span>
+                    ))}
+                  </div>
+                  <span className="bg-forest-deep text-white text-[8px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                    {t.tag}
+                  </span>
+                </div>
+
+                {/* Big gold quote */}
+                <span className="text-[3.5rem] text-gold/25 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/40 transition-colors duration-300">"</span>
+
+                {/* Quote text */}
+                <p className="text-[14px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
+                  {t.q}
+                </p>
+
+                {/* Divider with hover gold accent */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
+                  <div className="w-1 h-1 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
+                </div>
+
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-sm shrink-0 group-hover:border-gold/40 transition-colors duration-300">
+                    {t.a[0]}
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-bold text-forest-deep">{t.a}</p>
+                    <p className="text-[9px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Building2, GraduationCap } from 'lucide-react'
 import heroImg from '../assets/cambridge.jpg'
+import { Footer } from './index'
 
 export const Route = createFileRoute('/programmes/cslp')({
   head: () => ({
@@ -21,6 +22,7 @@ function Page() {
       <Pillars />
       <Who />
       <CTA />
+      <Footer />
     </div>
   )
 }
@@ -98,13 +100,18 @@ function Who() {
 
 function CTA() {
   return (
-    <section className="border-t border-border/60 bg-forest py-24 text-center">
+    <section className="border-t border-border/60 bg-[#F7F5F0] py-24 text-center">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-4xl font-bold text-cream md:text-5xl">Bring Cambridge home to your school.</h2>
-        <p className="mt-6 text-lg text-cream/80">Applications open for the March 2026 cohort.</p>
-        <a href="https://www.globaledulab.com/cslp" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="h-px w-8 bg-gold" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Enroll</span>
+          <div className="h-px w-8 bg-gold" />
+        </div>
+        <h2 className="text-4xl font-bold text-forest-deep md:text-5xl">Bring Cambridge home to your school.</h2>
+        <p className="mt-6 text-lg text-forest/70">Applications open for the March 2026 cohort.</p>
+        <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
           Apply Now <ArrowUpRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </section>
   )
