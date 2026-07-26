@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Mail, Newspaper } from "lucide-react";
+import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Mail, Newspaper, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import cambridgeImg from "@/assets/cambridge.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
+import { Footer } from "./index";
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -29,14 +31,21 @@ export const Route = createFileRoute("/insights")({
 });
 
 function InsightsPage() {
+  const [downloadModalUrl, setDownloadModalUrl] = useState<string | null>(null);
+
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen bg-background font-sans text-foreground relative">
       <Hero />
       <PartnersBar />
       <ResearchThemes />
-      <FeaturedPaper />
-      <PublicationsArchive />
+      <FeaturedPaper onDownload={setDownloadModalUrl} />
+      <PublicationsArchive onDownload={setDownloadModalUrl} />
       <TheBriefing />
+      <CTA />
+      <Footer />
+      {downloadModalUrl && (
+        <DownloadModal url={downloadModalUrl} onClose={() => setDownloadModalUrl(null)} />
+      )}
     </div>
   );
 }
@@ -209,7 +218,7 @@ function ResearchThemes() {
   );
 }
 
-function FeaturedPaper() {
+function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
   return (
     <section className="py-24 bg-forest-deep">
       <div className="mx-auto max-w-7xl px-6">
@@ -224,7 +233,7 @@ function FeaturedPaper() {
             </p>
             
             <div className="mt-10 flex flex-wrap items-center gap-6">
-              <button className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest-deep transition-colors hover:bg-gold/90">
+              <button onClick={() => onDownload("/report.pdf")} className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest-deep transition-colors hover:bg-gold/90">
                 Access Full Report
                 <Download className="h-4 w-4" />
               </button>
@@ -252,7 +261,7 @@ function FeaturedPaper() {
   );
 }
 
-function PublicationsArchive() {
+function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void }) {
   const reports = [
     {
       num: "NO. 01",
@@ -260,7 +269,8 @@ function PublicationsArchive() {
       category: "LEADERSHIP · AI",
       title: "Leadership in the Age of Artificial Intelligence",
       desc: "How leaders must evolve as AI reshapes decision-making, organisational design and the human core of business.",
-      date: "WHITE PAPER · 2026"
+      date: "WHITE PAPER · 2026",
+      downloadLink: "/report.pdf"
     },
     {
       num: "NO. 02",
@@ -268,7 +278,8 @@ function PublicationsArchive() {
       category: "FRUGAL AI · EXECUTIVE AGENDA",
       title: "Frugal AI — Executive Agenda 2026",
       desc: "Doing more with less: a companion research report on responsible, resource-conscious AI strategies for emerging markets.",
-      date: "RESEARCH REPORT · MAY 2026"
+      date: "RESEARCH REPORT · MAY 2026",
+      downloadLink: "/frugal-ai-report.pdf"
     },
     {
       num: "NO. 03",
@@ -276,7 +287,8 @@ function PublicationsArchive() {
       category: "GILP · CAMBRIDGE",
       title: "Global India Leadership Programme — Cambridge",
       desc: "Frameworks and forward-looking insights from Judge Business School faculty and global business leaders convened at Cambridge.",
-      date: "WHITE PAPER · MARCH 2026"
+      date: "WHITE PAPER · MARCH 2026",
+      downloadLink: "/report.pdf"
     }
   ];
 
@@ -319,9 +331,15 @@ function PublicationsArchive() {
                 
                 <div className="flex items-center justify-between border-t border-forest/10 pt-4 mt-auto">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40">{r.date}</span>
-                  <button className="text-[10px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
-                    DOWNLOAD <Download className="h-3 w-3" />
-                  </button>
+                  {r.downloadLink !== "#" ? (
+                    <button onClick={() => onDownload(r.downloadLink)} className="text-[10px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
+                      DOWNLOAD <Download className="h-3 w-3" />
+                    </button>
+                  ) : (
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40 flex items-center gap-1">
+                      DOWNLOAD <Download className="h-3 w-3" />
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -374,16 +392,92 @@ function TheBriefing() {
           </div>
         </div>
       </div>
-      
-      {/* Footer bar exactly matching screenshot */}
-      <div className="mt-24 bg-forest-deep py-6 px-6">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-bold text-white/50 tracking-wider">
-          <p>© 2026 Global Education Lab — Insights & Research.</p>
-          <Link to="/" className="hover:text-white transition-colors flex items-center gap-2">
-            ← Back to Global.Edu.Lab
-          </Link>
+    </section>
+  );
+}
+
+function CTA() {
+  return (
+    <section id="contact" className="bg-forest-deep text-cream">
+      <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+              Insights & Research
+            </p>
+            <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+              Transform your thinking.<br />Lead with purpose.<br />
+              <span className="text-gold">Stay ahead of change.</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/80">
+              Global Education Lab connects perspectives on leadership, artificial intelligence, sustainability, and global business. 
+              Let's start the conversation.
+            </p>
+          </div>
+          <div className="md:col-span-4">
+            <Link
+              to="/contact"
+              className="inline-flex w-full items-center justify-between gap-4 rounded-2xl bg-gold px-8 py-6 text-forest-deep transition-all hover:bg-gold/90"
+            >
+              <span className="text-lg font-bold tracking-tight">Partner With Us</span>
+              <ArrowUpRight className="h-6 w-6" />
+            </Link>
+            <p className="mt-4 text-center text-xs uppercase tracking-[0.2em] text-cream/60">
+              hello@globaledulab.com
+            </p>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = url.split('/').pop() || 'report.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-forest-deep/80 backdrop-blur-sm">
+      <div className="bg-white rounded-3xl w-full max-w-md p-8 relative shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 text-forest/50 hover:text-forest transition-colors"
+        >
+          <X className="h-5 w-5" />
+        </button>
+        <div className="mb-8">
+          <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mb-6">
+            <Download className="h-6 w-6 text-gold" />
+          </div>
+          <h3 className="text-2xl font-bold text-forest-deep font-serif">Access Full Report</h3>
+          <p className="text-sm text-forest/70 mt-2">Please provide your details to download the report.</p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Full Name</label>
+            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Jane Doe" />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Email</label>
+            <input required type="email" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="jane@example.com" />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Organisation</label>
+            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Company or Institution" />
+          </div>
+          <button type="submit" className="w-full mt-6 bg-gold text-forest-deep font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 transition-colors hover:bg-gold/90">
+            Download PDF <ArrowUpRight className="h-4 w-4" />
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

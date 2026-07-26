@@ -1,6 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Leaf, Sun, Globe2, BookOpen } from 'lucide-react'
 import heroImg from '../assets/students.jpg'
+import { Footer } from './index'
 
 export const Route = createFileRoute('/programmes/bali')({
   head: () => ({
@@ -21,6 +22,7 @@ function Page() {
       <Overview />
       <Themes />
       <CTA />
+      <Footer />
     </div>
   )
 }
@@ -100,9 +102,9 @@ function CTA() {
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="text-4xl font-bold text-cream md:text-5xl">Learn where nature teaches.</h2>
         <p className="mt-6 text-lg text-cream/80">Register interest for the May 2026 cohort.</p>
-        <a href="https://www.globaledulab.com/baligreenschool-1" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+        <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
           Apply Now <ArrowUpRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { Footer } from './index'
 import {
   ArrowUpRight,
   GraduationCap,
@@ -36,6 +37,7 @@ function SchoolLeaders() {
       <Testimonials />
       <DelegationConcierge />
       <FinalCTA />
+      <Footer />
     </div>
   )
 }
@@ -249,7 +251,7 @@ function ProgrammesCohorts() {
       location: "Cambridge, UK",
       date: "12–14 March 2026",
       desc: "Three days inside one of the world's most storied university towns. Sessions with Cambridge faculty, college dinners, and school visits across the East of England.",
-      link: "https://www.globaledulab.com/cslp",
+      link: "/programmes/cslp",
     },
     {
       tag: "STUDY VISIT",
@@ -258,7 +260,7 @@ function ProgrammesCohorts() {
       location: "Helsinki & Espoo",
       date: "15–16 May 2026",
       desc: "Inside the world's most-studied schooling system. Meet the architects of Finnish education policy and observe pedagogy in comprehensive schools.",
-      link: "https://www.globaledulab.com/finland",
+      link: "/programmes/finland",
     },
     {
       tag: "POLICY",
@@ -267,7 +269,7 @@ function ProgrammesCohorts() {
       location: "London, UK",
       date: "18–21 January 2026",
       desc: "A week inside Britain's education policy engine — from the House of Lords to independent school boards and multi-academy trusts.",
-      link: "https://www.globaledulab.com/llp-1",
+      link: "/programmes/llp",
     },
     {
       tag: "SUSTAINABILITY",
@@ -276,7 +278,7 @@ function ProgrammesCohorts() {
       location: "Ubud, Indonesia",
       date: "12–16 May 2026",
       desc: "Learn how the Green School re-imagined the classroom. Sustainability, project-based learning and curriculum design — inside a living campus.",
-      link: "https://www.globaledulab.com/baligreenschool-1",
+      link: "/programmes/bali",
     },
   ]
 
@@ -332,15 +334,13 @@ function ProgrammesCohorts() {
                 </div>
 
                 <div className="mt-8 border-t border-forest/10 pt-6">
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={p.link as any}
                     onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[12px] font-semibold uppercase tracking-widest text-cream transition-all hover:bg-forest-deep hover:shadow-md"
                   >
                     View the Programme <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             )
@@ -525,12 +525,12 @@ function FinalCTA() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          <a
-            href="#cohorts"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
           <a
             href="#cohorts"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"

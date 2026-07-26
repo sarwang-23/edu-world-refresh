@@ -1,6 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, MapPin, Calendar, Users, Compass, School, Lightbulb } from 'lucide-react'
 import heroImg from '../assets/school-leaders.jpg'
+import { Footer } from './index'
 
 export const Route = createFileRoute('/programmes/finland')({
   head: () => ({
@@ -22,6 +23,7 @@ function Page() {
       <WhoShould />
       <Highlights />
       <CTA />
+      <Footer />
     </div>
   )
 }
@@ -140,9 +142,9 @@ function CTA() {
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="text-4xl font-bold text-cream md:text-5xl">Ready to explore Finland?</h2>
         <p className="mt-6 text-lg text-cream/80">Limited seats. Registrations for the March 2026 cohort are now open.</p>
-        <a href="https://www.globaledulab.com/finland" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+        <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
           Register Now <ArrowUpRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </section>
   )

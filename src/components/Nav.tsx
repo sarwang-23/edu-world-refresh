@@ -6,10 +6,11 @@ export function Nav() {
   
   const links = [
     { label: "Global Ventures", href: "/global-ventures" },
-    { label: "Our Impact", href: "/our-impact" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
+    { label: "Blog", href: "#" },
     { label: "Contact", href: "/contact" },
+    { label: "Insights", href: "/insights" },
   ]
 
   const programmes = [
@@ -20,7 +21,7 @@ export function Nav() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">

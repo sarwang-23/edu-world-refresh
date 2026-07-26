@@ -1,4 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { Footer } from './index'
 import {
   ArrowUpRight,
   Building2,
@@ -33,6 +34,7 @@ function BusinessLeaders() {
       <Testimonials />
       <DelegationConcierge />
       <FinalCTA />
+      <Footer />
     </div>
   )
 }
@@ -483,12 +485,12 @@ function FinalCTA() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          <a
-            href="#programmes"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
           <a
             href="#programmes"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
