@@ -9,58 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
-import { Route as InsightsRouteImport } from './routes/insights'
-import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
-import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
-import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
-import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
-import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
-import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
-import { Route as ProgrammesHouseOfLordsRouteImport } from './routes/programmes.house-of-lords'
-import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
-import { Route as ProgrammesStudentCampsRouteImport } from './routes/programmes.student-camps'
-import { Route as ProgrammesTeacherTrainingRouteImport } from './routes/programmes.teacher-training'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgrammesZeroToOneRouteImport } from './routes/programmes.zero-to-one'
+import { Route as ProgrammesTeacherTrainingRouteImport } from './routes/programmes.teacher-training'
+import { Route as ProgrammesStudentCampsRouteImport } from './routes/programmes.student-camps'
+import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
+import { Route as ProgrammesHouseOfLordsRouteImport } from './routes/programmes.house-of-lords'
+import { Route as ProgrammesGilpRouteImport } from './routes/programmes.gilp'
+import { Route as ProgrammesFinlandRouteImport } from './routes/programmes.finland'
+import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
+import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
-  id: '/business-leaders',
-  path: '/business-leaders',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
-  id: '/global-ventures',
-  path: '/global-ventures',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsRoute = InsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchoolLeadersRoute = SchoolLeadersRouteImport.update({
-  id: '/school-leaders',
-  path: '/school-leaders',
+const TeachersRoute = TeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentsRoute = StudentsRouteImport.update({
@@ -68,44 +38,44 @@ const StudentsRoute = StudentsRouteImport.update({
   path: '/students',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeachersRoute = TeachersRouteImport.update({
-  id: '/teachers',
-  path: '/teachers',
+const SchoolLeadersRoute = SchoolLeadersRouteImport.update({
+  id: '/school-leaders',
+  path: '/school-leaders',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesBaliRoute = ProgrammesBaliRouteImport.update({
-  id: '/programmes/bali',
-  path: '/programmes/bali',
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesCslpRoute = ProgrammesCslpRouteImport.update({
-  id: '/programmes/cslp',
-  path: '/programmes/cslp',
+const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
+  id: '/global-ventures',
+  path: '/global-ventures',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesFinlandRoute = ProgrammesFinlandRouteImport.update({
-  id: '/programmes/finland',
-  path: '/programmes/finland',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesGilpRoute = ProgrammesGilpRouteImport.update({
-  id: '/programmes/gilp',
-  path: '/programmes/gilp',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesHouseOfLordsRoute = ProgrammesHouseOfLordsRouteImport.update({
-  id: '/programmes/house-of-lords',
-  path: '/programmes/house-of-lords',
+const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
+  id: '/business-leaders',
+  path: '/business-leaders',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
-  id: '/programmes/llp',
-  path: '/programmes/llp',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgrammesStudentCampsRoute = ProgrammesStudentCampsRouteImport.update({
-  id: '/programmes/student-camps',
-  path: '/programmes/student-camps',
+const ProgrammesZeroToOneRoute = ProgrammesZeroToOneRouteImport.update({
+  id: '/programmes/zero-to-one',
+  path: '/programmes/zero-to-one',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesTeacherTrainingRoute =
@@ -114,9 +84,39 @@ const ProgrammesTeacherTrainingRoute =
     path: '/programmes/teacher-training',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ProgrammesZeroToOneRoute = ProgrammesZeroToOneRouteImport.update({
-  id: '/programmes/zero-to-one',
-  path: '/programmes/zero-to-one',
+const ProgrammesStudentCampsRoute = ProgrammesStudentCampsRouteImport.update({
+  id: '/programmes/student-camps',
+  path: '/programmes/student-camps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesLlpRoute = ProgrammesLlpRouteImport.update({
+  id: '/programmes/llp',
+  path: '/programmes/llp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesHouseOfLordsRoute = ProgrammesHouseOfLordsRouteImport.update({
+  id: '/programmes/house-of-lords',
+  path: '/programmes/house-of-lords',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesGilpRoute = ProgrammesGilpRouteImport.update({
+  id: '/programmes/gilp',
+  path: '/programmes/gilp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesFinlandRoute = ProgrammesFinlandRouteImport.update({
+  id: '/programmes/finland',
+  path: '/programmes/finland',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesCslpRoute = ProgrammesCslpRouteImport.update({
+  id: '/programmes/cslp',
+  path: '/programmes/cslp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesBaliRoute = ProgrammesBaliRouteImport.update({
+  id: '/programmes/bali',
+  path: '/programmes/bali',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -267,53 +267,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/business-leaders': {
-      id: '/business-leaders'
-      path: '/business-leaders'
-      fullPath: '/business-leaders'
-      preLoaderRoute: typeof BusinessLeadersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/global-ventures': {
-      id: '/global-ventures'
-      path: '/global-ventures'
-      fullPath: '/global-ventures'
-      preLoaderRoute: typeof GlobalVenturesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights': {
-      id: '/insights'
-      path: '/insights'
-      fullPath: '/insights'
-      preLoaderRoute: typeof InsightsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/school-leaders': {
-      id: '/school-leaders'
-      path: '/school-leaders'
-      fullPath: '/school-leaders'
-      preLoaderRoute: typeof SchoolLeadersRouteImport
+    '/teachers': {
+      id: '/teachers'
+      path: '/teachers'
+      fullPath: '/teachers'
+      preLoaderRoute: typeof TeachersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/students': {
@@ -323,60 +281,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/teachers': {
-      id: '/teachers'
-      path: '/teachers'
-      fullPath: '/teachers'
-      preLoaderRoute: typeof TeachersRouteImport
+    '/school-leaders': {
+      id: '/school-leaders'
+      path: '/school-leaders'
+      fullPath: '/school-leaders'
+      preLoaderRoute: typeof SchoolLeadersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/bali': {
-      id: '/programmes/bali'
-      path: '/programmes/bali'
-      fullPath: '/programmes/bali'
-      preLoaderRoute: typeof ProgrammesBaliRouteImport
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/cslp': {
-      id: '/programmes/cslp'
-      path: '/programmes/cslp'
-      fullPath: '/programmes/cslp'
-      preLoaderRoute: typeof ProgrammesCslpRouteImport
+    '/global-ventures': {
+      id: '/global-ventures'
+      path: '/global-ventures'
+      fullPath: '/global-ventures'
+      preLoaderRoute: typeof GlobalVenturesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/finland': {
-      id: '/programmes/finland'
-      path: '/programmes/finland'
-      fullPath: '/programmes/finland'
-      preLoaderRoute: typeof ProgrammesFinlandRouteImport
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/gilp': {
-      id: '/programmes/gilp'
-      path: '/programmes/gilp'
-      fullPath: '/programmes/gilp'
-      preLoaderRoute: typeof ProgrammesGilpRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/house-of-lords': {
-      id: '/programmes/house-of-lords'
-      path: '/programmes/house-of-lords'
-      fullPath: '/programmes/house-of-lords'
-      preLoaderRoute: typeof ProgrammesHouseOfLordsRouteImport
+    '/business-leaders': {
+      id: '/business-leaders'
+      path: '/business-leaders'
+      fullPath: '/business-leaders'
+      preLoaderRoute: typeof BusinessLeadersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/llp': {
-      id: '/programmes/llp'
-      path: '/programmes/llp'
-      fullPath: '/programmes/llp'
-      preLoaderRoute: typeof ProgrammesLlpRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/student-camps': {
-      id: '/programmes/student-camps'
-      path: '/programmes/student-camps'
-      fullPath: '/programmes/student-camps'
-      preLoaderRoute: typeof ProgrammesStudentCampsRouteImport
+    '/programmes/zero-to-one': {
+      id: '/programmes/zero-to-one'
+      path: '/programmes/zero-to-one'
+      fullPath: '/programmes/zero-to-one'
+      preLoaderRoute: typeof ProgrammesZeroToOneRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programmes/teacher-training': {
@@ -386,11 +344,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesTeacherTrainingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programmes/zero-to-one': {
-      id: '/programmes/zero-to-one'
-      path: '/programmes/zero-to-one'
-      fullPath: '/programmes/zero-to-one'
-      preLoaderRoute: typeof ProgrammesZeroToOneRouteImport
+    '/programmes/student-camps': {
+      id: '/programmes/student-camps'
+      path: '/programmes/student-camps'
+      fullPath: '/programmes/student-camps'
+      preLoaderRoute: typeof ProgrammesStudentCampsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/llp': {
+      id: '/programmes/llp'
+      path: '/programmes/llp'
+      fullPath: '/programmes/llp'
+      preLoaderRoute: typeof ProgrammesLlpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/house-of-lords': {
+      id: '/programmes/house-of-lords'
+      path: '/programmes/house-of-lords'
+      fullPath: '/programmes/house-of-lords'
+      preLoaderRoute: typeof ProgrammesHouseOfLordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/gilp': {
+      id: '/programmes/gilp'
+      path: '/programmes/gilp'
+      fullPath: '/programmes/gilp'
+      preLoaderRoute: typeof ProgrammesGilpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/finland': {
+      id: '/programmes/finland'
+      path: '/programmes/finland'
+      fullPath: '/programmes/finland'
+      preLoaderRoute: typeof ProgrammesFinlandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/cslp': {
+      id: '/programmes/cslp'
+      path: '/programmes/cslp'
+      fullPath: '/programmes/cslp'
+      preLoaderRoute: typeof ProgrammesCslpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/bali': {
+      id: '/programmes/bali'
+      path: '/programmes/bali'
+      fullPath: '/programmes/bali'
+      preLoaderRoute: typeof ProgrammesBaliRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
