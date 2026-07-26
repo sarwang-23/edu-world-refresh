@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as InsightsRouteImport } from './routes/insights'
@@ -49,6 +50,11 @@ const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrepreneurshipRoute = EntrepreneurshipRouteImport.update({
+  id: '/entrepreneurship',
+  path: '/entrepreneurship',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -143,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -166,6 +173,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -190,6 +198,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -215,6 +224,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/business-leaders'
     | '/contact'
+    | '/entrepreneurship'
     | '/gallery'
     | '/global-ventures'
     | '/insights'
@@ -238,6 +248,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/business-leaders'
     | '/contact'
+    | '/entrepreneurship'
     | '/gallery'
     | '/global-ventures'
     | '/insights'
@@ -261,6 +272,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/business-leaders'
     | '/contact'
+    | '/entrepreneurship'
     | '/gallery'
     | '/global-ventures'
     | '/insights'
@@ -285,6 +297,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
+  EntrepreneurshipRoute: typeof EntrepreneurshipRoute
   GalleryRoute: typeof GalleryRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
   InsightsRoute: typeof InsightsRoute
@@ -332,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrepreneurship': {
+      id: '/entrepreneurship'
+      path: '/entrepreneurship'
+      fullPath: '/entrepreneurship'
+      preLoaderRoute: typeof EntrepreneurshipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -461,6 +481,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,
+  EntrepreneurshipRoute: EntrepreneurshipRoute,
   GalleryRoute: GalleryRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
   InsightsRoute: InsightsRoute,

@@ -6,6 +6,7 @@ export function Nav() {
   
   const links = [
     { label: "Global Ventures", href: "/global-ventures" },
+    { label: "Entrepreneurship", href: "/entrepreneurship" },
     { label: "Our Impact", href: "/our-impact" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
