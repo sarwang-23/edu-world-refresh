@@ -6,10 +6,10 @@ export function Nav() {
   
   const links = [
     { label: "Global Ventures", href: "/global-ventures" },
+    { label: "Our Impact", href: "/our-impact" },
+    { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Blog", href: "#" },
     { label: "Contact", href: "/contact" },
-    { label: "Insights", href: "/insights" },
   ]
 
   const programmes = [
