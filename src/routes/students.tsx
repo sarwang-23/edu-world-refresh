@@ -1,37 +1,32 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { ArrowUpRight, ArrowDownToLine, GraduationCap, Users, Globe2, Lightbulb, Compass, MonitorPlay, Code, Target, MessageSquare, Microscope, ShieldCheck, Heart, User, Building2 } from 'lucide-react'
 import { Footer } from './index'
-import {
-  ArrowUpRight,
-  Compass,
-  Globe2,
-  BookOpen,
-  Award,
-  FileText,
-  ShieldCheck,
-  Languages,
-  Utensils,
-  Quote,
-  MapPin,
-  Calendar,
-} from 'lucide-react'
-import studentsImg from '../assets/students.jpg'
+
+import studentsImg from '@/assets/students.jpg'
+import cambridgeImg from '@/assets/cambridge.jpg'
+import heroImg from '@/assets/hero-classroom.jpg'
+import teachersImg from '@/assets/teachers.jpg'
 
 export const Route = createFileRoute('/students')({
-  component: Students,
+  head: () => ({
+    meta: [
+      { title: 'Young Leaders Summer Programme | Global Education Lab' },
+      { name: 'description', content: 'An immersive summer experience in Cambridge for ambitious young learners.' },
+    ],
+  }),
+  component: YoungLeaders,
 })
 
-function Students() {
+function YoungLeaders() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground bg-cream">
       <Hero />
-      <CollaboratorsBar />
-      <WhyStudentsJoin />
-      <StatsBar />
-      <OngoingProgrammes />
-      <EndToEndJourney />
-      <Testimonials />
-      <FamilyConcierge />
-      <FinalCTA />
+      <FeaturesStrip />
+      <CoreElements />
+      <PartnersAndMentors />
+      <ChooseYourTrack />
+      <ValueProps />
+      <BottomCTA />
       <Footer />
     </div>
   )
@@ -39,52 +34,36 @@ function Students() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-cream">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+    <section className="relative overflow-hidden bg-cream pt-12 pb-24 md:pt-16 md:pb-12">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      
+      <div className="mx-auto max-w-7xl px-6 relative">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-6 block">
+              YOUNG LEADERS SUMMER PROGRAMME
+            </span>
+            <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-[4.5rem] leading-[1.05]">
+              Learn. Lead.<br />Shape the future.
+            </h1>
+            <p className="mt-6 text-sm text-forest/80 leading-relaxed max-w-lg font-medium">
+              An immersive summer experience in Cambridge for ambitious young learners who want to explore STEM, AI, entrepreneurship and public speaking—while building confidence, friendships and a global mindset.
+            </p>
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-0 pb-12 md:pb-20 lg:grid-cols-12 lg:gap-8 items-start">
-        <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-forest/70">
-            <Compass className="h-3.5 w-3.5 text-gold" /> For Students & Young Learners — Aged 14–17 and 18+
-          </span>
-          <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
-            A Cambridge summer, <span className="italic text-gold font-serif">before university even begins.</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
-            Since 2022 we have delivered future-focused programmes to 5,000+ students — Economics, Business, STEM, Entrepreneurship, Sustainability and Public Speaking — including residential summer camps at Hughes Hall and Girton College, University of Cambridge.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#programmes"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
-            >
-              Explore 2026 Programmes <ArrowUpRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#family"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
-            >
-              Parent & School Support
-            </a>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#tracks" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-forest">
+                Explore Programme Tracks <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <button className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-forest/5">
+                Download Programme Overview <ArrowDownToLine className="h-4 w-4" />
+              </button>
+            </div>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.22em] text-forest/40">
-            <span className="h-px w-10 bg-forest/30" />
-            CAMBRIDGE · HUGHES HALL · GIRTON COLLEGE
-          </div>
-        </div>
-
-        <div className="relative lg:col-span-5 lg:mt-14">
-          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl shadow-forest/15">
-            <img
-              src={studentsImg}
-              alt="Students at Cambridge"
-              className="h-[480px] w-full object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-gold font-bold">YOUNG LEADERS</p>
-              <p className="mt-1 text-xl font-bold text-cream">
-                Inspiring the next generation of global thinkers.
-              </p>
+          
+          <div className="lg:col-span-6 relative">
+            {/* The image flows to the edge on the right, matching the design which shows a large cut-off image */}
+            <div className="relative rounded-l-[3rem] overflow-hidden aspect-[4/3] md:-mr-12 shadow-2xl shadow-forest/10">
+              <img src={studentsImg} alt="Students" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -93,90 +72,56 @@ function Hero() {
   )
 }
 
-function CollaboratorsBar() {
-  const partners = [
-    "Iten Hall, Cambridge",
-    "Girton College, Cambridge",
-    "University of Cambridge",
-    "Judge Business School",
-    "King's College Cambridge",
-    "British Council",
-    "Hughes Hall Cambridge",
-    "Girton College, Cambridge",
-    "University of Cambridge",
-    "Judge Business School",
+function FeaturesStrip() {
+  const features = [
+    { icon: <GraduationCap className="h-6 w-6" />, title: "Future-Ready Skills", desc: "STEM, AI, communication and entrepreneurship." },
+    { icon: <Users className="h-6 w-6" />, title: "Cambridge Ecosystem", desc: "Connect with researchers, students and innovators." },
+    { icon: <Lightbulb className="h-6 w-6" />, title: "Hands-on Learning", desc: "Workshops, projects and real-world challenges." },
+    { icon: <Globe2 className="h-6 w-6" />, title: "Global Community", desc: "Learn with young leaders from around the world." },
+    { icon: <Compass className="h-6 w-6" />, title: "Beyond the Classroom", desc: "Cultural experiences, social activities and exploration." },
   ]
-
   return (
-    <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
-      <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
-        IN COLLABORATION WITH
-      </p>
-      <div className="relative flex w-full">
-        <div className="animate-marquee whitespace-nowrap flex items-center">
-          {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-xs font-bold text-forest/80 uppercase tracking-widest">
-              {partner}
-              <span className="ml-16 text-gold/30">✦</span>
-            </span>
-          ))}
-          {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-xs font-bold text-forest/80 uppercase tracking-widest">
-              {partner}
-              <span className="ml-16 text-gold/30">✦</span>
-            </span>
-          ))}
-        </div>
+    <div className="mx-auto max-w-7xl px-6 relative z-10 -mt-8">
+      <div className="bg-forest-deep rounded-3xl p-8 flex flex-wrap lg:flex-nowrap justify-between gap-6">
+        {features.map((f, i) => (
+          <div key={i} className="flex flex-col items-center text-center flex-1 px-2">
+            <div className="text-gold mb-3">{f.icon}</div>
+            <h4 className="text-[11px] font-bold text-white mb-2">{f.title}</h4>
+            <p className="text-[10px] text-cream/70 leading-relaxed max-w-[140px]">{f.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function WhyStudentsJoin() {
-  const reasons = [
-    {
-      icon: <Globe2 className="h-5 w-5 text-gold" />,
-      title: "A globally diverse cohort",
-      desc: "Sit alongside peers from India, the UAE, Nigeria, Vietnam and Europe. The campus that called the world.",
-    },
-    {
-      icon: <BookOpen className="h-5 w-5 text-gold" />,
-      title: "Taught at Cambridge",
-      desc: "Lectures, workshops and mentoring inside historic Cambridge colleges — Hughes Hall and Girton — with visiting faculty.",
-    },
-    {
-      icon: <Compass className="h-5 w-5 text-gold" />,
-      title: "Future-focused curriculum",
-      desc: "STEM, Entrepreneurship, AI, Economics, Sustainability and Public Speaking — subjects that develop curiosity and problem-solving.",
-    },
-    {
-      icon: <Award className="h-5 w-5 text-gold" />,
-      title: "Certificate of participation",
-      desc: "A co-branded certificate from Global Education Lab and the host college — a valuable addition to any university application.",
-    },
+function CoreElements() {
+  const elements = [
+    { img: studentsImg, icon: <Microscope className="h-5 w-5" />, title: "STEM Exploration", desc: "Discover, experiment and solve real-world problems through engaging STEM sessions and interactive learning." },
+    { img: heroImg, icon: <MessageSquare className="h-5 w-5" />, title: "Public Speaking", desc: "Build confidence and sharpen communication skills through structured speaking practice and presentations." },
+    { img: studentsImg, icon: <MonitorPlay className="h-5 w-5" />, title: "AI & Emerging Tech", desc: "Understand the power of AI and how technology is shaping industries, communities and our future." },
+    { img: studentsImg, icon: <Code className="h-5 w-5" />, title: "Entrepreneurship", desc: "Develop ideas, explore opportunities and learn how innovation turns into impact through practical workshops." },
+    { img: cambridgeImg, icon: <Globe2 className="h-5 w-5" />, title: "Cambridge Experience", desc: "Gain exclusive access to Cambridge institutions, research centres, innovation hubs and a vibrant student community." },
   ]
-
   return (
-    <section className="py-24 bg-[#F7F5F0]">
+    <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">WHY STUDENTS JOIN US</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl leading-tight">
-            Built to inspire students with <span className="italic text-gold font-serif">global ambition.</span>
-          </h2>
-          <p className="mt-6 text-sm text-forest/80 leading-relaxed max-w-3xl">
-            Our programmes give students a genuine taste of Cambridge life — world-class lectures, hands-on projects, and a cohort of peers from around the globe. They leave more confident, more curious, and better prepared for the road to higher education.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-forest-deep md:text-[2.25rem]">Core programme elements</h2>
+          <div className="w-12 h-1 bg-gold mx-auto mt-6" />
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {reasons.map((r, idx) => (
-            <div key={idx} className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest/10">
-                {r.icon}
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {elements.map((e, i) => (
+            <div key={i} className="flex flex-col items-center text-center">
+              <div className="aspect-square w-full rounded-2xl overflow-hidden mb-6 relative">
+                <img src={e.img} alt={e.title} className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-base font-bold text-forest-deep">{r.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-forest/75">{r.desc}</p>
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-forest/10 text-forest-deep shadow-md -mt-12 relative z-10 mb-4">
+                {e.icon}
+              </div>
+              <h3 className="text-[15px] font-bold text-forest-deep mb-3">{e.title}</h3>
+              <p className="text-[11px] text-forest/70 leading-relaxed">{e.desc}</p>
             </div>
           ))}
         </div>
@@ -185,292 +130,190 @@ function WhyStudentsJoin() {
   )
 }
 
-function StatsBar() {
-  const stats = [
-    { label: "5,000+", sub: "STUDENTS IMPACTED" },
-    { label: "20+", sub: "COUNTRIES REPRESENTED" },
-    { label: "2", sub: "CAMBRIDGE COLLEGES" },
-    { label: "98%", sub: "WOULD RECOMMEND" },
-  ]
-
+function PartnersAndMentors() {
   return (
-    <div className="bg-forest py-6 overflow-hidden">
-      <div className="relative flex w-full">
-        <div className="animate-marquee whitespace-nowrap flex items-center">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex items-center">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
-                  <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[9px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function OngoingProgrammes() {
-  const programmes = [
-    {
-      type: "SUMMER CAMP",
-      audience: "SCHOOL · 14–17 YRS",
-      title: "STEM & Entrepreneurship Summer Camp at Cambridge",
-      location: "HUGHES HALL, UNIVERSITY OF CAMBRIDGE",
-      date: "6-18 JULY 2026",
-      desc: "A two-week residential experience for school students at Hughes Hall — hands-on STEM projects, entrepreneurship sprints, Cambridge tours and cultural excursions across the East of England.",
-      link: "/programmes/student-camps",
-    },
-    {
-      type: "FELLOWSHIP",
-      audience: "GRADUATE · 18+ YRS",
-      title: "Summer Programme at Girton College — Entrepreneurship & AI",
-      location: "GIRTON COLLEGE, UNIVERSITY OF CAMBRIDGE",
-      date: "13-25 JULY 2026",
-      desc: "A fortnight for undergraduates and gap-year students at Girton College. Lectures on entrepreneurship and applied AI, a live venture-building sprint, and mentoring from Cambridge faculty and founders.",
-      link: "/programmes/student-camps",
-    },
-  ]
-
-  return (
-    <section id="programmes" className="py-24 bg-cream">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">ON-GOING PROGRAMMES - 2026</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
-            Two summers at Cambridge. School and Graduate.
-          </h2>
-          <p className="mt-4 text-sm text-forest/80 max-w-2xl">
-            Join our flagship programmes at Hughes Hall (14–17 years) and Girton College (18+ years) — a genuine Cambridge experience curated end-to-end.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {programmes.map((p, idx) => (
-            <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
-                </div>
-
-                <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
-                <div className="mt-3 flex flex-wrap items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-forest/60">
-                  <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
-                  <span>|</span>
-                  <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
-                </div>
-
-                <p className="mt-4 text-sm leading-relaxed text-forest/80">
-                  {p.desc}
-                </p>
-              </div>
-
-              <div className="mt-8">
-                <a
-                  href={p.link}
-                  className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
-                >
-                  VIEW THE PROGRAMME <ArrowUpRight className="h-3 w-3" />
-                </a>
+    <section className="pb-24">
+      <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10">
+        
+        {/* Summatic Partner */}
+        <div className="bg-white rounded-3xl p-10 border border-forest/10 flex flex-col justify-center">
+          <h3 className="text-xl font-bold text-forest-deep mb-8">In partnership with Summatic</h3>
+          <div className="flex items-center gap-8">
+            <div className="w-32 h-12 flex-shrink-0 flex items-center justify-center">
+              {/* Fake Logo for Summatic */}
+              <div className="text-2xl font-bold text-forest-deep flex items-center gap-2">
+                <span className="w-6 h-6 rounded-sm bg-gradient-to-tr from-blue-500 via-purple-500 to-red-500" />
+                summatic
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function EndToEndJourney() {
-  const steps = [
-    {
-      step: "01",
-      title: "Register your interest",
-      desc: "Complete a short application. We may follow up with a few questions to ensure we match you to the right programme.",
-    },
-    {
-      step: "02",
-      title: "Family & school call",
-      desc: "A 15-minute call with a parent (and school coordinator if relevant) to align on the student's goals and readiness.",
-    },
-    {
-      step: "03",
-      title: "Visa & travel support",
-      desc: "Formal invitation letters for the UK visa process, visa recommendations for safety, two group travel partners and arrivals into London.",
-    },
-    {
-      step: "04",
-      title: "Arrive & immerse",
-      desc: "Airport pickup to Cambridge, supervised residential stay in college, and 24/7 on-the-ground pastoral care.",
-    },
-  ]
-
-  return (
-    <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM APPLICATION TO ARRIVAL</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
-            A student journey we handle end-to-end.
-          </h2>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s, idx) => (
-            <div key={idx} className="relative flex flex-col">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="font-serif text-3xl font-bold text-gold">{s.step}</span>
-                <div className="h-px flex-1 bg-forest/20" />
-              </div>
-              <h3 className="text-base font-bold text-forest-deep">{s.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-forest/75">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Testimonials() {
-  const reviews = [
-    {
-      quote:
-        '"Two weeks at Cambridge changed how I see my future. I arrived shy about my ideas and left pitching to a room of peers."',
-      author: "Ananya Iyer",
-      role: "STUDENT · CHENNAI, INDIA",
-    },
-    {
-      quote:
-        '"The Girton programme was the first time I sat in a real Cambridge lecture. It made my university applications feel possible."',
-      author: "Oluwaseun Adeyemi",
-      role: "UNDERGRADUATE · LAGOS, NIGERIA",
-    },
-    {
-      quote:
-        '"As parents, the pastoral care and daily updates gave us complete peace of mind — and our son came home a different young man."',
-      author: "Mrs. Fatima Al-Zuwaidi",
-      role: "PARENT · DUBAI, UAE",
-    },
-  ]
-
-  return (
-    <section className="bg-forest py-24 text-cream">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM OUR STUDENTS & PARENTS</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
-            Trusted by families across four continents.
-          </h2>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          {reviews.map((r, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col justify-between rounded-2xl border border-cream/15 bg-forest-deep/60 p-8 backdrop-blur-sm"
-            >
-              <div>
-                <Quote className="h-8 w-8 text-gold/40 mb-4" />
-                <p className="text-sm leading-relaxed text-cream/90 italic">{r.quote}</p>
-              </div>
-
-              <div className="mt-8 border-t border-cream/10 pt-4">
-                <p className="text-sm font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function FamilyConcierge() {
-  const items = [
-    {
-      icon: <FileText className="h-5 w-5 text-gold" />,
-      title: "Visa & invitation letters",
-      desc: "Formal invitation letters and supporting documents for UK student visitor visa applications.",
-    },
-    {
-      icon: <ShieldCheck className="h-5 w-5 text-gold" />,
-      title: "24/7 pastoral care",
-      desc: "DBS-checked residential team, on-college grounds throughout the programme, with daily parent updates.",
-    },
-    {
-      icon: <Languages className="h-5 w-5 text-gold" />,
-      title: "Multilingual admissions",
-      desc: "Enquiries answered in English, Arabic, French, Hindi and Chinese. Family calls in translation on request.",
-    },
-    {
-      icon: <Utensils className="h-5 w-5 text-gold" />,
-      title: "Dietary & faith needs",
-      desc: "Halal, vegetarian, Kosher and Jain menus at every meal. Prayer rooms arranged at college buildings.",
-    },
-  ]
-
-  return (
-    <section id="family" className="bg-cream py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FOR PARENTS & SCHOOLS</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
-              Everything a family needs — before boarding.
-            </h2>
-            <p className="mt-6 text-sm text-forest/80 leading-relaxed">
-              Sending a young person abroad is a big decision. Our concierge team manages visas, travel, pastoral care and communication so students arrive ready to learn and parents stay informed at every step.
+            <p className="text-[11px] text-forest/70 leading-relaxed">
+              We are proud to partner with Summatic to deliver a transformative learning experience that inspires young minds and prepares them for a future of limitless possibilities.
             </p>
           </div>
+        </div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
-            {items.map((item, idx) => (
-              <div key={idx} className="rounded-2xl border border-forest/10 bg-white shadow-sm p-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest/10">
-                  {item.icon}
-                </div>
-                <h3 className="text-base font-bold text-forest-deep">{item.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-forest/75">{item.desc}</p>
-              </div>
+        {/* Facilitators */}
+        <div className="bg-white rounded-3xl p-10 border border-forest/10 flex flex-col justify-center">
+          <h3 className="text-xl font-bold text-forest-deep mb-6">Expert Facilitators & Mentors</h3>
+          <div className="flex items-center gap-3 mb-6">
+            {[1,2,3,4,5].map(i => (
+              <img key={i} src={teachersImg} alt="Mentor" className="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" />
             ))}
           </div>
+          <p className="text-[11px] text-forest/70 leading-relaxed mb-6">
+            Our facilitators include Cambridge educators, researchers, entrepreneurs, industry experts and communication specialists with a passion for guiding young learners.
+          </p>
+          <div>
+            <Link to="/about" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.1em] text-forest-deep hover:bg-forest/5 transition-all">
+              Meet the Facilitators <ArrowUpRight className="h-3 w-3" />
+            </Link>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  )
+}
+
+function ChooseYourTrack() {
+  return (
+    <section id="tracks" className="py-24 bg-white border-y border-border/60">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-forest-deep md:text-[2.25rem] mb-4">Choose Your Track</h2>
+          <p className="text-sm text-forest/70 font-medium">Two unique pathways. One unforgettable Cambridge experience.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          
+          {/* Track 1: Entrepreneurship */}
+          <div className="bg-cream rounded-3xl border border-forest/10 overflow-hidden flex flex-col">
+            <div className="p-10 flex-1 relative">
+              <span className="absolute top-0 left-0 bg-forest-deep text-white text-[9px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 rounded-br-xl">TRACK 1</span>
+              <h3 className="text-3xl font-bold text-forest-deep mt-4 mb-2">Entrepreneurship</h3>
+              <p className="text-sm font-bold text-forest-deep mb-4">Build ideas. Solve problems. Create impact.</p>
+              <p className="text-[11px] text-forest/70 leading-relaxed mb-8">
+                Explore the world of innovation and entrepreneurship. Learn how ideas are born, tested and developed into real solutions.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  "Opportunity discovery & ideation",
+                  "Pitching & storytelling",
+                  "Business model basics",
+                  "AI for innovation",
+                  "Design thinking & problem solving",
+                  "Team projects & venture challenge"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <ShieldCheck className="h-4 w-4 text-forest-deep shrink-0" />
+                    <span className="text-[10px] font-semibold text-forest-deep">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 h-40">
+              <img src={studentsImg} alt="" className="w-full h-full object-cover" />
+              <div className="bg-forest/5 flex items-center justify-center border-t border-forest/10 group cursor-pointer hover:bg-forest/10 transition-colors">
+                <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest-deep flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Explore Entrepreneurship Track <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Track 2: STEM Research */}
+          <div className="bg-[#1A365D] rounded-3xl overflow-hidden flex flex-col text-white relative">
+            <div className="p-10 flex-1 relative z-10">
+              <span className="absolute top-0 left-0 bg-blue-500 text-white text-[9px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 rounded-br-xl">TRACK 2</span>
+              <h3 className="text-3xl font-bold mt-4 mb-2">STEM Research</h3>
+              <p className="text-sm font-bold text-blue-200 mb-4">Ask questions. Explore. Discover.</p>
+              <p className="text-[11px] text-white/70 leading-relaxed mb-8">
+                Dive into the world of research and STEM. Learn how questions become insights and insights create a better world.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  "Research thinking & inquiry",
+                  "AI applications in research",
+                  "Science & technology exploration",
+                  "Collaborative investigations",
+                  "Team & evidence basics",
+                  "Present your research findings"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <ShieldCheck className="h-4 w-4 text-blue-400 shrink-0" />
+                    <span className="text-[10px] font-semibold text-white/90">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="absolute top-0 right-0 bottom-32 w-1/2 opacity-20 pointer-events-none">
+              <img src={studentsImg} alt="" className="w-full h-full object-cover rounded-bl-full" />
+            </div>
+            <div className="grid grid-cols-2 h-40">
+              <div className="bg-blue-600/20 flex items-center justify-center border-t border-blue-500/20 group cursor-pointer hover:bg-blue-600/40 transition-colors">
+                <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Explore STEM Research Track <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </div>
+              <img src={heroImg} alt="" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   )
 }
 
-function FinalCTA() {
+function ValueProps() {
+  const props = [
+    { icon: <User className="h-6 w-6" />, title: "Grow in confidence", desc: "Speak, present and lead with clarity." },
+    { icon: <Lightbulb className="h-6 w-6" />, title: "Think like a problem solver", desc: "Apply STEM, AI and creativity to real challenges." },
+    { icon: <Globe2 className="h-6 w-6" />, title: "Connect globally", desc: "Build friendships and networks that last a lifetime." },
+    { icon: <Building2 className="h-6 w-6" />, title: "Access Cambridge", desc: "Engage with researchers, students and innovations." },
+    { icon: <Compass className="h-6 w-6" />, title: "Broaden your perspective", desc: "Experience new cultures, ideas and opportunities." },
+    { icon: <Target className="h-6 w-6" />, title: "Shape your future", desc: "Discover your passions and explore new pathways." },
+  ]
   return (
-    <section className="bg-forest-deep py-24 text-center text-cream">
-      <div className="mx-auto max-w-3xl px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">RESERVE YOUR SEAT</p>
-        <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
-          Applications open for Summer 2026.
-        </h2>
-        <p className="mt-6 text-sm leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Seats at Hughes Hall and Girton College are limited and fill six to nine months in advance. Apply today and our admissions team will be in touch within two working days.
-        </p>
+    <section className="py-20 bg-cream">
+      <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {props.map((p, i) => (
+          <div key={i} className="flex flex-col items-center text-center">
+            <div className="w-12 h-12 rounded-full border border-forest/20 flex items-center justify-center text-forest-deep mb-4">
+              {p.icon}
+            </div>
+            <h4 className="text-[11px] font-bold text-forest-deep mb-2">{p.title}</h4>
+            <p className="text-[10px] text-forest/70">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
-          >
-            APPLY FOR 2026 <ArrowUpRight className="h-4 w-4" />
-          </Link>
-          <a
-            href="#programmes"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
-          >
-            OR VIEW ALL PROGRAMMES →
-          </a>
+function BottomCTA() {
+  return (
+    <section className="pb-24 pt-10 bg-cream relative">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="bg-forest-deep rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative">
+          {/* Background image fade on the left */}
+          <div className="absolute left-0 top-0 bottom-0 w-1/3 opacity-30">
+            <img src={cambridgeImg} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-forest-deep" />
+          </div>
+          
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold text-white mb-2">Start your Cambridge journey early.</h2>
+            <p className="text-sm text-primary-foreground/80">Discover new ideas. Build your voice. Explore the future.</p>
+          </div>
+          <div className="flex flex-wrap gap-4 relative z-10">
+            <button className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-white">
+              Register Your Interest <ArrowUpRight className="h-4 w-4" />
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-primary-foreground transition-all hover:bg-primary-foreground/10">
+              Download Programme Overview <ArrowDownToLine className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
