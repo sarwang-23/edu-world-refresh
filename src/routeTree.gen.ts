@@ -14,6 +14,7 @@ import { Route as StudentsRouteImport } from './routes/students'
 import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as OurImpactRouteImport } from './routes/our-impact'
 import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
@@ -52,6 +53,11 @@ const OurImpactRoute = OurImpactRouteImport.update({
 const InsightsRoute = InsightsRouteImport.update({
   id: '/insights',
   path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
+  id: '/global-ventures',
+  path: '/global-ventures',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/school-leaders': typeof SchoolLeadersRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/school-leaders': typeof SchoolLeadersRoute
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/school-leaders': typeof SchoolLeadersRoute
@@ -198,6 +207,7 @@ export interface FileRouteTypes {
     | '/business-leaders'
     | '/contact'
     | '/gallery'
+    | '/global-ventures'
     | '/insights'
     | '/our-impact'
     | '/school-leaders'
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
     | '/business-leaders'
     | '/contact'
     | '/gallery'
+    | '/global-ventures'
     | '/insights'
     | '/our-impact'
     | '/school-leaders'
@@ -240,6 +251,7 @@ export interface FileRouteTypes {
     | '/business-leaders'
     | '/contact'
     | '/gallery'
+    | '/global-ventures'
     | '/insights'
     | '/our-impact'
     | '/school-leaders'
@@ -262,6 +274,7 @@ export interface RootRouteChildren {
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  GlobalVenturesRoute: typeof GlobalVenturesRoute
   InsightsRoute: typeof InsightsRoute
   OurImpactRoute: typeof OurImpactRoute
   SchoolLeadersRoute: typeof SchoolLeadersRoute
@@ -313,6 +326,13 @@ declare module '@tanstack/react-router' {
       path: '/insights'
       fullPath: '/insights'
       preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global-ventures': {
+      id: '/global-ventures'
+      path: '/global-ventures'
+      fullPath: '/global-ventures'
+      preLoaderRoute: typeof GlobalVenturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -422,6 +442,7 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  GlobalVenturesRoute: GlobalVenturesRoute,
   InsightsRoute: InsightsRoute,
   OurImpactRoute: OurImpactRoute,
   SchoolLeadersRoute: SchoolLeadersRoute,
