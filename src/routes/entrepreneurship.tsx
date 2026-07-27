@@ -190,24 +190,28 @@ function Programmes() {
       title: "Zero-to-One Ideation Weekend", 
       desc: "An immersive experience for students, workers and professionals to solve real-world challenges.", 
       img: placeholderImg,
+      link: "/entrepreneurship/zero-to-one",
       stats: [{i: <BookOpen className="w-3 h-3"/>, t: "48 Hours"}, {i: <Globe2 className="w-3 h-3"/>, t: "Cambridge"}]
     },
     { 
       title: "Startup Accelerator (12 Months)", 
       desc: "Structured cohorts for early-stage startups with mentorship, workshops and investor connections.", 
       img: placeholderImg2,
-      stats: [{i: <BookOpen className="w-3 h-3"/>, t: "3 Months"}, {i: <Globe2 className="w-3 h-3"/>, t: "Hybrid"}]
+      link: "/entrepreneurship/accelerator",
+      stats: [{i: <BookOpen className="w-3 h-3"/>, t: "12 Months"}, {i: <Globe2 className="w-3 h-3"/>, t: "Hybrid"}]
     },
     { 
       title: "Mentorship & Founder Network", 
       desc: "Private introductions and access to our global community of founders, alumni and industry experts.", 
       img: placeholderImg3,
+      link: "/entrepreneurship/mentorship",
       stats: [{i: <BookOpen className="w-3 h-3"/>, t: "Ongoing"}, {i: <Globe2 className="w-3 h-3"/>, t: "Global"}]
     },
     { 
       title: "Demo Day & Investor Connect", 
       desc: "Pitch to investors, corporates and partners. Opportunities for funding, pilots and global expansion.", 
       img: placeholderImg4,
+      link: "/entrepreneurship/demo-day",
       stats: [{i: <BookOpen className="w-3 h-3"/>, t: "Twice a Year"}, {i: <Globe2 className="w-3 h-3"/>, t: "Cambridge"}]
     },
   ]
@@ -249,7 +253,7 @@ function Programmes() {
                     ))}
                   </div>
 
-                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[10px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
+                  <Link to={p.link} className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[10px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
                     LEARN MORE <ArrowUpRight className="h-3 w-3" />
                   </Link>
                 </div>
@@ -418,7 +422,7 @@ function Community() {
     { q: "The Cambridge ecosystem is unmatched. It opened doors we never imagined.", a: "David Lee", r: "CO-FOUNDER, DEEPSEARCH \u00b7 ACCELERATOR COHORT" },
   ]
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream pt-24 md:pt-32 pb-0">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 flex flex-col items-center text-center max-w-3xl mx-auto">
           <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
@@ -431,7 +435,7 @@ function Community() {
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 mb-32">
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {testimonials.map((t, i) => (
             <div key={i} className="group rounded-[2rem] border border-forest/10 bg-white p-10 hover:shadow-[0_20px_40px_rgba(20,40,30,0.08)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/10 transition-colors duration-500 pointer-events-none" />
@@ -451,7 +455,7 @@ function Community() {
         </div>
       </div>
 
-      <div className="bg-forest-deep w-full py-12 md:py-16 mt-8 border-t border-forest-deep/10">
+      <div className="bg-forest-deep w-full py-12 md:py-16 border-t border-forest-deep/10">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-3xl">

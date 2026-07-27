@@ -222,6 +222,7 @@ function OngoingProgrammes() {
       location: "UNIVERSITY OF CAMBRIDGE",
       date: "14-18 SEPTEMBER 2026",
       desc: "A week at Cambridge for Indian CXOs — cutting-edge leadership strategies, AI and innovation frameworks, and access to the UK-India business corridor, in partnership with Cambridge Judge Business School.",
+      link: "/programmes/gilp",
     },
     {
       type: "INVITE ONLY",
@@ -230,6 +231,7 @@ function OngoingProgrammes() {
       location: "HOUSE OF LORDS, LONDON",
       date: "15 OCTOBER 2026",
       desc: "An exclusive, invite-only convening at the House of Lords spotlighting the global impact of Cambridge startups — with founders, investors and policymakers from the UK-India corridor.",
+      link: "/programmes/house-of-lords",
     },
     {
       type: "ENTREPRENEURSHIP",
@@ -238,6 +240,7 @@ function OngoingProgrammes() {
       location: "JUDGE BUSINESS SCHOOL, CAMBRIDGE",
       date: "19-21 JUNE 2026",
       desc: "Three days in-person at Judge Business School to move a venture from zero to one — validation sprints, mentor clinics and founder-to-founder dialogues.",
+      link: "/programmes/zero-to-one",
     },
     {
       type: "ADVISORY",
@@ -246,6 +249,7 @@ function OngoingProgrammes() {
       location: "ON-SITE OR CAMBRIDGE",
       date: "ROLLING CALENDAR",
       desc: "Custom workshops for boards and leadership teams on ESG leadership, organisational behaviour, entrepreneurship and corporate governance — the core themes we have delivered since 2022.",
+      link: "/programmes/corporate-learning",
     }
   ]
 
@@ -285,12 +289,12 @@ function OngoingProgrammes() {
                 </div>
                 
                 <div className="mt-8">
-                  <a
-                    href="#"
+                  <Link
+                    to={p.link}
                     className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
                   >
                     VIEW THE PROGRAMME <ArrowUpRight className="h-3 w-3" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             )

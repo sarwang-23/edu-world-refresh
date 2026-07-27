@@ -162,66 +162,57 @@ function WhatIs() {
 }
 
 function OurVentures() {
-  const [filter, setFilter] = useState("All");
-  
-  const ventures = [
-    { name: "KAVACH AI", track: "Venture Track", icon: <Shield className="h-8 w-8 text-indigo-700" />, desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", slug: "kavach-ai" },
-    { name: "CARBON SYNC", track: "Venture Track", icon: <Leaf className="h-8 w-8 text-emerald-600" />, desc: "A sustainability intelligence platform that helps organisations measure, manage and reduce carbon impact with precision and transparency.", slug: "carbon-sync" },
-    { name: "PROJECT TACTO", track: "Venture Track", icon: <Atom className="h-8 w-8 text-orange-600" />, desc: "Building advanced tactile sensing solutions that enhance human-machine interaction across robotics, healthcare and assistive technologies.", slug: "project-tacto" },
-    { name: "VYOMVEDA", track: "Research Track", icon: <Sparkles className="h-8 w-8 text-blue-900" />, desc: "Researching space weather intelligence and predictive modelling to support resilient space and satellite operations.", slug: "vyomveda" },
-    { name: "CELLUNOVA", track: "Research Track", icon: <Microscope className="h-8 w-8 text-teal-600" />, desc: "Developing innovative cellular therapeutics and biomaterials through cutting-edge research in regenerative medicine.", slug: "cellunova" },
-    { name: "SAIVYY", track: "Venture Track", icon: <FlaskConical className="h-8 w-8 text-slate-800" />, desc: "A digital health platform improving access to quality care through AI-driven diagnostics and patient empowerment tools.", slug: "saivyy" },
-  ];
-  
-  const filtered = filter === "All" ? ventures : ventures.filter(v => v.track === filter);
-
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
-        
         <div className="flex flex-col items-center mb-16 text-center">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-forest/20" />
-            <h2 className="text-xl font-serif italic text-forest-deep">Our Ventures</h2>
-            <div className="h-px w-12 bg-forest/20" />
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Our Ventures</span>
+            <div className="h-px w-8 bg-gold" />
           </div>
-          <p className="text-[11px] text-forest/70 max-w-md">
-            A portfolio of exceptional startups and research-led innovations from emerging economies.
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-6">
+            A portfolio of exceptional innovations
+          </h2>
+          <p className="text-[15px] text-forest/70 max-w-2xl leading-relaxed">
+            Discover our featured startups and research-led innovations from emerging economies, shaping the future of global industries.
           </p>
         </div>
 
-        <div className="flex justify-end mb-8">
-          <div className="inline-flex bg-cream rounded-full border border-forest/10 p-1">
-            {["All", "Venture Track", "Research Track"].map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`px-5 py-2 rounded-full text-[10px] font-bold transition-all ${filter === f ? 'bg-forest-deep text-white shadow-md' : 'text-forest/70 hover:text-forest-deep hover:bg-forest/5'}`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((v, i) => (
-            <div key={i} className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 rounded-full border border-forest/10 flex items-center justify-center shrink-0">
-                  {v.icon}
-                </div>
-                <div className={`px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider border ${v.track === 'Venture Track' ? 'bg-forest/5 text-forest border-forest/20' : 'bg-gold/10 text-gold border-gold/30'}`}>
-                  {v.track}
-                </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="group relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/10 min-h-[450px] flex flex-col justify-end p-8 md:p-12 cursor-pointer">
+            <img src={businessLeadersImg} alt="Venture Track" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-transparent" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/20 backdrop-blur-md border border-gold/30 text-[10px] font-bold uppercase tracking-widest text-gold mb-5">
+                <Shield className="h-3 w-3" /> Venture Track
               </div>
-              <h3 className="text-sm font-bold text-forest-deep mb-3 uppercase tracking-wide">{v.name}</h3>
-              <p className="text-[11px] text-forest/70 leading-relaxed mb-6 flex-1">{v.desc}</p>
-              <Link to="/ventures/$slug" params={{ slug: v.slug }} className="inline-flex items-center gap-2 text-[11px] font-bold text-forest hover:text-forest-deep group-hover:gap-3 transition-all mt-auto">
-                Know More <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-gold transition-colors duration-300">KAVACH AI</h3>
+              <p className="text-[14px] text-white/80 leading-relaxed mb-8">
+                AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.
+              </p>
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] text-white group-hover:text-gold transition-colors duration-300">
+                Explore Venture <ArrowUpRight className="h-4 w-4" />
+              </div>
             </div>
-          ))}
+          </div>
+
+          <div className="group relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/10 min-h-[450px] flex flex-col justify-end p-8 md:p-12 cursor-pointer">
+            <img src={heroClassroomImg} alt="Research Track" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-transparent" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-[10px] font-bold uppercase tracking-widest text-white mb-5">
+                <Sparkles className="h-3 w-3" /> Research Track
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-gold transition-colors duration-300">VYOMVEDA</h3>
+              <p className="text-[14px] text-white/80 leading-relaxed mb-8">
+                Researching space weather intelligence and predictive modelling to support resilient space and satellite operations.
+              </p>
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] text-white group-hover:text-gold transition-colors duration-300">
+                Explore Venture <ArrowUpRight className="h-4 w-4" />
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

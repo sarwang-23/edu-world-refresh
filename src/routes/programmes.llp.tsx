@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Calendar, MapPin, Building2, Users, Award, BookOpen, Coffee, GraduationCap } from 'lucide-react'
-import heroImg from '../assets/school-leaders.jpg'
+import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, Landmark, Handshake } from 'lucide-react'
 import { Footer } from './index'
+import { useState } from 'react'
 
 export const Route = createFileRoute('/programmes/llp')({
   head: () => ({
     meta: [
       { title: 'London School Leadership Programme — Global Edu Lab' },
-      { name: 'description', content: 'The London School Leadership Programme returns in partnership with Britannica Research Lab and NISA, offering Indian school leaders an immersive look at the UK education model.' },
+      { name: 'description', content: 'A premium 5-day leadership programme in London — from the House of Lords to leading independent school visits, policy dialogues and Westminster networking.' },
       { property: 'og:title', content: 'London School Leadership Programme' },
-      { property: 'og:description', content: 'Immersive UK education programme for Indian school leaders.' },
+      { property: 'og:description', content: 'Experience the best of British education leadership. House of Lords visits, independent school tours, and policy dialogues in London.' },
     ],
   }),
   component: Page,
@@ -17,10 +17,13 @@ export const Route = createFileRoute('/programmes/llp')({
 
 function Page() {
   return (
-    <div className="flex min-h-screen flex-col pt-16">
+    <div className="flex min-h-screen flex-col">
       <Hero />
-      <Package />
-      <Highlights />
+      <ExperienceSection />
+      <WhoShouldEnroll />
+      <Schedule />
+      <Testimonials />
+      <ProgrammeDetails />
       <CTA />
       <Footer />
     </div>
@@ -29,21 +32,66 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-forest text-cream">
-      <div className="absolute inset-0 z-0">
-        <img src={heroImg} alt="London" className="h-full w-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
-      </div>
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">School Leaders Programme · 4th Edition</p>
-          <h1 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">London School Leadership Programme.</h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 md:text-xl">
-            An immersive experience for Indian school leaders to explore the UK&rsquo;s successful education model, its key philosophies and enduring global influence — in partnership with Britannica Research Lab and NISA.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-6 text-sm text-cream/80">
-            <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-gold" /> 18–21 January 2026</span>
-            <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-gold" /> London, United Kingdom</span>
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-8 bg-gold" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
+            </div>
+            <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
+              London School Leadership Programme
+            </h1>
+            <p className="mt-5 text-lg font-semibold text-forest/80 leading-snug">
+              Inside Britain's Education Policy Engine — From Westminster to the Classroom
+            </p>
+            <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
+              The London School Leadership Programme (LLP) is a premium 5-day executive experience in the heart of Britain's capital. Visit the Houses of Parliament, meet policy makers, explore leading independent and state schools, and return with a global leadership perspective anchored in British institutional excellence.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-5 text-sm text-forest/70">
+              <span className="inline-flex items-center gap-2 font-semibold">
+                <Calendar className="h-4 w-4 text-gold" /> 18th–22nd January, 2026
+              </span>
+              <span className="inline-flex items-center gap-2 font-semibold">
+                <MapPin className="h-4 w-4 text-gold" /> London, United Kingdom
+              </span>
+            </div>
+            <div className="mt-10 flex gap-4 flex-wrap">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+              >
+                Apply Now <ArrowUpRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="#schedule"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+              >
+                View Schedule
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-600">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center text-white p-8">
+                  <Landmark className="h-20 w-20 mx-auto mb-4 opacity-80" />
+                  <p className="text-lg font-semibold opacity-90">Houses of Parliament</p>
+                  <p className="text-sm opacity-70 mt-1">Westminster, London</p>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/20 to-transparent" />
+            </div>
+            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
+              <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
+                <GraduationCap className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">GEL Certified</p>
+                <p className="text-[10px] text-forest/55 mt-0.5">Certificate of Participation</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -51,24 +99,47 @@ function Hero() {
   )
 }
 
-function Package() {
-  const items = [
-    { icon: <Building2 className="h-6 w-6" />, title: '4-Star Accommodation', desc: 'Modern amenities in a central London hotel.' },
-    { icon: <Coffee className="h-6 w-6" />, title: 'All Meals Included', desc: 'Breakfast, lunch and networking dinners.' },
-    { icon: <MapPin className="h-6 w-6" />, title: 'School Visit Transport', desc: 'Local travel arranged to every partner school.' },
-    { icon: <BookOpen className="h-6 w-6" />, title: 'Britannica Resources', desc: 'Curated learning materials for participants.' },
+function ExperienceSection() {
+  const pillars = [
+    {
+      icon: <Landmark className="h-8 w-8" />,
+      title: 'British Policy & Governance',
+      items: ['Visit the Houses of Parliament & meet MPs', 'Policy dialogues on the British education system', 'Understand Ofsted, curriculum frameworks and school governance'],
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: 'Premier School Visits',
+      items: ['Visits to top-ranked independent and state schools', 'Discussions with British headteachers & governors', 'Observe British pedagogical models in real classrooms'],
+    },
+    {
+      icon: <Globe2 className="h-8 w-8" />,
+      title: 'Global Leadership Network',
+      items: ['London networking dinners with senior educators', 'Interactions with global school leaders & policy experts', 'Lifelong GEL London Leadership Alumni membership'],
+    },
   ]
   return (
-    <section className="border-b border-border/60 bg-cream">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Our Package Includes</p>
-        <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Everything, taken care of.</h2>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((it, i) => (
-            <div key={i} className="rounded-3xl border border-forest/10 bg-background p-8">
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-forest/5 text-forest">{it.icon}</div>
-              <h3 className="text-lg font-bold text-forest-deep">{it.title}</h3>
-              <p className="mt-3 text-forest/70">{it.desc}</p>
+    <section className="bg-white py-24 border-t border-forest/5">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">What You Will Experience</span>
+            <div className="h-px w-8 bg-gold" />
+          </div>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Experience leadership, the London way!</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {pillars.map((p, i) => (
+            <div key={i} className="group bg-white rounded-3xl p-8 border border-forest/8 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/5 text-gold group-hover:bg-gold/10 transition-colors duration-300">{p.icon}</div>
+              <h3 className="text-lg font-bold text-forest-deep mb-4">{p.title}</h3>
+              <ul className="space-y-2.5">
+                {p.items.map((item, k) => (
+                  <li key={k} className="flex items-start gap-2.5 text-[13px] text-forest/70 leading-relaxed">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />{item}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -77,28 +148,210 @@ function Package() {
   )
 }
 
-function Highlights() {
-  const items = [
-    { icon: <GraduationCap className="h-5 w-5" />, t: 'British School Visits' },
-    { icon: <Users className="h-5 w-5" />, t: 'Leadership Workshops' },
-    { icon: <Coffee className="h-5 w-5" />, t: 'Networking Dinners' },
-    { icon: <Award className="h-5 w-5" />, t: 'Award Ceremony at House of Lords' },
-    { icon: <BookOpen className="h-5 w-5" />, t: 'Britannica Products' },
-    { icon: <GraduationCap className="h-5 w-5" />, t: 'Certified Teachers Training' },
+function WhoShouldEnroll() {
+  const profiles = [
+    { title: 'School Owners & Principals', desc: 'Those who want to benchmark their institution against the British independent school model and understand global education governance.', icon: <Building2 className="h-6 w-6" />, color: 'bg-forest' },
+    { title: 'Next-gen Education Leaders', desc: 'Aspiring leaders who want exposure to Westminster policy dialogues, British boarding schools and international school governance.', icon: <GraduationCap className="h-6 w-6" />, color: 'bg-gold' },
+    { title: 'Education Policy Advisors', desc: 'Those who want to understand how British education policy drives school performance and what lessons can be applied in the Indian context.', icon: <Handshake className="h-6 w-6" />, color: 'bg-forest/60' },
   ]
   return (
-    <section className="bg-background py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Programme Highlights</p>
-        <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Four days of immersion and influence.</h2>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((it, i) => (
-            <div key={i} className="flex items-center gap-4 rounded-2xl border border-forest/10 bg-cream/40 p-6">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-forest/5 text-forest">{it.icon}</div>
-              <span className="font-semibold text-forest-deep">{it.t}</span>
+    <section className="bg-forest-deep py-24 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
+            <div className="h-px w-8 bg-gold" />
+          </div>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Who should enroll for this programme?</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {profiles.map((p, i) => (
+            <div key={i} className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-gold/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-500 overflow-hidden group">
+              <div className={"h-1.5 w-full " + p.color} />
+              <div className="p-8">
+                <div className={"mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl " + p.color + " text-white shadow-lg"}>{p.icon}</div>
+                <h3 className="text-[17px] font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
+                <p className="text-[13px] text-white/70 leading-relaxed">{p.desc}</p>
+              </div>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function Schedule() {
+  const days = [
+    { day: 'Day 1', location: 'Arrival in London', items: ['Welcome reception & programme orientation', 'Evening networking dinner with the cohort'] },
+    { day: 'Day 2', location: 'Westminster & Policy', items: ['Visit to Houses of Parliament', 'Briefing session with education policy experts', 'Westminster policy dialogue on school standards'] },
+    { day: 'Day 3', location: 'School Immersions', items: ['Visits to 2 leading London independent schools', 'Headteacher Q&A and classroom observations', 'Networking dinner with senior British educators'] },
+    { day: 'Day 4', location: 'Leadership & London', items: ['Leadership workshop: Adapting British governance', 'City of London tour & cultural programme', 'Formal award dinner & certificate ceremony'] },
+    { day: 'Day 5', location: 'Departure', items: ['Final reflection & action planning session', 'Check out & departures'] },
+  ]
+  return (
+    <section id="schedule" className="bg-[#F7F5F0] py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programme Itinerary</span>
+          </div>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Programme Schedule <span className="text-forest/40 font-medium text-2xl">(Indicative)</span></h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          {days.map((d, i) => (
+            <div key={i} className={"rounded-2xl border p-6 transition-all duration-300 " + (i === 2 ? 'border-gold/40 bg-white shadow-lg ring-1 ring-gold/20' : 'border-forest/10 bg-white hover:border-gold/30 hover:shadow-md')}>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/40">{d.day}</span>
+              <h3 className="text-[15px] font-bold text-gold mt-1 mb-3">{d.location}</h3>
+              <ul className="space-y-2">
+                {d.items.map((it, k) => (
+                  <li key={k} className="flex items-start gap-2 text-[12px] text-forest/70 leading-relaxed">
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-forest/30 shrink-0" />{it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-[12px] italic text-forest/40">*This is a preliminary itinerary. A complete itinerary will be provided 30 days before the programme.</p>
+      </div>
+    </section>
+  )
+}
+
+function Testimonials() {
+  const testimonials = [
+    { name: 'Dr. Meena Subramaniam', school: 'Principal, Delhi Public School, Hyderabad', quote: 'Walking through the Houses of Parliament and discussing education policy with British parliamentarians was an experience I\'ll carry for life. GEL delivered an impeccably curated week that elevated my entire perspective on school leadership.', initials: 'MS' },
+    { name: 'Arjun Mehta', school: 'School Director, Mehta Foundation Schools, Mumbai', quote: 'The London programme gave me access to institutions and conversations that I simply couldn\'t have arranged on my own. The independent school visits and Westminster policy dialogue were extraordinary. Highly recommended for any serious school leader.', initials: 'AM' },
+  ]
+  const [current, setCurrent] = useState(0)
+  const t = testimonials[current]
+  return (
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="h-px w-8 bg-gold" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+          <div className="h-px w-8 bg-gold" />
+        </div>
+        <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What participants say about our programme?</h2>
+        <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-forest-deep to-forest flex items-center justify-center text-2xl font-bold text-white shadow-xl mb-6">{t.initials}</div>
+        <div className="flex items-center justify-center gap-1 mb-6">
+          {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
+        </div>
+        <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
+        <p className="font-bold text-forest-deep">{t.name}</p>
+        <p className="text-[12px] text-forest/50 mt-1">{t.school}</p>
+        <div className="flex items-center justify-center gap-4 mt-10">
+          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <div className="flex gap-2">
+            {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
+          </div>
+          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ProgrammeDetails() {
+  const details = [
+    { label: 'Duration', value: '5 Days Immersive Programme' },
+    { label: 'Location', value: 'London, United Kingdom' },
+    { label: 'Cohort Size', value: 'Limited to 28 Delegates' },
+    { label: 'Certificate', value: 'GEL Certificate of Participation' },
+  ]
+
+  const inclusions = [
+    'All school visits, workshops, policy dialogues & sessions',
+    'Houses of Parliament visit & briefing access',
+    'Accommodation for 4 nights at a premium Central London hotel',
+    'Daily breakfast and in-programme lunches',
+    'All cultural dinners & networking events',
+    'City of London cultural excursion',
+    'Certificate of participation ceremony & formal award dinner',
+  ]
+
+  const exclusions = [
+    'International flights and UK Visa costs',
+    'Personal meals not mentioned in the itinerary',
+    'Travel insurance (strongly recommended)',
+  ]
+
+  return (
+    <section className="bg-[#F7F5F0] py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programme Details</span>
+          </div>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Everything you need to know.</h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {details.map((d, i) => (
+            <div key={i} className="rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/30 hover:shadow-md transition-all duration-300">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
+              <p className="text-[15px] font-bold text-forest-deep">{d.value}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-6">
+            <div className="rounded-2xl p-8 bg-forest-deep text-white border border-forest-deep relative overflow-hidden shadow-xl">
+               <div className="absolute top-6 right-6 text-gold opacity-50"><Star className="h-6 w-6 fill-gold"/></div>
+               <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fees</p>
+               <p className="text-[24px] font-bold text-white mb-3">Early bird starts at 1,900 GBP</p>
+               <span className="inline-block text-[12px] font-semibold text-white/70">✦ Limited seats available</span>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm flex-1">
+              <div className="mb-10">
+                <h3 className="text-[18px] font-bold text-forest-deep mb-5">Inclusions</h3>
+                <ul className="space-y-3.5">
+                  {inclusions.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[14px] text-forest/75 leading-relaxed">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-[18px] font-bold text-forest-deep mb-5">Exclusions</h3>
+                <ul className="space-y-3.5">
+                  {exclusions.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[14px] text-forest/75 leading-relaxed">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-forest/30 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px] bg-gradient-to-br from-slate-800 via-slate-600 to-gray-500 flex items-center justify-center relative">
+            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:20px_20px]" />
+            <div className="relative text-center text-white p-8">
+              <Landmark className="h-24 w-24 mx-auto mb-6 opacity-80" />
+              <p className="text-2xl font-bold mb-2">London, United Kingdom</p>
+              <p className="text-sm opacity-70">Houses of Parliament · Independent Schools</p>
+              <p className="text-sm opacity-60 mt-2">Westminster, London</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   )
@@ -106,18 +359,24 @@ function Highlights() {
 
 function CTA() {
   return (
-    <section className="border-t border-border/60 bg-[#F7F5F0] py-24 text-center">
-      <div className="mx-auto max-w-3xl px-6">
+    <section className="bg-forest-deep py-24 text-center relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Enroll</span>
           <div className="h-px w-8 bg-gold" />
         </div>
-        <h2 className="text-4xl font-bold text-forest-deep md:text-5xl">London calling.</h2>
-        <p className="mt-6 text-lg text-forest/70">Reserve your seat for the January 2026 cohort.</p>
-        <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
-          Apply Now <ArrowUpRight className="h-4 w-4" />
-        </Link>
+        <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Bring London's leadership excellence to your school.</h2>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications open for the January 2026 cohort. Limited seats — secure yours today.</p>
+        <div className="mt-10 flex gap-4 justify-center flex-wrap">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+            Apply Now <ArrowUpRight className="h-4 w-4" />
+          </Link>
+          <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+            View All Programmes
+          </Link>
+        </div>
       </div>
     </section>
   )

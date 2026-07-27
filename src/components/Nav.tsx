@@ -6,10 +6,12 @@ export function Nav() {
   
   const mainLinks = [
     { label: "Home", href: "/" },
+    { label: "Entrepreneurship", href: "/entrepreneurship" },
   ]
 
   const rightLinks = [
     { label: "Global Ventures", href: "/global-ventures" },
+    { label: "Partner with GEL", href: "/partner-with-gel" },
     { label: "Our Impact", href: "/our-impact" },
     { label: "About", href: "/about" },
     { label: "Resources", href: "/resources" },
