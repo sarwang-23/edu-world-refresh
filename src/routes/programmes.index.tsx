@@ -132,7 +132,7 @@ function ProgrammesPage() {
       {/* Upcoming Programmes */}
       <section className="py-24 bg-[#F4EFE6] relative overflow-hidden">
         <div className="pointer-events-none absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-gold/5 blur-[120px]" />
-        <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="flex items-center gap-3 mb-4">

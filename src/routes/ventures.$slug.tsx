@@ -150,7 +150,7 @@ function Hero({ v }: { v: Venture }) {
       <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay" />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep via-forest-deep/90 to-transparent" />
       
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-6 pt-28">
         <div className="flex items-center gap-2 text-[14px] uppercase tracking-wider text-white/50 mb-8">
           <Link to="/global-ventures" className="hover:text-white transition-colors">Global Ventures</Link>
           <ChevronRight className="h-3 w-3" />

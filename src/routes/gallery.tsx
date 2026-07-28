@@ -33,7 +33,7 @@ function GalleryPage() {
         <div className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] translate-x-1/3 rounded-full bg-gold/8 blur-[140px]" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 pt-12 lg:grid-cols-12 lg:gap-16">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-16 pt-28">
           {/* Left Content */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">

@@ -81,7 +81,7 @@ function Hero() {
       <div className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-forest/8 hidden xl:block" />
       <div className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border border-gold/10 hidden xl:block" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-32 w-full">
+      <div className="relative mx-auto max-w-7xl px-6 pt-28 pb-32 w-full">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7 space-y-8">
 

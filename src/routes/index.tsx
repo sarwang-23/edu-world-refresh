@@ -48,7 +48,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 pt-10 lg:grid-cols-12 lg:gap-12">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-28">
         <div className="lg:col-span-7">
           <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
             Transformational education.<br />

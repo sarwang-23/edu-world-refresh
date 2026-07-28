@@ -37,7 +37,7 @@ function Hero() {
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-orange-400/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-orange-600/6 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-6 pt-28">
         {/* Back */}
         <Link
           to="/programmes/graduate"

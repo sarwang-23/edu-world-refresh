@@ -54,7 +54,7 @@ function Hero() {
     <section className="relative border-b border-border/60 bg-cream overflow-hidden pb-20">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-6 pb-8 relative z-10">
+      <div className="mx-auto max-w-7xl px-6 pb-8 relative z-10 pt-28">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-start pt-0 mt-0">
           <div className="mt-0 pt-0">
             <div className="flex flex-wrap gap-2 mb-8">

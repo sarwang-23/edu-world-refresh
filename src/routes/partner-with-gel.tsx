@@ -63,7 +63,7 @@ function Hero() {
       <div className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] translate-x-1/3 rounded-full bg-gold/8 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-12 md:pt-16">
+      <div className="relative mx-auto max-w-7xl px-6 pb-24 md: pt-28">
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             {/* Badge */}

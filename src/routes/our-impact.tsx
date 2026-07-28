@@ -38,7 +38,7 @@ function Hero() {
   return (
     <section className="relative border-b border-border/60 bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-6 pb-20 pt-0 md:grid-cols-12 md:pb-28">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-6 pb-20 md:grid-cols-12 md:pb-28 pt-28">
         
         {/* Left Content */}
         <div className="md:col-span-7 lg:col-span-7 xl:col-span-7 pr-0 md:pr-4">

@@ -34,7 +34,7 @@ function Page() {
           <img src={heroImg} alt="Teachers" className="h-full w-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 pb-32 md:py-48">
           <div className="max-w-3xl">
             <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">For K-12 Teachers</p>
             <h1 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">Transform your teaching, the Cambridge way.</h1>

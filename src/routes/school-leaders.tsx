@@ -46,7 +46,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-16 md:pb-24">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-28">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries

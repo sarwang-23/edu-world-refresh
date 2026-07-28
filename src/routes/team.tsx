@@ -34,7 +34,7 @@ function Hero() {
       {/* Grid overlay */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto max-w-7xl px-6 text-center">
+      <div className="relative mx-auto max-w-7xl px-6 text-center pt-28">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
           <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
