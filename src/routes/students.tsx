@@ -53,7 +53,7 @@ function Hero() {
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gold">Young Leaders Summer Programme</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.28em] text-gold">Young Leaders Summer Programme</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -75,7 +75,7 @@ function Hero() {
                 { icon: <Users className="h-4 w-4" />, label: 'Ages 13–18' },
                 { icon: <Star className="h-4 w-4" />, label: 'Summer 2026' },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[11px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[13px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
@@ -85,12 +85,12 @@ function Hero() {
             <div className="mt-8 flex gap-4 flex-wrap">
               <a
                 href="#tracks"
-                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <button className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <button className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 Overview <ArrowDownToLine className="h-4 w-4" />
               </button>
             </div>
@@ -105,7 +105,7 @@ function Hero() {
               {/* Bottom overlay label */}
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
                   <p className="text-white text-[15px] font-bold">Summer 2026</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -114,7 +114,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[9px] font-bold">+40</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[11px] font-bold">+40</div>
                 </div>
               </div>
             </div>
@@ -125,8 +125,8 @@ function Hero() {
                 <GraduationCap className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">Cambridge</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Immersive Experience</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Cambridge</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Immersive Experience</p>
               </div>
             </div>
 
@@ -136,8 +136,8 @@ function Hero() {
                 <Award className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-white uppercase tracking-wider">2 Tracks</p>
-                <p className="text-[10px] text-cream/55 mt-0.5">Entrepreneurship & STEM</p>
+                <p className="text-[13px] font-bold text-white uppercase tracking-wider">2 Tracks</p>
+                <p className="text-[12px] text-cream/55 mt-0.5">Entrepreneurship & STEM</p>
               </div>
             </div>
 
@@ -168,8 +168,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[11px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[13px] text-forest/55 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -209,8 +209,8 @@ function FeaturesStrip() {
                   </div>
                   {/* text */}
                   <div className="pr-8 border-r border-forest/8">
-                    <p className="text-[13px] font-bold text-forest-deep whitespace-nowrap tracking-tight">{f.title}</p>
-                    <p className="text-[11px] text-forest/50 whitespace-nowrap mt-0.5 font-medium">{f.desc}</p>
+                    <p className="text-[15px] font-bold text-forest-deep whitespace-nowrap tracking-tight">{f.title}</p>
+                    <p className="text-[13px] text-forest/50 whitespace-nowrap mt-0.5 font-medium">{f.desc}</p>
                   </div>
                   {/* gold dot separator */}
                   <span className="h-1.5 w-1.5 rounded-full bg-gold/50 shrink-0 -ml-3" />
@@ -240,7 +240,7 @@ function CoreElements() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">The Curriculum</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">The Curriculum</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep leading-tight mb-4">Core programme elements.</h2>
           <p className="text-[15px] text-forest/55 max-w-lg leading-[1.75]">Every element is designed to challenge, inspire and equip young leaders for the world ahead.</p>
@@ -261,13 +261,13 @@ function CoreElements() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
 
                 {/* top-left number badge */}
-                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white/80">
+                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[12px] font-bold text-white/80">
                   {e.num}
                 </div>
 
                 {/* top-right tag pill */}
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">
                     {e.tag}
                   </span>
                 </div>
@@ -279,7 +279,7 @@ function CoreElements() {
                     {e.icon}
                   </div>
                   <h3 className="text-[14px] font-bold text-white leading-tight mb-2">{e.title}</h3>
-                  <p className="text-[11px] text-cream/75 leading-[1.6]">{e.desc}</p>
+                  <p className="text-[13px] text-cream/75 leading-[1.6]">{e.desc}</p>
                 </div>
               </div>
             </div>
@@ -304,7 +304,7 @@ function PartnersAndMentors() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Our Network</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Our Network</span>
           </div>
           <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-white leading-[1.06] mb-4">
             Learn from
@@ -333,12 +333,12 @@ function PartnersAndMentors() {
                 </div>
                 <div>
                   <p className="text-[20px] font-bold text-white tracking-tight">summatic</p>
-                  <p className="text-[10px] text-gold uppercase tracking-[0.2em] mt-0.5 font-semibold">Official Programme Partner</p>
+                  <p className="text-[12px] text-gold uppercase tracking-[0.2em] mt-0.5 font-semibold">Official Programme Partner</p>
                 </div>
               </div>
 
               <h3 className="text-[17px] font-bold text-white mb-4">In partnership with Summatic</h3>
-              <p className="text-[13px] text-cream/65 leading-[1.75]">
+              <p className="text-[15px] text-cream/65 leading-[1.75]">
                 We are proud to partner with Summatic to deliver a transformative learning experience that inspires young minds and prepares them for a future of limitless possibilities.
               </p>
 
@@ -351,7 +351,7 @@ function PartnersAndMentors() {
                 ].map((s, i) => (
                   <div key={i}>
                     <p className="text-[22px] font-bold text-gold leading-none">{s.val}</p>
-                    <p className="text-[10px] text-cream/45 mt-1 uppercase tracking-[0.15em]">{s.label}</p>
+                    <p className="text-[12px] text-cream/45 mt-1 uppercase tracking-[0.15em]">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -378,29 +378,29 @@ function PartnersAndMentors() {
                       style={{ zIndex: 6 - i }}
                     />
                   ))}
-                  <div className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 bg-gold/15 flex items-center justify-center text-[10px] font-bold text-gold" style={{ zIndex: 0 }}>
+                  <div className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 bg-gold/15 flex items-center justify-center text-[12px] font-bold text-gold" style={{ zIndex: 0 }}>
                     +12
                   </div>
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-white">18 Expert Facilitators</p>
+                  <p className="text-[15px] font-bold text-white">18 Expert Facilitators</p>
                   <div className="flex items-center gap-1 mt-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-3 w-3 fill-gold text-gold" />
                     ))}
-                    <span className="text-[10px] text-cream/50 ml-1">Top rated</span>
+                    <span className="text-[12px] text-cream/50 ml-1">Top rated</span>
                   </div>
                 </div>
               </div>
 
               <h3 className="text-[17px] font-bold text-white mb-4">Expert Facilitators &amp; Mentors</h3>
-              <p className="text-[13px] text-cream/65 leading-[1.75] mb-8">
+              <p className="text-[15px] text-cream/65 leading-[1.75] mb-8">
                 Our facilitators include Cambridge educators, researchers, entrepreneurs, industry experts and communication specialists with a passion for guiding young learners.
               </p>
 
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
+                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
               >
                 Meet the Facilitators
                 <ArrowUpRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
@@ -426,7 +426,7 @@ function ChooseYourTrack() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Choose Your Track.</h2>
@@ -444,21 +444,21 @@ function ChooseYourTrack() {
             <div className="p-9 pb-6">
               {/* badge row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[9px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
+                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[11px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Track 01
                 </span>
-                <span className="text-[10px] font-semibold text-forest/35 uppercase tracking-widest">Entrepreneurship</span>
+                <span className="text-[12px] font-semibold text-forest/35 uppercase tracking-widest">Entrepreneurship</span>
               </div>
 
               <h3 className="text-[2.4rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-gold transition-colors duration-400">Build ideas.<br/>Create impact.</h3>
-              <p className="text-[13px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
+              <p className="text-[15px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
                 Explore the world of innovation. Learn how ideas are born, tested and developed into real solutions that change the world.
               </p>
 
               <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                 {['Opportunity discovery', 'Pitching & storytelling', 'Business model basics', 'AI for innovation', 'Design thinking', 'Venture challenge'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[12px] text-forest/70">
+                  <div key={i} className="flex items-center gap-2.5 text-[14px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                     </span>
@@ -473,7 +473,7 @@ function ChooseYourTrack() {
               <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
-                <Link to="/students/entrepreneurship" className="inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
+                <Link to="/students/entrepreneurship" className="inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3 text-[12px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -490,21 +490,21 @@ function ChooseYourTrack() {
             <div className="p-9 pb-6">
               {/* badge row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[9px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
+                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[11px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Track 02
                 </span>
-                <span className="text-[10px] font-semibold text-forest/35 uppercase tracking-widest">STEM Research</span>
+                <span className="text-[12px] font-semibold text-forest/35 uppercase tracking-widest">STEM Research</span>
               </div>
 
               <h3 className="text-[2.4rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-blue-600 transition-colors duration-400">Ask questions.<br/>Discover more.</h3>
-              <p className="text-[13px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
+              <p className="text-[15px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
                 Dive into the world of research and STEM. Learn how questions become insights and insights create a better world.
               </p>
 
               <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                 {['Research thinking', 'AI in research', 'Science exploration', 'Collaborative inquiry', 'Evidence basics', 'Present findings'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[12px] text-forest/70">
+                  <div key={i} className="flex items-center gap-2.5 text-[14px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-blue-500/10 border border-blue-400/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                     </span>
@@ -519,7 +519,7 @@ function ChooseYourTrack() {
               <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
-                <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
+                <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[12px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -553,7 +553,7 @@ function ValueProps() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Why Join</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Why Join</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-4">What you&rsquo;ll take home.</h2>
@@ -570,7 +570,7 @@ function ValueProps() {
               <div className="pointer-events-none absolute top-0 right-0 h-28 w-28 rounded-full bg-gold/8 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* number */}
-              <span className="text-[11px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{p.num}</span>
+              <span className="text-[13px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{p.num}</span>
 
               {/* icon */}
               <div className="mt-4 mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300 shadow-sm">
@@ -578,7 +578,7 @@ function ValueProps() {
               </div>
 
               <h4 className="text-[14px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h4>
-              <p className="text-[12px] text-forest/60 leading-[1.65]">{p.desc}</p>
+              <p className="text-[14px] text-forest/60 leading-[1.65]">{p.desc}</p>
 
               {/* bottom accent line */}
               <div className="absolute bottom-0 left-7 right-7 h-[1.5px] bg-gradient-to-r from-transparent via-gold/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -608,24 +608,24 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-[1.08] tracking-tight">Start your Cambridge journey early.</h2>
         <p className="mt-5 text-[15px] text-cream/65 leading-[1.75] max-w-xl mx-auto">Discover new ideas. Build your voice. Explore the future — at one of the world's greatest universities.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <button className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <button className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Register Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <button className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Download Overview <ArrowDownToLine className="h-4 w-4" />
           </button>
         </div>
 
         {/* Bottom trust note */}
-        <p className="mt-10 text-[11px] text-cream/35 uppercase tracking-[0.2em]">
+        <p className="mt-10 text-[13px] text-cream/35 uppercase tracking-[0.2em]">
           Cambridge, UK · Summer 2026 · Fully Supervised
         </p>
       </div>

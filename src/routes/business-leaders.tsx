@@ -46,7 +46,7 @@ function Hero() {
       
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-0 lg:grid-cols-12 lg:gap-8 items-start pb-12 md:pb-20">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-forest/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <Building2 className="h-3.5 w-3.5 text-gold" /> For Business Leaders & Entrepreneurs
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
@@ -58,18 +58,18 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#programmes"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
               Explore 2026 Programmes <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#delegations"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
             >
               Corporate Delegations
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.22em] text-forest/40">
+          <div className="mt-10 flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.22em] text-forest/40">
             <span className="h-px w-10 bg-forest/30" />
             CAMBRIDGE · HOUSE OF LORDS · JUDGE BUSINESS SCHOOL
           </div>
@@ -83,7 +83,7 @@ function Hero() {
               className="h-[480px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-gold font-bold">CXOs & ENTREPRENEURS</p>
+              <p className="text-[13px] uppercase tracking-[0.2em] text-gold font-bold">CXOs & ENTREPRENEURS</p>
               <p className="mt-1 text-xl font-bold text-cream">
                 Where global business leaders come to learn, think and connect.
               </p>
@@ -109,19 +109,19 @@ function CollaboratorsBar() {
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
-      <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
+      <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
         IN COLLABORATION WITH
       </p>
       <div className="relative flex w-full">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-xs font-bold text-forest/80 uppercase tracking-widest">
+            <span key={i} className="mx-8 flex items-center text-[13px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-xs font-bold text-forest/80 uppercase tracking-widest">
+            <span key={`dup-${i}`} className="mx-8 flex items-center text-[13px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
@@ -160,11 +160,11 @@ function WhyLeadersTravel() {
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">WHY EXECUTIVES TRAVEL WITH US</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">WHY EXECUTIVES TRAVEL WITH US</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl leading-tight">
             Built for leaders preparing to <span className="italic text-gold font-serif">lead global growth.</span>
           </h2>
-          <p className="mt-6 text-sm text-forest/80 leading-relaxed max-w-3xl">
+          <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-3xl">
             Our flagship — the Global India Leadership Programme (GILP) — brings Indian CXOs to Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks, and to network with the UK-India business corridor. Our wider calendar convenes executives at Cambridge, the House of Lords and Judge Business School.
           </p>
         </div>
@@ -176,7 +176,7 @@ function WhyLeadersTravel() {
                 {r.icon}
               </div>
               <h3 className="text-base font-bold text-forest-deep">{r.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-forest/75">{r.desc}</p>
+              <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -202,7 +202,7 @@ function StatsBar() {
               {stats.map((stat, idx) => (
                 <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[9px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[11px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
                 </div>
               ))}
             </div>
@@ -257,11 +257,11 @@ function OngoingProgrammes() {
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES - 2026</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES - 2026</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             One flagship. Three ways to join.
           </h2>
-          <p className="mt-4 text-sm text-forest/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-[15px] text-forest/80 max-w-2xl mx-auto">
             Attend our flagship at Cambridge, join an invite-only convening, or bring your leadership team into a bespoke corporate workshop.
           </p>
         </div>
@@ -272,18 +272,18 @@ function OngoingProgrammes() {
               <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
+                    <span className="text-[12px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
+                    <span className="text-[12px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
                   </div>
                   
                   <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
-                  <div className="mt-3 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-forest/60">
+                  <div className="mt-3 flex items-center gap-3 text-[12px] font-bold uppercase tracking-widest text-forest/60">
                     <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
                     <span>|</span>
                     <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
                   </div>
                   
-                  <p className="mt-4 text-sm leading-relaxed text-forest/80">
+                  <p className="mt-4 text-[15px] leading-relaxed text-forest/80">
                     {p.desc}
                   </p>
                 </div>
@@ -291,7 +291,7 @@ function OngoingProgrammes() {
                 <div className="mt-8">
                   <Link
                     to={p.link}
-                    className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
+                    className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[13px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
                   >
                     VIEW THE PROGRAMME <ArrowUpRight className="h-3 w-3" />
                   </Link>
@@ -333,7 +333,7 @@ function EndToEndJourney() {
     <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO CAMBRIDGE</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO CAMBRIDGE</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             An executive journey we handle end-to-end.
           </h2>
@@ -347,7 +347,7 @@ function EndToEndJourney() {
                 <div className="h-px flex-1 bg-forest/20" />
               </div>
               <h3 className="text-base font-bold text-forest-deep">{s.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-forest/75">{s.desc}</p>
+              <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -382,7 +382,7 @@ function Testimonials() {
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by CXOs, founders and boards.
           </h2>
@@ -396,12 +396,12 @@ function Testimonials() {
             >
               <div>
                 <Quote className="h-8 w-8 text-gold/40 mb-4" />
-                <p className="text-sm leading-relaxed text-cream/90 italic">{r.quote}</p>
+                <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
               <div className="mt-8 border-t border-cream/10 pt-4">
-                <p className="text-sm font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="text-[15px] font-bold text-gold">{r.author}</p>
+                <p className="mt-1 text-[12px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
               </div>
             </div>
           ))}
@@ -450,11 +450,11 @@ function DelegationConcierge() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">FOR CORPORATE DELEGATIONS</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FOR CORPORATE DELEGATIONS</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Everything your leadership team needs — before you board.
             </h2>
-            <p className="mt-6 text-sm text-forest/80 leading-relaxed">
+            <p className="mt-6 text-[15px] text-forest/80 leading-relaxed">
               Bringing a C-suite across borders is a serious undertaking. Our concierge desk manages the details so your team arrives ready to think, learn and build — not exhausted from logistics.
             </p>
           </div>
@@ -466,7 +466,7 @@ function DelegationConcierge() {
                   {item.icon}
                 </div>
                 <h3 className="text-base font-bold text-forest-deep">{item.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-forest/75">{item.desc}</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -480,24 +480,24 @@ function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Reserve your seats for the 2026 season.
         </h2>
-        <p className="mt-6 text-sm leading-relaxed text-cream/80 max-w-xl mx-auto">
+        <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
           Cohorts are capped and typically fill six to nine months in advance. Register today and our admissions team will be in touch within two working days.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href="#programmes"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
           >
             OR VIEW ALL PROGRAMMES →
           </a>

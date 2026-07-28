@@ -40,7 +40,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Invite-Only · UK Parliament</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Invite-Only · UK Parliament</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Global Impact of Cambridge Startups
@@ -51,7 +51,7 @@ function Hero() {
             <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
               An exclusive, invite-only evening at the Palace of Westminster honouring the founders, investors and researchers behind Cambridge&rsquo;s most impactful global ventures — bringing together the UK-India business corridor under one historic roof.
             </p>
-            <div className="mt-8 flex flex-wrap gap-5 text-sm text-forest/70">
+            <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
                 <Calendar className="h-4 w-4 text-gold" /> 15 October 2026
               </span>
@@ -64,13 +64,13 @@ function Hero() {
                 href="https://www.globaledulab.com/events/house-of-lords%3A-global-impact-of-cambridge-startups"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Request Invitation <ArrowUpRight className="h-4 w-4" />
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
               >
                 Learn More
               </Link>
@@ -86,8 +86,8 @@ function Hero() {
                 <Landmark className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">UK Parliament</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Westminster</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">UK Parliament</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Westminster</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -95,8 +95,8 @@ function Hero() {
                 <Award className="h-5 w-5 text-forest-deep" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">By Invitation</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Only</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">By Invitation</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Only</p>
               </div>
             </div>
           </div>
@@ -126,8 +126,8 @@ function StatsStrip() {
               className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0"
             >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
-              <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
-              <p className="text-[12px] text-forest/55 mt-0.5">{s.sub}</p>
+              <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
+              <p className="text-[14px] text-forest/55 mt-0.5">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -160,7 +160,7 @@ function AboutEvening() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">About the Evening</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">About the Evening</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Where Cambridge meets Westminster.</h2>
@@ -171,7 +171,7 @@ function AboutEvening() {
             <div key={i} className="group bg-[#F7F5F0] rounded-3xl p-8 border border-forest/8 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-gold shadow-sm group-hover:bg-gold/10 transition-colors duration-300">{it.icon}</div>
               <h3 className="text-[16px] font-bold text-forest-deep mb-3">{it.title}</h3>
-              <p className="text-[13px] text-forest/70 leading-relaxed">{it.desc}</p>
+              <p className="text-[15px] text-forest/70 leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>
@@ -196,7 +196,7 @@ function WhatToExpect() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Evening Programme</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Evening Programme</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">An evening to remember.</h2>
@@ -204,9 +204,9 @@ function WhatToExpect() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {agenda.map((item, i) => (
             <div key={i} className="rounded-3xl border border-white/10 bg-white/5 p-8 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
-              <p className="text-[11px] font-bold text-gold uppercase tracking-[0.2em] mb-2">{item.time}</p>
+              <p className="text-[13px] font-bold text-gold uppercase tracking-[0.2em] mb-2">{item.time}</p>
               <h3 className="text-[15px] font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-[13px] text-white/65 leading-relaxed">{item.desc}</p>
+              <p className="text-[15px] text-white/65 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -228,7 +228,7 @@ function WhoAttends() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Attends</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Attends</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">A genuinely curated room.</h2>
@@ -241,7 +241,7 @@ function WhoAttends() {
               <div className="p-7">
                 <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl ${p.color} text-white shadow-lg`}>{p.icon}</div>
                 <h3 className="text-[15px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[13px] text-forest/70 leading-relaxed">{p.desc}</p>
+                <p className="text-[15px] text-forest/70 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -279,7 +279,7 @@ function PastEditions() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Voices from Past Editions</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Voices from Past Editions</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What guests say about the evening.</h2>
@@ -289,7 +289,7 @@ function PastEditions() {
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[12px] text-forest/50 mt-1">{t.role}</p>
+        <p className="text-[14px] text-forest/50 mt-1">{t.role}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
           <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
@@ -313,7 +313,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">By Invitation Only</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">By Invitation Only</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Request your invitation.</h2>
@@ -323,11 +323,11 @@ function CTA() {
             href="https://www.globaledulab.com/events/house-of-lords%3A-global-impact-of-cambridge-startups"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Request Invitation <ArrowUpRight className="h-4 w-4" />
           </a>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             Ask a Question
           </Link>
         </div>

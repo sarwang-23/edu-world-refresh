@@ -44,7 +44,7 @@ export function Nav() {
             <Link
               key={l.label}
               to={l.href}
-              className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+              className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname === l.href ? "text-forest" : "text-forest/75"
               }`}
             >
@@ -54,7 +54,7 @@ export function Nav() {
           
           {/* Programmes Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
-            <span className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname.startsWith('/programmes') || 
                 location.pathname.startsWith('/students') || 
                 location.pathname.startsWith('/past-programmes') ? "text-forest" : "text-forest/75"
@@ -68,7 +68,7 @@ export function Nav() {
                   <Link
                     key={p.label}
                     to={p.href}
-                    className="rounded-lg px-4 py-2.5 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                    className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                   >
                     {p.label}
                   </Link>
@@ -79,7 +79,7 @@ export function Nav() {
 
           {/* Explore Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
-            <span className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname === '/insights' || location.pathname === '/gallery' ? "text-forest" : "text-forest/75"
               }`}>
               Explore
@@ -91,7 +91,7 @@ export function Nav() {
                   <Link
                     key={e.label}
                     to={e.href}
-                    className="rounded-lg px-4 py-2.5 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                    className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                   >
                     {e.label}
                   </Link>
@@ -104,7 +104,7 @@ export function Nav() {
             <Link
               key={l.label}
               to={l.href}
-              className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+              className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname === l.href ? "text-forest" : "text-forest/75"
               }`}
             >
@@ -114,7 +114,7 @@ export function Nav() {
         </nav>
         <Link
           to="/contact"
-          className="hidden items-center gap-2 rounded-full bg-forest-deep px-5 py-2.5 text-[13px] font-bold tracking-wide text-gold transition-all hover:bg-forest md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-forest-deep px-5 py-2.5 text-[15px] font-bold tracking-wide text-gold transition-all hover:bg-forest md:inline-flex"
         >
           Apply Now <ArrowUpRight className="h-4 w-4" />
         </Link>

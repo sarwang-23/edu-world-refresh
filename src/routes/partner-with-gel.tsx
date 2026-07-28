@@ -67,7 +67,7 @@ function Hero() {
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[9px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
+            <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[11px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               Global Partnerships
             </span>
@@ -86,13 +86,13 @@ function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+                className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Start a Conversation <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
               >
                 Explore Opportunities <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -107,8 +107,8 @@ function Hero() {
               ].map((f, i) => (
                 <div key={i}>
                   <div className="text-gold mb-2">{f.icon}</div>
-                  <h4 className="text-[11px] font-bold text-forest-deep mb-1">{f.title}</h4>
-                  <p className="text-[10px] text-forest/60 leading-relaxed">{f.desc}</p>
+                  <h4 className="text-[13px] font-bold text-forest-deep mb-1">{f.title}</h4>
+                  <p className="text-[12px] text-forest/60 leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -127,7 +127,7 @@ function Hero() {
             {/* Stat badge */}
             <div className="absolute -bottom-6 -left-6 bg-forest-deep border border-gold/20 p-6 rounded-2xl shadow-2xl flex flex-col justify-center min-w-[160px]">
               <span className="text-3xl font-bold font-serif text-gold italic">15+</span>
-              <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-cream/70 mt-1">Countries Engaged</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-cream/70 mt-1">Countries Engaged</span>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ function ImpactStatsStrip() {
         {duplicatedStats.map((s, i) => (
           <div key={i} className="flex flex-col items-center justify-center px-8 md:px-16 w-64 md:w-80 border-r border-forest/10 shrink-0 text-center">
             <span className="text-[2.2rem] font-bold text-forest-deep">{s.v}</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/50 mt-1">{s.l}</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/50 mt-1">{s.l}</span>
           </div>
         ))}
       </div>
@@ -212,7 +212,7 @@ function Opportunities() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Where We Collaborate</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Where We Collaborate</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-[1.1]">Partnership Opportunities</h2>
@@ -248,7 +248,7 @@ function Opportunities() {
                 to={o.link} 
                 className="mt-auto inline-flex items-center gap-3 border-t border-forest/10 pt-6 group-hover:border-gold/30 transition-colors duration-500"
               >
-                <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-forest-deep group-hover:text-gold transition-colors duration-400">
+                <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-forest-deep group-hover:text-gold transition-colors duration-400">
                   Explore
                 </span>
                 <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-forest/20 group-hover:border-gold group-hover:bg-gold transition-all duration-400 overflow-hidden">
@@ -286,7 +286,7 @@ function WhyPartner() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">The GEL Difference</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">The GEL Difference</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white mb-5 leading-[1.1]">Why partner with GEL?</h2>
@@ -302,7 +302,7 @@ function WhyPartner() {
                 {r.icon}
               </div>
               <h3 className="text-[15px] font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">{r.title}</h3>
-              <p className="text-[12px] text-white/60 leading-[1.7]">{r.desc}</p>
+              <p className="text-[14px] text-white/60 leading-[1.7]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -326,7 +326,7 @@ function PartnershipJourney() {
         <div className="text-center max-w-2xl mx-auto mb-20">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-[1.1]">Our partnership journey</h2>
@@ -346,9 +346,9 @@ function PartnershipJourney() {
                 <div className="w-16 h-16 rounded-full bg-forest-deep flex items-center justify-center text-gold mb-6 border-4 border-cream shadow-lg group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all duration-300 relative z-10">
                   {s.icon}
                 </div>
-                <span className="text-[9px] font-black text-gold/50 tracking-[0.2em] mb-1">{s.num}</span>
+                <span className="text-[11px] font-black text-gold/50 tracking-[0.2em] mb-1">{s.num}</span>
                 <h4 className="text-[14px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{s.title}</h4>
-                <p className="text-[11px] text-forest/65 leading-[1.65] px-2">{s.desc}</p>
+                <p className="text-[13px] text-forest/65 leading-[1.65] px-2">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -373,7 +373,7 @@ function TrustedByMarquee() {
         <text x="63" y="48" fontSize="14" textAnchor="middle" fill="#f5c842">♞</text>
         <path d="M10,4 H80 V50 Q45,70 45,70 Q45,70 10,50 Z" fill="none" stroke="#c8a030" strokeWidth="1.5"/>
       </svg>
-      <span className="text-[10px] font-black text-[#003b5c] text-center leading-tight tracking-wider uppercase mt-2">University of<br/>Cambridge</span>
+      <span className="text-[12px] font-black text-[#003b5c] text-center leading-tight tracking-wider uppercase mt-2">University of<br/>Cambridge</span>
     </div>,
     // Girton
     <div className="flex flex-col items-center justify-center gap-1 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -392,8 +392,8 @@ function TrustedByMarquee() {
         <path d="M6,2 H54 V34 Q30,50 30,50 Q30,50 6,34 Z" fill="none" stroke="#1a6b2a" strokeWidth="1"/>
       </svg>
       <div className="text-center leading-none mt-2">
-        <div className="text-[11px] font-black text-[#1a6b2a] tracking-wide">GIRTON</div>
-        <div className="text-[9px] font-black text-[#111] tracking-widest">COLLEGE</div>
+        <div className="text-[13px] font-black text-[#1a6b2a] tracking-wide">GIRTON</div>
+        <div className="text-[11px] font-black text-[#111] tracking-widest">COLLEGE</div>
       </div>
     </div>,
     // King's E-Lab
@@ -406,7 +406,7 @@ function TrustedByMarquee() {
         <text x="54" y="17" fontSize="7.5" fill="#1a1a2e" fontWeight="900" textAnchor="middle">KING'S</text>
         <text x="54" y="27" fontSize="7" fill="#c8a951" fontWeight="900" textAnchor="middle">E-LAB</text>
       </svg>
-      <span className="text-[10px] font-bold text-forest-deep text-center leading-tight mt-1">King's E-Lab</span>
+      <span className="text-[12px] font-bold text-forest-deep text-center leading-tight mt-1">King's E-Lab</span>
     </div>,
     // CISL
     <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -423,7 +423,7 @@ function TrustedByMarquee() {
         <text x="54" y="25" fontSize="4" fill="#555" textAnchor="middle">Cambridge</text>
         <text x="54" y="32" fontSize="3.8" fill="#555" textAnchor="middle">Sustainability</text>
       </svg>
-      <span className="text-[10px] font-bold text-forest-deep text-center leading-tight mt-1">Cambridge Inst.<br/>Sustainability</span>
+      <span className="text-[12px] font-bold text-forest-deep text-center leading-tight mt-1">Cambridge Inst.<br/>Sustainability</span>
     </div>,
     // AUS
     <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -436,7 +436,7 @@ function TrustedByMarquee() {
         <text x="56" y="25" fontSize="6" fill="#1a3a6b" fontWeight="800" textAnchor="middle">University</text>
         <text x="56" y="33" fontSize="5.5" fill="#888" textAnchor="middle">of Sharjah</text>
       </svg>
-      <span className="text-[10px] font-bold text-forest-deep text-center leading-tight mt-1">American University<br/>of Sharjah</span>
+      <span className="text-[12px] font-bold text-forest-deep text-center leading-tight mt-1">American University<br/>of Sharjah</span>
     </div>,
     // KREA
     <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -448,7 +448,7 @@ function TrustedByMarquee() {
         <text x="56" y="19" fontSize="10" fill="#d44000" fontWeight="900" textAnchor="middle" fontFamily="serif">KREA</text>
         <text x="56" y="30" fontSize="6" fill="#888" textAnchor="middle">University</text>
       </svg>
-      <span className="text-[10px] font-bold text-forest-deep text-center leading-tight mt-1">KREA University</span>
+      <span className="text-[12px] font-bold text-forest-deep text-center leading-tight mt-1">KREA University</span>
     </div>,
     // Galgotias
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -463,7 +463,7 @@ function TrustedByMarquee() {
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="h-px w-6 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Trusted By</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Trusted By</span>
           <div className="h-px w-6 bg-gold" />
         </div>
         <h3 className="text-[1.8rem] font-bold text-forest-deep">Our partners and collaborators</h3>
@@ -494,7 +494,7 @@ function TestimonialSection() {
         <div className="text-center mb-12 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-6 bg-[#C19842]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C19842]">Partner Success</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-[#C19842]">Partner Success</span>
           </div>
           <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep leading-[1.1] mb-8 tracking-tight">
             Partnering for <span className="font-serif italic text-[#C19842]">excellence.</span>
@@ -523,7 +523,7 @@ function TestimonialSection() {
               className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border border-forest/5 mb-5"
             />
             <h4 className="text-[17px] md:text-[19px] font-bold text-forest-deep mb-1">Dr. Ted Laursen</h4>
-            <p className="text-[10px] md:text-[11px] text-forest/50 uppercase tracking-[0.2em] font-extrabold leading-[1.6]">
+            <p className="text-[12px] md:text-[13px] text-forest/50 uppercase tracking-[0.2em] font-extrabold leading-[1.6]">
               Chancellor, American University of Sharjah
             </p>
           </div>
@@ -543,7 +543,7 @@ function CTA() {
         
         <div className="flex-1 w-full max-w-3xl">
           <div className="mb-6">
-            <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#C19842]">
+            <span className="text-[12px] md:text-[13px] font-extrabold uppercase tracking-[0.25em] text-[#C19842]">
               Let's Begin
             </span>
           </div>

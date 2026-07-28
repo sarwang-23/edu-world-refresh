@@ -38,7 +38,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Bali Green School Immersive Programme
@@ -49,7 +49,7 @@ function Hero() {
             <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
               The Bali Green School Immersive Programme is a transformative 5-day experience at the legendary Green School in Ubud, Bali — the world's most celebrated sustainable school. Discover nature-based learning, bamboo architecture, circular design, student-led projects and curriculum models that are redefining education globally.
             </p>
-            <div className="mt-8 flex flex-wrap gap-5 text-sm text-forest/70">
+            <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
                 <Calendar className="h-4 w-4 text-gold" /> 12th–16th May, 2026
               </span>
@@ -60,13 +60,13 @@ function Hero() {
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
                 href="#schedule"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
               >
                 View Schedule
               </a>
@@ -78,7 +78,7 @@ function Hero() {
                 <div className="text-center text-white p-8">
                   <TreePine className="h-20 w-20 mx-auto mb-4 opacity-80" />
                   <p className="text-lg font-semibold opacity-90">Green School, Bali</p>
-                  <p className="text-sm opacity-70 mt-1">Ubud, Indonesia</p>
+                  <p className="text-[15px] opacity-70 mt-1">Ubud, Indonesia</p>
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/20 to-transparent" />
@@ -88,8 +88,8 @@ function Hero() {
                 <Leaf className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">GEL Certified</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Certificate of Participation</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">GEL Certified</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Certificate of Participation</p>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ function ExperienceSection() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">What You Will Experience</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What You Will Experience</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Experience education, the Green School way!</h2>
@@ -135,7 +135,7 @@ function ExperienceSection() {
               <h3 className="text-lg font-bold text-forest-deep mb-4">{p.title}</h3>
               <ul className="space-y-2.5">
                 {p.items.map((item, k) => (
-                  <li key={k} className="flex items-start gap-2.5 text-[13px] text-forest/70 leading-relaxed">
+                  <li key={k} className="flex items-start gap-2.5 text-[15px] text-forest/70 leading-relaxed">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />{item}
                   </li>
                 ))}
@@ -161,7 +161,7 @@ function WhoShouldEnroll() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Who should enroll for this programme?</h2>
@@ -173,7 +173,7 @@ function WhoShouldEnroll() {
               <div className="p-8">
                 <div className={"mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl " + p.color + " text-white shadow-lg"}>{p.icon}</div>
                 <h3 className="text-[17px] font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[13px] text-white/70 leading-relaxed">{p.desc}</p>
+                <p className="text-[15px] text-white/70 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -197,18 +197,18 @@ function Schedule() {
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programme Itinerary</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Itinerary</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Programme Schedule <span className="text-forest/40 font-medium text-2xl">(Indicative)</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-4">
           {days.map((d, i) => (
             <div key={i} className={"rounded-2xl border p-6 transition-all duration-300 " + (i === 2 ? 'border-gold/40 bg-white shadow-lg ring-1 ring-gold/20' : 'border-forest/10 bg-white hover:border-gold/30 hover:shadow-md')}>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/40">{d.day}</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/40">{d.day}</span>
               <h3 className="text-[15px] font-bold text-gold mt-1 mb-3">{d.location}</h3>
               <ul className="space-y-2">
                 {d.items.map((it, k) => (
-                  <li key={k} className="flex items-start gap-2 text-[12px] text-forest/70 leading-relaxed">
+                  <li key={k} className="flex items-start gap-2 text-[14px] text-forest/70 leading-relaxed">
                     <span className="mt-1.5 h-1 w-1 rounded-full bg-forest/30 shrink-0" />{it}
                   </li>
                 ))}
@@ -216,7 +216,7 @@ function Schedule() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-[12px] italic text-forest/40">*This is a preliminary itinerary. A complete itinerary will be provided 30 days before the programme.</p>
+        <p className="mt-8 text-[14px] italic text-forest/40">*This is a preliminary itinerary. A complete itinerary will be provided 30 days before the programme.</p>
       </div>
     </section>
   )
@@ -234,7 +234,7 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What participants say about our programme?</h2>
@@ -244,7 +244,7 @@ function Testimonials() {
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[12px] text-forest/50 mt-1">{t.school}</p>
+        <p className="text-[14px] text-forest/50 mt-1">{t.school}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
           <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
@@ -291,7 +291,7 @@ function ProgrammeDetails() {
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programme Details</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Details</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Everything you need to know.</h2>
         </div>
@@ -299,7 +299,7 @@ function ProgrammeDetails() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {details.map((d, i) => (
             <div key={i} className="rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/30 hover:shadow-md transition-all duration-300">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
               <p className="text-[15px] font-bold text-forest-deep">{d.value}</p>
             </div>
           ))}
@@ -309,9 +309,9 @@ function ProgrammeDetails() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl p-8 bg-forest-deep text-white border border-forest-deep relative overflow-hidden shadow-xl">
                <div className="absolute top-6 right-6 text-gold opacity-50"><Star className="h-6 w-6 fill-gold"/></div>
-               <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fees</p>
+               <p className="text-[13px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fees</p>
                <p className="text-[24px] font-bold text-white mb-3">Early bird starts at 1,500 USD</p>
-               <span className="inline-block text-[12px] font-semibold text-white/70">✦ Limited to 20 participants</span>
+               <span className="inline-block text-[14px] font-semibold text-white/70">✦ Limited to 20 participants</span>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm flex-1">
@@ -346,8 +346,8 @@ function ProgrammeDetails() {
             <div className="relative text-center text-white p-8">
               <TreePine className="h-24 w-24 mx-auto mb-6 opacity-80" />
               <p className="text-2xl font-bold mb-2">Green School Bali</p>
-              <p className="text-sm opacity-70">The world's most celebrated sustainable school</p>
-              <p className="text-sm opacity-60 mt-2">Ubud, Indonesia</p>
+              <p className="text-[15px] opacity-70">The world's most celebrated sustainable school</p>
+              <p className="text-[15px] opacity-60 mt-2">Ubud, Indonesia</p>
             </div>
           </div>
         </div>
@@ -364,16 +364,16 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Enroll</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Enroll</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Bring the Green School spirit to your institution.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications open for the May 2026 cohort. Limited to 20 participants — secure your seat today.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             View All Programmes
           </Link>
         </div>

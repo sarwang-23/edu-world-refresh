@@ -40,7 +40,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-6 pb-20 pt-0 md:grid-cols-12 md:pb-28">
         <div className="md:col-span-7 lg:col-span-7 xl:col-span-7 pr-0 md:pr-4">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-4 py-1.5 text-[13px] font-bold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
             <Sparkles className="h-3.5 w-3.5 text-gold" /> ABOUT GLOBAL EDUCATION LAB
           </span>
           <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-forest-deep md:text-[3.5rem] lg:text-[4rem] xl:text-[5rem]">
@@ -57,18 +57,18 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#founder-story"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-[15px] font-bold tracking-wide text-white transition-all hover:bg-forest-deep"
             >
               Our Story <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#impact"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 bg-transparent px-8 py-3.5 text-sm font-bold tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 bg-transparent px-8 py-3.5 text-[15px] font-bold tracking-wide text-forest transition-all hover:bg-forest/5"
             >
               Our Impact
             </a>
           </div>
-          <div className="mt-16 flex items-center gap-3 text-sm font-medium uppercase tracking-[0.22em] text-forest/60">
+          <div className="mt-16 flex items-center gap-3 text-[15px] font-medium uppercase tracking-[0.22em] text-forest/60">
             <span className="h-px w-10 bg-forest/30" />
             CAMBRIDGE ┬╖ GLOBAL ┬╖ SINCE 2019
           </div>
@@ -81,7 +81,7 @@ function Hero() {
               className="h-[500px] md:h-[650px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">SINCE 2019</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">SINCE 2019</p>
               <p className="mt-2 text-3xl font-serif italic text-cream pb-1 leading-tight">
                 Cambridge to the world.
               </p>
@@ -98,7 +98,7 @@ function Foundations() {
     <section className="border-b border-border/60 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="text-[15px] font-medium uppercase tracking-[0.22em] text-gold">
             FOUNDATIONS
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-forest-deep md:text-5xl">
@@ -110,7 +110,7 @@ function Foundations() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-cream">
               <Target className="h-6 w-6" />
             </div>
-            <h3 className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-gold">OUR MISSION</h3>
+            <h3 className="mt-8 text-[15px] font-bold uppercase tracking-[0.18em] text-gold">OUR MISSION</h3>
             <p className="mt-4 text-base leading-relaxed text-forest/80">
               To deliver transformative educational experiences across every stage of a learner's
               life ΓÇö empowering people to lead, innovate and create impact.
@@ -121,7 +121,7 @@ function Foundations() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-cream">
               <Eye className="h-6 w-6" />
             </div>
-            <h3 className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-gold">OUR VISION</h3>
+            <h3 className="mt-8 text-[15px] font-bold uppercase tracking-[0.18em] text-gold">OUR VISION</h3>
             <p className="mt-4 text-base leading-relaxed text-forest/80">
               A world where education is experiential, inclusive and borderless ΓÇö unlocking
               potential and creating a better future for all.
@@ -132,8 +132,8 @@ function Foundations() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-cream">
               <HandHeart className="h-6 w-6" />
             </div>
-            <h3 className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-gold">OUR VALUES</h3>
-            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-forest/80">
+            <h3 className="mt-8 text-[15px] font-bold uppercase tracking-[0.18em] text-gold">OUR VALUES</h3>
+            <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-forest/80">
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
                 Excellence in Everything We Do
@@ -190,7 +190,7 @@ function AboutCompany() {
     <section className="border-b border-border/60 bg-forest-deep text-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+          <p className="text-[15px] font-medium uppercase tracking-[0.22em] text-gold">
             WHO WE ARE
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -221,13 +221,13 @@ function AboutCompany() {
                       <ArrowUpRight className="h-4 w-4" />
                     </div>
                   ) : (
-                    <span className="text-xs font-medium tracking-[0.2em] text-cream/50 transition-colors duration-300 group-hover:text-cream/70">
+                    <span className="text-[13px] font-medium tracking-[0.2em] text-cream/50 transition-colors duration-300 group-hover:text-cream/70">
                       {p.tag}
                     </span>
                   )}
                 </div>
                 <h3 className="mt-8 text-2xl font-bold tracking-tight">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream/75">{p.body}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-cream/75">{p.body}</p>
               </div>
             );
           })}
@@ -245,7 +245,7 @@ function FounderStory() {
         {/* Section Label */}
         <div className="mb-16 flex items-center gap-4">
           <span className="h-px w-12 bg-gold" />
-          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">Our Founder's Story</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">Our Founder's Story</p>
         </div>
 
         <div className="grid gap-12 md:grid-cols-12 md:items-start">
@@ -278,7 +278,7 @@ function FounderStory() {
             {/* Credentials */}
             <div className="mt-10 flex flex-wrap gap-2">
               {["Cambridge Alumnus & Fellow, CJBS", "14+ Years Global Experience", "Ecosystem Builder", "People & Purpose Driven"].map((tag) => (
-                <span key={tag} className="rounded-full border border-forest/15 bg-white px-4 py-1.5 text-[11px] font-semibold tracking-wide text-forest-deep shadow-sm">
+                <span key={tag} className="rounded-full border border-forest/15 bg-white px-4 py-1.5 text-[13px] font-semibold tracking-wide text-forest-deep shadow-sm">
                   {tag}
                 </span>
               ))}
@@ -299,9 +299,9 @@ function FounderStory() {
                 <p className="font-serif text-2xl italic text-cream">Suyash Bharti</p>
                 <div className="mt-2 flex items-center gap-2">
                   <span className="h-px w-6 bg-gold" />
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Founder & Director</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold">Founder & Director</p>
                 </div>
-                <p className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-cream/60">Cambridge Alumnus & Fellow, CJBS</p>
+                <p className="mt-1.5 text-[12px] uppercase tracking-[0.18em] text-cream/60">Cambridge Alumnus & Fellow, CJBS</p>
               </div>
             </div>
           </div>
@@ -317,7 +317,7 @@ function Journey() {
   return (
     <section className="border-b border-border/60 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+        <p className="text-[15px] font-medium uppercase tracking-[0.22em] text-gold">
           OUR JOURNEY
         </p>
         <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-forest-deep md:text-5xl">
@@ -342,13 +342,13 @@ function Journey() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white border-2 border-forest/15 text-forest/50 transition-colors group-hover:border-gold group-hover:text-gold shadow-sm">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-gold border-[3px] border-cream text-[10px] font-bold text-forest-deep">
+                  <div className="absolute -bottom-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-gold border-[3px] border-cream text-[12px] font-bold text-forest-deep">
                     0{idx + 1}
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-forest-deep">{item.year}</h3>
-                <p className="mt-2 text-xs font-bold uppercase tracking-wider text-forest-deep leading-relaxed">{item.title}</p>
-                <p className="mt-1 text-xs text-forest/70">{item.desc}</p>
+                <p className="mt-2 text-[13px] font-bold uppercase tracking-wider text-forest-deep leading-relaxed">{item.title}</p>
+                <p className="mt-1 text-[13px] text-forest/70">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -362,7 +362,7 @@ function Team() {
   return (
     <section className="border-b border-border/60 bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+        <p className="text-[15px] font-medium uppercase tracking-[0.22em] text-gold">
           OUR TEAM & ECOSYSTEM
         </p>
         <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-forest-deep md:text-5xl">
@@ -383,14 +383,14 @@ function Team() {
                 <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 backdrop-blur text-forest-deep shadow-sm">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-gold text-xs font-bold text-forest-deep shadow-sm">
+                <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-gold text-[13px] font-bold text-forest-deep shadow-sm">
                   {item.tag}
                 </div>
               </div>
               <div className="flex flex-col flex-grow p-6 md:p-8">
                 <h3 className="text-lg font-bold text-forest-deep">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-forest/75 flex-grow">{item.desc}</p>
-                <Link to={item.link} className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-gold transition-colors hover:text-gold/80">
+                <p className="mt-3 text-[15px] leading-relaxed text-forest/75 flex-grow">{item.desc}</p>
+                <Link to={item.link} className="mt-6 inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.15em] text-gold transition-colors hover:text-gold/80">
                   LEARN MORE <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -414,7 +414,7 @@ function Impact() {
   return (
     <section id="impact" className="border-b border-border/60 bg-forest-deep overflow-hidden">
       <div className="mx-auto max-w-7xl py-10 md:py-14 text-center relative">
-        <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold mb-10 px-6">
+        <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-10 px-6">
           OUR GLOBAL IMPACT, IN NUMBERS
         </p>
         
@@ -431,7 +431,7 @@ function Impact() {
                 {stats.map((stat, i) => (
                   <div key={`${arrayIndex}-${i}`} className="flex items-center gap-4 text-left">
                     <span className="text-4xl md:text-[3rem] font-bold tracking-tight text-cream">{stat.num}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-cream/70 max-w-[90px] leading-snug">{stat.label}</span>
+                    <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-cream/70 max-w-[90px] leading-snug">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -448,13 +448,13 @@ function Cta() {
     <section className="bg-forest-deep py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 items-end gap-12 md:gap-20">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold">FROM CAMBRIDGE TO THE WORLD</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold">FROM CAMBRIDGE TO THE WORLD</p>
           <h2 className="mt-4 text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight text-cream">
             Learn <span className="text-cream">experientially.</span><br />
             Innovate <span className="text-cream">boldly.</span><br />
             <span className="text-gold">Create impact.</span>
           </h2>
-          <p className="mt-6 text-sm text-cream/80 max-w-[320px] leading-relaxed">
+          <p className="mt-6 text-[15px] text-cream/80 max-w-[320px] leading-relaxed">
             Global Education Lab empowers learners, educators and leaders to build a better future. Let's start the conversation.
           </p>
         </div>

@@ -64,7 +64,7 @@ function PartnersBar() {
 
   return (
     <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
-      <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
+      <p className="text-center text-[12px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
         PARTNERED WITH THE WORLD'S LEADING UNIVERSITY ECOSYSTEMS
       </p>
       <div className="relative flex overflow-hidden">
@@ -78,7 +78,7 @@ function PartnersBar() {
           {items.map((partner, idx) => (
             <span
               key={idx}
-              className="whitespace-nowrap text-sm font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
+              className="whitespace-nowrap text-[15px] font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
             >
               {partner}
               <span className="ml-14 text-gold/40 select-none">✦</span>
@@ -99,7 +99,7 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start">
         {/* Text Content */}
         <div className="flex flex-col justify-center lg:col-span-7 pt-0">
-          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-forest/70 mb-8 w-fit">
+          <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest/70 mb-8 w-fit">
             <BookOpen className="h-3.5 w-3.5 text-gold" />
             INSIGHTS & RESEARCH
           </div>
@@ -117,20 +117,20 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
               Browse Publications
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
             >
               Featured White Paper
             </Link>
           </div>
 
-          <div className="mt-16 flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-forest/40">
+          <div className="mt-16 flex items-center gap-4 text-[13px] font-bold uppercase tracking-widest text-forest/40">
             <span className="h-px w-8 bg-forest/20"></span>
             CAMBRIDGE · LONDON · BALI · HELSINKI
           </div>
@@ -148,14 +148,14 @@ function Hero() {
             
             {/* Image Text Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-2">LATEST EDITION</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold mb-2">LATEST EDITION</p>
               <p className="text-white font-bold text-xl leading-snug">White Paper — Cambridge, March</p>
             </div>
           </div>
           
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -left-6 z-30 rounded-2xl border border-forest/10 bg-white p-6 shadow-xl w-40">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-forest/40 mb-1">PUBLICATIONS</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-forest/40 mb-1">PUBLICATIONS</p>
             <p className="text-2xl font-bold text-forest-deep">3 · 2026</p>
           </div>
         </div>
@@ -192,7 +192,7 @@ function ResearchThemes() {
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">RESEARCH THEMES</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">RESEARCH THEMES</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             Four lenses on a changing world.
           </h2>
@@ -209,7 +209,7 @@ function ResearchThemes() {
                 {t.icon}
               </div>
               <h3 className="text-base font-bold text-forest-deep">{t.title}</h3>
-              <p className="mt-3 text-xs leading-relaxed text-forest/75">{t.desc}</p>
+              <p className="mt-3 text-[13px] leading-relaxed text-forest/75">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -224,20 +224,20 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-6">FEATURED WHITE PAPER · MARCH 2026</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-6">FEATURED WHITE PAPER · MARCH 2026</p>
             <h2 className="text-4xl font-bold tracking-tight text-cream md:text-6xl leading-[1.1]">
               Global India Leadership Programme — <span className="font-serif italic text-gold">Cambridge 2026.</span>
             </h2>
-            <p className="mt-6 text-sm leading-relaxed text-cream/80 max-w-md">
+            <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-md">
               Perspectives from global business leaders and Judge Business School faculty on how artificial intelligence, sustainability, governance and shifting economic dynamics are redefining leadership.
             </p>
             
             <div className="mt-10 flex flex-wrap items-center gap-6">
-              <button onClick={() => onDownload("/report.pdf")} className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-forest-deep transition-colors hover:bg-gold/90">
+              <button onClick={() => onDownload("/report.pdf")} className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[15px] font-bold text-forest-deep transition-colors hover:bg-gold/90">
                 Access Full Report
                 <Download className="h-4 w-4" />
               </button>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-cream/40">JUDGE BUSINESS SCHOOL · CAMBRIDGE</span>
+              <span className="text-[12px] font-bold uppercase tracking-widest text-cream/40">JUDGE BUSINESS SCHOOL · CAMBRIDGE</span>
             </div>
           </div>
           
@@ -250,7 +250,7 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full">
-                <span className="inline-block px-2 py-1 bg-gold/20 text-gold text-[10px] font-bold uppercase tracking-widest rounded mb-3 border border-gold/30">PRIMARY PAPER</span>
+                <span className="inline-block px-2 py-1 bg-gold/20 text-gold text-[12px] font-bold uppercase tracking-widest rounded mb-3 border border-gold/30">PRIMARY PAPER</span>
                 <p className="text-white font-bold text-xl md:text-2xl">Leadership in the Age of AI, Sustainability & Global Change</p>
               </div>
             </div>
@@ -297,12 +297,12 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">PUBLICATIONS ARCHIVE</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">PUBLICATIONS ARCHIVE</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
               Latest analysis & reports.
             </h2>
           </div>
-          <Link to="/insights" className="text-xs font-bold uppercase tracking-widest text-forest-deep hover:text-forest flex items-center gap-1 group">
+          <Link to="/insights" className="text-[13px] font-bold uppercase tracking-widest text-forest-deep hover:text-forest flex items-center gap-1 group">
             FULL ARCHIVE 
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
@@ -312,10 +312,10 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
           {reports.map((r, idx) => (
             <div key={idx} className="group flex flex-col rounded-2xl bg-[#F7F5F0] border border-forest/5 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[12px] font-bold uppercase tracking-widest px-2 py-1 rounded">
                   {r.num}
                 </div>
-                <div className="absolute top-4 right-4 z-10 bg-gold text-forest-deep text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1">
+                <div className="absolute top-4 right-4 z-10 bg-gold text-forest-deep text-[12px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1">
                   <BookOpen className="h-3 w-3" /> PDF
                 </div>
                 <img 
@@ -325,18 +325,18 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
                 />
               </div>
               <div className="flex flex-col flex-1 p-8">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">{r.category}</p>
+                <p className="text-[12px] font-bold uppercase tracking-widest text-gold mb-3">{r.category}</p>
                 <h3 className="text-lg font-bold text-forest-deep mb-3 leading-snug">{r.title}</h3>
-                <p className="text-xs text-forest/75 leading-relaxed mb-8 flex-1">{r.desc}</p>
+                <p className="text-[13px] text-forest/75 leading-relaxed mb-8 flex-1">{r.desc}</p>
                 
                 <div className="flex items-center justify-between border-t border-forest/10 pt-4 mt-auto">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40">{r.date}</span>
+                  <span className="text-[12px] font-bold uppercase tracking-widest text-forest/40">{r.date}</span>
                   {r.downloadLink !== "#" ? (
-                    <button onClick={() => onDownload(r.downloadLink)} className="text-[10px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
+                    <button onClick={() => onDownload(r.downloadLink)} className="text-[12px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
                       DOWNLOAD <Download className="h-3 w-3" />
                     </button>
                   ) : (
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-forest/40 flex items-center gap-1">
+                    <span className="text-[12px] font-bold uppercase tracking-widest text-forest/40 flex items-center gap-1">
                       DOWNLOAD <Download className="h-3 w-3" />
                     </span>
                   )}
@@ -356,7 +356,7 @@ function TheBriefing() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid gap-12 md:grid-cols-2 items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-4">THE BRIEFING</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-4">THE BRIEFING</p>
             <h2 className="text-4xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Proprietary<br />analysis,<br />
               <span className="font-serif italic text-gold">twice a month.</span>
@@ -368,7 +368,7 @@ function TheBriefing() {
               <div className="flex-shrink-0 mt-1 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest-deep text-white">
                 <Mail className="h-5 w-5" />
               </div>
-              <p className="text-sm font-medium text-forest-deep leading-relaxed">
+              <p className="text-[15px] font-medium text-forest-deep leading-relaxed">
                 Receive our white papers, executive briefings and programme insights before they're published anywhere else.
               </p>
             </div>
@@ -377,14 +377,14 @@ function TheBriefing() {
               <input 
                 type="email" 
                 placeholder="Professional email" 
-                className="flex-1 rounded-full border border-forest/20 bg-transparent px-5 py-3 text-sm focus:border-forest-deep focus:outline-none focus:ring-1 focus:ring-forest-deep"
+                className="flex-1 rounded-full border border-forest/20 bg-transparent px-5 py-3 text-[15px] focus:border-forest-deep focus:outline-none focus:ring-1 focus:ring-forest-deep"
               />
-              <button type="submit" className="flex items-center justify-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-forest">
+              <button type="submit" className="flex items-center justify-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[15px] font-bold text-white transition-colors hover:bg-forest">
                 Subscribe <ArrowUpRight className="h-4 w-4" />
               </button>
             </form>
             
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-forest/50">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-bold uppercase tracking-widest text-forest/50">
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> NO SPAM</span>
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> TWICE A MONTH</span>
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> UNSUBSCRIBE ANYTIME</span>
@@ -402,7 +402,7 @@ function CTA() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-[15px] font-medium uppercase tracking-[0.22em] text-gold">
               Insights & Research
             </p>
             <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
@@ -422,7 +422,7 @@ function CTA() {
               <span className="text-lg font-bold tracking-tight">Partner With Us</span>
               <ArrowUpRight className="h-6 w-6" />
             </Link>
-            <p className="mt-4 text-center text-xs uppercase tracking-[0.2em] text-cream/60">
+            <p className="mt-4 text-center text-[13px] uppercase tracking-[0.2em] text-cream/60">
               hello@globaledulab.com
             </p>
           </div>
@@ -458,20 +458,20 @@ function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
             <Download className="h-6 w-6 text-gold" />
           </div>
           <h3 className="text-2xl font-bold text-forest-deep font-serif">Access Full Report</h3>
-          <p className="text-sm text-forest/70 mt-2">Please provide your details to download the report.</p>
+          <p className="text-[15px] text-forest/70 mt-2">Please provide your details to download the report.</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Full Name</label>
-            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Jane Doe" />
+            <label className="block text-[13px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Full Name</label>
+            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Jane Doe" />
           </div>
           <div>
-            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Email</label>
-            <input required type="email" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="jane@example.com" />
+            <label className="block text-[13px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Email</label>
+            <input required type="email" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="jane@example.com" />
           </div>
           <div>
-            <label className="block text-xs font-bold text-forest-deep uppercase tracking-widest mb-1.5">Organisation</label>
-            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Company or Institution" />
+            <label className="block text-[13px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Organisation</label>
+            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Company or Institution" />
           </div>
           <button type="submit" className="w-full mt-6 bg-gold text-forest-deep font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 transition-colors hover:bg-gold/90">
             Download PDF <ArrowUpRight className="h-4 w-4" />

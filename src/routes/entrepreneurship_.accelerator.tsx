@@ -37,7 +37,7 @@ function Hero() {
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gold">12-Month Hybrid Programme</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.28em] text-gold">12-Month Hybrid Programme</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
@@ -58,7 +58,7 @@ function Hero() {
                 { icon: <Globe2 className="h-4 w-4" />, label: 'Hybrid Format' },
                 { icon: <Building2 className="h-4 w-4" />, label: 'Investor Access' },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[11px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[13px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
@@ -68,7 +68,7 @@ function Hero() {
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Apply for Next Cohort
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -87,8 +87,8 @@ function Hero() {
                 <Rocket className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">Fast-Track Growth</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Scale your venture</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Fast-Track Growth</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Scale your venture</p>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ function FeaturesStrip() {
         {repeated.map((f, i) => (
           <div key={i} className="flex flex-col items-center text-center gap-3 px-16 min-w-[250px] shrink-0 border-r border-forest/10 last:border-r-0">
             <div className="text-gold">{f.icon}</div>
-            <h4 className="text-[13px] font-bold text-forest-deep">{f.title}</h4>
+            <h4 className="text-[15px] font-bold text-forest-deep">{f.title}</h4>
           </div>
         ))}
       </div>
@@ -134,7 +134,7 @@ function DetailsSection() {
         <div>
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programme Overview</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Overview</span>
           </div>
           <h2 className="text-[2.2rem] font-bold text-forest-deep leading-tight mb-6">Designed for rapid, sustainable scale.</h2>
           <p className="text-[15px] text-forest/70 leading-relaxed mb-8">
@@ -172,7 +172,7 @@ function BottomCTA() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl"
+            className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl"
           >
             Apply Now
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />

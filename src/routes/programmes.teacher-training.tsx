@@ -36,7 +36,7 @@ function Page() {
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-48">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">For K-12 Teachers</p>
+            <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">For K-12 Teachers</p>
             <h1 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">Transform your teaching, the Cambridge way.</h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 md:text-xl">
               In collaboration with seasoned academics from the University of Cambridge, we pioneer a new era in professional teacher training — blending academic expertise with real-world application.
@@ -46,7 +46,7 @@ function Page() {
       </section>
       <section className="border-b border-border/60 bg-cream">
         <div className="mx-auto max-w-7xl px-6 py-24">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Why Our Teacher Training</p>
+          <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">Why Our Teacher Training</p>
           <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Six reasons teachers choose us.</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {why.map((it, i) => (
@@ -61,17 +61,17 @@ function Page() {
       </section>
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Ongoing Programmes · 2025–2026</p>
+          <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">Ongoing Programmes · 2025–2026</p>
           <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Enrol in your next course.</h2>
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {courses.map((it, i) => (
               <a key={i} href="https://www.globaledulab.com/applynow" target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between rounded-3xl border border-forest/10 bg-cream/40 p-10 transition-all hover:bg-cream/70 hover:shadow-lg">
                 <div>
-                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-gold">{it.when}</p>
+                  <p className="text-[15px] font-medium uppercase tracking-[0.2em] text-gold">{it.when}</p>
                   <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep group-hover:text-gold transition-colors">{it.t}</h3>
                   <p className="mt-4 text-forest/70 leading-relaxed">{it.d}</p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-xs group-hover:text-gold transition-colors">
+                <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-[13px] group-hover:text-gold transition-colors">
                   Read More <ArrowUpRight className="h-4 w-4" />
                 </div>
               </a>
@@ -83,7 +83,7 @@ function Page() {
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-4xl font-bold text-cream md:text-5xl">Level up your practice.</h2>
           <p className="mt-6 text-lg text-cream/80">Join thousands of teachers already growing with Global Education Lab.</p>
-          <a href="https://www.globaledulab.com/forteachers" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+          <a href="https://www.globaledulab.com/forteachers" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>

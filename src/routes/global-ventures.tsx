@@ -88,7 +88,7 @@ function Hero() {
             {/* Label */}
             <div className="inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Global Ventures Programme</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Global Ventures Programme</span>
             </div>
 
             {/* Headline */}
@@ -106,7 +106,7 @@ function Hero() {
               {pills.map((p, i) => (
                 <div key={i} className="flex items-center gap-2 rounded-full border border-forest/12 bg-white/80 backdrop-blur-sm px-4 py-2 shadow-sm">
                   <span className="text-gold/80">{p.icon}</span>
-                  <span className="text-[11px] font-medium text-forest/70">{p.label}</span>
+                  <span className="text-[13px] font-medium text-forest/70">{p.label}</span>
                 </div>
               ))}
             </div>
@@ -115,13 +115,13 @@ function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[13px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+                className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Apply to the Programme <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/partner-with-gel"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[13px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
               >
                 Partner with Us <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -139,24 +139,24 @@ function Hero() {
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="h-px flex-1 bg-gold/30" />
-                    <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-gold/60">Featured Venture</span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold/60">Featured Venture</span>
                     <div className="h-px flex-1 bg-gold/30" />
                   </div>
                   <p className="text-white font-bold text-xl mb-1">CARBONSYNQ</p>
-                  <p className="text-white/50 text-[11px]">Sustainability intelligence platform</p>
+                  <p className="text-white/50 text-[13px]">Sustainability intelligence platform</p>
                 </div>
               </div>
 
               {/* Floating stat card */}
               <div className="absolute -top-6 -right-8 bg-white border border-forest/10 rounded-2xl p-5 shadow-xl">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gold/70 mb-1">Portfolio</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold/70 mb-1">Portfolio</p>
                 <p className="text-3xl font-bold text-forest-deep">6+</p>
-                <p className="text-[10px] text-forest/50">Active Ventures</p>
+                <p className="text-[12px] text-forest/50">Active Ventures</p>
               </div>
 
               {/* Floating tag */}
               <div className="absolute -bottom-6 -left-8 bg-gold rounded-2xl px-5 py-4 shadow-xl">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-forest-deep/60 mb-0.5">Countries</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest-deep/60 mb-0.5">Countries</p>
                 <p className="text-2xl font-bold text-forest-deep">5+</p>
               </div>
             </div>
@@ -184,7 +184,7 @@ function StatsBar() {
         {duplicateStats.map((s, i) => (
           <div key={i} className="flex flex-col items-center text-center px-16 border-r border-white/5 last:border-r-0">
             <p className="text-[1.8rem] font-bold text-gold leading-none mb-1">{s.num}</p>
-            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40 whitespace-nowrap">{s.label}</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40 whitespace-nowrap">{s.label}</p>
           </div>
         ))}
       </div>
@@ -212,7 +212,7 @@ function WhatIs() {
         {/* Top label */}
         <div className="flex items-center gap-3 mb-24 justify-center">
           <div className="h-px w-12 bg-gold/40" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold">About the Programme</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.35em] text-gold">About the Programme</span>
           <div className="h-px w-12 bg-gold/40" />
         </div>
 
@@ -233,7 +233,7 @@ function WhatIs() {
               </p>
             </div>
             <div className="pt-6">
-              <Link to="/contact" className="group inline-flex items-center gap-3 rounded-full bg-forest-deep px-9 py-4.5 text-[12px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-forest shadow-xl shadow-forest/15 hover:shadow-forest/30">
+              <Link to="/contact" className="group inline-flex items-center gap-3 rounded-full bg-forest-deep px-9 py-4.5 text-[14px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-forest shadow-xl shadow-forest/15 hover:shadow-forest/30">
                 Explore the Programme <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
@@ -255,7 +255,7 @@ function WhatIs() {
                   
                   {/* Typography */}
                   <h4 className="text-[14px] font-bold text-forest-deep mb-4 leading-tight tracking-wide group-hover:text-forest transition-colors duration-300">{p.title}</h4>
-                  <p className="text-[12px] text-forest/60 leading-[1.8] font-light">{p.desc}</p>
+                  <p className="text-[14px] text-forest/60 leading-[1.8] font-light">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -290,7 +290,7 @@ function OurVentures() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-10 bg-gold/40" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold">Our Ventures</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.35em] text-gold">Our Ventures</span>
             <div className="h-px w-10 bg-gold/40" />
           </div>
           <h2 className="text-[2.4rem] md:text-[3.2rem] font-bold text-white mb-4 tracking-tight leading-tight">
@@ -304,7 +304,7 @@ function OurVentures() {
           <div className="flex items-center gap-1.5 mt-10 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
             {(["All", "Venture Track", "Research Track"] as const).map(tab => (
               <button key={tab} onClick={() => setFilter(tab)}
-                className={`px-6 py-2.5 rounded-full text-[11px] font-bold tracking-wide transition-all ${filter === tab ? "bg-gold text-[#0A1F11] shadow" : "text-white/50 hover:text-white"}`}
+                className={`px-6 py-2.5 rounded-full text-[13px] font-bold tracking-wide transition-all ${filter === tab ? "bg-gold text-[#0A1F11] shadow" : "text-white/50 hover:text-white"}`}
               >
                 {tab}
               </button>
@@ -324,15 +324,15 @@ function OurVentures() {
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold/25 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
 
               {/* Track badge */}
-              <div className={`inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-full border text-[9px] font-bold uppercase tracking-[0.2em] mb-8 transition-all duration-500 shadow-sm ${v.isVenture ? "bg-gold/15 text-gold border-gold/30 group-hover:border-gold/60 group-hover:bg-gold/25 group-hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]" : "bg-white/10 text-white/80 border-white/20 group-hover:border-white/50 group-hover:bg-white/15"}`}>
+              <div className={`inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-full border text-[11px] font-bold uppercase tracking-[0.2em] mb-8 transition-all duration-500 shadow-sm ${v.isVenture ? "bg-gold/15 text-gold border-gold/30 group-hover:border-gold/60 group-hover:bg-gold/25 group-hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]" : "bg-white/10 text-white/80 border-white/20 group-hover:border-white/50 group-hover:bg-white/15"}`}>
                 {v.icon} {v.track}
               </div>
 
               <h3 className="text-[20px] font-bold text-white mb-4 group-hover:text-gold transition-colors duration-300 tracking-wide">{v.name}</h3>
-              <p className="text-[13px] text-white/65 leading-[1.8] font-light flex-1">{v.desc}</p>
+              <p className="text-[15px] text-white/65 leading-[1.8] font-light flex-1">{v.desc}</p>
 
               <div className="mt-8 pt-6 border-t border-white/10 group-hover:border-gold/30 transition-colors duration-500 flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-gold transition-colors duration-300">Explore Venture</span>
+                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-gold transition-colors duration-300">Explore Venture</span>
                 <div className="w-9 h-9 rounded-full bg-white/10 group-hover:bg-gold flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(201,168,76,0.5)] group-hover:scale-110">
                   <ArrowUpRight className="h-4 w-4 text-white/70 group-hover:text-[#0A1F11] transition-colors duration-300" />
                 </div>
@@ -376,12 +376,12 @@ function Journey() {
                   <div className="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white border border-[#0A1F11]/8 flex items-center justify-center text-[#0A1F11]/40 shadow-sm group-hover:bg-[#0A1F11] group-hover:text-gold group-hover:border-[#0A1F11] group-hover:shadow-xl transition-all duration-400">
                     {s.icon}
                   </div>
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-[#0A1F11] text-[9px] font-bold px-2 py-0.5 rounded-full shadow">
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-[#0A1F11] text-[11px] font-bold px-2 py-0.5 rounded-full shadow">
                     {s.num}
                   </div>
                 </div>
-                <h4 className="text-[11px] font-bold text-[#0A1F11] mt-4 mb-2">{s.title}</h4>
-                <p className="text-[10px] text-[#0A1F11]/55 leading-[1.7] max-w-[120px]">{s.desc}</p>
+                <h4 className="text-[13px] font-bold text-[#0A1F11] mt-4 mb-2">{s.title}</h4>
+                <p className="text-[12px] text-[#0A1F11]/55 leading-[1.7] max-w-[120px]">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -398,7 +398,7 @@ function TrackComparison() {
       <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex items-center gap-3 justify-center mb-14">
           <div className="h-px w-10 bg-gold/40" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold">Choose Your Path</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.35em] text-gold">Choose Your Path</span>
           <div className="h-px w-10 bg-gold/40" />
         </div>
 
@@ -414,18 +414,18 @@ function TrackComparison() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">Venture Track</h3>
-                  <p className="text-[10px] text-white/50">For startups ready to grow and scale globally.</p>
+                  <p className="text-[12px] text-white/50">For startups ready to grow and scale globally.</p>
                 </div>
               </div>
               <div className="space-y-3">
                 {["Business model & strategy development","Customer & market validation","Investor readiness & fundraising support","Partnerships & market-entry planning","Scaling support"].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-1 h-1 rounded-full bg-gold shrink-0" />
-                    <span className="text-[12px] text-white/70">{item}</span>
+                    <span className="text-[14px] text-white/70">{item}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 inline-flex items-center gap-2 text-[11px] font-bold text-gold uppercase tracking-wider">
+              <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-gold uppercase tracking-wider">
                 Learn More <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
             </div>
@@ -442,18 +442,18 @@ function TrackComparison() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#0A1F11]">Research Track</h3>
-                  <p className="text-[10px] text-[#0A1F11]/60">For research-led innovations before commercialisation.</p>
+                  <p className="text-[12px] text-[#0A1F11]/60">For research-led innovations before commercialisation.</p>
                 </div>
               </div>
               <div className="space-y-3">
                 {["Research collaboration & technical validation","Expert & academic engagement","IP & commercialisation pathway guidance","Venture formation support","From knowledge to global impact"].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-1 h-1 rounded-full bg-[#0A1F11]/60 shrink-0" />
-                    <span className="text-[12px] text-[#0A1F11]/75">{item}</span>
+                    <span className="text-[14px] text-[#0A1F11]/75">{item}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 inline-flex items-center gap-2 text-[11px] font-bold text-[#0A1F11] uppercase tracking-wider">
+              <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-[#0A1F11] uppercase tracking-wider">
                 Learn More <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
             </div>
@@ -480,7 +480,7 @@ function WhoShouldApply() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-6 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Eligibility</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Eligibility</span>
             </div>
             <h2 className="text-[2.2rem] font-bold text-[#0A1F11] mb-5 leading-tight">Who Should Apply?</h2>
             <p className="text-[14px] text-[#0A1F11]/60 leading-[1.8]">
@@ -493,7 +493,7 @@ function WhoShouldApply() {
                 <div className="w-10 h-10 rounded-xl bg-[#F7F5F0] flex items-center justify-center text-[#0A1F11]/40 shrink-0 group-hover:bg-gold/10 group-hover:text-gold transition-all">
                   {item.icon}
                 </div>
-                <p className="text-[12px] font-bold text-[#0A1F11] leading-tight">{item.title}</p>
+                <p className="text-[14px] font-bold text-[#0A1F11] leading-tight">{item.title}</p>
               </div>
             ))}
           </div>
@@ -526,10 +526,10 @@ function BottomCTA() {
               <h2 className="text-[2rem] font-bold text-white leading-tight mb-4">
                 Let's build global impact—<span className="font-serif italic text-gold">together.</span>
               </h2>
-              <p className="text-[13px] text-white/50 leading-relaxed mb-8">
+              <p className="text-[15px] text-white/50 leading-relaxed mb-8">
                 Partner with us to empower ventures, create value and shape a better future.
               </p>
-              <Link to="/contact" className="self-start inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A1F11] transition-all hover:bg-white">
+              <Link to="/contact" className="self-start inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.2em] text-[#0A1F11] transition-all hover:bg-white">
                 Get in Touch <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
@@ -541,9 +541,9 @@ function BottomCTA() {
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gold/60 mb-5">
                     {cta.icon}
                   </div>
-                  <h4 className="text-[13px] font-bold text-white mb-2">{cta.title}</h4>
-                  <p className="text-[11px] text-white/45 leading-relaxed mb-5 flex-1">{cta.desc}</p>
-                  <button className="inline-flex items-center gap-1.5 text-[10px] font-bold text-gold hover:text-white transition-colors uppercase tracking-[0.15em]">
+                  <h4 className="text-[15px] font-bold text-white mb-2">{cta.title}</h4>
+                  <p className="text-[13px] text-white/45 leading-relaxed mb-5 flex-1">{cta.desc}</p>
+                  <button className="inline-flex items-center gap-1.5 text-[12px] font-bold text-gold hover:text-white transition-colors uppercase tracking-[0.15em]">
                     {cta.link} <ArrowUpRight className="h-3 w-3" />
                   </button>
                 </div>

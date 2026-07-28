@@ -40,7 +40,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Programmes for Students &amp; Young Learners</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programmes for Students &amp; Young Learners</span>
             </div>
             <h1 className="text-[2.8rem] md:text-[3.6rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
               Young Leaders<br />
@@ -52,7 +52,7 @@ function Hero() {
             <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
               Residential summer programmes at the University of Cambridge — covering Economics, Business, STEM, Public Speaking, English, Entrepreneurship and Sustainability. Live, learn and grow alongside the next generation of global leaders.
             </p>
-            <div className="mt-8 flex flex-wrap gap-5 text-sm text-forest/70">
+            <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
                 <Calendar className="h-4 w-4 text-gold" /> July 2026
               </span>
@@ -65,13 +65,13 @@ function Hero() {
                 href="https://www.globaledulab.com/studentprogrammes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="#camps"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
               >
                 View Programmes
               </a>
@@ -91,14 +91,14 @@ function Hero() {
                 ].map((s) => (
                   <div key={s.label} className="bg-white/5 rounded-2xl p-5 border border-white/10">
                     <p className="text-2xl font-bold text-gold leading-none">{s.val}</p>
-                    <p className="text-[11px] font-bold text-cream mt-2">{s.label}</p>
-                    <p className="text-[10px] text-cream/50 mt-1">{s.sub}</p>
+                    <p className="text-[13px] font-bold text-cream mt-2">{s.label}</p>
+                    <p className="text-[12px] text-cream/50 mt-1">{s.sub}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-6 p-4 bg-gold/10 rounded-xl border border-gold/20 relative z-10">
-                <p className="text-[11px] font-bold text-gold uppercase tracking-wider">Hughes Hall &amp; Girton College · Cambridge</p>
-                <p className="text-[10px] text-cream/60 mt-1">Prestigious residential college experience</p>
+                <p className="text-[13px] font-bold text-gold uppercase tracking-wider">Hughes Hall &amp; Girton College · Cambridge</p>
+                <p className="text-[12px] text-cream/60 mt-1">Prestigious residential college experience</p>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ function StatsSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Since 2022</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Since 2022</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep leading-tight">
               5,000+ students impacted through online programmes and residential summer camps.
@@ -124,11 +124,11 @@ function StatsSection() {
             <div className="mt-10 grid grid-cols-2 gap-8">
               <div className="rounded-2xl border border-forest/8 p-6 bg-[#F7F5F0]">
                 <h3 className="text-4xl font-bold text-gold">5,000+</h3>
-                <p className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-forest/70">Students Impacted</p>
+                <p className="mt-2 text-[13px] font-semibold uppercase tracking-widest text-forest/70">Students Impacted</p>
               </div>
               <div className="rounded-2xl border border-forest/8 p-6 bg-[#F7F5F0]">
                 <h3 className="text-4xl font-bold text-gold">14–17</h3>
-                <p className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-forest/70">&amp; 18+ Age Groups</p>
+                <p className="mt-2 text-[13px] font-semibold uppercase tracking-widest text-forest/70">&amp; 18+ Age Groups</p>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ function StatsSection() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />
-                  <span className="text-[13px] text-forest/75">{item}</span>
+                  <span className="text-[15px] text-forest/75">{item}</span>
                 </div>
               ))}
             </div>
@@ -194,7 +194,7 @@ function Camps() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ongoing Programmes</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ongoing Programmes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Two flagship Cambridge camps.</h2>
@@ -209,21 +209,21 @@ function Camps() {
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-gold group-hover:bg-gold/20 transition-colors duration-300">
                     {camp.icon}
                   </div>
-                  <span className="rounded-full border border-white/20 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-cream/70">
+                  <span className="rounded-full border border-white/20 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-cream/70">
                     {camp.badge}
                   </span>
                 </div>
                 <h3 className="text-[19px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">{camp.title}</h3>
-                <p className="text-[13px] text-white/65 leading-relaxed mb-6 flex-1">{camp.desc}</p>
+                <p className="text-[15px] text-white/65 leading-relaxed mb-6 flex-1">{camp.desc}</p>
                 <ul className="space-y-2 mb-6">
                   {camp.highlights.map((h, k) => (
-                    <li key={k} className="flex items-center gap-2.5 text-[12px] text-cream/70">
+                    <li key={k} className="flex items-center gap-2.5 text-[14px] text-cream/70">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
                       {h}
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-4 text-[12px] text-cream/60 mb-6">
+                <div className="flex flex-wrap gap-4 text-[14px] text-cream/60 mb-6">
                   <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5 text-gold" />{camp.when}</span>
                   <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5 text-gold" />{camp.where}</span>
                 </div>
@@ -231,7 +231,7 @@ function Camps() {
                   href={camp.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/20 py-3 text-[10px] font-bold uppercase tracking-[0.15em] text-cream hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 w-full"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/20 py-3 text-[12px] font-bold uppercase tracking-[0.15em] text-cream hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 w-full"
                 >
                   Read More <ArrowUpRight className="h-3 w-3" />
                 </a>
@@ -256,7 +256,7 @@ function WhoShouldJoin() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Built for ambitious young minds.</h2>
@@ -270,7 +270,7 @@ function WhoShouldJoin() {
                   {p.icon}
                 </div>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[13px] text-forest/65 leading-relaxed">{p.desc}</p>
+                <p className="text-[15px] text-forest/65 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -293,7 +293,7 @@ function Experience() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">The Experience</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">The Experience</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">More than a programme — a life-defining summer.</h2>
@@ -303,7 +303,7 @@ function Experience() {
             <div key={i} className="group bg-white rounded-3xl p-8 border border-forest/8 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/5 text-gold group-hover:bg-gold/10 transition-colors duration-300">{p.icon}</div>
               <h3 className="text-[16px] font-bold text-forest-deep mb-3">{p.title}</h3>
-              <p className="text-[13px] text-forest/65 leading-relaxed">{p.desc}</p>
+              <p className="text-[15px] text-forest/65 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -325,7 +325,7 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Student Stories</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Student Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What our students say.</h2>
@@ -335,7 +335,7 @@ function Testimonials() {
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[12px] text-forest/50 mt-1">{t.school}</p>
+        <p className="text-[14px] text-forest/50 mt-1">{t.school}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
           <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
@@ -361,7 +361,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">A Cambridge summer awaits.</h2>
@@ -371,13 +371,13 @@ function CTA() {
             href="https://www.globaledulab.com/studentprogrammes"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             to="/school-leaders"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300"
           >
             View All Programmes
           </Link>

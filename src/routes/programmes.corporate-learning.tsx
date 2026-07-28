@@ -41,7 +41,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Bespoke Advisory · Rolling Calendar</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Bespoke Advisory · Rolling Calendar</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Corporate Learning &amp; ESG Workshops
@@ -52,7 +52,7 @@ function Hero() {
             <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
               Custom workshops and learning programmes for boards and senior leadership teams — designed around the themes we have delivered since 2022: ESG leadership, corporate governance, entrepreneurship, organisational behaviour and AI strategy.
             </p>
-            <div className="mt-8 flex flex-wrap gap-5 text-sm text-forest/70">
+            <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
                 <Calendar className="h-4 w-4 text-gold" /> Rolling Calendar — Year-Round
               </span>
@@ -63,11 +63,11 @@ function Hero() {
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Enquire Now <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <a href="#workshops" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300">
+              <a href="#workshops" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300">
                 See Workshop Themes
               </a>
             </div>
@@ -82,8 +82,8 @@ function Hero() {
                 <Building2 className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">Delivered Since</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">2022</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Delivered Since</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">2022</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -91,8 +91,8 @@ function Hero() {
                 <Award className="h-5 w-5 text-forest-deep" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">Fully Bespoke</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">Built for your team</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Fully Bespoke</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">Built for your team</p>
               </div>
             </div>
           </div>
@@ -122,8 +122,8 @@ function StatsStrip() {
               className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0"
             >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
-              <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
-              <p className="text-[12px] text-forest/55 mt-0.5">{s.sub}</p>
+              <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
+              <p className="text-[14px] text-forest/55 mt-0.5">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -219,7 +219,7 @@ function Workshops() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Workshop Themes</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Workshop Themes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Six core themes, infinitely customisable.</h2>
@@ -232,10 +232,10 @@ function Workshops() {
               <div className="p-8">
                 <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${t.color} text-white shadow-lg group-hover:scale-105 transition-transform duration-300`}>{t.icon}</div>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{t.title}</h3>
-                <p className="text-[13px] text-forest/65 leading-relaxed mb-5">{t.desc}</p>
+                <p className="text-[15px] text-forest/65 leading-relaxed mb-5">{t.desc}</p>
                 <ul className="space-y-2">
                   {t.items.map((item, k) => (
-                    <li key={k} className="flex items-center gap-2.5 text-[12px] text-forest/70">
+                    <li key={k} className="flex items-center gap-2.5 text-[14px] text-forest/70">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />{item}
                     </li>
                   ))}
@@ -264,7 +264,7 @@ function HowItWorks() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">From enquiry to impact — five steps.</h2>
@@ -273,10 +273,10 @@ function HowItWorks() {
           {steps.map((s, i) => (
             <div key={i} className="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 text-center">
               <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center mx-auto mb-5">
-                <span className="text-[12px] font-bold text-gold">{s.n}</span>
+                <span className="text-[14px] font-bold text-gold">{s.n}</span>
               </div>
               <h3 className="text-[14px] font-bold text-white mb-3">{s.title}</h3>
-              <p className="text-[12px] text-white/60 leading-relaxed">{s.desc}</p>
+              <p className="text-[14px] text-white/60 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -320,7 +320,7 @@ function Formats() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Delivery Formats</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Delivery Formats</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">We come to you — or you come to Cambridge.</h2>
@@ -333,12 +333,12 @@ function Formats() {
               <p className="text-[14px] text-forest/70 leading-relaxed mb-8">{f.desc}</p>
               <ul className="space-y-3 mb-8">
                 {f.features.map((feat, k) => (
-                  <li key={k} className="flex items-center gap-3 text-[13px] text-forest/80">
+                  <li key={k} className="flex items-center gap-3 text-[15px] text-forest/80">
                     <CheckCircle2 className="h-4 w-4 text-gold shrink-0" />{feat}
                   </li>
                 ))}
               </ul>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[13px] font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300">
                 {f.cta} <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
@@ -362,7 +362,7 @@ function WhoWeWorkWith() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who We Work With</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who We Work With</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Trusted by ambitious organisations.</h2>
@@ -374,7 +374,7 @@ function WhoWeWorkWith() {
               <div className="p-7">
                 <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl ${c.color} text-white shadow-lg`}>{c.icon}</div>
                 <h3 className="text-[15px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{c.title}</h3>
-                <p className="text-[13px] text-forest/70 leading-relaxed">{c.desc}</p>
+                <p className="text-[15px] text-forest/70 leading-relaxed">{c.desc}</p>
               </div>
             </div>
           ))}
@@ -412,7 +412,7 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Client Stories</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Client Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What clients say.</h2>
@@ -422,7 +422,7 @@ function Testimonials() {
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[12px] text-forest/50 mt-1">{t.role}</p>
+        <p className="text-[14px] text-forest/50 mt-1">{t.role}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
           <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
@@ -446,7 +446,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Start the Conversation</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Start the Conversation</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Build a workshop for your team.</h2>
@@ -454,11 +454,11 @@ function CTA() {
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Enquire Now <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <a href="mailto:info@globaledulab.com" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <a href="mailto:info@globaledulab.com" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             Email Us Directly
           </a>
         </div>

@@ -50,7 +50,7 @@ function Hero() {
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gold">Our Portfolio</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.28em] text-gold">Our Portfolio</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -66,11 +66,11 @@ function Hero() {
             </p>
 
             <div className="mt-8 flex gap-4 flex-wrap">
-              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
+              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
                 Explore Our Programme Portfolio
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 Discuss a Custom Programme
               </Link>
             </div>
@@ -83,7 +83,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Global Reach</p>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Global Reach</p>
                   <p className="text-white text-[15px] font-bold">15+ Countries</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -92,7 +92,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[9px] font-bold">+500</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[11px] font-bold">+500</div>
                 </div>
               </div>
             </div>
@@ -103,8 +103,8 @@ function Hero() {
                 <Globe2 className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[10px] text-forest/55 mt-0.5">15+ Countries</p>
+                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
+                <p className="text-[12px] text-forest/55 mt-0.5">15+ Countries</p>
               </div>
             </div>
 
@@ -113,8 +113,8 @@ function Hero() {
                 <Users className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-white uppercase tracking-wider">500+ Alumni</p>
-                <p className="text-[10px] text-cream/55 mt-0.5">Leaders & Professionals</p>
+                <p className="text-[13px] font-bold text-white uppercase tracking-wider">500+ Alumni</p>
+                <p className="text-[12px] text-cream/55 mt-0.5">Leaders & Professionals</p>
               </div>
             </div>
 
@@ -144,8 +144,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[11px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[13px] text-forest/55 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -203,7 +203,7 @@ function OurProgrammes() {
         <div className="text-center mb-16 max-w-2xl mx-auto flex flex-col items-center">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Portfolio</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Portfolio</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-6 leading-[1.1]">Our Programmes</h2>
@@ -231,18 +231,18 @@ function OurProgrammes() {
               </div>
               <div className="flex flex-col flex-1 p-6 pt-9">
                 <h3 className="text-[14px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[11px] text-forest/60 leading-[1.6] mb-5">{p.desc}</p>
+                <p className="text-[13px] text-forest/60 leading-[1.6] mb-5">{p.desc}</p>
                 <div className="flex flex-col gap-2 mb-6 flex-1">
                   {p.bullets.map((b, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                       <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
-                      <span className="text-[10px] font-semibold text-forest-deep/80 leading-snug">{b}</span>
+                      <span className="text-[12px] font-semibold text-forest-deep/80 leading-snug">{b}</span>
                     </div>
                   ))}
                 </div>
                 <Link
                   to={p.link}
-                  className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#1a3523] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#1a3523]/30 hover:bg-[#0f2117] hover:shadow-[#1a3523]/40 hover:-translate-y-0.5 transition-all duration-300 mt-auto"
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#1a3523] px-5 py-3 text-[12px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#1a3523]/30 hover:bg-[#0f2117] hover:shadow-[#1a3523]/40 hover:-translate-y-0.5 transition-all duration-300 mt-auto"
                 >
                   Explore Programme <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
@@ -273,7 +273,7 @@ function ImpactBanner() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Creating Impact That Lasts</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Creating Impact That Lasts</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Beyond the classroom.<br />Beyond the programme.
@@ -287,7 +287,7 @@ function ImpactBanner() {
               <div key={i} className="flex flex-col items-center text-center bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-md hover:bg-white/10 transition-colors duration-300 group">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 border border-gold/20 text-gold mb-4 group-hover:scale-110 transition-transform">{s.icon}</div>
                 <div className="text-2xl font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">{s.v}</div>
-                <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-cream/60 leading-tight max-w-[120px]">{s.l}</div>
+                <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-cream/60 leading-tight max-w-[120px]">{s.l}</div>
               </div>
             ))}
           </div>
@@ -328,7 +328,7 @@ function Voices() {
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5 leading-[1.1]">Voices from Our Participants</h2>
@@ -343,10 +343,10 @@ function Voices() {
             <div key={i} className="group bg-[#F4EFE6] rounded-[1.75rem] p-8 border border-forest/8 flex flex-col hover:border-gold/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-400 relative overflow-hidden">
               <span className="text-6xl text-gold/20 font-serif leading-none absolute top-5 right-7 group-hover:text-gold/40 transition-colors duration-300">"</span>
               <img src={t.img} alt={t.a} className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-md mb-5" />
-              <p className="text-[13px] text-forest/75 leading-[1.8] mb-6 italic flex-1">{t.q}</p>
+              <p className="text-[15px] text-forest/75 leading-[1.8] mb-6 italic flex-1">{t.q}</p>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep">{t.a}</p>
-                <p className="text-[11px] text-forest/60 mt-0.5 uppercase tracking-wide font-semibold">{t.r}</p>
+                <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
+                <p className="text-[13px] text-forest/60 mt-0.5 uppercase tracking-wide font-semibold">{t.r}</p>
               </div>
             </div>
           ))}
@@ -371,18 +371,18 @@ function BottomCTA() {
         </div>
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Custom Programmes</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Custom Programmes</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white leading-[1.08] tracking-tight">Let's create the next transformational learning experience.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-[1.75] max-w-xl mx-auto">We partner with schools, universities, corporations and governments to design impactful global programmes.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Discuss a Custom Programme
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </Link>
-          <Link to="/partner-with-gel" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <Link to="/partner-with-gel" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Partner with GEL
           </Link>
         </div>

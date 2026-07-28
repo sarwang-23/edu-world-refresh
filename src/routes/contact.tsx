@@ -20,7 +20,7 @@ function ContactPage() {
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center gap-3">
               <span className="h-[1px] w-6 bg-gold"></span>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">Vol. 01 — Correspondence</span>
+              <span className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase">Vol. 01 — Correspondence</span>
             </div>
             
             <h1 className="text-6xl md:text-[5.5rem] font-bold tracking-tight text-forest leading-[1.05] font-serif">
@@ -28,7 +28,7 @@ function ContactPage() {
               <span className="font-serif italic text-gold font-normal">quiet conversation.</span>
             </h1>
             
-            <p className="max-w-md text-[13px] leading-relaxed text-forest/70 pt-4">
+            <p className="max-w-md text-[15px] leading-relaxed text-forest/70 pt-4">
               Whether you are shaping an executive cohort, exploring a school partnership, or scaling a venture across borders — our Cambridge desk receives your letter personally, and replies in kind.
             </p>
           </div>
@@ -36,13 +36,13 @@ function ContactPage() {
           {/* Right Column */}
           <div className="lg:col-span-5 flex flex-col justify-center relative">
             <div className="flex justify-start lg:justify-end mb-16 lg:absolute lg:top-0 lg:right-0">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-forest/40 uppercase">Cambridge - Est. Waterbeach</span>
+              <span className="text-[12px] font-bold tracking-[0.2em] text-forest/40 uppercase">Cambridge - Est. Waterbeach</span>
             </div>
             
             <div className="border-t border-b border-forest/10 py-8 mt-12 relative w-full max-w-[280px]">
-              <h3 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase mb-4">Reply Within</h3>
+              <h3 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase mb-4">Reply Within</h3>
               <div className="text-[4rem] font-serif text-forest leading-none mb-6">24h</div>
-              <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-forest/50 uppercase">
+              <div className="flex items-center gap-2 text-[12px] font-bold tracking-widest text-forest/50 uppercase">
                 <Clock className="h-3.5 w-3.5 text-gold" />
                 MON-FRI • 09:00-18:00 GMT
               </div>
@@ -62,10 +62,10 @@ function ContactPage() {
             <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-gold/40"></div>
 
             <div className="border-b border-forest/10 pb-6 mb-12 mt-4">
-              <h4 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase mb-3">The Letter</h4>
+              <h4 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase mb-3">The Letter</h4>
               <div className="flex justify-between items-end">
                 <h2 className="text-4xl text-forest font-serif italic">Write to us</h2>
-                <span className="text-[13px] font-serif italic text-forest/40">Ref. GEL/CB25</span>
+                <span className="text-[15px] font-serif italic text-forest/40">Ref. GEL/CB25</span>
               </div>
             </div>
 
@@ -74,14 +74,14 @@ function ContactPage() {
                 <div className="relative">
                   <div className="flex items-baseline gap-2 mb-2">
                     <span className="text-[14px] font-serif italic text-gold">01.</span>
-                    <label className="text-[10px] font-bold tracking-[0.2em] text-forest/50 uppercase">First Name</label>
+                    <label className="text-[12px] font-bold tracking-[0.2em] text-forest/50 uppercase">First Name</label>
                   </div>
                   <input type="text" placeholder="Karan" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
                 </div>
                 <div className="relative">
                   <div className="flex items-baseline gap-2 mb-2">
                     <span className="text-[14px] font-serif italic text-gold">02.</span>
-                    <label className="text-[10px] font-bold tracking-[0.2em] text-forest/50 uppercase">Last Name</label>
+                    <label className="text-[12px] font-bold tracking-[0.2em] text-forest/50 uppercase">Last Name</label>
                   </div>
                   <input type="text" placeholder="Sharma" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
                 </div>
@@ -90,7 +90,7 @@ function ContactPage() {
               <div className="relative">
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-[14px] font-serif italic text-gold">03.</span>
-                  <label className="text-[10px] font-bold tracking-[0.2em] text-forest/50 uppercase">Email Address</label>
+                  <label className="text-[12px] font-bold tracking-[0.2em] text-forest/50 uppercase">Email Address</label>
                 </div>
                 <input type="email" placeholder="you@organization.com" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
               </div>
@@ -98,7 +98,7 @@ function ContactPage() {
               <div className="relative">
                 <div className="flex items-baseline gap-2 mb-6">
                   <span className="text-[14px] font-serif italic text-gold">04.</span>
-                  <label className="text-[10px] font-bold tracking-[0.2em] text-forest/50 uppercase">I'm interested in</label>
+                  <label className="text-[12px] font-bold tracking-[0.2em] text-forest/50 uppercase">I'm interested in</label>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {[
@@ -109,7 +109,7 @@ function ContactPage() {
                     { label: "Global Ventures", active: false },
                     { label: "Media & Press", active: false }
                   ].map((tag, i) => (
-                    <button type="button" key={i} className={`border px-4 py-2.5 text-[11px] font-bold tracking-wide transition-colors flex items-center gap-3 ${tag.active ? "border-[#0A301D] bg-[#0A301D] text-white" : "border-forest/10 bg-transparent text-forest/60 hover:border-forest/30 hover:text-forest"}`}>
+                    <button type="button" key={i} className={`border px-4 py-2.5 text-[13px] font-bold tracking-wide transition-colors flex items-center gap-3 ${tag.active ? "border-[#0A301D] bg-[#0A301D] text-white" : "border-forest/10 bg-transparent text-forest/60 hover:border-forest/30 hover:text-forest"}`}>
                       {tag.active ? (
                         <span className="w-1.5 h-1.5 bg-gold shrink-0"></span>
                       ) : (
@@ -124,7 +124,7 @@ function ContactPage() {
               <div className="relative pt-4">
                 <div className="flex items-baseline gap-2 mb-4">
                   <span className="text-[14px] font-serif italic text-gold">05.</span>
-                  <label className="text-[10px] font-bold tracking-[0.2em] text-forest/50 uppercase">Message</label>
+                  <label className="text-[12px] font-bold tracking-[0.2em] text-forest/50 uppercase">Message</label>
                 </div>
                 {/* Simulated lined paper for textarea */}
                 <div className="relative">
@@ -133,10 +133,10 @@ function ContactPage() {
               </div>
 
               <div className="flex flex-col md:flex-row items-end justify-between gap-6 pt-12">
-                <p className="text-[9px] text-forest/40 max-w-[250px] leading-relaxed">
+                <p className="text-[11px] text-forest/40 max-w-[250px] leading-relaxed">
                   By submitting, you consent to be contacted by the Global Education Lab team.
                 </p>
-                <button type="button" className="inline-flex items-center justify-center gap-4 bg-[#0A301D] px-8 py-5 text-[11px] font-bold tracking-[0.2em] text-white transition-all hover:bg-forest-deep">
+                <button type="button" className="inline-flex items-center justify-center gap-4 bg-[#0A301D] px-8 py-5 text-[13px] font-bold tracking-[0.2em] text-white transition-all hover:bg-forest-deep">
                   SEND <br/> LETTER <span className="w-6 h-px bg-white/40 ml-2"></span>
                 </button>
               </div>
@@ -155,11 +155,11 @@ function ContactPage() {
               <div className="relative p-10 h-full flex flex-col">
                 <div className="flex justify-between items-start mb-12">
                   <div>
-                    <h4 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Home</h4>
+                    <h4 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Home</h4>
                     <h2 className="text-3xl text-white font-serif italic">The Cambridge Desk</h2>
                   </div>
                   <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center shrink-0">
-                    <span className="text-[11px] font-serif italic text-gold">G·E·L</span>
+                    <span className="text-[13px] font-serif italic text-gold">G·E·L</span>
                   </div>
                 </div>
                 
@@ -167,8 +167,8 @@ function ContactPage() {
                   <div className="flex gap-4">
                     <MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-[9px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Head Office</p>
-                      <p className="text-[13px] font-medium leading-relaxed text-white/90">Global Education Lab Ltd<br/>Stirling House, Denny End Road<br/>Waterbeach, CB25 9PB<br/>Cambridge, United Kingdom</p>
+                      <p className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Head Office</p>
+                      <p className="text-[15px] font-medium leading-relaxed text-white/90">Global Education Lab Ltd<br/>Stirling House, Denny End Road<br/>Waterbeach, CB25 9PB<br/>Cambridge, United Kingdom</p>
                     </div>
                   </div>
                   
@@ -176,15 +176,15 @@ function ContactPage() {
                     <div className="flex gap-4">
                       <Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-[9px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Telephone</p>
-                        <p className="text-[13px] font-medium text-white/90">+44 (0)1223 302 904</p>
+                        <p className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Telephone</p>
+                        <p className="text-[15px] font-medium text-white/90">+44 (0)1223 302 904</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
                       <Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-[9px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Email</p>
-                        <p className="text-[13px] font-medium text-white/90 truncate max-w-[120px]">info@globaledulab.com</p>
+                        <p className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Email</p>
+                        <p className="text-[15px] font-medium text-white/90 truncate max-w-[120px]">info@globaledulab.com</p>
                       </div>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ function ContactPage() {
                     <MapPin className="h-10 w-10 text-[#88B04B]" fill="#88B04B" />
                   </div>
                   <div className="absolute right-0 bottom-0">
-                    <button className="bg-[#082617] text-white/90 text-[9px] font-bold tracking-widest uppercase px-4 py-3 flex items-center gap-2 hover:text-white transition-colors">
+                    <button className="bg-[#082617] text-white/90 text-[11px] font-bold tracking-widest uppercase px-4 py-3 flex items-center gap-2 hover:text-white transition-colors">
                       Directions <ArrowUpRight className="h-3 w-3" />
                     </button>
                   </div>
@@ -210,12 +210,12 @@ function ContactPage() {
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border-[0.5px] border-gold/20"></div>
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border-[0.5px] border-gold/10"></div>
               
-              <h4 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase mb-3 relative z-10">Institutional Access</h4>
+              <h4 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase mb-3 relative z-10">Institutional Access</h4>
               <h2 className="text-3xl text-forest font-serif italic mb-4 relative z-10">Partner with us</h2>
-              <p className="text-[13px] text-forest/70 mb-8 leading-relaxed relative z-10 max-w-[280px]">
+              <p className="text-[15px] text-forest/70 mb-8 leading-relaxed relative z-10 max-w-[280px]">
                 Schools, universities and organisations exploring bespoke collaborations may reach our partnerships desk directly.
               </p>
-              <a href="/global-ventures" className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-forest hover:text-gold transition-colors uppercase border-b border-forest/30 hover:border-gold pb-1 relative z-10">
+              <a href="/global-ventures" className="inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-forest hover:text-gold transition-colors uppercase border-b border-forest/30 hover:border-gold pb-1 relative z-10">
                 Explore Global Ventures <ArrowUpRight className="h-3 w-3" />
               </a>
             </div>
@@ -227,44 +227,44 @@ function ContactPage() {
         <div className="pt-8">
           <div className="flex justify-between items-end border-b border-forest/10 pb-6 mb-8">
             <div>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Presence</h4>
+              <h4 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Presence</h4>
               <h2 className="text-4xl text-forest font-serif italic">Across three continents</h2>
             </div>
-            <span className="text-[13px] font-serif italic text-forest/40">Index of desks</span>
+            <span className="text-[15px] font-serif italic text-forest/40">Index of desks</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-b border-forest/10">
             {/* Cambridge */}
             <div className="p-8 pb-16 relative">
               <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">United Kingdom</h5>
-                <span className="text-[13px] font-serif italic text-forest/30">01</span>
+                <h5 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase">United Kingdom</h5>
+                <span className="text-[15px] font-serif italic text-forest/30">01</span>
               </div>
               <p className="text-2xl font-bold text-forest font-serif mb-2">Cambridge</p>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Headquarters</p>
-              <p className="text-[13px] text-forest/70 leading-relaxed max-w-[220px]">Where our research, leadership and global education programmes are shaped.</p>
+              <p className="text-[12px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Headquarters</p>
+              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Where our research, leadership and global education programmes are shaped.</p>
             </div>
 
             {/* India */}
             <div className="p-8 pb-16 bg-white relative shadow-[0_0_40px_rgba(10,48,29,0.03)] border-x border-forest/5">
               <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">India</h5>
-                <span className="text-[13px] font-serif italic text-forest/30">02</span>
+                <h5 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase">India</h5>
+                <span className="text-[15px] font-serif italic text-forest/30">02</span>
               </div>
               <p className="text-2xl font-bold text-forest font-serif mb-2">Delhi — Mumbai</p>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Regional Office</p>
-              <p className="text-[13px] text-forest/70 leading-relaxed max-w-[220px]">Programme delivery and school partnerships across the subcontinent.</p>
+              <p className="text-[12px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Regional Office</p>
+              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Programme delivery and school partnerships across the subcontinent.</p>
             </div>
 
             {/* Global */}
             <div className="p-8 pb-16 relative">
               <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">International</h5>
-                <span className="text-[13px] font-serif italic text-forest/30">03</span>
+                <h5 className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase">International</h5>
+                <span className="text-[15px] font-serif italic text-forest/30">03</span>
               </div>
               <p className="text-2xl font-bold text-forest font-serif mb-2">Finland — Bali</p>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Residencies</p>
-              <p className="text-[13px] text-forest/70 leading-relaxed max-w-[220px]">Immersive leadership residencies and cross-cultural learning experiences.</p>
+              <p className="text-[12px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Residencies</p>
+              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Immersive leadership residencies and cross-cultural learning experiences.</p>
             </div>
           </div>
         </div>

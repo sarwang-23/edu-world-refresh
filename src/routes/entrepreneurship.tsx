@@ -59,7 +59,7 @@ function Hero() {
           <div className="mt-0 pt-0">
             <div className="flex flex-wrap gap-2 mb-8">
               {pills.map((p) => (
-                <span key={p.t} className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 backdrop-blur-sm px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-sm">
+                <span key={p.t} className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 backdrop-blur-sm px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-sm">
                   {p.icon} {p.t}
                 </span>
               ))}
@@ -68,16 +68,16 @@ function Hero() {
               Entrepreneur<span className="text-gold">ship</span>
             </h1>
             <p className="mt-6 text-2xl font-serif italic text-gold">Ideas. Innovation. Impact.</p>
-            <p className="mt-3 text-forest/70 font-medium text-lg uppercase tracking-widest text-[11px]">From campus to global markets.</p>
-            <p className="mt-8 text-sm leading-relaxed text-forest/70 max-w-lg">
+            <p className="mt-3 text-forest/70 font-medium text-lg uppercase tracking-widest text-[13px]">From campus to global markets.</p>
+            <p className="mt-8 text-[15px] leading-relaxed text-forest/70 max-w-lg">
               Empowering the next generation of founders and innovators with world-class programmes, mentorship and direct access to Cambridge's innovation ecosystem. <span className="font-semibold text-forest-deep">This is where research, capital and entrepreneurial energy meet.</span>
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
-              <Link to="/contact" className="group relative inline-flex items-center gap-2 rounded-full bg-forest px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden">
+              <Link to="/contact" className="group relative inline-flex items-center gap-2 rounded-full bg-forest px-8 py-4 text-[13px] font-bold uppercase tracking-[0.2em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">Explore Programmes <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span>
                 <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest-deep to-forest opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-8 py-4 text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40">
                 Connect With Our Team
               </Link>
             </div>
@@ -92,31 +92,31 @@ function Hero() {
               {/* Top badge */}
               <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
                 <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                <span className="text-[10px] font-bold text-forest-deep tracking-[0.2em] uppercase">100+ Startups</span>
+                <span className="text-[12px] font-bold text-forest-deep tracking-[0.2em] uppercase">100+ Startups</span>
               </div>
 
               {/* Center content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8">
                 <div className="text-center">
                   <p className="text-6xl font-bold text-gold leading-none">5K+</p>
-                  <p className="text-[11px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Entrepreneurs Trained</p>
+                  <p className="text-[13px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Entrepreneurs Trained</p>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="text-center">
                   <p className="text-6xl font-bold text-cream leading-none">£2M+</p>
-                  <p className="text-[11px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Funding Raised</p>
+                  <p className="text-[13px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Funding Raised</p>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="text-center">
                   <p className="text-6xl font-bold text-gold leading-none">18</p>
-                  <p className="text-[11px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Countries Reached</p>
+                  <p className="text-[13px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Countries Reached</p>
                 </div>
               </div>
 
               {/* Bottom overlay */}
               <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4">
-                <p className="text-[12px] font-bold text-cream">Founder Cohort 2025 · Open</p>
-                <p className="text-[10px] text-cream/60 mt-1 uppercase tracking-widest">Cambridge · London · Singapore</p>
+                <p className="text-[14px] font-bold text-cream">Founder Cohort 2025 · Open</p>
+                <p className="text-[12px] text-cream/60 mt-1 uppercase tracking-widest">Cambridge · London · Singapore</p>
               </div>
             </div>
             {/* Right panel - scrolls down (reverse) */}
@@ -131,7 +131,7 @@ function Hero() {
               
               <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 text-center">
                 <p className="text-3xl font-bold text-gold">35+</p>
-                <p className="text-[10px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
+                <p className="text-[12px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ function PillarsStrip() {
     <section className="bg-forest-deep border-b border-white/10 py-4 overflow-hidden relative flex flex-col items-center">
       {/* Top Centre Title */}
       <div className="z-20 mb-4">
-        <h2 className="px-6 py-1.5 rounded-full border border-white/20 text-[10px] font-bold uppercase tracking-[0.25em] text-gold whitespace-nowrap flex items-center gap-3">
+        <h2 className="px-6 py-1.5 rounded-full border border-white/20 text-[12px] font-bold uppercase tracking-[0.25em] text-gold whitespace-nowrap flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
           Our Core Pillars
         </h2>
@@ -171,8 +171,8 @@ function PillarsStrip() {
                 {s.icon}
               </div>
               <div>
-                <h4 className="text-[10px] font-bold text-cream uppercase tracking-widest whitespace-nowrap">{s.label}</h4>
-                <p className="text-[10px] text-cream/50 whitespace-nowrap font-medium">{s.val}</p>
+                <h4 className="text-[12px] font-bold text-cream uppercase tracking-widest whitespace-nowrap">{s.label}</h4>
+                <p className="text-[12px] text-cream/50 whitespace-nowrap font-medium">{s.val}</p>
               </div>
               <span className="ml-6 text-white/15 text-lg shrink-0">·</span>
             </div>
@@ -220,7 +220,7 @@ function Programmes() {
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center mb-20">
-          <span className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.25em] text-gold before:h-px before:w-12 before:bg-gradient-to-r before:from-transparent before:to-gold/50 after:h-px after:w-12 after:bg-gradient-to-l after:from-transparent after:to-gold/50">
+          <span className="flex items-center gap-4 text-[12px] font-bold uppercase tracking-[0.25em] text-gold before:h-px before:w-12 before:bg-gradient-to-r before:from-transparent before:to-gold/50 after:h-px after:w-12 after:bg-gradient-to-l after:from-transparent after:to-gold/50">
             OUR ENTREPRENEURSHIP PROGRAMMES
           </span>
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-forest-deep md:text-[3rem]">
@@ -243,17 +243,17 @@ function Programmes() {
                 </div>
                 <div className="p-8 flex flex-col flex-1 relative z-10">
                   <h3 className="text-lg font-bold text-forest-deep leading-tight mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
-                  <p className="text-xs text-forest/70 leading-relaxed mb-8 flex-1">{p.desc}</p>
+                  <p className="text-[13px] text-forest/70 leading-relaxed mb-8 flex-1">{p.desc}</p>
                   
                   <div className="flex items-center justify-between pt-5 border-t border-forest/10 mb-6 group-hover:border-gold/20 transition-colors">
                     {p.stats.map((s, i) => (
-                      <div key={i} className="flex items-center gap-1.5 text-[9px] text-forest/60 uppercase font-bold tracking-wider">
+                      <div key={i} className="flex items-center gap-1.5 text-[11px] text-forest/60 uppercase font-bold tracking-wider">
                         <span className="text-gold">{s.i}</span> {s.t}
                       </div>
                     ))}
                   </div>
 
-                  <Link to={p.link} className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[10px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
+                  <Link to={p.link} className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[12px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
                     LEARN MORE <ArrowUpRight className="h-3 w-3" />
                   </Link>
                 </div>
@@ -280,15 +280,15 @@ function FounderJourney() {
           <div className="lg:sticky lg:top-32 relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold">THE FOUNDER JOURNEY</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold">THE FOUNDER JOURNEY</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-cream md:text-[3.5rem] leading-[1.05]">
               Five stages, from <span className="font-serif italic text-gold relative inline-block">spark<div className="absolute -bottom-2 left-0 w-full h-1 bg-gold/30 rounded-full" /></span> to scale.
             </h2>
-            <p className="mt-6 text-sm text-cream/70 max-w-md leading-relaxed">
+            <p className="mt-6 text-[15px] text-cream/70 max-w-md leading-relaxed">
               A structured arc that meets founders wherever they are — from first idea to companies scaling internationally. Every step is backed by Cambridge faculty, funding networks and active investors.
             </p>
-            <div className="mt-8 flex flex-wrap gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+            <div className="mt-8 flex flex-wrap gap-6 text-[13px] font-bold uppercase tracking-[0.2em] text-gold">
               <Link to="/contact" className="flex items-center gap-2 hover:text-cream transition-colors group">
                 <div className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold/20 transition-colors"><ArrowUpRight className="w-3 h-3" /></div>
                 PORTFOLIO
@@ -317,7 +317,7 @@ function FounderJourney() {
                   <span className="text-2xl font-serif text-forest/20 group-hover:text-gold transition-colors">{s.n}</span>
                 </div>
                 <h3 className="text-lg font-bold text-forest-deep mb-2 relative z-10">{s.t}</h3>
-                <p className="text-xs text-forest/70 leading-relaxed relative z-10">{s.d}</p>
+                <p className="text-[13px] text-forest/70 leading-relaxed relative z-10">{s.d}</p>
               </div>
             ))}
           </div>
@@ -334,7 +334,7 @@ function Ecosystem() {
       logo: (
         <div className="flex items-center gap-2">
           <Shield className="w-6 h-6 text-[#9c2727]" fill="#9c2727" />
-          <span className="font-serif font-bold text-forest-deep text-[13px] leading-tight text-left uppercase">
+          <span className="font-serif font-bold text-forest-deep text-[15px] leading-tight text-left uppercase">
             University of<br />Cambridge
           </span>
         </div>
@@ -353,7 +353,7 @@ function Ecosystem() {
       logo: (
         <div className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-[#9c2727]" fill="#9c2727" />
-          <span className="font-serif text-forest-deep font-semibold text-[11px] tracking-wide leading-tight uppercase text-left">
+          <span className="font-serif text-forest-deep font-semibold text-[13px] tracking-wide leading-tight uppercase text-left">
             CAMBRIDGE<br />JUDGE BUSINESS SCHOOL
           </span>
         </div>
@@ -380,7 +380,7 @@ function Ecosystem() {
       logo: (
         <div className="flex flex-col items-center">
           <Handshake className="w-8 h-8 text-forest-deep mb-1.5" />
-          <span className="font-sans font-bold text-forest-deep text-[13px] leading-tight">Industry Partners</span>
+          <span className="font-sans font-bold text-forest-deep text-[15px] leading-tight">Industry Partners</span>
         </div>
       ),
       role: "Pilots, scale and market access",
@@ -403,7 +403,7 @@ function Ecosystem() {
               <div className="h-14 flex items-center justify-center mb-3">
                 {p.logo}
               </div>
-              <p className="text-[10px] text-forest/60 leading-relaxed font-medium text-center max-w-[140px]">
+              <p className="text-[12px] text-forest/60 leading-relaxed font-medium text-center max-w-[140px]">
                 {p.role}
               </p>
               <span className="mt-4 text-forest/15 text-xl shrink-0">·</span>
@@ -425,7 +425,7 @@ function Community() {
     <section className="bg-cream pt-24 md:pt-32 pb-0">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 flex flex-col items-center text-center max-w-3xl mx-auto">
-          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
+          <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem] leading-[1.1]">
             Built in our programmes.<br/>
             <span className="font-serif italic text-gold relative inline-block">
@@ -440,14 +440,14 @@ function Community() {
             <div key={i} className="group rounded-[2rem] border border-forest/10 bg-white p-10 hover:shadow-[0_20px_40px_rgba(20,40,30,0.08)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/10 transition-colors duration-500 pointer-events-none" />
               <Quote className="h-8 w-8 text-gold/20 mb-8 group-hover:text-gold/40 transition-colors duration-500" />
-              <p className="text-[13px] text-forest-deep/80 font-medium leading-relaxed mb-10 flex-1">"{t.q}"</p>
+              <p className="text-[15px] text-forest-deep/80 font-medium leading-relaxed mb-10 flex-1">"{t.q}"</p>
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-forest-deep text-gold flex items-center justify-center font-serif text-lg font-bold">
                   {t.a.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold text-forest-deep leading-tight">{t.a}</p>
-                  <p className="text-[9px] text-forest/50 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
+                  <p className="text-[13px] font-bold text-forest-deep leading-tight">{t.a}</p>
+                  <p className="text-[11px] text-forest/50 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
                 </div>
               </div>
             </div>
@@ -459,7 +459,7 @@ function Community() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-3xl">
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold mb-6 block">START YOUR ENTREPRENEURIAL JOURNEY</span>
+              <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-6 block">START YOUR ENTREPRENEURIAL JOURNEY</span>
               <h2 className="text-4xl font-bold tracking-tight text-cream md:text-[4rem] leading-[1.1] mb-6">
                 Build confidently.<br />
                 Innovate boldly.<br />
@@ -471,10 +471,10 @@ function Community() {
             </div>
             
             <div className="flex flex-col items-start md:items-end gap-5 shrink-0 md:pb-2">
-              <Link to="/contact" className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-sm font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
+              <Link to="/contact" className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-[15px] font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
                 Explore Programmes <ArrowUpRight className="h-5 w-5" />
               </Link>
-              <a href="mailto:hello@globaledulab.com" className="text-[10px] font-bold uppercase tracking-[0.25em] text-cream/60 hover:text-gold transition-colors">
+              <a href="mailto:hello@globaledulab.com" className="text-[12px] font-bold uppercase tracking-[0.25em] text-cream/60 hover:text-gold transition-colors">
                 HELLO@GLOBALEDULAB.COM
               </a>
             </div>
