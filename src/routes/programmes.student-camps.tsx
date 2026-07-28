@@ -209,7 +209,7 @@ function Camps() {
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-gold group-hover:bg-gold/20 transition-colors duration-300">
                     {camp.icon}
                   </div>
-                  <span className="rounded-full border border-white/20 px-3 py-1.5 text-[13px] font-bold uppercase tracking-[0.15em] text-cream/70">
+                  <span className="rounded-full border border-white/20 px-3 py-1.5 text-[15px] font-bold uppercase tracking-[0.15em] text-cream/70">
                     {camp.badge}
                   </span>
                 </div>

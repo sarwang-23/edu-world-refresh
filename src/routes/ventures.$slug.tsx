@@ -194,7 +194,7 @@ function Hero({ v }: { v: Venture }) {
                 Request Venture Brief <Download className="h-3 w-3" />
               </button>
               
-              <div className="flex items-start gap-2 mt-4 text-[13px] text-forest/60">
+              <div className="flex items-start gap-2 mt-4 text-[15px] text-forest/60">
                 <Lock className="h-3 w-3 shrink-0 mt-0.5" />
                 <p>Introductions are subject to relevance, founder approval and confidentiality.</p>
               </div>
@@ -223,7 +223,7 @@ function MetadataBar({ v }: { v: Venture }) {
                 {item.icon}
               </div>
               <div>
-                <p className="text-[13px] font-bold uppercase tracking-widest text-forest/50">{item.l}</p>
+                <p className="text-[15px] font-bold uppercase tracking-widest text-forest/50">{item.l}</p>
                 <p className="text-[15px] font-semibold text-forest-deep mt-0.5">{item.v}</p>
               </div>
             </div>
@@ -287,7 +287,7 @@ function MainContent({ v }: { v: Venture }) {
                       <span className="text-[14px] text-forest/70 font-medium">{m.l}</span>
                       <div className="text-right">
                         <span className="text-[15px] font-bold text-forest-deep">{m.v}</span>
-                        {m.subtitle && <p className="text-[13px] text-forest/50 leading-none">{m.subtitle}</p>}
+                        {m.subtitle && <p className="text-[15px] text-forest/50 leading-none">{m.subtitle}</p>}
                       </div>
                     </div>
                   ))}

@@ -114,7 +114,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+30</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+30</div>
                 </div>
               </div>
             </div>
@@ -270,7 +270,7 @@ function ThemeSection() {
               <div className="absolute bottom-0 left-0 right-0 p-10">
                 <div className="inline-flex items-center gap-2 mb-4 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3.5 py-1.5 rounded-full">
                   <Sprout className="h-4 w-4 text-gold" />
-                  <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold">Why This Theme</p>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">Why This Theme</p>
                 </div>
                 <p className="text-white text-[15px] leading-[1.7] font-medium">
                   Global food systems are under pressure from climate change, population growth, and shifting consumer expectations — creating the largest venture opportunity of the decade.

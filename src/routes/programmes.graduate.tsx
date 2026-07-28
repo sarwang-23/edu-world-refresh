@@ -108,7 +108,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+30</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+30</div>
                 </div>
               </div>
             </div>
@@ -214,7 +214,7 @@ function WhyDifferent() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-transparent" />
                 <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[14px] font-bold text-white/80">{e.num}</div>
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[13px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">{e.tag}</span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[15px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">{e.tag}</span>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 border border-gold/30 text-gold backdrop-blur-sm group-hover:bg-gold group-hover:text-forest-deep group-hover:border-gold transition-all duration-300 shadow-lg">{e.icon}</div>
@@ -298,7 +298,7 @@ function Tracks() {
             <div className="h-[3px] w-full bg-gradient-to-r from-gold/40 via-gold to-gold/20" />
             <div className="p-9 pb-6">
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[13px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
+                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[15px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Track 01
                 </span>
@@ -335,7 +335,7 @@ function Tracks() {
             <div className="h-[3px] w-full bg-gradient-to-r from-blue-400/30 via-blue-500 to-blue-400/20" />
             <div className="p-9 pb-6">
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[13px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
+                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[15px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Track 02
                 </span>
@@ -372,7 +372,7 @@ function Tracks() {
             <div className="h-[3px] w-full bg-gradient-to-r from-orange-400/30 via-orange-500 to-orange-400/20" />
             <div className="p-9 pb-6">
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-orange-500/8 text-orange-600 text-[13px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-orange-400/25">
+                <span className="inline-flex items-center gap-2 bg-orange-500/8 text-orange-600 text-[15px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-orange-400/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
                   Track 03
                 </span>

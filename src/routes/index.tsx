@@ -453,7 +453,7 @@ function Voices() {
                     <p className="text-[14px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
                   </div>
                 </div>
-                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[13px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
                   {featured.tag}
                 </span>
               </div>
@@ -500,7 +500,7 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[13px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <p className="text-[15px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
                   </div>
                 </div>
               </div>

@@ -200,7 +200,7 @@ function StatsBar() {
               {stats.map((stat, idx) => (
                 <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[13px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
                 </div>
               ))}
             </div>

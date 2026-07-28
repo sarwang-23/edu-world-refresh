@@ -139,7 +139,7 @@ function Hero() {
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="h-px flex-1 bg-gold/30" />
-                    <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold/60">Featured Venture</span>
+                    <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold/60">Featured Venture</span>
                     <div className="h-px flex-1 bg-gold/30" />
                   </div>
                   <p className="text-white font-bold text-xl mb-1">CARBONSYNQ</p>
@@ -149,14 +149,14 @@ function Hero() {
 
               {/* Floating stat card */}
               <div className="absolute -top-6 -right-8 bg-white border border-forest/10 rounded-2xl p-5 shadow-xl">
-                <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold/70 mb-1">Portfolio</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold/70 mb-1">Portfolio</p>
                 <p className="text-3xl font-bold text-forest-deep">6+</p>
                 <p className="text-[14px] text-forest/50">Active Ventures</p>
               </div>
 
               {/* Floating tag */}
               <div className="absolute -bottom-6 -left-8 bg-gold rounded-2xl px-5 py-4 shadow-xl">
-                <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep/60 mb-0.5">Countries</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep/60 mb-0.5">Countries</p>
                 <p className="text-2xl font-bold text-forest-deep">5+</p>
               </div>
             </div>
@@ -184,7 +184,7 @@ function StatsBar() {
         {duplicateStats.map((s, i) => (
           <div key={i} className="flex flex-col items-center text-center px-16 border-r border-white/5 last:border-r-0">
             <p className="text-[1.8rem] font-bold text-gold leading-none mb-1">{s.num}</p>
-            <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-white/40 whitespace-nowrap">{s.label}</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/40 whitespace-nowrap">{s.label}</p>
           </div>
         ))}
       </div>
@@ -324,7 +324,7 @@ function OurVentures() {
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold/25 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
 
               {/* Track badge */}
-              <div className={`inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-full border text-[13px] font-bold uppercase tracking-[0.2em] mb-8 transition-all duration-500 shadow-sm ${v.isVenture ? "bg-gold/15 text-gold border-gold/30 group-hover:border-gold/60 group-hover:bg-gold/25 group-hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]" : "bg-white/10 text-white/80 border-white/20 group-hover:border-white/50 group-hover:bg-white/15"}`}>
+              <div className={`inline-flex items-center gap-2.5 self-start px-4 py-2 rounded-full border text-[15px] font-bold uppercase tracking-[0.2em] mb-8 transition-all duration-500 shadow-sm ${v.isVenture ? "bg-gold/15 text-gold border-gold/30 group-hover:border-gold/60 group-hover:bg-gold/25 group-hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]" : "bg-white/10 text-white/80 border-white/20 group-hover:border-white/50 group-hover:bg-white/15"}`}>
                 {v.icon} {v.track}
               </div>
 
@@ -376,7 +376,7 @@ function Journey() {
                   <div className="w-[4.5rem] h-[4.5rem] rounded-2xl bg-white border border-[#0A1F11]/8 flex items-center justify-center text-[#0A1F11]/40 shadow-sm group-hover:bg-[#0A1F11] group-hover:text-gold group-hover:border-[#0A1F11] group-hover:shadow-xl transition-all duration-400">
                     {s.icon}
                   </div>
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-[#0A1F11] text-[13px] font-bold px-2 py-0.5 rounded-full shadow">
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gold text-[#0A1F11] text-[15px] font-bold px-2 py-0.5 rounded-full shadow">
                     {s.num}
                   </div>
                 </div>

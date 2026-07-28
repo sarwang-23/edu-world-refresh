@@ -90,7 +90,7 @@ function Leadership() {
             />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
               <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bharti</span>
-              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-white/60">Founder & CEO</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/60">Founder & CEO</span>
             </div>
           </div>
         </div>

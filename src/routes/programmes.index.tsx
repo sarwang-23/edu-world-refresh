@@ -155,7 +155,7 @@ function ProgrammesPage() {
                 <div className="relative aspect-[4/3] md:w-2/5 overflow-hidden shrink-0">
                   <img src={p.img} alt={p.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent opacity-60" />
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep shadow-sm">
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep shadow-sm">
                     {p.tag}
                   </span>
                 </div>

@@ -50,7 +50,7 @@ function Hero() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             {/* badge */}
-            <span className="inline-flex items-center gap-2 bg-gold/12 text-gold text-[13px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
+            <span className="inline-flex items-center gap-2 bg-gold/12 text-gold text-[15px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               Track 01 · Entrepreneurship
             </span>
@@ -91,7 +91,7 @@ function Hero() {
               ].map((s, i) => (
                 <div key={i} className="rounded-xl bg-white/15 backdrop-blur-md border border-white/20 px-4 py-3 text-center">
                   <p className="text-[18px] font-bold text-white">{s.val}</p>
-                  <p className="text-[13px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
+                  <p className="text-[15px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>

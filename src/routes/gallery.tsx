@@ -64,15 +64,15 @@ function GalleryPage() {
             <div className="pt-8 border-t border-forest/10 grid grid-cols-3 gap-6">
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">05</p>
-                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Countries</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Countries</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">150+</p>
-                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Business Leaders</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Business Leaders</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">5,000+</p>
-                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Students Engaged</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Students Engaged</p>
               </div>
             </div>
           </div>

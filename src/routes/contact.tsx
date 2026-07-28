@@ -133,7 +133,7 @@ function ContactPage() {
               </div>
 
               <div className="flex flex-col md:flex-row items-end justify-between gap-6 pt-12">
-                <p className="text-[13px] text-forest/40 max-w-[250px] leading-relaxed">
+                <p className="text-[15px] text-forest/40 max-w-[250px] leading-relaxed">
                   By submitting, you consent to be contacted by the Global Education Lab team.
                 </p>
                 <button type="button" className="inline-flex items-center justify-center gap-4 bg-[#0A301D] px-8 py-5 text-[15px] font-bold tracking-[0.2em] text-white transition-all hover:bg-forest-deep">
@@ -167,7 +167,7 @@ function ContactPage() {
                   <div className="flex gap-4">
                     <MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-[13px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Head Office</p>
+                      <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Head Office</p>
                       <p className="text-[15px] font-medium leading-relaxed text-white/90">Global Education Lab Ltd<br/>Stirling House, Denny End Road<br/>Waterbeach, CB25 9PB<br/>Cambridge, United Kingdom</p>
                     </div>
                   </div>
@@ -176,14 +176,14 @@ function ContactPage() {
                     <div className="flex gap-4">
                       <Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-[13px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Telephone</p>
+                        <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Telephone</p>
                         <p className="text-[15px] font-medium text-white/90">+44 (0)1223 302 904</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
                       <Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-[13px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Email</p>
+                        <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Email</p>
                         <p className="text-[15px] font-medium text-white/90 truncate max-w-[120px]">info@globaledulab.com</p>
                       </div>
                     </div>
@@ -197,7 +197,7 @@ function ContactPage() {
                     <MapPin className="h-10 w-10 text-[#88B04B]" fill="#88B04B" />
                   </div>
                   <div className="absolute right-0 bottom-0">
-                    <button className="bg-[#082617] text-white/90 text-[13px] font-bold tracking-widest uppercase px-4 py-3 flex items-center gap-2 hover:text-white transition-colors">
+                    <button className="bg-[#082617] text-white/90 text-[15px] font-bold tracking-widest uppercase px-4 py-3 flex items-center gap-2 hover:text-white transition-colors">
                       Directions <ArrowUpRight className="h-3 w-3" />
                     </button>
                   </div>

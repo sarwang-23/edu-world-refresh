@@ -215,7 +215,7 @@ function Stories() {
               </div>
               
               <div className="mt-auto pt-8 border-t border-forest/10 flex justify-between items-center">
-                <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest/40">Global Education Lab</span>
+                <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest/40">Global Education Lab</span>
                 <button onClick={() => setActiveStory(null)} className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest hover:text-gold transition-colors">
                   Close Story
                 </button>
@@ -311,7 +311,7 @@ function Numbers() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
               <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Learners by Region</h3>
-              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">Five Regions</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">Five Regions</span>
             </div>
             <div className="flex flex-col gap-10 relative z-10">
               <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-r-gold border-t-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:rotate-45">
@@ -338,7 +338,7 @@ function Numbers() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-forest/5 rounded-full blur-3xl group-hover:bg-forest/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
               <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Programme Growth</h3>
-              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
             </div>
             <div className="flex h-[200px] items-end justify-between gap-3 relative mt-10 z-10">
                <div className="absolute inset-0 border-b border-l border-forest/10" />
@@ -350,7 +350,7 @@ function Numbers() {
                   >
                     {i === growth.length - 1 && <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(200,160,90,0.8)] animate-pulse" />}
                   </div>
-                  <span className="text-[13px] font-bold text-forest/40 group-hover/bar:text-gold transition-colors">{g.y}</span>
+                  <span className="text-[15px] font-bold text-forest/40 group-hover/bar:text-gold transition-colors">{g.y}</span>
                 </div>
               ))}
             </div>
@@ -361,7 +361,7 @@ function Numbers() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
               <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Startups Supported</h3>
-              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">By Stage</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">By Stage</span>
             </div>
             <div className="flex flex-col gap-10 relative z-10">
               <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-b-gold border-r-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:-rotate-45">

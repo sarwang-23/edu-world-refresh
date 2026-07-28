@@ -114,7 +114,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+40</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+40</div>
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@ function CoreElements() {
 
                 {/* top-right tag pill */}
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[13px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[15px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">
                     {e.tag}
                   </span>
                 </div>
@@ -444,7 +444,7 @@ function ChooseYourTrack() {
             <div className="p-9 pb-6">
               {/* badge row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[13px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
+                <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[15px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Track 01
                 </span>
@@ -490,7 +490,7 @@ function ChooseYourTrack() {
             <div className="p-9 pb-6">
               {/* badge row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[13px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
+                <span className="inline-flex items-center gap-2 bg-blue-500/8 text-blue-600 text-[15px] font-black uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-blue-400/25">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Track 02
                 </span>

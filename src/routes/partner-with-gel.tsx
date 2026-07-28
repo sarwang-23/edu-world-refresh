@@ -67,7 +67,7 @@ function Hero() {
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[13px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
+            <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[15px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               Global Partnerships
             </span>
@@ -127,7 +127,7 @@ function Hero() {
             {/* Stat badge */}
             <div className="absolute -bottom-6 -left-6 bg-forest-deep border border-gold/20 p-6 rounded-2xl shadow-2xl flex flex-col justify-center min-w-[160px]">
               <span className="text-3xl font-bold font-serif text-gold italic">15+</span>
-              <span className="text-[13px] font-bold uppercase tracking-[0.15em] text-cream/70 mt-1">Countries Engaged</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.15em] text-cream/70 mt-1">Countries Engaged</span>
             </div>
           </div>
         </div>
@@ -346,7 +346,7 @@ function PartnershipJourney() {
                 <div className="w-16 h-16 rounded-full bg-forest-deep flex items-center justify-center text-gold mb-6 border-4 border-cream shadow-lg group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all duration-300 relative z-10">
                   {s.icon}
                 </div>
-                <span className="text-[13px] font-black text-gold/50 tracking-[0.2em] mb-1">{s.num}</span>
+                <span className="text-[15px] font-black text-gold/50 tracking-[0.2em] mb-1">{s.num}</span>
                 <h4 className="text-[14px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{s.title}</h4>
                 <p className="text-[15px] text-forest/65 leading-[1.65] px-2">{s.desc}</p>
               </div>
@@ -393,7 +393,7 @@ function TrustedByMarquee() {
       </svg>
       <div className="text-center leading-none mt-2">
         <div className="text-[15px] font-black text-[#1a6b2a] tracking-wide">GIRTON</div>
-        <div className="text-[13px] font-black text-[#111] tracking-widest">COLLEGE</div>
+        <div className="text-[15px] font-black text-[#111] tracking-widest">COLLEGE</div>
       </div>
     </div>,
     // King's E-Lab

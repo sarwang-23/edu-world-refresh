@@ -247,7 +247,7 @@ function Programmes() {
                   
                   <div className="flex items-center justify-between pt-5 border-t border-forest/10 mb-6 group-hover:border-gold/20 transition-colors">
                     {p.stats.map((s, i) => (
-                      <div key={i} className="flex items-center gap-1.5 text-[13px] text-forest/60 uppercase font-bold tracking-wider">
+                      <div key={i} className="flex items-center gap-1.5 text-[15px] text-forest/60 uppercase font-bold tracking-wider">
                         <span className="text-gold">{s.i}</span> {s.t}
                       </div>
                     ))}
@@ -447,7 +447,7 @@ function Community() {
                 </div>
                 <div>
                   <p className="text-[15px] font-bold text-forest-deep leading-tight">{t.a}</p>
-                  <p className="text-[13px] text-forest/50 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
+                  <p className="text-[15px] text-forest/50 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
                 </div>
               </div>
             </div>
