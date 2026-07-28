@@ -112,13 +112,19 @@ function StatsStrip() {
     { val: '100+', label: 'Guests', sub: 'Founders, peers & investors' },
     { val: 'UK–India', label: 'Corridor Focus', sub: 'Cross-border ecosystem' },
     { val: 'Annual', label: 'Recurring Event', sub: 'Growing each year' },
+    { val: 'Lords', label: 'House of Lords', sub: 'Palace of Westminster' },
+    { val: 'Invite', label: 'By Invitation', sub: 'Curated guest list' },
   ]
+  const repeated = [...stats, ...stats, ...stats]
   return (
-    <section className="bg-white border-y border-forest/8">
-      <div className="mx-auto max-w-7xl px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
+    <section className="bg-white border-y border-forest/8 overflow-hidden">
+      <div className="py-8 relative">
+        <div className="flex gap-0 animate-marquee">
+          {repeated.map((s, i) => (
+            <div
+              key={i}
+              className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0"
+            >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
               <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
               <p className="text-[12px] text-forest/55 mt-0.5">{s.sub}</p>

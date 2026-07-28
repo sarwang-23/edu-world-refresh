@@ -26,7 +26,6 @@ function Page() {
       <ExperientialLearning />
       <ProgrammeStructure />
       <WhoShouldAttend />
-      <Testimonials />
       <ProgrammeDetails />
       <CTA />
       <Footer />
@@ -114,14 +113,23 @@ function StatsStrip() {
     { val: 'CXOs', label: 'Curated Cohort', sub: 'Boards, CEOs, Founders' },
     { val: 'AI+', label: 'Innovation Focus', sub: 'Strategy & Leadership' },
     { val: '1:1', label: 'Mentorship', sub: 'Post-programme support' },
+    { val: '4', label: 'Core Pillars', sub: 'Leadership, AI, Growth, Finance' },
+    { val: 'LCG', label: 'Lord\'s Cricket Ground', sub: 'Signature experience, London' },
   ]
+  const repeated = [...stats, ...stats, ...stats]
   return (
-    <section className="bg-white border-y border-forest/8">
-      <div className="mx-auto max-w-7xl px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
+    <section className="bg-white border-y border-forest/8 overflow-hidden">
+      <div className="py-8 relative">
+        <div
+          className="flex gap-0 animate-marquee"
+          style={{ animationDirection: 'reverse' }}
+        >
+          {repeated.map((s, i) => (
+            <div
+              key={i}
+              className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default"
+            >
+              <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
               <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
               <p className="text-[12px] text-forest/55 mt-0.5">{s.sub}</p>
             </div>
@@ -280,7 +288,7 @@ function ProgrammeStructure() {
     },
   ]
   return (
-    <section id="details" className="bg-[#F7F5F0] py-24">
+    <section id="details" className="bg-[#E8E0D0] py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
@@ -291,7 +299,7 @@ function ProgrammeStructure() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {phases.map((ph, i) => (
-            <div key={i} className="rounded-3xl bg-white border border-forest/10 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div key={i} className="rounded-3xl bg-white/90 border border-forest/15 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <div className={`h-1.5 w-full ${ph.color}`} />
               <div className="p-8">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/40 mb-1">Phase {i + 1}</p>
@@ -321,24 +329,26 @@ function WhoShouldAttend() {
     { icon: <Layers className="h-6 w-6" />, title: 'Senior Leaders', desc: 'C-suite and senior leadership ready to step into broader strategic roles within their organisations.', color: 'bg-forest-deep' },
   ]
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-forest-deep py-24 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/8 blur-[120px]" />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
             <div className="h-px w-8 bg-gold" />
           </div>
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Is this programme for you?</h2>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Is this programme for you?</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {profiles.map((p, i) => (
-            <div key={i} className="group rounded-3xl border border-forest/8 bg-[#F7F5F0] overflow-hidden hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+            <div key={i} className="group rounded-3xl border border-white/15 bg-white/8 backdrop-blur-sm overflow-hidden hover:border-gold/40 hover:bg-white/12 hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
               <div className={`h-1.5 w-full ${p.color}`} />
               <div className="p-7">
-                <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl ${p.color} text-white shadow-lg`}>{p.icon}</div>
-                <h3 className="text-[16px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[13px] text-forest/70 leading-relaxed">{p.desc}</p>
+                <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl ${p.color} text-white shadow-lg ring-2 ring-white/10`}>{p.icon}</div>
+                <h3 className="text-[16px] font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
+                <p className="text-[13px] text-cream/70 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -348,60 +358,6 @@ function WhoShouldAttend() {
   )
 }
 
-function Testimonials() {
-  const testimonials = [
-    {
-      name: 'Priya Sharma',
-      role: 'CEO, TechVentures India',
-      initials: 'PS',
-      quote: 'The GILP completely transformed how I approach strategy. The AI simulation sessions were unlike anything I\'ve experienced in India — incredibly practical and directly applicable to our business challenges.',
-    },
-    {
-      name: 'Rajesh Kumar',
-      role: 'MD, Global Manufacturing Group',
-      initials: 'RK',
-      quote: 'Being at Cambridge Judge was a privilege. The faculty brought world-class perspectives, and the cohort of Indian CXOs created a peer network I continue to draw on every day.',
-    },
-    {
-      name: 'Ananya Mehta',
-      role: 'Founder, HealthTech Startup',
-      initials: 'AM',
-      quote: 'The Lord\'s Cricket Ground session was extraordinary — leadership lessons drawn from elite sport that I would never have encountered elsewhere. GILP is truly a one-of-a-kind programme.',
-    },
-  ]
-  const [current, setCurrent] = useState(0)
-  const t = testimonials[current]
-  return (
-    <section className="bg-[#F7F5F0] py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <div className="h-px w-8 bg-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-          <div className="h-px w-8 bg-gold" />
-        </div>
-        <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What participants say.</h2>
-        <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-forest-deep to-forest flex items-center justify-center text-2xl font-bold text-white shadow-xl mb-6">{t.initials}</div>
-        <div className="flex items-center justify-center gap-1 mb-6">
-          {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-        </div>
-        <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
-        <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[12px] text-forest/50 mt-1">{t.role}</p>
-        <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
-          </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function ProgrammeDetails() {
   const details = [
@@ -428,7 +384,7 @@ function ProgrammeDetails() {
     'Personal expenses',
   ]
   return (
-    <section className="bg-white py-24">
+    <section className="bg-[#E8E0D0] py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
@@ -439,7 +395,7 @@ function ProgrammeDetails() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {details.map((d, i) => (
-            <div key={i} className="rounded-2xl p-6 bg-[#F7F5F0] border border-forest/10 hover:border-gold/30 hover:shadow-md transition-all duration-300">
+            <div key={i} className="rounded-2xl p-6 bg-white/80 border border-forest/10 hover:border-gold/30 hover:shadow-md transition-all duration-300">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
               <p className="text-[15px] font-bold text-forest-deep">{d.value}</p>
             </div>
@@ -453,7 +409,7 @@ function ProgrammeDetails() {
               <p className="text-[24px] font-bold text-white mb-3">Enquire for Pricing</p>
               <span className="inline-block text-[12px] font-semibold text-white/70">✦ Limited seats available — apply early</span>
             </div>
-            <div className="bg-[#F7F5F0] rounded-2xl p-8 border border-forest/10 flex-1">
+            <div className="bg-white/80 rounded-2xl p-8 border border-forest/10 flex-1">
               <h3 className="text-[16px] font-bold text-forest-deep mb-5">Inclusions</h3>
               <ul className="space-y-3">
                 {inclusions.map((item, i) => (

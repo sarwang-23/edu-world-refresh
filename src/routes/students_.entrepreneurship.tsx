@@ -7,7 +7,7 @@ import { Footer } from './index'
 import studentsImg from '../assets/students.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 
-export const Route = createFileRoute('/students/entrepreneurship')({
+export const Route = createFileRoute('/students_/entrepreneurship')({
   head: () => ({
     meta: [
       { title: 'Entrepreneurship Track | Young Leaders Summer Programme' },

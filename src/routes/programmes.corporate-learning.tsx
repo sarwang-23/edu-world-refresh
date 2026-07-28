@@ -108,13 +108,19 @@ function StatsStrip() {
     { val: '50+', label: 'Teams Trained', sub: 'Boards & senior leadership' },
     { val: 'Bespoke', label: 'Every Workshop', sub: 'Built around your org' },
     { val: '2 Formats', label: 'Flexible Delivery', sub: 'On-site or at Cambridge' },
+    { val: 'ESG', label: 'Core Theme', sub: 'Leadership & governance' },
+    { val: 'AI+', label: 'Strategy Focus', sub: 'For boards & C-suite' },
   ]
+  const repeated = [...stats, ...stats, ...stats]
   return (
-    <section className="bg-white border-y border-forest/8">
-      <div className="mx-auto max-w-7xl px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center">
+    <section className="bg-white border-y border-forest/8 overflow-hidden">
+      <div className="py-8 relative">
+        <div className="flex gap-0 animate-marquee">
+          {repeated.map((s, i) => (
+            <div
+              key={i}
+              className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0"
+            >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
               <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
               <p className="text-[12px] text-forest/55 mt-0.5">{s.sub}</p>

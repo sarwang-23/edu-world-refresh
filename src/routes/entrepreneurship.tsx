@@ -190,7 +190,7 @@ function Programmes() {
       title: "Zero-to-One Ideation Weekend", 
       desc: "An immersive experience for students, workers and professionals to solve real-world challenges.", 
       img: placeholderImg,
-      link: "/entrepreneurship/zero-to-one",
+      link: "/programmes/zero-to-one",
       stats: [{i: <BookOpen className="w-3 h-3"/>, t: "48 Hours"}, {i: <Globe2 className="w-3 h-3"/>, t: "Cambridge"}]
     },
     { 

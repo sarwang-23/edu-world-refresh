@@ -24,7 +24,7 @@ function YoungLeaders() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
-      <FeaturesStrip />
+      <StatsMarquee />
       <CoreElements />
       <PartnersAndMentors />
       <ChooseYourTrack />
@@ -144,6 +144,34 @@ function Hero() {
             {/* Decorative dot pattern */}
             <div className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── STATS MARQUEE ─────────────────────────────────────────────────────── */
+function StatsMarquee() {
+  const stats = [
+    { val: '2 Tracks', label: 'Academic Pathways', sub: 'Entrepreneurship & STEM' },
+    { val: 'Ages 13–18', label: 'Target Cohort', sub: 'Young leaders & innovators' },
+    { val: 'Cambridge', label: 'Base', sub: 'Girton College, Cambridge' },
+    { val: 'Summer', label: 'Next Cohort', sub: '2026' },
+    { val: '30+', label: 'Expert Sessions', sub: 'Academics & industry leaders' },
+    { val: '100%', label: 'Supervised', sub: 'Safe residential environment' },
+  ]
+  const repeated = [...stats, ...stats, ...stats]
+  return (
+    <section className="bg-white border-y border-forest/8 overflow-hidden relative z-20 -mt-12">
+      <div className="py-10">
+        <div className="flex gap-0 animate-marquee" style={{ animationDirection: 'reverse' }}>
+          {repeated.map((s, i) => (
+            <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
+              <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[11px] text-forest/55 leading-tight">{s.sub}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

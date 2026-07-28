@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles } from 'lucide-react'
+import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
 import heroImg from '../assets/hero-classroom.jpg'
@@ -20,9 +20,9 @@ export const Route = createFileRoute('/programmes/zero-to-one')({
 
 function ZeroToOne() {
   return (
-    <div className="flex min-h-screen flex-col font-sans text-foreground bg-white">
+    <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
-      <StatsStrip />
+      <StatsMarquee />
       <WhatIsZTO />
       <ThemeSection />
       <SuccessStory />
@@ -35,78 +35,114 @@ function ZeroToOne() {
   )
 }
 
+/* ─── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4EFE6] pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
+      {/* grid texture */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="grid md:grid-cols-12 gap-16 items-center">
-          <div className="md:col-span-6">
-            <span className="inline-flex items-center gap-2 bg-gold/12 text-gold text-[9px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              48-Hour Venture-Building Weekend
-            </span>
-            <h1 className="text-[3rem] md:text-[4.5rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
-              Zero-To-One
-            </h1>
-            <p className="mt-4 text-[18px] font-semibold text-forest/80 leading-snug font-serif italic text-gold">
-              From raw ideas to incubator-ready ventures.
-            </p>
-            <p className="mt-6 text-[15px] text-forest/65 leading-[1.8] max-w-lg mb-10">
-              A practical, high-energy venture-building format that helps participants move from early interest, research insight or lived experience to a validated venture direction — in just 48 hours. Hosted at Cambridge Judge Business School, in partnership with King's E-Lab.
-            </p>
-            
-            <div className="mt-8 flex flex-wrap gap-5 text-[12px] font-semibold text-forest/80 mb-10 border-l-2 border-gold/40 pl-4 py-1">
-              <span className="inline-flex items-center gap-2">
-                <Calendar className="h-4 w-4 text-gold" /> 19–21 June 2026
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Target className="h-4 w-4 text-gold" /> Judge Business School, Cambridge
-              </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Text column */}
+          <div>
+            {/* eyebrow */}
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
             </div>
 
-            <div className="flex gap-4 flex-wrap">
+            <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
+              Zero-To-One.<br />
+              <span className="font-serif italic text-gold">Idea to venture.</span>
+            </h1>
+
+            <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
+              From raw ideas to incubator-ready ventures in 48 hours.
+            </p>
+            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+              A practical, high-energy venture-building format hosted at Cambridge Judge Business School, in partnership with King's E-Lab. Challenge your thinking, form a team, and leave with a validated direction.
+            </p>
+
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              {[
+                { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
+                { icon: <Calendar className="h-4 w-4" />, label: '19–21 June 2026' },
+                { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
+              ].map((b, i) => (
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[11px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                  <span className="text-gold">{b.icon}</span>
+                  {b.label}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex gap-4 flex-wrap">
               <a
                 href="https://www.globaledulab.com/event/zero-to-one"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
-                Sign Up Now <ArrowUpRight className="h-4 w-4" />
+                Sign Up Now
+                <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest hover:border-gold/40 transition-all duration-300">
+              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 See Format
               </a>
             </div>
           </div>
-          <div className="md:col-span-6 relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl h-[480px]">
-              <img src={heroImg} alt="Zero to One" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent" />
+
+          {/* Image column */}
+          <div className="relative">
+            <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
+              <img src={heroImg} alt="Zero to One" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-white text-[15px] font-bold">June 19–21, 2026</p>
+                </div>
+                <div className="flex -space-x-2">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
+                      <User className="h-4 w-4 text-white" />
+                    </div>
+                  ))}
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[9px] font-bold">+30</div>
+                </div>
+              </div>
             </div>
-            
-            {/* Floating cards */}
-            <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-forest/10 p-5 flex items-center gap-4 border border-forest/8">
-              <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center">
-                <Rocket className="h-6 w-6 text-gold" />
+
+            {/* Floating card — King's E-Lab */}
+            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
+              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
+                <Rocket className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[12px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
-                <p className="text-[10px] text-forest/55 mt-1">& Cambridge Judge</p>
+                <p className="text-[11px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
+                <p className="text-[10px] text-forest/55 mt-0.5">& Cambridge Judge</p>
               </div>
             </div>
-            <div className="absolute -top-6 -right-6 bg-forest-deep rounded-2xl shadow-xl shadow-forest-deep/20 p-5 flex items-center gap-4 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                <Zap className="h-6 w-6 text-gold" />
+
+            {/* Floating card — 48h */}
+            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
+              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <Zap className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[12px] font-bold text-white uppercase tracking-wider">48 Hours</p>
-                <p className="text-[10px] text-cream/55 mt-1">Idea to venture</p>
+                <p className="text-[11px] font-bold text-white uppercase tracking-wider">48 Hours</p>
+                <p className="text-[10px] text-cream/55 mt-0.5">Idea to venture</p>
               </div>
             </div>
+
+            {/* Dot pattern */}
+            <div className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
           </div>
         </div>
       </div>
@@ -114,20 +150,24 @@ function Hero() {
   )
 }
 
-function StatsStrip() {
+/* ─── STATS MARQUEE ─────────────────────────────────────────────────────────── */
+function StatsMarquee() {
   const stats = [
     { val: '48h', label: 'Intensive Format', sub: 'Idea to venture direction' },
     { val: '4/10', label: 'Ideas Incubated', sub: 'From inaugural cohort' },
     { val: 'Spark', label: 'Cambridge Incubator', sub: 'Placement pipeline' },
     { val: '2026', label: 'October Theme', sub: 'Food, Agriculture & Planetary Health' },
+    { val: '100%', label: 'Form Real Teams', sub: 'Across disciplines' },
+    { val: 'June', label: 'Next Cohort', sub: '19–21 June 2026' },
   ]
+  const repeated = [...stats, ...stats, ...stats]
   return (
-    <section className="relative z-20 -mt-12 w-full px-6">
-      <div className="mx-auto max-w-6xl bg-white rounded-3xl shadow-[0_8px_40px_rgba(26,53,35,0.08)] border border-forest/5 px-10 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-forest/5">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center px-4 group">
-              <p className="text-3xl md:text-4xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
+    <section className="bg-white border-y border-forest/8 overflow-hidden relative z-20 -mt-12">
+      <div className="py-10">
+        <div className="flex gap-0 animate-marquee" style={{ animationDirection: 'reverse' }}>
+          {repeated.map((s, i) => (
+            <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
+              <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
               <p className="text-[11px] text-forest/55 leading-tight">{s.sub}</p>
             </div>
@@ -138,6 +178,7 @@ function StatsStrip() {
   )
 }
 
+/* ─── WHAT IS ZTO ────────────────────────────────────────────────────────────── */
 function WhatIsZTO() {
   const pillars = [
     { icon: <Users className="h-6 w-6" />, title: 'Who Participates', desc: 'Researchers, business students, alumni, early-stage founders and curious builders across disciplines.' },
@@ -146,7 +187,7 @@ function WhatIsZTO() {
     { icon: <Compass className="h-6 w-6" />, title: 'The Principle', desc: 'Not to start with the best idea, but to develop founder-thinking: how to find the \'how\' inside any \'what\'.' },
   ]
   return (
-    <section className="bg-white py-32">
+    <section className="bg-white py-32 border-t border-forest/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4">
@@ -183,6 +224,7 @@ function WhatIsZTO() {
   )
 }
 
+/* ─── THEME SECTION ──────────────────────────────────────────────────────────── */
 function ThemeSection() {
   const ventureAreas = [
     'AI for personalised food & nutrition',
@@ -195,7 +237,7 @@ function ThemeSection() {
     'Sustainable packaging & distribution',
   ]
   return (
-    <section className="py-24 bg-forest-deep relative overflow-hidden">
+    <section className="py-32 bg-forest-deep relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-[600px] w-[600px] rounded-full bg-gold/10 blur-[120px]" />
       
@@ -207,7 +249,7 @@ function ThemeSection() {
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
-              Food, Agriculture &amp;<br/>Planetary Health
+              Food, Agriculture &<br/>Planetary Health
             </h2>
             <p className="text-[15px] text-cream/75 leading-[1.8] mb-10 max-w-lg">
               A timely theme connecting health, climate, biology, food systems, sustainability, agriculture, AI, supply chains, behaviour change and commercial innovation. One of the most pressing systems challenges of our era — and an enormous venture opportunity.
@@ -222,7 +264,7 @@ function ThemeSection() {
             </div>
           </div>
           <div className="relative h-full min-h-[480px]">
-            <div className="h-full w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-black/40 border border-white/10 min-h-[480px] group">
+            <div className="h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/40 border border-white/10 min-h-[480px] group">
               <img src={cambridgeImg} alt="Theme" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-10">
@@ -242,9 +284,11 @@ function ThemeSection() {
   )
 }
 
+/* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
 function SuccessStory() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-32 bg-[#F4EFE6] relative overflow-hidden">
+      <div className="pointer-events-none absolute -top-32 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-gold/8 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
@@ -254,7 +298,7 @@ function SuccessStory() {
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">From challenge to incubation.</h2>
         </div>
-        <div className="bg-[#F4EFE6] rounded-[2rem] p-10 lg:p-14 border border-forest/8 shadow-sm">
+        <div className="bg-white rounded-[2.5rem] p-10 lg:p-14 border border-forest/8 shadow-[0_16px_60px_rgba(26,53,35,0.08)]">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <p className="text-[15px] text-forest/75 leading-[1.8] mb-6">
@@ -269,7 +313,7 @@ function SuccessStory() {
                   { val: '2', label: 'Teams in active pilot support' },
                   { val: '100%', label: 'Participants form real teams' },
                 ].map((s, i) => (
-                  <div key={i} className="text-center bg-white rounded-2xl p-6 border border-forest/5 shadow-[0_2px_12px_rgba(26,53,35,0.04)]">
+                  <div key={i} className="text-center bg-[#F4EFE6] rounded-2xl p-6 border border-forest/8 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                     <p className="text-2xl font-bold text-forest-deep">{s.val}</p>
                     <p className="text-[10px] text-forest/60 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
                   </div>
@@ -295,6 +339,7 @@ function SuccessStory() {
   )
 }
 
+/* ─── PROGRAMME FORMAT ───────────────────────────────────────────────────────── */
 function ProgrammeFormat() {
   const schedule = [
     {
@@ -332,8 +377,8 @@ function ProgrammeFormat() {
   const [activeDay, setActiveDay] = useState(0)
   const day = schedule[activeDay]
   return (
-    <section id="format" className="bg-[#F4EFE6] py-32 border-y border-forest/8 relative overflow-hidden">
-      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[120px]" />
+    <section id="format" className="bg-white py-32 border-t border-forest/5 relative overflow-hidden">
+      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/6 blur-[120px]" />
       
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="mb-16">
@@ -348,14 +393,14 @@ function ProgrammeFormat() {
             <button
               key={i}
               onClick={() => setActiveDay(i)}
-              className={"rounded-full px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-white border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
+              className={"rounded-full px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
             >
               {d.day.split(' · ')[0]}
             </button>
           ))}
         </div>
-        <div className="bg-white rounded-[2rem] p-10 lg:p-12 border border-forest/8 shadow-[0_8px_40px_rgba(26,53,35,0.06)] relative overflow-hidden">
-          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/5 blur-[60px]" />
+        <div className="bg-[#F4EFE6] rounded-[2.5rem] p-10 lg:p-12 border border-forest/8 shadow-[0_8px_40px_rgba(26,53,35,0.06)] relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/8 blur-[60px]" />
           
           <div className="mb-10 flex items-baseline gap-4 relative z-10">
             <h3 className="text-[22px] font-bold text-forest-deep">{day.day}</h3>
@@ -364,7 +409,7 @@ function ProgrammeFormat() {
           
           <div className="flex flex-col gap-5 relative z-10">
             {day.sessions.map((s, i) => (
-              <div key={i} className="group flex flex-col md:flex-row gap-5 md:gap-8 bg-[#F4EFE6] rounded-2xl p-6 border border-forest/5 hover:border-gold/30 hover:shadow-md transition-all duration-300">
+              <div key={i} className="group flex flex-col md:flex-row gap-5 md:gap-8 bg-white rounded-2xl p-6 border border-forest/5 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                 <div className="md:w-32 shrink-0 pt-0.5">
                   <p className="text-[11px] font-bold text-gold uppercase tracking-[0.15em]">{s.time}</p>
                 </div>
@@ -381,15 +426,18 @@ function ProgrammeFormat() {
   )
 }
 
+/* ─── WHO SHOULD APPLY ───────────────────────────────────────────────────────── */
 function WhoShouldApply() {
   const profiles = [
-    { icon: <FlaskConical className="h-6 w-6" />, title: 'Researchers', desc: 'Scientists and academics who have insights or findings that could translate into real-world impact.', color: 'bg-forest-deep text-white' },
-    { icon: <Globe2 className="h-6 w-6" />, title: 'Business Students', desc: 'MBA and master\'s students looking to build real-world venture experience alongside their studies.', color: 'bg-[#B47C35] text-white' },
-    { icon: <Lightbulb className="h-6 w-6" />, title: 'Early Founders', desc: 'Those with early ideas who want to stress-test, refine and build with like-minded collaborators.', color: 'bg-[#1A365D] text-white' },
-    { icon: <Rocket className="h-6 w-6" />, title: 'Builders & Makers', desc: 'Technologists, designers and product people who want to channel their skills into a new venture.', color: 'bg-forest text-white' },
+    { icon: <FlaskConical className="h-6 w-6" />, title: 'Researchers', desc: 'Scientists and academics who have insights or findings that could translate into real-world impact.', color: 'bg-forest-deep' },
+    { icon: <Globe2 className="h-6 w-6" />, title: 'Business Students', desc: 'MBA and master\'s students looking to build real-world venture experience alongside their studies.', color: 'bg-[#B47C35]' },
+    { icon: <Lightbulb className="h-6 w-6" />, title: 'Early Founders', desc: 'Those with early ideas who want to stress-test, refine and build with like-minded collaborators.', color: 'bg-[#1A365D]' },
+    { icon: <Rocket className="h-6 w-6" />, title: 'Builders & Makers', desc: 'Technologists, designers and product people who want to channel their skills into a new venture.', color: 'bg-forest' },
   ]
   return (
-    <section className="bg-white py-32 relative overflow-hidden">
+    <section className="bg-forest-deep py-32 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/8 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
@@ -397,20 +445,20 @@ function WhoShouldApply() {
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
             <div className="h-px w-8 bg-gold" />
           </div>
-          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5">Built for curious, driven people.</h2>
-          <p className="mt-4 text-[15px] text-forest/65 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
+          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-white mb-5">Built for curious, driven people.</h2>
+          <p className="mt-4 text-[15px] text-cream/65 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {profiles.map((p, i) => (
-            <div key={i} className="group rounded-[1.75rem] border border-forest/8 bg-white overflow-hidden hover:shadow-[0_16px_48px_rgba(26,53,35,0.12)] hover:-translate-y-2 transition-all duration-400">
+            <div key={i} className="group rounded-[1.75rem] border border-white/12 bg-white/6 backdrop-blur-sm overflow-hidden hover:border-gold/40 hover:bg-white/10 hover:shadow-[0_16px_48px_rgba(0,0,0,0.2)] hover:-translate-y-2 transition-all duration-400">
+              <div className={`h-1.5 w-full ${p.color}`} />
               <div className="p-8 pb-10">
-                <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-300 ${p.color}`}>
+                <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${p.color} text-white shadow-sm ring-2 ring-white/10 group-hover:scale-110 transition-transform duration-300`}>
                   {p.icon}
                 </div>
-                <h3 className="text-[17px] font-bold text-forest-deep mb-3 leading-tight">{p.title}</h3>
-                <p className="text-[13px] text-forest/65 leading-[1.6]">{p.desc}</p>
+                <h3 className="text-[17px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
+                <p className="text-[13px] text-cream/65 leading-[1.6]">{p.desc}</p>
               </div>
-              <div className={`h-2 w-full ${p.color} opacity-80 group-hover:opacity-100 transition-opacity duration-300`} />
             </div>
           ))}
         </div>
@@ -419,6 +467,7 @@ function WhoShouldApply() {
   )
 }
 
+/* ─── TESTIMONIALS ───────────────────────────────────────────────────────────── */
 function Testimonials() {
   const testimonials = [
     {
@@ -444,6 +493,7 @@ function Testimonials() {
   const t = testimonials[current]
   return (
     <section className="bg-[#F4EFE6] py-32 border-t border-forest/5 relative overflow-hidden">
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-gold/8 blur-[100px]" />
       <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
@@ -452,7 +502,7 @@ function Testimonials() {
         </div>
         <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-16">What participants say.</h2>
         
-        <div className="bg-white rounded-[2rem] p-12 border border-forest/8 shadow-[0_8px_32px_rgba(26,53,35,0.06)] relative">
+        <div className="bg-white rounded-[2.5rem] p-12 border border-forest/8 shadow-[0_8px_32px_rgba(26,53,35,0.06)] relative">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2">
             <div className="h-20 w-20 rounded-[1.25rem] bg-gold flex items-center justify-center text-2xl font-bold text-forest-deep shadow-xl border-4 border-[#F4EFE6]">{t.initials}</div>
           </div>
@@ -481,6 +531,7 @@ function Testimonials() {
   )
 }
 
+/* ─── BOTTOM CTA ─────────────────────────────────────────────────────────────── */
 function BottomCTA() {
   return (
     <section className="bg-forest-deep py-32 text-center relative overflow-hidden">

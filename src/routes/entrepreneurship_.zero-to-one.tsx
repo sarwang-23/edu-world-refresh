@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Clock, MapPin, Lightbulb, Users, Zap, Star, CheckCircle2, Rocket, Brain, Target, Globe2 } from 'lucide-react'
 import { Footer } from './index'
 
-export const Route = createFileRoute('/entrepreneurship/zero-to-one')({
+export const Route = createFileRoute('/entrepreneurship_/zero-to-one')({
   head: () => ({
     meta: [
       { title: 'Zero-to-One Ideation Weekend — Global Edu Lab Entrepreneurship' },

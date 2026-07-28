@@ -24,10 +24,10 @@ import { Route as ProgrammesRouteImport } from './routes/programmes'
 import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
-import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship.accelerator'
-import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship.demo-day'
-import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship.mentorship'
-import { Route as EntrepreneurshipZeroToOneRouteImport } from './routes/entrepreneurship.zero-to-one'
+import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship_.accelerator'
+import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
+import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
+import { Route as EntrepreneurshipZeroToOneRouteImport } from './routes/entrepreneurship_.zero-to-one'
 import { Route as ProgrammesIndexRouteImport } from './routes/programmes.index'
 import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
 import { Route as ProgrammesCorporateLearningRouteImport } from './routes/programmes.corporate-learning'
@@ -40,8 +40,9 @@ import { Route as ProgrammesLlpRouteImport } from './routes/programmes.llp'
 import { Route as ProgrammesStudentCampsRouteImport } from './routes/programmes.student-camps'
 import { Route as ProgrammesTeacherTrainingRouteImport } from './routes/programmes.teacher-training'
 import { Route as ProgrammesZeroToOneRouteImport } from './routes/programmes.zero-to-one'
-import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students.entrepreneurship'
-import { Route as StudentsStemResearchRouteImport } from './routes/students.stem-research'
+import { Route as StudentsArchitectureRouteImport } from './routes/students_.architecture'
+import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students_.entrepreneurship'
+import { Route as StudentsStemResearchRouteImport } from './routes/students_.stem-research'
 import { Route as VenturesSlugRouteImport } from './routes/ventures.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -121,26 +122,26 @@ const TeachersRoute = TeachersRouteImport.update({
 } as any)
 const EntrepreneurshipAcceleratorRoute =
   EntrepreneurshipAcceleratorRouteImport.update({
-    id: '/accelerator',
-    path: '/accelerator',
-    getParentRoute: () => EntrepreneurshipRoute,
+    id: '/entrepreneurship_/accelerator',
+    path: '/entrepreneurship/accelerator',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const EntrepreneurshipDemoDayRoute = EntrepreneurshipDemoDayRouteImport.update({
-  id: '/demo-day',
-  path: '/demo-day',
-  getParentRoute: () => EntrepreneurshipRoute,
+  id: '/entrepreneurship_/demo-day',
+  path: '/entrepreneurship/demo-day',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const EntrepreneurshipMentorshipRoute =
   EntrepreneurshipMentorshipRouteImport.update({
-    id: '/mentorship',
-    path: '/mentorship',
-    getParentRoute: () => EntrepreneurshipRoute,
+    id: '/entrepreneurship_/mentorship',
+    path: '/entrepreneurship/mentorship',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const EntrepreneurshipZeroToOneRoute =
   EntrepreneurshipZeroToOneRouteImport.update({
-    id: '/zero-to-one',
-    path: '/zero-to-one',
-    getParentRoute: () => EntrepreneurshipRoute,
+    id: '/entrepreneurship_/zero-to-one',
+    path: '/entrepreneurship/zero-to-one',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
   id: '/',
@@ -204,16 +205,21 @@ const ProgrammesZeroToOneRoute = ProgrammesZeroToOneRouteImport.update({
   path: '/zero-to-one',
   getParentRoute: () => ProgrammesRoute,
 } as any)
+const StudentsArchitectureRoute = StudentsArchitectureRouteImport.update({
+  id: '/students_/architecture',
+  path: '/students/architecture',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudentsEntrepreneurshipRoute =
   StudentsEntrepreneurshipRouteImport.update({
-    id: '/entrepreneurship',
-    path: '/entrepreneurship',
-    getParentRoute: () => StudentsRoute,
+    id: '/students_/entrepreneurship',
+    path: '/students/entrepreneurship',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const StudentsStemResearchRoute = StudentsStemResearchRouteImport.update({
-  id: '/stem-research',
-  path: '/stem-research',
-  getParentRoute: () => StudentsRoute,
+  id: '/students_/stem-research',
+  path: '/students/stem-research',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const VenturesSlugRoute = VenturesSlugRouteImport.update({
   id: '/ventures/$slug',
@@ -226,7 +232,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
-  '/entrepreneurship': typeof EntrepreneurshipRouteWithChildren
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -235,7 +241,7 @@ export interface FileRoutesByFullPath {
   '/past-programmes': typeof PastProgrammesRoute
   '/programmes': typeof ProgrammesRouteWithChildren
   '/school-leaders': typeof SchoolLeadersRoute
-  '/students': typeof StudentsRouteWithChildren
+  '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
@@ -252,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
+  '/students/architecture': typeof StudentsArchitectureRoute
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
@@ -262,7 +269,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
-  '/entrepreneurship': typeof EntrepreneurshipRouteWithChildren
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -270,7 +277,7 @@ export interface FileRoutesByTo {
   '/partner-with-gel': typeof PartnerWithGelRoute
   '/past-programmes': typeof PastProgrammesRoute
   '/school-leaders': typeof SchoolLeadersRoute
-  '/students': typeof StudentsRouteWithChildren
+  '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
@@ -287,6 +294,7 @@ export interface FileRoutesByTo {
   '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
+  '/students/architecture': typeof StudentsArchitectureRoute
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
@@ -298,7 +306,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
-  '/entrepreneurship': typeof EntrepreneurshipRouteWithChildren
+  '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
@@ -307,12 +315,12 @@ export interface FileRoutesById {
   '/past-programmes': typeof PastProgrammesRoute
   '/programmes': typeof ProgrammesRouteWithChildren
   '/school-leaders': typeof SchoolLeadersRoute
-  '/students': typeof StudentsRouteWithChildren
+  '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
-  '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
-  '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
-  '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
-  '/entrepreneurship/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
+  '/entrepreneurship_/accelerator': typeof EntrepreneurshipAcceleratorRoute
+  '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
+  '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
+  '/entrepreneurship_/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -324,8 +332,9 @@ export interface FileRoutesById {
   '/programmes/student-camps': typeof ProgrammesStudentCampsRoute
   '/programmes/teacher-training': typeof ProgrammesTeacherTrainingRoute
   '/programmes/zero-to-one': typeof ProgrammesZeroToOneRoute
-  '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
-  '/students/stem-research': typeof StudentsStemResearchRoute
+  '/students_/architecture': typeof StudentsArchitectureRoute
+  '/students_/entrepreneurship': typeof StudentsEntrepreneurshipRoute
+  '/students_/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
@@ -362,6 +371,7 @@ export interface FileRouteTypes {
     | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
+    | '/students/architecture'
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
@@ -397,6 +407,7 @@ export interface FileRouteTypes {
     | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
+    | '/students/architecture'
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
@@ -418,10 +429,10 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
-    | '/entrepreneurship/accelerator'
-    | '/entrepreneurship/demo-day'
-    | '/entrepreneurship/mentorship'
-    | '/entrepreneurship/zero-to-one'
+    | '/entrepreneurship_/accelerator'
+    | '/entrepreneurship_/demo-day'
+    | '/entrepreneurship_/mentorship'
+    | '/entrepreneurship_/zero-to-one'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -433,8 +444,9 @@ export interface FileRouteTypes {
     | '/programmes/student-camps'
     | '/programmes/teacher-training'
     | '/programmes/zero-to-one'
-    | '/students/entrepreneurship'
-    | '/students/stem-research'
+    | '/students_/architecture'
+    | '/students_/entrepreneurship'
+    | '/students_/stem-research'
     | '/ventures/$slug'
     | '/programmes/'
   fileRoutesById: FileRoutesById
@@ -444,7 +456,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
-  EntrepreneurshipRoute: typeof EntrepreneurshipRouteWithChildren
+  EntrepreneurshipRoute: typeof EntrepreneurshipRoute
   GalleryRoute: typeof GalleryRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
   InsightsRoute: typeof InsightsRoute
@@ -453,8 +465,15 @@ export interface RootRouteChildren {
   PastProgrammesRoute: typeof PastProgrammesRoute
   ProgrammesRoute: typeof ProgrammesRouteWithChildren
   SchoolLeadersRoute: typeof SchoolLeadersRoute
-  StudentsRoute: typeof StudentsRouteWithChildren
+  StudentsRoute: typeof StudentsRoute
   TeachersRoute: typeof TeachersRoute
+  EntrepreneurshipAcceleratorRoute: typeof EntrepreneurshipAcceleratorRoute
+  EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
+  EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
+  EntrepreneurshipZeroToOneRoute: typeof EntrepreneurshipZeroToOneRoute
+  StudentsArchitectureRoute: typeof StudentsArchitectureRoute
+  StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
+  StudentsStemResearchRoute: typeof StudentsStemResearchRoute
   VenturesSlugRoute: typeof VenturesSlugRoute
 }
 
@@ -565,33 +584,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeachersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/entrepreneurship/accelerator': {
-      id: '/entrepreneurship/accelerator'
-      path: '/accelerator'
+    '/entrepreneurship_/accelerator': {
+      id: '/entrepreneurship_/accelerator'
+      path: '/entrepreneurship/accelerator'
       fullPath: '/entrepreneurship/accelerator'
       preLoaderRoute: typeof EntrepreneurshipAcceleratorRouteImport
-      parentRoute: typeof EntrepreneurshipRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/entrepreneurship/demo-day': {
-      id: '/entrepreneurship/demo-day'
-      path: '/demo-day'
+    '/entrepreneurship_/demo-day': {
+      id: '/entrepreneurship_/demo-day'
+      path: '/entrepreneurship/demo-day'
       fullPath: '/entrepreneurship/demo-day'
       preLoaderRoute: typeof EntrepreneurshipDemoDayRouteImport
-      parentRoute: typeof EntrepreneurshipRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/entrepreneurship/mentorship': {
-      id: '/entrepreneurship/mentorship'
-      path: '/mentorship'
+    '/entrepreneurship_/mentorship': {
+      id: '/entrepreneurship_/mentorship'
+      path: '/entrepreneurship/mentorship'
       fullPath: '/entrepreneurship/mentorship'
       preLoaderRoute: typeof EntrepreneurshipMentorshipRouteImport
-      parentRoute: typeof EntrepreneurshipRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/entrepreneurship/zero-to-one': {
-      id: '/entrepreneurship/zero-to-one'
-      path: '/zero-to-one'
+    '/entrepreneurship_/zero-to-one': {
+      id: '/entrepreneurship_/zero-to-one'
+      path: '/entrepreneurship/zero-to-one'
       fullPath: '/entrepreneurship/zero-to-one'
       preLoaderRoute: typeof EntrepreneurshipZeroToOneRouteImport
-      parentRoute: typeof EntrepreneurshipRoute
+      parentRoute: typeof rootRouteImport
     }
     '/programmes/': {
       id: '/programmes/'
@@ -677,19 +696,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesZeroToOneRouteImport
       parentRoute: typeof ProgrammesRoute
     }
-    '/students/entrepreneurship': {
-      id: '/students/entrepreneurship'
-      path: '/entrepreneurship'
+    '/students_/architecture': {
+      id: '/students_/architecture'
+      path: '/students/architecture'
+      fullPath: '/students/architecture'
+      preLoaderRoute: typeof StudentsArchitectureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students_/entrepreneurship': {
+      id: '/students_/entrepreneurship'
+      path: '/students/entrepreneurship'
       fullPath: '/students/entrepreneurship'
       preLoaderRoute: typeof StudentsEntrepreneurshipRouteImport
-      parentRoute: typeof StudentsRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/students/stem-research': {
-      id: '/students/stem-research'
-      path: '/stem-research'
+    '/students_/stem-research': {
+      id: '/students_/stem-research'
+      path: '/students/stem-research'
       fullPath: '/students/stem-research'
       preLoaderRoute: typeof StudentsStemResearchRouteImport
-      parentRoute: typeof StudentsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/ventures/$slug': {
       id: '/ventures/$slug'
@@ -700,23 +726,6 @@ declare module '@tanstack/react-router' {
     }
   }
 }
-
-interface EntrepreneurshipRouteChildren {
-  EntrepreneurshipAcceleratorRoute: typeof EntrepreneurshipAcceleratorRoute
-  EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
-  EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
-  EntrepreneurshipZeroToOneRoute: typeof EntrepreneurshipZeroToOneRoute
-}
-
-const EntrepreneurshipRouteChildren: EntrepreneurshipRouteChildren = {
-  EntrepreneurshipAcceleratorRoute: EntrepreneurshipAcceleratorRoute,
-  EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
-  EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,
-  EntrepreneurshipZeroToOneRoute: EntrepreneurshipZeroToOneRoute,
-}
-
-const EntrepreneurshipRouteWithChildren =
-  EntrepreneurshipRoute._addFileChildren(EntrepreneurshipRouteChildren)
 
 interface ProgrammesRouteChildren {
   ProgrammesBaliRoute: typeof ProgrammesBaliRoute
@@ -752,26 +761,12 @@ const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
   ProgrammesRouteChildren,
 )
 
-interface StudentsRouteChildren {
-  StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
-  StudentsStemResearchRoute: typeof StudentsStemResearchRoute
-}
-
-const StudentsRouteChildren: StudentsRouteChildren = {
-  StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
-  StudentsStemResearchRoute: StudentsStemResearchRoute,
-}
-
-const StudentsRouteWithChildren = StudentsRoute._addFileChildren(
-  StudentsRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,
-  EntrepreneurshipRoute: EntrepreneurshipRouteWithChildren,
+  EntrepreneurshipRoute: EntrepreneurshipRoute,
   GalleryRoute: GalleryRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
   InsightsRoute: InsightsRoute,
@@ -780,8 +775,15 @@ const rootRouteChildren: RootRouteChildren = {
   PastProgrammesRoute: PastProgrammesRoute,
   ProgrammesRoute: ProgrammesRouteWithChildren,
   SchoolLeadersRoute: SchoolLeadersRoute,
-  StudentsRoute: StudentsRouteWithChildren,
+  StudentsRoute: StudentsRoute,
   TeachersRoute: TeachersRoute,
+  EntrepreneurshipAcceleratorRoute: EntrepreneurshipAcceleratorRoute,
+  EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
+  EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,
+  EntrepreneurshipZeroToOneRoute: EntrepreneurshipZeroToOneRoute,
+  StudentsArchitectureRoute: StudentsArchitectureRoute,
+  StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
+  StudentsStemResearchRoute: StudentsStemResearchRoute,
   VenturesSlugRoute: VenturesSlugRoute,
 }
 export const routeTree = rootRouteImport
