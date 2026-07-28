@@ -48,7 +48,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
@@ -85,7 +85,7 @@ function Hero() {
               className="h-[480px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-[13px] uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
+              <p className="text-[15px] uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
               <p className="mt-1 text-xl font-semibold text-cream">
                 Empowering leaders across world-class ecosystems.
               </p>
@@ -111,7 +111,7 @@ function CollaboratorsBar() {
 
   return (
     <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
-      <p className="text-center text-[12px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
+      <p className="text-center text-[14px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
         IN COLLABORATION WITH
       </p>
       <div className="relative flex overflow-hidden">
@@ -168,7 +168,7 @@ function WhyLeadersTravel() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Header: stacked, left-aligned */}
         <div className="mb-14 max-w-2xl">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
             WHY LEADERS TRAVEL WITH US
           </p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-forest-deep md:text-5xl">
@@ -231,7 +231,7 @@ function StatsBar() {
           {items.map((s, idx) => (
             <div key={idx} className="flex flex-col items-center shrink-0">
               <p className="font-sans text-4xl font-bold tracking-tight text-gold md:text-5xl">{s.k}</p>
-              <p className="mt-2 text-[13px] font-bold uppercase tracking-[0.2em] text-cream/70 whitespace-nowrap">{s.v}</p>
+              <p className="mt-2 text-[15px] font-bold uppercase tracking-[0.2em] text-cream/70 whitespace-nowrap">{s.v}</p>
             </div>
           ))}
         </div>
@@ -286,7 +286,7 @@ function ProgrammesCohorts() {
     <section id="cohorts" className="border-b border-border/60 bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">2026 COHORTS</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">2026 COHORTS</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             Four programmes. One passport.
           </h2>
@@ -309,7 +309,7 @@ function ProgrammesCohorts() {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between text-[13px] font-bold uppercase tracking-[0.2em] text-forest/60 mb-6">
+                  <div className="flex items-center justify-between text-[15px] font-bold uppercase tracking-[0.2em] text-forest/60 mb-6">
                     <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-gold transition-colors ${
                       isSelected ? 'bg-gold/15' : 'bg-forest/5'
                     }`}>
@@ -320,7 +320,7 @@ function ProgrammesCohorts() {
 
                   <h3 className="text-2xl font-bold text-forest-deep">{p.title}</h3>
 
-                  <div className="mt-3 flex items-center gap-4 text-[13px] font-semibold uppercase tracking-wider text-gold">
+                  <div className="mt-3 flex items-center gap-4 text-[15px] font-semibold uppercase tracking-wider text-gold">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3.5 w-3.5" /> {p.location}
                     </span>
@@ -379,7 +379,7 @@ function EndToEndJourney() {
     <section className="border-b border-border/60 py-24" style={{ backgroundColor: '#FBF8F0' }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO ARRIVAL</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO ARRIVAL</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             An international journey we handle end-to-end.
           </h2>
@@ -393,7 +393,7 @@ function EndToEndJourney() {
                 <div className="h-px flex-1 bg-forest/20" />
               </div>
               <h3 className="text-base font-bold text-forest-deep">{s.title}</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{s.desc}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-forest/75">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -428,7 +428,7 @@ function Testimonials() {
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by school leaders across four continents.
           </h2>
@@ -447,7 +447,7 @@ function Testimonials() {
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[12px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
               </div>
             </div>
           ))}
@@ -486,7 +486,7 @@ function DelegationConcierge() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FOR INTERNATIONAL DELEGATIONS</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR INTERNATIONAL DELEGATIONS</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Everything you need — before you board.
             </h2>
@@ -502,7 +502,7 @@ function DelegationConcierge() {
                   {item.icon}
                 </div>
                 <h3 className="text-base font-bold text-forest-deep">{item.title}</h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{item.desc}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-forest/75">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -516,7 +516,7 @@ function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Reserve your delegation for the 2026 season.
         </h2>
@@ -527,13 +527,13 @@ function FinalCTA() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href="#cohorts"
-            className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
           >
             OR VIEW ALL PROGRAMMES →
           </a>

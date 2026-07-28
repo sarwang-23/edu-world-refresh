@@ -38,7 +38,7 @@ function GalleryPage() {
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold tracking-[0.25em] text-gold uppercase">The Visual Archive • Vol. 01</span>
+              <span className="text-[14px] font-bold tracking-[0.25em] text-gold uppercase">The Visual Archive • Vol. 01</span>
             </div>
 
             <h1 className="text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
@@ -64,15 +64,15 @@ function GalleryPage() {
             <div className="pt-8 border-t border-forest/10 grid grid-cols-3 gap-6">
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">05</p>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-forest/50 uppercase">Countries</p>
+                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Countries</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">150+</p>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-forest/50 uppercase">Business Leaders</p>
+                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Business Leaders</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">5,000+</p>
-                <p className="text-[11px] font-bold tracking-[0.2em] text-forest/50 uppercase">Students Engaged</p>
+                <p className="text-[13px] font-bold tracking-[0.2em] text-forest/50 uppercase">Students Engaged</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ function GalleryPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                 <div>
-                  <span className="text-[12px] font-bold tracking-[0.2em] text-gold uppercase block mb-1">Cover</span>
+                  <span className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase block mb-1">Cover</span>
                   <p className="text-white font-medium text-[15px]">Cambridge • Michaelmas '24</p>
                 </div>
                 <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 flex items-center justify-center hover:bg-white/30 transition-colors">
@@ -103,7 +103,7 @@ function GalleryPage() {
             <div key={i} className="flex gap-8 items-center shrink-0">
               {['CAMBRIDGE', 'LONDON', 'HELSINKI', 'TALLINN', 'BALI', 'NEW DELHI', 'MUMBAI', 'BENGALURU'].map((city, j) => (
                 <div key={`${i}-${j}`} className="flex items-center gap-8">
-                  <span className="text-[12px] font-bold tracking-[0.2em] text-forest/40 uppercase">{city}</span>
+                  <span className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase">{city}</span>
                   <span className="w-1.5 h-1.5 border border-gold/50 rounded-full flex items-center justify-center">
                     <span className="w-0.5 h-0.5 bg-gold rounded-full"></span>
                   </span>
@@ -121,7 +121,7 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[12px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 01 — Corporate Leadership</span>
+                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 01 — Corporate Leadership</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1]">
                 The Boardroom,<br />
@@ -169,7 +169,7 @@ function GalleryPage() {
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-24 z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-6 bg-gold" />
-            <span className="text-[12px] font-bold tracking-[0.3em] text-gold uppercase">Past Programmes</span>
+            <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Past Programmes</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
             Five countries.{" "}
@@ -189,7 +189,7 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[12px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 02 — School Leadership</span>
+                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 02 — School Leadership</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1]">
                 Educators,{" "}
@@ -218,7 +218,7 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[12px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 03 — Student Programmes</span>
+                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 03 — Student Programmes</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1] max-w-xl">
                 The next generation,{" "}
@@ -251,7 +251,7 @@ function GalleryPage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-6 bg-[#C19842]" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#C19842]">Be Part of the Story</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-[#C19842]">Be Part of the Story</span>
             </div>
             <h2 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold text-white leading-[1.05] tracking-tight mb-0">
               Let's build something

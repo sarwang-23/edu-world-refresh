@@ -71,7 +71,7 @@ function Page() {
                   <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep group-hover:text-gold transition-colors">{it.t}</h3>
                   <p className="mt-4 text-forest/70 leading-relaxed">{it.d}</p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-[13px] group-hover:text-gold transition-colors">
+                <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-[15px] group-hover:text-gold transition-colors">
                   Read More <ArrowUpRight className="h-4 w-4" />
                 </div>
               </a>

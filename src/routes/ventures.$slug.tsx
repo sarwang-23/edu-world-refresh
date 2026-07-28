@@ -125,7 +125,7 @@ function VenturePage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`py-4 text-[13px] font-bold uppercase tracking-wider transition-colors relative ${activeTab === tab ? 'text-forest-deep' : 'text-forest/50 hover:text-forest-deep'}`}
+              className={`py-4 text-[15px] font-bold uppercase tracking-wider transition-colors relative ${activeTab === tab ? 'text-forest-deep' : 'text-forest/50 hover:text-forest-deep'}`}
             >
               {tab}
               {activeTab === tab && (
@@ -151,7 +151,7 @@ function Hero({ v }: { v: Venture }) {
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep via-forest-deep/90 to-transparent" />
       
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex items-center gap-2 text-[12px] uppercase tracking-wider text-white/50 mb-8">
+        <div className="flex items-center gap-2 text-[14px] uppercase tracking-wider text-white/50 mb-8">
           <Link to="/global-ventures" className="hover:text-white transition-colors">Global Ventures</Link>
           <ChevronRight className="h-3 w-3" />
           <span className="text-white/80">Venture Profile</span>
@@ -159,7 +159,7 @@ function Hero({ v }: { v: Venture }) {
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8">
-            <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded text-[12px] font-bold uppercase tracking-widest text-gold mb-6">
+            <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded text-[14px] font-bold uppercase tracking-widest text-gold mb-6">
               {v.track}
             </span>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
@@ -185,16 +185,16 @@ function Hero({ v }: { v: Venture }) {
             {/* Interested Card */}
             <div className="bg-white rounded-2xl p-6 shadow-2xl text-forest-deep w-full max-w-sm">
               <h3 className="text-[15px] font-bold mb-2">Interested in this venture?</h3>
-              <p className="text-[12px] text-forest/70 mb-6">We facilitate introductions to founders and support meaningful collaborations.</p>
+              <p className="text-[14px] text-forest/70 mb-6">We facilitate introductions to founders and support meaningful collaborations.</p>
               
-              <button className="w-full flex items-center justify-center gap-2 bg-forest-deep text-white rounded-lg py-2.5 text-[13px] font-bold mb-3 hover:bg-forest transition-colors">
+              <button className="w-full flex items-center justify-center gap-2 bg-forest-deep text-white rounded-lg py-2.5 text-[15px] font-bold mb-3 hover:bg-forest transition-colors">
                 Request Introduction <ArrowUpRight className="h-3 w-3" />
               </button>
-              <button className="w-full flex items-center justify-center gap-2 bg-white text-forest-deep border border-forest/20 rounded-lg py-2.5 text-[13px] font-bold hover:bg-forest/5 transition-colors">
+              <button className="w-full flex items-center justify-center gap-2 bg-white text-forest-deep border border-forest/20 rounded-lg py-2.5 text-[15px] font-bold hover:bg-forest/5 transition-colors">
                 Request Venture Brief <Download className="h-3 w-3" />
               </button>
               
-              <div className="flex items-start gap-2 mt-4 text-[11px] text-forest/60">
+              <div className="flex items-start gap-2 mt-4 text-[13px] text-forest/60">
                 <Lock className="h-3 w-3 shrink-0 mt-0.5" />
                 <p>Introductions are subject to relevance, founder approval and confidentiality.</p>
               </div>
@@ -223,8 +223,8 @@ function MetadataBar({ v }: { v: Venture }) {
                 {item.icon}
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-forest/50">{item.l}</p>
-                <p className="text-[13px] font-semibold text-forest-deep mt-0.5">{item.v}</p>
+                <p className="text-[13px] font-bold uppercase tracking-widest text-forest/50">{item.l}</p>
+                <p className="text-[15px] font-semibold text-forest-deep mt-0.5">{item.v}</p>
               </div>
             </div>
           ))}
@@ -255,8 +255,8 @@ function MainContent({ v }: { v: Venture }) {
               <div key={i} className="bg-white rounded-2xl p-6 border border-forest/10 shadow-sm flex flex-col items-center text-center">
                 <div className="mb-4">{c.icon}</div>
                 <h4 className="text-[15px] font-bold text-forest-deep mb-3">{c.title}</h4>
-                <p className="text-[12px] text-forest/70 leading-relaxed flex-1 mb-4">{c.desc}</p>
-                <button className="text-[12px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors mt-auto">
+                <p className="text-[14px] text-forest/70 leading-relaxed flex-1 mb-4">{c.desc}</p>
+                <button className="text-[14px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors mt-auto">
                   Learn more <ArrowUpRight className="h-3 w-3" />
                 </button>
               </div>
@@ -272,22 +272,22 @@ function MainContent({ v }: { v: Venture }) {
                 {v.progress.map((p, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="h-4 w-4 text-forest shrink-0" />
-                    <span className="text-[13px] text-forest/80 leading-relaxed">{p}</span>
+                    <span className="text-[15px] text-forest/80 leading-relaxed">{p}</span>
                   </div>
                 ))}
               </div>
               
               <div className="bg-cream rounded-xl p-6 mt-auto">
-                <h4 className="text-[13px] font-bold text-forest-deep mb-4">
+                <h4 className="text-[15px] font-bold text-forest-deep mb-4">
                   Key Metrics <span className="font-normal text-forest/60">(Pilot Stage)</span>
                 </h4>
                 <div className="space-y-3">
                   {v.metrics.map((m, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-forest/10 pb-2 last:border-0 last:pb-0">
-                      <span className="text-[12px] text-forest/70 font-medium">{m.l}</span>
+                      <span className="text-[14px] text-forest/70 font-medium">{m.l}</span>
                       <div className="text-right">
                         <span className="text-[15px] font-bold text-forest-deep">{m.v}</span>
-                        {m.subtitle && <p className="text-[11px] text-forest/50 leading-none">{m.subtitle}</p>}
+                        {m.subtitle && <p className="text-[13px] text-forest/50 leading-none">{m.subtitle}</p>}
                       </div>
                     </div>
                   ))}
@@ -306,15 +306,15 @@ function MainContent({ v }: { v: Venture }) {
                     </div>
                     <div>
                       <h4 className="text-[14px] font-bold text-forest-deep">{member.name}</h4>
-                      <p className="text-[12px] font-semibold text-gold mb-2">{member.role}</p>
-                      <p className="text-[12px] text-forest/70 leading-relaxed">{member.bio}</p>
+                      <p className="text-[14px] font-semibold text-gold mb-2">{member.role}</p>
+                      <p className="text-[14px] text-forest/70 leading-relaxed">{member.bio}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="mt-6 pt-6 border-t border-forest/5">
-                <p className="text-[12px] text-forest/70 italic mb-4">Advisors and domain experts from security, AI and enterprise technology.</p>
-                <button className="text-[13px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors">
+                <p className="text-[14px] text-forest/70 italic mb-4">Advisors and domain experts from security, AI and enterprise technology.</p>
+                <button className="text-[15px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors">
                   View Team <ArrowUpRight className="h-3 w-3" />
                 </button>
               </div>
@@ -331,10 +331,10 @@ function MainContent({ v }: { v: Venture }) {
                   <div className="w-12 h-12 bg-white rounded-full border border-forest/10 shadow-sm flex items-center justify-center text-forest mb-4">
                     {stage.icon}
                   </div>
-                  <h4 className="text-[12px] font-bold text-forest-deep mb-4">{stage.period}</h4>
+                  <h4 className="text-[14px] font-bold text-forest-deep mb-4">{stage.period}</h4>
                   <ul className="text-left w-full space-y-2">
                     {stage.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-[12px] text-forest/70 leading-relaxed">
+                      <li key={j} className="flex items-start gap-2 text-[14px] text-forest/70 leading-relaxed">
                         <CheckCircle2 className="h-3 w-3 text-forest/40 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
@@ -356,7 +356,7 @@ function MainContent({ v }: { v: Venture }) {
               {v.highlights.map((h, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <Zap className="h-4 w-4 text-forest/50 shrink-0 mt-0.5" />
-                  <span className="text-[13px] text-forest/80 leading-relaxed">{h}</span>
+                  <span className="text-[15px] text-forest/80 leading-relaxed">{h}</span>
                 </div>
               ))}
             </div>
@@ -372,13 +372,13 @@ function MainContent({ v }: { v: Venture }) {
                     {s.icon}
                   </div>
                   <div>
-                    <h4 className="text-[13px] font-bold text-forest-deep mb-1">{s.t}</h4>
-                    <p className="text-[12px] text-forest/70 leading-relaxed">{s.d}</p>
+                    <h4 className="text-[15px] font-bold text-forest-deep mb-1">{s.t}</h4>
+                    <p className="text-[14px] text-forest/70 leading-relaxed">{s.d}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <button className="w-full mt-6 bg-white border border-forest/20 text-forest-deep rounded-lg py-3 text-[13px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center justify-center gap-2">
+            <button className="w-full mt-6 bg-white border border-forest/20 text-forest-deep rounded-lg py-3 text-[15px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center justify-center gap-2">
               See Collaboration Opportunities <ArrowUpRight className="h-3 w-3" />
             </button>
           </div>
@@ -397,7 +397,7 @@ function GelsRole() {
       <div className="relative grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-2xl font-bold mb-4">GEL's Role in Kavach AI's Journey</h2>
-          <p className="text-[13px] text-white/80 leading-relaxed">
+          <p className="text-[15px] text-white/80 leading-relaxed">
             Through the Global Ventures Programme, GEL supports Kavach AI with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners. Our objective is to help the venture scale globally through the UK and beyond.
           </p>
         </div>
@@ -413,7 +413,7 @@ function GelsRole() {
               <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
                 <CheckCircle2 className="h-3 w-3 text-gold" />
               </div>
-              <span className="text-[12px] font-medium leading-relaxed">{item}</span>
+              <span className="text-[14px] font-medium leading-relaxed">{item}</span>
             </div>
           ))}
         </div>
@@ -432,16 +432,16 @@ function BottomCTA() {
           </div>
           <div>
             <h2 className="text-xl font-bold text-forest-deep mb-1">Let's build a safer future—together.</h2>
-            <p className="text-[13px] text-forest/70">
+            <p className="text-[15px] text-forest/70">
               If you are an investor, corporate, university or expert interested in collaborating with Kavach AI, we would love to connect.
             </p>
           </div>
         </div>
         <div className="flex gap-4 shrink-0">
-          <button className="bg-gold hover:bg-gold/90 text-forest-deep px-6 py-3 rounded-lg text-[13px] font-bold transition-colors inline-flex items-center gap-2">
+          <button className="bg-gold hover:bg-gold/90 text-forest-deep px-6 py-3 rounded-lg text-[15px] font-bold transition-colors inline-flex items-center gap-2">
             Request Introduction <ArrowUpRight className="h-3 w-3" />
           </button>
-          <button className="bg-white border border-forest/20 text-forest-deep px-6 py-3 rounded-lg text-[13px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center gap-2">
+          <button className="bg-white border border-forest/20 text-forest-deep px-6 py-3 rounded-lg text-[15px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center gap-2">
             Request Venture Brief <Download className="h-3 w-3" />
           </button>
         </div>

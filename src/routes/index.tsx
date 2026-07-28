@@ -71,7 +71,7 @@ function Hero() {
               Partner with GEL
             </Link>
           </div>
-          <p className="mt-8 text-[13px] font-bold uppercase tracking-[0.2em] text-forest/50">
+          <p className="mt-8 text-[15px] font-bold uppercase tracking-[0.2em] text-forest/50">
             Rooted in Cambridge. Impacting the world.
           </p>
         </div>
@@ -114,7 +114,7 @@ function FeaturesStrip() {
           <div key={i} className="flex flex-col items-start gap-3 mx-10 min-w-[220px]">
             <div className="text-forest/70">{f.icon}</div>
             <h4 className="text-[15px] font-bold text-forest-deep">{f.title}</h4>
-            <p className="text-[13px] text-forest/60 leading-relaxed max-w-[180px]">{f.desc}</p>
+            <p className="text-[15px] text-forest/60 leading-relaxed max-w-[180px]">{f.desc}</p>
           </div>
         ))}
       </div>
@@ -173,7 +173,7 @@ function OurProgrammes() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
             </div>
             <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
               Our Programmes
@@ -182,7 +182,7 @@ function OurProgrammes() {
           </div>
           <Link
             to="/programmes"
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[13px] font-bold uppercase tracking-[0.12em] text-white hover:bg-forest transition-all duration-300"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[15px] font-bold uppercase tracking-[0.12em] text-white hover:bg-forest transition-all duration-300"
           >
             View All Programmes <ArrowUpRight className="h-4 w-4" />
           </Link>
@@ -213,7 +213,7 @@ function OurProgrammes() {
                 <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[8px] font-bold uppercase tracking-[0.18em] text-gold">
                   {p.tag}
                 </span>
-                <span className="text-[13px] font-bold text-white/30 font-mono mt-1">{p.number}</span>
+                <span className="text-[15px] font-bold text-white/30 font-mono mt-1">{p.number}</span>
               </div>
 
               {/* Content — pinned to bottom */}
@@ -221,10 +221,10 @@ function OurProgrammes() {
                 <h3 className="text-[15px] font-bold text-white leading-snug mb-3 group-hover:text-gold transition-colors duration-300">
                   {p.headline}
                 </h3>
-                <p className="text-[12px] text-white/70 leading-relaxed mb-5 max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
+                <p className="text-[14px] text-white/70 leading-relaxed mb-5 max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
                   {p.desc}
                 </p>
-                <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.12em] text-gold">
+                <div className="flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.12em] text-gold">
                   Explore
                   <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:scale-110 transition-all duration-300">
                     <ArrowUpRight className="h-3 w-3 text-gold group-hover:text-forest-deep transition-colors duration-300" />
@@ -266,7 +266,7 @@ function ImpactSoFar() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep leading-tight tracking-tight">
               Our Impact So Far
@@ -274,7 +274,7 @@ function ImpactSoFar() {
           </div>
           <Link
             to="/our-impact"
-            className="inline-flex w-fit items-center gap-3 rounded-full bg-forest-deep px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shrink-0"
+            className="inline-flex w-fit items-center gap-3 rounded-full bg-forest-deep px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shrink-0"
           >
             Explore Our Impact <ArrowUpRight className="h-4 w-4" />
           </Link>
@@ -295,8 +295,8 @@ function ImpactSoFar() {
                 <div className="text-forest/70">{s.icon}</div>
                 <div>
                   <div className="text-[1.6rem] font-bold text-forest-deep leading-none tabular-nums">{s.value}</div>
-                  <div className="text-[13px] font-bold text-forest-deep mt-1.5">{s.label}</div>
-                  <div className="text-[12px] text-forest/50 mt-0.5">{s.desc}</div>
+                  <div className="text-[15px] font-bold text-forest-deep mt-1.5">{s.label}</div>
+                  <div className="text-[14px] text-forest/50 mt-0.5">{s.desc}</div>
                 </div>
               </div>
               {/* Vertical separator */}
@@ -319,7 +319,7 @@ function CambridgeOrigin() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
-            <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold flex items-center gap-3 mb-4">
+            <p className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold flex items-center gap-3 mb-4">
               <span className="w-6 h-px bg-gold/50" /> FROM CAMBRIDGE TO THE WORLD
             </p>
             <h2 className="text-[2.5rem] font-bold leading-[1.05] md:text-[3.5rem] mb-6">
@@ -338,7 +338,7 @@ function CambridgeOrigin() {
                   <div className="shrink-0 mt-0.5">{item.icon}</div>
                   <div>
                     <h4 className="text-[15px] font-bold text-white mb-1">{item.title}</h4>
-                    <p className="text-[13px] text-primary-foreground/60 leading-relaxed">{item.desc}</p>
+                    <p className="text-[15px] text-primary-foreground/60 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -397,7 +397,7 @@ function Voices() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
             </div>
             <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
               Voices from Our{" "}
@@ -450,10 +450,10 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-white">{featured.a}</p>
-                    <p className="text-[12px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
+                    <p className="text-[14px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
                   </div>
                 </div>
-                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[11px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[13px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
                   {featured.tag}
                 </span>
               </div>
@@ -500,7 +500,7 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[11px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <p className="text-[13px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
                   </div>
                 </div>
               </div>
@@ -560,7 +560,7 @@ export function Footer() {
             </p>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Quick Links</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Quick Links</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -568,7 +568,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Partner</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Partner</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -576,7 +576,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Resources</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Resources</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["News & Insights", "/insights"], ["Events", "/gallery"], ["Brochures", "/contact"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -584,13 +584,13 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Connect</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Connect</p>
             <a href="mailto:hello@globaledulab.com" className="text-[15px] text-forest/80 hover:text-forest transition-colors">
               hello@globaledulab.com
             </a>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[13px] text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[15px] text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Global Education Lab Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-forest transition-colors">Privacy Policy</a>

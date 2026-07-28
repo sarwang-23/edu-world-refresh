@@ -41,7 +41,7 @@ function Hero() {
         {/* Back */}
         <Link
           to="/students"
-          className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.18em] text-gold mb-10 hover:text-gold/70 transition-colors"
+          className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.18em] text-gold mb-10 hover:text-gold/70 transition-colors"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Programme
@@ -50,7 +50,7 @@ function Hero() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             {/* badge */}
-            <span className="inline-flex items-center gap-2 bg-gold/12 text-gold text-[11px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
+            <span className="inline-flex items-center gap-2 bg-gold/12 text-gold text-[13px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               Track 01 · Entrepreneurship
             </span>
@@ -66,13 +66,13 @@ function Hero() {
             <div className="flex gap-4 flex-wrap">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/students"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest hover:border-gold/40 transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest hover:border-gold/40 transition-all duration-300"
               >
                 View All Tracks
               </Link>
@@ -91,7 +91,7 @@ function Hero() {
               ].map((s, i) => (
                 <div key={i} className="rounded-xl bg-white/15 backdrop-blur-md border border-white/20 px-4 py-3 text-center">
                   <p className="text-[18px] font-bold text-white">{s.val}</p>
-                  <p className="text-[11px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
+                  <p className="text-[13px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -116,7 +116,7 @@ function WhatYoullDo() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Do</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Do</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Four pillars of learning.</h2>
@@ -155,7 +155,7 @@ function Modules() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Modules</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Modules</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Six intensive sessions.</h2>
@@ -163,7 +163,7 @@ function Modules() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((m, i) => (
             <div key={i} className="rounded-[1.5rem] bg-white border border-forest/8 p-7 hover:border-gold/30 hover:shadow-[0_12px_36px_rgba(26,53,35,0.09)] transition-all duration-300 shadow-sm group">
-              <span className="text-[13px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{m.num}</span>
+              <span className="text-[15px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{m.num}</span>
               <h3 className="text-[15px] font-bold text-forest-deep mt-2 mb-4 group-hover:text-gold transition-colors duration-300">{m.title}</h3>
               <ul className="space-y-2">
                 {m.items.map((item, j) => (
@@ -191,7 +191,7 @@ function Outcomes() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Leave With</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Leave With</span>
             </div>
             <h2 className="text-[2.4rem] font-bold text-white mb-6 leading-tight">More than a programme. A launchpad.</h2>
             <p className="text-[14px] text-cream/60 leading-[1.8] mb-8">
@@ -228,14 +228,14 @@ function CTA() {
       <div className="mx-auto max-w-2xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Join the Track</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Join the Track</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Ready to build your idea?</h2>
         <p className="text-[15px] text-forest/60 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
+          className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
         >
           Apply for Track 01 <ArrowUpRight className="h-4 w-4" />
         </Link>

@@ -41,7 +41,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Cambridge Judge Business School</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Cambridge Judge Business School</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Global India Leadership Programme
@@ -65,13 +65,13 @@ function Hero() {
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="#details"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
               >
                 Programme Details
               </a>
@@ -87,8 +87,8 @@ function Hero() {
                 <Landmark className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Cambridge Judge</p>
-                <p className="text-[12px] text-forest/55 mt-0.5">Business School</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Cambridge Judge</p>
+                <p className="text-[14px] text-forest/55 mt-0.5">Business School</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -96,8 +96,8 @@ function Hero() {
                 <GraduationCap className="h-5 w-5 text-forest-deep" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">5-Day Residential</p>
-                <p className="text-[12px] text-forest/55 mt-0.5">Immersive Programme</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">5-Day Residential</p>
+                <p className="text-[14px] text-forest/55 mt-0.5">Immersive Programme</p>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ function StatsStrip() {
               className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default"
             >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
               <p className="text-[14px] text-forest/55 mt-0.5">{s.sub}</p>
             </div>
           ))}
@@ -173,7 +173,7 @@ function Curriculum() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Curriculum Pillars</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Curriculum Pillars</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Built for leaders driving India's global ambitions.</h2>
@@ -213,7 +213,7 @@ function ExperientialLearning() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Signature Experience</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Signature Experience</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white leading-tight mb-6">
               Leadership at Lord's Cricket Ground
@@ -240,7 +240,7 @@ function ExperientialLearning() {
               <img src={heroImg} alt="Lord's Cricket Ground" className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent rounded-3xl" />
               <div className="absolute bottom-6 left-6">
-                <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Lord's Cricket Ground</p>
+                <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Lord's Cricket Ground</p>
                 <p className="text-white text-[15px] font-semibold">London, UK · 17 September 2026</p>
               </div>
             </div>
@@ -293,7 +293,7 @@ function ProgrammeStructure() {
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Structure</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Structure</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Three phases, one transformation.</h2>
         </div>
@@ -302,7 +302,7 @@ function ProgrammeStructure() {
             <div key={i} className="rounded-3xl bg-white/90 border border-forest/15 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <div className={`h-1.5 w-full ${ph.color}`} />
               <div className="p-8">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/40 mb-1">Phase {i + 1}</p>
+                <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/40 mb-1">Phase {i + 1}</p>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-1">{ph.phase}</h3>
                 <p className="text-[14px] text-gold font-semibold mb-6">{ph.date}</p>
                 <ul className="space-y-3">
@@ -336,7 +336,7 @@ function WhoShouldAttend() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Attend</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Is this programme for you?</h2>
@@ -389,14 +389,14 @@ function ProgrammeDetails() {
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Details</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Details</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Everything you need to know.</h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {details.map((d, i) => (
             <div key={i} className="rounded-2xl p-6 bg-white/80 border border-forest/10 hover:border-gold/30 hover:shadow-md transition-all duration-300">
-              <p className="text-[12px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
+              <p className="text-[14px] font-bold uppercase tracking-[0.2em] mb-2 text-forest/40">{d.label}</p>
               <p className="text-[15px] font-bold text-forest-deep">{d.value}</p>
             </div>
           ))}
@@ -405,7 +405,7 @@ function ProgrammeDetails() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl p-8 bg-forest-deep text-white border border-forest-deep relative overflow-hidden shadow-xl">
               <div className="absolute top-6 right-6 text-gold opacity-50"><Star className="h-6 w-6 fill-gold" /></div>
-              <p className="text-[13px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fee</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fee</p>
               <p className="text-[24px] font-bold text-white mb-3">Enquire for Pricing</p>
               <span className="inline-block text-[14px] font-semibold text-white/70">✦ Limited seats available — apply early</span>
             </div>
@@ -444,7 +444,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Lead India&rsquo;s next global chapter.</h2>
@@ -454,11 +454,11 @@ function CTA() {
             href="https://www.globaledulab.com/indialeadership"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </a>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             Request Brochure
           </Link>
         </div>

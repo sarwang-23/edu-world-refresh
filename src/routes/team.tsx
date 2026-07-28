@@ -37,7 +37,7 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         
@@ -60,7 +60,7 @@ function Leadership() {
         
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
-            <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold mb-4 block">— Leadership</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold mb-4 block">— Leadership</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-deep mb-6 leading-tight">
               Driven by purpose, <span className="font-serif italic text-gold">rooted in Cambridge.</span>
             </h2>
@@ -90,7 +90,7 @@ function Leadership() {
             />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
               <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bharti</span>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Founder & CEO</span>
+              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-white/60">Founder & CEO</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ function CoreTeam() {
                 <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <h3 className="text-xl font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
-              <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/50 mb-4">{member.role}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-forest/50 mb-4">{member.role}</p>
               
               <div className="flex items-center gap-3 pt-4 border-t border-forest/5 opacity-0 group-hover:opacity-100 transition-opacity">
                 <a href="#" className="text-forest/40 hover:text-forest transition-colors"><Linkedin className="h-4 w-4" /></a>

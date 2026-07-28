@@ -53,7 +53,7 @@ function Hero() {
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -75,7 +75,7 @@ function Hero() {
                 { icon: <Calendar className="h-4 w-4" />, label: '19–21 June 2026' },
                 { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[13px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
@@ -87,12 +87,12 @@ function Hero() {
                 href="https://www.globaledulab.com/event/zero-to-one"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Sign Up Now
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 See Format
               </a>
             </div>
@@ -105,7 +105,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
                   <p className="text-white text-[15px] font-bold">June 19–21, 2026</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -114,7 +114,7 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[11px] font-bold">+30</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+30</div>
                 </div>
               </div>
             </div>
@@ -125,8 +125,8 @@ function Hero() {
                 <Rocket className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
-                <p className="text-[12px] text-forest/55 mt-0.5">& Cambridge Judge</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
+                <p className="text-[14px] text-forest/55 mt-0.5">& Cambridge Judge</p>
               </div>
             </div>
 
@@ -136,8 +136,8 @@ function Hero() {
                 <Zap className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-white uppercase tracking-wider">48 Hours</p>
-                <p className="text-[12px] text-cream/55 mt-0.5">Idea to venture</p>
+                <p className="text-[15px] font-bold text-white uppercase tracking-wider">48 Hours</p>
+                <p className="text-[14px] text-cream/55 mt-0.5">Idea to venture</p>
               </div>
             </div>
 
@@ -168,8 +168,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[13px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -193,7 +193,7 @@ function WhatIsZTO() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
             </div>
             <h2 className="text-[2.2rem] font-bold text-forest-deep mb-6 leading-[1.1]">Bridging the ideation gap.</h2>
             <p className="text-[14px] text-forest/70 leading-[1.7] mb-5">
@@ -246,7 +246,7 @@ function ThemeSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Food, Agriculture &<br/>Planetary Health
@@ -270,7 +270,7 @@ function ThemeSection() {
               <div className="absolute bottom-0 left-0 right-0 p-10">
                 <div className="inline-flex items-center gap-2 mb-4 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3.5 py-1.5 rounded-full">
                   <Sprout className="h-4 w-4 text-gold" />
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">Why This Theme</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold">Why This Theme</p>
                 </div>
                 <p className="text-white text-[15px] leading-[1.7] font-medium">
                   Global food systems are under pressure from climate change, population growth, and shifting consumer expectations — creating the largest venture opportunity of the decade.
@@ -293,7 +293,7 @@ function SuccessStory() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">From challenge to incubation.</h2>
@@ -315,7 +315,7 @@ function SuccessStory() {
                 ].map((s, i) => (
                   <div key={i} className="text-center bg-[#F4EFE6] rounded-2xl p-6 border border-forest/8 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                     <p className="text-2xl font-bold text-forest-deep">{s.val}</p>
-                    <p className="text-[12px] text-forest/60 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
+                    <p className="text-[14px] text-forest/60 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -328,7 +328,7 @@ function SuccessStory() {
                 </div>
               </div>
               <div className="absolute bottom-6 left-6">
-                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
+                <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
                 <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
               </div>
             </div>
@@ -384,7 +384,7 @@ function ProgrammeFormat() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
           </div>
           <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-[1.1]">48 hours — structured for velocity.</h2>
         </div>
@@ -393,7 +393,7 @@ function ProgrammeFormat() {
             <button
               key={i}
               onClick={() => setActiveDay(i)}
-              className={"rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
+              className={"rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
             >
               {d.day.split(' · ')[0]}
             </button>
@@ -411,7 +411,7 @@ function ProgrammeFormat() {
             {day.sessions.map((s, i) => (
               <div key={i} className="group flex flex-col md:flex-row gap-5 md:gap-8 bg-white rounded-2xl p-6 border border-forest/5 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                 <div className="md:w-32 shrink-0 pt-0.5">
-                  <p className="text-[13px] font-bold text-gold uppercase tracking-[0.15em]">{s.time}</p>
+                  <p className="text-[15px] font-bold text-gold uppercase tracking-[0.15em]">{s.time}</p>
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">{s.title}</h4>
@@ -442,7 +442,7 @@ function WhoShouldApply() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-white mb-5">Built for curious, driven people.</h2>
@@ -497,7 +497,7 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-16">What participants say.</h2>
@@ -547,7 +547,7 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[3.2rem] font-bold text-white leading-[1.08] tracking-tight">Turn your curiosity into a venture.</h2>
@@ -558,12 +558,12 @@ function BottomCTA() {
             href="https://www.globaledulab.com/event/zero-to-one"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
+            className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
           >
             Sign Up Now
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </a>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Ask a Question
           </Link>
         </div>

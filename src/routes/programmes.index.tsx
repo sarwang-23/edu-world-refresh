@@ -109,7 +109,7 @@ function ProgrammesPage() {
       {/* Filter Tabs - Glassmorphic */}
       <div className="sticky top-[73px] z-40 bg-white/70 backdrop-blur-xl border-b border-forest/10 shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center gap-3 overflow-x-auto scrollbar-hide">
-          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/50 mr-4 shrink-0 flex items-center gap-2">
+          <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/50 mr-4 shrink-0 flex items-center gap-2">
             <span className="w-1 h-1 bg-gold rounded-full animate-pulse" />
             Filter by Track
           </span>
@@ -117,7 +117,7 @@ function ProgrammesPage() {
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-5 py-2.5 rounded-full text-[13px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${
+              className={`px-5 py-2.5 rounded-full text-[15px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${
                 activeFilter === f
                   ? "bg-forest-deep text-gold shadow-md"
                   : "bg-white/50 border border-forest/10 text-forest-deep hover:bg-forest/5"
@@ -137,13 +137,13 @@ function ProgrammesPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold" />
-                <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Explore</span>
+                <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Explore</span>
               </div>
               <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
                 Upcoming Programmes
               </h2>
             </div>
-            <Link to="/past-programmes" className="group inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.1em] text-forest-deep hover:text-gold transition-colors pb-2">
+            <Link to="/past-programmes" className="group inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.1em] text-forest-deep hover:text-gold transition-colors pb-2">
               View all past programmes 
               <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
@@ -155,7 +155,7 @@ function ProgrammesPage() {
                 <div className="relative aspect-[4/3] md:w-2/5 overflow-hidden shrink-0">
                   <img src={p.img} alt={p.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent opacity-60" />
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-[0.15em] text-forest-deep shadow-sm">
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep shadow-sm">
                     {p.tag}
                   </span>
                 </div>
@@ -164,15 +164,15 @@ function ProgrammesPage() {
                   <p className="text-[15px] text-forest/70 leading-relaxed mb-6 flex-1">{p.desc}</p>
                   
                   <div className="space-y-2 mb-6 pt-5 border-t border-forest/5">
-                    <div className="flex items-center gap-2 text-[13px] font-bold text-forest-deep/80">
+                    <div className="flex items-center gap-2 text-[15px] font-bold text-forest-deep/80">
                       <Calendar className="h-3.5 w-3.5 text-gold" /> {p.date}
                     </div>
-                    <div className="flex items-center gap-2 text-[13px] font-bold text-forest-deep/80">
+                    <div className="flex items-center gap-2 text-[15px] font-bold text-forest-deep/80">
                       <MapPin className="h-3.5 w-3.5 text-gold" /> {p.location}
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:text-gold transition-colors">
+                  <span className="inline-flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:text-gold transition-colors">
                     Explore Programme <ChevronRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -192,13 +192,13 @@ function ProgrammesPage() {
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 backdrop-blur-sm mb-6">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold">Partner With Us</span>
+                <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold">Partner With Us</span>
               </div>
               <h3 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-[1.1]">Custom Programmes for Institutions.</h3>
               <p className="text-[15px] text-cream/70 leading-relaxed mb-10">
                 We design and deliver tailor-made programmes for schools, universities, engaging 1,000+ learners and 500+ school leaders aligned with your goals. From custom modules to end-to-end logistics in Cambridge.
               </p>
-              <Link to="/partner-with-gel" className="group inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep transition-all hover:bg-white shadow-xl">
+              <Link to="/partner-with-gel" className="group inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep transition-all hover:bg-white shadow-xl">
                 Partner with GEL <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
@@ -227,7 +227,7 @@ function ProgrammesPage() {
           <div className="flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Global Reach</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Global Reach</span>
               <div className="h-px w-8 bg-gold" />
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep mb-6 leading-tight">Past Programmes & Impact</h2>
@@ -245,7 +245,7 @@ function ProgrammesPage() {
           </div>
 
           <div className="flex justify-center">
-            <Link to="/past-programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-cream hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/20">
+            <Link to="/past-programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-cream hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/20">
               Past Programmes <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
@@ -273,10 +273,10 @@ function ProgrammesPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gold px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-white transition-all duration-300 shadow-xl shadow-black/20">
+            <Link to="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-white transition-all duration-300 shadow-xl shadow-black/20">
               Let's Talk <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
-            <a href="mailto:info@globaledulab.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-9 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+            <a href="mailto:info@globaledulab.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
               info@globaledulab.com
             </a>
           </div>
@@ -300,7 +300,7 @@ function ProgrammesHero() {
           <div className="lg:col-span-6 relative z-20">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.28em] text-gold">Our Programmes</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Our Programmes</span>
             </div>
             
             <h1 className="text-[3rem] md:text-[4.5rem] font-bold tracking-tight text-forest-deep leading-[1.02]">
@@ -321,7 +321,7 @@ function ProgrammesHero() {
                 { icon: <Globe2 className="h-4 w-4" />, label: "Global Network" },
                 { icon: <GraduationCap className="h-4 w-4" />, label: "Experiential Design" },
               ].map((badge, idx) => (
-                <div key={idx} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[13px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={idx} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{badge.icon}</span>
                   {badge.label}
                 </div>
@@ -345,8 +345,8 @@ function ProgrammesHero() {
                 <Globe2 className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[12px] text-forest/55 mt-0.5">5+ Countries</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
+                <p className="text-[14px] text-forest/55 mt-0.5">5+ Countries</p>
               </div>
             </div>
 
@@ -355,8 +355,8 @@ function ProgrammesHero() {
                 <Users className="h-5 w-5 text-forest-deep" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-forest-deep uppercase tracking-wider">Alumni Network</p>
-                <p className="text-[12px] text-forest/55 mt-0.5">1000+ Learners</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Alumni Network</p>
+                <p className="text-[14px] text-forest/55 mt-0.5">1000+ Learners</p>
               </div>
             </div>
           </div>

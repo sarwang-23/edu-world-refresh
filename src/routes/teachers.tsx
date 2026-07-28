@@ -42,7 +42,7 @@ function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-0 pb-12 md:pb-20 lg:grid-cols-12 lg:gap-8 items-start">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[13px] font-semibold uppercase tracking-[0.18em] text-forest/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <BookOpen className="h-3.5 w-3.5 text-gold" /> For K-12 Teachers & Educators
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
@@ -65,7 +65,7 @@ function Hero() {
               School Cohort Support
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.22em] text-forest/40">
+          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/40">
             <span className="h-px w-10 bg-forest/30" />
             CAMBRIDGE FACULTY · ONLINE · PERSONALISED
           </div>
@@ -79,7 +79,7 @@ function Hero() {
               className="h-[480px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-[13px] uppercase tracking-[0.2em] text-gold font-bold">GLOBAL</p>
+              <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">GLOBAL</p>
               <p className="mt-1 text-xl font-bold text-cream">
                 A new era of professional teacher training.
               </p>
@@ -107,19 +107,19 @@ function CollaboratorsBar() {
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
-      <p className="text-[12px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
+      <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
         IN COLLABORATION WITH
       </p>
       <div className="relative flex w-full">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-[13px] font-bold text-forest/80 uppercase tracking-widest">
+            <span key={i} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-[13px] font-bold text-forest/80 uppercase tracking-widest">
+            <span key={`dup-${i}`} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
@@ -158,7 +158,7 @@ function WhyTeachersChooseUs() {
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">WHY CHOOSE OUR TEACHER TRAINING</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">WHY CHOOSE OUR TEACHER TRAINING</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl mx-auto leading-tight">
             Built for educators with a <span className="italic text-gold font-serif">global mindset.</span>
           </h2>
@@ -174,7 +174,7 @@ function WhyTeachersChooseUs() {
                 {r.icon}
               </div>
               <h3 className="text-base font-bold text-forest-deep">{r.title}</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{r.desc}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-forest/75">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -200,7 +200,7 @@ function StatsBar() {
               {stats.map((stat, idx) => (
                 <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[11px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[13px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
                 </div>
               ))}
             </div>
@@ -237,7 +237,7 @@ function OngoingProgrammes() {
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">OUR PROGRAMMES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">OUR PROGRAMMES</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             Two programmes. One transformation.
           </h2>
@@ -251,12 +251,12 @@ function OngoingProgrammes() {
             <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-[12px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                  <span className="text-[12px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
+                  <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
+                  <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
                 </div>
 
                 <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
-                <div className="mt-3 flex flex-wrap items-center gap-3 text-[12px] font-bold uppercase tracking-widest text-forest/60">
+                <div className="mt-3 flex flex-wrap items-center gap-3 text-[14px] font-bold uppercase tracking-widest text-forest/60">
                   <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
                   <span>|</span>
                   <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
@@ -270,7 +270,7 @@ function OngoingProgrammes() {
               <div className="mt-8">
                 <a
                   href={p.link}
-                  className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[13px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
+                  className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[15px] font-bold uppercase tracking-widest text-primary-foreground transition-all hover:bg-forest-deep"
                 >
                   READ MORE <ArrowUpRight className="h-3 w-3" />
                 </a>
@@ -311,7 +311,7 @@ function EndToEndJourney() {
     <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENROLMENT TO CERTIFICATE</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENROLMENT TO CERTIFICATE</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             A guided professional-development journey.
           </h2>
@@ -325,7 +325,7 @@ function EndToEndJourney() {
                 <div className="h-px flex-1 bg-forest/20" />
               </div>
               <h3 className="text-base font-bold text-forest-deep">{s.title}</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{s.desc}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-forest/75">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -360,7 +360,7 @@ function Testimonials() {
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR EDUCATORS</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR EDUCATORS</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by teachers and schools worldwide.
           </h2>
@@ -379,7 +379,7 @@ function Testimonials() {
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[12px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
               </div>
             </div>
           ))}
@@ -418,7 +418,7 @@ function SchoolLeadershipSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">FOR SCHOOL LEADERSHIP</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR SCHOOL LEADERSHIP</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Bring the whole staffroom on board.
             </h2>
@@ -434,7 +434,7 @@ function SchoolLeadershipSection() {
                   {item.icon}
                 </div>
                 <h3 className="text-base font-bold text-forest-deep">{item.title}</h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-forest/75">{item.desc}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-forest/75">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -448,7 +448,7 @@ function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">JOIN THE 2026 INTAKE</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">JOIN THE 2026 INTAKE</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Elevate your teaching — starting this season.
         </h2>
@@ -459,13 +459,13 @@ function FinalCTA() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             APPLY NOW <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href="#programmes"
-            className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
           >
             OR VIEW PROGRAMMES →
           </a>

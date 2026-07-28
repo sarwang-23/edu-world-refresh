@@ -36,7 +36,7 @@ function Hero() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Entrepreneurship Programme</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Entrepreneurship Programme</span>
             </div>
             <h1 className="text-[2.8rem] md:text-[3.6rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
               Zero-to-One<br /><span className="font-serif italic text-gold">Ideation Weekend</span>
@@ -56,10 +56,10 @@ function Hero() {
               </span>
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300">
+              <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300">
                 All Programmes
               </Link>
             </div>
@@ -76,14 +76,14 @@ function Hero() {
                 ].map((s) => (
                   <div key={s.label} className="bg-white/5 rounded-2xl p-5 border border-white/10">
                     <p className="text-3xl font-bold text-gold leading-none">{s.val}</p>
-                    <p className="text-[13px] font-bold text-cream mt-2">{s.label}</p>
-                    <p className="text-[12px] text-cream/50 mt-1">{s.sub}</p>
+                    <p className="text-[15px] font-bold text-cream mt-2">{s.label}</p>
+                    <p className="text-[14px] text-cream/50 mt-1">{s.sub}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-6 p-4 bg-gold/10 rounded-xl border border-gold/20 relative z-10">
-                <p className="text-[13px] font-bold text-gold uppercase tracking-wider">Next Cohort · Open for Applications</p>
-                <p className="text-[12px] text-cream/60 mt-1">Cambridge · Limited to 60 Participants</p>
+                <p className="text-[15px] font-bold text-gold uppercase tracking-wider">Next Cohort · Open for Applications</p>
+                <p className="text-[14px] text-cream/60 mt-1">Cambridge · Limited to 60 Participants</p>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ function WhatYouGet() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What You Get</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You Get</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Everything packed into 48 hours.</h2>
@@ -139,7 +139,7 @@ function HowItWorks() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">How It Works</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">How It Works</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Your 48-hour journey.</h2>
@@ -170,7 +170,7 @@ function WhoShouldJoin() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Built for aspiring founders.</h2>
         </div>
@@ -206,7 +206,7 @@ function Outcomes() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">What You Leave With</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You Leave With</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-8">You won't leave empty-handed.</h2>
             <ul className="space-y-4">
@@ -226,7 +226,7 @@ function Outcomes() {
                 "Zero-to-One gave us clarity, mentors and the confidence to build our MVP in just 48 hours. Within 6 months, we had our first 100 paying customers."
               </blockquote>
               <p className="font-bold text-gold text-[15px]">Avani Patel</p>
-              <p className="text-[13px] text-cream/50 uppercase tracking-wider mt-1">Co-Founder, EduTech Hub · Ideation Alumni</p>
+              <p className="text-[15px] text-cream/50 uppercase tracking-wider mt-1">Co-Founder, EduTech Hub · Ideation Alumni</p>
             </div>
           </div>
         </div>
@@ -242,16 +242,16 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Build</span>
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Build</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Your idea. 48 hours. Cambridge.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications are open. Limited cohort size — apply today to secure your place.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[13px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             View All Programmes
           </Link>
         </div>

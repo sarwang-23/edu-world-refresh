@@ -42,7 +42,7 @@ function Hero() {
         
         {/* Left Content */}
         <div className="md:col-span-7 lg:col-span-7 xl:col-span-7 pr-0 md:pr-4">
-           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-4 py-1.5 text-[13px] font-bold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
+           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-4 py-1.5 text-[15px] font-bold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
              <Sparkles className="h-3.5 w-3.5 text-gold" /> MEASURABLE IMPACT
            </span>
            <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-forest-deep md:text-[3.5rem] lg:text-[4rem] xl:text-[5rem]">
@@ -76,7 +76,7 @@ function Hero() {
            <div className="relative overflow-hidden rounded-[2.5rem] border border-border/60 shadow-2xl group">
              <img src={heroImg} alt="Impact" className="h-[500px] md:h-[650px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" />
              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/50 to-transparent p-10">
-                <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-3">Impact Since 2019</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold mb-3">Impact Since 2019</p>
                 <p className="text-3xl md:text-4xl font-serif italic text-cream leading-tight pb-1">
                   Education that<br />travels.
                 </p>
@@ -101,7 +101,7 @@ function Stats() {
   return (
     <section className="border-b border-border/60 bg-forest-deep overflow-hidden">
       <div className="mx-auto max-w-7xl py-8 md:py-12 text-center relative">
-        <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-8 px-6">
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-8 px-6">
           OUR GLOBAL IMPACT, IN NUMBERS
         </p>
         
@@ -118,7 +118,7 @@ function Stats() {
                 {stats.map((stat, i) => (
                   <div key={`${arrayIndex}-${i}`} className="flex items-center gap-4 text-left">
                     <span className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-cream">{stat.num}</span>
-                    <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-cream/70 max-w-[90px] leading-snug">{stat.label}</span>
+                    <span className="text-[14px] font-bold uppercase tracking-[0.15em] text-cream/70 max-w-[90px] leading-snug">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -147,7 +147,7 @@ function Stories() {
     <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60 relative">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20">
-          <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">— Voices of Change</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— Voices of Change</span>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Stories that <span className="font-serif italic text-gold">inspire.</span></h2>
           <p className="mt-6 text-[15px] font-medium text-forest/70 max-w-lg leading-relaxed">Real people, real outcomes — hear journeys that show what our programmes make possible.</p>
         </div>
@@ -158,10 +158,10 @@ function Stories() {
              <img src={mainStory.img} alt="Student" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent" />
              <div className="relative p-10 md:p-12">
-                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">{mainStory.tag}</span>
+                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[14px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">{mainStory.tag}</span>
                 <h3 className="text-3xl md:text-4xl font-bold text-cream mb-5 leading-tight">{mainStory.t}</h3>
                 <p className="text-cream/80 text-[15px] md:text-base leading-relaxed mb-8">{mainStory.d}</p>
-                <button onClick={() => setActiveStory(mainStory)} className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link text-left">
+                <button onClick={() => setActiveStory(mainStory)} className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link text-left">
                   {mainStory.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                 </button>
              </div>
@@ -175,10 +175,10 @@ function Stories() {
                   <img src={s.img} alt={s.t} className="h-40 sm:h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex flex-col justify-center py-2 items-start">
-                  <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold mb-3">— {s.tag}</span>
+                  <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold mb-3">— {s.tag}</span>
                   <h3 className="text-2xl font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors">{s.t}</h3>
                   <p className="text-[15px] text-forest/70 leading-relaxed mb-6">{s.d}</p>
-                  <button onClick={() => setActiveStory(s)} className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link text-left">
+                  <button onClick={() => setActiveStory(s)} className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link text-left">
                     {s.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                   </button>
                 </div>
@@ -204,7 +204,7 @@ function Stories() {
                 <X className="w-5 h-5" />
               </button>
               
-              <span className="text-[12px] font-bold uppercase tracking-[0.25em] text-gold mb-4">— {activeStory.tag}</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold mb-4">— {activeStory.tag}</span>
               <h3 className="text-3xl md:text-4xl font-bold text-forest-deep mb-5 leading-tight">{activeStory.t}</h3>
               <p className="text-[15px] md:text-base font-medium text-forest/80 italic mb-8 border-l-[3px] border-gold pl-5 py-1 leading-relaxed">
                 "{activeStory.d}"
@@ -215,8 +215,8 @@ function Stories() {
               </div>
               
               <div className="mt-auto pt-8 border-t border-forest/10 flex justify-between items-center">
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest/40">Global Education Lab</span>
-                <button onClick={() => setActiveStory(null)} className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest hover:text-gold transition-colors">
+                <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest/40">Global Education Lab</span>
+                <button onClick={() => setActiveStory(null)} className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest hover:text-gold transition-colors">
                   Close Story
                 </button>
               </div>
@@ -241,7 +241,7 @@ function SDGs() {
     <section className="bg-forest-deep py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 relative z-10">
          <div className="max-w-2xl mb-16">
-           <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">GLOBAL GOALS</span>
+           <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">GLOBAL GOALS</span>
            <h2 className="mt-4 text-4xl font-bold tracking-tight text-cream md:text-[3.5rem] leading-[1.1] mb-6">
              Advancing the<br />
              <span className="font-serif italic text-gold">Global Goals.</span>
@@ -299,10 +299,10 @@ function Numbers() {
        <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div>
-            <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">— The Data</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— The Data</span>
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Impact in <span className="font-serif italic text-gold">numbers.</span></h2>
           </div>
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/50 md:pb-2 border-b border-forest/10 pb-1">Source: GEL Programme Records</p>
+          <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/50 md:pb-2 border-b border-forest/10 pb-1">Source: GEL Programme Records</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -310,8 +310,8 @@ function Numbers() {
           <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
-              <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep">Learners by Region</h3>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">Five Regions</span>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Learners by Region</h3>
+              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">Five Regions</span>
             </div>
             <div className="flex flex-col gap-10 relative z-10">
               <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-r-gold border-t-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:rotate-45">
@@ -337,8 +337,8 @@ function Numbers() {
           <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-forest/5 rounded-full blur-3xl group-hover:bg-forest/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
-              <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep">Programme Growth</h3>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Programme Growth</h3>
+              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
             </div>
             <div className="flex h-[200px] items-end justify-between gap-3 relative mt-10 z-10">
                <div className="absolute inset-0 border-b border-l border-forest/10" />
@@ -350,7 +350,7 @@ function Numbers() {
                   >
                     {i === growth.length - 1 && <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(200,160,90,0.8)] animate-pulse" />}
                   </div>
-                  <span className="text-[11px] font-bold text-forest/40 group-hover/bar:text-gold transition-colors">{g.y}</span>
+                  <span className="text-[13px] font-bold text-forest/40 group-hover/bar:text-gold transition-colors">{g.y}</span>
                 </div>
               ))}
             </div>
@@ -360,8 +360,8 @@ function Numbers() {
           <div className="group rounded-[2.5rem] border border-white bg-gradient-to-b from-white to-white/60 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 backdrop-blur-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
-              <h3 className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep">Startups Supported</h3>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">By Stage</span>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Startups Supported</h3>
+              <span className="text-[13px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">By Stage</span>
             </div>
             <div className="flex flex-col gap-10 relative z-10">
               <div className="relative mx-auto h-32 w-32 shrink-0 rounded-full border-[12px] border-forest border-b-gold border-r-forest/10 shadow-[0_0_40px_rgba(20,40,30,0.05)] transition-transform duration-700 group-hover:-rotate-45">
@@ -398,7 +398,7 @@ function Testimonials() {
     <section className="bg-cream py-24 md:py-32 border-b border-border/60 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 text-center flex flex-col items-center">
-          <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">— What They Say</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— What They Say</span>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Perspectives on <span className="font-serif italic text-gold">impact.</span></h2>
           <div className="mt-8 h-px w-24 bg-gold/60" />
         </div>
@@ -412,7 +412,7 @@ function Testimonials() {
                    <div className="h-12 w-12 rounded-full bg-forest/10 flex items-center justify-center text-forest font-serif italic text-xl">{t.a.charAt(0)}</div>
                    <div>
                      <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                     <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-forest/50 mt-1">{t.r}</p>
+                     <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/50 mt-1">{t.r}</p>
                    </div>
                 </div>
              </div>
@@ -435,7 +435,7 @@ function GlobalNetwork() {
     <section className="bg-cream py-24 md:py-32 relative overflow-hidden border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center text-center mb-20">
-          <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">— Global Reach</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— Global Reach</span>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Connecting <span className="font-serif italic text-gold">continents.</span></h2>
           <p className="mt-8 max-w-2xl text-lg text-forest/70 leading-relaxed">From Cambridge to the world, our network spans over 25 countries, fostering cross-border collaboration and innovation.</p>
         </div>
@@ -457,7 +457,7 @@ function GlobalNetwork() {
                  <div className={`absolute rounded-full animate-ping opacity-50 ${n.isMain ? 'w-8 h-8 bg-gold' : 'w-4 h-4 bg-cream'}`} style={{ animationDuration: '3s' }} />
                  <div className={`rounded-full relative z-10 transition-transform duration-300 group-hover/node:scale-150 ${n.isMain ? 'w-4 h-4 bg-gold shadow-[0_0_15px_rgba(200,160,90,0.8)]' : 'w-2.5 h-2.5 bg-cream shadow-[0_0_8px_rgba(250,248,240,0.6)]'}`} />
                  
-                 <span className="opacity-0 group-hover/node:opacity-100 transition-opacity duration-300 text-[12px] font-bold uppercase tracking-widest text-forest-deep bg-cream px-3 py-1.5 rounded-full shadow-lg absolute top-6 z-20 pointer-events-none whitespace-nowrap">
+                 <span className="opacity-0 group-hover/node:opacity-100 transition-opacity duration-300 text-[14px] font-bold uppercase tracking-widest text-forest-deep bg-cream px-3 py-1.5 rounded-full shadow-lg absolute top-6 z-20 pointer-events-none whitespace-nowrap">
                    {n.label}
                  </span>
               </div>
@@ -465,7 +465,7 @@ function GlobalNetwork() {
 
            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-forest-deep border border-forest/50 shadow-2xl rounded-2xl p-5 max-w-[200px]">
               <div className="text-3xl font-serif italic text-gold mb-1">25+</div>
-              <div className="text-[12px] font-bold uppercase tracking-[0.15em] text-cream/70">Countries in our network</div>
+              <div className="text-[14px] font-bold uppercase tracking-[0.15em] text-cream/70">Countries in our network</div>
            </div>
         </div>
       </div>
@@ -479,7 +479,7 @@ function CTA() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">— Get Involved</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— Get Involved</span>
             <h2 className="mt-6 text-4xl font-bold tracking-tight text-cream md:text-[4.5rem] leading-[1.1]">
               Together, we create<br />impact that <span className="font-serif italic text-gold">lasts.</span>
             </h2>
@@ -493,7 +493,7 @@ function CTA() {
                 Get Involved
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
              </Link>
-             <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-cream/50 pl-4 lg:pl-0">hello@globaledulab.com</span>
+             <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-cream/50 pl-4 lg:pl-0">hello@globaledulab.com</span>
           </div>
         </div>
       </div>
