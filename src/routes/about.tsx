@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, Network, CheckCircle2, BookOpen, GraduationCap, Users, LineChart, FlaskConical } from "lucide-react";
 import cambridgeImg from "@/assets/cambridge.jpg";
@@ -372,10 +372,10 @@ function Team() {
         
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-left">
           {[
-            { icon: Users, tag: "01", title: "Our Team", desc: "A passionate team of educators, innovators and operators committed to excellence and impact." },
-            { icon: BookOpen, tag: "02", title: "Academic Partners", desc: "Deep collaborations with leading universities and research centres in Cambridge and beyond." },
-            { icon: Briefcase, tag: "03", title: "Industry & Ecosystem Partners", desc: "Working with corporates, governments and ecosystem enablers to co-create meaningful impact." },
-            { icon: Globe2, tag: "04", title: "Global Community", desc: "A vibrant network of learners, alumni, founders, leaders and changemakers across the world." },
+            { icon: Users, tag: "01", title: "Our Team", desc: "A passionate team of educators, innovators and operators committed to excellence and impact.", link: "/team" },
+            { icon: BookOpen, tag: "02", title: "Academic Partners", desc: "Deep collaborations with leading universities and research centres in Cambridge and beyond.", link: "/partner-with-gel" },
+            { icon: Briefcase, tag: "03", title: "Industry & Ecosystem Partners", desc: "Working with corporates, governments and ecosystem enablers to co-create meaningful impact.", link: "/partner-with-gel" },
+            { icon: Globe2, tag: "04", title: "Global Community", desc: "A vibrant network of learners, alumni, founders, leaders and changemakers across the world.", link: "/our-impact" },
           ].map((item) => (
             <div key={item.title} className="flex flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-white shadow-sm transition-all hover:shadow-lg hover:border-forest/20 group">
               <div className="h-48 relative overflow-hidden">
@@ -390,7 +390,7 @@ function Team() {
               <div className="flex flex-col flex-grow p-6 md:p-8">
                 <h3 className="text-lg font-bold text-forest-deep">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-forest/75 flex-grow">{item.desc}</p>
-                <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-gold transition-colors hover:text-gold/80">
+                <Link to={item.link} className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-gold transition-colors hover:text-gold/80">
                   LEARN MORE <ArrowUpRight className="h-3 w-3" />
                 </Link>
               </div>

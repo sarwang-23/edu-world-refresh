@@ -253,8 +253,11 @@ function ProgrammesPage() {
       </section>
 
       {/* Bottom CTA Strip */}
-      <section className="bg-[#F4EFE6] py-24 relative overflow-hidden border-t border-forest/10">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:40px_40px]" />
+      <section className="bg-forest-deep py-24 relative overflow-hidden border-t border-white/5">
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+        {/* Glow blobs */}
+        <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[130px]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[400px] rounded-full bg-gold/5 blur-[100px]" />
         
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <div className="flex items-center justify-center gap-1.5 mb-6">
@@ -262,18 +265,18 @@ function ProgrammesPage() {
               <Sparkles key={i} className="h-5 w-5 fill-gold text-gold opacity-90" />
             ))}
           </div>
-          <h2 className="text-[2.2rem] md:text-[3.5rem] font-bold text-forest-deep leading-tight mb-6">
+          <h2 className="text-[2.2rem] md:text-[3.5rem] font-bold text-white leading-tight mb-6">
             Not sure which programme is right for you?
           </h2>
-          <p className="text-[16px] text-forest/70 leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-[16px] text-white/65 leading-relaxed max-w-2xl mx-auto mb-12">
             Our team is here to help you find the best fit for your goals. Whether you're an individual learner or an organization seeking custom solutions, let's talk.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-forest-deep px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/20">
+            <Link to="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gold px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-white transition-all duration-300 shadow-xl shadow-black/20">
               Let's Talk <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
-            <a href="mailto:info@globaledulab.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:bg-white transition-all duration-300">
+            <a href="mailto:info@globaledulab.com" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-9 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
               info@globaledulab.com
             </a>
           </div>

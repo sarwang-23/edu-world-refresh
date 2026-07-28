@@ -14,8 +14,12 @@ export function Nav() {
     { label: "Partner with GEL", href: "/partner-with-gel" },
     { label: "Our Impact", href: "/our-impact" },
     { label: "About", href: "/about" },
-    { label: "Resources", href: "/resources" },
     { label: "Contact", href: "/contact" },
+  ]
+
+  const explore = [
+    { label: "Insights & Resources", href: "/insights" },
+    { label: "Gallery", href: "/gallery" },
   ]
 
   const programmes = [
@@ -67,6 +71,29 @@ export function Nav() {
                     className="rounded-lg px-4 py-2.5 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                   >
                     {p.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Explore Dropdown */}
+          <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
+            <span className={`text-[13px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+                location.pathname === '/insights' || location.pathname === '/gallery' ? "text-forest" : "text-forest/75"
+              }`}>
+              Explore
+            </span>
+            <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
+            <div className="absolute top-full left-0 hidden w-48 flex-col group-hover:flex">
+              <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg mt-0">
+                {explore.map((e) => (
+                  <Link
+                    key={e.label}
+                    to={e.href}
+                    className="rounded-lg px-4 py-2.5 text-[13px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                  >
+                    {e.label}
                   </Link>
                 ))}
               </div>

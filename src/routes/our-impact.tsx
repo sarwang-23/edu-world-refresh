@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Users, GraduationCap, Leaf, Globe, Rocket, Award, Heart, BookOpen, Quote, Sparkles } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight, Users, GraduationCap, Leaf, Globe, Rocket, Award, Heart, BookOpen, Quote, Sparkles, X } from 'lucide-react'
 import heroImg from '@/assets/hero-classroom.jpg'
 import s1 from '@/assets/students.jpg'
 import s2 from '@/assets/school-leaders.jpg'
@@ -130,13 +131,20 @@ function Stats() {
 }
 
 function Stories() {
+  const [activeStory, setActiveStory] = useState<{tag: string, t: string, d: string, content: string, img: string, link: string} | null>(null)
+
   const items = [
-    { img: s2, tag: 'FOUNDER', t: 'Ideas into Impact', d: 'Arjun and his team developed a solution that has helped over 2,000 young people access quality education.', link: 'Read Arjun\'s Story' },
-    { img: s3, tag: 'ALUMNI', t: 'A Global Mindset', d: 'For Musa, GEL was more than a programme — it was the start of a global network.', link: 'Read Musa\'s Story' },
-    { img: s4, tag: 'EDUCATOR', t: 'Building a Better Tomorrow', d: 'With skills gained through GEL, Aisha is driving change for a more inclusive future.', link: 'Read Aisha\'s Story' },
+    { img: s2, tag: 'FOUNDER', t: 'Ideas into Impact', d: 'Arjun and his team developed a solution that has helped over 2,000 young people access quality education.', link: 'Read Arjun\'s Story', content: 'Arjun started his journey with a simple idea: that every child deserves access to quality educational materials regardless of their geographic location. Through the GEL incubator program, he refined his vision, connected with key stakeholders, and successfully launched a platform that distributes digital learning resources to remote villages. Today, his initiative has scaled across three states and continues to grow.' },
+    { img: s3, tag: 'ALUMNI', t: 'A Global Mindset', d: 'For Musa, GEL was more than a programme — it was the start of a global network.', link: 'Read Musa\'s Story', content: 'Coming from a small town, Musa always dreamed of making a global impact. The Global Education Lab gave him the tools, network, and confidence to step onto the world stage. During his time at Cambridge, he collaborated with peers from 15 different countries, leading to the creation of a cross-border initiative that promotes sustainable business practices in developing markets.' },
+    { img: s4, tag: 'EDUCATOR', t: 'Building a Better Tomorrow', d: 'With skills gained through GEL, Aisha is driving change for a more inclusive future.', link: 'Read Aisha\'s Story', content: 'As an educator with over 10 years of experience, Aisha felt the traditional curriculum was leaving some students behind. By participating in GEL\'s educational leadership track, she learned innovative pedagogical frameworks and design-thinking principles. She has since redesigned her school\'s approach to STEM education, resulting in a 40% increase in female student engagement in sciences.' },
   ]
+
+  const mainStory = {
+    img: s1, tag: 'Participant', t: 'From Student to Changemaker', d: 'Riya co-founded a sustainability startup after her GEL experience and is now creating real impact in her community.', link: 'Read Riya\'s Story', content: 'Riya arrived at the GEL programme with a passion for environmental conservation but lacked the business acumen to turn her ideas into reality. Through intensive mentorship, venture building workshops, and pitch sessions, she transformed her concept into a viable startup. Her company now works with local municipalities to implement waste-to-energy solutions, reducing landfill waste by 25% in her home district.'
+  }
+
   return (
-    <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60">
+    <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60 relative">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20">
           <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">— Voices of Change</span>
@@ -147,15 +155,15 @@ function Stories() {
         <div className="grid gap-8 lg:grid-cols-12">
           {/* Main Story */}
           <div className="lg:col-span-5 relative group overflow-hidden rounded-[2.5rem] border border-border/60 shadow-2xl flex flex-col justify-end min-h-[550px] lg:min-h-full">
-             <img src={s1} alt="Student" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+             <img src={mainStory.img} alt="Student" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent" />
              <div className="relative p-10 md:p-12">
-                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">Participant</span>
-                <h3 className="text-3xl md:text-4xl font-bold text-cream mb-5 leading-tight">From Student to Changemaker</h3>
-                <p className="text-cream/80 text-sm md:text-base leading-relaxed mb-8">Riya co-founded a sustainability startup after her GEL experience and is now creating real impact in her community.</p>
-                <a href="#" className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link">
-                  Read Riya's Story <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-                </a>
+                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">{mainStory.tag}</span>
+                <h3 className="text-3xl md:text-4xl font-bold text-cream mb-5 leading-tight">{mainStory.t}</h3>
+                <p className="text-cream/80 text-sm md:text-base leading-relaxed mb-8">{mainStory.d}</p>
+                <button onClick={() => setActiveStory(mainStory)} className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link text-left">
+                  {mainStory.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                </button>
              </div>
           </div>
 
@@ -166,19 +174,56 @@ function Stories() {
                 <div className="sm:w-56 shrink-0 overflow-hidden rounded-2xl border border-border/60">
                   <img src={s.img} alt={s.t} className="h-40 sm:h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <div className="flex flex-col justify-center py-2">
+                <div className="flex flex-col justify-center py-2 items-start">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-3">— {s.tag}</span>
                   <h3 className="text-2xl font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors">{s.t}</h3>
                   <p className="text-sm text-forest/70 leading-relaxed mb-6">{s.d}</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link">
+                  <button onClick={() => setActiveStory(s)} className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link text-left">
                     {s.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-                  </a>
+                  </button>
                 </div>
               </article>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Popup Banner / Modal */}
+      {activeStory && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-12">
+          <div className="absolute inset-0 bg-forest-deep/80 backdrop-blur-md transition-opacity" onClick={() => setActiveStory(null)} />
+          <div className="relative w-full max-w-5xl bg-white rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300 max-h-[90vh]">
+            {/* Modal Image */}
+            <div className="w-full md:w-2/5 h-48 md:h-auto relative shrink-0">
+              <img src={activeStory.img} alt={activeStory.t} className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            
+            {/* Modal Content */}
+            <div className="w-full md:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col overflow-y-auto">
+              <button onClick={() => setActiveStory(null)} className="absolute top-6 right-6 p-2.5 rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors z-10">
+                <X className="w-5 h-5" />
+              </button>
+              
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold mb-4">— {activeStory.tag}</span>
+              <h3 className="text-3xl md:text-4xl font-bold text-forest-deep mb-5 leading-tight">{activeStory.t}</h3>
+              <p className="text-sm md:text-base font-medium text-forest/80 italic mb-8 border-l-[3px] border-gold pl-5 py-1 leading-relaxed">
+                "{activeStory.d}"
+              </p>
+              
+              <div className="text-forest/70 leading-[1.8] mb-10 text-sm md:text-[15px]">
+                <p>{activeStory.content}</p>
+              </div>
+              
+              <div className="mt-auto pt-8 border-t border-forest/10 flex justify-between items-center">
+                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-forest/40">Global Education Lab</span>
+                <button onClick={() => setActiveStory(null)} className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest hover:text-gold transition-colors">
+                  Close Story
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

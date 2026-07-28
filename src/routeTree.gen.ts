@@ -24,6 +24,7 @@ import { Route as ProgrammesRouteImport } from './routes/programmes'
 import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship_.accelerator'
 import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
 import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
@@ -118,6 +119,11 @@ const StudentsRoute = StudentsRouteImport.update({
 const TeachersRoute = TeachersRouteImport.update({
   id: '/teachers',
   path: '/teachers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrepreneurshipAcceleratorRoute =
@@ -243,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/team': typeof TeamRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -279,6 +286,7 @@ export interface FileRoutesByTo {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/team': typeof TeamRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -317,6 +325,7 @@ export interface FileRoutesById {
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
+  '/team': typeof TeamRoute
   '/entrepreneurship_/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -356,6 +365,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/team'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -392,6 +402,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/team'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -429,6 +440,7 @@ export interface FileRouteTypes {
     | '/school-leaders'
     | '/students'
     | '/teachers'
+    | '/team'
     | '/entrepreneurship_/accelerator'
     | '/entrepreneurship_/demo-day'
     | '/entrepreneurship_/mentorship'
@@ -467,6 +479,7 @@ export interface RootRouteChildren {
   SchoolLeadersRoute: typeof SchoolLeadersRoute
   StudentsRoute: typeof StudentsRoute
   TeachersRoute: typeof TeachersRoute
+  TeamRoute: typeof TeamRoute
   EntrepreneurshipAcceleratorRoute: typeof EntrepreneurshipAcceleratorRoute
   EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
   EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
@@ -582,6 +595,13 @@ declare module '@tanstack/react-router' {
       path: '/teachers'
       fullPath: '/teachers'
       preLoaderRoute: typeof TeachersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/entrepreneurship_/accelerator': {
@@ -777,6 +797,7 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolLeadersRoute: SchoolLeadersRoute,
   StudentsRoute: StudentsRoute,
   TeachersRoute: TeachersRoute,
+  TeamRoute: TeamRoute,
   EntrepreneurshipAcceleratorRoute: EntrepreneurshipAcceleratorRoute,
   EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
   EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,

@@ -452,7 +452,7 @@ function TrustedByMarquee() {
     </div>,
     // Galgotias
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Galgotias_University_logo.svg/500px-Galgotias_University_logo.svg.png" alt="Galgotias University" className="h-16 w-auto object-contain mix-blend-multiply" />
+      <img src="/galgotias-logo.jpg" alt="Galgotias University" className="h-16 w-auto object-contain mix-blend-multiply" />
     </div>
   ]
 
@@ -487,31 +487,49 @@ function TrustedByMarquee() {
 /* ── Testimonial Section ── */
 function TestimonialSection() {
   return (
-    <section className="bg-cream py-28 md:py-36 px-6">
-      <div className="mx-auto max-w-5xl">
-        <div className="bg-forest-deep rounded-[2.5rem] p-12 md:p-16 text-cream flex flex-col md:flex-row items-center gap-12 relative overflow-hidden shadow-2xl shadow-forest/20">
-          <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
-          <div className="pointer-events-none absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-[80px]" />
+    <section className="bg-[#F4F1E8] py-24 md:py-32 px-6">
+      <div className="mx-auto max-w-[1000px]">
+        
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-6 bg-[#C19842]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C19842]">Partner Success</span>
+          </div>
+          <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep leading-[1.1] mb-8 tracking-tight">
+            Partnering for <span className="font-serif italic text-[#C19842]">excellence.</span>
+          </h2>
+          <div className="mx-auto h-px w-20 bg-[#C19842]/40" />
+        </div>
+
+        {/* 1 Frame (Single Card) */}
+        <div className="relative bg-white rounded-[2.5rem] p-10 md:p-16 lg:p-20 shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-forest/5 flex flex-col items-center text-center overflow-hidden">
           
-          <div className="flex-1 relative z-10">
-            <Quote className="w-12 h-12 text-gold/30 mb-8" />
-            <p className="text-2xl md:text-3xl font-serif italic leading-relaxed mb-8 text-white">
+          {/* Watermark Quote Icon */}
+          <div className="absolute top-4 left-6 md:left-12 text-[12rem] md:text-[16rem] font-serif text-forest-deep/[0.02] leading-none pointer-events-none select-none">
+            "
+          </div>
+          
+          <div className="relative z-10 w-full max-w-3xl mx-auto mb-10 md:mb-12">
+            <p className="text-[1.5rem] md:text-[2rem] lg:text-[2.4rem] font-serif italic text-forest-deep leading-[1.5] tracking-tight">
               "Our partnership with GEL has opened new doors for our students and faculty. The Cambridge experience, combined with practical learning, created exceptional outcomes."
             </p>
           </div>
           
-          <div className="flex flex-col items-center text-center shrink-0 relative z-10 bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-md">
+          <div className="flex flex-col items-center shrink-0 w-full relative z-10">
             <img
               src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=150&q=80"
               alt="Dr. Ted Laursen"
-              className="w-24 h-24 rounded-full object-cover border-4 border-gold/40 mb-4 shadow-xl"
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border border-forest/5 mb-5"
             />
-            <h4 className="text-[16px] font-bold text-white mb-1">Dr. Ted Laursen</h4>
-            <p className="text-[10px] text-cream/70 uppercase tracking-widest max-w-[150px] leading-relaxed">
-              Chancellor,<br/>American University of Sharjah
+            <h4 className="text-[17px] md:text-[19px] font-bold text-forest-deep mb-1">Dr. Ted Laursen</h4>
+            <p className="text-[10px] md:text-[11px] text-forest/50 uppercase tracking-[0.2em] font-extrabold leading-[1.6]">
+              Chancellor, American University of Sharjah
             </p>
           </div>
+
         </div>
+
       </div>
     </section>
   )
@@ -520,44 +538,35 @@ function TestimonialSection() {
 /* ── CTA ── */
 function CTA() {
   return (
-    <section className="bg-white py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="rounded-[2.5rem] bg-forest-deep p-12 md:p-16 relative overflow-hidden border border-white/8 shadow-[0_20px_60px_rgba(20,40,30,0.35)]">
-          {/* Grid */}
-          <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-          {/* Glow */}
-          <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[140px]" />
-
-          <div className="relative z-10 flex flex-col md:flex-row items-start justify-between gap-12">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-gold" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Let's Begin</span>
-              </div>
-              <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-[1.1] mb-5">
-                Let's build something <span className="font-serif italic text-gold">impactful together.</span>
-              </h2>
-              <p className="text-[15px] text-white/65 leading-[1.75]">
-                Tell us about your goals and explore how we can collaborate — our team responds within two working days, wherever you are in the world.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 shrink-0 md:pt-10">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-gold px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em] text-forest-deep transition-all hover:bg-amber-400 hover:scale-105 shadow-xl shadow-gold/25 min-w-[240px]"
-              >
-                Start a Conversation <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/35 min-w-[240px]"
-              >
-                Download Brochure <Download className="h-4 w-4" />
-              </Link>
-            </div>
+    <section className="bg-[#051108] w-full py-24 md:py-36 px-6 md:px-12 lg:px-20 border-t border-white/[0.04]">
+      <div className="mx-auto max-w-[1400px] flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12 lg:gap-20">
+        
+        <div className="flex-1 w-full max-w-3xl">
+          <div className="mb-6">
+            <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#C19842]">
+              Let's Begin
+            </span>
           </div>
+          <h2 className="text-[2.8rem] md:text-[4rem] lg:text-[4.5rem] font-sans font-extrabold text-[#F4F1E1] leading-[1.05] tracking-[-0.02em] mb-1">
+            Let's build something
+          </h2>
+          <h2 className="text-[2.8rem] md:text-[4rem] lg:text-[4.5rem] font-sans font-extrabold text-[#C19842] leading-[1.05] tracking-[-0.02em] mb-8">
+            impactful together.
+          </h2>
+          <p className="text-[14px] md:text-[16px] text-[#A6B8AC] leading-[1.7] max-w-2xl font-medium tracking-wide">
+            Tell us about your goals and explore how we can collaborate — our team responds within two working days, wherever you are in the world.
+          </p>
         </div>
+
+        <div className="flex flex-col items-start lg:items-center gap-6 shrink-0 w-full lg:w-auto">
+          <Link
+            to="/contact"
+            className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-[#CE9D45] px-10 py-5 text-[14px] font-bold text-[#141414] transition-all hover:bg-[#E5B254] hover:-translate-y-1 w-full md:w-auto min-w-[260px]"
+          >
+            Start a Conversation <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
+        </div>
+        
       </div>
     </section>
   )
