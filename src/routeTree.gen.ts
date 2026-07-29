@@ -16,6 +16,7 @@ import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GilpDelegateRouteImport } from './routes/gilp-delegate'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as OurImpactRouteImport } from './routes/our-impact'
@@ -80,6 +81,11 @@ const EntrepreneurshipRoute = EntrepreneurshipRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GilpDelegateRoute = GilpDelegateRouteImport.update({
+  id: '/gilp-delegate',
+  path: '/gilp-delegate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
@@ -247,6 +253,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
+  '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
@@ -286,6 +293,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
+  '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
@@ -325,6 +333,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
+  '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
@@ -366,6 +375,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/entrepreneurship'
     | '/gallery'
+    | '/gilp-delegate'
     | '/global-ventures'
     | '/insights'
     | '/our-impact'
@@ -405,6 +415,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/entrepreneurship'
     | '/gallery'
+    | '/gilp-delegate'
     | '/global-ventures'
     | '/insights'
     | '/our-impact'
@@ -443,6 +454,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/entrepreneurship'
     | '/gallery'
+    | '/gilp-delegate'
     | '/global-ventures'
     | '/insights'
     | '/our-impact'
@@ -483,6 +495,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   EntrepreneurshipRoute: typeof EntrepreneurshipRoute
   GalleryRoute: typeof GalleryRoute
+  GilpDelegateRoute: typeof GilpDelegateRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
   InsightsRoute: typeof InsightsRoute
   OurImpactRoute: typeof OurImpactRoute
@@ -552,6 +565,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gilp-delegate': {
+      id: '/gilp-delegate'
+      path: '/gilp-delegate'
+      fullPath: '/gilp-delegate'
+      preLoaderRoute: typeof GilpDelegateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/global-ventures': {
@@ -809,6 +829,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   EntrepreneurshipRoute: EntrepreneurshipRoute,
   GalleryRoute: GalleryRoute,
+  GilpDelegateRoute: GilpDelegateRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
   InsightsRoute: InsightsRoute,
   OurImpactRoute: OurImpactRoute,
