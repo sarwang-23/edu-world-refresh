@@ -3,6 +3,21 @@ import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, S
 import { useState } from 'react'
 import { Footer } from './index'
 
+// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec'
+
+// Fires a form submission to the GILP Apps Script backend.
+// Uses no-cors + urlencoded body so it works without any CORS setup on the Apps Script side.
+async function submitToGILP(formType: string, data: Record<string, string>) {
+  const body = new URLSearchParams({ formType, ...data })
+  await fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+    body: body.toString(),
+  })
+}
+
 export const Route = createFileRoute('/programmes/gilp')({
   head: () => ({
     meta: [
@@ -14,9 +29,11 @@ export const Route = createFileRoute('/programmes/gilp')({
 })
 
 function Page() {
+  const [brochureOpen, setBrochureOpen] = useState(false)
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <Hero />
+      <Hero onDownloadBrochure={() => setBrochureOpen(true)} />
+      <BrochureModal open={brochureOpen} onClose={() => setBrochureOpen(false)} />
       <ProgrammeOverview />
       <Outcomes />
       <Curriculum />
@@ -41,8 +58,91 @@ function Page() {
   )
 }
 
+/* ─── BROCHURE MODAL — captures name+email, then downloads the PDF ─── */
+// TODO: replace with the real hosted brochure PDF URL
+const BROCHURE_PDF_URL = '/gilp-brochure.pdf'
+
+function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+
+  if (!open) return null
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!fullName || !email) return
+    setStatus('submitting')
+    try {
+      await submitToGILP('brochure', { fullName, email })
+      // trigger the actual PDF download
+      const link = document.createElement('a')
+      link.href = BROCHURE_PDF_URL
+      link.download = 'GILP-Brochure.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      setFullName('')
+      setEmail('')
+      setStatus('idle')
+      onClose()
+    } catch (err) {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4" onClick={onClose}>
+      <div
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="bg-forest-deep px-7 py-5 flex items-center justify-between">
+          <p className="text-white font-bold text-[16px]">Download the GILP Brochure</p>
+          <button type="button" onClick={onClose} className="text-white/70 hover:text-white text-[20px] leading-none">×</button>
+        </div>
+        <form onSubmit={handleSubmit} className="p-7 space-y-4">
+          <p className="text-[13.5px] text-forest/60 leading-relaxed">
+            Enter your details and the brochure will download instantly. We'll also email you with next steps.
+          </p>
+          <div>
+            <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
+            <input
+              type="text"
+              required
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+            />
+          </div>
+          {status === 'error' && (
+            <p className="text-[12.5px] text-red-500">Something went wrong. Please try again.</p>
+          )}
+          <button
+            type="submit"
+            disabled={status === 'submitting'}
+            className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md disabled:opacity-60"
+          >
+            {status === 'submitting' ? 'Please wait…' : 'Download Brochure'}
+          </button>
+        </form>
+      </div>
+    </div>
+  )
+}
+
 /* ─── 1. HERO — matches screenshot exactly ─── */
-function Hero() {
+function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
   return (
     <section className="relative bg-[#E8DCC8] pt-28 pb-20 border-b border-forest/10 overflow-hidden">
       {/* subtle grid */}
@@ -91,14 +191,13 @@ function Hero() {
             </div>
 
             <div className="flex gap-3 flex-wrap">
-              <a
-                href="https://www.globaledulab.com/indialeadership"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={onDownloadBrochure}
                 className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
               >
                 Download Brochure
-              </a>
+              </button>
               <a
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
@@ -1387,6 +1486,42 @@ function ContactSection() {
 
 /* ─── 17. APPLY NOW ─── */
 function ApplyNow() {
+  const [form, setForm] = useState({
+    fullName: '',
+    email: '',
+    designation: '',
+    organisation: '',
+    phoneCode: '+91',
+    phone: '',
+    linkedin: '',
+    funding: '',
+    package: '',
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }))
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('submitting')
+    try {
+      await submitToGILP('apply', {
+        fullName: form.fullName,
+        email: form.email,
+        designation: form.designation,
+        organisation: form.organisation,
+        phone: `${form.phoneCode} ${form.phone}`,
+        linkedin: form.linkedin,
+        funding: form.funding,
+        package: form.package,
+      })
+      setStatus('success')
+    } catch (err) {
+      setStatus('error')
+    }
+  }
+
   return (
     <section className="bg-[#FAF8F5] py-24 border-t border-forest/5 relative overflow-hidden">
       <div className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
@@ -1442,45 +1577,57 @@ function ApplyNow() {
               <p className="text-white font-bold text-[15px]">You are currently applying to Round 1 application</p>
               <p className="text-white/60 text-[13px] mt-0.5">Please ensure you provide accurate information</p>
             </div>
-            <div className="p-8 space-y-5">
-              {[
-                { label: 'Full name', type: 'text', required: true },
-                { label: 'Email address', type: 'email', required: true },
-                { label: 'Current Designation', type: 'text', required: true },
-                { label: 'Organisation', type: 'text', required: true },
-              ].map((field, i) => (
-                <div key={i}>
-                  <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">
-                    {field.label} {field.required && <span className="text-red-400">*</span>}
-                  </label>
-                  <input
-                    type={field.type}
-                    className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                  />
-                </div>
-              ))}
+            <form onSubmit={handleSubmit} className="p-8 space-y-5">
+              <div>
+                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
+                <input
+                  type="text" required value={form.fullName} onChange={update('fullName')}
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
+                <input
+                  type="email" required value={form.email} onChange={update('email')}
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Current Designation <span className="text-red-400">*</span></label>
+                <input
+                  type="text" required value={form.designation} onChange={update('designation')}
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Organisation <span className="text-red-400">*</span></label>
+                <input
+                  type="text" required value={form.organisation} onChange={update('organisation')}
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                />
+              </div>
               <div>
                 <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">
                   Your contact number <span className="text-red-400">*</span>
                 </label>
                 <div className="flex gap-2">
-                  <select className="border border-forest/15 rounded-xl px-3 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
-                    <option>🇮🇳 +91</option>
-                    <option>🇬🇧 +44</option>
-                    <option>🇺🇸 +1</option>
-                    <option>🇦🇪 +971</option>
+                  <select value={form.phoneCode} onChange={update('phoneCode')} className="border border-forest/15 rounded-xl px-3 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+971">🇦🇪 +971</option>
                   </select>
-                  <input type="tel" className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                  <input type="tel" required value={form.phone} onChange={update('phone')} className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
                 </div>
               </div>
               <div>
                 <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Your LinkedIn profile (if available)</label>
-                <input type="url" className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                <input type="url" value={form.linkedin} onChange={update('linkedin')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
               </div>
               <div>
                 <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Programme funding</label>
-                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
-                  <option>Choose who is funding your programme participation</option>
+                <select value={form.funding} onChange={update('funding')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                  <option value="">Choose who is funding your programme participation</option>
                   <option>Self-funded</option>
                   <option>Employer-funded</option>
                   <option>Scholarship / Grant</option>
@@ -1488,23 +1635,28 @@ function ApplyNow() {
               </div>
               <div>
                 <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Package options <span className="text-red-400">*</span></label>
-                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
-                  <option>Check above for package offerings</option>
+                <select required value={form.package} onChange={update('package')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                  <option value="">Check above for package offerings</option>
                   <option>Package 1 — £5,100 (Basic Programme)</option>
                   <option>Package 2 — £6,300 (Programme + Single Accommodation)</option>
                   <option>Package 3 — £6,500 (Programme + Double Accommodation)</option>
                 </select>
               </div>
-              <a
-                href="https://www.globaledulab.com/indialeadership"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2"
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2 disabled:opacity-60"
               >
-                Apply for GILP <ArrowUpRight className="h-4 w-4" />
-              </a>
+                {status === 'submitting' ? 'Submitting…' : <>Apply for GILP <ArrowUpRight className="h-4 w-4" /></>}
+              </button>
+              {status === 'success' && (
+                <p className="text-center text-[13px] font-semibold text-forest-deep mt-1">✓ Application received — check your email for confirmation.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-center text-[13px] font-semibold text-red-500 mt-1">Something went wrong. Please try again.</p>
+              )}
               <p className="text-center text-[11.5px] text-forest/40 mt-1">Applications reviewed on a rolling basis. Early applications strongly encouraged.</p>
-            </div>
+            </form>
           </div>
         </div>
       </div>

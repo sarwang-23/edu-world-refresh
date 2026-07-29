@@ -2,6 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Camera, FileText, ChevronDown } from "lucide-react";
 import { useState, useRef } from "react";
 
+// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec";
+
+// Fires a form submission to the GILP Apps Script backend.
+// Uses no-cors + urlencoded body so it works without any CORS setup on the Apps Script side.
+async function submitToGILP(formType: string, data: Record<string, string>) {
+  const body = new URLSearchParams({ formType, ...data });
+  await fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+    body: body.toString(),
+  });
+}
+
 export const Route = createFileRoute("/gilp-delegate")({
   component: GilpDelegatePage,
   head: () => ({
@@ -70,6 +85,43 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
 }
 
 function GilpDelegatePage() {
+  const [form, setForm] = useState({
+    title: "",
+    firstName: "",
+    lastName: "",
+    dietary: "",
+    organisation: "",
+    phoneCode: "+91 IN",
+    phone: "",
+    email: "",
+    funding: "",
+  });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    try {
+      await submitToGILP("delegate", {
+        fullName: `${form.title} ${form.firstName} ${form.lastName}`.trim(),
+        firstName: form.firstName,
+        lastName: form.lastName,
+        title: form.title,
+        dietary: form.dietary,
+        organisation: form.organisation,
+        phone: `${form.phoneCode} ${form.phone}`,
+        email: form.email,
+        funding: form.funding,
+      });
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
   const steps = [
     { num: "02", title: "FEE PAYMENT", desc: "Within 2 weeks of submitting this form" },
     { num: "03", title: "VISA INVITATION LETTER", desc: "Issued within 5 working days of receiving your fee" },
@@ -177,14 +229,14 @@ function GilpDelegatePage() {
                 </h2>
               </div>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
 
                 {/* Row: Title + First + Last */}
                 <div className="grid grid-cols-3 gap-3">
                   <div>
                     <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Title *</label>
                     <div className={selectWrapCls}>
-                      <select className={selectCls}>
+                      <select required value={form.title} onChange={update("title")} className={selectCls}>
                         <option value="">—</option>
                         <option>Mr</option>
                         <option>Mrs</option>
@@ -197,11 +249,11 @@ function GilpDelegatePage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">First Name *</label>
-                    <input type="text" className={inputCls} />
+                    <input type="text" required value={form.firstName} onChange={update("firstName")} className={inputCls} />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Last Name</label>
-                    <input type="text" className={inputCls} />
+                    <input type="text" value={form.lastName} onChange={update("lastName")} className={inputCls} />
                   </div>
                 </div>
 
@@ -209,7 +261,7 @@ function GilpDelegatePage() {
                 <div>
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Dietary Preference *</label>
                   <div className={selectWrapCls}>
-                    <select className={selectCls}>
+                    <select required value={form.dietary} onChange={update("dietary")} className={selectCls}>
                       <option value="">Select...</option>
                       <option>Vegetarian</option>
                       <option>Vegan</option>
@@ -225,7 +277,7 @@ function GilpDelegatePage() {
                 {/* Organisation */}
                 <div>
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Organisation *</label>
-                  <input type="text" placeholder="School / Company" className={inputCls} />
+                  <input type="text" required placeholder="School / Company" value={form.organisation} onChange={update("organisation")} className={inputCls} />
                 </div>
 
                 {/* Contact */}
@@ -233,7 +285,7 @@ function GilpDelegatePage() {
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
                   <div className="flex gap-2">
                     <div className={`${selectWrapCls} w-[108px] flex-shrink-0`}>
-                      <select className={`${selectCls} w-full`}>
+                      <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
                         <option>+91 IN</option>
                         <option>+44 UK</option>
                         <option>+1 US</option>
@@ -241,14 +293,14 @@ function GilpDelegatePage() {
                       </select>
                       <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/40 pointer-events-none" />
                     </div>
-                    <input type="tel" placeholder="98765 43210" className={`${inputCls} flex-1`} />
+                    <input type="tel" required placeholder="98765 43210" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
                   </div>
                 </div>
 
                 {/* Email */}
                 <div>
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Email Address *</label>
-                  <input type="email" placeholder="you@organisation.com" className={inputCls} />
+                  <input type="email" required placeholder="you@organisation.com" value={form.email} onChange={update("email")} className={inputCls} />
                 </div>
 
                 {/* Divider */}
@@ -281,7 +333,7 @@ function GilpDelegatePage() {
                 <div>
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme Funding</label>
                   <div className={selectWrapCls}>
-                    <select className={selectCls}>
+                    <select value={form.funding} onChange={update("funding")} className={selectCls}>
                       <option value="">Choose who is funding your programme participation</option>
                       <option>Self Funded</option>
                       <option>Organisation Funded</option>
@@ -299,14 +351,21 @@ function GilpDelegatePage() {
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0"
+                    disabled={status === "submitting"}
+                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0 disabled:opacity-60"
                   >
-                    Next
+                    {status === "submitting" ? "Submitting…" : "Next"}
                     <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </button>
                 </div>
+                {status === "success" && (
+                  <p className="text-center text-[13px] font-semibold text-forest-deep">✓ Registration received — check your email for confirmation.</p>
+                )}
+                {status === "error" && (
+                  <p className="text-center text-[13px] font-semibold text-red-500">Something went wrong. Please try again.</p>
+                )}
 
                 {/* ── GILP Banner Image at bottom ── */}
                 <div className="mt-10 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
