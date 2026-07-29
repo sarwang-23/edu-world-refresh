@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -12,8 +12,66 @@ export const Route = createFileRoute("/contact")({
   }),
 });
 
+// Apps Script Web App URL — deployed from Code.gs
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
+
 function ContactPage() {
   const [selectedInterest, setSelectedInterest] = useState("");
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneCode: "+91 IN",
+    phone: "",
+    organisation: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleChange = (field: keyof typeof formData) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          formType: "Contact",
+          ...formData,
+          interest: selectedInterest,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.result === "success") {
+        setStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneCode: "+91 IN",
+          phone: "",
+          organisation: "",
+          message: "",
+        });
+        setSelectedInterest("");
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
 
   return (
     <div className="min-h-screen font-sans">
@@ -106,37 +164,65 @@ function ContactPage() {
               </h2>
             </div>
 
-            <form className="space-y-6">
+            {status === "success" ? (
+              <div className="flex flex-col items-center text-center gap-4 py-16 px-6 bg-[#F7F5F1] rounded-2xl border border-forest/10">
+                <CheckCircle2 className="h-10 w-10 text-gold" />
+                <h3 className="text-[1.3rem] font-bold text-forest-deep">Message sent</h3>
+                <p className="text-[13.5px] text-forest/60 max-w-[320px]">
+                  Thank you for reaching out — our Cambridge desk will respond within 24 hours.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus("idle")}
+                  className="mt-2 text-[12px] font-bold uppercase tracking-[0.18em] text-forest-deep border-b-2 border-forest-deep/20 hover:border-gold hover:text-gold transition-all duration-200 pb-0.5"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+            <form className="space-y-6" onSubmit={handleSubmit}>
 
               {/* Name */}
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  { num: "01", label: "First Name", placeholder: "Karan" },
-                  { num: "02", label: "Last Name", placeholder: "Sharma" },
-                ].map((f, i) => (
-                  <div key={i} className="group">
-                    <div className="flex items-baseline gap-1.5 mb-2">
-                      
-                      <label className="text-[13px] font-semibold text-forest/80">{f.label}</label>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder={f.placeholder}
-                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                    />
+                <div className="group">
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[13px] font-semibold text-forest/80">First Name</label>
                   </div>
-                ))}
+                  <input
+                    type="text"
+                    required
+                    placeholder="Karan"
+                    value={formData.firstName}
+                    onChange={handleChange("firstName")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  />
+                </div>
+                <div className="group">
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[13px] font-semibold text-forest/80">Last Name</label>
+                  </div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Sharma"
+                    value={formData.lastName}
+                    onChange={handleChange("lastName")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  />
+                </div>
               </div>
 
               {/* Email */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  
                   <label className="text-[13px] font-semibold text-forest/80">Email Address</label>
                 </div>
                 <input
                   type="email"
+                  required
                   placeholder="you@organisation.com"
+                  value={formData.email}
+                  onChange={handleChange("email")}
                   className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                 />
               </div>
@@ -144,11 +230,14 @@ function ContactPage() {
               {/* Phone */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  
                   <label className="text-[13px] font-semibold text-forest/80">Phone Number</label>
                 </div>
                 <div className="flex gap-2">
-                  <select className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]">
+                  <select
+                    value={formData.phoneCode}
+                    onChange={handleChange("phoneCode")}
+                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
+                  >
                     <option>+91 IN</option>
                     <option>+44 UK</option>
                     <option>+1 US</option>
@@ -157,6 +246,8 @@ function ContactPage() {
                   <input
                     type="tel"
                     placeholder="98765 43210"
+                    value={formData.phone}
+                    onChange={handleChange("phone")}
                     className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
@@ -165,7 +256,6 @@ function ContactPage() {
               {/* Interest */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-3">
-                  
                   <label className="text-[13px] font-semibold text-forest/80">I am Interested In</label>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
@@ -201,12 +291,13 @@ function ContactPage() {
               {/* Organisation */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  
                   <label className="text-[13px] font-semibold text-forest/80">Organisation</label>
                 </div>
                 <input
                   type="text"
                   placeholder="Your school or company name"
+                  value={formData.organisation}
+                  onChange={handleChange("organisation")}
                   className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                 />
               </div>
@@ -214,15 +305,22 @@ function ContactPage() {
               {/* Message */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  
                   <label className="text-[13px] font-semibold text-forest/80">Your Message</label>
                 </div>
                 <textarea
                   rows={4}
                   placeholder="Tell us a little about what you are planning..."
+                  value={formData.message}
+                  onChange={handleChange("message")}
                   className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
                 />
               </div>
+
+              {status === "error" && (
+                <p className="text-[12.5px] text-red-600 font-medium">
+                  Something went wrong sending your message. Please try again.
+                </p>
+              )}
 
               {/* CTA */}
               <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
@@ -231,15 +329,21 @@ function ContactPage() {
                 </p>
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5"
+                  disabled={status === "submitting"}
+                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status === "submitting" ? "Sending..." : "Send Message"}
                   <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
-                    <ArrowUpRight className="h-4 w-4" />
+                    {status === "submitting" ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <ArrowUpRight className="h-4 w-4" />
+                    )}
                   </span>
                 </button>
               </div>
             </form>
+            )}
           </div>
         </div>
       </section>
