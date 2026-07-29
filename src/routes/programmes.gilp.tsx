@@ -31,10 +31,10 @@ function Page() {
       <CertificateSection />
       <FacultyGrid />
       <AlumniTestimonials />
-      <FAQ />
       <CancellationPolicy />
       <ContactSection />
       <ApplyNow />
+      <FAQ />
       <CTA />
       <Footer />
     </div>
@@ -1030,13 +1030,13 @@ function FAQ() {
 /* ─── 13. CERTIFICATE ─── */
 function CertificateSection() {
   return (
-    <section className="bg-[#2C1F0E] py-24 relative overflow-hidden">
+    <section className="bg-forest-deep py-24 relative overflow-hidden">
       {/* Warm decorative blobs only — no grid */}
       <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#C9913D]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#C9913D]/8 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start lg:pt-8">
 
           {/* LEFT — Text content */}
           <div>
@@ -1068,16 +1068,8 @@ function CertificateSection() {
                   </div>
                 ))}
               </div>
-              <div className="mt-2">
-                <img
-                  src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                  alt="Cambridge Judge Business School"
-                  className="h-9 w-auto object-contain opacity-35"
-                />
-              </div>
             </div>
           </div>
-
           {/* RIGHT — Certificate mock + 2 images */}
           <div className="flex flex-col gap-5">
             {/* Certificate mock */}
@@ -1109,22 +1101,6 @@ function CertificateSection() {
                   <p className="text-[3rem] font-black text-forest/5 tracking-[0.4em] rotate-[-30deg] select-none">SAMPLE</p>
                 </div>
               </div>
-            </div>
-
-            {/* 2 premium images */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { src: 'https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg', alt: 'Cambridge programme session', label: 'Cambridge CJBS' },
-                { src: 'https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg', alt: "Lord's Cricket Ground", label: "Lord's, London" },
-              ].map((img, i) => (
-                <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] group shadow-[0_10px_40px_rgba(0,0,0,0.4)] border border-[#C9913D]/15 hover:border-[#C9913D]/35 transition-all duration-500">
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1F0E]/75 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3">
-                    <p className="text-[11px] font-bold text-[#C9913D] uppercase tracking-widest">{img.label}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -1210,25 +1186,37 @@ function FacultyGrid() {
   ]
 
   return (
-    <section className="bg-white py-24 border-t border-forest/5">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section className="bg-[#F7F5F1] py-24 border-t border-forest/5 relative overflow-hidden">
+      {/* Subtle decorative elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-forest/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
+
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10 z-10">
         <div className="text-center mb-16">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">World-Class Academics</span>
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Faculty and Speakers</h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <span className="h-px w-8 bg-gold" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">World-Class Academics</span>
+            <span className="h-px w-8 bg-gold" />
+          </div>
+          <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-forest-deep mb-4 leading-tight">
+            Faculty & <span className="font-serif italic font-normal text-forest/60">Speakers</span>
+          </h2>
           <p className="text-[15px] text-forest/60 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {faculty.map((f, i) => (
-            <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(10,48,29,0.06)] border border-forest/5 hover:shadow-[0_20px_50px_rgba(10,48,29,0.12)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col">
-              <div className={`h-1 w-full bg-gradient-to-r ${f.accent}`} />
-              <div className="relative overflow-hidden">
-                <img src={f.img} alt={f.name} className="w-full aspect-square object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-[0_8px_20px_rgba(10,48,29,0.03)] border border-forest/5 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(196,148,50,0.08)] hover:-translate-y-1 transition-all duration-500 flex flex-col">
+              <div className="relative overflow-hidden aspect-[4/5] p-2.5 pb-0">
+                <div className="w-full h-full rounded-t-xl overflow-hidden relative">
+                  <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-forest-deep/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </div>
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-0.5">{f.name}</h3>
-                <p className="text-[12px] font-semibold text-gold mb-3 leading-snug">{f.role}</p>
-                <p className="text-[12px] text-forest/60 leading-relaxed line-clamp-5">{f.bio}</p>
+              <div className="p-6 flex flex-col flex-1 bg-white relative z-10">
+                <h3 className="text-[17px] font-bold text-forest-deep leading-snug mb-1">{f.name}</h3>
+                <p className="text-[13px] font-serif italic text-gold mb-4 leading-snug">{f.role}</p>
+                <div className="h-px w-8 bg-forest/10 mb-4 transition-all duration-300 group-hover:w-12 group-hover:bg-gold/40" />
+                <p className="text-[12.5px] text-forest/60 leading-relaxed">{f.bio}</p>
               </div>
             </div>
           ))}

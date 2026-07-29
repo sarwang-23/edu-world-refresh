@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const [selectedInterest, setSelectedInterest] = useState("General Enquiry");
+  const [selectedInterest, setSelectedInterest] = useState("");
 
   return (
     <div className="min-h-screen font-sans">
@@ -116,8 +116,8 @@ function ContactPage() {
                 ].map((f, i) => (
                   <div key={i} className="group">
                     <div className="flex items-baseline gap-1.5 mb-2">
-                      <span className="text-[12px] font-serif italic text-gold/70">{f.num}.</span>
-                      <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">{f.label}</label>
+                      
+                      <label className="text-[13px] font-semibold text-forest/80">{f.label}</label>
                     </div>
                     <input
                       type="text"
@@ -131,8 +131,8 @@ function ContactPage() {
               {/* Email */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <span className="text-[12px] font-serif italic text-gold/70">03.</span>
-                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Email Address</label>
+                  
+                  <label className="text-[13px] font-semibold text-forest/80">Email Address</label>
                 </div>
                 <input
                   type="email"
@@ -144,8 +144,8 @@ function ContactPage() {
               {/* Phone */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <span className="text-[12px] font-serif italic text-gold/70">04.</span>
-                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Phone Number</label>
+                  
+                  <label className="text-[13px] font-semibold text-forest/80">Phone Number</label>
                 </div>
                 <div className="flex gap-2">
                   <select className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]">
@@ -165,8 +165,8 @@ function ContactPage() {
               {/* Interest */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-3">
-                  <span className="text-[12px] font-serif italic text-gold/70">05.</span>
-                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">I am Interested In</label>
+                  
+                  <label className="text-[13px] font-semibold text-forest/80">I am Interested In</label>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {[
@@ -201,8 +201,8 @@ function ContactPage() {
               {/* Organisation */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <span className="text-[12px] font-serif italic text-gold/70">06.</span>
-                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Organisation</label>
+                  
+                  <label className="text-[13px] font-semibold text-forest/80">Organisation</label>
                 </div>
                 <input
                   type="text"
@@ -214,8 +214,8 @@ function ContactPage() {
               {/* Message */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <span className="text-[12px] font-serif italic text-gold/70">07.</span>
-                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Your Message</label>
+                  
+                  <label className="text-[13px] font-semibold text-forest/80">Your Message</label>
                 </div>
                 <textarea
                   rows={4}
