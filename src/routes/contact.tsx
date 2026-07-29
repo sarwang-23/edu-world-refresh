@@ -1,275 +1,327 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
-    meta: [{ title: "Contact Us — Global Education Lab" }],
+    meta: [
+      { title: "Contact Us — Global Education Lab" },
+      { name: "description", content: "Get in touch with Global Education Lab. Cambridge desk for executive programmes, school partnerships, and global ventures." },
+    ],
   }),
 });
 
 function ContactPage() {
+  const [selectedInterest, setSelectedInterest] = useState("General Enquiry");
+
   return (
-    <div className="min-h-screen bg-[#F7F5F0] pt-24 pb-24 font-sans selection:bg-forest/10 selection:text-forest">
-      <div className="mx-auto max-w-6xl px-6">
-        
-        {/* Top Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-20 relative">
-          
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="flex items-center gap-3">
-              <span className="h-[1px] w-6 bg-gold"></span>
-              <span className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase">Vol. 01 — Correspondence</span>
+    <div className="min-h-screen font-sans">
+
+      {/* ═══════════════════════════════════════════
+          HERO — Full-viewport split layout
+      ═══════════════════════════════════════════ */}
+      <section className="min-h-screen flex flex-col lg:flex-row">
+
+        {/* LEFT PANEL — Immersive dark image panel */}
+        <div className="relative lg:w-[42%] min-h-[420px] lg:min-h-screen flex flex-col justify-between overflow-hidden">
+          {/* Background image */}
+          <img
+            src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
+            alt="Cambridge programme"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Multi-layer overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/85 to-forest-deep/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
+
+          {/* Decorative gold line */}
+          <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+
+          {/* Top content */}
+          <div className="relative z-10 px-10 md:px-14 pt-28">
+            <div className="flex items-center gap-3 mb-10">
+              <div className="h-px w-10 bg-gold" />
+              <span className="text-[11px] font-bold tracking-[0.28em] text-gold uppercase">Global Education Lab</span>
             </div>
-            
-            <h1 className="text-6xl md:text-[5.5rem] font-bold tracking-tight text-forest leading-[1.05] font-serif">
-              Begin a <br />
-              <span className="font-serif italic text-gold font-normal">quiet conversation.</span>
+
+            <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
+              Begin a<br />
+              <em className="font-serif italic font-normal text-gold not-italic">conversation.</em>
             </h1>
-            
-            <p className="max-w-md text-[15px] leading-relaxed text-forest/70 pt-4">
-              Whether you are shaping an executive cohort, exploring a school partnership, or scaling a venture across borders — our Cambridge desk receives your letter personally, and replies in kind.
+            <p className="text-[14px] text-white/50 leading-relaxed max-w-[300px] mb-10">
+              Our Cambridge desk receives every enquiry personally and responds within 24 hours.
             </p>
+
+            {/* Contact rows */}
+            <div className="space-y-4">
+              {[
+                { icon: <Phone className="h-3.5 w-3.5 text-gold" />, val: "+44 (01223) 362994", href: "tel:+441223362994" },
+                { icon: <Mail className="h-3.5 w-3.5 text-gold" />, val: "info@globaledulab.com", href: "mailto:info@globaledulab.com" },
+                { icon: <MapPin className="h-3.5 w-3.5 text-gold" />, val: "Stirling House, Waterbeach, Cambridge CB25 9PB", href: null },
+                { icon: <Clock className="h-3.5 w-3.5 text-gold" />, val: "Mon–Fri · 09:00–18:00 GMT", href: null },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3.5 group">
+                  <div className="h-7 w-7 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold/20 group-hover:border-gold/30 transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  {item.href ? (
+                    <a href={item.href} className="text-[13px] text-white/70 group-hover:text-white transition-colors duration-200 leading-relaxed">{item.val}</a>
+                  ) : (
+                    <p className="text-[13px] text-white/70 leading-relaxed">{item.val}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Column */}
-          <div className="lg:col-span-5 flex flex-col justify-center relative">
-            <div className="flex justify-start lg:justify-end mb-16 lg:absolute lg:top-0 lg:right-0">
-              <span className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase">Cambridge - Est. Waterbeach</span>
-            </div>
-            
-            <div className="border-t border-b border-forest/10 py-8 mt-12 relative w-full max-w-[280px]">
-              <h3 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase mb-4">Reply Within</h3>
-              <div className="text-[4rem] font-serif text-forest leading-none mb-6">24h</div>
-              <div className="flex items-center gap-2 text-[14px] font-bold tracking-widest text-forest/50 uppercase">
-                <Clock className="h-3.5 w-3.5 text-gold" />
-                MON-FRI • 09:00-18:00 GMT
+          {/* Bottom bar */}
+          <div className="relative z-10 px-10 md:px-14 pb-10 mt-10">
+            <div className="border-t border-white/10 pt-6 flex items-end justify-between">
+              <div>
+                <p className="text-[9px] uppercase tracking-[0.25em] text-white/25 mb-1">Reply within</p>
+                <p className="text-[2.2rem] font-bold text-white leading-none">24h</p>
               </div>
+              <img
+                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
+                alt="Cambridge Judge Business School"
+                className="h-8 w-auto object-contain opacity-25"
+              />
             </div>
           </div>
         </div>
 
-        {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-32">
-          
-          {/* Left Column - Form */}
-          <div className="lg:col-span-7 bg-white p-10 md:p-14 relative shadow-sm border border-forest/10">
-            {/* Corner Marks */}
-            <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-gold/40"></div>
-            <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-gold/40"></div>
-            <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-gold/40"></div>
-            <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-gold/40"></div>
+        {/* RIGHT PANEL — Premium form */}
+        <div className="lg:w-[58%] bg-white flex items-start lg:items-center justify-center px-8 md:px-14 lg:px-20 py-28 lg:py-0 overflow-y-auto">
+          <div className="w-full max-w-[560px]">
 
-            <div className="border-b border-forest/10 pb-6 mb-12 mt-4">
-              <h4 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase mb-3">The Letter</h4>
-              <div className="flex justify-between items-end">
-                <h2 className="text-4xl text-forest font-serif italic">Write to us</h2>
-                <span className="text-[15px] font-serif italic text-forest/40">Ref. GEL/CB25</span>
-              </div>
+            {/* Form heading */}
+            <div className="mb-10">
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+                <span className="h-px w-6 bg-gold inline-block" /> Send a Message
+              </span>
+              <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
+                How can we<br />
+                <span className="font-serif italic font-normal text-forest/50">help you?</span>
+              </h2>
             </div>
 
-            <form className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-[14px] font-serif italic text-gold">01.</span>
-                    <label className="text-[14px] font-bold tracking-[0.2em] text-forest/50 uppercase">First Name</label>
+            <form className="space-y-6">
+
+              {/* Name */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { num: "01", label: "First Name", placeholder: "Karan" },
+                  { num: "02", label: "Last Name", placeholder: "Sharma" },
+                ].map((f, i) => (
+                  <div key={i} className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <span className="text-[12px] font-serif italic text-gold/70">{f.num}.</span>
+                      <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">{f.label}</label>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder={f.placeholder}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
                   </div>
-                  <input type="text" placeholder="Karan" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
+                ))}
+              </div>
+
+              {/* Email */}
+              <div>
+                <div className="flex items-baseline gap-1.5 mb-2">
+                  <span className="text-[12px] font-serif italic text-gold/70">03.</span>
+                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Email Address</label>
                 </div>
-                <div className="relative">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-[14px] font-serif italic text-gold">02.</span>
-                    <label className="text-[14px] font-bold tracking-[0.2em] text-forest/50 uppercase">Last Name</label>
-                  </div>
-                  <input type="text" placeholder="Sharma" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
+                <input
+                  type="email"
+                  placeholder="you@organisation.com"
+                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <div className="flex items-baseline gap-1.5 mb-2">
+                  <span className="text-[12px] font-serif italic text-gold/70">04.</span>
+                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Phone Number</label>
+                </div>
+                <div className="flex gap-2">
+                  <select className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]">
+                    <option>+91 IN</option>
+                    <option>+44 UK</option>
+                    <option>+1 US</option>
+                    <option>+971 AE</option>
+                  </select>
+                  <input
+                    type="tel"
+                    placeholder="98765 43210"
+                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  />
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-[14px] font-serif italic text-gold">03.</span>
-                  <label className="text-[14px] font-bold tracking-[0.2em] text-forest/50 uppercase">Email Address</label>
+              {/* Interest */}
+              <div>
+                <div className="flex items-baseline gap-1.5 mb-3">
+                  <span className="text-[12px] font-serif italic text-gold/70">05.</span>
+                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">I am Interested In</label>
                 </div>
-                <input type="email" placeholder="you@organization.com" className="w-full border-b border-forest/10 bg-transparent py-2 text-[15px] text-forest placeholder:text-forest/30 focus:border-forest focus:outline-none transition-colors" />
-              </div>
-
-              <div className="relative">
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-[14px] font-serif italic text-gold">04.</span>
-                  <label className="text-[14px] font-bold tracking-[0.2em] text-forest/50 uppercase">I'm interested in</label>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {[
-                    { label: "General enquiry", active: true },
-                    { label: "School Leaders", active: false },
-                    { label: "Business Leaders", active: false },
-                    { label: "Students & Teachers", active: false },
-                    { label: "Global Ventures", active: false },
-                    { label: "Media & Press", active: false }
+                    "General Enquiry",
+                    "School Leaders",
+                    "Business Leaders",
+                    "Students & Teachers",
+                    "Global Ventures",
+                    "Media & Press",
                   ].map((tag, i) => (
-                    <button type="button" key={i} className={`border px-4 py-2.5 text-[15px] font-bold tracking-wide transition-colors flex items-center gap-3 ${tag.active ? "border-[#0A301D] bg-[#0A301D] text-white" : "border-forest/10 bg-transparent text-forest/60 hover:border-forest/30 hover:text-forest"}`}>
-                      {tag.active ? (
-                        <span className="w-1.5 h-1.5 bg-gold shrink-0"></span>
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setSelectedInterest(tag)}
+                      className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
+                        selectedInterest === tag
+                          ? "bg-forest-deep border-forest-deep text-white shadow-md"
+                          : "bg-[#F7F5F1] border-transparent text-forest/60 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
+                      }`}
+                    >
+                      {selectedInterest === tag ? (
+                        <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
                       ) : (
-                        <span className="w-1 h-1 bg-forest/20 shrink-0"></span>
+                        <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
                       )}
-                      <span className="truncate">{tag.label}</span>
+                      {tag}
                     </button>
                   ))}
                 </div>
               </div>
 
-              <div className="relative pt-4">
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-[14px] font-serif italic text-gold">05.</span>
-                  <label className="text-[14px] font-bold tracking-[0.2em] text-forest/50 uppercase">Message</label>
+              {/* Organisation */}
+              <div>
+                <div className="flex items-baseline gap-1.5 mb-2">
+                  <span className="text-[12px] font-serif italic text-gold/70">06.</span>
+                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Organisation</label>
                 </div>
-                {/* Simulated lined paper for textarea */}
-                <div className="relative">
-                   <textarea rows={3} placeholder="Tell us a little about what you're planning..." className="w-full bg-transparent py-2 text-[15px] leading-[3rem] text-forest placeholder:text-forest/30 focus:outline-none resize-none relative z-10" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 47px, rgba(10,48,29,0.05) 48px)'}}></textarea>
-                </div>
+                <input
+                  type="text"
+                  placeholder="Your school or company name"
+                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                />
               </div>
 
-              <div className="flex flex-col md:flex-row items-end justify-between gap-6 pt-12">
-                <p className="text-[15px] text-forest/40 max-w-[250px] leading-relaxed">
+              {/* Message */}
+              <div>
+                <div className="flex items-baseline gap-1.5 mb-2">
+                  <span className="text-[12px] font-serif italic text-gold/70">07.</span>
+                  <label className="text-[11px] font-bold tracking-widest text-forest/50 uppercase">Your Message</label>
+                </div>
+                <textarea
+                  rows={4}
+                  placeholder="Tell us a little about what you are planning..."
+                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
+                />
+              </div>
+
+              {/* CTA */}
+              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                <p className="text-[11.5px] text-forest/35 leading-relaxed max-w-[200px]">
                   By submitting, you consent to be contacted by the Global Education Lab team.
                 </p>
-                <button type="button" className="inline-flex items-center justify-center gap-4 bg-[#0A301D] px-8 py-5 text-[15px] font-bold tracking-[0.2em] text-white transition-all hover:bg-forest-deep">
-                  SEND <br/> LETTER <span className="w-6 h-px bg-white/40 ml-2"></span>
+                <button
+                  type="submit"
+                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5"
+                >
+                  Send Message
+                  <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
                 </button>
               </div>
             </form>
           </div>
+        </div>
+      </section>
 
-          {/* Right Column - Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            
-            {/* Our Home Card */}
-            <div className="relative overflow-hidden bg-[#0A301D] text-white shadow-sm flex-grow border border-forest/30">
-              <div className="absolute inset-x-0 top-0 h-48 w-full bg-[#082617]">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent"></div>
+      {/* ═══════════════════════════════════════════
+          MAP SECTION
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#F7F5F1] py-24 border-t border-forest/5">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="grid md:grid-cols-[1fr_2fr] gap-10 items-center mb-10">
+            <div>
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+                <span className="h-px w-6 bg-gold inline-block" /> Find Us
+              </span>
+              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">Our Location</h2>
+              <div className="space-y-3 text-[13.5px] text-forest/65 leading-relaxed">
+                <p className="font-semibold text-forest-deep">Global Education Lab Ltd</p>
+                <p>Stirling House<br />Denny End Road<br />Waterbeach, CB25 9PB<br />Cambridge, United Kingdom</p>
               </div>
-              
-              <div className="relative p-10 h-full flex flex-col">
-                <div className="flex justify-between items-start mb-12">
-                  <div>
-                    <h4 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Home</h4>
-                    <h2 className="text-3xl text-white font-serif italic">The Cambridge Desk</h2>
-                  </div>
-                  <div className="w-12 h-12 rounded-full border border-gold/40 flex items-center justify-center shrink-0">
-                    <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
-                  </div>
-                </div>
-                
-                <div className="space-y-8 mb-8">
-                  <div className="flex gap-4">
-                    <MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Head Office</p>
-                      <p className="text-[15px] font-medium leading-relaxed text-white/90">Global Education Lab Ltd<br/>Stirling House, Denny End Road<br/>Waterbeach, CB25 9PB<br/>Cambridge, United Kingdom</p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <div className="flex gap-4">
-                      <Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Telephone</p>
-                        <p className="text-[15px] font-medium text-white/90">+44 (0)1223 302 904</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-[15px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">Email</p>
-                        <p className="text-[15px] font-medium text-white/90 truncate max-w-[120px]">info@globaledulab.com</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Map area mockup */}
-                <div className="mt-auto relative rounded overflow-hidden h-48 bg-[#0D3B24]">
-                  <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <MapPin className="h-10 w-10 text-[#88B04B]" fill="#88B04B" />
-                  </div>
-                  <div className="absolute right-0 bottom-0">
-                    <button className="bg-[#082617] text-white/90 text-[15px] font-bold tracking-widest uppercase px-4 py-3 flex items-center gap-2 hover:text-white transition-colors">
-                      Directions <ArrowUpRight className="h-3 w-3" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Partner with us Card */}
-            <div className="bg-white p-10 shadow-sm border border-forest/10 relative overflow-hidden">
-              <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border-[0.5px] border-gold/20"></div>
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border-[0.5px] border-gold/10"></div>
-              
-              <h4 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase mb-3 relative z-10">Institutional Access</h4>
-              <h2 className="text-3xl text-forest font-serif italic mb-4 relative z-10">Partner with us</h2>
-              <p className="text-[15px] text-forest/70 mb-8 leading-relaxed relative z-10 max-w-[280px]">
-                Schools, universities and organisations exploring bespoke collaborations may reach our partnerships desk directly.
-              </p>
-              <a href="/global-ventures" className="inline-flex items-center gap-2 text-[14px] font-bold tracking-[0.2em] text-forest hover:text-gold transition-colors uppercase border-b border-forest/30 hover:border-gold pb-1 relative z-10">
-                Explore Global Ventures <ArrowUpRight className="h-3 w-3" />
+              <a
+                href="https://www.google.com/maps/search/Stirling+House+Denny+End+Road+Waterbeach+Cambridge+CB25+9PB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-[12px] font-bold uppercase tracking-[0.18em] text-forest-deep border-b-2 border-forest-deep/20 hover:border-gold hover:text-gold transition-all duration-200 pb-0.5"
+              >
+                Get Directions <ArrowUpRight className="h-3 w-3" />
               </a>
             </div>
-            
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(10,48,29,0.12)] border border-forest/8">
+              <iframe
+                title="Global Education Lab Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.2!2d0.19012!3d52.27537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d870ef1f2b2e7b%3A0xa23c5fae47e3f521!2sStirling%20House%2C%20Denny%20End%20Rd%2C%20Waterbeach%2C%20Cambridge%20CB25%209PB%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000001!5m2!1sen!2suk"
+                width="100%"
+                height="400"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom Locations */}
-        <div className="pt-8">
-          <div className="flex justify-between items-end border-b border-forest/10 pb-6 mb-8">
+      {/* ═══════════════════════════════════════════
+          GLOBAL PRESENCE
+      ═══════════════════════════════════════════ */}
+      <section className="bg-white py-24 border-t border-forest/5">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-4 border-b border-forest/8 pb-8">
             <div>
-              <h4 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase mb-3">Our Presence</h4>
-              <h2 className="text-4xl text-forest font-serif italic">Across three continents</h2>
+              <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-3">
+                <span className="h-px w-6 bg-gold inline-block" /> Our Presence
+              </span>
+              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep">
+                Across <em className="font-serif italic font-normal text-forest/50">three continents</em>
+              </h2>
             </div>
-            <span className="text-[15px] font-serif italic text-forest/40">Index of desks</span>
+            <div className="flex items-center gap-2 text-[12px] text-forest/35 font-medium">
+              <Globe2 className="h-4 w-4" /> Index of desks
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-b border-forest/10">
-            {/* Cambridge */}
-            <div className="p-8 pb-16 relative">
-              <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase">United Kingdom</h5>
-                <span className="text-[15px] font-serif italic text-forest/30">01</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-forest/8">
+            {[
+              { region: "United Kingdom", city: "Cambridge", role: "Headquarters", desc: "Where our research, leadership and global education programmes are shaped.", num: "01" },
+              { region: "India", city: "Delhi — Mumbai", role: "Regional Office", desc: "Programme delivery and school partnerships across the subcontinent.", num: "02" },
+              { region: "International", city: "Finland — Bali", role: "Residencies", desc: "Immersive leadership residencies and cross-cultural learning experiences.", num: "03" },
+            ].map((loc, i) => (
+              <div key={i} className="group px-0 md:px-10 first:pl-0 last:pr-0 py-8 md:py-0">
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">{loc.region}</span>
+                  <span className="text-[1.8rem] font-serif italic text-forest/8">{loc.num}</span>
+                </div>
+                <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">{loc.city}</h3>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest/35 mb-4">{loc.role}</p>
+                <p className="text-[13.5px] text-forest/60 leading-relaxed">{loc.desc}</p>
               </div>
-              <p className="text-2xl font-bold text-forest font-serif mb-2">Cambridge</p>
-              <p className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Headquarters</p>
-              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Where our research, leadership and global education programmes are shaped.</p>
-            </div>
-
-            {/* India */}
-            <div className="p-8 pb-16 bg-white relative shadow-[0_0_40px_rgba(10,48,29,0.03)] border-x border-forest/5">
-              <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase">India</h5>
-                <span className="text-[15px] font-serif italic text-forest/30">02</span>
-              </div>
-              <p className="text-2xl font-bold text-forest font-serif mb-2">Delhi — Mumbai</p>
-              <p className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Regional Office</p>
-              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Programme delivery and school partnerships across the subcontinent.</p>
-            </div>
-
-            {/* Global */}
-            <div className="p-8 pb-16 relative">
-              <div className="flex justify-between items-start mb-10">
-                <h5 className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase">International</h5>
-                <span className="text-[15px] font-serif italic text-forest/30">03</span>
-              </div>
-              <p className="text-2xl font-bold text-forest font-serif mb-2">Finland — Bali</p>
-              <p className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase mb-6">Residencies</p>
-              <p className="text-[15px] text-forest/70 leading-relaxed max-w-[220px]">Immersive leadership residencies and cross-cultural learning experiences.</p>
-            </div>
+            ))}
           </div>
         </div>
-        
-      </div>
+      </section>
+
     </div>
   );
 }

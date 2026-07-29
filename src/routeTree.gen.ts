@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApplyNowRouteImport } from './routes/apply-now'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
@@ -54,6 +55,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplyNowRoute = ApplyNowRouteImport.update({
+  id: '/apply-now',
+  path: '/apply-now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
@@ -236,6 +242,7 @@ const VenturesSlugRoute = VenturesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
@@ -274,6 +281,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
@@ -312,6 +320,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
@@ -352,6 +361,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/apply-now'
     | '/business-leaders'
     | '/contact'
     | '/entrepreneurship'
@@ -390,6 +400,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/apply-now'
     | '/business-leaders'
     | '/contact'
     | '/entrepreneurship'
@@ -427,6 +438,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/apply-now'
     | '/business-leaders'
     | '/contact'
     | '/entrepreneurship'
@@ -466,6 +478,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ApplyNowRoute: typeof ApplyNowRoute
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
   EntrepreneurshipRoute: typeof EntrepreneurshipRoute
@@ -504,6 +517,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apply-now': {
+      id: '/apply-now'
+      path: '/apply-now'
+      fullPath: '/apply-now'
+      preLoaderRoute: typeof ApplyNowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/business-leaders': {
@@ -784,6 +804,7 @@ const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ApplyNowRoute: ApplyNowRoute,
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,
   EntrepreneurshipRoute: EntrepreneurshipRoute,

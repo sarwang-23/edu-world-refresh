@@ -113,7 +113,7 @@ export function Nav() {
           ))}
         </nav>
         <Link
-          to="/contact"
+          to="/apply-now"
           className="hidden items-center gap-2 rounded-full bg-forest-deep px-5 py-2.5 text-[15px] font-bold tracking-wide text-gold transition-all hover:bg-forest md:inline-flex"
         >
           Apply Now <ArrowUpRight className="h-4 w-4" />
