@@ -152,7 +152,6 @@ function GilpDelegatePage() {
 
           <div className="relative z-10 px-10 md:px-12 pt-10 pb-12 flex flex-col min-h-full">
 
-
             {/* ── Registration badge ── */}
             <div className="flex items-center gap-3 mb-6">
               <div className="h-8 w-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
