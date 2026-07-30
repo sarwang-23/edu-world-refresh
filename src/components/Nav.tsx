@@ -80,14 +80,13 @@ export function Nav() {
                   </div>
                 </div>
 
-                {/* For Educators */}
-                {/* @ts-expect-error - Route doesn't exist yet */}
-                <Link
-                  to="/programmes/educators"
+                {/* For Educators — route not built yet, plain anchor avoids the typed-router error */}
+                <a
+                  href="/programmes/educators"
                   className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                 >
                   For Educators
-                </Link>
+                </a>
 
                 {/* For Entrepreneurs */}
                 <div className="group/entrepreneurs relative">
@@ -100,10 +99,9 @@ export function Nav() {
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
                       <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
                       <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
-                      {/* @ts-expect-error - Route doesn't exist yet */}
-                      <Link to="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
-                      {/* @ts-expect-error - Route doesn't exist yet */}
-                      <Link to="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</Link>
+                      {/* Routes not built yet — plain anchors avoid the typed-router error */}
+                      <a href="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</a>
+                      <a href="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</a>
                     </div>
                   </div>
                 </div>
