@@ -234,6 +234,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
 }
 
 /* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
+/* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
 function ProgrammeOverview() {
   const [videoOpen, setVideoOpen] = useState(false)
 
@@ -290,7 +291,7 @@ function ProgrammeOverview() {
           <div className="relative w-full">
             {/* soft shadow glow */}
             <div className="absolute -inset-4 bg-gold/10 rounded-3xl blur-2xl pointer-events-none" />
-            
+
             <div className="relative bg-white rounded-2xl shadow-[0_8px_40px_rgba(10,48,29,0.08)] overflow-hidden ring-1 ring-forest/5">
               {!videoOpen ? (
                 <button
@@ -305,7 +306,7 @@ function ProgrammeOverview() {
                   />
                   {/* overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-forest-deep/20 to-transparent group-hover:from-forest-deep/60 transition-all duration-500" />
-                  
+
                   {/* Play ring */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative">
@@ -315,7 +316,7 @@ function ProgrammeOverview() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Bottom caption */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-center gap-4">
@@ -331,16 +332,24 @@ function ProgrammeOverview() {
                   </div>
                 </button>
               ) : (
-                <div className="w-full aspect-video">
-                  <iframe
-                    src="https://www.globaledulab.com/indialeadership"
-                    className="w-full h-full"
-                    allow="autoplay; fullscreen"
-                    title="GILP testimonial video"
+                <div className="relative w-full aspect-video bg-black">
+                  <video
+                    src="/Globalindialeadershipprogramme.mp4"
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    playsInline
                   />
+                  <button
+                    onClick={() => setVideoOpen(false)}
+                    aria-label="Close video"
+                    className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center text-[16px] transition-colors"
+                  >
+                    ×
+                  </button>
                 </div>
               )}
-              
+
               {/* bottom label strip */}
               <div className="px-6 py-4 flex items-center justify-between border-t border-forest/6 bg-white">
                 <div className="flex items-center gap-2.5">

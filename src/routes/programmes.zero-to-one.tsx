@@ -3,6 +3,7 @@ import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calen
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
 import heroImg from '../assets/hero-classroom.jpg'
+import zeroToOneVideo from '../assets/zero-to-one.mp4'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
 
@@ -285,7 +286,10 @@ function ThemeSection() {
 }
 
 /* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
+/* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
 function SuccessStory() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   return (
     <section className="py-32 bg-[#F4EFE6] relative overflow-hidden">
       <div className="pointer-events-none absolute -top-32 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-gold/8 blur-[120px]" />
@@ -320,17 +324,44 @@ function SuccessStory() {
                 ))}
               </div>
             </div>
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] cursor-pointer group shadow-xl border border-forest/8">
-              <img src={businessLeadersImg} alt="Zero to One outcome" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-forest-deep/30 group-hover:bg-forest-deep/10 transition-colors duration-500 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-                  <Play className="h-6 w-6 text-gold ml-1" />
+
+            {/* Video / thumbnail frame — dimensions unchanged (aspect-[16/10]) */}
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] shadow-xl border border-forest/8">
+              {!videoOpen ? (
+                <button
+                  onClick={() => setVideoOpen(true)}
+                  className="relative w-full h-full cursor-pointer group block"
+                  aria-label="Play Zero-To-One highlights video"
+                >
+                  <img src={businessLeadersImg} alt="Zero to One outcome" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-forest-deep/30 group-hover:bg-forest-deep/10 transition-colors duration-500 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+                      <Play className="h-6 w-6 text-gold ml-1" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6">
+                    <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
+                    <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
+                  </div>
+                </button>
+              ) : (
+                <div className="relative w-full h-full bg-black">
+                  <video
+                    src="/zerotoone.mp4"
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    playsInline
+                  />
+                  <button
+                    onClick={() => setVideoOpen(false)}
+                    aria-label="Close video"
+                    className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center text-[16px] transition-colors z-10"
+                  >
+                    ×
+                  </button>
                 </div>
-              </div>
-              <div className="absolute bottom-6 left-6">
-                <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
-                <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
-              </div>
+              )}
             </div>
           </div>
         </div>
