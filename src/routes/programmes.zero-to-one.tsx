@@ -1,10 +1,31 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
+import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User, ChevronUp, ChevronDown } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
-import heroImg from '../assets/hero-classroom.jpg'
+import heroImg from '../assets/zero-to-one-past-5.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
+import person11Img from '../assets/person11.jpg'
+import person12Img from '../assets/person12.jpg'
+import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
+import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
+import sydneyConner from '@/assets/people/sydney_conner.jpg';
+import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
+import past1 from '../assets/zero-to-one-past-1.jpg'
+import past2 from '../assets/zero-to-one-past-2.jpg'
+import past3 from '../assets/zero-to-one-past-3.jpg'
+import past4 from '../assets/zero-to-one-past-4.jpg'
+import past5 from '../assets/zero-to-one-past-5.jpg'
+import past6 from '../assets/zero-to-one-past-6.jpg'
+import past7 from '../assets/zero-to-one-past-7.jpg'
+import past8 from '../assets/zero-to-one-past-8.jpg'
+import past9 from '../assets/zero-to-one-past-9.jpg'
+import past10 from '../assets/zero-to-one-past-10.jpg'
+import past11 from '../assets/zero-to-one-past-11.jpg'
+import past12 from '../assets/zero-to-one-past-12.jpg'
+import past13 from '../assets/zero-to-one-past-13.jpg'
+import past14 from '../assets/zero-to-one-past-14.jpg'
+import past15 from '../assets/zero-to-one-past-15.jpg'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
@@ -28,6 +49,7 @@ function ZeroToOne() {
       <SuccessStory />
       <ProgrammeFormat />
       <WhoShouldApply />
+      <PastProgrammesGallery />
       <Testimonials />
       <BottomCTA />
       <Footer />
@@ -38,14 +60,14 @@ function ZeroToOne() {
 /* ─── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-36 md:pt-4 md:pb-44">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-2">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text column */}
@@ -53,7 +75,7 @@ function Hero() {
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -64,7 +86,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               From raw ideas to incubator-ready ventures in 48 hours.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               A practical, high-energy venture-building format hosted at Cambridge Judge Business School, in partnership with King's E-Lab. Challenge your thinking, form a team, and leave with a validated direction.
             </p>
 
@@ -105,7 +127,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
                   <p className="text-white text-[15px] font-bold">June 19–21, 2026</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -126,7 +148,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">& Cambridge Judge</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">& Cambridge Judge</p>
               </div>
             </div>
 
@@ -137,7 +159,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white uppercase tracking-wider">48 Hours</p>
-                <p className="text-[14px] text-cream/55 mt-0.5">Idea to venture</p>
+                <p className="text-[15px] text-cream/80 mt-0.5">Idea to venture</p>
               </div>
             </div>
 
@@ -168,8 +190,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/80 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -193,16 +215,16 @@ function WhatIsZTO() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
             </div>
             <h2 className="text-[2.2rem] font-bold text-forest-deep mb-6 leading-[1.1]">Bridging the ideation gap.</h2>
-            <p className="text-[14px] text-forest/70 leading-[1.7] mb-5">
+            <p className="text-[15px] text-forest/70 leading-[1.7] mb-5">
               Most incubators and accelerators are designed for teams that already have a defined idea, a formed team, early validation and founder confidence.
             </p>
-            <p className="text-[14px] font-bold text-forest-deep leading-[1.7] mb-5 p-4 bg-[#F4EFE6] rounded-xl border-l-2 border-gold">
+            <p className="text-[15px] font-bold text-forest-deep leading-[1.7] mb-5 p-4 bg-[#F4EFE6] rounded-xl border-l-2 border-gold">
               Zero-to-One fills the stage before that.
             </p>
-            <p className="text-[14px] text-forest/70 leading-[1.7]">
+            <p className="text-[15px] text-forest/70 leading-[1.7]">
               Participants find the hidden 'how' inside an early idea, challenge it through teamwork and mentoring, and begin turning uncertainty into validated 'yeses'.
             </p>
           </div>
@@ -213,7 +235,7 @@ function WhatIsZTO() {
                   <div className="pointer-events-none absolute top-0 right-0 h-32 w-32 rounded-full bg-gold/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F4EFE6] text-gold shadow-sm group-hover:bg-gold group-hover:text-white transition-all duration-300">{p.icon}</div>
                   <h4 className="text-[15px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h4>
-                  <p className="text-[15px] text-forest/65 leading-[1.6]">{p.desc}</p>
+                  <p className="text-[15px] text-forest/80 leading-[1.6]">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -246,7 +268,7 @@ function ThemeSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Food, Agriculture &<br/>Planetary Health
@@ -258,7 +280,7 @@ function ThemeSection() {
               {ventureAreas.map((area, i) => (
                 <div key={i} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 px-5 py-4 cursor-default">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0 shadow-[0_0_8px_rgba(255,215,0,0.6)]" />
-                  <span className="text-[14px] text-white/90 leading-snug font-medium">{area}</span>
+                  <span className="text-[15px] text-white/90 leading-snug font-medium">{area}</span>
                 </div>
               ))}
             </div>
@@ -293,7 +315,7 @@ function SuccessStory() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">From challenge to incubation.</h2>
@@ -315,7 +337,7 @@ function SuccessStory() {
                 ].map((s, i) => (
                   <div key={i} className="text-center bg-[#F4EFE6] rounded-2xl p-6 border border-forest/8 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                     <p className="text-2xl font-bold text-forest-deep">{s.val}</p>
-                    <p className="text-[14px] text-forest/60 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
+                    <p className="text-[15px] text-forest/80 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -328,7 +350,7 @@ function SuccessStory() {
                 </div>
               </div>
               <div className="absolute bottom-6 left-6">
-                <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
                 <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
               </div>
             </div>
@@ -384,7 +406,7 @@ function ProgrammeFormat() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
           </div>
           <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-[1.1]">48 hours — structured for velocity.</h2>
         </div>
@@ -393,7 +415,7 @@ function ProgrammeFormat() {
             <button
               key={i}
               onClick={() => setActiveDay(i)}
-              className={"rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
+              className={"rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/80 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
             >
               {d.day.split(' · ')[0]}
             </button>
@@ -415,7 +437,7 @@ function ProgrammeFormat() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">{s.title}</h4>
-                  <p className="text-[14px] text-forest/70 leading-[1.65]">{s.desc}</p>
+                  <p className="text-[15px] text-forest/70 leading-[1.65]">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -442,11 +464,11 @@ function WhoShouldApply() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-white mb-5">Built for curious, driven people.</h2>
-          <p className="mt-4 text-[15px] text-cream/65 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
+          <p className="mt-4 text-[15px] text-cream/80 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {profiles.map((p, i) => (
@@ -457,7 +479,7 @@ function WhoShouldApply() {
                   {p.icon}
                 </div>
                 <h3 className="text-[17px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[15px] text-cream/65 leading-[1.6]">{p.desc}</p>
+                <p className="text-[15px] text-cream/80 leading-[1.6]">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -467,26 +489,78 @@ function WhoShouldApply() {
   )
 }
 
+/* ─── PAST PROGRAMMES GALLERY ────────────────────────────────────────────────── */
+function PastProgrammesGallery() {
+  const images = [past1, past2, past3, past4, past5, past6, past7, past8, past9, past10, past11, past12, past13, past14, past15]
+  const [showAll, setShowAll] = useState(false)
+  const visibleImages = showAll ? images : images.slice(0, 6)
+
+  return (
+    <section className="bg-white py-24 border-t border-forest/5">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-center justify-center text-center mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Past Programmes</span>
+            <div className="h-px w-8 bg-gold" />
+          </div>
+          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5">Moments from Zero-to-One.</h2>
+          <p className="text-[15px] text-forest/70 max-w-2xl leading-[1.7]">
+            A look back at our previous intensive 48-hour ideation weekends at Cambridge.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visibleImages.map((src, idx) => (
+            <div key={idx} className="relative rounded-[2rem] overflow-hidden aspect-[4/3] group shadow-sm border border-forest/5">
+              <img src={src} alt={`Past programme ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-forest-deep/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          ))}
+        </div>
+
+        {images.length > 6 && (
+          <div className="mt-16 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-[#F4EFE6] px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-gold hover:bg-gold/10 hover:text-gold transition-all duration-300 shadow-sm"
+            >
+              {showAll ? 'Show Less' : 'Load More'}
+              {showAll ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
 /* ─── TESTIMONIALS ───────────────────────────────────────────────────────────── */
 function Testimonials() {
   const testimonials = [
     {
-      name: 'Shreya Patel',
-      role: 'PhD Researcher, University of Cambridge',
-      initials: 'SP',
-      quote: 'I came in with a vague idea about food systems and left with a real team, a validated direction, and an invitation to pitch to the Spark Incubator. Zero-to-One changed the trajectory of my research.',
+      name: 'Tendai Nzonzo',
+      role: 'Sana AI — Winning Team, Zero-to-One',
+      img: tendaiNzonzo,
+      quote: "On GEL Zero-to-One, what I liked the most was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast.",
     },
     {
-      name: 'James Okafor',
-      role: 'MBA Student, Cambridge Judge Business School',
-      initials: 'JO',
-      quote: 'The AI prototyping workshop alone was worth it. We went from idea to working concept in three hours. The mentors were genuine and the format was relentlessly practical.',
+      name: 'Sydney Conner',
+      role: 'PhD in Biomedical Engineering, University of Cambridge',
+      img: sydneyConner,
+      quote: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle — as a market structure failure, not just a research gap. That reframe was the most valuable part.",
     },
     {
-      name: 'Mia Chen',
-      role: 'Co-founder, AgriTech Startup (Spark Incubator)',
-      initials: 'MC',
-      quote: 'We formed as a team at Zero-to-One, pitched on day three, and six months later we\'re in the Cambridge Spark Incubator. I would not have believed it was possible without this programme.',
+      name: 'Rosalind Howell',
+      role: 'Zero-to-One Participant',
+      img: rosalindHowell,
+      quote: "There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence, expertise and becoming more and more inspired. I loved the individualised feedback sessions — really helped us build confidence in our ideas.",
+    },
+    {
+      name: 'Dr. Yvonne Walburga Joko-Fru',
+      role: 'Post-doctoral Research Affiliate, University of Cambridge',
+      img: yvonneWalburga,
+      quote: "I was humbled and exhilarated for the recognition of the potential of EquiGen by our fellow cohort members and the judges. This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
     },
   ]
   const [current, setCurrent] = useState(0)
@@ -497,14 +571,14 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-16">What participants say.</h2>
         
         <div className="bg-white rounded-[2.5rem] p-12 border border-forest/8 shadow-[0_8px_32px_rgba(26,53,35,0.06)] relative">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-            <div className="h-20 w-20 rounded-[1.25rem] bg-gold flex items-center justify-center text-2xl font-bold text-forest-deep shadow-xl border-4 border-[#F4EFE6]">{t.initials}</div>
+            <div className="h-20 w-20 rounded-[1.25rem] overflow-hidden border-4 border-[#F4EFE6] shadow-xl"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
           </div>
           
           <div className="flex items-center justify-center gap-1.5 mb-8 mt-4">
@@ -512,16 +586,16 @@ function Testimonials() {
           </div>
           <blockquote className="text-[17px] leading-[1.8] text-forest/75 max-w-2xl mx-auto italic mb-8">"{t.quote}"</blockquote>
           <p className="text-[15px] font-bold text-forest-deep">{t.name}</p>
-          <p className="text-[14px] text-forest/55 mt-1.5 uppercase tracking-wide font-semibold">{t.role}</p>
+          <p className="text-[15px] text-forest/80 mt-1.5 uppercase tracking-wide font-semibold">{t.role}</p>
           
           <div className="flex items-center justify-center gap-4 mt-10">
-            <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/50 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
+            <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
               <ChevronLeft className="h-4 w-4" />
             </button>
             <div className="flex gap-2">
               {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
             </div>
-            <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/50 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
+            <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
@@ -547,7 +621,7 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[3.2rem] font-bold text-white leading-[1.08] tracking-tight">Turn your curiosity into a venture.</h2>

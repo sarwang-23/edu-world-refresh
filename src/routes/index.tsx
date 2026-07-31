@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero-classroom.jpg";
+import heroImg from "@/assets/hero-image.jpg";
 import cambridgeImg from "@/assets/cambridge.jpg";
-import schoolLeadersImg from "@/assets/school-leaders.jpg";
-import businessLeadersImg from "@/assets/business-leaders.jpg";
+import schoolLeadersImg from "@/assets/partner.png";
+import businessLeadersImg from "@/assets/executive-education.jpg";
 import teachersImg from "@/assets/teachers.jpg";
-import studentsImg from "@/assets/students.jpg";
+import studentsImg from "@/assets/young-leaders.png";
+import startupImg from "@/assets/startup.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,7 +49,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-28">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6">
         <div className="lg:col-span-7">
           <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
             Transformational education.<br />
@@ -71,7 +72,7 @@ function Hero() {
               Partner with GEL
             </Link>
           </div>
-          <p className="mt-8 text-[15px] font-bold uppercase tracking-[0.2em] text-forest/50">
+          <p className="mt-8 text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70">
             Rooted in Cambridge. Impacting the world.
           </p>
         </div>
@@ -114,7 +115,7 @@ function FeaturesStrip() {
           <div key={i} className="flex flex-col items-start gap-3 mx-10 min-w-[220px]">
             <div className="text-forest/70">{f.icon}</div>
             <h4 className="text-[15px] font-bold text-forest-deep">{f.title}</h4>
-            <p className="text-[15px] text-forest/60 leading-relaxed max-w-[180px]">{f.desc}</p>
+            <p className="text-[15px] text-forest/80 leading-relaxed max-w-[180px]">{f.desc}</p>
           </div>
         ))}
       </div>
@@ -143,7 +144,7 @@ function OurProgrammes() {
       accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
     {
-      img: heroImg,
+      img: startupImg,
       tag: "Entrepreneurship",
       number: "03",
       headline: "Startup & Innovation Hub",
@@ -173,12 +174,12 @@ function OurProgrammes() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
             </div>
             <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
               Our Programmes
             </h2>
-            <p className="mt-2 text-[15px] text-forest/60 font-medium">High-impact learning for every stage of your journey.</p>
+            <p className="mt-2 text-[15px] text-forest/80 font-medium">High-impact learning for every stage of your journey.</p>
           </div>
           <Link
             to="/programmes"
@@ -210,10 +211,10 @@ function OurProgrammes() {
 
               {/* Tag badge — top left */}
               <div className="relative z-10 p-5 flex justify-between items-start">
-                <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[8px] font-bold uppercase tracking-[0.18em] text-gold">
+                <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[14px] font-bold uppercase tracking-[0.18em] text-gold">
                   {p.tag}
                 </span>
-                <span className="text-[15px] font-bold text-white/30 font-mono mt-1">{p.number}</span>
+                <span className="text-[15px] font-bold text-white/80 font-mono mt-1">{p.number}</span>
               </div>
 
               {/* Content — pinned to bottom */}
@@ -221,10 +222,10 @@ function OurProgrammes() {
                 <h3 className="text-[15px] font-bold text-white leading-snug mb-3 group-hover:text-gold transition-colors duration-300">
                   {p.headline}
                 </h3>
-                <p className="text-[14px] text-white/70 leading-relaxed mb-5 max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
+                <p className="text-[15px] text-white/70 leading-relaxed mb-5 max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
                   {p.desc}
                 </p>
-                <div className="flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.12em] text-gold">
+                <div className="flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.12em] text-gold">
                   Explore
                   <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:scale-110 transition-all duration-300">
                     <ArrowUpRight className="h-3 w-3 text-gold group-hover:text-forest-deep transition-colors duration-300" />
@@ -239,7 +240,7 @@ function OurProgrammes() {
         <div className="mt-10 flex justify-center md:hidden">
           <Link
             to="/programmes"
-            className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider text-white transition-all hover:bg-forest-deep"
+            className="inline-flex items-center gap-2 rounded-full bg-forest px-8 py-3.5 text-[15px] font-bold uppercase tracking-wider text-white transition-all hover:bg-forest-deep"
           >
             View All Programmes <ArrowUpRight className="h-4 w-4" />
           </Link>
@@ -266,7 +267,7 @@ function ImpactSoFar() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep leading-tight tracking-tight">
               Our Impact So Far
@@ -296,7 +297,7 @@ function ImpactSoFar() {
                 <div>
                   <div className="text-[1.6rem] font-bold text-forest-deep leading-none tabular-nums">{s.value}</div>
                   <div className="text-[15px] font-bold text-forest-deep mt-1.5">{s.label}</div>
-                  <div className="text-[14px] text-forest/50 mt-0.5">{s.desc}</div>
+                  <div className="text-[15px] text-forest/70 mt-0.5">{s.desc}</div>
                 </div>
               </div>
               {/* Vertical separator */}
@@ -319,7 +320,7 @@ function CambridgeOrigin() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
-            <p className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold flex items-center gap-3 mb-4">
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold flex items-center gap-3 mb-4">
               <span className="w-6 h-px bg-gold/50" /> FROM CAMBRIDGE TO THE WORLD
             </p>
             <h2 className="text-[2.5rem] font-bold leading-[1.05] md:text-[3.5rem] mb-6">
@@ -397,14 +398,14 @@ function Voices() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
             </div>
             <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
               Voices from Our{" "}
               <span className="italic font-serif text-forest">Community</span>
             </h2>
           </div>
-          <p className="text-[15px] text-forest/55 max-w-[260px] leading-relaxed md:text-right hidden">
+          <p className="text-[15px] text-forest/80 max-w-[260px] leading-relaxed md:text-right hidden">
             Real stories from learners, leaders and innovators.
           </p>
         </div>
@@ -430,9 +431,9 @@ function Voices() {
               </div>
 
               {/* Big quote mark */}
-              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
+              <span className="block text-[5rem] text-gold/80 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
 
-              <p className="text-[16px] text-white/95 leading-[1.75] font-light mb-8 max-w-md">
+              <p className="text-[16px] text-white/95 leading-[1.75] font-normal mb-8 max-w-md">
                 {featured.q}
               </p>
 
@@ -450,7 +451,7 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-white">{featured.a}</p>
-                    <p className="text-[14px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
+                    <p className="text-[15px] text-white/80 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
                   </div>
                 </div>
                 <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
@@ -474,16 +475,16 @@ function Voices() {
                       <span key={si} className="text-gold text-[15px]">★</span>
                     ))}
                   </div>
-                  <span className="bg-forest-deep text-white text-[8px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                  <span className="bg-forest-deep text-white text-[14px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
                     {t.tag}
                   </span>
                 </div>
 
                 {/* Big gold quote */}
-                <span className="text-[3.5rem] text-gold/25 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/40 transition-colors duration-300">"</span>
+                <span className="text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
 
                 {/* Quote text */}
-                <p className="text-[14px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
+                <p className="text-[15px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
                   {t.q}
                 </p>
 
@@ -500,7 +501,7 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[15px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <p className="text-[15px] text-forest/70 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
                   </div>
                 </div>
               </div>
@@ -560,7 +561,7 @@ export function Footer() {
             </p>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Quick Links</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/80 mb-4">Quick Links</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -568,7 +569,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Partner</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/80 mb-4">Partner</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -576,7 +577,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Resources</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/80 mb-4">Resources</p>
             <ul className="space-y-3 text-[15px] text-forest/80">
               {[["News & Insights", "/insights"], ["Events", "/gallery"], ["Brochures", "/contact"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
@@ -584,7 +585,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Connect</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/80 mb-4">Connect</p>
             <a href="mailto:hello@globaledulab.com" className="text-[15px] text-forest/80 hover:text-forest transition-colors">
               hello@globaledulab.com
             </a>

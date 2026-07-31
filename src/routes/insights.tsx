@@ -64,7 +64,7 @@ function PartnersBar() {
 
   return (
     <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
-      <p className="text-center text-[14px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
+      <p className="text-center text-[15px] font-bold uppercase tracking-[0.3em] text-forest/70 mb-5">
         PARTNERED WITH THE WORLD'S LEADING UNIVERSITY ECOSYSTEMS
       </p>
       <div className="relative flex overflow-hidden">
@@ -81,7 +81,7 @@ function PartnersBar() {
               className="whitespace-nowrap text-[15px] font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
             >
               {partner}
-              <span className="ml-14 text-gold/40 select-none">✦</span>
+              <span className="ml-14 text-gold/80 select-none">✦</span>
             </span>
           ))}
         </div>
@@ -96,7 +96,7 @@ function Hero() {
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-28">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
         {/* Text Content */}
         <div className="flex flex-col justify-center lg:col-span-7 pt-0">
           <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mb-8 w-fit">
@@ -130,7 +130,7 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-16 flex items-center gap-4 text-[15px] font-bold uppercase tracking-widest text-forest/40">
+          <div className="mt-16 flex items-center gap-4 text-[15px] font-bold uppercase tracking-widest text-forest/70">
             <span className="h-px w-8 bg-forest/20"></span>
             CAMBRIDGE · LONDON · BALI · HELSINKI
           </div>
@@ -148,14 +148,14 @@ function Hero() {
             
             {/* Image Text Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent">
-              <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold mb-2">LATEST EDITION</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold mb-2">LATEST EDITION</p>
               <p className="text-white font-bold text-xl leading-snug">White Paper — Cambridge, March</p>
             </div>
           </div>
           
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -left-6 z-30 rounded-2xl border border-forest/10 bg-white p-6 shadow-xl w-40">
-            <p className="text-[14px] font-bold uppercase tracking-widest text-forest/40 mb-1">PUBLICATIONS</p>
+            <p className="text-[15px] font-bold uppercase tracking-widest text-forest/70 mb-1">PUBLICATIONS</p>
             <p className="text-2xl font-bold text-forest-deep">3 · 2026</p>
           </div>
         </div>
@@ -237,7 +237,7 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
                 Access Full Report
                 <Download className="h-4 w-4" />
               </button>
-              <span className="text-[14px] font-bold uppercase tracking-widest text-cream/40">JUDGE BUSINESS SCHOOL · CAMBRIDGE</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-cream/70">JUDGE BUSINESS SCHOOL · CAMBRIDGE</span>
             </div>
           </div>
           
@@ -250,7 +250,7 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full">
-                <span className="inline-block px-2 py-1 bg-gold/20 text-gold text-[14px] font-bold uppercase tracking-widest rounded mb-3 border border-gold/30">PRIMARY PAPER</span>
+                <span className="inline-block px-2 py-1 bg-gold/20 text-gold text-[15px] font-bold uppercase tracking-widest rounded mb-3 border border-gold/30">PRIMARY PAPER</span>
                 <p className="text-white font-bold text-xl md:text-2xl">Leadership in the Age of AI, Sustainability & Global Change</p>
               </div>
             </div>
@@ -312,10 +312,10 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
           {reports.map((r, idx) => (
             <div key={idx} className="group flex flex-col rounded-2xl bg-[#F7F5F0] border border-forest/5 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[14px] font-bold uppercase tracking-widest px-2 py-1 rounded">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[15px] font-bold uppercase tracking-widest px-2 py-1 rounded">
                   {r.num}
                 </div>
-                <div className="absolute top-4 right-4 z-10 bg-gold text-forest-deep text-[14px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1">
+                <div className="absolute top-4 right-4 z-10 bg-gold text-forest-deep text-[15px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1">
                   <BookOpen className="h-3 w-3" /> PDF
                 </div>
                 <img 
@@ -325,18 +325,18 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
                 />
               </div>
               <div className="flex flex-col flex-1 p-8">
-                <p className="text-[14px] font-bold uppercase tracking-widest text-gold mb-3">{r.category}</p>
+                <p className="text-[15px] font-bold uppercase tracking-widest text-gold mb-3">{r.category}</p>
                 <h3 className="text-lg font-bold text-forest-deep mb-3 leading-snug">{r.title}</h3>
                 <p className="text-[15px] text-forest/75 leading-relaxed mb-8 flex-1">{r.desc}</p>
                 
                 <div className="flex items-center justify-between border-t border-forest/10 pt-4 mt-auto">
-                  <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">{r.date}</span>
+                  <span className="text-[15px] font-bold uppercase tracking-widest text-forest/70">{r.date}</span>
                   {r.downloadLink !== "#" ? (
-                    <button onClick={() => onDownload(r.downloadLink)} className="text-[14px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
+                    <button onClick={() => onDownload(r.downloadLink)} className="text-[15px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
                       DOWNLOAD <Download className="h-3 w-3" />
                     </button>
                   ) : (
-                    <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40 flex items-center gap-1">
+                    <span className="text-[15px] font-bold uppercase tracking-widest text-forest/70 flex items-center gap-1">
                       DOWNLOAD <Download className="h-3 w-3" />
                     </span>
                   )}
@@ -384,7 +384,7 @@ function TheBriefing() {
               </button>
             </form>
             
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] font-bold uppercase tracking-widest text-forest/50">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[15px] font-bold uppercase tracking-widest text-forest/70">
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> NO SPAM</span>
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> TWICE A MONTH</span>
               <span className="flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-gold"></span> UNSUBSCRIBE ANYTIME</span>
@@ -422,7 +422,7 @@ function CTA() {
               <span className="text-lg font-bold tracking-tight">Partner With Us</span>
               <ArrowUpRight className="h-6 w-6" />
             </Link>
-            <p className="mt-4 text-center text-[15px] uppercase tracking-[0.2em] text-cream/60">
+            <p className="mt-4 text-center text-[15px] uppercase tracking-[0.2em] text-cream/80">
               hello@globaledulab.com
             </p>
           </div>
@@ -449,7 +449,7 @@ function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
       <div className="bg-white rounded-3xl w-full max-w-md p-8 relative shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-forest/50 hover:text-forest transition-colors"
+          className="absolute top-6 right-6 text-forest/70 hover:text-forest transition-colors"
         >
           <X className="h-5 w-5" />
         </button>

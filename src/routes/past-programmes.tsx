@@ -2,12 +2,14 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Users, Lightbulb, TrendingUp, BookOpen, Building2, CheckCircle2, ChevronRight, GraduationCap, Leaf, User, Calendar, MapPin, Sparkles } from 'lucide-react'
 import { Footer } from './index'
 
-import heroImg from '@/assets/hero-classroom.jpg'
+import heroImg from '@/assets/site visit.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
+import finlandImg from '@/assets/finland_1.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
 import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'
-import cambridgeImg from '@/assets/cambridge.jpg'
+import cambridgeImg from '@/assets/cambridge_1.jpg'
+import baliImg from '@/assets/bali_new_4.jpg'
 
 export const Route = createFileRoute('/past-programmes')({
   head: () => ({
@@ -36,21 +38,21 @@ function PastProgrammes() {
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4EFE6] pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative overflow-hidden bg-[#F4EFE6] pt-6 pb-36 md:pt-6 md:pb-44">
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* Grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
+      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text column */}
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Our Portfolio</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Our Portfolio</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -61,7 +63,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               Global learning experiences. Lasting institutional impact.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               Global Education Lab designs and delivers international programmes for education leaders, entrepreneurs and business executives. Each programme combines expert learning, institutional engagement and cultural immersion to create insights that drive meaningful change.
             </p>
 
@@ -83,7 +85,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Global Reach</p>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Global Reach</p>
                   <p className="text-white text-[15px] font-bold">15+ Countries</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -104,7 +106,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">15+ Countries</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">15+ Countries</p>
               </div>
             </div>
 
@@ -114,7 +116,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white uppercase tracking-wider">500+ Alumni</p>
-                <p className="text-[14px] text-cream/55 mt-0.5">Leaders & Professionals</p>
+                <p className="text-[15px] text-cream/80 mt-0.5">Leaders & Professionals</p>
               </div>
             </div>
 
@@ -144,8 +146,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/80 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -161,7 +163,7 @@ function OurProgrammes() {
       tag: "Education Leadership",
       title: "Finland & Estonia Education Exploration",
       desc: "An immersive exploration of two world-leading education systems. Participants engaged with schools, educators and policymakers to understand innovative practices in leadership, pedagogy, technology and student well-being.",
-      img: schoolLeadersImg,
+      img: finlandImg,
       icon: <Building2 className="h-5 w-5" />,
       bullets: ["School & institutional visits", "Expert interactions", "Policy & system insights", "Cultural engagement"],
       link: "/programmes/finland"
@@ -179,7 +181,7 @@ function OurProgrammes() {
       tag: "Sustainability & Education",
       title: "Bali Green School Exploration Programme",
       desc: "A sustainability-focused journey exploring how education can shape conscious, responsible and future-ready learners. Participants experienced innovative learning models rooted in nature, community and purpose.",
-      img: teachersImg,
+      img: baliImg,
       icon: <Leaf className="h-5 w-5" />,
       bullets: ["Sustainability in education", "Systems thinking & design", "Community & cultural immersion", "Alternative learning models"],
       link: "/programmes/bali"
@@ -203,7 +205,7 @@ function OurProgrammes() {
         <div className="text-center mb-16 max-w-2xl mx-auto flex flex-col items-center">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Portfolio</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Portfolio</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-6 leading-[1.1]">Our Programmes</h2>
@@ -211,7 +213,7 @@ function OurProgrammes() {
             Each programme is carefully designed to deliver real-world learning, meaningful connections, and lasting professional impact.
           </p>
           <div className="inline-flex">
-            <p className="text-[14px] font-bold text-forest-deep leading-[1.7] px-6 py-3 bg-[#F4EFE6] rounded-xl border-l-2 border-gold shadow-sm">
+            <p className="text-[15px] font-bold text-forest-deep leading-[1.7] px-6 py-3 bg-[#F4EFE6] rounded-xl border-l-2 border-gold shadow-sm">
               Every cohort. Every country. Every career.
             </p>
           </div>
@@ -224,25 +226,25 @@ function OurProgrammes() {
               <div className="relative h-44 overflow-hidden">
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[8px] font-bold uppercase tracking-[0.1em] text-forest-deep">{p.tag}</span>
+                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[14px] font-bold uppercase tracking-[0.1em] text-forest-deep">{p.tag}</span>
                 <div className="absolute -bottom-5 left-5 w-10 h-10 bg-white rounded-xl flex items-center justify-center border border-forest/10 text-gold shadow-md group-hover:bg-gold group-hover:text-white transition-colors duration-300 z-10">
                   {p.icon}
                 </div>
               </div>
               <div className="flex flex-col flex-1 p-6 pt-9">
-                <h3 className="text-[14px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[15px] text-forest/60 leading-[1.6] mb-5">{p.desc}</p>
+                <h3 className="text-[15px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
+                <p className="text-[15px] text-forest/80 leading-[1.6] mb-5">{p.desc}</p>
                 <div className="flex flex-col gap-2 mb-6 flex-1">
                   {p.bullets.map((b, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                       <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
-                      <span className="text-[14px] font-semibold text-forest-deep/80 leading-snug">{b}</span>
+                      <span className="text-[15px] font-semibold text-forest-deep/80 leading-snug">{b}</span>
                     </div>
                   ))}
                 </div>
                 <Link
                   to={p.link}
-                  className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#1a3523] px-5 py-3 text-[14px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#1a3523]/30 hover:bg-[#0f2117] hover:shadow-[#1a3523]/40 hover:-translate-y-0.5 transition-all duration-300 mt-auto"
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#1a3523] px-5 py-3 text-[15px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#1a3523]/30 hover:bg-[#0f2117] hover:shadow-[#1a3523]/40 hover:-translate-y-0.5 transition-all duration-300 mt-auto"
                 >
                   Explore Programme <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
@@ -273,7 +275,7 @@ function ImpactBanner() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Creating Impact That Lasts</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Creating Impact That Lasts</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Beyond the classroom.<br />Beyond the programme.
@@ -287,7 +289,7 @@ function ImpactBanner() {
               <div key={i} className="flex flex-col items-center text-center bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-md hover:bg-white/10 transition-colors duration-300 group">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 border border-gold/20 text-gold mb-4 group-hover:scale-110 transition-transform">{s.icon}</div>
                 <div className="text-2xl font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">{s.v}</div>
-                <div className="text-[15px] font-bold uppercase tracking-[0.1em] text-cream/60 leading-tight max-w-[120px]">{s.l}</div>
+                <div className="text-[15px] font-bold uppercase tracking-[0.1em] text-cream/80 leading-tight max-w-[120px]">{s.l}</div>
               </div>
             ))}
           </div>
@@ -328,7 +330,7 @@ function Voices() {
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5 leading-[1.1]">Voices from Our Participants</h2>
@@ -341,12 +343,12 @@ function Voices() {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div key={i} className="group bg-[#F4EFE6] rounded-[1.75rem] p-8 border border-forest/8 flex flex-col hover:border-gold/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-400 relative overflow-hidden">
-              <span className="text-6xl text-gold/20 font-serif leading-none absolute top-5 right-7 group-hover:text-gold/40 transition-colors duration-300">"</span>
+              <span className="text-6xl text-gold/80 font-serif leading-none absolute top-5 right-7 group-hover:text-gold/80 transition-colors duration-300">"</span>
               <img src={t.img} alt={t.a} className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-md mb-5" />
               <p className="text-[15px] text-forest/75 leading-[1.8] mb-6 italic flex-1">{t.q}</p>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                <p className="text-[15px] text-forest/60 mt-0.5 uppercase tracking-wide font-semibold">{t.r}</p>
+                <p className="text-[15px] text-forest/80 mt-0.5 uppercase tracking-wide font-semibold">{t.r}</p>
               </div>
             </div>
           ))}
@@ -371,7 +373,7 @@ function BottomCTA() {
         </div>
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Custom Programmes</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Custom Programmes</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white leading-[1.08] tracking-tight">Let's create the next transformational learning experience.</h2>

@@ -33,11 +33,11 @@ function EntrepreneurshipTrack() {
 /* ── Hero ── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-6 pb-36 md:pt-6 md:pb-44">
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative mx-auto max-w-7xl px-6 pt-6">
         {/* Back */}
         <Link
           to="/students"
@@ -59,7 +59,7 @@ function Hero() {
               Build ideas.<br />
               <span className="font-serif italic text-gold">Create impact.</span>
             </h1>
-            <p className="text-[15px] text-forest/65 leading-[1.8] max-w-md mb-10">
+            <p className="text-[15px] text-forest/80 leading-[1.8] max-w-md mb-10">
               Discover the world of innovation and entrepreneurship. Learn how world-changing ideas are born, tested and transformed into real solutions — at Cambridge.
             </p>
 
@@ -116,11 +116,11 @@ function WhatYoullDo() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Do</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Do</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Four pillars of learning.</h2>
-          <p className="text-[14px] text-forest/55 max-w-lg mx-auto leading-[1.75]">Everything you experience is designed to build real entrepreneurial capability.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg mx-auto leading-[1.75]">Everything you experience is designed to build real entrepreneurial capability.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -130,7 +130,7 @@ function WhatYoullDo() {
                 {p.icon}
               </div>
               <h3 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-              <p className="text-[14px] text-forest/60 leading-[1.65]">{p.desc}</p>
+              <p className="text-[15px] text-forest/80 leading-[1.65]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -155,7 +155,7 @@ function Modules() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Modules</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Modules</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Six intensive sessions.</h2>
@@ -163,11 +163,11 @@ function Modules() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((m, i) => (
             <div key={i} className="rounded-[1.5rem] bg-white border border-forest/8 p-7 hover:border-gold/30 hover:shadow-[0_12px_36px_rgba(26,53,35,0.09)] transition-all duration-300 shadow-sm group">
-              <span className="text-[15px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{m.num}</span>
+              <span className="text-[15px] font-black text-gold/80 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{m.num}</span>
               <h3 className="text-[15px] font-bold text-forest-deep mt-2 mb-4 group-hover:text-gold transition-colors duration-300">{m.title}</h3>
               <ul className="space-y-2">
                 {m.items.map((item, j) => (
-                  <li key={j} className="flex items-center gap-2.5 text-[14px] text-forest/65">
+                  <li key={j} className="flex items-center gap-2.5 text-[15px] text-forest/80">
                     <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
                     {item}
                   </li>
@@ -191,10 +191,10 @@ function Outcomes() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Leave With</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What You'll Leave With</span>
             </div>
             <h2 className="text-[2.4rem] font-bold text-white mb-6 leading-tight">More than a programme. A launchpad.</h2>
-            <p className="text-[14px] text-cream/60 leading-[1.8] mb-8">
+            <p className="text-[15px] text-cream/80 leading-[1.8] mb-8">
               Participants leave not just with knowledge, but with the mindset, skills and network to start turning ideas into reality.
             </p>
             {[
@@ -228,11 +228,11 @@ function CTA() {
       <div className="mx-auto max-w-2xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Join the Track</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Join the Track</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Ready to build your idea?</h2>
-        <p className="text-[15px] text-forest/60 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
+        <p className="text-[15px] text-forest/80 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"

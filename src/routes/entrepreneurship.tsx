@@ -54,12 +54,12 @@ function Hero() {
     <section className="relative border-b border-border/60 bg-cream overflow-hidden pb-20">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-6 pb-8 relative z-10 pt-28">
+      <div className="mx-auto max-w-7xl px-6 pb-8 relative z-10 pt-6">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-start pt-0 mt-0">
           <div className="mt-0 pt-0">
             <div className="flex flex-wrap gap-2 mb-8">
               {pills.map((p) => (
-                <span key={p.t} className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 backdrop-blur-sm px-4 py-2 text-[14px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-sm">
+                <span key={p.t} className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 backdrop-blur-sm px-4 py-2 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-sm">
                   {p.icon} {p.t}
                 </span>
               ))}
@@ -92,31 +92,31 @@ function Hero() {
               {/* Top badge */}
               <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
                 <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                <span className="text-[14px] font-bold text-forest-deep tracking-[0.2em] uppercase">100+ Startups</span>
+                <span className="text-[15px] font-bold text-forest-deep tracking-[0.2em] uppercase">100+ Startups</span>
               </div>
 
               {/* Center content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8">
                 <div className="text-center">
                   <p className="text-6xl font-bold text-gold leading-none">5K+</p>
-                  <p className="text-[15px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Entrepreneurs Trained</p>
+                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Entrepreneurs Trained</p>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="text-center">
                   <p className="text-6xl font-bold text-cream leading-none">£2M+</p>
-                  <p className="text-[15px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Funding Raised</p>
+                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Funding Raised</p>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="text-center">
                   <p className="text-6xl font-bold text-gold leading-none">18</p>
-                  <p className="text-[15px] text-cream/60 mt-2 uppercase tracking-widest font-semibold">Countries Reached</p>
+                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Countries Reached</p>
                 </div>
               </div>
 
               {/* Bottom overlay */}
               <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4">
-                <p className="text-[14px] font-bold text-cream">Founder Cohort 2025 · Open</p>
-                <p className="text-[14px] text-cream/60 mt-1 uppercase tracking-widest">Cambridge · London · Singapore</p>
+                <p className="text-[15px] font-bold text-cream">Founder Cohort 2025 · Open</p>
+                <p className="text-[15px] text-cream/80 mt-1 uppercase tracking-widest">Cambridge · London · Singapore</p>
               </div>
             </div>
             {/* Right panel - scrolls down (reverse) */}
@@ -131,7 +131,7 @@ function Hero() {
               
               <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 text-center">
                 <p className="text-3xl font-bold text-gold">35+</p>
-                <p className="text-[14px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
+                <p className="text-[15px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ function PillarsStrip() {
     <section className="bg-forest-deep border-b border-white/10 py-4 overflow-hidden relative flex flex-col items-center">
       {/* Top Centre Title */}
       <div className="z-20 mb-4">
-        <h2 className="px-6 py-1.5 rounded-full border border-white/20 text-[14px] font-bold uppercase tracking-[0.25em] text-gold whitespace-nowrap flex items-center gap-3">
+        <h2 className="px-6 py-1.5 rounded-full border border-white/20 text-[15px] font-bold uppercase tracking-[0.25em] text-gold whitespace-nowrap flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
           Our Core Pillars
         </h2>
@@ -171,8 +171,8 @@ function PillarsStrip() {
                 {s.icon}
               </div>
               <div>
-                <h4 className="text-[14px] font-bold text-cream uppercase tracking-widest whitespace-nowrap">{s.label}</h4>
-                <p className="text-[14px] text-cream/50 whitespace-nowrap font-medium">{s.val}</p>
+                <h4 className="text-[15px] font-bold text-cream uppercase tracking-widest whitespace-nowrap">{s.label}</h4>
+                <p className="text-[15px] text-cream/70 whitespace-nowrap font-medium">{s.val}</p>
               </div>
               <span className="ml-6 text-white/15 text-lg shrink-0">·</span>
             </div>
@@ -220,7 +220,7 @@ function Programmes() {
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center mb-20">
-          <span className="flex items-center gap-4 text-[14px] font-bold uppercase tracking-[0.25em] text-gold before:h-px before:w-12 before:bg-gradient-to-r before:from-transparent before:to-gold/50 after:h-px after:w-12 after:bg-gradient-to-l after:from-transparent after:to-gold/50">
+          <span className="flex items-center gap-4 text-[15px] font-bold uppercase tracking-[0.25em] text-gold before:h-px before:w-12 before:bg-gradient-to-r before:from-transparent before:to-gold/50 after:h-px after:w-12 after:bg-gradient-to-l after:from-transparent after:to-gold/50">
             OUR ENTREPRENEURSHIP PROGRAMMES
           </span>
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-forest-deep md:text-[3rem]">
@@ -247,13 +247,13 @@ function Programmes() {
                   
                   <div className="flex items-center justify-between pt-5 border-t border-forest/10 mb-6 group-hover:border-gold/20 transition-colors">
                     {p.stats.map((s, i) => (
-                      <div key={i} className="flex items-center gap-1.5 text-[15px] text-forest/60 uppercase font-bold tracking-wider">
+                      <div key={i} className="flex items-center gap-1.5 text-[15px] text-forest/80 uppercase font-bold tracking-wider">
                         <span className="text-gold">{s.i}</span> {s.t}
                       </div>
                     ))}
                   </div>
 
-                  <Link to={p.link} className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
+                  <Link to={p.link} className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest/5 py-3 text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:bg-forest-deep group-hover:text-cream transition-colors w-full">
                     LEARN MORE <ArrowUpRight className="h-3 w-3" />
                   </Link>
                 </div>
@@ -280,7 +280,7 @@ function FounderJourney() {
           <div className="lg:sticky lg:top-32 relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold">THE FOUNDER JOURNEY</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">THE FOUNDER JOURNEY</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-cream md:text-[3.5rem] leading-[1.05]">
               Five stages, from <span className="font-serif italic text-gold relative inline-block">spark<div className="absolute -bottom-2 left-0 w-full h-1 bg-gold/30 rounded-full" /></span> to scale.
@@ -314,7 +314,7 @@ function FounderJourney() {
                   <div className="w-10 h-10 rounded-full border border-forest/10 bg-white flex items-center justify-center group-hover:scale-110 group-hover:bg-gold group-hover:border-gold transition-all duration-300 shadow-sm">
                     <Rocket className="w-4 h-4 text-forest-deep group-hover:text-forest-deep transition-colors" />
                   </div>
-                  <span className="text-2xl font-serif text-forest/20 group-hover:text-gold transition-colors">{s.n}</span>
+                  <span className="text-2xl font-serif text-forest/80 group-hover:text-gold transition-colors">{s.n}</span>
                 </div>
                 <h3 className="text-lg font-bold text-forest-deep mb-2 relative z-10">{s.t}</h3>
                 <p className="text-[15px] text-forest/70 leading-relaxed relative z-10">{s.d}</p>
@@ -403,7 +403,7 @@ function Ecosystem() {
               <div className="h-14 flex items-center justify-center mb-3">
                 {p.logo}
               </div>
-              <p className="text-[14px] text-forest/60 leading-relaxed font-medium text-center max-w-[140px]">
+              <p className="text-[15px] text-forest/80 leading-relaxed font-medium text-center max-w-[140px]">
                 {p.role}
               </p>
               <span className="mt-4 text-forest/15 text-xl shrink-0">·</span>
@@ -422,10 +422,10 @@ function Community() {
     { q: "The Cambridge ecosystem is unmatched. It opened doors we never imagined.", a: "David Lee", r: "CO-FOUNDER, DEEPSEARCH \u00b7 ACCELERATOR COHORT" },
   ]
   return (
-    <section className="bg-cream pt-24 md:pt-32 pb-0">
+    <section className="bg-cream pt-24 md:pt-16 pb-0">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 flex flex-col items-center text-center max-w-3xl mx-auto">
-          <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem] leading-[1.1]">
             Built in our programmes.<br/>
             <span className="font-serif italic text-gold relative inline-block">
@@ -439,7 +439,7 @@ function Community() {
           {testimonials.map((t, i) => (
             <div key={i} className="group rounded-[2rem] border border-forest/10 bg-white p-10 hover:shadow-[0_20px_40px_rgba(20,40,30,0.08)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/10 transition-colors duration-500 pointer-events-none" />
-              <Quote className="h-8 w-8 text-gold/20 mb-8 group-hover:text-gold/40 transition-colors duration-500" />
+              <Quote className="h-8 w-8 text-gold/80 mb-8 group-hover:text-gold/80 transition-colors duration-500" />
               <p className="text-[15px] text-forest-deep/80 font-medium leading-relaxed mb-10 flex-1">"{t.q}"</p>
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-forest-deep text-gold flex items-center justify-center font-serif text-lg font-bold">
@@ -447,7 +447,7 @@ function Community() {
                 </div>
                 <div>
                   <p className="text-[15px] font-bold text-forest-deep leading-tight">{t.a}</p>
-                  <p className="text-[15px] text-forest/50 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
+                  <p className="text-[15px] text-forest/70 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
                 </div>
               </div>
             </div>
@@ -474,7 +474,7 @@ function Community() {
               <Link to="/contact" className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-[15px] font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
                 Explore Programmes <ArrowUpRight className="h-5 w-5" />
               </Link>
-              <a href="mailto:hello@globaledulab.com" className="text-[14px] font-bold uppercase tracking-[0.25em] text-cream/60 hover:text-gold transition-colors">
+              <a href="mailto:hello@globaledulab.com" className="text-[15px] font-bold uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition-colors">
                 HELLO@GLOBALEDULAB.COM
               </a>
             </div>

@@ -7,8 +7,17 @@ import {
 import { Footer } from './index'
 import studentsImg from '../assets/students.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
-import heroImg from '../assets/hero-classroom.jpg'
+import heroImg from '../assets/young-leaders.png'
 import teachersImg from '../assets/teachers.jpg'
+import stemImg from '../assets/STEM1.jpg'
+import publicSpeakingImg from '../assets/IMG_4915.jpg'
+import siteVisitImg from '../assets/site visit.jpg'
+import socialCulturalImg from '../assets/IMG_5138_2.jpg'
+import mentor1 from '../assets/YusufH.jpg'
+import mentor2 from '../assets/IMG_4915.jpg'
+import mentor3 from '../assets/IMG_5138_2.jpg'
+import mentor4 from '../assets/person4.jpg'
+import mentor5 from '../assets/person5.jpg'
 
 export const Route = createFileRoute('/students')({
   head: () => ({
@@ -38,14 +47,14 @@ function YoungLeaders() {
 /* ─── 1. HERO · cream bg ─────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-6 pb-36 md:pt-6 md:pb-44">
       {/* layered ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] -translate-y-0 translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* ── Text column ── */}
@@ -53,7 +62,7 @@ function Hero() {
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Young Leaders Summer Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Young Leaders Summer Programme</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -64,7 +73,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               An immersive summer experience in Cambridge for ambitious young learners.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               Explore STEM, AI, entrepreneurship and public speaking — while building confidence, friendships and a global mindset at one of the world's most prestigious universities.
             </p>
 
@@ -100,12 +109,12 @@ function Hero() {
           <div className="relative">
             {/* Main image */}
             <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={studentsImg} alt="Students at Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={heroImg} alt="Students at Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               {/* Bottom overlay label */}
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
                   <p className="text-white text-[15px] font-bold">Summer 2026</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -126,7 +135,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Cambridge</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">Immersive Experience</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">Immersive Experience</p>
               </div>
             </div>
 
@@ -137,7 +146,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white uppercase tracking-wider">2 Tracks</p>
-                <p className="text-[14px] text-cream/55 mt-0.5">Entrepreneurship & STEM</p>
+                <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship & STEM</p>
               </div>
             </div>
 
@@ -168,8 +177,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/80 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -210,7 +219,7 @@ function FeaturesStrip() {
                   {/* text */}
                   <div className="pr-8 border-r border-forest/8">
                     <p className="text-[15px] font-bold text-forest-deep whitespace-nowrap tracking-tight">{f.title}</p>
-                    <p className="text-[15px] text-forest/50 whitespace-nowrap mt-0.5 font-medium">{f.desc}</p>
+                    <p className="text-[15px] text-forest/70 whitespace-nowrap mt-0.5 font-medium">{f.desc}</p>
                   </div>
                   {/* gold dot separator */}
                   <span className="h-1.5 w-1.5 rounded-full bg-gold/50 shrink-0 -ml-3" />
@@ -227,11 +236,10 @@ function FeaturesStrip() {
 /* ─── 3. CORE ELEMENTS · white bg ───────────────────────────────────────── */
 function CoreElements() {
   const elements = [
-    { img: heroImg,        icon: <Microscope className="h-5 w-5" />, num: '01', title: 'STEM Exploration',    tag: 'Science & Research',    desc: 'Discover, experiment and solve real-world problems through engaging STEM sessions and interactive learning.' },
-    { img: studentsImg,    icon: <MessageSquare className="h-5 w-5" />, num: '02', title: 'Public Speaking',    tag: 'Communication',          desc: 'Build confidence and sharpen communication skills through structured speaking practice and presentations.' },
-    { img: cambridgeImg,   icon: <MonitorPlay className="h-5 w-5" />, num: '03', title: 'AI & Emerging Tech', tag: 'Technology',              desc: 'Understand the power of AI and how technology is shaping industries, communities and our future.' },
-    { img: studentsImg,    icon: <Code className="h-5 w-5" />,         num: '04', title: 'Entrepreneurship',   tag: 'Innovation',             desc: 'Develop ideas, explore opportunities and learn how innovation turns into impact through practical workshops.' },
-    { img: cambridgeImg,   icon: <Globe2 className="h-5 w-5" />,       num: '05', title: 'Cambridge Experience', tag: 'Campus Life',          desc: 'Gain exclusive access to Cambridge institutions, research centres, innovation hubs and student life.' },
+    { img: stemImg,        icon: <Microscope className="h-5 w-5" />, num: '01', title: 'STEM Exploration',    tag: 'Science & Research',    desc: 'Discover, experiment and solve real-world problems through engaging STEM sessions and interactive learning.' },
+    { img: publicSpeakingImg,    icon: <MessageSquare className="h-5 w-5" />, num: '02', title: 'Public Speaking',    tag: 'Communication',          desc: 'Build confidence and sharpen communication skills through structured speaking practice and presentations.' },
+    { img: siteVisitImg,   icon: <Building2 className="h-5 w-5" />, num: '03', title: 'Site Visits', tag: 'Industry',              desc: 'Gain real-world perspectives with exclusive visits to leading organisations and innovation hubs.' },
+    { img: socialCulturalImg,    icon: <Users className="h-5 w-5" />,         num: '04', title: 'Social & Cultural',   tag: 'Community',             desc: 'Immerse in diverse cultures, build lasting friendships and expand your global perspective.' },
   ]
   return (
     <section className="bg-white py-32">
@@ -240,13 +248,13 @@ function CoreElements() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">The Curriculum</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">The Curriculum</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep leading-tight mb-4">Core programme elements.</h2>
-          <p className="text-[15px] text-forest/55 max-w-lg leading-[1.75]">Every element is designed to challenge, inspire and equip young leaders for the world ahead.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg leading-[1.75]">Every element is designed to challenge, inspire and equip young leaders for the world ahead.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {elements.map((e, i) => (
             <div key={i} className="group relative flex flex-col rounded-[1.75rem] overflow-hidden border border-forest/8 bg-white shadow-[0_4px_24px_rgba(26,53,35,0.07)] hover:shadow-[0_20px_60px_rgba(26,53,35,0.18)] hover:-translate-y-2 transition-all duration-500 cursor-pointer">
 
@@ -261,7 +269,7 @@ function CoreElements() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
 
                 {/* top-left number badge */}
-                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[14px] font-bold text-white/80">
+                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[15px] font-bold text-white/80">
                   {e.num}
                 </div>
 
@@ -278,7 +286,7 @@ function CoreElements() {
                   <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gold/20 border border-gold/30 text-gold backdrop-blur-sm group-hover:bg-gold group-hover:text-forest-deep group-hover:border-gold transition-all duration-300 shadow-lg">
                     {e.icon}
                   </div>
-                  <h3 className="text-[14px] font-bold text-white leading-tight mb-2">{e.title}</h3>
+                  <h3 className="text-[15px] font-bold text-white leading-tight mb-2">{e.title}</h3>
                   <p className="text-[15px] text-cream/75 leading-[1.6]">{e.desc}</p>
                 </div>
               </div>
@@ -304,13 +312,13 @@ function PartnersAndMentors() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Our Network</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Our Network</span>
           </div>
           <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-white leading-[1.06] mb-4">
             Learn from
             <span className="font-serif italic text-gold"> the very best.</span>
           </h2>
-          <p className="text-[15px] text-cream/55 max-w-xl leading-[1.8]">
+          <p className="text-[15px] text-cream/80 max-w-xl leading-[1.8]">
             World-class educators, Cambridge researchers and industry leaders — all dedicated to your development.
           </p>
         </div>
@@ -333,12 +341,12 @@ function PartnersAndMentors() {
                 </div>
                 <div>
                   <p className="text-[20px] font-bold text-white tracking-tight">summatic</p>
-                  <p className="text-[14px] text-gold uppercase tracking-[0.2em] mt-0.5 font-semibold">Official Programme Partner</p>
+                  <p className="text-[15px] text-gold uppercase tracking-[0.2em] mt-0.5 font-semibold">Official Programme Partner</p>
                 </div>
               </div>
 
               <h3 className="text-[17px] font-bold text-white mb-4">In partnership with Summatic</h3>
-              <p className="text-[15px] text-cream/65 leading-[1.75]">
+              <p className="text-[15px] text-cream/80 leading-[1.75]">
                 We are proud to partner with Summatic to deliver a transformative learning experience that inspires young minds and prepares them for a future of limitless possibilities.
               </p>
 
@@ -351,7 +359,7 @@ function PartnersAndMentors() {
                 ].map((s, i) => (
                   <div key={i}>
                     <p className="text-[22px] font-bold text-gold leading-none">{s.val}</p>
-                    <p className="text-[14px] text-cream/45 mt-1 uppercase tracking-[0.15em]">{s.label}</p>
+                    <p className="text-[15px] text-cream/80 mt-1 uppercase tracking-[0.15em]">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -369,16 +377,16 @@ function PartnersAndMentors() {
               {/* avatar stack */}
               <div className="flex items-center gap-4 mb-8 pb-8 border-b border-white/8">
                 <div className="flex -space-x-3">
-                  {[1, 2, 3, 4, 5].map(i => (
+                  {[mentor1, mentor2, mentor3, mentor4, mentor5].map((imgSrc, i) => (
                     <img
                       key={i}
-                      src={teachersImg}
+                      src={imgSrc}
                       alt="Mentor"
                       className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 object-cover hover:scale-110 transition-transform duration-300"
                       style={{ zIndex: 6 - i }}
                     />
                   ))}
-                  <div className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 bg-gold/15 flex items-center justify-center text-[14px] font-bold text-gold" style={{ zIndex: 0 }}>
+                  <div className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 bg-gold/15 flex items-center justify-center text-[15px] font-bold text-gold" style={{ zIndex: 0 }}>
                     +12
                   </div>
                 </div>
@@ -388,19 +396,19 @@ function PartnersAndMentors() {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-3 w-3 fill-gold text-gold" />
                     ))}
-                    <span className="text-[14px] text-cream/50 ml-1">Top rated</span>
+                    <span className="text-[15px] text-cream/70 ml-1">Top rated</span>
                   </div>
                 </div>
               </div>
 
               <h3 className="text-[17px] font-bold text-white mb-4">Expert Facilitators &amp; Mentors</h3>
-              <p className="text-[15px] text-cream/65 leading-[1.75] mb-8">
+              <p className="text-[15px] text-cream/80 leading-[1.75] mb-8">
                 Our facilitators include Cambridge educators, researchers, entrepreneurs, industry experts and communication specialists with a passion for guiding young learners.
               </p>
 
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[14px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
+                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
               >
                 Meet the Facilitators
                 <ArrowUpRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
@@ -426,11 +434,11 @@ function ChooseYourTrack() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Choose Your Track.</h2>
-          <p className="text-[15px] text-forest/65 max-w-lg mx-auto leading-[1.75]">Two unique pathways. One unforgettable Cambridge experience.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg mx-auto leading-[1.75]">Two unique pathways. One unforgettable Cambridge experience.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -448,17 +456,17 @@ function ChooseYourTrack() {
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Track 01
                 </span>
-                <span className="text-[14px] font-semibold text-forest/35 uppercase tracking-widest">Entrepreneurship</span>
+                <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Entrepreneurship</span>
               </div>
 
               <h3 className="text-[2.4rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-gold transition-colors duration-400">Build ideas.<br/>Create impact.</h3>
-              <p className="text-[15px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
+              <p className="text-[15px] text-forest/80 leading-[1.75] mb-7 max-w-sm">
                 Explore the world of innovation. Learn how ideas are born, tested and developed into real solutions that change the world.
               </p>
 
               <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                 {['Opportunity discovery', 'Pitching & storytelling', 'Business model basics', 'AI for innovation', 'Design thinking', 'Venture challenge'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[14px] text-forest/70">
+                  <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                     </span>
@@ -473,7 +481,7 @@ function ChooseYourTrack() {
               <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
-                <Link to="/students/entrepreneurship" className="inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
+                <Link to="/students/entrepreneurship" className="inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -494,17 +502,17 @@ function ChooseYourTrack() {
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Track 02
                 </span>
-                <span className="text-[14px] font-semibold text-forest/35 uppercase tracking-widest">STEM Research</span>
+                <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">STEM Research</span>
               </div>
 
               <h3 className="text-[2.4rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-blue-600 transition-colors duration-400">Ask questions.<br/>Discover more.</h3>
-              <p className="text-[15px] text-forest/55 leading-[1.75] mb-7 max-w-sm">
+              <p className="text-[15px] text-forest/80 leading-[1.75] mb-7 max-w-sm">
                 Dive into the world of research and STEM. Learn how questions become insights and insights create a better world.
               </p>
 
               <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                 {['Research thinking', 'AI in research', 'Science exploration', 'Collaborative inquiry', 'Evidence basics', 'Present findings'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[14px] text-forest/70">
+                  <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-blue-500/10 border border-blue-400/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                     </span>
@@ -519,7 +527,7 @@ function ChooseYourTrack() {
               <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
-                <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
+                <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -553,11 +561,11 @@ function ValueProps() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Why Join</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Why Join</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-4">What you&rsquo;ll take home.</h2>
-          <p className="text-[14px] text-forest/55 max-w-lg mx-auto leading-[1.75]">Six transformative outcomes every participant carries forward.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg mx-auto leading-[1.75]">Six transformative outcomes every participant carries forward.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -570,15 +578,15 @@ function ValueProps() {
               <div className="pointer-events-none absolute top-0 right-0 h-28 w-28 rounded-full bg-gold/8 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* number */}
-              <span className="text-[15px] font-black text-gold/50 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{p.num}</span>
+              <span className="text-[15px] font-black text-gold/80 tracking-[0.2em] group-hover:text-gold transition-colors duration-300">{p.num}</span>
 
               {/* icon */}
               <div className="mt-4 mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300 shadow-sm">
                 {p.icon}
               </div>
 
-              <h4 className="text-[14px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h4>
-              <p className="text-[14px] text-forest/60 leading-[1.65]">{p.desc}</p>
+              <h4 className="text-[15px] font-bold text-forest-deep mb-2 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h4>
+              <p className="text-[15px] text-forest/80 leading-[1.65]">{p.desc}</p>
 
               {/* bottom accent line */}
               <div className="absolute bottom-0 left-7 right-7 h-[1.5px] bg-gradient-to-r from-transparent via-gold/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -608,24 +616,24 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-[1.08] tracking-tight">Start your Cambridge journey early.</h2>
-        <p className="mt-5 text-[15px] text-cream/65 leading-[1.75] max-w-xl mx-auto">Discover new ideas. Build your voice. Explore the future — at one of the world's greatest universities.</p>
+        <p className="mt-5 text-[15px] text-cream/80 leading-[1.75] max-w-xl mx-auto">Discover new ideas. Build your voice. Explore the future — at one of the world's greatest universities.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
           <button className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Register Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Download Overview <ArrowDownToLine className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
 
         {/* Bottom trust note */}
-        <p className="mt-10 text-[15px] text-cream/35 uppercase tracking-[0.2em]">
+        <p className="mt-10 text-[15px] text-cream/80 uppercase tracking-[0.2em]">
           Cambridge, UK · Summer 2026 · Fully Supervised
         </p>
       </div>

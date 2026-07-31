@@ -2,6 +2,48 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Play, Utensils, Landmark, Castle } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from './index'
+import alumniSnigdha from '@/assets/alumni-snigdha.jpg'
+import alumniFatin from '@/assets/alumni-fatin.jpg'
+import alumniSamwer from '@/assets/alumni-samwer.jpg'
+import alumniSam from '@/assets/alumni-sam.jpg'
+import alumniRamashankar from '@/assets/alumni-ramashankar.jpg'
+import alumniParag from '@/assets/alumni-parag.jpg'
+import alumniMario from '@/assets/alumni-mario.jpg'
+import alumniFatin1 from '@/assets/alumni-fatin1.jpg'
+import alumniFatin2 from '@/assets/alumni-fatin2.jpg'
+import alumniBidisha from '@/assets/alumni-bidisha.jpg'
+import alumniAnand from '@/assets/alumni-anand.jpg'
+import alumniAashish from '@/assets/alumni-aashish.jpg'
+import gilpMarch1 from '@/assets/gilp-march-1.jpg'
+import gilpMarch2 from '@/assets/gilp-march-2.jpg'
+import gilpMarch3 from '@/assets/gilp-march-3.jpg'
+import gilpMarch4 from '@/assets/gilp-march-4.jpg'
+import gilpMarch5 from '@/assets/gilp-march-5.jpg'
+import gilpMarch6 from '@/assets/gilp-march-6.jpg'
+import gilpMarch7 from '@/assets/gilp-march-7.jpg'
+import gilpMarch8 from '@/assets/gilp-march-8.jpg'
+import gilpMarch9 from '@/assets/gilp-march-9.jpg'
+import gilpMarch10 from '@/assets/gilp-march-10.jpg'
+import gilpMarch11 from '@/assets/gilp-march-11.jpg'
+import gilpMarch12 from '@/assets/gilp-march-12.jpg'
+import gilpMarch13 from '@/assets/gilp-march-13.jpg'
+import gilpMarch14 from '@/assets/gilp-march-14.jpg'
+import gilpMarch15 from '@/assets/gilp-march-15.jpg'
+import gilpMarch16 from '@/assets/gilp-march-16.jpg'
+import gilpMarch17 from '@/assets/gilp-march-17.jpg'
+import gilpMarch18 from '@/assets/gilp-march-18.jpg'
+import gilpMarch19 from '@/assets/gilp-march-19.jpg'
+import facultyJaideep from '@/assets/faculty-jaideep.jpg'
+import facultyShasha from '@/assets/faculty-shasha.jpg'
+import facultyLionel from '@/assets/faculty-lionel.jpg'
+import facultyRaghavendra from '@/assets/faculty-raghavendra.jpg'
+import facultyEden from '@/assets/faculty-eden.jpg'
+import facultyOguzhan from '@/assets/faculty-oguzhan.jpg'
+import facultyKamiar from '@/assets/faculty-kamiar.jpg'
+import facultyElizabeth from '@/assets/faculty-elizabeth.jpg'
+import facultySerish from '@/assets/faculty-serish.jpg'
+import facultyGuy from '@/assets/faculty-guy.jpg'
+import heroClassroom from '@/assets/hero-classroom.jpg'
 
 export const Route = createFileRoute('/programmes/gilp')({
   head: () => ({
@@ -35,6 +77,7 @@ function Page() {
       <ContactSection />
       <ApplyNow />
       <FAQ />
+      <CohortGallery />
       <CTA />
       <Footer />
     </div>
@@ -44,7 +87,7 @@ function Page() {
 /* ─── 1. HERO — matches screenshot exactly ─── */
 function Hero() {
   return (
-    <section className="relative bg-[#E8DCC8] pt-28 pb-20 border-b border-forest/10 overflow-hidden">
+    <section className="relative bg-[#E8DCC8] pt-4 pb-20 border-b border-forest/10 overflow-hidden">
       {/* subtle grid */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#0A301D_1px,transparent_1px),linear-gradient(90deg,#0A301D_1px,transparent_1px)] [background-size:48px_48px]" />
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
@@ -69,7 +112,7 @@ function Hero() {
               />
             </div>
 
-            <p className="text-[15px] text-forest/65 leading-relaxed max-w-[420px] mb-7">
+            <p className="text-[15px] text-forest/80 leading-relaxed max-w-[420px] mb-7">
               Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
               experience at Cambridge equips you with cutting-edge insights in AI, strategy,
               and leadership to navigate complexity and lead with confidence in a rapidly evolving
@@ -82,7 +125,7 @@ function Hero() {
             </div>
 
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-[14px] text-forest/55 font-medium">certified by</span>
+              <span className="text-[15px] text-forest/80 font-medium">certified by</span>
               <img
                 src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
                 alt="University of Cambridge — Judge Business School"
@@ -95,7 +138,7 @@ function Hero() {
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
               >
                 Download Brochure
               </a>
@@ -103,7 +146,7 @@ function Hero() {
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -116,7 +159,7 @@ function Hero() {
             <div className="relative bg-white rounded-3xl shadow-[0_8px_40px_rgba(10,48,29,0.12)] p-3 w-full max-w-[500px]">
               <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="https://static.wixstatic.com/media/bf78a9_488e24a00450410faa1dc07cdebebefc~mv2.jpg"
+                  src={heroClassroom}
                   alt="GILP participants at Cambridge Judge Business School"
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
                 />
@@ -124,7 +167,7 @@ function Hero() {
               {/* floating badge */}
               <div className="absolute -bottom-4 left-6 bg-forest-deep text-white rounded-xl px-4 py-2 shadow-lg flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gold shrink-0" />
-                <span className="text-[13px] font-bold">Cambridge Judge Business School</span>
+                <span className="text-[15px] font-bold">Cambridge Judge Business School</span>
               </div>
             </div>
           </div>
@@ -149,7 +192,7 @@ function ProgrammeOverview() {
             {/* Section Header inline */}
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">About the Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">About the Programme</span>
             </div>
 
             <h2 className="text-[2.2rem] md:text-[2.6rem] font-bold text-forest-deep leading-[1.15] mb-4">
@@ -181,7 +224,7 @@ function ProgrammeOverview() {
               ].map((s, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-[22px] font-bold text-forest-deep">{s.val}</span>
-                  <span className="text-[12px] uppercase tracking-wider text-forest/60 font-medium mt-0.5">{s.label}</span>
+                  <span className="text-[15px] uppercase tracking-wider text-forest/80 font-medium mt-0.5">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -222,11 +265,11 @@ function ProgrammeOverview() {
                     <div className="flex items-center gap-4">
                       <div className="w-1 h-10 bg-gold rounded-full shrink-0" />
                       <div>
-                        <p className="text-[14px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
-                        <p className="text-[13px] text-white/80 mt-1">Partner, Talent Element</p>
+                        <p className="text-[15px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
+                        <p className="text-[15px] text-white/80 mt-1">Partner, Talent Element</p>
                       </div>
                       <div className="ml-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2">
-                        <p className="text-[13px] italic text-white font-medium">"I'm loving it here"</p>
+                        <p className="text-[15px] italic text-white font-medium">"I'm loving it here"</p>
                       </div>
                     </div>
                   </div>
@@ -249,7 +292,7 @@ function ProgrammeOverview() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
                   </div>
-                  <span className="text-[13px] font-bold text-forest/70 uppercase tracking-wider">Alumni Testimonial</span>
+                  <span className="text-[15px] font-bold text-forest/70 uppercase tracking-wider">Alumni Testimonial</span>
                 </div>
                 <img
                   src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
@@ -285,7 +328,7 @@ function Outcomes() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold">Programme Outcomes</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Outcomes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white leading-tight">As a GILP participant, you will</h2>
@@ -376,7 +419,7 @@ function Curriculum() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="mb-12">
           <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-forest-deep">Programme Curriculum</h2>
-          <p className="mt-3 text-[15px] text-forest/65 max-w-2xl leading-relaxed">Six core modules delivering the complete toolkit for Indian CXOs leading high-growth organisations in a global, AI-driven landscape.</p>
+          <p className="mt-3 text-[15px] text-forest/80 max-w-2xl leading-relaxed">Six core modules delivering the complete toolkit for Indian CXOs leading high-growth organisations in a global, AI-driven landscape.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {modules.map((m, i) => (
@@ -388,7 +431,7 @@ function Curriculum() {
               <div className="mb-6 pb-5 border-b border-forest/5">
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="h-px w-4 bg-gold" />
-                  <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">{m.num}</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">{m.num}</p>
                 </div>
                 <h3 className="text-[18px] font-bold text-forest-deep leading-snug group-hover:text-gold-deep transition-colors duration-300">{m.title}</h3>
               </div>
@@ -418,7 +461,7 @@ function LordsCricket() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold mb-3">Signature Experience · 17 September</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-3">Signature Experience · 17 September</p>
             <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-white leading-tight mb-5">
               Leadership at Lord's Cricket Ground
             </h2>
@@ -433,8 +476,8 @@ function LordsCricket() {
                 { t: '17 September', d: 'Signature programme day' },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[13px] font-bold text-gold mb-1">{item.t}</p>
-                  <p className="text-[13px] text-white/65">{item.d}</p>
+                  <p className="text-[15px] font-bold text-gold mb-1">{item.t}</p>
+                  <p className="text-[15px] text-white/80">{item.d}</p>
                 </div>
               ))}
             </div>
@@ -447,8 +490,8 @@ function LordsCricket() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             <div className="absolute bottom-5 left-5">
-              <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Lord's Cricket Ground</p>
-              <p className="text-white text-[14px] font-semibold">London, UK · 17 September 2026</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Lord's Cricket Ground</p>
+              <p className="text-white text-[15px] font-semibold">London, UK · 17 September 2026</p>
             </div>
           </div>
         </div>
@@ -477,7 +520,7 @@ function LordsMarquee() {
         {repeatedItems.map((item, i) => (
           <div key={i} className="flex flex-col items-center justify-center shrink-0 w-[260px] px-4 border-r border-forest/10">
             {item.icon}
-            <p className="text-[13px] font-bold text-forest-deep uppercase tracking-[0.1em] text-center">{item.text}</p>
+            <p className="text-[15px] font-bold text-forest-deep uppercase tracking-[0.1em] text-center">{item.text}</p>
           </div>
         ))}
       </div>
@@ -504,7 +547,7 @@ function ProfessorQuote() {
             <blockquote className="text-[16px] md:text-[17px] text-forest-deep leading-relaxed mb-6 font-medium">
               The Global India Leadership Programme is about more than learning — it's about transformation. At Cambridge Judge Business School, we give leaders the tools to think creatively, harness AI and innovation, and shape the future of their organisations in a rapidly changing world.
             </blockquote>
-            <p className="text-[14px] text-forest-deep font-semibold italic">
+            <p className="text-[15px] text-forest-deep font-semibold italic">
               — Prof. Jaideep Prabhu, Vice Dean & Jawaharlal Nehru Professor of Business & Enterprise, Cambridge Judge Business School
             </p>
           </div>
@@ -622,7 +665,7 @@ function Faculty() {
               </div>
               <h3 className="text-[16px] font-bold text-white">{f.name}</h3>
               <p className="text-[13.5px] text-gold font-semibold mt-1.5 leading-snug">{f.role}</p>
-              <p className="text-[12.5px] text-white/50 mt-1.5 font-medium">Cambridge Judge Business School</p>
+              <p className="text-[12.5px] text-white/80 mt-1.5 font-medium">Cambridge Judge Business School</p>
             </div>
           ))}
         </div>
@@ -651,11 +694,11 @@ function WhoShouldAttend() {
             <ul className="space-y-4">
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
                 <span className="text-[14.5px] font-bold text-forest-deep">Round 1</span>
-                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 May 2026</span>
+                <span className="text-[15px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 May 2026</span>
               </li>
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
                 <span className="text-[14.5px] font-bold text-forest-deep">Round 2</span>
-                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 July 2026</span>
+                <span className="text-[15px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 July 2026</span>
               </li>
             </ul>
           </div>
@@ -693,7 +736,7 @@ function WhoShouldAttend() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 group-hover:bg-white group-hover:border-forest/10 transition-all duration-300">
                   <CheckCircle2 className="h-5 w-5 text-gold shrink-0" />
-                  <p className="text-[14px] font-bold text-forest-deep leading-snug">{item}</p>
+                  <p className="text-[15px] font-bold text-forest-deep leading-snug">{item}</p>
                 </div>
               ))}
             </div>
@@ -751,7 +794,7 @@ function Packages() {
           <p className="text-[11.5px] font-bold uppercase tracking-[0.3em] text-gold/80 mb-4">Cambridge Judge Business School</p>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep leading-tight">Programme packages<br className="hidden md:block" /> and Inclusions</h2>
           <div className="mt-5 h-px w-16 bg-gold/60" />
-          <p className="mt-5 text-[14px] italic text-forest/50">*Programme fee across all packages will increase by 10% for Round 2 applications.</p>
+          <p className="mt-5 text-[15px] italic text-forest/70">*Programme fee across all packages will increase by 10% for Round 2 applications.</p>
         </div>
 
         {/* Package cards */}
@@ -760,15 +803,15 @@ function Packages() {
             <div key={i} className={`rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(10,48,29,0.08)] transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(10,48,29,0.14)] bg-white ${pkg.highlight ? 'ring-2 ring-gold' : ''}`}>
               <div className={`h-1 w-full ${pkg.highlight ? 'bg-gradient-to-r from-gold via-amber-400 to-gold' : 'bg-forest-deep/10'}`} />
               <div className="p-8 relative">
-                <span className="absolute top-6 right-6 text-gold/40 text-3xl select-none font-serif">✦</span>
+                <span className="absolute top-6 right-6 text-gold/80 text-3xl select-none font-serif">✦</span>
                 <p className="text-[10.5px] font-bold uppercase tracking-[0.35em] text-gold mb-4">{pkg.name}</p>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-5 leading-snug pr-6">{pkg.subtitle}</h3>
                 <div className="border-t border-forest/8 pt-5 mb-5">
                   <p className="text-[28px] font-bold text-forest-deep tracking-tight">{pkg.price}</p>
-                  <p className="text-[12px] text-forest/45 mt-1 font-medium">{pkg.priceNote}</p>
+                  <p className="text-[15px] text-forest/80 mt-1 font-medium">{pkg.priceNote}</p>
                 </div>
-                <p className="text-[13px] text-forest/60 mt-1 leading-relaxed">{pkg.detail}</p>
-                <p className="text-[12px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
+                <p className="text-[15px] text-forest/80 mt-1 leading-relaxed">{pkg.detail}</p>
+                <p className="text-[15px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
                 <a
                   href="https://www.globaledulab.com/indialeadership"
                   target="_blank"
@@ -821,7 +864,7 @@ function Packages() {
 function AccommodationSection() {
   const hotels = [
     {
-      src: 'https://cache.marriott.com/content/dam/marriott-renditions/STNGAGU/stngagu-lobby-0014-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=504px:*',
+      src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800',
       alt: 'Graduate by Hilton',
       name: 'Graduate by Hilton',
       walk: '6 mins walk',
@@ -829,7 +872,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stngagu-graduate-cambridge/',
     },
     {
-      src: 'https://www.hilton.com/im/en/STNHCHI/14352523/stnhchi-hilton-cambridge-city-centre-0069-hor-clsc.jpg?impolicy=crop&cw=5000&ch=3334&gravity=NorthWest&xposition=0&yposition=0&rw=768&rh=512',
+      src: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&q=80&w=800',
       alt: 'Hilton Cambridge City Centre',
       name: 'Hilton Cambridge City Centre',
       walk: '7 mins walk',
@@ -837,7 +880,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stnhchi-hilton-cambridge-city-centre/',
     },
     {
-      src: 'https://www.hotelduvin.com/wp-content/uploads/2022/09/HdV_Cambridge_Exterior_3_crop.jpg',
+      src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=800',
       alt: 'Hotel du Vin',
       name: 'Hotel du Vin',
       walk: '2 mins walk',
@@ -845,7 +888,7 @@ function AccommodationSection() {
       link: 'https://www.hotelduvin.com/locations/cambridge/',
     },
     {
-      src: 'https://universityarms.com/wp-content/uploads/2019/04/University-Arms-Hotel-Cambridge-Exterior.jpg',
+      src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800',
       alt: 'University Arms Hotel',
       name: 'University Arms Hotel',
       walk: '11 mins walk',
@@ -863,9 +906,9 @@ function AccommodationSection() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Packages 2 &amp; 3</span>
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Packages 2 &amp; 3</span>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-4">Accommodation in Cambridge</h2>
-          <p className="text-[15px] text-forest/65 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[15px] text-forest/80 leading-relaxed max-w-2xl mx-auto">
             Accommodation will be booked based on availability in 4-star hotels in close proximity to Cambridge Judge Business School.
           </p>
         </div>
@@ -888,7 +931,7 @@ function AccommodationSection() {
                   className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Walk badge */}
-                <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[13px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
                   </svg>
@@ -898,14 +941,14 @@ function AccommodationSection() {
 
               {/* Card body */}
               <div className="p-5 flex flex-col flex-1">
-                <p className="text-[11px] text-gold tracking-widest mb-1">{hotel.stars}</p>
+                <p className="text-[13px] text-gold tracking-widest mb-1">{hotel.stars}</p>
                 <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-1">{hotel.name}</h3>
-                <p className="text-[12px] text-forest/50 mb-4">from Judge Business School</p>
+                <p className="text-[15px] text-forest/70 mb-4">from Judge Business School</p>
                 <a
                   href={hotel.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-forest-deep/15 text-forest-deep text-[12px] font-bold uppercase tracking-[0.12em] py-2.5 hover:bg-forest-deep hover:text-white hover:border-forest-deep transition-all duration-300"
+                  className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-forest-deep/15 text-forest-deep text-[15px] font-bold uppercase tracking-[0.12em] py-2.5 hover:bg-forest-deep hover:text-white hover:border-forest-deep transition-all duration-300"
                 >
                   Check Hotel Website
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -918,7 +961,7 @@ function AccommodationSection() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-[13px] text-forest/45 mt-10 italic">
+        <p className="text-center text-[15px] text-forest/80 mt-10 italic">
           * Accommodation is subject to availability. Hotel allocation confirmed upon enrolment.
         </p>
       </div>
@@ -930,34 +973,52 @@ function AccommodationSection() {
 function AlumniTestimonials() {
   const alumni = [
     { 
-      name: 'Snigdha Manchanda', 
-      role: 'Founder, TeaTrunk (India)',
+      name: 'Parag', 
+      role: 'Alumnus',
       quote: "This programme helped articulate something critical: leadership is also about language. It equips founders to translate their journey into frameworks that resonate with investors and stakeholders. That shift, from building to being understood, unlocks the next level of growth and influence.",
-      img: 'https://ui-avatars.com/api/?name=Snigdha+Manchanda&background=0A301D&color=fff&size=128'
+      img: alumniParag
     },
     { 
-      name: 'Dr. Fatin Al Zadjali', 
-      role: 'L&D Head - Bank Dhofar (Oman)',
-      quote: "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
-      img: 'https://ui-avatars.com/api/?name=Fatin+Al+Zadjali&background=B3915F&color=fff&size=128'
+      name: 'Mario (Dr. Johannes Mario Schmidt)', 
+      role: 'MD, Lingel Windows and Doors Technologies',
+      quote: "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear.",
+      img: alumniMario
     },
     { 
       name: 'Johannes Samwer', 
       role: 'MD, Rhenus Lub (Germany)',
       quote: "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
-      img: 'https://ui-avatars.com/api/?name=Johannes+Samwer&background=0A301D&color=fff&size=128'
+      img: alumniSamwer
+    },
+    { 
+      name: 'Dr. Fatin Al Zadjali', 
+      role: 'L&D Head - Bank Dhofar (Oman)',
+      quote: "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical.",
+      img: alumniFatin1
+    },
+    { 
+      name: 'Dr. Fatin Al Zadjali', 
+      role: 'L&D Head - Bank Dhofar (Oman)',
+      quote: "I left with new strategies, and renewed clarity on leading with purpose and impact.",
+      img: alumniFatin2
+    },
+    { 
+      name: 'Bidisha', 
+      role: 'Alumna',
+      quote: 'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant.',
+      img: alumniBidisha
+    },
+    { 
+      name: 'Anand', 
+      role: 'Alumnus',
+      quote: 'The programme provided a unique perspective on leadership, marrying theory with real-world applications. The networking opportunities were fantastic, and I look forward to keeping in touch with the brilliant minds I met.',
+      img: alumniAnand
     },
     { 
       name: 'Dr. Aashish Chaudhry', 
       role: 'MD, Aakash Healthcare (India)',
-      quote: 'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.',
-      img: 'https://ui-avatars.com/api/?name=Aashish+Chaudhry&background=0A301D&color=fff&size=128'
-    },
-    { 
-      name: 'Dr. Johannes Mario Schmidt', 
-      role: 'MD, Lingel Windows and Doors Technologies (India)',
-      quote: "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.",
-      img: 'https://ui-avatars.com/api/?name=Johannes+Mario+Schmidt&background=B3915F&color=fff&size=128'
+      quote: 'A truly transformative experience that offered fresh insights into corporate governance and strategic execution. Highly recommended for any leader looking to navigate complex, fast-changing environments.',
+      img: alumniAashish
     },
   ]
 
@@ -966,7 +1027,7 @@ function AlumniTestimonials() {
       <div className="mx-auto w-[96%] xl:max-w-[1400px]">
         <div className="text-center mb-16">
           <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-2">What Our Alumni Say</h2>
-          <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-light">"Leadership Learning That Feels Like a Rolls Royce"</p>
+          <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-normal">"Leadership Learning That Feels Like a Rolls Royce"</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8">
           {alumni.map((a, i) => (
@@ -976,7 +1037,7 @@ function AlumniTestimonials() {
               </div>
               <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">“</span>
               <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">{a.name}</h3>
-              <p className="text-[11.5px] text-forest/60 mb-5">{a.role}</p>
+              <p className="text-[11.5px] text-forest/80 mb-5">{a.role}</p>
               <p className="text-[12.5px] text-forest-deep/80 leading-[1.7] hyphens-auto">{a.quote}</p>
             </div>
           ))}
@@ -1012,10 +1073,10 @@ function FAQ() {
                 className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left hover:bg-[#EDE8D5] transition-colors duration-150"
               >
                 <span className="text-[15px] font-bold text-forest-deep">{faq.q}</span>
-                {open === i ? <ChevronUp className="h-5 w-5 text-gold shrink-0" /> : <ChevronDown className="h-5 w-5 text-forest/35 shrink-0" />}
+                {open === i ? <ChevronUp className="h-5 w-5 text-gold shrink-0" /> : <ChevronDown className="h-5 w-5 text-forest/80 shrink-0" />}
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-[14px] text-forest/70 leading-relaxed border-t border-forest/8 bg-white">
+                <div className="px-6 pb-5 text-[15px] text-forest/70 leading-relaxed border-t border-forest/8 bg-white">
                   <p className="pt-4">{faq.a}</p>
                 </div>
               )}
@@ -1040,7 +1101,7 @@ function CertificateSection() {
 
           {/* LEFT — Text content */}
           <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-6 border border-[#C9913D]/20">Upon Completion</span>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-6 border border-[#C9913D]/20">Upon Completion</span>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-[#F5E6CC] mb-5 leading-tight">
               Earn a Recognised Certificate
             </h2>
@@ -1048,7 +1109,7 @@ function CertificateSection() {
               <div className="bg-[#3D2C14]/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C9913D]/20 relative overflow-hidden group hover:border-[#C9913D]/40 hover:bg-[#3D2C14] transition-all duration-300">
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#C9913D]/70 via-[#C9913D] to-[#C9913D]/50" />
                 <h3 className="text-[16px] font-bold text-[#F5E6CC] mb-2">University of Cambridge–certified</h3>
-                <p className="text-[14px] text-[#C9A87C]/80 leading-relaxed">
+                <p className="text-[15px] text-[#C9A87C]/80 leading-relaxed">
                   Earn a verified Cambridge Judge Business School certificate upon successful completion of the programme — a testament to your dedication, skills, and learning journey.
                 </p>
               </div>
@@ -1062,7 +1123,7 @@ function CertificateSection() {
                   <div key={i} className="bg-[#3D2C14]/80 rounded-xl p-4 border border-[#C9913D]/15 hover:border-[#C9913D]/35 hover:bg-[#3D2C14] transition-all duration-300 flex items-start gap-3">
                     <span className="text-[1.4rem]">{feat.icon}</span>
                     <div>
-                      <p className="text-[13px] font-bold text-[#F5E6CC]">{feat.label}</p>
+                      <p className="text-[15px] font-bold text-[#F5E6CC]">{feat.label}</p>
                       <p className="text-[11.5px] text-[#C9A87C]/60">{feat.sub}</p>
                     </div>
                   </div>
@@ -1070,35 +1131,44 @@ function CertificateSection() {
               </div>
             </div>
           </div>
-          {/* RIGHT — Certificate mock + 2 images */}
-          <div className="flex flex-col gap-5">
-            {/* Certificate mock */}
-            <div className="relative flex justify-center">
-              <div className="absolute -inset-6 bg-[#C9913D]/15 rounded-3xl blur-2xl" />
-              <div className="relative bg-white rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.5)] p-6 w-full border border-[#C9913D]/30">
-                <div className="absolute top-4 left-4 w-1.5 h-24 bg-gradient-to-b from-[#C9913D] to-[#C9913D]/40 rounded-full" />
-                <img
-                  src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                  alt="Cambridge Judge Business School"
-                  className="h-8 w-auto object-contain mb-6 ml-4 opacity-80"
-                />
-                <div className="ml-4 space-y-2 mb-8">
-                  <p className="text-[10px] uppercase tracking-widest text-forest/40">This is to certify that</p>
-                  <p className="text-[17px] font-bold text-forest-deep border-b border-forest/10 pb-2 pr-8">[Participant Name]</p>
-                  <p className="text-[10px] text-forest/50">attended</p>
-                  <p className="text-[13px] font-bold text-forest-deep leading-snug">Global India Leadership Programme</p>
-                  <p className="text-[10px] text-forest/50">14th September – 18th September 2026</p>
+          {/* RIGHT — Certificate mock */}
+          <div className="flex justify-center lg:justify-end lg:mt-[165px]">
+            <div className="relative w-full max-w-[520px]">
+              {/* Glow */}
+              <div className="absolute -inset-6 bg-[#C9913D]/15 rounded-3xl blur-2xl pointer-events-none" />
+              
+              {/* Certificate Card */}
+              <div className="relative bg-[#FAF8F5] rounded-xl shadow-[0_30px_80px_rgba(0,0,0,0.4)] p-8 md:p-10 w-full border border-[#C9913D]/30 flex flex-col justify-between aspect-[1.4/1] overflow-hidden">
+                {/* Decorative left bar */}
+                <div className="absolute top-8 bottom-8 left-6 w-1.5 bg-gradient-to-b from-[#C9913D] to-[#C9913D]/20 rounded-full" />
+                
+                {/* Header */}
+                <div className="pl-6 relative z-10">
+                  <img
+                    src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
+                    alt="Cambridge Judge Business School"
+                    className="h-10 w-auto object-contain mb-8 opacity-90"
+                  />
+                  <p className="text-[13px] uppercase tracking-[0.2em] text-forest/70 mb-2 font-medium">This is to certify that</p>
+                  <p className="text-[22px] font-bold text-forest-deep border-b border-forest/10 pb-2 mb-4 pr-10 inline-block min-w-[250px]">[Participant Name]</p>
+                  <p className="text-[13px] text-forest/80 mb-2 uppercase tracking-widest">attended</p>
+                  <p className="text-[16px] font-bold text-forest-deep leading-snug mb-1">Global India Leadership Programme</p>
+                  <p className="text-[13px] text-forest/70">14th September – 18th September 2026</p>
                 </div>
-                <div className="ml-4 mt-8 flex items-end justify-between">
+
+                {/* Footer */}
+                <div className="pl-6 flex items-end justify-between mt-auto pt-8 relative z-10">
                   <div>
-                    <div className="h-px w-28 bg-forest/20 mb-1" />
-                    <p className="text-[9px] text-forest/40">Prof. Jaideep Prabhu</p>
-                    <p className="text-[8px] text-forest/30">Programme Director</p>
+                    <div className="h-px w-32 bg-forest/20 mb-2" />
+                    <p className="text-[13px] font-bold text-forest/70 uppercase tracking-wider">Prof. Jaideep Prabhu</p>
+                    <p className="text-[14px] text-forest/70">Programme Director</p>
                   </div>
-                  <img src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png" alt="Cambridge" className="h-5 w-auto object-contain opacity-40 mr-2" />
+                  <img src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png" alt="Cambridge" className="h-6 w-auto object-contain opacity-20 mix-blend-multiply" />
                 </div>
+
+                {/* Sample Watermark */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <p className="text-[3rem] font-black text-forest/5 tracking-[0.4em] rotate-[-30deg] select-none">SAMPLE</p>
+                  <p className="text-[4.5rem] font-black text-forest/[0.04] tracking-[0.4em] rotate-[-30deg] select-none">SAMPLE</p>
                 </div>
               </div>
             </div>
@@ -1114,70 +1184,70 @@ function CertificateSection() {
 function FacultyGrid() {
   const faculty = [
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_356aa9f0ffc943199a9db3d6b68c9b64~mv2.jpg',
+      img: facultyJaideep,
       name: 'Prof. Jaideep Prabhu',
       role: 'Programme Director & Facilitator – Frugal Innovation',
       bio: 'Jaideep Prabhu, Jawaharlal Nehru Professor of Business & Enterprise at Cambridge Judge Business School, is a global authority on frugal innovation. His work demonstrates how organisations can create impactful, resource-efficient solutions under constraints — a mindset he brings to help delegates turn constraints into strategy.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/ff608f_0b9dd7af10ee485baf6441b9fef2416e~mv2.jpg',
+      img: facultyShasha,
       name: 'Prof. Shasha Lu',
       role: 'Facilitator – Customer-Centric Innovation in the AI Era',
       bio: 'Associate Professor in Marketing at Cambridge Judge, Shasha Lu applies machine learning to enhance customer insight. Her research on artificial empathy and decision marketing empowers leaders to craft AI-driven, customer-centric innovation strategies that resonate in complex fast-moving markets.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg',
+      img: facultyLionel,
       name: 'Prof. Lionel Paolella',
       role: 'Facilitator – Leadership & Strategy',
       bio: 'Lionel Paolella, Associate Professor in Strategy & Organisational Behaviour at Cambridge Judge, explores organisational strategy, social evaluation, and inclusion. With a deep understanding of how leadership shapes culture and performance, he equips participants to lead with strategic clarity and inclusivity.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_23c128d7b28c45d2970bedb4a85b2927~mv2.jpeg',
+      img: facultyRaghavendra,
       name: 'Prof. Raghavendra Rao',
       role: 'Facilitator – Corporate Governance',
       bio: 'Sir Brahmana Ratcheloval Professor of Finance at Cambridge Judge, Raghavendra Rao leads research in corporate governance, scenario finance, and market transparency. He brings a rigorous lens to governance, treating it as a mechanism for managing information flows and accountability within firms.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_ca1aa471265b4f4eabc1cda72c39b667~mv2.jpg',
+      img: facultyEden,
       name: 'Prof. Eden Yin',
       role: 'Facilitator – Building Branding Strategy',
       bio: 'Associate Professor in Marketing at Cambridge Judge, Eden Yin specialises in building global brands — particularly Chinese firms expanding internationally. His expertise spans digital-era branding, innovation strategy, and high-tech product growth, offering delegates practical insights to elevate brand equity in dynamic markets.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_902fda2ddbb34a3bb49561c9721950a7~mv2.jpg',
+      img: facultyOguzhan,
       name: 'Prof. Oğuzhan Karakaş',
       role: 'Facilitator – Boardroom Dynamics',
       bio: 'Associate Professor in Finance at Cambridge Judge, Oğuzhan Karakaş focuses on corporate governance, ownership, private equity, and CSR. His rigorous insight into boardroom dynamics illuminates how governance structures and stakeholder control drive organisational integrity and strategic outcomes.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg',
+      img: facultyKamiar,
       name: 'Prof. Kamiar Mohaddes',
       role: 'Facilitator – Leadership for a Sustainable World',
       bio: 'Associate Professor in Economics & Policy at Cambridge Judge and Director of the climaTRACES Lab, Kamiar Mohaddes specialises in the macroeconomics of climate change. He guides leaders on embedding sustainability within economic strategy, helping them steer organisations toward resilience and responsibility.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_661db96db04d4fe9a148309182ffe62b~mv2.jpg',
+      img: facultyElizabeth,
       name: 'Elizabeth Osta',
       role: 'Facilitator – AI Frameworks & Digital Innovation',
       bio: 'Elizabeth is the Co-lead at the Frugal AI Hub at Cambridge Judge Business School. She is a digital and data strategist advising CXOs on AI, innovation, and responsible data use. As a former Chief Data Officer at HEINEKEN, she also founded Digital Forward and holds leadership experience across banking, consumer goods, and social impact.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_7a4f072812284113bb4dbf8dde862226~mv2.jpg',
+      img: facultySerish,
       name: 'Serish Venkata Gandikota',
       role: 'Facilitator – AI Frameworks & Digital Innovation',
       bio: 'Serish is the Co-lead at the Frugal AI Hub at Cambridge Judge Business School. He is an innovation strategist, impact & climate fund adviser, entrepreneur, and researcher focused on frugal innovation, sustainability, and impact investing. He has led EU-funded projects and launched ventures across social enterprise and technology.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
-      img: 'https://static.wixstatic.com/media/bf78a9_2b40f76be34f43f5b8b02526672c5416~mv2.png',
+      img: facultyGuy,
       name: 'Guy Doza',
       role: 'Facilitator – Public Speaking & Art of Negotiation',
       bio: 'Guy Doza is a renowned author and TEDx speaker who advises top politicians and global CEOs on leadership, persuasion, and negotiation. A leading expert in rhetoric, he blends ancient wisdom with modern science to help leaders communicate with clarity, inspire audiences, and negotiate with impact.',
@@ -1186,37 +1256,43 @@ function FacultyGrid() {
   ]
 
   return (
-    <section className="bg-[#F7F5F1] py-24 border-t border-forest/5 relative overflow-hidden">
+    <section className="bg-[#E8DCC8] py-24 border-t border-forest/5 relative overflow-hidden">
       {/* Subtle decorative elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-forest/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/20 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-10 z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">World-Class Academics</span>
+            <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold">World-Class Academics</span>
             <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-forest-deep mb-4 leading-tight">
-            Faculty & <span className="font-serif italic font-normal text-forest/60">Speakers</span>
+            Faculty & <span className="font-serif italic font-normal text-forest/80">Speakers</span>
           </h2>
-          <p className="text-[15px] text-forest/60 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
+          <p className="text-[15px] text-forest/70 max-w-2xl mx-auto font-medium">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {faculty.map((f, i) => (
-            <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-[0_8px_20px_rgba(10,48,29,0.03)] border border-forest/5 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(196,148,50,0.08)] hover:-translate-y-1 transition-all duration-500 flex flex-col">
-              <div className="relative overflow-hidden aspect-[4/5] p-2.5 pb-0">
-                <div className="w-full h-full rounded-t-xl overflow-hidden relative">
-                  <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-forest-deep/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div key={i} className="group bg-white rounded-[1.25rem] overflow-hidden shadow-[0_10px_30px_rgba(10,48,29,0.06)] hover:shadow-[0_24px_60px_rgba(196,148,50,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col border border-forest/5 relative">
+              {/* Premium Top Gradient Bar using accent property */}
+              <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${f.accent} opacity-90`} />
+              
+              {/* Image Frame */}
+              <div className="p-3 pb-0 relative">
+                <div className="w-full aspect-[4/5] rounded-xl overflow-hidden relative shadow-inner border border-black/5 ring-1 ring-black/5">
+                  <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-[1.07] transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
-              <div className="p-6 flex flex-col flex-1 bg-white relative z-10">
-                <h3 className="text-[17px] font-bold text-forest-deep leading-snug mb-1">{f.name}</h3>
-                <p className="text-[13px] font-serif italic text-gold mb-4 leading-snug">{f.role}</p>
-                <div className="h-px w-8 bg-forest/10 mb-4 transition-all duration-300 group-hover:w-12 group-hover:bg-gold/40" />
-                <p className="text-[12.5px] text-forest/60 leading-relaxed">{f.bio}</p>
+
+              {/* Content */}
+              <div className="px-6 pt-6 pb-7 flex flex-col flex-1 bg-white relative z-10">
+                <h3 className="text-[17.5px] font-bold text-forest-deep leading-snug mb-1.5">{f.name}</h3>
+                <p className="text-[15px] font-serif italic text-gold-deep mb-4 leading-tight">{f.role}</p>
+                <div className="h-[2px] w-8 bg-forest/10 mb-4 transition-all duration-500 group-hover:w-16 group-hover:bg-gold/60" />
+                <p className="text-[12.5px] text-forest/80 leading-relaxed">{f.bio}</p>
               </div>
             </div>
           ))}
@@ -1232,37 +1308,40 @@ function CancellationPolicy() {
     {
       date: 'On or before 14 June 2026',
       refund: '50% refund',
-      color: 'bg-emerald-50 border-emerald-200',
-      badge: 'bg-emerald-100 text-emerald-700',
+      color: 'bg-[#153f2d]/80 border-[#226046]',
+      badge: 'bg-[#226046] text-emerald-200',
       icon: '✓',
-      iconColor: 'text-emerald-500',
+      iconColor: 'text-emerald-400',
     },
     {
       date: '15 June – 13 August 2026',
       refund: '25% refund',
-      color: 'bg-amber-50 border-amber-200',
-      badge: 'bg-amber-100 text-amber-700',
+      color: 'bg-[#4a3614]/80 border-[#6b5020]',
+      badge: 'bg-[#6b5020] text-amber-200',
       icon: '◑',
-      iconColor: 'text-amber-500',
+      iconColor: 'text-amber-400',
     },
     {
       date: 'On or after 14 August 2026',
       refund: 'No refund',
-      color: 'bg-red-50 border-red-100',
-      badge: 'bg-red-100 text-red-700',
+      color: 'bg-[#4a1c1c]/80 border-[#6b2a2a]',
+      badge: 'bg-[#6b2a2a] text-red-200',
       icon: '✕',
       iconColor: 'text-red-400',
     },
   ]
 
   return (
-    <section className="bg-[#FAF8F5] py-24 border-t border-forest/5 relative overflow-hidden">
-      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full bg-gold/5 blur-3xl" />
-      <div className="relative mx-auto max-w-5xl px-6 md:px-10">
+    <section className="bg-forest-deep py-24 border-t border-forest/10 relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full bg-[#C9913D]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-32 -right-32 w-[350px] h-[350px] rounded-full bg-[#C9913D]/5 blur-3xl" />
+      
+      <div className="relative mx-auto max-w-5xl px-6 md:px-10 z-10">
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Important Policy</span>
-          <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep mb-3">Cancellation &amp; Refund Policy</h2>
-          <p className="text-[15px] text-forest/60 max-w-xl mx-auto">
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-4 border border-[#C9913D]/20">Important Policy</span>
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-[#F5E6CC] mb-3">Cancellation &amp; Refund Policy</h2>
+          <p className="text-[15px] text-[#C9A87C]/80 max-w-xl mx-auto">
             We understand that plans can change, and we aim to be as flexible as possible.
           </p>
         </div>
@@ -1270,35 +1349,35 @@ function CancellationPolicy() {
         {/* Refund tiers */}
         <div className="grid md:grid-cols-3 gap-5 mb-10">
           {policies.map((p, i) => (
-            <div key={i} className={`rounded-2xl border p-6 ${p.color} hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md`}>
+            <div key={i} className={`rounded-2xl border p-6 ${p.color} backdrop-blur-sm hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg`}>
               <div className="flex items-center justify-between mb-4">
                 <span className={`text-[2rem] font-bold ${p.iconColor}`}>{p.icon}</span>
-                <span className={`text-[13px] font-bold px-3 py-1 rounded-full ${p.badge}`}>{p.refund}</span>
+                <span className={`text-[15px] font-bold px-3 py-1 rounded-full ${p.badge} shadow-inner border border-white/5`}>{p.refund}</span>
               </div>
-              <p className="text-[14px] font-semibold text-forest-deep">Cancellation</p>
-              <p className="text-[13px] text-forest/65 mt-1">{p.date}</p>
+              <p className="text-[15px] font-semibold text-white">Cancellation</p>
+              <p className="text-[15px] text-white/80 mt-1">{p.date}</p>
             </div>
           ))}
         </div>
 
         {/* Policy cards */}
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="bg-white rounded-2xl p-7 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 relative overflow-hidden">
+          <div className="bg-[#3D2C14]/80 backdrop-blur-sm rounded-2xl p-7 shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-[#C9913D]/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/70 via-gold to-gold/50" />
-            <h3 className="text-[15px] font-bold text-forest-deep mb-3">How to Cancel</h3>
-            <p className="text-[14px] text-forest/65 leading-relaxed">
+            <h3 className="text-[15px] font-bold text-[#F5E6CC] mb-3">How to Cancel</h3>
+            <p className="text-[15px] text-[#C9A87C]/80 leading-relaxed">
               All cancellations must be submitted in writing to the programme team at{' '}
-              <a href="mailto:info@globaledulab.com" className="text-[#1a73e8] underline hover:text-[#1558b0] transition-colors">
+              <a href="mailto:info@globaledulab.com" className="text-gold underline hover:text-gold-deep transition-colors">
                 info@globaledulab.com
               </a>.
-              Refunds (where applicable) will be processed within <strong>14 working days</strong> of receiving your cancellation request.
+              Refunds (where applicable) will be processed within <strong className="text-[#F5E6CC] font-semibold">14 working days</strong> of receiving your cancellation request.
             </p>
           </div>
-          <div className="bg-white rounded-2xl p-7 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-forest-deep" />
-            <h3 className="text-[15px] font-bold text-forest-deep mb-3">⚠️ Currency Note</h3>
-            <p className="text-[14px] text-forest/65 leading-relaxed">
-              <strong>Refunds are processed only in GBP (British Pounds).</strong> If you paid in another currency, the final amount you receive may vary depending on the prevailing exchange rate and any charges applied by your payment provider or bank at the time of refund.
+          <div className="bg-[#3D2C14]/80 backdrop-blur-sm rounded-2xl p-7 shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-[#C9913D]/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gold" />
+            <h3 className="text-[15px] font-bold text-[#F5E6CC] mb-3">⚠️ Currency Note</h3>
+            <p className="text-[15px] text-[#C9A87C]/80 leading-relaxed">
+              <strong className="text-[#F5E6CC] font-semibold">Refunds are processed only in GBP (British Pounds).</strong> If you paid in another currency, the final amount you receive may vary depending on the prevailing exchange rate and any charges applied by your payment provider or bank at the time of refund.
             </p>
           </div>
         </div>
@@ -1312,12 +1391,12 @@ function ContactSection() {
   return (
     <section className="bg-white py-24 border-t border-forest/5">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+        <div className="grid md:grid-cols-2 gap-14 items-start">
           {/* Left: contact info */}
           <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Get in Touch</span>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Get in Touch</span>
             <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep mb-6">Contact Information</h2>
-            <p className="text-[15px] text-forest/60 leading-relaxed mb-10 max-w-md">
+            <p className="text-[15px] text-forest/80 leading-relaxed mb-10 max-w-md">
               Have questions about the programme? Our team is here to help you make the right decision.
             </p>
             <div className="space-y-5">
@@ -1329,7 +1408,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">Email</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">Email</p>
                   <a href="mailto:info@globaledulab.com" className="text-[16px] font-bold text-forest-deep hover:text-gold-deep transition-colors">
                     info@globaledulab.com
                   </a>
@@ -1342,7 +1421,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">UK</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">UK</p>
                   <a href="tel:+441223362994" className="text-[16px] font-bold text-forest-deep hover:text-gold-deep transition-colors">
                     +44 (01223) 362994
                   </a>
@@ -1356,7 +1435,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">Location</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">Location</p>
                   <p className="text-[16px] font-bold text-forest-deep">Cambridge Judge Business School, UK</p>
                 </div>
               </div>
@@ -1364,18 +1443,18 @@ function ContactSection() {
           </div>
 
           {/* Right: image */}
-          <div className="relative">
+          <div className="relative lg:mt-[195px]">
             <div className="absolute -inset-4 bg-gradient-to-br from-gold/10 to-forest/5 rounded-3xl blur-xl" />
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(10,48,29,0.12)]">
               <img
-                src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
+                src={gilpMarch5}
                 alt="Cambridge programme session"
                 className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <p className="text-[12px] font-bold uppercase tracking-widest text-gold mb-1">Cambridge Judge Business School</p>
-                <p className="text-white text-[14px] font-semibold">14–18 September 2026</p>
+                <p className="text-[15px] font-bold uppercase tracking-widest text-gold mb-1">Cambridge Judge Business School</p>
+                <p className="text-white text-[15px] font-semibold">14–18 September 2026</p>
               </div>
             </div>
           </div>
@@ -1394,53 +1473,76 @@ function ApplyNow() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid md:grid-cols-[1fr_1.1fr] gap-14 items-start">
           {/* Left: info */}
-          <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Limited Seats</span>
-            <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-tight">Apply Now</h2>
-            <h3 className="text-[1.15rem] font-bold text-forest/80 mb-2">Global India Leadership Programme at Cambridge</h3>
-            <div className="flex items-center gap-2 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-forest/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span className="text-[14px] text-forest/60">14–18 September 2026</span>
+          <div className="pr-0 lg:pr-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/10 px-4 py-1.5 rounded-full border border-[#C9913D]/20 shadow-sm">Limited Seats</span>
+              <div className="h-px w-12 bg-gradient-to-r from-[#C9913D]/40 to-transparent" />
             </div>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-[13px] text-forest/50">In Partnership with</span>
-              <img
-                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                alt="Cambridge Judge Business School"
-                className="h-8 w-auto object-contain"
-              />
+            <h2 className="text-[2.2rem] md:text-[3.2rem] font-bold text-forest-deep mb-5 leading-[1.1] tracking-tight">Apply <span className="text-[#C9913D] font-serif italic font-normal">Now</span></h2>
+            <h3 className="text-[1.3rem] font-bold text-forest-deep mb-3 leading-snug">Global India Leadership Programme at Cambridge</h3>
+            
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+              <div className="flex items-center gap-2.5">
+                <div className="bg-white rounded-full p-1.5 shadow-sm border border-forest/5">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#C9913D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <span className="text-[15px] font-semibold text-forest/70">14–18 September 2026</span>
+              </div>
+              <div className="h-4 w-px bg-forest/20 hidden sm:block" />
+              <div className="flex items-center gap-3">
+                <span className="text-[15px] uppercase tracking-wider font-semibold text-forest/70">In Partnership with</span>
+                <img
+                  src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
+                  alt="Cambridge Judge Business School"
+                  className="h-8 w-auto object-contain opacity-90"
+                />
+              </div>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 mb-6">
-              <p className="text-[14px] text-forest/70 leading-relaxed mb-3">
+
+            <div className="bg-gradient-to-br from-white to-[#FAF8F5] rounded-2xl p-7 shadow-[0_8px_30px_rgba(10,48,29,0.06)] border border-[#C9913D]/20 mb-8 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#C9913D] to-[#C9913D]/30" />
+              <p className="text-[14.5px] text-forest/75 leading-relaxed mb-4">
                 We invite you to submit your application for the Global India Leadership Programme. This is your opportunity to learn from Cambridge Judge Business School faculty, network with peers across the UK–India corridor, and gain cutting-edge insights into leadership, AI, and innovation.
               </p>
-              <p className="text-[13px] font-bold text-forest-deep">
-                Please note: <span className="font-normal text-forest/65">Submitting an application on this page does not guarantee a confirmed place. Applications are reviewed by our programme team using a selective admission model.</span>
-              </p>
+              <div className="bg-[#C9913D]/10 rounded-xl p-4 border border-[#C9913D]/20 flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#C9913D] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <p className="text-[15px] text-forest-deep leading-relaxed">
+                  <strong className="font-bold">Please note:</strong> Submitting an application on this page does not guarantee a confirmed place. Applications are reviewed by our programme team using a selective admission model.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
+
+            <div className="space-y-4 mb-8">
               {[
-                'Professional achievement — your track record of impact and leadership',
-                'Organisational responsibility — the level of influence you hold in your organisation',
-                'Alignment with programme objectives — how this experience supports your goals',
-                'Space availability — limited seats to ensure a high-quality, personalised experience',
+                { title: 'Professional achievement', desc: 'your track record of impact and leadership' },
+                { title: 'Organisational responsibility', desc: 'the level of influence you hold in your organisation' },
+                { title: 'Alignment with programme objectives', desc: 'how this experience supports your goals' },
+                { title: 'Space availability', desc: 'limited seats to ensure a high-quality, personalised experience' },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  <p className="text-[13.5px] text-forest/70">{item}</p>
+                <div key={i} className="flex items-start gap-3.5">
+                  <div className="bg-[#C9913D]/10 rounded-full p-1 mt-0.5 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-[#C9913D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <p className="text-[15px] text-forest/70 leading-snug">
+                    <strong className="font-bold text-forest-deep">{item.title}</strong> — {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
-            <p className="text-[13px] text-forest/55 mt-5 italic">
-              Successful applicants will receive a confirmation email within 7 working days with instructions for securing their place by paying the programme fee.
-            </p>
+
+            <div className="flex items-start gap-3 border-t border-forest/10 pt-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-forest/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <p className="text-[15px] text-forest/80 italic leading-relaxed">
+                Successful applicants will receive a confirmation email within 7 working days with instructions for securing their place by paying the programme fee.
+              </p>
+            </div>
           </div>
 
           {/* Right: form */}
           <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(10,48,29,0.1)] border border-forest/5 overflow-hidden">
             <div className="bg-forest-deep px-8 py-5">
               <p className="text-white font-bold text-[15px]">You are currently applying to Round 1 application</p>
-              <p className="text-white/60 text-[13px] mt-0.5">Please ensure you provide accurate information</p>
+              <p className="text-white/80 text-[15px] mt-0.5">Please ensure you provide accurate information</p>
             </div>
             <div className="p-8 space-y-5">
               {[
@@ -1450,36 +1552,36 @@ function ApplyNow() {
                 { label: 'Organisation', type: 'text', required: true },
               ].map((field, i) => (
                 <div key={i}>
-                  <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">
+                  <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
                     {field.label} {field.required && <span className="text-red-400">*</span>}
                   </label>
                   <input
                     type={field.type}
-                    className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                    className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
                   />
                 </div>
               ))}
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
                   Your contact number <span className="text-red-400">*</span>
                 </label>
                 <div className="flex gap-2">
-                  <select className="border border-forest/15 rounded-xl px-3 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
+                  <select className="border border-forest/15 rounded-xl px-3 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
                     <option>🇮🇳 +91</option>
                     <option>🇬🇧 +44</option>
                     <option>🇺🇸 +1</option>
                     <option>🇦🇪 +971</option>
                   </select>
-                  <input type="tel" className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                  <input type="tel" className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
                 </div>
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Your LinkedIn profile (if available)</label>
-                <input type="url" className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Your LinkedIn profile (if available)</label>
+                <input type="url" className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Programme funding</label>
-                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Programme funding</label>
+                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
                   <option>Choose who is funding your programme participation</option>
                   <option>Self-funded</option>
                   <option>Employer-funded</option>
@@ -1487,8 +1589,8 @@ function ApplyNow() {
                 </select>
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Package options <span className="text-red-400">*</span></label>
-                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Package options <span className="text-red-400">*</span></label>
+                <select className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
                   <option>Check above for package offerings</option>
                   <option>Package 1 — £5,100 (Basic Programme)</option>
                   <option>Package 2 — £6,300 (Programme + Single Accommodation)</option>
@@ -1499,11 +1601,11 @@ function ApplyNow() {
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2"
+                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[15px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2"
               >
                 Apply for GILP <ArrowUpRight className="h-4 w-4" />
               </a>
-              <p className="text-center text-[11.5px] text-forest/40 mt-1">Applications reviewed on a rolling basis. Early applications strongly encouraged.</p>
+              <p className="text-center text-[11.5px] text-forest/70 mt-1">Applications reviewed on a rolling basis. Early applications strongly encouraged.</p>
             </div>
           </div>
         </div>
@@ -1512,7 +1614,60 @@ function ApplyNow() {
   )
 }
 
-/* ─── 18. CTA ─── */
+/* ─── 19. COHORT GALLERY ─── */
+function CohortGallery() {
+  const [visibleCount, setVisibleCount] = useState(6)
+  
+  const cohortImages = [
+    gilpMarch1,
+    gilpMarch2,
+    gilpMarch3,
+    gilpMarch4,
+    gilpMarch5,
+    gilpMarch6,
+    gilpMarch7,
+    gilpMarch8,
+    gilpMarch9,
+    gilpMarch10,
+    gilpMarch11,
+    gilpMarch12,
+    gilpMarch13,
+    gilpMarch14,
+    gilpMarch15,
+    gilpMarch16,
+    gilpMarch17,
+    gilpMarch18,
+    gilpMarch19,
+  ]
+
+  return (
+    <section className="bg-white py-24 border-t border-forest/5">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-12 tracking-tight">March 2026 Cohort</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+          {cohortImages.slice(0, visibleCount).map((src, i) => (
+            <div key={i} className="rounded-xl md:rounded-2xl overflow-hidden aspect-[4/3] bg-[#FAF8F5] shadow-[0_4px_20px_rgba(10,48,29,0.05)] hover:shadow-[0_12px_40px_rgba(10,48,29,0.12)] transition-all duration-300 border border-forest/5">
+              <img src={src} alt={`Cohort moment ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+            </div>
+          ))}
+        </div>
+        
+        {visibleCount < cohortImages.length && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setVisibleCount(cohortImages.length)}
+              className="px-8 py-3.5 bg-white border-2 border-forest-deep text-forest-deep font-bold text-[15px] uppercase tracking-[0.15em] rounded-lg hover:bg-forest-deep hover:text-white transition-all duration-300 shadow-[0_4px_15px_rgba(10,48,29,0.05)] hover:shadow-[0_8px_25px_rgba(10,48,29,0.15)]"
+            >
+              Load More
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+/* ─── 20. CTA ─── */
 function CTA() {
   return (
     <section className="bg-forest-deep py-20 text-center relative overflow-hidden">
@@ -1526,13 +1681,13 @@ function CTA() {
             href="https://www.globaledulab.com/indialeadership"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-amber-400 transition-colors duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-amber-400 transition-colors duration-200 shadow-lg"
           >
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
           >
             Contact Us
           </Link>

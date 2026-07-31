@@ -28,15 +28,15 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-20 md:pt-28 md:pb-24">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-8 pb-20 md:pt-6 md:pb-24">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/8 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
+      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Entrepreneurship Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Entrepreneurship Programme</span>
             </div>
             <h1 className="text-[2.8rem] md:text-[3.6rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
               Zero-to-One<br /><span className="font-serif italic text-gold">Ideation Weekend</span>
@@ -44,7 +44,7 @@ function Hero() {
             <p className="mt-6 text-lg font-semibold text-forest/80 leading-snug">
               48 Hours. One Problem. Your First Venture.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-relaxed max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-relaxed max-w-lg">
               The Zero-to-One Ideation Weekend is an intensive 48-hour sprint where students, young professionals and aspiring founders come together at Cambridge to tackle real-world problems, rapidly prototype solutions, and pitch to a live panel of investors and mentors.
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
@@ -77,13 +77,13 @@ function Hero() {
                   <div key={s.label} className="bg-white/5 rounded-2xl p-5 border border-white/10">
                     <p className="text-3xl font-bold text-gold leading-none">{s.val}</p>
                     <p className="text-[15px] font-bold text-cream mt-2">{s.label}</p>
-                    <p className="text-[14px] text-cream/50 mt-1">{s.sub}</p>
+                    <p className="text-[15px] text-cream/70 mt-1">{s.sub}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-6 p-4 bg-gold/10 rounded-xl border border-gold/20 relative z-10">
                 <p className="text-[15px] font-bold text-gold uppercase tracking-wider">Next Cohort · Open for Applications</p>
-                <p className="text-[14px] text-cream/60 mt-1">Cambridge · Limited to 60 Participants</p>
+                <p className="text-[15px] text-cream/80 mt-1">Cambridge · Limited to 60 Participants</p>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ function WhatYouGet() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You Get</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What You Get</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Everything packed into 48 hours.</h2>
@@ -116,7 +116,7 @@ function WhatYouGet() {
             <div key={i} className="group bg-white rounded-3xl p-8 border border-forest/8 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/5 text-gold group-hover:bg-gold/10 transition-colors duration-300">{item.icon}</div>
               <h3 className="text-[16px] font-bold text-forest-deep mb-3">{item.title}</h3>
-              <p className="text-[15px] text-forest/65 leading-relaxed">{item.desc}</p>
+              <p className="text-[15px] text-forest/80 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -139,7 +139,7 @@ function HowItWorks() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">How It Works</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">How It Works</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Your 48-hour journey.</h2>
@@ -147,9 +147,9 @@ function HowItWorks() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, i) => (
             <div key={i} className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-gold/40 hover:bg-white/10 hover:-translate-y-1 transition-all duration-500 p-8 group">
-              <span className="text-5xl font-serif text-gold/20 font-bold group-hover:text-gold/50 transition-colors">{s.n}</span>
+              <span className="text-5xl font-serif text-gold/80 font-bold group-hover:text-gold/80 transition-colors">{s.n}</span>
               <h3 className="text-[17px] font-bold text-white mt-4 mb-3 group-hover:text-gold transition-colors duration-300">{s.t}</h3>
-              <p className="text-[15px] text-white/65 leading-relaxed">{s.d}</p>
+              <p className="text-[15px] text-white/80 leading-relaxed">{s.d}</p>
             </div>
           ))}
         </div>
@@ -170,7 +170,7 @@ function WhoShouldJoin() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Built for aspiring founders.</h2>
         </div>
@@ -181,7 +181,7 @@ function WhoShouldJoin() {
                 <Rocket className="h-5 w-5 text-gold" />
               </div>
               <h3 className="text-[17px] font-bold text-forest-deep mb-3">{p.title}</h3>
-              <p className="text-[15px] text-forest/65 leading-relaxed">{p.desc}</p>
+              <p className="text-[15px] text-forest/80 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -206,7 +206,7 @@ function Outcomes() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What You Leave With</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What You Leave With</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-8">You won't leave empty-handed.</h2>
             <ul className="space-y-4">
@@ -226,7 +226,7 @@ function Outcomes() {
                 "Zero-to-One gave us clarity, mentors and the confidence to build our MVP in just 48 hours. Within 6 months, we had our first 100 paying customers."
               </blockquote>
               <p className="font-bold text-gold text-[15px]">Avani Patel</p>
-              <p className="text-[15px] text-cream/50 uppercase tracking-wider mt-1">Co-Founder, EduTech Hub · Ideation Alumni</p>
+              <p className="text-[15px] text-cream/70 uppercase tracking-wider mt-1">Co-Founder, EduTech Hub · Ideation Alumni</p>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Build</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Build</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Your idea. 48 hours. Cambridge.</h2>

@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, MapPin, Award, Users, Building2, ChevronLeft, ChevronRight, Star, Briefcase, Leaf, Globe2, Brain, CheckCircle2, Calendar, Target } from 'lucide-react'
-import heroImg from '../assets/business-leaders.jpg'
+import heroImg from '../assets/gilp-march-5.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 import { Footer } from './index'
 import { useState } from 'react'
+import person11Img from '../assets/person11.jpg'
+import person12Img from '../assets/person12.jpg'
 
 export const Route = createFileRoute('/programmes/corporate-learning')({
   head: () => ({
@@ -35,13 +37,13 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
-      <div className="mx-auto max-w-7xl px-6 pt-28">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
+      <div className="mx-auto max-w-7xl px-6 pt-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Bespoke Advisory · Rolling Calendar</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Bespoke Advisory · Rolling Calendar</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Corporate Learning &amp; ESG Workshops
@@ -49,7 +51,7 @@ function Hero() {
             <p className="mt-5 text-lg font-semibold text-forest/80 leading-snug">
               Cambridge-quality learning, built around your organisation.
             </p>
-            <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
+            <p className="mt-5 text-[15px] text-forest/80 leading-relaxed max-w-lg">
               Custom workshops and learning programmes for boards and senior leadership teams — designed around the themes we have delivered since 2022: ESG leadership, corporate governance, entrepreneurship, organisational behaviour and AI strategy.
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
@@ -83,7 +85,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Delivered Since</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">2022</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">2022</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -92,7 +94,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Fully Bespoke</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">Built for your team</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">Built for your team</p>
               </div>
             </div>
           </div>
@@ -123,7 +125,7 @@ function StatsStrip() {
             >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
               <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
-              <p className="text-[14px] text-forest/55 mt-0.5">{s.sub}</p>
+              <p className="text-[15px] text-forest/80 mt-0.5">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -219,11 +221,11 @@ function Workshops() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Workshop Themes</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Workshop Themes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Six core themes, infinitely customisable.</h2>
-          <p className="mt-4 text-[15px] text-forest/65 max-w-2xl mx-auto leading-relaxed">Each workshop theme can be delivered as a half-day, full-day or multi-session learning journey — tailored to your board, your sector and your strategic priorities.</p>
+          <p className="mt-4 text-[15px] text-forest/80 max-w-2xl mx-auto leading-relaxed">Each workshop theme can be delivered as a half-day, full-day or multi-session learning journey — tailored to your board, your sector and your strategic priorities.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {themes.map((t, i) => (
@@ -232,10 +234,10 @@ function Workshops() {
               <div className="p-8">
                 <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${t.color} text-white shadow-lg group-hover:scale-105 transition-transform duration-300`}>{t.icon}</div>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{t.title}</h3>
-                <p className="text-[15px] text-forest/65 leading-relaxed mb-5">{t.desc}</p>
+                <p className="text-[15px] text-forest/80 leading-relaxed mb-5">{t.desc}</p>
                 <ul className="space-y-2">
                   {t.items.map((item, k) => (
-                    <li key={k} className="flex items-center gap-2.5 text-[14px] text-forest/70">
+                    <li key={k} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />{item}
                     </li>
                   ))}
@@ -264,7 +266,7 @@ function HowItWorks() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">How We Work</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">From enquiry to impact — five steps.</h2>
@@ -273,10 +275,10 @@ function HowItWorks() {
           {steps.map((s, i) => (
             <div key={i} className="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 text-center">
               <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center mx-auto mb-5">
-                <span className="text-[14px] font-bold text-gold">{s.n}</span>
+                <span className="text-[15px] font-bold text-gold">{s.n}</span>
               </div>
-              <h3 className="text-[14px] font-bold text-white mb-3">{s.title}</h3>
-              <p className="text-[14px] text-white/60 leading-relaxed">{s.desc}</p>
+              <h3 className="text-[15px] font-bold text-white mb-3">{s.title}</h3>
+              <p className="text-[15px] text-white/80 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -320,7 +322,7 @@ function Formats() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Delivery Formats</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Delivery Formats</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">We come to you — or you come to Cambridge.</h2>
@@ -330,7 +332,7 @@ function Formats() {
             <div key={i} className="bg-white rounded-3xl p-10 border border-forest/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-forest-deep text-gold mb-6 shadow-lg">{f.icon}</div>
               <h3 className="text-[20px] font-bold text-forest-deep mb-3">{f.title}</h3>
-              <p className="text-[14px] text-forest/70 leading-relaxed mb-8">{f.desc}</p>
+              <p className="text-[15px] text-forest/70 leading-relaxed mb-8">{f.desc}</p>
               <ul className="space-y-3 mb-8">
                 {f.features.map((feat, k) => (
                   <li key={k} className="flex items-center gap-3 text-[15px] text-forest/80">
@@ -362,7 +364,7 @@ function WhoWeWorkWith() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who We Work With</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who We Work With</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Trusted by ambitious organisations.</h2>
@@ -389,19 +391,19 @@ function Testimonials() {
     {
       name: 'Vikram Mehta',
       role: 'Chairman, Indian Conglomerate',
-      initials: 'VM',
+      img: person11Img,
       quote: 'The ESG workshop delivered by Global Education Lab was the single most impactful board development exercise we have run in five years. The faculty brought genuine Cambridge rigour to our specific business context.',
     },
     {
       name: 'Sarah Okafor',
       role: 'CEO, UK-India Investment Platform',
-      initials: 'SO',
+      img: person12Img,
       quote: 'The Corporate Governance workshop cut through the theoretical noise and gave our board a clear, actionable framework. We implemented changes in our committee structure within two weeks of the session.',
     },
     {
       name: 'Arjun Nair',
       role: 'Founder & MD, Scale-up',
-      initials: 'AN',
+      img: person11Img,
       quote: 'We had the workshop at Cambridge — two days at Judge Business School. My entire leadership team came back transformed. The combination of intellectual challenge and Cambridge atmosphere was extraordinary.',
     },
   ]
@@ -412,25 +414,25 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Client Stories</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Client Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What clients say.</h2>
-        <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-forest-deep to-forest flex items-center justify-center text-2xl font-bold text-white shadow-xl mb-6">{t.initials}</div>
+        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
         <div className="flex items-center justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[14px] text-forest/50 mt-1">{t.role}</p>
+        <p className="text-[15px] text-forest/70 mt-1">{t.role}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
           </button>
           <div className="flex gap-2">
             {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
           </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
@@ -446,7 +448,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Start the Conversation</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Start the Conversation</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Build a workshop for your team.</h2>
