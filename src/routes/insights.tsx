@@ -8,6 +8,18 @@ import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
 import { Footer } from "./index";
 
+// Same Apps Script Web App URL you already use in contact.tsx / apply-now.tsx.
+// Replace this with that exact URL so all three forms hit the same script.
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
+
+// Maps a download link to the report name that should be saved in the sheet.
+// Featured Paper card + the two "report.pdf" cards in the archive all count
+// as the same report; only the Frugal AI card is different.
+const REPORT_NAMES: Record<string, string> = {
+  "/report.pdf": "Leadership in the age of AI",
+  "/frugal-ai-report.pdf": "Frugal AI — Executive Agenda 2026",
+};
+
 export const Route = createFileRoute("/insights")({
   head: () => ({
     meta: [
@@ -433,14 +445,47 @@ function CTA() {
 }
 
 function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [organisation, setOrganisation] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const reportName = REPORT_NAMES[url] || "Unknown Report";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const link = document.createElement('a');
+    if (submitting) return;
+    setSubmitting(true);
+
+    // Log the submission to the sheet first. mode: "no-cors" is required for
+    // Apps Script Web Apps from the browser — we don't need to read the
+    // response, so this fires the request and moves straight to the download.
+    try {
+      await fetch(WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          formType: "Download",
+          fullName,
+          email,
+          organisation,
+          report: reportName,
+        }),
+      });
+    } catch (err) {
+      console.error("Failed to log report download:", err);
+    }
+
+    // No approval gate — go straight to the download once the details are logged.
+    const link = document.createElement("a");
     link.href = url;
-    link.download = url.split('/').pop() || 'report.pdf';
+    link.download = url.split("/").pop() || "report.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    setSubmitting(false);
     onClose();
   };
 
@@ -463,18 +508,43 @@ function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Full Name</label>
-            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Jane Doe" />
+            <input
+              required
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+              placeholder="Jane Doe"
+            />
           </div>
           <div>
             <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Email</label>
-            <input required type="email" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="jane@example.com" />
+            <input
+              required
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+              placeholder="jane@example.com"
+            />
           </div>
           <div>
             <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Organisation</label>
-            <input required type="text" className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" placeholder="Company or Institution" />
+            <input
+              required
+              type="text"
+              value={organisation}
+              onChange={(e) => setOrganisation(e.target.value)}
+              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+              placeholder="Company or Institution"
+            />
           </div>
-          <button type="submit" className="w-full mt-6 bg-gold text-forest-deep font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 transition-colors hover:bg-gold/90">
-            Download PDF <ArrowUpRight className="h-4 w-4" />
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full mt-6 bg-gold text-forest-deep font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 transition-colors hover:bg-gold/90 disabled:opacity-60"
+          >
+            {submitting ? "Preparing Download…" : "Download PDF"} <ArrowUpRight className="h-4 w-4" />
           </button>
         </form>
       </div>

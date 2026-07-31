@@ -100,7 +100,7 @@ function ContactPage() {
           <div className="relative z-10 px-10 md:px-14 pt-16">
             <div className="flex items-center gap-3 mb-10">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[13px] font-bold tracking-[0.28em] text-gold uppercase">Global Education Lab</span>
+              <span className="text-[15px] font-bold tracking-[0.28em] text-gold uppercase">Global Education Lab</span>
             </div>
 
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
@@ -137,7 +137,7 @@ function ContactPage() {
           <div className="relative z-10 px-10 md:px-14 pb-10 mt-10">
             <div className="border-t border-white/10 pt-6 flex items-end justify-between">
               <div>
-                <p className="text-[14px] uppercase tracking-[0.25em] text-white/80 mb-1">Reply within</p>
+                <p className="text-[15px] uppercase tracking-[0.25em] text-white/80 mb-1">Reply within</p>
                 <p className="text-[2.2rem] font-bold text-white leading-none">24h</p>
               </div>
               <img
@@ -155,7 +155,7 @@ function ContactPage() {
 
             {/* Form heading */}
             <div className="mb-10">
-              <span className="inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+              <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Send a Message
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
@@ -355,7 +355,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid md:grid-cols-[1fr_2fr] gap-10 items-center mb-10">
             <div>
-              <span className="inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+              <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Find Us
               </span>
               <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">Our Location</h2>
@@ -395,7 +395,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-4 border-b border-forest/8 pb-8">
             <div>
-              <span className="inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.22em] text-gold uppercase mb-3">
+              <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-3">
                 <span className="h-px w-6 bg-gold inline-block" /> Our Presence
               </span>
               <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep">
@@ -414,11 +414,11 @@ function ContactPage() {
             ].map((loc, i) => (
               <div key={i} className="group px-0 md:px-10 first:pl-0 last:pr-0 py-8 md:py-0">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold">{loc.region}</span>
+                  <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">{loc.region}</span>
                   <span className="text-[1.8rem] font-serif italic text-forest/8">{loc.num}</span>
                 </div>
                 <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">{loc.city}</h3>
-                <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-forest/80 mb-4">{loc.role}</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-forest/80 mb-4">{loc.role}</p>
                 <p className="text-[13.5px] text-forest/80 leading-relaxed">{loc.desc}</p>
               </div>
             ))}

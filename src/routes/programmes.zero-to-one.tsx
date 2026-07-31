@@ -1,31 +1,11 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User, ChevronUp, ChevronDown } from 'lucide-react'
+import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
-import heroImg from '../assets/zero-to-one-past-5.jpg'
+import heroImg from '../assets/hero-classroom.jpg'
+import zeroToOneVideo from '../assets/zero-to-one.mp4'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
-import person11Img from '../assets/person11.jpg'
-import person12Img from '../assets/person12.jpg'
-import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
-import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
-import sydneyConner from '@/assets/people/sydney_conner.jpg';
-import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
-import past1 from '../assets/zero-to-one-past-1.jpg'
-import past2 from '../assets/zero-to-one-past-2.jpg'
-import past3 from '../assets/zero-to-one-past-3.jpg'
-import past4 from '../assets/zero-to-one-past-4.jpg'
-import past5 from '../assets/zero-to-one-past-5.jpg'
-import past6 from '../assets/zero-to-one-past-6.jpg'
-import past7 from '../assets/zero-to-one-past-7.jpg'
-import past8 from '../assets/zero-to-one-past-8.jpg'
-import past9 from '../assets/zero-to-one-past-9.jpg'
-import past10 from '../assets/zero-to-one-past-10.jpg'
-import past11 from '../assets/zero-to-one-past-11.jpg'
-import past12 from '../assets/zero-to-one-past-12.jpg'
-import past13 from '../assets/zero-to-one-past-13.jpg'
-import past14 from '../assets/zero-to-one-past-14.jpg'
-import past15 from '../assets/zero-to-one-past-15.jpg'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
@@ -49,7 +29,6 @@ function ZeroToOne() {
       <SuccessStory />
       <ProgrammeFormat />
       <WhoShouldApply />
-      <PastProgrammesGallery />
       <Testimonials />
       <BottomCTA />
       <Footer />
@@ -60,14 +39,14 @@ function ZeroToOne() {
 /* ─── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-36 md:pt-4 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-2">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text column */}
@@ -307,7 +286,10 @@ function ThemeSection() {
 }
 
 /* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
+/* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
 function SuccessStory() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   return (
     <section className="py-32 bg-[#F4EFE6] relative overflow-hidden">
       <div className="pointer-events-none absolute -top-32 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-gold/8 blur-[120px]" />
@@ -342,17 +324,44 @@ function SuccessStory() {
                 ))}
               </div>
             </div>
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] cursor-pointer group shadow-xl border border-forest/8">
-              <img src={businessLeadersImg} alt="Zero to One outcome" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-forest-deep/30 group-hover:bg-forest-deep/10 transition-colors duration-500 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-                  <Play className="h-6 w-6 text-gold ml-1" />
+
+            {/* Video / thumbnail frame — dimensions unchanged (aspect-[16/10]) */}
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] shadow-xl border border-forest/8">
+              {!videoOpen ? (
+                <button
+                  onClick={() => setVideoOpen(true)}
+                  className="relative w-full h-full cursor-pointer group block"
+                  aria-label="Play Zero-To-One highlights video"
+                >
+                  <img src={businessLeadersImg} alt="Zero to One outcome" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-forest-deep/30 group-hover:bg-forest-deep/10 transition-colors duration-500 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+                      <Play className="h-6 w-6 text-gold ml-1" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6">
+                    <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
+                    <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
+                  </div>
+                </button>
+              ) : (
+                <div className="relative w-full h-full bg-black">
+                  <video
+                    src="/zerotoone.mp4"
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    playsInline
+                  />
+                  <button
+                    onClick={() => setVideoOpen(false)}
+                    aria-label="Close video"
+                    className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center text-[16px] transition-colors z-10"
+                  >
+                    ×
+                  </button>
                 </div>
-              </div>
-              <div className="absolute bottom-6 left-6">
-                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
-                <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -489,78 +498,26 @@ function WhoShouldApply() {
   )
 }
 
-/* ─── PAST PROGRAMMES GALLERY ────────────────────────────────────────────────── */
-function PastProgrammesGallery() {
-  const images = [past1, past2, past3, past4, past5, past6, past7, past8, past9, past10, past11, past12, past13, past14, past15]
-  const [showAll, setShowAll] = useState(false)
-  const visibleImages = showAll ? images : images.slice(0, 6)
-
-  return (
-    <section className="bg-white py-24 border-t border-forest/5">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center justify-center text-center mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Past Programmes</span>
-            <div className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5">Moments from Zero-to-One.</h2>
-          <p className="text-[15px] text-forest/70 max-w-2xl leading-[1.7]">
-            A look back at our previous intensive 48-hour ideation weekends at Cambridge.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleImages.map((src, idx) => (
-            <div key={idx} className="relative rounded-[2rem] overflow-hidden aspect-[4/3] group shadow-sm border border-forest/5">
-              <img src={src} alt={`Past programme ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-forest-deep/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          ))}
-        </div>
-
-        {images.length > 6 && (
-          <div className="mt-16 flex justify-center">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-[#F4EFE6] px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-gold hover:bg-gold/10 hover:text-gold transition-all duration-300 shadow-sm"
-            >
-              {showAll ? 'Show Less' : 'Load More'}
-              {showAll ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-            </button>
-          </div>
-        )}
-      </div>
-    </section>
-  )
-}
-
 /* ─── TESTIMONIALS ───────────────────────────────────────────────────────────── */
 function Testimonials() {
   const testimonials = [
     {
-      name: 'Tendai Nzonzo',
-      role: 'Sana AI — Winning Team, Zero-to-One',
-      img: tendaiNzonzo,
-      quote: "On GEL Zero-to-One, what I liked the most was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast.",
+      name: 'Shreya Patel',
+      role: 'PhD Researcher, University of Cambridge',
+      initials: 'SP',
+      quote: 'I came in with a vague idea about food systems and left with a real team, a validated direction, and an invitation to pitch to the Spark Incubator. Zero-to-One changed the trajectory of my research.',
     },
     {
-      name: 'Sydney Conner',
-      role: 'PhD in Biomedical Engineering, University of Cambridge',
-      img: sydneyConner,
-      quote: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle — as a market structure failure, not just a research gap. That reframe was the most valuable part.",
+      name: 'James Okafor',
+      role: 'MBA Student, Cambridge Judge Business School',
+      initials: 'JO',
+      quote: 'The AI prototyping workshop alone was worth it. We went from idea to working concept in three hours. The mentors were genuine and the format was relentlessly practical.',
     },
     {
-      name: 'Rosalind Howell',
-      role: 'Zero-to-One Participant',
-      img: rosalindHowell,
-      quote: "There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence, expertise and becoming more and more inspired. I loved the individualised feedback sessions — really helped us build confidence in our ideas.",
-    },
-    {
-      name: 'Dr. Yvonne Walburga Joko-Fru',
-      role: 'Post-doctoral Research Affiliate, University of Cambridge',
-      img: yvonneWalburga,
-      quote: "I was humbled and exhilarated for the recognition of the potential of EquiGen by our fellow cohort members and the judges. This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
+      name: 'Mia Chen',
+      role: 'Co-founder, AgriTech Startup (Spark Incubator)',
+      initials: 'MC',
+      quote: 'We formed as a team at Zero-to-One, pitched on day three, and six months later we\'re in the Cambridge Spark Incubator. I would not have believed it was possible without this programme.',
     },
   ]
   const [current, setCurrent] = useState(0)
@@ -578,7 +535,7 @@ function Testimonials() {
         
         <div className="bg-white rounded-[2.5rem] p-12 border border-forest/8 shadow-[0_8px_32px_rgba(26,53,35,0.06)] relative">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-            <div className="h-20 w-20 rounded-[1.25rem] overflow-hidden border-4 border-[#F4EFE6] shadow-xl"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
+            <div className="h-20 w-20 rounded-[1.25rem] bg-gold flex items-center justify-center text-2xl font-bold text-forest-deep shadow-xl border-4 border-[#F4EFE6]">{t.initials}</div>
           </div>
           
           <div className="flex items-center justify-center gap-1.5 mb-8 mt-4">

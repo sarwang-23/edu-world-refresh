@@ -226,7 +226,7 @@ function OurProgrammes() {
               <div className="relative h-44 overflow-hidden">
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[14px] font-bold uppercase tracking-[0.1em] text-forest-deep">{p.tag}</span>
+                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[15px] font-bold uppercase tracking-[0.1em] text-forest-deep">{p.tag}</span>
                 <div className="absolute -bottom-5 left-5 w-10 h-10 bg-white rounded-xl flex items-center justify-center border border-forest/10 text-gold shadow-md group-hover:bg-gold group-hover:text-white transition-colors duration-300 z-10">
                   {p.icon}
                 </div>

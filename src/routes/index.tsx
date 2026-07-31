@@ -211,7 +211,7 @@ function OurProgrammes() {
 
               {/* Tag badge — top left */}
               <div className="relative z-10 p-5 flex justify-between items-start">
-                <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[14px] font-bold uppercase tracking-[0.18em] text-gold">
+                <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[15px] font-bold uppercase tracking-[0.18em] text-gold">
                   {p.tag}
                 </span>
                 <span className="text-[15px] font-bold text-white/80 font-mono mt-1">{p.number}</span>
@@ -475,7 +475,7 @@ function Voices() {
                       <span key={si} className="text-gold text-[15px]">★</span>
                     ))}
                   </div>
-                  <span className="bg-forest-deep text-white text-[14px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                  <span className="bg-forest-deep text-white text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
                     {t.tag}
                   </span>
                 </div>

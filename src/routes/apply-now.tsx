@@ -117,7 +117,7 @@ function ApplyNowPage() {
                 <div className="flex items-center justify-center h-8 w-8 rounded-full bg-gold/10 border border-gold/30">
                   <Sparkles className="w-3.5 h-3.5 text-gold" />
                 </div>
-                <span className="text-[13px] font-bold tracking-[0.3em] text-gold uppercase">Admissions</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Admissions</span>
               </div>
 
               <h1 className="text-[2.8rem] md:text-[3.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
@@ -145,7 +145,7 @@ function ApplyNowPage() {
                     <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                   </div>
                   <div>
-                    <p className="text-[13px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
+                    <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
                     <p className="text-[15px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ function ApplyNowPage() {
           <div className="w-full max-w-[560px]">
 
             <div className="mb-10">
-              <span className="inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+              <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Application Form
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">

@@ -78,14 +78,13 @@ export function Nav() {
                   </div>
                 </div>
 
-                {/* For Educators */}
-                {/* @ts-expect-error - Route doesn't exist yet */}
-                <Link
-                  to="/programmes/educators"
+                {/* For Educators — route not built yet, plain anchor avoids the typed-router error */}
+                <a
+                  href="/programmes/educators"
                   className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
                 >
                   For Educators
-                </Link>
+                </a>
 
                 {/* For Entrepreneurs */}
                 <div className="group/entrepreneurs relative">
@@ -99,6 +98,9 @@ export function Nav() {
                       <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
                       <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
                       <Link to="/entrepreneurship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Entrepreneurship</Link>
+                      {/* Routes not built yet — plain anchors avoid the typed-router error */}
+                      <a href="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</a>
+                      <a href="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</a>
                     </div>
                   </div>
                 </div>

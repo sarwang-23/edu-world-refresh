@@ -560,7 +560,7 @@ function Testimonials() {
               {/* Programme badge */}
               <div className="inline-flex items-center gap-2 rounded-md bg-forest-deep/5 px-3 py-1.5 mb-6 self-start border border-forest-deep/10">
                 <div className="h-1.5 w-1.5 rounded-full bg-gold" />
-                <span className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep/80">
+                <span className="text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep/80">
                   {t.r.split('—')[1]?.trim() || 'Alumni'}
                 </span>
               </div>
@@ -575,7 +575,7 @@ function Testimonials() {
               <div className="mt-auto relative z-10">
                 <button
                   onClick={(e) => { e.stopPropagation(); setSelectedTestimonial(t); }}
-                  className="inline-flex items-center gap-1.5 text-gold font-bold uppercase tracking-[0.2em] text-[13px] hover:gap-2 transition-all duration-300 mb-6"
+                  className="inline-flex items-center gap-1.5 text-gold font-bold uppercase tracking-[0.2em] text-[15px] hover:gap-2 transition-all duration-300 mb-6"
                 >
                   Read More <ArrowUpRight className="h-3.5 w-3.5" />
                 </button>
@@ -593,7 +593,7 @@ function Testimonials() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep leading-tight mb-0.5">{t.a}</p>
-                    <p className="text-[13px] text-forest-deep/80 font-medium leading-tight line-clamp-1">{t.r.split('—')[0]?.trim()}</p>
+                    <p className="text-[15px] text-forest-deep/80 font-medium leading-tight line-clamp-1">{t.r.split('—')[0]?.trim()}</p>
                   </div>
                 </div>
               </div>
@@ -624,7 +624,7 @@ function Testimonials() {
               {/* Programme badge */}
               <div className="inline-flex items-center gap-2 rounded-full bg-forest-deep/5 border border-forest-deep/10 px-4 py-1.5 mb-8">
                 <div className="h-1.5 w-1.5 rounded-full bg-gold" />
-                <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest-deep/80">
+                <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep/80">
                   {selectedTestimonial.r.split('—')[1]?.trim() || 'Alumni'}
                 </span>
               </div>
