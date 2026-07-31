@@ -52,7 +52,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 9th–13th March, 2026
+                <Quote className="h-4 w-4 text-gold" /> "Leadership is shaped where ideas meet evidence."
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> University of Cambridge, UK

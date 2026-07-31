@@ -51,7 +51,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 18th–22nd January, 2026
+                <Quote className="h-4 w-4 text-gold" /> "Policy, practice, and leadership become sharper in dialogue."
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> London, United Kingdom

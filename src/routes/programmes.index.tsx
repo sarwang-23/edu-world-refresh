@@ -32,7 +32,7 @@ const upcomingProgrammes = [
     tag: "FOR EXECUTIVES & LEADERS",
     title: "Global India Leadership Programme",
     desc: "A 5-day executive programme for senior leaders exploring strategy, innovation and partnerships in the India–UK corridor.",
-    date: "14–18 Sept 2026",
+    quote: "Leadership is not a date. It is a decision to grow.",
     location: "Cambridge, UK",
     link: "/programmes/gilp",
     category: "For Executives",
@@ -42,7 +42,7 @@ const upcomingProgrammes = [
     tag: "FOR GRADUATES & STUDENTS",
     title: "Graduate Summer Programme",
     desc: "A 2-week immersive experience in Entrepreneurship & AI with 30+ hours of learning, startup exposure, London visit and Cambridge college life.",
-    date: "12–25 July 2026",
+    quote: "When ambition meets mentorship, momentum becomes possible.",
     location: "Girton College, Cambridge",
     link: "/programmes/graduate",
 
@@ -53,7 +53,7 @@ const upcomingProgrammes = [
     tag: "FOR FOUNDERS & INNOVATORS",
     title: "Zero-to-One Venture Weekend",
     desc: "A 2.5-day intensive to ideate, validate and build testable ventures in 48 hours with mentorship, expert guidance and pitch to investors.",
-    date: "Next: June 2026",
+    quote: "Build the next chapter with the right people beside you.",
     location: "Cambridge, UK",
     link: "/programmes/zero-to-one",
     category: "For Founders",
@@ -63,7 +63,7 @@ const upcomingProgrammes = [
     tag: "FOR YOUNG LEARNERS",
     title: "Young Leaders Summer Programme",
     desc: "Fast-paced summer experiences in leadership, communication, STEM, entrepreneurship and personal growth for ages 14–18.",
-    date: "Various dates",
+    quote: "A strong future often begins with a single, brave conversation.",
     location: "Cambridge, UK",
     link: "/students",
     category: "For Students",
@@ -165,7 +165,7 @@ function ProgrammesPage() {
                   
                   <div className="space-y-2 mb-6 pt-5 border-t border-forest/5">
                     <div className="flex items-center gap-2 text-[15px] font-bold text-forest-deep/80">
-                      <Calendar className="h-3.5 w-3.5 text-gold" /> {p.date}
+                      <Sparkles className="h-3.5 w-3.5 text-gold" /> {p.quote}
                     </div>
                     <div className="flex items-center gap-2 text-[15px] font-bold text-forest-deep/80">
                       <MapPin className="h-3.5 w-3.5 text-gold" /> {p.location}

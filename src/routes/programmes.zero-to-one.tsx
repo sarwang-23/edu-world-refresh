@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
+import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User, Quote } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
 import heroImg from '../assets/hero-classroom.jpg'
@@ -11,7 +11,7 @@ export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
     meta: [
       { title: 'Zero-To-One Ideation Weekend | Cambridge Judge Business School — Global Edu Lab' },
-      { name: 'description', content: 'A 48-hour venture-building format that takes you from idea to incubator-ready in Cambridge. June 19–21 2026 at Judge Business School.' },
+      { name: 'description', content: 'A 48-hour venture-building format that takes you from idea to incubator-ready in Cambridge with coaching, mentorship, and a clear founder pathway.' },
       { property: 'og:title', content: 'Zero-To-One Ideation Weekend' },
       { property: 'og:description', content: 'From raw ideas to incubator-ready ventures in 48 hours at Cambridge.' },
     ],
@@ -73,7 +73,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
-                { icon: <Calendar className="h-4 w-4" />, label: '19–21 June 2026' },
+                { icon: <Quote className="h-4 w-4" />, label: 'Build something real.' },
                 { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -107,7 +107,7 @@ function Hero() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
                   <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                  <p className="text-white text-[15px] font-bold">June 19–21, 2026</p>
+                  <p className="text-white text-[15px] font-bold">Turn a raw idea into a credible direction.</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
@@ -159,7 +159,7 @@ function StatsMarquee() {
     { val: 'Spark', label: 'Cambridge Incubator', sub: 'Placement pipeline' },
     { val: '2026', label: 'October Theme', sub: 'Food, Agriculture & Planetary Health' },
     { val: '100%', label: 'Form Real Teams', sub: 'Across disciplines' },
-    { val: 'June', label: 'Next Cohort', sub: '19–21 June 2026' },
+    { val: 'Future', label: 'Next Cohort', sub: 'Start with a conversation' },
   ]
   const repeated = [...stats, ...stats, ...stats]
   return (
@@ -375,7 +375,7 @@ function ProgrammeFormat() {
   const schedule = [
     {
       day: 'Day 1 · Thursday',
-      date: '19 June 2026',
+      date: 'Day 1',
       sessions: [
         { time: 'Afternoon', title: 'Arrival & Registration', desc: 'Check-in at Cambridge Judge Business School. Opening reception with mentors and peers.' },
         { time: 'Evening', title: 'Theme Deep-Dive', desc: 'Expert panel on Food, Agriculture & Planetary Health. Landscape mapping and opportunity framing.' },
@@ -384,7 +384,7 @@ function ProgrammeFormat() {
     },
     {
       day: 'Day 2 · Friday',
-      date: '20 June 2026',
+      date: 'Day 2',
       sessions: [
         { time: '9:00am', title: 'Problem-Finding Sprints', desc: 'Facilitated sessions to surface real problems within the theme. Move from interest to insight.' },
         { time: '12:00pm', title: 'Team Formation', desc: 'Form interdisciplinary teams of 3–5. Chemistry over credentials.' },
@@ -395,7 +395,7 @@ function ProgrammeFormat() {
     },
     {
       day: 'Day 3 · Saturday',
-      date: '21 June 2026',
+      date: 'Day 3',
       sessions: [
         { time: '9:00am', title: 'Final Preparation', desc: 'Polish your venture story. Final mentor feedback rounds.' },
         { time: '11:00am', title: 'Venture Pitches', desc: 'Present your venture direction to a panel of investors, academics and ecosystem leaders.' },

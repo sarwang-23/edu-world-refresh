@@ -51,7 +51,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 15th–19th September, 2026
+                <Quote className="h-4 w-4 text-gold" /> "The strongest systems are built with clarity, trust, and purpose."
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> Helsinki & Espoo, Finland
