@@ -251,7 +251,7 @@ function ProgrammesCohorts() {
       delegates: "32 DELEGATES",
       title: "Cambridge School Leadership Programme",
       location: "Cambridge, UK",
-      date: "12–14 March 2026",
+      quote: "Great schools begin with courageous leadership conversations.",
       desc: "Three days inside one of the world's most storied university towns. Sessions with Cambridge faculty, college dinners, and school visits across the East of England.",
       link: "/programmes/cslp",
     },
@@ -260,7 +260,7 @@ function ProgrammesCohorts() {
       delegates: "24 DELEGATES",
       title: "Finland Education Programme",
       location: "Helsinki & Espoo",
-      date: "15–16 May 2026",
+      quote: "The future of learning is built through observation, reflection, and trust.",
       desc: "Inside the world's most-studied schooling system. Meet the architects of Finnish education policy and observe pedagogy in comprehensive schools.",
       link: "/programmes/finland",
     },
@@ -269,7 +269,7 @@ function ProgrammesCohorts() {
       delegates: "28 DELEGATES",
       title: "London School Leadership Programme",
       location: "London, UK",
-      date: "18–21 January 2026",
+      quote: "Leadership grows when systems, policy, and practice meet in one room.",
       desc: "A week inside Britain's education policy engine — from the House of Lords to independent school boards and multi-academy trusts.",
       link: "/programmes/llp",
     },
@@ -278,7 +278,7 @@ function ProgrammesCohorts() {
       delegates: "20 DELEGATES",
       title: "Bali Green School Programme",
       location: "Ubud, Indonesia",
-      date: "12–16 May 2026",
+      quote: "A classroom can be both radical and deeply human.",
       desc: "Learn how the Green School re-imagined the classroom. Sustainability, project-based learning and curriculum design — inside a living campus.",
       link: "/programmes/bali",
     },
@@ -328,7 +328,7 @@ function ProgrammesCohorts() {
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1">
-                      <Calendar className="h-3.5 w-3.5" /> {p.date}
+                      <Quote className="h-3.5 w-3.5" /> {p.quote}
                     </span>
                   </div>
 

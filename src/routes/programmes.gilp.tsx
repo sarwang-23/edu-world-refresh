@@ -21,8 +21,8 @@ async function submitToGILP(formType: string, data: Record<string, string>) {
 export const Route = createFileRoute('/programmes/gilp')({
   head: () => ({
     meta: [
-      { title: 'Global India Leadership Programme at Cambridge | Sept 2026 — Global Edu Lab' },
-      { name: 'description', content: 'A 5-day residential executive leadership programme at Cambridge Judge Business School for Indian board members, CEOs and senior leaders. September 2026.' },
+      { title: 'Global India Leadership Programme at Cambridge — Global Edu Lab' },
+      { name: 'description', content: 'A transformative leadership programme at Cambridge Judge Business School for Indian board members, CEOs and senior leaders.' },
     ],
   }),
   component: Page,
@@ -159,7 +159,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
                   Global India Leadership Programme
                 </h1>
                 <p className="text-[1.7rem] md:text-[2.1rem] font-bold text-forest-deep leading-tight mt-1">
-                  14-18 September 2026
+                  “Leadership grows where perspective widens.”
                 </p>
               </div>
               <img
@@ -177,8 +177,8 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             </p>
 
             <div className="flex items-center gap-2.5 mb-4">
-              <Calendar className="h-[18px] w-[18px] text-forest-deep shrink-0" />
-              <span className="text-[15px] font-semibold text-forest-deep">14-18 September, 2026</span>
+              <Quote className="h-[18px] w-[18px] text-forest-deep shrink-0" />
+              <span className="text-[15px] font-semibold text-forest-deep">“The next bold move begins with a conversation.”</span>
             </div>
 
             <div className="flex items-center gap-3 mb-8">
@@ -526,19 +526,19 @@ function LordsCricket() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-3">Signature Experience · 17 September</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold mb-3">Signature Experience</p>
             <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-white leading-tight mb-5">
               Leadership at Lord's Cricket Ground
             </h2>
             <p className="text-[15px] text-cream/75 leading-relaxed mb-8">
-              On 17 September, gather at the Home of Cricket for an exclusive leadership session, private tour and networking lunch. The programme includes a leadership session inspired by the principles of high-performance sport, a private networking lunch with senior business leaders and academics, and an exclusive behind-the-scenes tour of the Home of Cricket.
+              Gather at the Home of Cricket for an exclusive leadership session, private tour and networking lunch. The programme includes a leadership session inspired by the principles of high-performance sport, a private networking lunch with senior business leaders and academics, and an exclusive behind-the-scenes tour of the Home of Cricket.
             </p>
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
                 { t: 'High-Performance Leadership', d: 'Lessons from elite sport' },
                 { t: 'Private Tour', d: "Exclusive access to Lord's" },
                 { t: 'Senior Networking', d: 'Business leaders & academics' },
-                { t: '17 September', d: 'Signature programme day' },
+                { t: 'Signature Day', d: 'A leadership experience with impact' },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
                   <p className="text-[15px] font-bold text-gold mb-1">{item.t}</p>
@@ -555,8 +555,8 @@ function LordsCricket() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             <div className="absolute bottom-5 left-5">
-              <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Lord's Cricket Ground</p>
-              <p className="text-white text-[15px] font-semibold">London, UK · 17 September 2026</p>
+              <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Lord's Cricket Ground</p>
+              <p className="text-white text-[14px] font-semibold">London, UK · A signature leadership day</p>
             </div>
           </div>
         </div>
@@ -568,7 +568,7 @@ function LordsCricket() {
 /* ─── 5.5 LORDS MARQUEE ─── */
 function LordsMarquee() {
   const items = [
-    { icon: <Calendar className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />, text: '17 September 2026' },
+    { icon: <Quote className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />, text: 'Signature Leadership Day' },
     { icon: <Users className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />, text: 'Leadership Session' },
     { icon: <Utensils className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />, text: 'Networking Lunch' },
     { icon: <Landmark className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />, text: 'Private Tour' },
@@ -745,25 +745,25 @@ function WhoShouldAttend() {
     <section className="bg-[#FAF8F5] py-24 border-y border-forest/5 relative overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-5">Admission Criteria & Deadlines</h2>
+          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-5">Admission Criteria & Next Steps</h2>
           <p className="text-[15px] font-medium text-forest/70 italic max-w-2xl mx-auto">
-            Applications are reviewed on a rolling, space-available basis. Early applications are strongly encouraged.
+            “The right opportunity often starts with the right conversation.”
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Deadlines Card */}
+          {/* Next Steps Card */}
           <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/80 to-gold transition-opacity duration-300" />
-            <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">Application Deadlines</h3>
+            <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">Next Steps</h3>
             <ul className="space-y-4">
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
                 <span className="text-[14.5px] font-bold text-forest-deep">Round 1</span>
-                <span className="text-[15px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 May 2026</span>
+                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">Connect with our team</span>
               </li>
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
                 <span className="text-[14.5px] font-bold text-forest-deep">Round 2</span>
-                <span className="text-[15px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">30 July 2026</span>
+                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">Receive tailored guidance</span>
               </li>
             </ul>
           </div>
@@ -1099,7 +1099,7 @@ function FAQ() {
   const faqs = [
     { q: 'Who should apply to GILP?', a: 'GILP is designed for board members, CEOs, founders, senior leaders, and government officials from India who are looking to scale globally, navigate AI disruption, and reimagine their leadership approach through a Cambridge lens.' },
     { q: 'What is included in the programme fee?', a: "The basic programme fee includes all teaching, workshops and seminars, breakfast and daytime catering, the Lord's Cricket Ground session and private tour, a Cambridge college formal dinner, pre-programme materials and assessment, post-programme impact report, Cambridge certificate, and lifelong alumni network access." },
-    { q: 'Where is the programme held?', a: "The programme takes place at Cambridge Judge Business School over 5 residential days (14–18 September 2026), with a special off-site session at Lord's Cricket Ground in London on 17 September." },
+    { q: 'Where is the programme held?', a: 'The programme takes place at Cambridge Judge Business School over five residential days, with a special off-site leadership experience at Lord’s Cricket Ground in London.' },
     { q: 'Will I receive a certificate?', a: 'Yes. Upon successful completion, you will earn a verified Cambridge Judge Business School certificate — a prestigious recognition of your learning journey.' },
     { q: 'What accommodation options are available?', a: 'Package 2 and Package 3 include 5-night accommodation in a 4-star hotel in close proximity to Cambridge Judge Business School (options range from 2–11 minutes walk). Accommodation will be booked based on availability.' },
     { q: 'When are applications due?', a: 'Applications are reviewed on a rolling, space-available basis. Early applications are strongly encouraged. Programme fees will increase by 10% for Round 2 applications, subject to availability.' },
@@ -1193,9 +1193,9 @@ function CertificateSection() {
                 <div className="ml-4 space-y-2 mb-8">
                   <p className="text-[13px] uppercase tracking-widest text-forest/70">This is to certify that</p>
                   <p className="text-[17px] font-bold text-forest-deep border-b border-forest/10 pb-2 pr-8">[Participant Name]</p>
-                  <p className="text-[13px] text-forest/70">attended</p>
-                  <p className="text-[15px] font-bold text-forest-deep leading-snug">Global India Leadership Programme</p>
-                  <p className="text-[13px] text-forest/70">14th September – 18th September 2026</p>
+                  <p className="text-[10px] text-forest/50">attended</p>
+                  <p className="text-[13px] font-bold text-forest-deep leading-snug">Global India Leadership Programme</p>
+                  <p className="text-[10px] text-forest/50">A residential leadership experience shaped for senior decision-makers</p>
                 </div>
                 <div className="ml-4 mt-8 flex items-end justify-between">
                   <div>
@@ -1543,8 +1543,8 @@ function ApplyNow() {
             <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-tight">Apply Now</h2>
             <h3 className="text-[1.15rem] font-bold text-forest/80 mb-2">Global India Leadership Programme at Cambridge</h3>
             <div className="flex items-center gap-2 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-forest/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span className="text-[15px] text-forest/80">14–18 September 2026</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-forest/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span className="text-[14px] text-forest/60">A Cambridge-led, executive leadership journey</span>
             </div>
             <div className="flex items-center gap-3 mb-8">
               <span className="text-[15px] text-forest/70">In Partnership with</span>
@@ -1681,7 +1681,7 @@ function CTA() {
       <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/10 blur-[120px]" />
       <div className="relative mx-auto max-w-2xl px-6">
         <h2 className="text-[1.8rem] md:text-[2.4rem] font-bold text-white leading-tight mb-3">Let's Get in Touch</h2>
-        <p className="text-[15px] text-cream/70 leading-relaxed mb-8 max-w-md mx-auto">Applications now open for the September 2026 cohort. Limited seats — secure your place early.</p>
+        <p className="text-[15px] text-cream/70 leading-relaxed mb-8 max-w-md mx-auto">“It is not about timing the opportunity. It is about preparing to lead through it.”</p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="https://www.globaledulab.com/indialeadership"
@@ -1695,7 +1695,7 @@ function CTA() {
             to="/contact"
             className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
           >
-            Contact Us
+            Apply Now
           </Link>
         </div>
         <div className="mt-10">

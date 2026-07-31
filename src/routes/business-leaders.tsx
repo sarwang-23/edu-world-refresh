@@ -14,7 +14,8 @@ import {
   Users,
   Quote,
   MapPin,
-  Calendar
+  Calendar,
+  Sparkles
 } from 'lucide-react'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 
@@ -220,7 +221,7 @@ function OngoingProgrammes() {
       audience: "INDIAN CXOs",
       title: "Global India Leadership Programme",
       location: "UNIVERSITY OF CAMBRIDGE",
-      date: "14-18 SEPTEMBER 2026",
+      quote: "The best leaders make space to reframe what is possible.",
       desc: "A week at Cambridge for Indian CXOs — cutting-edge leadership strategies, AI and innovation frameworks, and access to the UK-India business corridor, in partnership with Cambridge Judge Business School.",
       link: "/programmes/gilp",
     },
@@ -229,7 +230,7 @@ function OngoingProgrammes() {
       audience: "HOUSE OF LORDS",
       title: "Global Impact of Cambridge Startups",
       location: "HOUSE OF LORDS, LONDON",
-      date: "15 OCTOBER 2026",
+      quote: "When founders meet policymakers, ideas become action.",
       desc: "An exclusive, invite-only convening at the House of Lords spotlighting the global impact of Cambridge startups — with founders, investors and policymakers from the UK-India corridor.",
       link: "/programmes/house-of-lords",
     },
@@ -238,7 +239,7 @@ function OngoingProgrammes() {
       audience: "FOUNDERS",
       title: "Zero-To-One Ideation Weekend",
       location: "JUDGE BUSINESS SCHOOL, CAMBRIDGE",
-      date: "19-21 JUNE 2026",
+      quote: "The next bold move is rarely a solo one.",
       desc: "Three days in-person at Judge Business School to move a venture from zero to one — validation sprints, mentor clinics and founder-to-founder dialogues.",
       link: "/programmes/zero-to-one",
     },
@@ -247,7 +248,7 @@ function OngoingProgrammes() {
       audience: "BESPOKE",
       title: "Corporate Learning & ESG Workshops",
       location: "ON-SITE OR CAMBRIDGE",
-      date: "ROLLING CALENDAR",
+      quote: "Meaningful change starts with a conversation that matters.",
       desc: "Custom workshops for boards and leadership teams on ESG leadership, organisational behaviour, entrepreneurship and corporate governance — the core themes we have delivered since 2022.",
       link: "/programmes/corporate-learning",
     }
@@ -280,7 +281,7 @@ function OngoingProgrammes() {
                   <div className="mt-3 flex items-center gap-3 text-[15px] font-bold uppercase tracking-widest text-forest/80">
                     <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
                     <span>|</span>
-                    <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
+                    <span className="flex items-center gap-1"><Sparkles className="h-3 w-3" /> {p.quote}</span>
                   </div>
                   
                   <p className="mt-4 text-[15px] leading-relaxed text-forest/80">
