@@ -56,7 +56,7 @@ function Hero() {
               </span>
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
+              <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20">
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300">
@@ -248,7 +248,7 @@ function CTA() {
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Your idea. 48 hours. Cambridge.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications are open. Limited cohort size — apply today to secure your place.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
           <Link to="/entrepreneurship" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">

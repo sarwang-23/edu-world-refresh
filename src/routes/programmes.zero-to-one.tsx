@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
-import heroImg from '../assets/hero-classroom.jpg'
+import heroImg from '../assets/startup.jpg'
 import zeroToOneVideo from '../assets/zero-to-one.mp4'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
@@ -39,14 +39,14 @@ function ZeroToOne() {
 /* ─── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-24 md:pt-4 md:pb-32">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text column */}
@@ -73,7 +73,6 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
-                { icon: <Calendar className="h-4 w-4" />, label: '19–21 June 2026' },
                 { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -84,15 +83,13 @@ function Hero() {
             </div>
 
             <div className="mt-8 flex gap-4 flex-wrap">
-              <a
-                href="https://www.globaledulab.com/event/zero-to-one"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/apply-now"
                 className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Sign Up Now
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-              </a>
+              </Link>
               <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 See Format
               </a>
@@ -107,7 +104,6 @@ function Hero() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                  <p className="text-white text-[15px] font-bold">June 19–21, 2026</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
@@ -157,9 +153,9 @@ function StatsMarquee() {
     { val: '48h', label: 'Intensive Format', sub: 'Idea to venture direction' },
     { val: '4/10', label: 'Ideas Incubated', sub: 'From inaugural cohort' },
     { val: 'Spark', label: 'Cambridge Incubator', sub: 'Placement pipeline' },
-    { val: '2026', label: 'October Theme', sub: 'Food, Agriculture & Planetary Health' },
+    { val: 'Food & Agri', label: 'October Theme', sub: 'Planetary Health Focus' },
     { val: '100%', label: 'Form Real Teams', sub: 'Across disciplines' },
-    { val: 'June', label: 'Next Cohort', sub: '19–21 June 2026' },
+    { val: 'Rolling', label: 'Next Cohort', sub: 'Flexible scheduling' },
   ]
   const repeated = [...stats, ...stats, ...stats]
   return (

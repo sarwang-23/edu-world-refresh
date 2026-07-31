@@ -4,6 +4,8 @@ import { Footer } from './index'
 import { useState } from 'react'
 import person11Img from '../assets/person11.jpg'
 import person12Img from '../assets/person12.jpg'
+import londonHeroImg from '../assets/executive-education.jpg'
+import londonDetailsImg from '../assets/business-leaders.jpg'
 
 export const Route = createFileRoute('/programmes/llp')({
   head: () => ({
@@ -53,7 +55,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 18th–22nd January, 2026
+                <Calendar className="h-4 w-4 text-gold" /> Flexible & Customizable Dates
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> London, United Kingdom
@@ -61,7 +63,7 @@ function Hero() {
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/apply-now"
                 className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
@@ -75,15 +77,9 @@ function Hero() {
             </div>
           </div>
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-600">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <Landmark className="h-20 w-20 mx-auto mb-4 opacity-80" />
-                  <p className="text-lg font-semibold opacity-90">Houses of Parliament</p>
-                  <p className="text-[15px] opacity-70 mt-1">Westminster, London</p>
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/20 to-transparent" />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3]">
+              <img src={londonHeroImg} alt="London School Leadership Programme" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/10 to-transparent" />
             </div>
             <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
               <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
@@ -311,9 +307,9 @@ function ProgrammeDetails() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl p-8 bg-forest-deep text-white border border-forest-deep relative overflow-hidden shadow-xl">
                <div className="absolute top-6 right-6 text-gold opacity-50"><Star className="h-6 w-6 fill-gold"/></div>
-               <p className="text-[15px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fees</p>
-               <p className="text-[24px] font-bold text-white mb-3">Early bird starts at 1,900 GBP</p>
-               <span className="inline-block text-[15px] font-semibold text-white/70">✦ Limited seats available</span>
+               <p className="text-[15px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Flexible Packages</p>
+               <p className="text-[24px] font-bold text-white mb-3">Customize your cohort experience</p>
+               <span className="inline-block text-[15px] font-semibold text-white/70">✦ Enquire for tailored pricing</span>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm flex-1">
@@ -343,14 +339,8 @@ function ProgrammeDetails() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px] bg-gradient-to-br from-slate-800 via-slate-600 to-gray-500 flex items-center justify-center relative">
-            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle,#fff_1px,transparent_1px)] [background-size:20px_20px]" />
-            <div className="relative text-center text-white p-8">
-              <Landmark className="h-24 w-24 mx-auto mb-6 opacity-80" />
-              <p className="text-2xl font-bold mb-2">London, United Kingdom</p>
-              <p className="text-[15px] opacity-70">Houses of Parliament · Independent Schools</p>
-              <p className="text-[15px] opacity-60 mt-2">Westminster, London</p>
-            </div>
+          <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px]">
+            <img src={londonDetailsImg} alt="London Programme details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
 
@@ -370,9 +360,9 @@ function CTA() {
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Bring London's leadership excellence to your school.</h2>
-        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications open for the January 2026 cohort. Limited seats — secure yours today.</p>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Get in touch to tailor the programme dates and details to your institution's needs.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
           <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">

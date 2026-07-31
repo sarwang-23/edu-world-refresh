@@ -82,7 +82,7 @@ function Hero() {
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
                 { icon: <Users className="h-4 w-4" />, label: 'Ages 13–18' },
-                { icon: <Star className="h-4 w-4" />, label: 'Summer 2026' },
+                { icon: <Star className="h-4 w-4" />, label: 'Summer 2027' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
@@ -99,9 +99,12 @@ function Hero() {
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <button className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
-                Overview <ArrowDownToLine className="h-4 w-4" />
-              </button>
+              <Link
+                to="/apply-now"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300"
+              >
+                Apply Now <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
@@ -115,7 +118,7 @@ function Hero() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                  <p className="text-white text-[15px] font-bold">Summer 2026</p>
+                  <p className="text-white text-[15px] font-bold">Summer 2027</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
@@ -623,18 +626,18 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/80 leading-[1.75] max-w-xl mx-auto">Discover new ideas. Build your voice. Explore the future — at one of the world's greatest universities.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <button className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Register Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-          </button>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-            Download Overview <ArrowDownToLine className="h-4 w-4" />
+          </Link>
+          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
 
         {/* Bottom trust note */}
         <p className="mt-10 text-[15px] text-cream/80 uppercase tracking-[0.2em]">
-          Cambridge, UK · Summer 2026 · Fully Supervised
+          Cambridge, UK · Summer 2027 · Fully Supervised
         </p>
       </div>
     </section>

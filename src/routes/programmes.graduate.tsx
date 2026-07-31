@@ -9,7 +9,7 @@ import teachersImg from '@/assets/teachers.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
 
-import newHeroImg from '@/assets/IMG_0719.jpg'
+import newHeroImg from '@/assets/finland_1.jpg'
 import siteVisitImg from '@/assets/site visit.jpg'
 import socialCulturalImg from '@/assets/IMG_5138_2.jpg'
 import globalNetworkImg from '@/assets/IMG_4929.jpg'

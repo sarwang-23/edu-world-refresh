@@ -7,7 +7,8 @@ import cambridge4Img from '../assets/cambridge_4.jpg'
 import cambridge5Img from '../assets/cambridge_5.jpg'
 import cambridge6Img from '../assets/cambridge_6.jpg'
 import cambridge7Img from '../assets/cambridge_7.jpg'
-import cambridge8Img from '../assets/cambridge_8.jpg'
+import cambridge8Img from '../assets/cambridge.jpg'
+import cambridge9Img from '../assets/site visit.jpg'
 import person8Img from '../assets/person8.jpg'
 import person9Img from '../assets/person9.jpg'
 import { Footer } from './index'
@@ -58,11 +59,11 @@ function Hero() {
               Shape the Future of Your School with Cambridge Education Lab
             </p>
             <p className="mt-5 text-[15px] text-forest/80 leading-relaxed max-w-lg">
-              The Global India Leadership Programme 2026 is a Cambridge–India executive leadership bridge, designed to make high-quality leadership training at Cambridge accessible, affordable, and globally relevant, with a strong emphasis on AI, innovation, negotiation, finance, and cross-cultural leadership.
+              The Global India Leadership Programme is a Cambridge–India executive leadership bridge, designed to make high-quality leadership training at Cambridge accessible, affordable, and globally relevant, with a strong emphasis on AI, innovation, negotiation, finance, and cross-cultural leadership.
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 9th–13th March, 2026
+                <Calendar className="h-4 w-4 text-gold" /> Flexible & Customizable Dates
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> University of Cambridge, UK
@@ -70,7 +71,7 @@ function Hero() {
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/apply-now"
                 className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
@@ -315,9 +316,9 @@ function ProgrammeDetails() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl p-8 bg-forest-deep text-white border border-forest-deep relative overflow-hidden shadow-xl">
                <div className="absolute top-6 right-6 text-gold opacity-50"><Star className="h-6 w-6 fill-gold"/></div>
-               <p className="text-[15px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Course Fees</p>
-               <p className="text-[24px] font-bold text-white mb-3">Early bird starts at 1,900 GBP</p>
-               <span className="inline-block text-[15px] font-semibold text-white/70">✦ Limited seats available</span>
+               <p className="text-[15px] font-bold uppercase tracking-[0.2em] mb-2 text-gold">Flexible Packages</p>
+               <p className="text-[24px] font-bold text-white mb-3">Customize your cohort experience</p>
+               <span className="inline-block text-[15px] font-semibold text-white/70">✦ Enquire for tailored pricing</span>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm flex-1">
@@ -368,9 +369,9 @@ function CTA() {
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Bring Cambridge home to your school.</h2>
-        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications open for the March 2026 cohort. Limited seats - secure yours today.</p>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Get in touch to tailor the programme dates and details to your institution's needs.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
           <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
@@ -383,7 +384,7 @@ function CTA() {
 }
 
 function GallerySection() {
-  const images = [cambridgeImg, cambridge2Img, cambridge3Img, cambridge4Img, cambridge5Img, cambridge6Img, cambridge7Img, cambridge8Img];
+  const images = [cambridgeImg, cambridge2Img, cambridge3Img, cambridge4Img, cambridge5Img, cambridge6Img, cambridge7Img, cambridge8Img, cambridge9Img];
   return (
     <section className="bg-white py-24 border-t border-forest/5">
       <div className="mx-auto max-w-7xl px-6">
@@ -397,7 +398,7 @@ function GallerySection() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, i) => (
-            <div key={i} className={`relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group ${i === 3 ? 'md:col-start-1 md:col-end-2' : ''} ${i === 4 ? 'md:col-start-2 md:col-end-4' : ''}`}>
+            <div key={i} className={`relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group ${i === 4 ? 'md:col-span-2 md:row-span-2' : ''}`}>
               <img src={img} alt={`Cambridge CSLP ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           ))}

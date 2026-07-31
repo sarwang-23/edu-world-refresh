@@ -50,8 +50,8 @@ function Hero() {
     <section className="relative overflow-hidden bg-cream">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6">
-        <div className="lg:col-span-7">
-          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
+        <div className="lg:col-span-6">
+          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-5xl lg:text-[3.25rem] xl:text-[4rem]">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>
@@ -77,7 +77,7 @@ function Hero() {
           </p>
         </div>
 
-        <div className="relative lg:col-span-5">
+        <div className="relative lg:col-span-6">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={heroImg}
@@ -444,8 +444,12 @@ function Voices() {
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-4">
                   <div className="relative shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-forest border-2 border-gold/50 flex items-center justify-center text-white font-bold text-lg">
-                      {featured.a[0]}
+                    <div className="w-12 h-12 rounded-full bg-forest border-2 border-gold/50 flex items-center justify-center text-white font-bold text-lg overflow-hidden">
+                      {featured.img ? (
+                        <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" />
+                      ) : (
+                        featured.a[0]
+                      )}
                     </div>
                     <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-gold border-2 border-forest-deep" />
                   </div>
@@ -496,8 +500,12 @@ function Voices() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300">
-                    {t.a[0]}
+                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
+                    {t.img ? (
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                    ) : (
+                      t.a[0]
+                    )}
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>

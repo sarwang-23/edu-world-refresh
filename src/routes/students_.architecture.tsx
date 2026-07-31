@@ -65,7 +65,7 @@ function Hero() {
 
             <div className="flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/apply-now"
                 className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-orange-400 transition-all duration-300 shadow-xl shadow-orange-500/25"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />

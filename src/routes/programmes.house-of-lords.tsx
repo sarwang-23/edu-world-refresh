@@ -60,14 +60,12 @@ function Hero() {
               </span>
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
-              <a
-                href="https://www.globaledulab.com/events/house-of-lords%3A-global-impact-of-cambridge-startups"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/apply-now"
                 className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Request Invitation <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
@@ -319,14 +317,12 @@ function CTA() {
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Request your invitation.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">The October 2026 evening is now open for invitation requests. Submit your interest and our team will be in touch.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <a
-            href="https://www.globaledulab.com/events/house-of-lords%3A-global-impact-of-cambridge-startups"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/apply-now"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Request Invitation <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
           <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             Ask a Question
           </Link>

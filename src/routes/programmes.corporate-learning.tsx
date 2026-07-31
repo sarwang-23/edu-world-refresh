@@ -460,9 +460,9 @@ function CTA() {
           >
             Enquire Now <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <a href="mailto:info@globaledulab.com" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
-            Email Us Directly
-          </a>
+          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+            Bespoke Advisory &amp; ESG Workshops <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
