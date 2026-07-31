@@ -50,18 +50,18 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
           }`}
       >
         <div className={`flex-shrink-0 h-10 w-10 rounded-lg flex items-center justify-center transition-colors ${fileName ? "bg-forest-deep/10" : "bg-forest/8 group-hover:bg-gold/10"}`}>
-          <Icon className={`w-5 h-5 transition-colors ${fileName ? "text-forest-deep" : "text-forest/40 group-hover:text-gold"}`} />
+          <Icon className={`w-5 h-5 transition-colors ${fileName ? "text-forest-deep" : "text-forest/70 group-hover:text-gold"}`} />
         </div>
         <div className="flex-1 min-w-0">
           {fileName ? (
             <>
-              <p className="text-[13px] font-semibold text-forest-deep truncate">{fileName}</p>
-              <p className="text-[11px] text-forest/50 mt-0.5">Click to change file</p>
+              <p className="text-[15px] font-semibold text-forest-deep truncate">{fileName}</p>
+              <p className="text-[15px] text-forest/70 mt-0.5">Click to change file</p>
             </>
           ) : (
             <>
-              <p className="text-[13px] font-semibold text-forest/70">{label}</p>
-              <p className="text-[11px] text-forest/40 mt-0.5">Click to upload</p>
+              <p className="text-[15px] font-semibold text-forest/70">{label}</p>
+              <p className="text-[15px] text-forest/70 mt-0.5">Click to upload</p>
             </>
           )}
         </div>
@@ -79,7 +79,7 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
           onChange={handleChange}
         />
       </div>
-      {hint && <p className="text-[12px] text-forest/45 mt-2 leading-relaxed">{hint}</p>}
+      {hint && <p className="text-[15px] text-forest/80 mt-2 leading-relaxed">{hint}</p>}
     </div>
   );
 }
@@ -129,7 +129,7 @@ function GilpDelegatePage() {
     { num: "05", title: "CAMBRIDGE ARRIVAL", desc: "You arrive at Cambridge on 13th September 2026" },
   ];
 
-  const inputCls = "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/35 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
+  const inputCls = "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/80 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
   const selectWrapCls = "relative";
   const selectCls = `${inputCls} appearance-none cursor-pointer pr-10`;
 
@@ -157,7 +157,7 @@ function GilpDelegatePage() {
               <div className="h-8 w-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
               </div>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-gold uppercase">Registration</span>
+              <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Registration</span>
             </div>
 
             {/* ── Heading ── */}
@@ -167,7 +167,7 @@ function GilpDelegatePage() {
             </h1>
 
             {/* ── Info bullets ── */}
-            <div className="text-[14px] text-white/65 leading-[1.75] mb-10">
+            <div className="text-[15px] text-white/80 leading-[1.75] mb-10">
               <p className="mb-3">Please have the following ready before completing your registration:</p>
               <ul className="space-y-2 text-white/85">
                 {["Digital copy of your passport", "Digital copy of your partner's passport (if registering for a double option)", "Professional headshot for the profile book"].map((item, i) => (
@@ -181,17 +181,17 @@ function GilpDelegatePage() {
 
             {/* ── Timeline ── */}
             <div className="flex-1">
-              <p className="text-[11px] font-bold tracking-[0.25em] text-gold uppercase mb-6 flex items-center gap-3">
+              <p className="text-[15px] font-bold tracking-[0.25em] text-gold uppercase mb-6 flex items-center gap-3">
                 <span className="h-px w-5 bg-gold" /> What's Next on Your Journey
               </p>
               <div className="relative ml-3.5 border-l border-white/10 space-y-8 pb-4">
                 {steps.map((step, i) => (
                   <div key={i} className="relative pl-10">
                     <div className="absolute -left-[14px] top-0 h-7 w-7 rounded-full bg-forest-deep border border-gold/40 flex items-center justify-center">
-                      <span className="text-[10px] font-bold text-gold">{step.num}</span>
+                      <span className="text-[15px] font-bold text-gold">{step.num}</span>
                     </div>
-                    <h4 className="text-[13px] font-bold text-white uppercase tracking-wide leading-tight">{step.title}</h4>
-                    <p className="text-[12.5px] text-white/45 mt-1 leading-snug">{step.desc}</p>
+                    <h4 className="text-[15px] font-bold text-white uppercase tracking-wide leading-tight">{step.title}</h4>
+                    <p className="text-[12.5px] text-white/80 mt-1 leading-snug">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -201,11 +201,11 @@ function GilpDelegatePage() {
             <div className="mt-10 hidden lg:block">
               <div className="inline-flex items-center gap-4 px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10">
                 <div className="h-9 w-9 rounded-full border border-gold/40 flex items-center justify-center bg-forest-deep">
-                  <span className="text-[13px] font-serif italic text-gold">G·E·L</span>
+                  <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-white/35 mb-0.5">Established</p>
-                  <p className="text-[12px] text-white/85 font-serif italic">Excellence in Global Education</p>
+                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
+                  <p className="text-[15px] text-white/85 font-serif italic">Excellence in Global Education</p>
                 </div>
               </div>
             </div>
@@ -219,12 +219,12 @@ function GilpDelegatePage() {
 
               {/* ── Form heading ── */}
               <div className="mb-10">
-                <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-5">
+                <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-5">
                   <span className="h-px w-6 bg-gold" /> Application Form
                 </span>
                 <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
                   Submit your<br />
-                  <span className="font-serif italic font-normal text-forest/45">details</span>
+                  <span className="font-serif italic font-normal text-forest/80">details</span>
                 </h2>
               </div>
 
@@ -243,7 +243,7 @@ function GilpDelegatePage() {
                         <option>Dr</option>
                         <option>Prof</option>
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/40 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                     </div>
                   </div>
                   <div>
@@ -269,7 +269,7 @@ function GilpDelegatePage() {
                       <option>Gluten-Free</option>
                       <option>Other</option>
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/40 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                   </div>
                 </div>
 
@@ -290,7 +290,7 @@ function GilpDelegatePage() {
                         <option>+1 US</option>
                         <option>+971 AE</option>
                       </select>
-                      <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/40 pointer-events-none" />
+                      <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                     </div>
                     <input type="tel" required placeholder="98765 43210" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
                   </div>
@@ -339,19 +339,19 @@ function GilpDelegatePage() {
                       <option>Sponsorship</option>
                       <option>Other</option>
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/40 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* CTA */}
                 <div className="pt-6 border-t border-forest/5 flex items-center justify-between gap-5">
-                  <p className="text-[11.5px] text-forest/35 leading-relaxed max-w-[180px]">
+                  <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[180px]">
                     By submitting, you consent to be contacted by the GEL team.
                   </p>
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0 disabled:opacity-60"
+                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0 disabled:opacity-60"
                   >
                     {status === "submitting" ? "Submitting…" : "Next"}
                     <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors">
@@ -360,10 +360,10 @@ function GilpDelegatePage() {
                   </button>
                 </div>
                 {status === "success" && (
-                  <p className="text-center text-[13px] font-semibold text-forest-deep">✓ Registration received — check your email for confirmation.</p>
+                  <p className="text-center text-[15px] font-semibold text-forest-deep">✓ Registration received — check your email for confirmation.</p>
                 )}
                 {status === "error" && (
-                  <p className="text-center text-[13px] font-semibold text-red-500">Something went wrong. Please try again.</p>
+                  <p className="text-center text-[15px] font-semibold text-red-500">Something went wrong. Please try again.</p>
                 )}
 
                 {/* ── GILP Banner Image at bottom ── */}

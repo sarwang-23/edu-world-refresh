@@ -54,7 +54,7 @@ function Hero() {
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">48-Hour Venture-Building Weekend</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -65,7 +65,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               From raw ideas to incubator-ready ventures in 48 hours.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               A practical, high-energy venture-building format hosted at Cambridge Judge Business School, in partnership with King's E-Lab. Challenge your thinking, form a team, and leave with a validated direction.
             </p>
 
@@ -127,7 +127,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">& Cambridge Judge</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">& Cambridge Judge</p>
               </div>
             </div>
 
@@ -138,7 +138,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white uppercase tracking-wider">48 Hours</p>
-                <p className="text-[14px] text-cream/55 mt-0.5">Idea to venture</p>
+                <p className="text-[15px] text-cream/80 mt-0.5">Idea to venture</p>
               </div>
             </div>
 
@@ -169,8 +169,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/80 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -194,16 +194,16 @@ function WhatIsZTO() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">About Zero-To-One</span>
             </div>
             <h2 className="text-[2.2rem] font-bold text-forest-deep mb-6 leading-[1.1]">Bridging the ideation gap.</h2>
-            <p className="text-[14px] text-forest/70 leading-[1.7] mb-5">
+            <p className="text-[15px] text-forest/70 leading-[1.7] mb-5">
               Most incubators and accelerators are designed for teams that already have a defined idea, a formed team, early validation and founder confidence.
             </p>
-            <p className="text-[14px] font-bold text-forest-deep leading-[1.7] mb-5 p-4 bg-[#F4EFE6] rounded-xl border-l-2 border-gold">
+            <p className="text-[15px] font-bold text-forest-deep leading-[1.7] mb-5 p-4 bg-[#F4EFE6] rounded-xl border-l-2 border-gold">
               Zero-to-One fills the stage before that.
             </p>
-            <p className="text-[14px] text-forest/70 leading-[1.7]">
+            <p className="text-[15px] text-forest/70 leading-[1.7]">
               Participants find the hidden 'how' inside an early idea, challenge it through teamwork and mentoring, and begin turning uncertainty into validated 'yeses'.
             </p>
           </div>
@@ -214,7 +214,7 @@ function WhatIsZTO() {
                   <div className="pointer-events-none absolute top-0 right-0 h-32 w-32 rounded-full bg-gold/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F4EFE6] text-gold shadow-sm group-hover:bg-gold group-hover:text-white transition-all duration-300">{p.icon}</div>
                   <h4 className="text-[15px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h4>
-                  <p className="text-[15px] text-forest/65 leading-[1.6]">{p.desc}</p>
+                  <p className="text-[15px] text-forest/80 leading-[1.6]">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -247,7 +247,7 @@ function ThemeSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Food, Agriculture &<br/>Planetary Health
@@ -259,7 +259,7 @@ function ThemeSection() {
               {ventureAreas.map((area, i) => (
                 <div key={i} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 px-5 py-4 cursor-default">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0 shadow-[0_0_8px_rgba(255,215,0,0.6)]" />
-                  <span className="text-[14px] text-white/90 leading-snug font-medium">{area}</span>
+                  <span className="text-[15px] text-white/90 leading-snug font-medium">{area}</span>
                 </div>
               ))}
             </div>
@@ -297,7 +297,7 @@ function SuccessStory() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Alumni Impact</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">From challenge to incubation.</h2>
@@ -319,7 +319,7 @@ function SuccessStory() {
                 ].map((s, i) => (
                   <div key={i} className="text-center bg-[#F4EFE6] rounded-2xl p-6 border border-forest/8 hover:border-gold/30 hover:shadow-md transition-all duration-300">
                     <p className="text-2xl font-bold text-forest-deep">{s.val}</p>
-                    <p className="text-[14px] text-forest/60 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
+                    <p className="text-[15px] text-forest/80 mt-1 leading-[1.5] uppercase tracking-wide font-bold">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -340,7 +340,7 @@ function SuccessStory() {
                     </div>
                   </div>
                   <div className="absolute bottom-6 left-6">
-                    <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
+                    <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">Watch the Experience</p>
                     <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">Zero-To-One Highlights</p>
                   </div>
                 </button>
@@ -415,7 +415,7 @@ function ProgrammeFormat() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Format</span>
           </div>
           <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-[1.1]">48 hours — structured for velocity.</h2>
         </div>
@@ -424,7 +424,7 @@ function ProgrammeFormat() {
             <button
               key={i}
               onClick={() => setActiveDay(i)}
-              className={"rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/60 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
+              className={"rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " + (activeDay === i ? 'bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]' : 'bg-[#F4EFE6] border border-forest/10 text-forest/80 hover:border-gold/40 hover:text-forest-deep shadow-sm')}
             >
               {d.day.split(' · ')[0]}
             </button>
@@ -446,7 +446,7 @@ function ProgrammeFormat() {
                 </div>
                 <div>
                   <h4 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">{s.title}</h4>
-                  <p className="text-[14px] text-forest/70 leading-[1.65]">{s.desc}</p>
+                  <p className="text-[15px] text-forest/70 leading-[1.65]">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -473,11 +473,11 @@ function WhoShouldApply() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Apply</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-white mb-5">Built for curious, driven people.</h2>
-          <p className="mt-4 text-[15px] text-cream/65 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
+          <p className="mt-4 text-[15px] text-cream/80 max-w-xl mx-auto leading-[1.7]">You don't need the perfect idea. You need curiosity, drive, and the desire to think like a founder.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {profiles.map((p, i) => (
@@ -488,7 +488,7 @@ function WhoShouldApply() {
                   {p.icon}
                 </div>
                 <h3 className="text-[17px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[15px] text-cream/65 leading-[1.6]">{p.desc}</p>
+                <p className="text-[15px] text-cream/80 leading-[1.6]">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -528,7 +528,7 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-16">What participants say.</h2>
@@ -543,16 +543,16 @@ function Testimonials() {
           </div>
           <blockquote className="text-[17px] leading-[1.8] text-forest/75 max-w-2xl mx-auto italic mb-8">"{t.quote}"</blockquote>
           <p className="text-[15px] font-bold text-forest-deep">{t.name}</p>
-          <p className="text-[14px] text-forest/55 mt-1.5 uppercase tracking-wide font-semibold">{t.role}</p>
+          <p className="text-[15px] text-forest/80 mt-1.5 uppercase tracking-wide font-semibold">{t.role}</p>
           
           <div className="flex items-center justify-center gap-4 mt-10">
-            <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/50 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
+            <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
               <ChevronLeft className="h-4 w-4" />
             </button>
             <div className="flex gap-2">
               {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
             </div>
-            <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/50 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
+            <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
@@ -578,7 +578,7 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Join the Next Cohort</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2.2rem] md:text-[3.2rem] font-bold text-white leading-[1.08] tracking-tight">Turn your curiosity into a venture.</h2>

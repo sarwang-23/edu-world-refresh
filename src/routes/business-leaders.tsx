@@ -45,7 +45,7 @@ function Hero() {
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pb-12 md:pb-20 pt-28">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pb-12 md:pb-20 pt-6">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <Building2 className="h-3.5 w-3.5 text-gold" /> For Business Leaders & Entrepreneurs
@@ -70,7 +70,7 @@ function Hero() {
               Corporate Delegations
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/40">
+          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
             <span className="h-px w-10 bg-forest/30" />
             CAMBRIDGE · HOUSE OF LORDS · JUDGE BUSINESS SCHOOL
           </div>
@@ -110,7 +110,7 @@ function CollaboratorsBar() {
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
-      <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-forest/40 mb-4 text-center">
+      <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-forest/70 mb-4 text-center">
         IN COLLABORATION WITH
       </p>
       <div className="relative flex w-full">
@@ -118,13 +118,13 @@ function CollaboratorsBar() {
           {partners.map((partner, i) => (
             <span key={i} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
-              <span className="ml-16 text-gold/30">✦</span>
+              <span className="ml-16 text-gold/80">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
             <span key={`dup-${i}`} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
               {partner}
-              <span className="ml-16 text-gold/30">✦</span>
+              <span className="ml-16 text-gold/80">✦</span>
             </span>
           ))}
         </div>
@@ -273,12 +273,12 @@ function OngoingProgrammes() {
               <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                    <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
+                    <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
+                    <span className="text-[15px] font-bold uppercase tracking-widest text-forest/70">{p.audience}</span>
                   </div>
                   
                   <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
-                  <div className="mt-3 flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest text-forest/60">
+                  <div className="mt-3 flex items-center gap-3 text-[15px] font-bold uppercase tracking-widest text-forest/80">
                     <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
                     <span>|</span>
                     <span className="flex items-center gap-1"><Sparkles className="h-3 w-3" /> {p.quote}</span>
@@ -396,13 +396,13 @@ function Testimonials() {
               className="flex flex-col justify-between rounded-2xl border border-cream/15 bg-forest-deep/60 p-8 backdrop-blur-sm"
             >
               <div>
-                <Quote className="h-8 w-8 text-gold/40 mb-4" />
+                <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="mt-1 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
               </div>
             </div>
           ))}

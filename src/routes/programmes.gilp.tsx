@@ -102,27 +102,27 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
           <button type="button" onClick={onClose} className="text-white/70 hover:text-white text-[20px] leading-none">×</button>
         </div>
         <form onSubmit={handleSubmit} className="p-7 space-y-4">
-          <p className="text-[13.5px] text-forest/60 leading-relaxed">
+          <p className="text-[13.5px] text-forest/80 leading-relaxed">
             Enter your details and the brochure will download instantly. We'll also email you with next steps.
           </p>
           <div>
-            <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
+            <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
             <input
               type="text"
               required
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
             />
           </div>
           <div>
-            <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
+            <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
             />
           </div>
           {status === 'error' && (
@@ -131,7 +131,7 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md disabled:opacity-60"
+            className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md disabled:opacity-60"
           >
             {status === 'submitting' ? 'Please wait…' : 'Download Brochure'}
           </button>
@@ -169,7 +169,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
               />
             </div>
 
-            <p className="text-[15px] text-forest/65 leading-relaxed max-w-[420px] mb-7">
+            <p className="text-[15px] text-forest/80 leading-relaxed max-w-[420px] mb-7">
               Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
               experience at Cambridge equips you with cutting-edge insights in AI, strategy,
               and leadership to navigate complexity and lead with confidence in a rapidly evolving
@@ -182,7 +182,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             </div>
 
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-[14px] text-forest/55 font-medium">certified by</span>
+              <span className="text-[15px] text-forest/80 font-medium">certified by</span>
               <img
                 src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
                 alt="University of Cambridge — Judge Business School"
@@ -194,16 +194,18 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
               <button
                 type="button"
                 onClick={onDownloadBrochure}
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
               >
                 Download Brochure
               </button>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+              <a
+                href="https://www.globaledulab.com/indialeadership"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -221,7 +223,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
               {/* floating badge */}
               <div className="absolute -bottom-4 left-6 bg-forest-deep text-white rounded-xl px-4 py-2 shadow-lg flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gold shrink-0" />
-                <span className="text-[13px] font-bold">Cambridge Judge Business School</span>
+                <span className="text-[15px] font-bold">Cambridge Judge Business School</span>
               </div>
             </div>
           </div>
@@ -247,7 +249,7 @@ function ProgrammeOverview() {
             {/* Section Header inline */}
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-gold">About the Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">About the Programme</span>
             </div>
 
             <h2 className="text-[2.2rem] md:text-[2.6rem] font-bold text-forest-deep leading-[1.15] mb-4">
@@ -279,7 +281,7 @@ function ProgrammeOverview() {
               ].map((s, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-[22px] font-bold text-forest-deep">{s.val}</span>
-                  <span className="text-[12px] uppercase tracking-wider text-forest/60 font-medium mt-0.5">{s.label}</span>
+                  <span className="text-[15px] uppercase tracking-wider text-forest/80 font-medium mt-0.5">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -320,11 +322,11 @@ function ProgrammeOverview() {
                     <div className="flex items-center gap-4">
                       <div className="w-1 h-10 bg-gold rounded-full shrink-0" />
                       <div>
-                        <p className="text-[14px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
-                        <p className="text-[13px] text-white/80 mt-1">Partner, Talent Element</p>
+                        <p className="text-[15px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
+                        <p className="text-[15px] text-white/80 mt-1">Partner, Talent Element</p>
                       </div>
                       <div className="ml-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2">
-                        <p className="text-[13px] italic text-white font-medium">"I'm loving it here"</p>
+                        <p className="text-[15px] italic text-white font-medium">"I'm loving it here"</p>
                       </div>
                     </div>
                   </div>
@@ -355,7 +357,7 @@ function ProgrammeOverview() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
                   </div>
-                  <span className="text-[13px] font-bold text-forest/70 uppercase tracking-wider">Alumni Testimonial</span>
+                  <span className="text-[15px] font-bold text-forest/70 uppercase tracking-wider">Alumni Testimonial</span>
                 </div>
                 <img
                   src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
@@ -391,7 +393,7 @@ function Outcomes() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold">Programme Outcomes</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Outcomes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white leading-tight">As a GILP participant, you will</h2>
@@ -482,7 +484,7 @@ function Curriculum() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="mb-12">
           <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-forest-deep">Programme Curriculum</h2>
-          <p className="mt-3 text-[15px] text-forest/65 max-w-2xl leading-relaxed">Six core modules delivering the complete toolkit for Indian CXOs leading high-growth organisations in a global, AI-driven landscape.</p>
+          <p className="mt-3 text-[15px] text-forest/80 max-w-2xl leading-relaxed">Six core modules delivering the complete toolkit for Indian CXOs leading high-growth organisations in a global, AI-driven landscape.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {modules.map((m, i) => (
@@ -494,7 +496,7 @@ function Curriculum() {
               <div className="mb-6 pb-5 border-b border-forest/5">
                 <div className="flex items-center gap-2.5 mb-3">
                   <div className="h-px w-4 bg-gold" />
-                  <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">{m.num}</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">{m.num}</p>
                 </div>
                 <h3 className="text-[18px] font-bold text-forest-deep leading-snug group-hover:text-gold-deep transition-colors duration-300">{m.title}</h3>
               </div>
@@ -539,8 +541,8 @@ function LordsCricket() {
                 { t: 'Signature Day', d: 'A leadership experience with impact' },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[13px] font-bold text-gold mb-1">{item.t}</p>
-                  <p className="text-[13px] text-white/65">{item.d}</p>
+                  <p className="text-[15px] font-bold text-gold mb-1">{item.t}</p>
+                  <p className="text-[15px] text-white/80">{item.d}</p>
                 </div>
               ))}
             </div>
@@ -583,7 +585,7 @@ function LordsMarquee() {
         {repeatedItems.map((item, i) => (
           <div key={i} className="flex flex-col items-center justify-center shrink-0 w-[260px] px-4 border-r border-forest/10">
             {item.icon}
-            <p className="text-[13px] font-bold text-forest-deep uppercase tracking-[0.1em] text-center">{item.text}</p>
+            <p className="text-[15px] font-bold text-forest-deep uppercase tracking-[0.1em] text-center">{item.text}</p>
           </div>
         ))}
       </div>
@@ -610,7 +612,7 @@ function ProfessorQuote() {
             <blockquote className="text-[16px] md:text-[17px] text-forest-deep leading-relaxed mb-6 font-medium">
               The Global India Leadership Programme is about more than learning — it's about transformation. At Cambridge Judge Business School, we give leaders the tools to think creatively, harness AI and innovation, and shape the future of their organisations in a rapidly changing world.
             </blockquote>
-            <p className="text-[14px] text-forest-deep font-semibold italic">
+            <p className="text-[15px] text-forest-deep font-semibold italic">
               — Prof. Jaideep Prabhu, Vice Dean & Jawaharlal Nehru Professor of Business & Enterprise, Cambridge Judge Business School
             </p>
           </div>
@@ -728,7 +730,7 @@ function Faculty() {
               </div>
               <h3 className="text-[16px] font-bold text-white">{f.name}</h3>
               <p className="text-[13.5px] text-gold font-semibold mt-1.5 leading-snug">{f.role}</p>
-              <p className="text-[12.5px] text-white/50 mt-1.5 font-medium">Cambridge Judge Business School</p>
+              <p className="text-[12.5px] text-white/80 mt-1.5 font-medium">Cambridge Judge Business School</p>
             </div>
           ))}
         </div>
@@ -799,7 +801,7 @@ function WhoShouldAttend() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 group-hover:bg-white group-hover:border-forest/10 transition-all duration-300">
                   <CheckCircle2 className="h-5 w-5 text-gold shrink-0" />
-                  <p className="text-[14px] font-bold text-forest-deep leading-snug">{item}</p>
+                  <p className="text-[15px] font-bold text-forest-deep leading-snug">{item}</p>
                 </div>
               ))}
             </div>
@@ -857,7 +859,7 @@ function Packages() {
           <p className="text-[11.5px] font-bold uppercase tracking-[0.3em] text-gold/80 mb-4">Cambridge Judge Business School</p>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep leading-tight">Programme packages<br className="hidden md:block" /> and Inclusions</h2>
           <div className="mt-5 h-px w-16 bg-gold/60" />
-          <p className="mt-5 text-[14px] italic text-forest/50">*Programme fee across all packages will increase by 10% for Round 2 applications.</p>
+          <p className="mt-5 text-[15px] italic text-forest/70">*Programme fee across all packages will increase by 10% for Round 2 applications.</p>
         </div>
 
         {/* Package cards */}
@@ -866,15 +868,15 @@ function Packages() {
             <div key={i} className={`rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(10,48,29,0.08)] transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(10,48,29,0.14)] bg-white ${pkg.highlight ? 'ring-2 ring-gold' : ''}`}>
               <div className={`h-1 w-full ${pkg.highlight ? 'bg-gradient-to-r from-gold via-amber-400 to-gold' : 'bg-forest-deep/10'}`} />
               <div className="p-8 relative">
-                <span className="absolute top-6 right-6 text-gold/40 text-3xl select-none font-serif">✦</span>
+                <span className="absolute top-6 right-6 text-gold/80 text-3xl select-none font-serif">✦</span>
                 <p className="text-[10.5px] font-bold uppercase tracking-[0.35em] text-gold mb-4">{pkg.name}</p>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-5 leading-snug pr-6">{pkg.subtitle}</h3>
                 <div className="border-t border-forest/8 pt-5 mb-5">
                   <p className="text-[28px] font-bold text-forest-deep tracking-tight">{pkg.price}</p>
-                  <p className="text-[12px] text-forest/45 mt-1 font-medium">{pkg.priceNote}</p>
+                  <p className="text-[15px] text-forest/80 mt-1 font-medium">{pkg.priceNote}</p>
                 </div>
-                <p className="text-[13px] text-forest/60 mt-1 leading-relaxed">{pkg.detail}</p>
-                <p className="text-[12px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
+                <p className="text-[15px] text-forest/80 mt-1 leading-relaxed">{pkg.detail}</p>
+                <p className="text-[15px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
                 <a
                   href="https://www.globaledulab.com/indialeadership"
                   target="_blank"
@@ -969,9 +971,9 @@ function AccommodationSection() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Packages 2 &amp; 3</span>
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Packages 2 &amp; 3</span>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-4">Accommodation in Cambridge</h2>
-          <p className="text-[15px] text-forest/65 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[15px] text-forest/80 leading-relaxed max-w-2xl mx-auto">
             Accommodation will be booked based on availability in 4-star hotels in close proximity to Cambridge Judge Business School.
           </p>
         </div>
@@ -994,7 +996,7 @@ function AccommodationSection() {
                   className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Walk badge */}
-                <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[13px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
                   </svg>
@@ -1004,14 +1006,14 @@ function AccommodationSection() {
 
               {/* Card body */}
               <div className="p-5 flex flex-col flex-1">
-                <p className="text-[11px] text-gold tracking-widest mb-1">{hotel.stars}</p>
+                <p className="text-[13px] text-gold tracking-widest mb-1">{hotel.stars}</p>
                 <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-1">{hotel.name}</h3>
-                <p className="text-[12px] text-forest/50 mb-4">from Judge Business School</p>
+                <p className="text-[15px] text-forest/70 mb-4">from Judge Business School</p>
                 <a
                   href={hotel.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-forest-deep/15 text-forest-deep text-[12px] font-bold uppercase tracking-[0.12em] py-2.5 hover:bg-forest-deep hover:text-white hover:border-forest-deep transition-all duration-300"
+                  className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-forest-deep/15 text-forest-deep text-[15px] font-bold uppercase tracking-[0.12em] py-2.5 hover:bg-forest-deep hover:text-white hover:border-forest-deep transition-all duration-300"
                 >
                   Check Hotel Website
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -1024,7 +1026,7 @@ function AccommodationSection() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-[13px] text-forest/45 mt-10 italic">
+        <p className="text-center text-[15px] text-forest/80 mt-10 italic">
           * Accommodation is subject to availability. Hotel allocation confirmed upon enrolment.
         </p>
       </div>
@@ -1072,7 +1074,7 @@ function AlumniTestimonials() {
       <div className="mx-auto w-[96%] xl:max-w-[1400px]">
         <div className="text-center mb-16">
           <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-2">What Our Alumni Say</h2>
-          <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-light">"Leadership Learning That Feels Like a Rolls Royce"</p>
+          <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-normal">"Leadership Learning That Feels Like a Rolls Royce"</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8">
           {alumni.map((a, i) => (
@@ -1082,7 +1084,7 @@ function AlumniTestimonials() {
               </div>
               <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">“</span>
               <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">{a.name}</h3>
-              <p className="text-[11.5px] text-forest/60 mb-5">{a.role}</p>
+              <p className="text-[11.5px] text-forest/80 mb-5">{a.role}</p>
               <p className="text-[12.5px] text-forest-deep/80 leading-[1.7] hyphens-auto">{a.quote}</p>
             </div>
           ))}
@@ -1118,10 +1120,10 @@ function FAQ() {
                 className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left hover:bg-[#EDE8D5] transition-colors duration-150"
               >
                 <span className="text-[15px] font-bold text-forest-deep">{faq.q}</span>
-                {open === i ? <ChevronUp className="h-5 w-5 text-gold shrink-0" /> : <ChevronDown className="h-5 w-5 text-forest/35 shrink-0" />}
+                {open === i ? <ChevronUp className="h-5 w-5 text-gold shrink-0" /> : <ChevronDown className="h-5 w-5 text-forest/80 shrink-0" />}
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-[14px] text-forest/70 leading-relaxed border-t border-forest/8 bg-white">
+                <div className="px-6 pb-5 text-[15px] text-forest/70 leading-relaxed border-t border-forest/8 bg-white">
                   <p className="pt-4">{faq.a}</p>
                 </div>
               )}
@@ -1146,7 +1148,7 @@ function CertificateSection() {
 
           {/* LEFT — Text content */}
           <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-6 border border-[#C9913D]/20">Upon Completion</span>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-6 border border-[#C9913D]/20">Upon Completion</span>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-[#F5E6CC] mb-5 leading-tight">
               Earn a Recognised Certificate
             </h2>
@@ -1154,7 +1156,7 @@ function CertificateSection() {
               <div className="bg-[#3D2C14]/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C9913D]/20 relative overflow-hidden group hover:border-[#C9913D]/40 hover:bg-[#3D2C14] transition-all duration-300">
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#C9913D]/70 via-[#C9913D] to-[#C9913D]/50" />
                 <h3 className="text-[16px] font-bold text-[#F5E6CC] mb-2">University of Cambridge–certified</h3>
-                <p className="text-[14px] text-[#C9A87C]/80 leading-relaxed">
+                <p className="text-[15px] text-[#C9A87C]/80 leading-relaxed">
                   Earn a verified Cambridge Judge Business School certificate upon successful completion of the programme — a testament to your dedication, skills, and learning journey.
                 </p>
               </div>
@@ -1168,7 +1170,7 @@ function CertificateSection() {
                   <div key={i} className="bg-[#3D2C14]/80 rounded-xl p-4 border border-[#C9913D]/15 hover:border-[#C9913D]/35 hover:bg-[#3D2C14] transition-all duration-300 flex items-start gap-3">
                     <span className="text-[1.4rem]">{feat.icon}</span>
                     <div>
-                      <p className="text-[13px] font-bold text-[#F5E6CC]">{feat.label}</p>
+                      <p className="text-[15px] font-bold text-[#F5E6CC]">{feat.label}</p>
                       <p className="text-[11.5px] text-[#C9A87C]/60">{feat.sub}</p>
                     </div>
                   </div>
@@ -1189,7 +1191,7 @@ function CertificateSection() {
                   className="h-8 w-auto object-contain mb-6 ml-4 opacity-80"
                 />
                 <div className="ml-4 space-y-2 mb-8">
-                  <p className="text-[10px] uppercase tracking-widest text-forest/40">This is to certify that</p>
+                  <p className="text-[13px] uppercase tracking-widest text-forest/70">This is to certify that</p>
                   <p className="text-[17px] font-bold text-forest-deep border-b border-forest/10 pb-2 pr-8">[Participant Name]</p>
                   <p className="text-[10px] text-forest/50">attended</p>
                   <p className="text-[13px] font-bold text-forest-deep leading-snug">Global India Leadership Programme</p>
@@ -1198,8 +1200,8 @@ function CertificateSection() {
                 <div className="ml-4 mt-8 flex items-end justify-between">
                   <div>
                     <div className="h-px w-28 bg-forest/20 mb-1" />
-                    <p className="text-[9px] text-forest/40">Prof. Jaideep Prabhu</p>
-                    <p className="text-[8px] text-forest/30">Programme Director</p>
+                    <p className="text-[14px] text-forest/70">Prof. Jaideep Prabhu</p>
+                    <p className="text-[14px] text-forest/70">Programme Director</p>
                   </div>
                   <img src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png" alt="Cambridge" className="h-5 w-auto object-contain opacity-40 mr-2" />
                 </div>
@@ -1301,13 +1303,13 @@ function FacultyGrid() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="h-px w-8 bg-gold" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">World-Class Academics</span>
+            <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold">World-Class Academics</span>
             <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-forest-deep mb-4 leading-tight">
-            Faculty & <span className="font-serif italic font-normal text-forest/60">Speakers</span>
+            Faculty & <span className="font-serif italic font-normal text-forest/80">Speakers</span>
           </h2>
-          <p className="text-[15px] text-forest/60 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
+          <p className="text-[15px] text-forest/80 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {faculty.map((f, i) => (
@@ -1320,9 +1322,9 @@ function FacultyGrid() {
               </div>
               <div className="p-6 flex flex-col flex-1 bg-white relative z-10">
                 <h3 className="text-[17px] font-bold text-forest-deep leading-snug mb-1">{f.name}</h3>
-                <p className="text-[13px] font-serif italic text-gold mb-4 leading-snug">{f.role}</p>
+                <p className="text-[15px] font-serif italic text-gold mb-4 leading-snug">{f.role}</p>
                 <div className="h-px w-8 bg-forest/10 mb-4 transition-all duration-300 group-hover:w-12 group-hover:bg-gold/40" />
-                <p className="text-[12.5px] text-forest/60 leading-relaxed">{f.bio}</p>
+                <p className="text-[12.5px] text-forest/80 leading-relaxed">{f.bio}</p>
               </div>
             </div>
           ))}
@@ -1366,9 +1368,9 @@ function CancellationPolicy() {
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full bg-gold/5 blur-3xl" />
       <div className="relative mx-auto max-w-5xl px-6 md:px-10">
         <div className="text-center mb-14">
-          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Important Policy</span>
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">Important Policy</span>
           <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep mb-3">Cancellation &amp; Refund Policy</h2>
-          <p className="text-[15px] text-forest/60 max-w-xl mx-auto">
+          <p className="text-[15px] text-forest/80 max-w-xl mx-auto">
             We understand that plans can change, and we aim to be as flexible as possible.
           </p>
         </div>
@@ -1379,10 +1381,10 @@ function CancellationPolicy() {
             <div key={i} className={`rounded-2xl border p-6 ${p.color} hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md`}>
               <div className="flex items-center justify-between mb-4">
                 <span className={`text-[2rem] font-bold ${p.iconColor}`}>{p.icon}</span>
-                <span className={`text-[13px] font-bold px-3 py-1 rounded-full ${p.badge}`}>{p.refund}</span>
+                <span className={`text-[15px] font-bold px-3 py-1 rounded-full ${p.badge}`}>{p.refund}</span>
               </div>
-              <p className="text-[14px] font-semibold text-forest-deep">Cancellation</p>
-              <p className="text-[13px] text-forest/65 mt-1">{p.date}</p>
+              <p className="text-[15px] font-semibold text-forest-deep">Cancellation</p>
+              <p className="text-[15px] text-forest/80 mt-1">{p.date}</p>
             </div>
           ))}
         </div>
@@ -1392,7 +1394,7 @@ function CancellationPolicy() {
           <div className="bg-white rounded-2xl p-7 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/70 via-gold to-gold/50" />
             <h3 className="text-[15px] font-bold text-forest-deep mb-3">How to Cancel</h3>
-            <p className="text-[14px] text-forest/65 leading-relaxed">
+            <p className="text-[15px] text-forest/80 leading-relaxed">
               All cancellations must be submitted in writing to the programme team at{' '}
               <a href="mailto:info@globaledulab.com" className="text-[#1a73e8] underline hover:text-[#1558b0] transition-colors">
                 info@globaledulab.com
@@ -1403,7 +1405,7 @@ function CancellationPolicy() {
           <div className="bg-white rounded-2xl p-7 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-forest-deep" />
             <h3 className="text-[15px] font-bold text-forest-deep mb-3">⚠️ Currency Note</h3>
-            <p className="text-[14px] text-forest/65 leading-relaxed">
+            <p className="text-[15px] text-forest/80 leading-relaxed">
               <strong>Refunds are processed only in GBP (British Pounds).</strong> If you paid in another currency, the final amount you receive may vary depending on the prevailing exchange rate and any charges applied by your payment provider or bank at the time of refund.
             </p>
           </div>
@@ -1421,9 +1423,9 @@ function ContactSection() {
         <div className="grid md:grid-cols-2 gap-14 items-center">
           {/* Left: contact info */}
           <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Get in Touch</span>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Get in Touch</span>
             <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep mb-6">Contact Information</h2>
-            <p className="text-[15px] text-forest/60 leading-relaxed mb-10 max-w-md">
+            <p className="text-[15px] text-forest/80 leading-relaxed mb-10 max-w-md">
               Have questions about the programme? Our team is here to help you make the right decision.
             </p>
             <div className="space-y-5">
@@ -1435,7 +1437,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">Email</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">Email</p>
                   <a href="mailto:info@globaledulab.com" className="text-[16px] font-bold text-forest-deep hover:text-gold-deep transition-colors">
                     info@globaledulab.com
                   </a>
@@ -1448,7 +1450,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">UK</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">UK</p>
                   <a href="tel:+441223362994" className="text-[16px] font-bold text-forest-deep hover:text-gold-deep transition-colors">
                     +44 (01223) 362994
                   </a>
@@ -1462,7 +1464,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-forest/40 mb-0.5">Location</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-0.5">Location</p>
                   <p className="text-[16px] font-bold text-forest-deep">Cambridge Judge Business School, UK</p>
                 </div>
               </div>
@@ -1480,8 +1482,8 @@ function ContactSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <p className="text-[12px] font-bold uppercase tracking-widest text-gold mb-1">Cambridge Judge Business School</p>
-                <p className="text-white text-[14px] font-semibold">14–18 September 2026</p>
+                <p className="text-[15px] font-bold uppercase tracking-widest text-gold mb-1">Cambridge Judge Business School</p>
+                <p className="text-white text-[15px] font-semibold">14–18 September 2026</p>
               </div>
             </div>
           </div>
@@ -1537,7 +1539,7 @@ function ApplyNow() {
         <div className="grid md:grid-cols-[1fr_1.1fr] gap-14 items-start">
           {/* Left: info */}
           <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Limited Seats</span>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">Limited Seats</span>
             <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-tight">Apply Now</h2>
             <h3 className="text-[1.15rem] font-bold text-forest/80 mb-2">Global India Leadership Programme at Cambridge</h3>
             <div className="flex items-center gap-2 mb-6">
@@ -1545,7 +1547,7 @@ function ApplyNow() {
               <span className="text-[14px] text-forest/60">A Cambridge-led, executive leadership journey</span>
             </div>
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-[13px] text-forest/50">In Partnership with</span>
+              <span className="text-[15px] text-forest/70">In Partnership with</span>
               <img
                 src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
                 alt="Cambridge Judge Business School"
@@ -1553,11 +1555,11 @@ function ApplyNow() {
               />
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(10,48,29,0.05)] border border-forest/5 mb-6">
-              <p className="text-[14px] text-forest/70 leading-relaxed mb-3">
+              <p className="text-[15px] text-forest/70 leading-relaxed mb-3">
                 We invite you to submit your application for the Global India Leadership Programme. This is your opportunity to learn from Cambridge Judge Business School faculty, network with peers across the UK–India corridor, and gain cutting-edge insights into leadership, AI, and innovation.
               </p>
-              <p className="text-[13px] font-bold text-forest-deep">
-                Please note: <span className="font-normal text-forest/65">Submitting an application on this page does not guarantee a confirmed place. Applications are reviewed by our programme team using a selective admission model.</span>
+              <p className="text-[15px] font-bold text-forest-deep">
+                Please note: <span className="font-normal text-forest/80">Submitting an application on this page does not guarantee a confirmed place. Applications are reviewed by our programme team using a selective admission model.</span>
               </p>
             </div>
             <div className="space-y-2">
@@ -1573,7 +1575,7 @@ function ApplyNow() {
                 </div>
               ))}
             </div>
-            <p className="text-[13px] text-forest/55 mt-5 italic">
+            <p className="text-[15px] text-forest/80 mt-5 italic">
               Successful applicants will receive a confirmation email within 7 working days with instructions for securing their place by paying the programme fee.
             </p>
           </div>
@@ -1582,58 +1584,58 @@ function ApplyNow() {
           <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(10,48,29,0.1)] border border-forest/5 overflow-hidden">
             <div className="bg-forest-deep px-8 py-5">
               <p className="text-white font-bold text-[15px]">You are currently applying to Round 1 application</p>
-              <p className="text-white/60 text-[13px] mt-0.5">Please ensure you provide accurate information</p>
+              <p className="text-white/80 text-[15px] mt-0.5">Please ensure you provide accurate information</p>
             </div>
             <form onSubmit={handleSubmit} className="p-8 space-y-5">
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Full name <span className="text-red-400">*</span></label>
                 <input
                   type="text" required value={form.fullName} onChange={update('fullName')}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Email address <span className="text-red-400">*</span></label>
                 <input
                   type="email" required value={form.email} onChange={update('email')}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Current Designation <span className="text-red-400">*</span></label>
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Current Designation <span className="text-red-400">*</span></label>
                 <input
                   type="text" required value={form.designation} onChange={update('designation')}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Organisation <span className="text-red-400">*</span></label>
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Organisation <span className="text-red-400">*</span></label>
                 <input
                   type="text" required value={form.organisation} onChange={update('organisation')}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
                   Your contact number <span className="text-red-400">*</span>
                 </label>
                 <div className="flex gap-2">
-                  <select value={form.phoneCode} onChange={update('phoneCode')} className="border border-forest/15 rounded-xl px-3 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
+                  <select value={form.phoneCode} onChange={update('phoneCode')} className="border border-forest/15 rounded-xl px-3 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
                     <option value="+91">🇮🇳 +91</option>
                     <option value="+44">🇬🇧 +44</option>
                     <option value="+1">🇺🇸 +1</option>
                     <option value="+971">🇦🇪 +971</option>
                   </select>
-                  <input type="tel" required value={form.phone} onChange={update('phone')} className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                  <input type="tel" required value={form.phone} onChange={update('phone')} className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
                 </div>
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Your LinkedIn profile (if available)</label>
-                <input type="url" value={form.linkedin} onChange={update('linkedin')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Your LinkedIn profile (if available)</label>
+                <input type="url" value={form.linkedin} onChange={update('linkedin')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Programme funding</label>
-                <select value={form.funding} onChange={update('funding')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Programme funding</label>
+                <select value={form.funding} onChange={update('funding')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
                   <option value="">Choose who is funding your programme participation</option>
                   <option>Self-funded</option>
                   <option>Employer-funded</option>
@@ -1641,8 +1643,8 @@ function ApplyNow() {
                 </select>
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-forest/70 mb-1.5">Package options <span className="text-red-400">*</span></label>
-                <select required value={form.package} onChange={update('package')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[14px] text-forest/60 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
+                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">Package options <span className="text-red-400">*</span></label>
+                <select required value={form.package} onChange={update('package')} className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200">
                   <option value="">Check above for package offerings</option>
                   <option>Package 1 — £5,100 (Basic Programme)</option>
                   <option>Package 2 — £6,300 (Programme + Single Accommodation)</option>
@@ -1652,17 +1654,17 @@ function ApplyNow() {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2 disabled:opacity-60"
+                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[15px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2 disabled:opacity-60"
               >
                 {status === 'submitting' ? 'Submitting…' : <>Apply for GILP <ArrowUpRight className="h-4 w-4" /></>}
               </button>
               {status === 'success' && (
-                <p className="text-center text-[13px] font-semibold text-forest-deep mt-1">✓ Application received — check your email for confirmation.</p>
+                <p className="text-center text-[15px] font-semibold text-forest-deep mt-1">✓ Application received — check your email for confirmation.</p>
               )}
               {status === 'error' && (
-                <p className="text-center text-[13px] font-semibold text-red-500 mt-1">Something went wrong. Please try again.</p>
+                <p className="text-center text-[15px] font-semibold text-red-500 mt-1">Something went wrong. Please try again.</p>
               )}
-              <p className="text-center text-[11.5px] text-forest/40 mt-1">Applications reviewed on a rolling basis. Early applications strongly encouraged.</p>
+              <p className="text-center text-[11.5px] text-forest/70 mt-1">Applications reviewed on a rolling basis. Early applications strongly encouraged.</p>
             </form>
           </div>
         </div>
@@ -1685,13 +1687,13 @@ function CTA() {
             href="https://www.globaledulab.com/indialeadership"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-amber-400 transition-colors duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-amber-400 transition-colors duration-200 shadow-lg"
           >
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
           >
             Apply Now
           </Link>

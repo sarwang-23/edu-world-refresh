@@ -117,7 +117,7 @@ function ApplyNowPage() {
                 <div className="flex items-center justify-center h-8 w-8 rounded-full bg-gold/10 border border-gold/30">
                   <Sparkles className="w-3.5 h-3.5 text-gold" />
                 </div>
-                <span className="text-[10px] font-bold tracking-[0.3em] text-gold uppercase">Admissions</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Admissions</span>
               </div>
 
               <h1 className="text-[2.8rem] md:text-[3.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
@@ -125,7 +125,7 @@ function ApplyNowPage() {
                 <em className="font-serif italic font-normal text-gold not-italic">global leaders.</em>
               </h1>
               
-              <div className="space-y-6 text-[15px] text-white/50 leading-[1.8] max-w-[380px] font-light">
+              <div className="space-y-6 text-[15px] text-white/80 leading-[1.8] max-w-[380px] font-normal">
                 <p>
                   Thank you for your interest in our premium educational experiences.
                 </p>
@@ -142,11 +142,11 @@ function ApplyNowPage() {
             <div className="mt-12">
                <div className="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
                   <div className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 bg-forest-deep shadow-inner">
-                    <span className="text-[14px] font-serif italic text-gold">G·E·L</span>
+                    <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-0.5">Established</p>
-                    <p className="text-[13px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
+                    <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
+                    <p className="text-[15px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
                   </div>
                 </div>
             </div>
@@ -158,12 +158,12 @@ function ApplyNowPage() {
           <div className="w-full max-w-[560px]">
 
             <div className="mb-10">
-              <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
+              <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Application Form
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
                 Submit your<br />
-                <span className="font-serif italic font-normal text-forest/50">details</span>
+                <span className="font-serif italic font-normal text-forest/70">details</span>
               </h2>
             </div>
 
@@ -171,13 +171,13 @@ function ApplyNowPage() {
               <div className="flex flex-col items-center text-center gap-4 py-16 px-6 bg-[#F7F5F1] rounded-2xl border border-forest/10">
                 <CheckCircle2 className="h-10 w-10 text-gold" />
                 <h3 className="text-[1.3rem] font-bold text-forest-deep">Application received</h3>
-                <p className="text-[13.5px] text-forest/60 max-w-[320px]">
+                <p className="text-[13.5px] text-forest/80 max-w-[320px]">
                   Thank you — our Cambridge desk will review your application and be in touch shortly.
                 </p>
                 <button
                   type="button"
                   onClick={() => setStatus("idle")}
-                  className="mt-2 text-[12px] font-bold uppercase tracking-[0.18em] text-forest-deep border-b-2 border-forest-deep/20 hover:border-gold hover:text-gold transition-all duration-200 pb-0.5"
+                  className="mt-2 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep border-b-2 border-forest-deep/20 hover:border-gold hover:text-gold transition-all duration-200 pb-0.5"
                 >
                   Submit another application
                 </button>
@@ -189,7 +189,7 @@ function ApplyNowPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="group">
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">First Name</label>
+                    <label className="text-[15px] font-semibold text-forest/80">First Name</label>
                   </div>
                   <input
                     type="text"
@@ -197,12 +197,12 @@ function ApplyNowPage() {
                     placeholder="Karan"
                     value={formData.firstName}
                     onChange={handleChange("firstName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
                 <div className="group">
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">Last Name</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Last Name</label>
                   </div>
                   <input
                     type="text"
@@ -210,7 +210,7 @@ function ApplyNowPage() {
                     placeholder="Sharma"
                     value={formData.lastName}
                     onChange={handleChange("lastName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
               </div>
@@ -218,7 +218,7 @@ function ApplyNowPage() {
               {/* Email */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Email Address</label>
+                  <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
                 </div>
                 <input
                   type="email"
@@ -226,20 +226,20 @@ function ApplyNowPage() {
                   placeholder="you@organisation.com"
                   value={formData.email}
                   onChange={handleChange("email")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                 />
               </div>
 
               {/* Phone */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Phone Number</label>
+                  <label className="text-[15px] font-semibold text-forest/80">Phone Number</label>
                 </div>
                 <div className="flex gap-2">
                   <select
                     value={formData.phoneCode}
                     onChange={handleChange("phoneCode")}
-                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
+                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
                   >
                     <option>+91 IN</option>
                     <option>+44 UK</option>
@@ -251,7 +251,7 @@ function ApplyNowPage() {
                     placeholder="98765 43210"
                     value={formData.phone}
                     onChange={handleChange("phone")}
-                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
               </div>
@@ -260,26 +260,26 @@ function ApplyNowPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">Organisation</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
                   </div>
                   <input
                     type="text"
                     placeholder="School/Company"
                     value={formData.organisation}
                     onChange={handleChange("organisation")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">Designation</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Designation</label>
                   </div>
                   <input
                     type="text"
                     placeholder="E.g. Principal"
                     value={formData.designation}
                     onChange={handleChange("designation")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
               </div>
@@ -287,7 +287,7 @@ function ApplyNowPage() {
               {/* Portfolio Selection */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-3">
-                  <label className="text-[13px] font-semibold text-forest/80">Select Programmes</label>
+                  <label className="text-[15px] font-semibold text-forest/80">Select Programmes</label>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {programmes.map((tag, i) => {
@@ -300,7 +300,7 @@ function ApplyNowPage() {
                       className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
                         isSelected
                           ? "bg-forest-deep border-forest-deep text-white shadow-md"
-                          : "bg-[#F7F5F1] border-transparent text-forest/60 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
+                          : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
                       }`}
                     >
                       {isSelected ? (
@@ -317,14 +317,14 @@ function ApplyNowPage() {
               {/* Message */}
               <div>
                 <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Additional Details</label>
+                  <label className="text-[15px] font-semibold text-forest/80">Additional Details</label>
                 </div>
                 <textarea
                   rows={4}
                   placeholder="Share any specific requirements or questions..."
                   value={formData.message}
                   onChange={handleChange("message")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
+                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
                 />
               </div>
 
@@ -336,13 +336,13 @@ function ApplyNowPage() {
 
               {/* CTA */}
               <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                <p className="text-[11.5px] text-forest/35 leading-relaxed max-w-[200px]">
+                <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[200px]">
                   By submitting, you consent to be contacted by the Global Education Lab team.
                 </p>
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
                 >
                   {status === "submitting" ? "Submitting..." : "Submit Application"}
                   <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">

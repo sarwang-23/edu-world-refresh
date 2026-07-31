@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Award, Users, Landmark, Globe2, Star, Rocket, Building2, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react'
-import heroImg from '../assets/business-leaders.jpg'
+import heroImg from '../assets/gilp-march-15.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 import { Footer } from './index'
 import { useState } from 'react'
@@ -34,13 +34,13 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
-      <div className="mx-auto max-w-7xl px-6 pt-28">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
+      <div className="mx-auto max-w-7xl px-6 pt-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Invite-Only · UK Parliament</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Invite-Only · UK Parliament</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Global Impact of Cambridge Startups
@@ -48,7 +48,7 @@ function Hero() {
             <p className="mt-5 text-lg font-semibold text-forest/80 leading-snug">
               House of Lords, Westminster
             </p>
-            <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
+            <p className="mt-5 text-[15px] text-forest/80 leading-relaxed max-w-lg">
               An exclusive, invite-only evening at the Palace of Westminster honouring the founders, investors and researchers behind Cambridge&rsquo;s most impactful global ventures — bringing together the UK-India business corridor under one historic roof.
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
@@ -87,7 +87,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">UK Parliament</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">Westminster</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">Westminster</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -96,7 +96,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">By Invitation</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">Only</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">Only</p>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ function StatsStrip() {
             >
               <p className="text-2xl md:text-3xl font-bold text-forest-deep">{s.val}</p>
               <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">{s.label}</p>
-              <p className="text-[14px] text-forest/55 mt-0.5">{s.sub}</p>
+              <p className="text-[15px] text-forest/80 mt-0.5">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -160,11 +160,11 @@ function AboutEvening() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">About the Evening</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">About the Evening</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Where Cambridge meets Westminster.</h2>
-          <p className="mt-4 text-[15px] text-forest/65 max-w-2xl mx-auto leading-relaxed">An evening that brings together two of the most important institutions in the UK — the University of Cambridge and the UK Parliament — to celebrate global innovation and the UK-India relationship.</p>
+          <p className="mt-4 text-[15px] text-forest/80 max-w-2xl mx-auto leading-relaxed">An evening that brings together two of the most important institutions in the UK — the University of Cambridge and the UK Parliament — to celebrate global innovation and the UK-India relationship.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((it, i) => (
@@ -196,7 +196,7 @@ function WhatToExpect() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Evening Programme</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Evening Programme</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">An evening to remember.</h2>
@@ -206,7 +206,7 @@ function WhatToExpect() {
             <div key={i} className="rounded-3xl border border-white/10 bg-white/5 p-8 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
               <p className="text-[15px] font-bold text-gold uppercase tracking-[0.2em] mb-2">{item.time}</p>
               <h3 className="text-[15px] font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-[15px] text-white/65 leading-relaxed">{item.desc}</p>
+              <p className="text-[15px] text-white/80 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -228,11 +228,11 @@ function WhoAttends() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Attends</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who Attends</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">A genuinely curated room.</h2>
-          <p className="mt-4 text-[15px] text-forest/65 max-w-xl mx-auto">Every guest is handpicked. The evening is designed for quality of connection, not quantity of attendance.</p>
+          <p className="mt-4 text-[15px] text-forest/80 max-w-xl mx-auto">Every guest is handpicked. The evening is designed for quality of connection, not quantity of attendance.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {profiles.map((p, i) => (
@@ -279,7 +279,7 @@ function PastEditions() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Voices from Past Editions</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Voices from Past Editions</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What guests say about the evening.</h2>
@@ -289,15 +289,15 @@ function PastEditions() {
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[14px] text-forest/50 mt-1">{t.role}</p>
+        <p className="text-[15px] text-forest/70 mt-1">{t.role}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
           </button>
           <div className="flex gap-2">
             {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
           </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
@@ -313,7 +313,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">By Invitation Only</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">By Invitation Only</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Request your invitation.</h2>

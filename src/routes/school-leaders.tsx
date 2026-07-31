@@ -20,6 +20,8 @@ import {
   Quote,
 } from 'lucide-react'
 import schoolLeadersImg from '../assets/school-leaders.jpg'
+import person11Img from '../assets/person11.jpg'
+import person12Img from '../assets/person12.jpg'
 
 export const Route = createFileRoute('/school-leaders')({
   component: SchoolLeaders,
@@ -46,7 +48,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-16 md:pb-24">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-28">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries
@@ -71,7 +73,7 @@ function Hero() {
               Delegate Support
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[15px] font-medium uppercase tracking-[0.22em] text-forest/60">
+          <div className="mt-10 flex items-center gap-3 text-[15px] font-medium uppercase tracking-[0.22em] text-forest/80">
             <span className="h-px w-10 bg-forest/30" />
             Cambridge · Finland · London · Bali
           </div>
@@ -111,7 +113,7 @@ function CollaboratorsBar() {
 
   return (
     <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
-      <p className="text-center text-[14px] font-bold uppercase tracking-[0.3em] text-forest/50 mb-5">
+      <p className="text-center text-[15px] font-bold uppercase tracking-[0.3em] text-forest/70 mb-5">
         IN COLLABORATION WITH
       </p>
       <div className="relative flex overflow-hidden">
@@ -128,7 +130,7 @@ function CollaboratorsBar() {
               className="whitespace-nowrap text-[15px] font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
             >
               {partner}
-              <span className="ml-14 text-gold/40 select-none">✦</span>
+              <span className="ml-14 text-gold/80 select-none">✦</span>
             </span>
           ))}
         </div>
@@ -309,7 +311,7 @@ function ProgrammesCohorts() {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between text-[15px] font-bold uppercase tracking-[0.2em] text-forest/60 mb-6">
+                  <div className="flex items-center justify-between text-[15px] font-bold uppercase tracking-[0.2em] text-forest/80 mb-6">
                     <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-gold transition-colors ${
                       isSelected ? 'bg-gold/15' : 'bg-forest/5'
                     }`}>
@@ -337,7 +339,7 @@ function ProgrammesCohorts() {
                   <Link
                     to={p.link as any}
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[14px] font-semibold uppercase tracking-widest text-cream transition-all hover:bg-forest-deep hover:shadow-md"
+                    className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[15px] font-semibold uppercase tracking-widest text-cream transition-all hover:bg-forest-deep hover:shadow-md"
                   >
                     View the Programme <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
@@ -409,18 +411,21 @@ function Testimonials() {
         '"The Cambridge programme reframed how our board thinks about school leadership. We came as visitors and left as peers."',
       author: "Dr. Aisha Rahman",
       role: "CHAIR OF TRUSTEES — CRESCENT INTERNATIONAL SCHOOL, DUBAI",
+      img: person11Img,
     },
     {
       quote:
         '"Finland was not a study tour — it was a mirror. Six months on, we have rebuilt our primary curriculum around what we saw."',
       author: "Kwame Mensah",
       role: "HEAD OF SCHOOL — ACHIMOTA LEARNING GROUP, ACCRA",
+      img: person12Img,
     },
     {
       quote:
         '"For our senior team, the London programme was worth every mile. The access GEL arranged was extraordinary."',
       author: "Priya Venkatesh",
       role: "FOUNDER-PRINCIPAL — SATTVA ACADEMIES, BENGALURU",
+      img: person11Img,
     },
   ]
 
@@ -441,13 +446,16 @@ function Testimonials() {
               className="flex flex-col justify-between rounded-2xl border border-cream/15 bg-forest-deep/60 p-8 backdrop-blur-sm"
             >
               <div>
-                <Quote className="h-8 w-8 text-gold/40 mb-4" />
+                <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
-              <div className="mt-8 border-t border-cream/10 pt-4">
-                <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+              <div className="mt-8 border-t border-cream/10 pt-4 flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0"><img src={r.img} alt={r.author} className="w-full h-full object-cover" /></div>
+                <div>
+                  <p className="text-[15px] font-bold text-gold">{r.author}</p>
+                  <p className="mt-0.5 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
+                </div>
               </div>
             </div>
           ))}

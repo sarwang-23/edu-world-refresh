@@ -3,11 +3,21 @@ import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compas
 import { Footer } from './index'
 
 import cambridgeImg from '@/assets/cambridge.jpg'
-import heroImg from '@/assets/hero-classroom.jpg'
+import heroImgOld from '@/assets/hero-classroom.jpg'
 import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
+
+import newHeroImg from '@/assets/IMG_0719.jpg'
+import siteVisitImg from '@/assets/site visit.jpg'
+import socialCulturalImg from '@/assets/IMG_5138_2.jpg'
+import globalNetworkImg from '@/assets/IMG_4929.jpg'
+import ecosystemImg from '@/assets/IMG_5277.jpg'
+
+import campusLife1 from '@/assets/campus-life-1.jpg'
+import campusLife2 from '@/assets/campus-life-2.jpg'
+import campusLife3 from '@/assets/campus-life-3.jpg'
 
 export const Route = createFileRoute('/programmes/graduate')({
   head: () => ({
@@ -26,6 +36,7 @@ function GraduateProgramme() {
       <StatsMarquee />
       <WhyDifferent />
       <EcosystemExperience />
+      <CampusLife />
       <Tracks />
       <Impact />
       <BottomCTA />
@@ -37,21 +48,21 @@ function GraduateProgramme() {
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4EFE6] pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-36 md:pt-4 md:pb-44">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
+      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text column */}
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Graduate Summer Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Graduate Summer Programme</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
@@ -63,7 +74,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               An immersive academic and professional experience for ambitious graduates.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               Learn from leading minds, explore world-class institutions, build global connections and turn ideas into real-world impact.
             </p>
 
@@ -86,20 +97,20 @@ function Hero() {
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <button className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 Register Your Interest
-              </button>
+              </Link>
             </div>
           </div>
 
           {/* Image column */}
           <div className="relative">
             <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={newHeroImg} alt="Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
+                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
                   <p className="text-white text-[15px] font-bold">12–25 July 2026</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -120,7 +131,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Girton College</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">University of Cambridge</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">University of Cambridge</p>
               </div>
             </div>
 
@@ -130,7 +141,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-white uppercase tracking-wider">3 Tracks</p>
-                <p className="text-[14px] text-cream/55 mt-0.5">Entrepreneurship, Research & Architecture</p>
+                <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship, Research & Architecture</p>
               </div>
             </div>
 
@@ -160,8 +171,8 @@ function StatsMarquee() {
           {repeated.map((s, i) => (
             <div key={i} className="text-center px-10 flex-shrink-0 border-r border-forest/10 last:border-r-0 group cursor-default">
               <p className="text-2xl md:text-3xl font-bold text-forest-deep group-hover:text-gold transition-colors duration-300">{s.val}</p>
-              <p className="text-[14px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
-              <p className="text-[15px] text-forest/55 leading-tight">{s.sub}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-gold mt-2 mb-1">{s.label}</p>
+              <p className="text-[15px] text-forest/80 leading-tight">{s.sub}</p>
             </div>
           ))}
         </div>
@@ -174,11 +185,11 @@ function StatsMarquee() {
 function WhyDifferent() {
   const elements = [
     { img: teachersImg, icon: <GraduationCap className="h-5 w-5" />, num: '01', title: 'Academic Excellence', tag: 'World-Class', desc: 'Engage with world-class teaching and cutting-edge research.' },
-    { img: cambridgeImg, icon: <Building2 className="h-5 w-5" />, num: '02', title: 'Cambridge Ecosystem', tag: 'Innovation', desc: 'Access universities, research centres, startups, investors and innovation hubs.' },
-    { img: heroImg, icon: <Presentation className="h-5 w-5" />, num: '03', title: 'Hands-on Learning', tag: 'Practical', desc: 'Interactive workshops, team projects and real-world problem solving.' },
-    { img: businessLeadersImg, icon: <MapPin className="h-5 w-5" />, num: '04', title: 'Site Visits', tag: 'Real-World', desc: 'Visit leading institutions, labs, companies and cultural landmarks.' },
-    { img: schoolLeadersImg, icon: <Globe2 className="h-5 w-5" />, num: '05', title: 'Global Network', tag: 'Connections', desc: 'Build lifelong friendships and professional connections.' },
-    { img: studentsImg, icon: <Heart className="h-5 w-5" />, num: '06', title: 'Social & Cultural', tag: 'Experience', desc: 'Explore Cambridge life, activities and the rich UK culture.' },
+    { img: ecosystemImg, icon: <Building2 className="h-5 w-5" />, num: '02', title: 'Cambridge Ecosystem', tag: 'Innovation', desc: 'Access universities, research centres, startups, investors and innovation hubs.' },
+    { img: heroImgOld, icon: <Presentation className="h-5 w-5" />, num: '03', title: 'Hands-on Learning', tag: 'Practical', desc: 'Interactive workshops, team projects and real-world problem solving.' },
+    { img: siteVisitImg, icon: <MapPin className="h-5 w-5" />, num: '04', title: 'Site Visits', tag: 'Real-World', desc: 'Visit leading institutions, labs, companies and cultural landmarks.' },
+    { img: globalNetworkImg, icon: <Globe2 className="h-5 w-5" />, num: '05', title: 'Global Network', tag: 'Connections', desc: 'Build lifelong friendships and professional connections.' },
+    { img: socialCulturalImg, icon: <Heart className="h-5 w-5" />, num: '06', title: 'Social & Cultural', tag: 'Experience', desc: 'Explore Cambridge life, activities and the rich UK culture.' },
   ]
   return (
     <section className="bg-white py-32 relative overflow-hidden">
@@ -190,7 +201,7 @@ function WhyDifferent() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Key Differentiators</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Key Differentiators</span>
           </div>
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-6 leading-[1.1]">Why this programme is different.</h2>
           <p className="text-[15px] text-forest/70 max-w-2xl leading-[1.75] mb-8">
@@ -199,8 +210,8 @@ function WhyDifferent() {
           <div className="inline-flex items-center gap-4 overflow-hidden rounded-2xl bg-[#F4EFE6] border border-gold/20 px-6 py-4 shadow-sm group">
             <div className="h-6 w-1 rounded-full bg-gold" />
             <div>
-              <span className="text-[14px] font-bold text-forest-deep leading-[1.6]">It's not just a summer. </span>
-              <span className="text-[14px] font-bold text-gold leading-[1.6]">It's a turning point.</span>
+              <span className="text-[15px] font-bold text-forest-deep leading-[1.6]">It's not just a summer. </span>
+              <span className="text-[15px] font-bold text-gold leading-[1.6]">It's a turning point.</span>
             </div>
           </div>
         </div>
@@ -212,7 +223,7 @@ function WhyDifferent() {
               <div className="relative aspect-[4/5] w-full overflow-hidden">
                 <img src={e.img} alt={e.title} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-transparent" />
-                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[14px] font-bold text-white/80">{e.num}</div>
+                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[15px] font-bold text-white/80">{e.num}</div>
                 <div className="absolute top-4 right-4">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[15px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">{e.tag}</span>
                 </div>
@@ -233,11 +244,11 @@ function WhyDifferent() {
 /* ─── ECOSYSTEM EXPERIENCE ───────────────────────────────────────────────── */
 function EcosystemExperience() {
   const elements = [
-    { img: heroImg, title: "Expert-led Sessions", desc: "Learn from academics, researchers and industry leaders." },
-    { img: studentsImg, title: "Workshops & Projects", desc: "Collaborate, ideate and build solutions with global peers." },
-    { img: cambridgeImg, title: "Site Visits", desc: "Explore universities, labs, companies and innovation hubs." },
-    { img: businessLeadersImg, title: "Startup & Research Access", desc: "Meet founders, researchers and innovators driving change." },
-    { img: schoolLeadersImg, title: "Social & Cultural Activities", desc: "Punting, college visits, dinners, city tours and more." },
+    { img: newHeroImg, title: "Expert-led Sessions", desc: "Learn from academics, researchers and industry leaders." },
+    { img: globalNetworkImg, title: "Workshops & Projects", desc: "Collaborate, ideate and build solutions with global peers." },
+    { img: siteVisitImg, title: "Site Visits", desc: "Explore universities, labs, companies and innovation hubs." },
+    { img: ecosystemImg, title: "Startup & Research Access", desc: "Meet founders, researchers and innovators driving change." },
+    { img: socialCulturalImg, title: "Social & Cultural Activities", desc: "Punting, college visits, dinners, city tours and more." },
   ]
   return (
     <section className="py-32 bg-forest-deep relative overflow-hidden">
@@ -247,7 +258,7 @@ function EcosystemExperience() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">The Environment</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">The Environment</span>
         </div>
         <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-4 leading-tight">Experience the Cambridge Ecosystem</h2>
         <p className="text-[15px] text-cream/75 leading-[1.8] mb-16 max-w-2xl">
@@ -261,8 +272,8 @@ function EcosystemExperience() {
                 <img src={e.img} alt={e.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" />
               </div>
               <div className="p-5 text-center">
-                <h3 className="text-[14px] font-bold text-white mb-2">{e.title}</h3>
-                <p className="text-[15px] text-cream/60 leading-relaxed">{e.desc}</p>
+                <h3 className="text-[15px] font-bold text-white mb-2">{e.title}</h3>
+                <p className="text-[15px] text-cream/80 leading-relaxed">{e.desc}</p>
               </div>
             </div>
           ))}
@@ -284,11 +295,11 @@ function Tracks() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Academic Pathways</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Choose Your Track.</h2>
-          <p className="text-[15px] text-forest/65 max-w-lg mx-auto leading-[1.75]">Three unique pathways. One unforgettable Cambridge experience.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg mx-auto leading-[1.75]">Three unique pathways. One unforgettable Cambridge experience.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -302,11 +313,11 @@ function Tracks() {
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Track 01
                 </span>
-                <span className="text-[14px] font-semibold text-forest/35 uppercase tracking-widest">Entrepreneurship</span>
+                <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Entrepreneurship</span>
               </div>
               <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-gold transition-colors duration-400">Entrepreneurship<br/>& AI</h3>
-              <p className="text-[14px] font-semibold text-forest/65 mb-4 tracking-wide">Build ideas. Solve problems.</p>
-              <p className="text-[14px] text-forest/55 leading-[1.65] mb-6">Build ideas for an AI-enabled world and transform them into viable ventures.</p>
+              <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Build ideas. Solve problems.</p>
+              <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Build ideas for an AI-enabled world and transform them into viable ventures.</p>
               <div className="flex flex-col gap-3">
                 {["Opportunity discovery","AI tools in real world","Prototyping & validation","Pitch to experts"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
@@ -319,10 +330,10 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={heroImg} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={heroImgOld} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
-                <Link to="/students/entrepreneurship" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-gold px-7 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
+                <Link to="/students/entrepreneurship" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-gold px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -339,11 +350,11 @@ function Tracks() {
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                   Track 02
                 </span>
-                <span className="text-[14px] font-semibold text-forest/35 uppercase tracking-widest">Research</span>
+                <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Research</span>
               </div>
               <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-blue-600 transition-colors duration-400">Research<br/>Methods</h3>
-              <p className="text-[14px] font-semibold text-forest/65 mb-4 tracking-wide">Ask questions. Discover.</p>
-              <p className="text-[14px] text-forest/55 leading-[1.65] mb-6">Develop research skills, explore topics and connect ideas with impact.</p>
+              <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Ask questions. Discover.</p>
+              <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Develop research skills, explore topics and connect ideas with impact.</p>
               <div className="flex flex-col gap-3">
                 {["Research design","Data analysis & evidence","Engage with researchers","Present your proposal"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
@@ -359,7 +370,7 @@ function Tracks() {
               <img src={studentsImg} alt="Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
-                <Link to="/students/stem-research" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
+                <Link to="/students/stem-research" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -376,11 +387,11 @@ function Tracks() {
                   <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
                   Track 03
                 </span>
-                <span className="text-[14px] font-semibold text-forest/35 uppercase tracking-widest">Architecture</span>
+                <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Architecture</span>
               </div>
               <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-orange-600 transition-colors duration-400">Architecture<br/>& Design</h3>
-              <p className="text-[14px] font-semibold text-forest/65 mb-4 tracking-wide">Design spaces. Shape experiences.</p>
-              <p className="text-[14px] text-forest/55 leading-[1.65] mb-6">Explore architecture through design, heritage and human-centred spaces.</p>
+              <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Design spaces. Shape experiences.</p>
+              <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Explore architecture through design, heritage and human-centred spaces.</p>
               <div className="flex flex-col gap-3">
                 {["Sustainable design","Heritage & urban design","Site analysis workshops","Present design concept"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
@@ -396,7 +407,7 @@ function Tracks() {
               <img src={cambridgeImg} alt="Architecture" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950/90 via-[#966526]/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
-                <Link to="/students/architecture" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#B47C35] px-7 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-orange-500/30 hover:bg-[#966526] transition-all duration-300 group/btn">
+                <Link to="/students/architecture" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#B47C35] px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-orange-500/30 hover:bg-[#966526] transition-all duration-300 group/btn">
                   Explore Track
                   <ArrowUpRight className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -404,6 +415,63 @@ function Tracks() {
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── CAMPUS LIFE & ACCOMMODATION ────────────────────────────────────────── */
+function CampusLife() {
+  return (
+    <section className="bg-white py-32 relative overflow-hidden border-y border-forest/10">
+      <div className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] rounded-full bg-forest/5 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-gold/5 blur-[100px]" />
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Accommodation & Experience</span>
+            <div className="h-px w-8 bg-gold" />
+          </div>
+          <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep mb-6 leading-tight">Campus Life & Accommodation</h2>
+          <p className="text-[15px] text-forest/70 max-w-2xl mx-auto leading-[1.75]">
+            Live, learn, and grow at one of Cambridge's historic colleges. From formal dinners to comfortable dormitories, experience the true essence of university life.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          {/* Main big image */}
+          <div className="lg:col-span-2 group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md">
+            <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+            <img src={campusLife2} alt="Classroom and Workshops" className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
+              <h3 className="text-2xl font-bold text-white mb-2">Interactive Workshops</h3>
+              <p className="text-cream/80 text-[15px]">Engage deeply with peers and facilitators in modern, dynamic learning spaces.</p>
+            </div>
+          </div>
+          
+          {/* Two smaller images */}
+          <div className="flex flex-col gap-6">
+            <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
+              <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img src={campusLife1} alt="Historic Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
+                <h3 className="text-lg font-bold text-white mb-1">Historic Grounds</h3>
+                <p className="text-cream/80 text-[15px]">Explore the beautiful college gardens.</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
+              <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img src={campusLife3} alt="Dorm Room" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
+                <h3 className="text-lg font-bold text-white mb-1">Comfortable Living</h3>
+                <p className="text-cream/80 text-[15px]">Modern, single en-suite rooms for delegates.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -424,7 +492,7 @@ function Impact() {
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programme Impact</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Impact</span>
         </div>
         <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep mb-16 leading-tight">Creating transformative experiences.</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -433,7 +501,7 @@ function Impact() {
               <div className="pointer-events-none absolute top-0 right-0 h-28 w-28 rounded-full bg-gold/8 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="mt-2 mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-300 shadow-sm">{s.icon}</div>
               <div className="text-3xl font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">{s.v}</div>
-              <div className="text-[14px] text-forest/60 leading-[1.65]">{s.l}</div>
+              <div className="text-[15px] text-forest/80 leading-[1.65]">{s.l}</div>
             </div>
           ))}
         </div>
@@ -458,20 +526,20 @@ function BottomCTA() {
 
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-[1.08] tracking-tight">Your Cambridge journey starts here.</h2>
-        <p className="mt-5 text-[15px] text-cream/65 leading-[1.75] max-w-xl mx-auto">Gain knowledge, build global connections and create the future you envision. A lifetime of impact. A summer to remember.</p>
+        <p className="mt-5 text-[15px] text-cream/80 leading-[1.75] max-w-xl mx-auto">Gain knowledge, build global connections and create the future you envision. A lifetime of impact. A summer to remember.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <button className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Register Your Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-          </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          </Link>
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Download Overview <ArrowDownToLine className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

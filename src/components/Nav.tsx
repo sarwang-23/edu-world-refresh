@@ -5,13 +5,11 @@ export function Nav() {
   const location = useLocation()
   
   // Extra items not in the provided image are placed here
-  const addons = [
-    { label: "Entrepreneurship", href: "/entrepreneurship" },
-  ]
+  const addons: { label: string; href: string }[] = []
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">
             Global<span className="text-gold">.</span>Edu<span className="text-gold">.</span>Lab
@@ -29,7 +27,7 @@ export function Nav() {
           </Link>
           
           {/* Programmes Dropdown */}
-          <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
+          <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
             <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname.startsWith('/programmes') || 
                 location.pathname.startsWith('/students') || 
@@ -99,6 +97,7 @@ export function Nav() {
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
                       <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
                       <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
+                      <Link to="/entrepreneurship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Entrepreneurship</Link>
                       {/* Routes not built yet — plain anchors avoid the typed-router error */}
                       <a href="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</a>
                       <a href="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</a>
@@ -126,7 +125,7 @@ export function Nav() {
           </Link>
 
           {/* Explore Dropdown */}
-          <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
+          <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
             <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' ? "text-forest" : "text-forest/75"
               }`}>
@@ -163,7 +162,7 @@ export function Nav() {
 
           {/* Addons Menu */}
           {addons.length > 0 && (
-            <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
+            <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
               <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest text-forest/75`}>
                 More
               </span>

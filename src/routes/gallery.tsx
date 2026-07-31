@@ -2,7 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Play, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Footer } from "./index";
-
+import yusufHImg from "@/assets/YusufH.jpg";
+import stem1Img from "@/assets/STEM1.jpg";
+import stemYvesImg from "@/assets/STEM Yves 2.jpg";
+import stemAstroImg from "@/assets/STEM astrophysics.jpg";
+import siteVisitImg from "@/assets/site visit.jpg";
+import img0719 from "@/assets/IMG_0719.jpg";
+import img4915 from "@/assets/IMG_4915.jpg";
+import img4929 from "@/assets/IMG_4929.jpg";
+import img5105 from "@/assets/IMG_5105.jpg";
+import img5138 from "@/assets/IMG_5138_2.jpg";
+import img5277 from "@/assets/IMG_5277.jpg";
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
   head: () => ({
@@ -33,12 +43,12 @@ function GalleryPage() {
         <div className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] translate-x-1/3 rounded-full bg-gold/8 blur-[140px]" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-16 pt-28">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-16 pt-16">
           {/* Left Content */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold tracking-[0.25em] text-gold uppercase">The Visual Archive • Vol. 01</span>
+              <span className="text-[15px] font-bold tracking-[0.25em] text-gold uppercase">The Visual Archive • Vol. 01</span>
             </div>
 
             <h1 className="text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
@@ -64,15 +74,15 @@ function GalleryPage() {
             <div className="pt-8 border-t border-forest/10 grid grid-cols-3 gap-6">
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">05</p>
-                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Countries</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/70 uppercase">Countries</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">150+</p>
-                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Business Leaders</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/70 uppercase">Business Leaders</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-forest-deep mb-1">5,000+</p>
-                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/50 uppercase">Students Engaged</p>
+                <p className="text-[15px] font-bold tracking-[0.2em] text-forest/70 uppercase">Students Engaged</p>
               </div>
             </div>
           </div>
@@ -84,7 +94,7 @@ function GalleryPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                 <div>
-                  <span className="text-[14px] font-bold tracking-[0.2em] text-gold uppercase block mb-1">Cover</span>
+                  <span className="text-[15px] font-bold tracking-[0.2em] text-gold uppercase block mb-1">Cover</span>
                   <p className="text-white font-medium text-[15px]">Cambridge • Michaelmas '24</p>
                 </div>
                 <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 flex items-center justify-center hover:bg-white/30 transition-colors">
@@ -103,7 +113,7 @@ function GalleryPage() {
             <div key={i} className="flex gap-8 items-center shrink-0">
               {['CAMBRIDGE', 'LONDON', 'HELSINKI', 'TALLINN', 'BALI', 'NEW DELHI', 'MUMBAI', 'BENGALURU'].map((city, j) => (
                 <div key={`${i}-${j}`} className="flex items-center gap-8">
-                  <span className="text-[14px] font-bold tracking-[0.2em] text-forest/40 uppercase">{city}</span>
+                  <span className="text-[15px] font-bold tracking-[0.2em] text-forest/70 uppercase">{city}</span>
                   <span className="w-1.5 h-1.5 border border-gold/50 rounded-full flex items-center justify-center">
                     <span className="w-0.5 h-0.5 bg-gold rounded-full"></span>
                   </span>
@@ -121,14 +131,14 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 01 — Corporate Leadership</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 01 — Corporate Leadership</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1]">
                 The Boardroom,<br />
                 <span className="font-serif italic text-gold">reimagined.</span>
               </h2>
             </div>
-            <p className="text-[14px] text-forest/70 max-w-sm leading-relaxed">
+            <p className="text-[15px] text-forest/70 max-w-sm leading-relaxed">
               Over 150 business leaders trained through advanced workshops delivered in partnership with the University of Cambridge and other trusted institutions.
             </p>
           </div>
@@ -169,14 +179,14 @@ function GalleryPage() {
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-24 z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-6 bg-gold" />
-            <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Past Programmes</span>
+            <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Past Programmes</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
             Five countries.{" "}
             <span className="font-serif italic text-gold font-normal">Hundreds of institutions.</span>{" "}
             One extended classroom.
           </h2>
-          <p className="text-[14px] text-white/80 max-w-lg leading-relaxed">
+          <p className="text-[15px] text-white/80 max-w-lg leading-relaxed">
             Highlights from previous programmes across the UK, India, Finland, Estonia and Indonesia.
           </p>
         </div>
@@ -189,14 +199,14 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 02 — School Leadership</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 02 — School Leadership</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1]">
                 Educators,{" "}
                 <span className="font-serif italic text-gold">in dialogue.</span>
               </h2>
             </div>
-            <p className="text-[14px] text-forest/70 max-w-sm leading-relaxed">
+            <p className="text-[15px] text-forest/70 max-w-sm leading-relaxed">
               L&D programmes delivered across five countries for over 100 educational organisations.
             </p>
           </div>
@@ -218,14 +228,14 @@ function GalleryPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-6 bg-gold" />
-                <span className="text-[14px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 03 — Student Programmes</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Chapter 03 — Student Programmes</span>
               </div>
               <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep tracking-tight leading-[1.1] max-w-xl">
                 The next generation,{" "}
                 <span className="font-serif italic text-gold">at work.</span>
               </h2>
             </div>
-            <p className="text-[14px] text-forest/70 max-w-sm leading-relaxed">
+            <p className="text-[15px] text-forest/70 max-w-sm leading-relaxed">
               STEM and Entrepreneurship workshops & summer camps for 5,000+ students — from young learners to undergraduates.
             </p>
           </div>
@@ -236,11 +246,14 @@ function GalleryPage() {
               "aspect-[2/3]", "aspect-square", "aspect-[3/4]",
               "aspect-square", "aspect-[3/2]", "aspect-square",
               "aspect-[4/5]", "aspect-[3/4]", "aspect-square"
-            ].map((ratio, i) => (
-              <div key={i} className={`rounded-[2rem] overflow-hidden relative break-inside-avoid group ${ratio}`}>
-                <img src={images[(i + 3) % images.length]} alt="Student Programmes" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-            ))}
+            ].map((ratio, i) => {
+              const studentImages = [yusufHImg, stem1Img, stemYvesImg, stemAstroImg, siteVisitImg, img0719, img4915, img4929, img5105, img5138, img5277];
+              return (
+                <div key={i} className={`rounded-[2rem] overflow-hidden relative break-inside-avoid group ${ratio}`}>
+                  <img src={studentImages[i % studentImages.length]} alt="Student Programmes" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -251,7 +264,7 @@ function GalleryPage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-6 bg-[#C19842]" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-[#C19842]">Be Part of the Story</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-[#C19842]">Be Part of the Story</span>
             </div>
             <h2 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold text-white leading-[1.05] tracking-tight mb-0">
               Let's build something
@@ -263,7 +276,7 @@ function GalleryPage() {
           <div className="flex flex-col items-start gap-5 shrink-0">
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#C19842] px-8 py-4 text-[14px] font-bold uppercase tracking-[0.2em] text-[#051108] transition-all hover:bg-white"
+              className="group inline-flex items-center gap-3 rounded-full bg-[#C19842] px-8 py-4 text-[15px] font-bold uppercase tracking-[0.2em] text-[#051108] transition-all hover:bg-white"
             >
               Start a Conversation
               <span className="text-base">↗</span>

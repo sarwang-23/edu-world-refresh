@@ -4,7 +4,7 @@ import {
   Building2, Image as ImageIcon, Users, Trophy, Lightbulb, Globe2
 } from 'lucide-react'
 import { Footer } from './index'
-import heroImg from '../assets/hero-classroom.jpg'
+import heroImg from '../assets/cambridge_3.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 
 export const Route = createFileRoute('/students_/architecture')({
@@ -33,11 +33,11 @@ function ArchitectureTrack() {
 /* ── Hero ── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-36 md:pt-28 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-6 pb-36 md:pt-6 md:pb-44">
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-orange-400/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-orange-600/6 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative mx-auto max-w-7xl px-6 pt-6">
         {/* Back */}
         <Link
           to="/programmes/graduate"
@@ -59,7 +59,7 @@ function Hero() {
               Design spaces.<br />
               <span className="font-serif italic text-orange-600">Shape experiences.</span>
             </h1>
-            <p className="text-[15px] text-forest/65 leading-[1.8] max-w-md mb-10">
+            <p className="text-[15px] text-forest/80 leading-[1.8] max-w-md mb-10">
               Explore architecture through design, heritage, sustainability and human-centred spaces. Learn how built environments impact our world — right at Cambridge University.
             </p>
 
@@ -116,11 +116,11 @@ function WhatYoullDo() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-orange-500" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-orange-600">What You'll Do</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-orange-600">What You'll Do</span>
             <div className="h-px w-8 bg-orange-500" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Four pillars of learning.</h2>
-          <p className="text-[14px] text-forest/55 max-w-lg mx-auto leading-[1.75]">Everything is designed to build genuine design capability and spatial awareness.</p>
+          <p className="text-[15px] text-forest/80 max-w-lg mx-auto leading-[1.75]">Everything is designed to build genuine design capability and spatial awareness.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -130,7 +130,7 @@ function WhatYoullDo() {
                 {p.icon}
               </div>
               <h3 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-orange-600 transition-colors duration-300">{p.title}</h3>
-              <p className="text-[14px] text-forest/60 leading-[1.65]">{p.desc}</p>
+              <p className="text-[15px] text-forest/80 leading-[1.65]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -155,7 +155,7 @@ function Modules() {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-orange-500" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-orange-600">Programme Modules</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-orange-600">Programme Modules</span>
             <div className="h-px w-8 bg-orange-500" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-3">Six intensive sessions.</h2>
@@ -167,7 +167,7 @@ function Modules() {
               <h3 className="text-[15px] font-bold text-forest-deep mt-2 mb-4 group-hover:text-orange-600 transition-colors duration-300">{m.title}</h3>
               <ul className="space-y-2">
                 {m.items.map((item, j) => (
-                  <li key={j} className="flex items-center gap-2.5 text-[14px] text-forest/65">
+                  <li key={j} className="flex items-center gap-2.5 text-[15px] text-forest/80">
                     <CheckCircle2 className="h-3.5 w-3.5 text-orange-500 shrink-0" />
                     {item}
                   </li>
@@ -191,10 +191,10 @@ function Outcomes() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-orange-300" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-orange-200">What You'll Leave With</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-orange-200">What You'll Leave With</span>
             </div>
             <h2 className="text-[2.4rem] font-bold text-white mb-6 leading-tight">More than design. A spatial mindset.</h2>
-            <p className="text-[14px] text-white/80 leading-[1.8] mb-8">
+            <p className="text-[15px] text-white/80 leading-[1.8] mb-8">
               Participants leave with not just architectural skills, but the creative mindset, confidence and network to design meaningful spaces.
             </p>
             {[
@@ -228,11 +228,11 @@ function CTA() {
       <div className="mx-auto max-w-2xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-orange-500" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-orange-600">Join the Track</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-orange-600">Join the Track</span>
           <div className="h-px w-8 bg-orange-500" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Ready to shape experiences?</h2>
-        <p className="text-[15px] text-forest/60 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
+        <p className="text-[15px] text-forest/80 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-orange-400 transition-all duration-300 shadow-xl shadow-orange-500/25"

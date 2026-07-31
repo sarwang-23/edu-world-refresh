@@ -3,7 +3,7 @@ import { ArrowUpRight, Globe2, GraduationCap, Users, Briefcase, Building2, Landm
 import { useState } from "react";
 import { Footer } from "./index";
 import cambridgeImg from "@/assets/cambridge.jpg";
-import heroImg from "@/assets/hero-classroom.jpg";
+import heroImg from "@/assets/IMG_5138_2.jpg";
 import schoolLeadersImg from "@/assets/school-leaders.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import teachersImg from "@/assets/teachers.jpg";
@@ -109,7 +109,7 @@ function ProgrammesPage() {
       {/* Filter Tabs - Glassmorphic */}
       <div className="sticky top-[73px] z-40 bg-white/70 backdrop-blur-xl border-b border-forest/10 shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center gap-3 overflow-x-auto scrollbar-hide">
-          <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/50 mr-4 shrink-0 flex items-center gap-2">
+          <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70 mr-4 shrink-0 flex items-center gap-2">
             <span className="w-1 h-1 bg-gold rounded-full animate-pulse" />
             Filter by Track
           </span>
@@ -132,12 +132,12 @@ function ProgrammesPage() {
       {/* Upcoming Programmes */}
       <section className="py-24 bg-[#F4EFE6] relative overflow-hidden">
         <div className="pointer-events-none absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-gold/5 blur-[120px]" />
-        <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
+        <div className="mx-auto max-w-7xl px-6 relative z-10 pt-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold" />
-                <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Explore</span>
+                <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Explore</span>
               </div>
               <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
                 Upcoming Programmes
@@ -172,7 +172,7 @@ function ProgrammesPage() {
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center gap-2 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:text-gold transition-colors">
+                  <span className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep group-hover:text-gold transition-colors">
                     Explore Programme <ChevronRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -192,7 +192,7 @@ function ProgrammesPage() {
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 backdrop-blur-sm mb-6">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-                <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-gold">Partner With Us</span>
+                <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">Partner With Us</span>
               </div>
               <h3 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-[1.1]">Custom Programmes for Institutions.</h3>
               <p className="text-[15px] text-cream/70 leading-relaxed mb-10">
@@ -211,7 +211,7 @@ function ProgrammesPage() {
                     </div>
                     <div>
                       <h4 className="text-[15px] font-bold text-white mb-2">{item.title}</h4>
-                      <p className="text-[15px] text-cream/60 leading-relaxed">{item.desc}</p>
+                      <p className="text-[15px] text-cream/80 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -227,7 +227,7 @@ function ProgrammesPage() {
           <div className="flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Global Reach</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Global Reach</span>
               <div className="h-px w-8 bg-gold" />
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep mb-6 leading-tight">Past Programmes & Impact</h2>
@@ -268,7 +268,7 @@ function ProgrammesPage() {
           <h2 className="text-[2.2rem] md:text-[3.5rem] font-bold text-white leading-tight mb-6">
             Not sure which programme is right for you?
           </h2>
-          <p className="text-[16px] text-white/65 leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-[16px] text-white/80 leading-relaxed max-w-2xl mx-auto mb-12">
             Our team is here to help you find the best fit for your goals. Whether you're an individual learner or an organization seeking custom solutions, let's talk.
           </p>
 
@@ -290,7 +290,7 @@ function ProgrammesPage() {
 
 function ProgrammesHero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-32 md:pt-28 md:pb-40 border-b border-forest/5">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-32 md:pt-4 md:pb-40 border-b border-forest/5">
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[100px]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
@@ -300,7 +300,7 @@ function ProgrammesHero() {
           <div className="lg:col-span-6 relative z-20">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Our Programmes</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Our Programmes</span>
             </div>
             
             <h1 className="text-[3rem] md:text-[4.5rem] font-bold tracking-tight text-forest-deep leading-[1.02]">
@@ -311,7 +311,7 @@ function ProgrammesHero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               Experiences for every stage of your journey.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-md">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-md">
               Explore our upcoming programmes designed for students, founders, educators and leaders. Learn in Cambridge. Connect globally. Create impact.
             </p>
             
@@ -346,7 +346,7 @@ function ProgrammesHero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">5+ Countries</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">5+ Countries</p>
               </div>
             </div>
 
@@ -356,7 +356,7 @@ function ProgrammesHero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Alumni Network</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">1000+ Learners</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">1000+ Learners</p>
               </div>
             </div>
           </div>

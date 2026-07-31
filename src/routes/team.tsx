@@ -5,6 +5,9 @@ import businessLeadersImg from '../assets/business-leaders.jpg'
 import studentCampsImg from '../assets/school-leaders.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 import studentsImg from '../assets/students.jpg'
+import person6Img from '../assets/person6.jpg'
+import person7Img from '../assets/person7.jpg'
+import person10Img from '../assets/person10.jpg'
 
 export const Route = createFileRoute('/team')({
   head: () => ({
@@ -30,14 +33,14 @@ function TeamPage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream pt-32 pb-24 md:pt-40 md:pb-32">
+    <section className="relative overflow-hidden bg-cream pt-6 pb-24 md:pt-40 md:pb-32">
       {/* Grid overlay */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto max-w-7xl px-6 text-center pt-28">
+      <div className="relative mx-auto max-w-7xl px-6 text-center pt-6">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         
@@ -60,7 +63,7 @@ function Leadership() {
         
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
-            <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold mb-4 block">— Leadership</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-4 block">— Leadership</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-deep mb-6 leading-tight">
               Driven by purpose, <span className="font-serif italic text-gold">rooted in Cambridge.</span>
             </h2>
@@ -90,7 +93,7 @@ function Leadership() {
             />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
               <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bharti</span>
-              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/60">Founder & CEO</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/80">Founder & CEO</span>
             </div>
           </div>
         </div>
@@ -102,9 +105,9 @@ function Leadership() {
 
 function CoreTeam() {
   const team = [
-    { name: "Sarah Jenkins", role: "Head of Academic Partnerships", img: studentsImg },
-    { name: "David Chen", role: "Director of Innovation", img: studentCampsImg },
-    { name: "Elena Rodriguez", role: "Global Programme Lead", img: cambridgeImg },
+    { name: "Sarah Jenkins", role: "Head of Academic Partnerships", img: person6Img },
+    { name: "David Chen", role: "Director of Innovation", img: person7Img },
+    { name: "Elena Rodriguez", role: "Global Programme Lead", img: person10Img },
   ]
   
   return (
@@ -127,11 +130,11 @@ function CoreTeam() {
                 <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <h3 className="text-xl font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
-              <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-forest/50 mb-4">{member.role}</p>
+              <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-4">{member.role}</p>
               
               <div className="flex items-center gap-3 pt-4 border-t border-forest/5 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="text-forest/40 hover:text-forest transition-colors"><Linkedin className="h-4 w-4" /></a>
-                <a href="#" className="text-forest/40 hover:text-forest transition-colors"><Twitter className="h-4 w-4" /></a>
+                <a href="#" className="text-forest/70 hover:text-forest transition-colors"><Linkedin className="h-4 w-4" /></a>
+                <a href="#" className="text-forest/70 hover:text-forest transition-colors"><Twitter className="h-4 w-4" /></a>
               </div>
             </div>
           ))}
@@ -152,7 +155,7 @@ function JoinTeamCTA() {
         <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
           We are always looking for passionate educators and operators to join our global network.
         </p>
-        <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[14px] font-bold tracking-[0.2em] uppercase text-forest-deep transition-all hover:bg-white">
+        <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold tracking-[0.2em] uppercase text-forest-deep transition-all hover:bg-white">
           View Openings <ArrowUpRight className="h-4 w-4" />
         </a>
       </div>

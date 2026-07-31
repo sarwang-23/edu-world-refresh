@@ -2,6 +2,8 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Rocket, GraduationCap, Star, CheckCircle2, Users, Globe2, Lightbulb, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Footer } from './index'
 import { useState } from 'react'
+import person11Img from '../assets/person11.jpg'
+import person12Img from '../assets/person12.jpg'
 
 export const Route = createFileRoute('/programmes/student-camps')({
   head: () => ({
@@ -32,15 +34,15 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/8 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-28">
+      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Programmes for Students &amp; Young Learners</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programmes for Students &amp; Young Learners</span>
             </div>
             <h1 className="text-[2.8rem] md:text-[3.6rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
               Young Leaders<br />
@@ -49,7 +51,7 @@ function Hero() {
             <p className="mt-5 text-lg font-semibold text-forest/80 leading-snug">
               Cambridge. Classrooms. Confidence. A summer that changes everything.
             </p>
-            <p className="mt-5 text-[15px] text-forest/65 leading-relaxed max-w-lg">
+            <p className="mt-5 text-[15px] text-forest/80 leading-relaxed max-w-lg">
               Residential summer programmes at the University of Cambridge — covering Economics, Business, STEM, Public Speaking, English, Entrepreneurship and Sustainability. Live, learn and grow alongside the next generation of global leaders.
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
@@ -92,13 +94,13 @@ function Hero() {
                   <div key={s.label} className="bg-white/5 rounded-2xl p-5 border border-white/10">
                     <p className="text-2xl font-bold text-gold leading-none">{s.val}</p>
                     <p className="text-[15px] font-bold text-cream mt-2">{s.label}</p>
-                    <p className="text-[14px] text-cream/50 mt-1">{s.sub}</p>
+                    <p className="text-[15px] text-cream/70 mt-1">{s.sub}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-6 p-4 bg-gold/10 rounded-xl border border-gold/20 relative z-10">
                 <p className="text-[15px] font-bold text-gold uppercase tracking-wider">Hughes Hall &amp; Girton College · Cambridge</p>
-                <p className="text-[14px] text-cream/60 mt-1">Prestigious residential college experience</p>
+                <p className="text-[15px] text-cream/80 mt-1">Prestigious residential college experience</p>
               </div>
             </div>
           </div>
@@ -116,7 +118,7 @@ function StatsSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Since 2022</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Since 2022</span>
             </div>
             <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep leading-tight">
               5,000+ students impacted through online programmes and residential summer camps.
@@ -194,11 +196,11 @@ function Camps() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ongoing Programmes</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Ongoing Programmes</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Two flagship Cambridge camps.</h2>
-          <p className="mt-4 text-[14px] text-cream/60 max-w-lg mx-auto">Two distinct programmes for two age groups — both delivering an unforgettable Cambridge experience.</p>
+          <p className="mt-4 text-[15px] text-cream/80 max-w-lg mx-auto">Two distinct programmes for two age groups — both delivering an unforgettable Cambridge experience.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {camps.map((camp, i) => (
@@ -214,16 +216,16 @@ function Camps() {
                   </span>
                 </div>
                 <h3 className="text-[19px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">{camp.title}</h3>
-                <p className="text-[15px] text-white/65 leading-relaxed mb-6 flex-1">{camp.desc}</p>
+                <p className="text-[15px] text-white/80 leading-relaxed mb-6 flex-1">{camp.desc}</p>
                 <ul className="space-y-2 mb-6">
                   {camp.highlights.map((h, k) => (
-                    <li key={k} className="flex items-center gap-2.5 text-[14px] text-cream/70">
+                    <li key={k} className="flex items-center gap-2.5 text-[15px] text-cream/70">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
                       {h}
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-4 text-[14px] text-cream/60 mb-6">
+                <div className="flex flex-wrap gap-4 text-[15px] text-cream/80 mb-6">
                   <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5 text-gold" />{camp.when}</span>
                   <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5 text-gold" />{camp.where}</span>
                 </div>
@@ -231,7 +233,7 @@ function Camps() {
                   href={camp.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/20 py-3 text-[14px] font-bold uppercase tracking-[0.15em] text-cream hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 w-full"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/20 py-3 text-[15px] font-bold uppercase tracking-[0.15em] text-cream hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 w-full"
                 >
                   Read More <ArrowUpRight className="h-3 w-3" />
                 </a>
@@ -256,7 +258,7 @@ function WhoShouldJoin() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Who Should Join</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">Built for ambitious young minds.</h2>
@@ -270,7 +272,7 @@ function WhoShouldJoin() {
                   {p.icon}
                 </div>
                 <h3 className="text-[17px] font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                <p className="text-[15px] text-forest/65 leading-relaxed">{p.desc}</p>
+                <p className="text-[15px] text-forest/80 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -293,7 +295,7 @@ function Experience() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">The Experience</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">The Experience</span>
             <div className="h-px w-8 bg-gold" />
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">More than a programme — a life-defining summer.</h2>
@@ -303,7 +305,7 @@ function Experience() {
             <div key={i} className="group bg-white rounded-3xl p-8 border border-forest/8 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/5 text-gold group-hover:bg-gold/10 transition-colors duration-300">{p.icon}</div>
               <h3 className="text-[16px] font-bold text-forest-deep mb-3">{p.title}</h3>
-              <p className="text-[15px] text-forest/65 leading-relaxed">{p.desc}</p>
+              <p className="text-[15px] text-forest/80 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -314,9 +316,9 @@ function Experience() {
 
 function Testimonials() {
   const testimonials = [
-    { name: 'Arya Sharma', school: 'Grade 11, Delhi Public School', quote: 'The Cambridge Summer Camp was the most challenging and rewarding two weeks of my life. The mentors were brilliant, the peers were inspiring, and the college experience was something I\'ll never forget.', initials: 'AS' },
-    { name: 'Lucas Ferreira', school: 'Year 12, São Paulo International School', quote: 'I came to Cambridge not knowing what I wanted to study. I left with a clear plan to pursue AI and entrepreneurship. The Girton programme opened my eyes to what\'s possible.', initials: 'LF' },
-    { name: 'Meera Nair', school: 'Gap Year Student, Kerala', quote: 'Being in a Cambridge college, learning from faculty and working on real startup pitches gave me the confidence I needed to apply for university with a genuine point of view.', initials: 'MN' },
+    { name: 'Arya Sharma', school: 'Grade 11, Delhi Public School', quote: "The Cambridge Summer Camp was the most challenging and rewarding two weeks of my life. The mentors were brilliant, the peers were inspiring, and the college experience was something I'll never forget.", img: person11Img },
+    { name: 'Lucas Ferreira', school: 'Year 12, São Paulo International School', quote: "I came to Cambridge not knowing what I wanted to study. I left with a clear plan to pursue AI and entrepreneurship. The Girton programme opened my eyes to what's possible.", img: person12Img },
+    { name: 'Meera Nair', school: 'Gap Year Student, Kerala', quote: 'Being in a Cambridge college, learning from faculty and working on real startup pitches gave me the confidence I needed to apply for university with a genuine point of view.', img: person11Img },
   ]
   const [current, setCurrent] = useState(0)
   const t = testimonials[current]
@@ -325,19 +327,19 @@ function Testimonials() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Student Stories</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Student Stories</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What our students say.</h2>
-        <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-forest-deep to-forest flex items-center justify-center text-2xl font-bold text-white shadow-xl mb-6">{t.initials}</div>
+        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
         <div className="flex items-center justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
         </div>
         <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
         <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[14px] text-forest/50 mt-1">{t.school}</p>
+        <p className="text-[15px] text-forest/70 mt-1">{t.school}</p>
         <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronLeft className="h-4 w-4" />
           </button>
           <div className="flex gap-2">
@@ -345,7 +347,7 @@ function Testimonials() {
               <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />
             ))}
           </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/50 hover:border-forest-deep hover:text-forest-deep transition-all">
+          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
@@ -361,7 +363,7 @@ function CTA() {
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
-          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Ready to Apply</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">A Cambridge summer awaits.</h2>

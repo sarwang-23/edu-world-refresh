@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Handshake, Users, Globe2, Sparkles, Building2, Quote, Lightbulb } from 'lucide-react'
 import { Footer } from './index'
-import heroImg from '../assets/business-leaders.jpg'
+import heroImg from '../assets/gilp-march-10.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 
 export const Route = createFileRoute('/entrepreneurship_/mentorship')({
@@ -28,16 +28,16 @@ function MentorshipPage() {
 
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-20 pb-32 md:pt-28 md:pb-40">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-8 pb-32 md:pt-6 md:pb-40">
       <div className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] translate-x-1/3 rounded-full bg-gold/10 blur-[120px]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.28em] text-gold">Ongoing Network</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Ongoing Network</span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
@@ -48,7 +48,7 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               Access a global community of experts and alumni.
             </p>
-            <p className="mt-4 text-[15px] text-forest/65 leading-[1.75] max-w-lg">
+            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
               Gain private introductions and ongoing guidance from a vetted network of successful founders, industry veterans, and Cambridge alumni. The right connection at the right time changes everything.
             </p>
 
@@ -88,7 +88,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Private Intros</p>
-                <p className="text-[14px] text-forest/55 mt-0.5">High-value connections</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">High-value connections</p>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ function DetailsSection() {
         <div>
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Why It Matters</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Why It Matters</span>
           </div>
           <h2 className="text-[2.2rem] font-bold text-forest-deep leading-tight mb-6">Build alongside those who have been there.</h2>
           <p className="text-[15px] text-forest/70 leading-relaxed mb-8">
@@ -144,7 +144,7 @@ function DetailsSection() {
             {points.map((p, i) => (
               <li key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                <span className="text-[14px] text-forest/80 font-medium">{p}</span>
+                <span className="text-[15px] text-forest/80 font-medium">{p}</span>
               </li>
             ))}
           </ul>
