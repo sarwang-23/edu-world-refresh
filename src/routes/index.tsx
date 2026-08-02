@@ -561,9 +561,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">
-              global<br />education<br />lab
-            </span>
+            <Link to="/" className="inline-block mb-3">
+              <img src="/gel-logo-transparent.png" alt="Global Education Lab" className="h-16 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
+            </Link>
             <p className="mt-5 max-w-sm text-[15px] leading-[1.7] text-muted-foreground">
               Transformational educational experiences for a lifetime of a learner's life.
             </p>

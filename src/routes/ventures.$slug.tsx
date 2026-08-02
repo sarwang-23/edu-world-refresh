@@ -23,12 +23,16 @@ import {
   Brain,
   Zap,
   Globe2,
-  Cpu
+  Cpu,
+  Building2,
+  Network,
+  Bot,
+  Award,
+  Heart,
+  BookOpen,
+  Accessibility
 } from 'lucide-react'
 import { useState } from 'react'
-import heroImg from '@/assets/hero-classroom.jpg'
-import cambridgeImg from '@/assets/cambridge.jpg'
-import businessLeadersImg from '@/assets/business-leaders.jpg'
 import { Footer } from './index'
 
 type Venture = {
@@ -43,63 +47,138 @@ type Venture = {
   markets: string
   logo: React.ReactNode
   color: string
+  accentColor?: string
   problem: string
   solution: string
   matters: string
   impact: string
   highlights: string[]
   progress: string[]
-  metrics: { l: string; v: string; subtitle?: string }[]
+  metrics: { l: string; v: string; subtitle?: string; icon?: React.ReactNode }[]
   team: { name: string; role: string; bio: string; img?: string }[]
   seeking: { icon: React.ReactNode; t: string; d: string }[]
-  roadmap: { period: string; icon: React.ReactNode; items: string[] }[]
+  roadmap: { period: string; icon: React.ReactNode; items: string[]; phase?: string }[]
+  heroImg?: string
+  awards?: string[]
 }
 
 const VENTURES: Record<string, Venture> = {
   'kavach-ai': {
     slug: 'kavach-ai', name: 'KAVACH AI', track: 'Venture Track',
-    tagline: 'Intelligent technology for a safer and more resilient future.',
-    intro: 'Kavach AI is an emerging artificial intelligence venture developing intelligent solutions for complex operational, security and resilience-related challenges.',
-    sector: 'Artificial Intelligence', stage: 'Early-stage Venture', origin: 'India', markets: 'UK, EU, Middle East, Asia-Pacific',
-    logo: <span className="text-5xl font-bold font-serif text-white">K</span>, color: 'from-slate-900 via-indigo-950 to-slate-900',
-    problem: 'Many organisations face rising security and operational risks due to fragmented systems, manual monitoring and slow response times.',
-    solution: 'Kavach AI uses advanced artificial intelligence to detect risks in real time, predict threats and automate intelligent responses.',
-    matters: 'More resilient operations, lower risk exposure and better decision-making lead to safer businesses and communities.',
-    impact: 'Enabling organisations to act faster, reduce incidents and build a safer, more resilient future for all stakeholders.',
-    highlights: ['AI-powered real-time risk detection and prediction', 'Adaptive to multiple industries and use cases', 'Proprietary algorithms for high accuracy and low false alerts', 'Scalable and secure architecture built for global deployment', 'Strong founding team with deep tech and domain expertise'],
-    progress: ['MVP developed and tested across pilot deployments', 'Successful pilots with early enterprise users', 'Proprietary AI models trained on multi-domain datasets', 'Strategic partnerships in progress', 'Patent application filed'],
-    metrics: [{ l: 'Pilots Completed', v: '3', subtitle: 'Pilot Stage' }, { l: 'Accuracy', v: '92%+' }, { l: 'Early Customers', v: '5' }, { l: 'Alerts Processed', v: '50K+' }, { l: 'Incidents Mitigated', v: '37%', subtitle: 'reduction' }],
+    tagline: 'AI-Powered Predictive Surveillance.',
+    intro: 'KavachAI transforms passive CCTV into proactive security intelligence with real-time threat detection, behavior analysis, and crowd management.',
+    sector: 'Enterprise AI & Security',
+    stage: 'Growth · Funded',
+    origin: 'Noida, Uttar Pradesh',
+    markets: 'Pharma Vaults, High-Value Logistics, Critical Infrastructure, Retail',
+    logo: <Bot className="h-12 w-12 text-white" />,
+    heroImg: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2060&auto=format&fit=crop',
+    color: 'from-[#0A2733] via-[#0A1C24] to-[#0A1F11]',
+    accentColor: 'cyan',
+    awards: ['🦈 Shark Tank India Season 3 Featured & Funded'],
+    problem: 'Current CCTV systems are recording-only — they capture footage but cannot detect, analyze, or prevent threats in real time. For industries like high-value logistics and critical infrastructure, human error, unverified access, or SOP deviations can lead to massive regulatory fines, disaster, or loss of life.',
+    solution: 'KavachAI offers a streamlined pipeline that turns raw video into real-time threat detection and predictive insights. It analyzes identity, movement, and distress cues to trigger preventive alerts before escalation, ensuring real-time process compliance and immediate intervention.',
+    matters: 'Early AI-powered threat detection can mean the difference between prevention and tragedy. By selling prevention against immediate inventory loss alongside protection from massive regulatory fines, KavachAI provides a "Dual ROI" for enterprises.',
+    impact: 'From retail storefronts to national transit infrastructure, KavachAI scales to protect any environment where people gather, preventing deliberate financial loss due to asset diversion and catastrophic operational abnormalities.',
+    highlights: [
+      'Predictive Threat Detection — Detects suspicious movements, aggression, loitering, or unusual activity patterns using advanced computer vision models.',
+      'Crowd & Behavior Analysis — Calculates crowd density, analyzes behavior, and detects congestion hotspots to prevent stampedes.',
+      'Real-time Alerts — Automated real-time notifications sent to security teams with live monitoring dashboards and heatmaps.',
+      'SOP Compliance — Focuses on environments where minor SOP deviations have catastrophic consequences, ensuring automated compliance.',
+      'Semantic Video Search — Search through footage using natural language, descriptions, or photos.'
+    ],
+    progress: [
+      'Appeared on Shark Tank India (Season 3) and secured a funding deal',
+      'Continuous 24/7 threat analysis across deployed enterprise feeds',
+      'Addressing rising global cargo theft and critical infrastructure vulnerabilities',
+      'Deployed predictive models successfully over existing passive CCTV infrastructure'
+    ],
+    metrics: [
+      { l: 'Core Tech', v: 'Predictive AI', icon: <Cpu className="h-5 w-5" /> },
+      { l: 'Response Time', v: '< 1s', icon: <Zap className="h-5 w-5" /> },
+      { l: 'Client ROI', v: 'Dual ROI', icon: <Briefcase className="h-5 w-5" /> },
+      { l: 'Funding', v: 'Shark Tank', icon: <Target className="h-5 w-5" /> },
+    ],
     team: [
-      { name: 'Aarav Sharma', role: 'Co-founder & CEO', bio: 'AI and cybersecurity expert with 10+ years of experience building scalable enterprise solutions.' },
-      { name: 'Neha Iyer', role: 'Co-founder & CTO', bio: 'Former research scientist in machine learning with expertise in predictive analytics and deep learning.' },
+      { name: 'Pratyusha Vemuri Venkata', role: 'Founder & CEO', bio: 'Extensive background in cybersecurity with prior product leadership roles at Microsoft, Cisco, Palo Alto Networks, Zscaler, and Akamai.', img: '/team/kavach-founder.jpg' },
+      { name: 'Chegondi Abhiram', role: 'Director', bio: 'Guiding strategic operations and growth for KavachAI.' },
     ],
     seeking: [
-      { icon: <Briefcase className="h-5 w-5" />, t: 'Investment', d: 'Pre-seed / Seed investment to scale product, expand pilots and accelerate market entry.' },
-      { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Enterprises and institutions interested in piloting AI-driven risk intelligence solutions.' },
-      { icon: <Handshake className="h-5 w-5" />, t: 'Strategic Partners', d: 'Technology partners, system integrators and consultants.' },
-      { icon: <Lightbulb className="h-5 w-5" />, t: 'Mentors & Experts', d: 'Domain experts in AI, cybersecurity, enterprise sales and product strategy.' },
+      { icon: <Building2 className="h-5 w-5" />, t: 'Strategic Partnerships', d: 'Deployments in critical infrastructure, logistics, and pharma sectors.' },
+      { icon: <Handshake className="h-5 w-5" />, t: 'Enterprise Pilots', d: 'Organizations seeking to upgrade their passive CCTV to proactive AI intelligence.' },
     ],
     roadmap: [
-      { period: '0 \u2013 6 Months', icon: <Rocket className="h-6 w-6" />, items: ['Scale pilots across multiple sectors', 'Enhance AI models and platform'] },
-      { period: '6 \u2013 12 Months', icon: <TrendingUp className="h-6 w-6" />, items: ['Commercial launch in target markets', 'Expand enterprise customer base'] },
-      { period: '12 \u2013 18 Months', icon: <Globe className="h-6 w-6" />, items: ['International expansion through UK', 'Strategic partnerships and integrations'] },
-      { period: '18 \u2013 24 Months', icon: <Target className="h-6 w-6" />, items: ['Platform scaling and market leadership', 'Sustainable revenue and profitability'] },
+      { period: 'Current', phase: 'MVP & Pilots', icon: <Bot className="h-5 w-5" />, items: ['Deploying predictive models in retail and logistics', 'Validating dual ROI with early enterprise adopters'] },
+      { period: 'Next 12 Months', phase: 'Expansion', icon: <Network className="h-5 w-5" />, items: ['Scaling to smart city and national transit deployments', 'Enhancing behavioral analysis for mass crowd management'] },
     ],
   },
-  // Placeholders so the links on /global-ventures work
   'carbon-sync': { slug: 'carbon-sync', name: 'CARBON SYNC', track: 'Venture Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Leaf />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
-  'project-tacto': { slug: 'project-tacto', name: 'PROJECT TACTO', track: 'Venture Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Atom />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
-  'vyomveda': { slug: 'vyomveda', name: 'VYOMVEDA', track: 'Research Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Sparkles />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
-  'cellunova': { slug: 'cellunova', name: 'CELLUNOVA', track: 'Research Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Microscope />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
+  'project-tacto': {
+    slug: 'project-tacto',
+    name: 'PROJECT TACTO',
+    track: 'Venture Track',
+    tagline: 'Code you can feel — making computational thinking accessible for every learner.',
+    intro: 'Project TACTO replaces screens with physical, highly tactile blocks. It is an open-source hardware system designed to make computational thinking and coding education accessible to visually impaired learners by utilizing hands-on, tactile interaction and real-time audio feedback.',
+    sector: 'EdTech · Accessible Education · Open-Source Hardware',
+    stage: 'Seed · Award Winning',
+    origin: 'Galgotias University, India',
+    markets: 'Global',
+    logo: <img src="/tacto/logo.png" alt="Project TACTO Logo" className="w-12 h-12 object-contain drop-shadow-md" />,
+    heroImg: '/tacto/hero.png',
+    color: 'from-[#1A0B2E] via-[#14102A] to-[#081A14]',
+    accentColor: 'violet',
+    awards: ['🏆 Top Prize — Global EDVentures Startup Competition', '☁️ AWS Championship Prize — Technical Rigor & Innovation'],
+    problem: 'Visually impaired students face significant barriers in STEM education due to the heavy reliance on screen literacy and the lack of accessible tools for learning computational thinking and programming concepts.',
+    solution: 'An open-source hardware system that replaces screen-based interfaces with physical, modular blocks. Users snap these blocks together to create code, complemented by real-time audio feedback, allowing them to "hear" and "feel" their code without relying on screens.',
+    matters: 'It removes the need for screen literacy, addressing the barriers visually impaired students face in STEM. Designed to be affordable, scalable, and effective even in low-infrastructure settings, it contributes directly to UN Sustainable Development Goal 4 — Inclusive and Equitable Quality Education.',
+    impact: 'Winner of the top prize and the AWS Championship Prize at the Global EDVentures Startup Competition. TACTO aims to democratize coding education and empower visually impaired learners globally.',
+    highlights: [
+      'Tactile Learning — Replaces screen-based interfaces with physical, modular blocks',
+      'Audio Feedback — Utilizes real-time audio feedback so students "hear" their code',
+      'Inclusive Design — Removes the need for screen literacy to learn STEM concepts',
+      'Open Source — Hardware is open-source, promoting widespread access and community contribution',
+      'Award Winning — Top prize and AWS Championship at Global EDVentures Startup Competition',
+    ],
+    progress: [
+      'Developed by a team of student innovators from Galgotias University, India',
+      'Won the top prize at the Global EDVentures Startup Competition',
+      'Won the AWS Championship Prize for technical rigor and innovation',
+      'Developed functional prototypes of the physical coding blocks and audio feedback system',
+    ],
+    metrics: [
+      { l: 'Competition Status', v: '🏆 Winner', icon: <Award className="h-5 w-5" /> },
+      { l: 'Hardware Type', v: 'Open Source', icon: <BookOpen className="h-5 w-5" /> },
+      { l: 'Learning Focus', v: 'Accessible', icon: <Accessibility className="h-5 w-5" /> },
+      { l: 'UN SDG Goal', v: 'SDG 4', icon: <Globe2 className="h-5 w-5" /> },
+    ],
+    team: [
+      { name: 'Gaurang Pant', role: 'Co-Founder', img: '/tacto/gaurang.png', bio: 'Innovator and developer focused on accessible education technologies and open-source hardware systems.' },
+      { name: 'Shristi Mandoliya', role: 'Co-Founder', img: '/tacto/shristi.png', bio: 'Passionate about creating inclusive learning experiences and breaking down barriers in STEM for every learner.' },
+      { name: 'Kavya Singh', role: 'Co-Founder', img: '/tacto/kavya.png', bio: 'Dedicated to leveraging technology for social impact and equitable quality education across the globe.' },
+    ],
+    seeking: [
+      { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Schools, educational institutions, and NGOs working with visually impaired students to pilot and refine the tactile learning system.' },
+      { icon: <Handshake className="h-5 w-5" />, t: 'Strategic Partners', d: 'Organizations and tech companies interested in supporting inclusive education and scaling open-source hardware initiatives.' },
+      { icon: <Lightbulb className="h-5 w-5" />, t: 'Mentors & Experts', d: 'Experts in hardware manufacturing, accessible design, and international education distribution.' },
+      { icon: <Globe2 className="h-5 w-5" />, t: 'Ecosystem Collaboration', d: 'Foundations and public sector bodies to co-develop solutions and promote accessible STEM education globally.' },
+    ],
+    roadmap: [
+      { period: 'Phase 1 — Build', phase: 'NOW', icon: <Rocket className="h-5 w-5" />, items: ['Refine hardware prototypes based on feedback', 'Conduct initial pilot testing with students'] },
+      { period: 'Phase 2 — Refine', phase: 'NEXT', icon: <TrendingUp className="h-5 w-5" />, items: ['Incorporate pilot feedback into hardware iterations', 'Optimize audio and tactile responsiveness'] },
+      { period: 'Phase 3 — Scale', phase: 'SOON', icon: <Globe className="h-5 w-5" />, items: ['Scale production of open-source kits globally', 'Partner with educational NGOs for distribution'] },
+      { period: 'Phase 4 — Impact', phase: 'FUTURE', icon: <Target className="h-5 w-5" />, items: ['Global distribution to visually impaired learners', 'Expand curriculum integration across institutions'] },
+    ],
+  },
+
   'saivyy': {
     slug: 'saivyy', name: 'SAIVYY TECHNOLOGIES', track: 'Venture Track',
     tagline: 'Empowering businesses with AI-driven automation, analytics and intelligent digital transformation.',
     intro: 'Saivyy Technologies Pvt. Ltd. develops enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and automate critical business processes — improving efficiency, accelerating decisions and driving sustainable digital transformation.',
     sector: 'Artificial Intelligence, Generative AI, Big Data Analytics & Intelligent Automation',
-    stage: 'Bootstrapped, Profitable & Growing (Founded 2025)',
+    stage: 'Bootstrapped, Profitable & Growing (Recently Founded)',
     origin: 'Noida, India',
     markets: 'India, UK, North America, Europe, Middle East',
-    logo: <Cpu className="h-12 w-12 text-white" />, color: 'from-slate-900 via-blue-950 to-slate-900',
+    logo: <Cpu className="h-12 w-12 text-white" />, color: 'from-slate-900 via-blue-950 to-slate-900', heroImg: '/saivyy/saivvyMain.jpeg',
     problem: 'Organisations generate vast amounts of data but struggle to convert it into actionable business intelligence. Legacy systems, manual processes and fragmented digital infrastructure lead to inefficiency, delayed decisions, higher costs and limited scalability — while technical complexity, integration barriers and scarce expertise slow AI adoption.',
     solution: 'Saivyy delivers end-to-end AI-driven digital transformation combining Artificial Intelligence, Machine Learning, Big Data Analytics, Intelligent Automation and Cloud. Scalable platforms help organisations automate workflows, extract meaningful insight, optimise operations and accelerate innovation through secure, enterprise-ready technology.',
     matters: 'Digital transformation is essential to remain competitive in a data-driven economy. Intelligent automation and data-driven decision-making improve productivity, reduce operational costs and enable organisations to focus on innovation and growth.',
@@ -112,7 +191,7 @@ const VENTURES: Record<string, Venture> = {
       'Global growth — expanding across India, the UK, Europe, North America and the Middle East',
     ],
     progress: [
-      'Incorporated as an AI, Big Data and Digital Transformation company (CIN U62010UP2025PTC233625, 24/09/2025)',
+      'Incorporated as an AI, Big Data and Digital Transformation company (CIN U62010UP2025PTC233625, Recently)',
       'Commercialised AI, Data Analytics, Cloud and Intelligent Automation service offerings for enterprise clients',
       'Built a team of 12+ professionals delivering solutions to 50+ clients',
       'Established office at Urbtech Trade Centre, Sector 132, Noida',
@@ -126,8 +205,8 @@ const VENTURES: Record<string, Venture> = {
       { l: 'Technology Domains', v: '6+' },
     ],
     team: [
-      { name: 'Keshav Madan', role: 'Founder & CEO', bio: 'Expert in enterprise technology, Artificial Intelligence and digital transformation. Leads product innovation, strategic partnerships and business growth, driving AI-powered solutions that help organisations modernise operations and make data-driven decisions.' },
-      { name: 'Manas Saxena', role: 'Tech Lead / CTO', bio: 'Leads technology strategy, product engineering and innovation — overseeing AI-driven, cloud-enabled and data-centric enterprise solutions that accelerate digital transformation and operational excellence.' },
+      { name: 'Keshav Madan', role: 'Founder & CEO', bio: 'Expert in enterprise technology, Artificial Intelligence and digital transformation. Leads product innovation, strategic partnerships and business growth, driving AI-powered solutions that help organisations modernise operations and make data-driven decisions.', img: '/saivyy/KESHAV.jpeg' },
+      { name: 'Manas Saxena', role: 'Tech Lead / CTO', bio: 'Leads technology strategy, product engineering and innovation — overseeing AI-driven, cloud-enabled and data-centric enterprise solutions that accelerate digital transformation and operational excellence.', img: '/saivyy/MAN.jpg' },
     ],
     seeking: [
       { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Manufacturing, education, software and logistics organisations in India and the UK to validate and deploy AI, analytics and automation solutions. Typical pilots run 8–16 weeks.' },
@@ -136,10 +215,10 @@ const VENTURES: Record<string, Venture> = {
       { icon: <Globe2 className="h-5 w-5" />, t: 'Ecosystem Collaboration', d: 'Industry associations, research organisations, innovation hubs, incubators, universities and public sector bodies to co-develop AI solutions and promote responsible digital innovation.' },
     ],
     roadmap: [
-      { period: 'Q3 – Q4 2026', icon: <Rocket className="h-6 w-6" />, items: ['Enter and establish presence in the UK market', 'Close first UK pilots and implementation projects'] },
-      { period: 'Q1 – Q2 2027', icon: <TrendingUp className="h-6 w-6" />, items: ['Scale UK operations through rapid delivery', 'Build case studies and strengthen delivery bandwidth'] },
-      { period: 'Q3 – Q4 2027', icon: <Globe className="h-6 w-6" />, items: ['Deepen UK market share', 'Open early conversations across target European markets'] },
-      { period: '2028 onward', icon: <Target className="h-6 w-6" />, items: ['Go-to AI implementation partner across UK & Europe', 'Expand delivery team and technical partnerships'] },
+      { period: 'Phase 1', icon: <Rocket className="h-5 w-5" />, items: ['Enter and establish presence in the UK market', 'Close first UK pilots and implementation projects'] },
+      { period: 'Phase 2', icon: <TrendingUp className="h-5 w-5" />, items: ['Scale UK operations through rapid delivery', 'Build case studies and strengthen delivery bandwidth'] },
+      { period: 'Phase 3', icon: <Globe className="h-5 w-5" />, items: ['Deepen UK market share', 'Open early conversations across target European markets'] },
+      { period: '2028 onward', icon: <Target className="h-5 w-5" />, items: ['Go-to AI implementation partner across UK & Europe', 'Expand delivery team and technical partnerships'] },
     ],
   },
 }
@@ -156,43 +235,57 @@ export const Route = createFileRoute('/ventures/$slug')({
 function VenturePage() {
   const v = Route.useLoaderData()
   const [activeTab, setActiveTab] = useState("Overview")
-  
   const hasFullData = v.intro !== ''
-  
+
   if (!hasFullData) {
     return (
-      <div className="min-h-screen bg-cream font-sans flex flex-col items-center justify-center text-center px-6">
-        <h1 className="text-4xl font-bold text-forest-deep mb-4">{v.name}</h1>
-        <p className="text-forest/70 text-lg max-w-md">Full venture profile coming soon. <Link to="/global-ventures" className="text-forest font-bold hover:underline">Back to Global Ventures</Link></p>
+      <div className="min-h-screen bg-[#F8F9FB] font-sans flex flex-col items-center justify-center text-center px-6">
+        <div className="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center mb-6 text-slate-600">{v.logo}</div>
+        <h1 className="text-4xl font-bold text-slate-900 mb-3">{v.name}</h1>
+        <p className="text-slate-500 text-[15px] max-w-sm mb-8 leading-relaxed">Full venture profile coming soon.</p>
+        <Link to="/global-ventures" className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold text-[14px] hover:bg-slate-800 transition-colors shadow-md">
+          <ArrowLeft className="h-4 w-4" /> Back to Global Ventures
+        </Link>
       </div>
     )
   }
 
-  const tabs = ["Overview", "The Opportunity", "Solution", "Progress", "Team", "Collaboration", "Roadmap", "GEL's Role"]
+  const tabs = ["Overview", "The Opportunity", "Progress", "Team", "Roadmap", "Collaborate", "GEL's Role"]
+
+  const scrollTo = (tab: string) => {
+    setActiveTab(tab)
+    const id = tab.toLowerCase().replace(/[^a-z0-9]/g, '-')
+    const el = document.getElementById(id)
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 170
+      window.scrollTo({ top: y, behavior: 'smooth' })
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-cream font-sans text-foreground flex flex-col">
+    <div className="min-h-screen bg-[#F8F9FB] font-sans">
       <Hero v={v} />
       <MetadataBar v={v} />
-      
-      {/* Tabs Menu */}
-      <div className="sticky top-[80px] z-40 bg-white border-b border-forest/10 shadow-sm overflow-x-auto hide-scrollbar">
-        <div className="mx-auto max-w-7xl px-6 flex items-center gap-8 min-w-max">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`py-4 text-[15px] font-bold uppercase tracking-wider transition-colors relative ${activeTab === tab ? 'text-forest-deep' : 'text-forest/70 hover:text-forest-deep'}`}
-            >
-              {tab}
-              {activeTab === tab && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-forest-deep" />
-              )}
-            </button>
-          ))}
+      {/* Sticky Nav */}
+      <div className="sticky top-0 z-30 bg-white/90 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => scrollTo(tab)}
+                className={`shrink-0 px-4 py-4 text-[12.5px] font-semibold border-b-2 transition-all duration-200 whitespace-nowrap ${
+                  activeTab === tab
+                    ? 'border-violet-600 text-violet-700'
+                    : 'border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-
       <MainContent v={v} />
       <GelsRole v={v} />
       <BottomCTA v={v} />
@@ -202,61 +295,142 @@ function VenturePage() {
 }
 
 function Hero({ v }: { v: Venture }) {
+  const brandColor = v.color || 'from-slate-900 via-blue-950 to-slate-900'
+  const isTacto = v.slug === 'project-tacto'
   return (
-    <section className="bg-forest-deep text-white pt-10 pb-16 relative overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay" 
-        style={{ backgroundImage: `url(${cambridgeImg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep via-forest-deep/90 to-transparent" />
-      
-      <div className="relative mx-auto max-w-7xl px-6 pt-6">
-        <div className="flex items-center gap-2 text-[15px] uppercase tracking-wider text-white/80 mb-8">
-          <Link to="/global-ventures" className="hover:text-white transition-colors">Global Ventures</Link>
-          <ChevronRight className="h-3 w-3" />
-          <span className="text-white/80">Venture Profile</span>
+    <section className={`text-white relative overflow-hidden bg-gradient-to-br ${brandColor} min-h-[580px] md:min-h-[660px] flex items-center`}>
+      {/* Hero image overlay */}
+      {v.heroImg && (
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${v.heroImg})`, opacity: isTacto ? 0.18 : 0.22 }}
+        />
+      )}
+      {/* Grid overlay */}
+      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:52px_52px]" />
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20" />
+      {/* Glow orbs - themed for Tacto */}
+      {isTacto ? (
+        <>
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/20 blur-[160px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-teal-500/15 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />
+        </>
+      ) : (
+        <>
+          <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-600/15 blur-[150px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
+        </>
+      )}
+
+      <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 pt-14 pb-32 z-10">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-14">
+          <Link to="/global-ventures" className="hover:text-white/65 transition-colors flex items-center gap-1.5">
+            <ArrowLeft className="h-3 w-3" /> Global Ventures
+          </Link>
+          <ChevronRight className="h-3 w-3 text-white/20" />
+          <span className="text-white/65">{v.name}</span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-8">
-            <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded text-[15px] font-bold uppercase tracking-widest text-gold mb-6">
-              {v.track}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
-              {v.name}
-            </h1>
-            <p className="text-2xl md:text-[2rem] font-bold text-gold leading-tight max-w-2xl mb-6">
-              {v.tagline.split('.')[0]}<span className="text-white italic">.</span>
-            </p>
-            <p className="text-[15px] text-white/80 leading-relaxed max-w-2xl mb-8">
-              {v.intro}
-            </p>
-          </div>
-          
-          <div className="lg:col-span-4 relative flex flex-col items-center">
-            {/* Logo Shield */}
-            <div className="w-32 h-32 md:w-48 md:h-48 mb-8 relative flex items-center justify-center">
-              <Shield className="absolute inset-0 w-full h-full text-white/10 stroke-1" />
-              <Shield className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] text-white/80 stroke-1" />
-              <Shield className="absolute inset-4 w-[calc(100%-32px)] h-[calc(100%-32px)] text-white stroke-2 fill-white/5 backdrop-blur-md" />
-              <span className="relative z-10 text-5xl md:text-7xl font-sans font-medium text-white mb-4">K</span>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+          {/* Left: Text content */}
+          <div className="lg:col-span-8 xl:col-span-7">
+            {/* Track badge */}
+            <div className="flex items-center gap-3 mb-7">
+              <span className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10.5px] font-black uppercase tracking-[0.2em] border ${
+                isTacto
+                  ? 'bg-violet-500/15 border-violet-400/25 text-violet-300'
+                  : 'bg-blue-500/15 border-blue-400/25 text-blue-300'
+              }`}>
+                {v.track}
+              </span>
+              {v.awards && v.awards.length > 0 && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400/15 border border-amber-400/25 rounded-full text-[10.5px] font-black uppercase tracking-[0.18em] text-amber-300">
+                  <Award className="h-3 w-3" /> Award Winning
+                </span>
+              )}
             </div>
 
-            {/* Interested Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-2xl text-forest-deep w-full max-w-sm">
-              <h3 className="text-[15px] font-bold mb-2">Interested in this venture?</h3>
-              <p className="text-[15px] text-forest/70 mb-6">We facilitate introductions to founders and support meaningful collaborations.</p>
-              
-              <Link to="/contact" className="w-full flex items-center justify-center gap-2 bg-forest-deep text-white rounded-lg py-2.5 text-[15px] font-bold mb-3 hover:bg-forest transition-colors">
-                Request Introduction <ArrowUpRight className="h-3 w-3" />
+            {/* Venture name */}
+            <h1 className="font-extrabold leading-[0.88] tracking-tight mb-6">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/95 to-white/50 text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] block">
+                {v.name}
+              </span>
+            </h1>
+
+            {/* Tagline */}
+            <p className="text-xl sm:text-2xl font-light text-white/70 leading-[1.4] max-w-2xl mb-5">
+              {v.tagline}
+            </p>
+
+            {/* Intro */}
+            <p className="text-[14.5px] text-white/50 leading-[1.9] max-w-xl mb-10">
+              {v.intro}
+            </p>
+
+            {/* Awards strip */}
+            {v.awards && v.awards.length > 0 && (
+              <div className="flex flex-col sm:flex-row gap-2.5 mb-10">
+                {v.awards.map((award, i) => (
+                  <span key={i} className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] border border-white/10 rounded-xl text-[12.5px] text-white/60 backdrop-blur-sm font-medium">
+                    {award}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white text-slate-900 px-7 py-3.5 rounded-xl text-[14px] font-bold hover:bg-slate-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 duration-200"
+              >
+                Request Introduction <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link to="/contact" className="w-full flex items-center justify-center gap-2 bg-white text-forest-deep border border-forest/20 rounded-lg py-2.5 text-[15px] font-bold hover:bg-forest/5 transition-colors">
-                Request Venture Brief <Download className="h-3 w-3" />
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
+              >
+                <Download className="h-4 w-4" /> Venture Brief
               </Link>
-              
-              <div className="flex items-start gap-2 mt-4 text-[15px] text-forest/80">
-                <Lock className="h-3 w-3 shrink-0 mt-0.5" />
-                <p>Introductions are subject to relevance, founder approval and confidentiality.</p>
+            </div>
+          </div>
+
+          {/* Right: Logo card */}
+          <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 justify-end items-end">
+            <div className="relative">
+              <div className={`absolute inset-0 rounded-[2.5rem] blur-[60px] scale-110 pointer-events-none ${isTacto ? 'bg-violet-500/20' : 'bg-blue-500/15'}`} />
+              <div className="relative bg-white/[0.06] backdrop-blur-2xl border border-white/[0.1] rounded-[2.5rem] p-10 flex flex-col items-center gap-5 shadow-2xl min-w-[230px]">
+                {/* Logo icon container */}
+                <div className={`w-24 h-24 rounded-3xl border flex items-center justify-center shadow-inner shrink-0 ${
+                  isTacto
+                    ? 'bg-gradient-to-br from-violet-500/20 to-indigo-500/10 border-violet-400/20'
+                    : 'bg-gradient-to-br from-white/20 to-white/5 border-white/20'
+                }`}>
+                  <div className="scale-[1.1]">{v.logo}</div>
+                </div>
+                {/* Name & origin */}
+                <div className="text-center">
+                  <p className="text-[9.5px] font-black uppercase tracking-[0.28em] text-white/30 mb-1.5">Venture</p>
+                  <p className="text-[16px] font-bold text-white leading-snug">{v.name}</p>
+                </div>
+                <div className="w-full h-px bg-white/[0.08]" />
+                <div className="flex flex-col items-center gap-2 w-full">
+                  <div className="flex items-center gap-2 text-white/35 text-[12px]">
+                    <Globe className="h-3.5 w-3.5 shrink-0" />
+                    <span>{v.origin}</span>
+                  </div>
+                  {isTacto && (
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="px-3 py-1 bg-violet-500/15 border border-violet-400/20 rounded-full text-[10.5px] font-bold text-violet-300">
+                        Open Source Hardware
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -267,24 +441,29 @@ function Hero({ v }: { v: Venture }) {
 }
 
 function MetadataBar({ v }: { v: Venture }) {
+  const isTacto = v.slug === 'project-tacto'
   const items = [
-    { icon: <Cpu className="h-5 w-5" />, l: "SECTOR", v: v.sector },
-    { icon: <TrendingUp className="h-5 w-5" />, l: "STAGE", v: v.stage },
-    { icon: <Globe className="h-5 w-5" />, l: "ORIGIN", v: v.origin },
-    { icon: <Target className="h-5 w-5" />, l: "TARGET MARKETS", v: v.markets },
+    { icon: <Cpu className="h-4 w-4" />, label: "Sector", value: v.sector },
+    { icon: <TrendingUp className="h-4 w-4" />, label: "Stage", value: v.stage },
+    { icon: <Globe className="h-4 w-4" />, label: "Origin", value: v.origin },
+    { icon: <Target className="h-4 w-4" />, label: "Target Markets", value: v.markets },
   ]
   return (
-    <div className="bg-white border-b border-forest/10">
-      <div className="mx-auto max-w-7xl px-6 py-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-x divide-forest/10">
+    <div className="relative z-20 -mt-11 mx-auto w-full max-w-7xl px-4 sm:px-6">
+      <div className="bg-white rounded-2xl border border-slate-200/80 shadow-[0_8px_40px_rgba(0,0,0,0.09)] overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
           {items.map((item, i) => (
-            <div key={i} className={`flex items-center gap-4 ${i !== 0 ? 'pl-4 md:pl-8' : ''}`}>
-              <div className="text-forest/70">
+            <div key={i} className="flex items-start gap-3.5 px-5 py-5 lg:px-6 lg:py-6">
+              <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${
+                isTacto
+                  ? 'text-violet-600 bg-violet-50 border-violet-100/60'
+                  : 'text-blue-600 bg-blue-50 border-blue-100/60'
+              }`}>
                 {item.icon}
               </div>
-              <div>
-                <p className="text-[15px] font-bold uppercase tracking-widest text-forest/70">{item.l}</p>
-                <p className="text-[15px] font-semibold text-forest-deep mt-0.5">{item.v}</p>
+              <div className="min-w-0">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">{item.label}</p>
+                <p className="text-[13px] font-semibold text-slate-800 leading-snug">{item.value}</p>
               </div>
             </div>
           ))}
@@ -294,216 +473,482 @@ function MetadataBar({ v }: { v: Venture }) {
   )
 }
 
+function SectionHeader({ label, id, accent }: { label: string; id?: string; accent?: boolean }) {
+  return (
+    <div className="flex items-center gap-3 mb-6" id={id}>
+      <span className="text-[10px] font-black uppercase tracking-[0.24em] text-slate-400 shrink-0">{label}</span>
+      <div className={`flex-1 h-px ${accent ? 'bg-gradient-to-r from-violet-200 to-transparent' : 'bg-slate-200'}`} />
+    </div>
+  )
+}
+
 function MainContent({ v }: { v: Venture }) {
-  const problemCards = [
-    { icon: <Target className="h-6 w-6 text-forest" />, title: "The Problem", desc: v.problem },
-    { icon: <Brain className="h-6 w-6 text-forest" />, title: "Our Solution", desc: v.solution },
-    { icon: <Globe2 className="h-6 w-6 text-forest" />, title: "Why It Matters", desc: v.matters },
-    { icon: <Shield className="h-6 w-6 text-forest" />, title: "Our Impact", desc: v.impact },
+  const isTacto = v.slug === 'project-tacto'
+  const opportunityCards = [
+    {
+      icon: <Target className="h-5 w-5" />,
+      bg: "bg-red-50", border: "border-red-100/80", iconColor: "text-red-500",
+      hoverShadow: "hover:shadow-red-100/60",
+      title: "The Problem",
+      desc: v.problem
+    },
+    {
+      icon: <Brain className="h-5 w-5" />,
+      bg: isTacto ? "bg-violet-50" : "bg-blue-50",
+      border: isTacto ? "border-violet-100/80" : "border-blue-100/80",
+      iconColor: isTacto ? "text-violet-600" : "text-blue-600",
+      hoverShadow: isTacto ? "hover:shadow-violet-100/60" : "hover:shadow-blue-100/60",
+      title: "Our Solution",
+      desc: v.solution
+    },
+    {
+      icon: <Globe2 className="h-5 w-5" />,
+      bg: "bg-teal-50", border: "border-teal-100/80", iconColor: "text-teal-600",
+      hoverShadow: "hover:shadow-teal-100/60",
+      title: "Why It Matters",
+      desc: v.matters
+    },
+    {
+      icon: <Shield className="h-5 w-5" />,
+      bg: "bg-amber-50", border: "border-amber-100/80", iconColor: "text-amber-600",
+      hoverShadow: "hover:shadow-amber-100/60",
+      title: "Our Impact",
+      desc: v.impact
+    },
   ]
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12 w-full">
-      <div className="grid lg:grid-cols-[1fr_320px] gap-12">
-        
-        {/* Left Column (Main Content) */}
-        <div className="space-y-12">
-          
-          {/* Top 4 Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {problemCards.map((c, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-forest/10 shadow-sm flex flex-col items-center text-center">
-                <div className="mb-4">{c.icon}</div>
-                <h4 className="text-[15px] font-bold text-forest-deep mb-3">{c.title}</h4>
-                <p className="text-[15px] text-forest/70 leading-relaxed flex-1 mb-4">{c.desc}</p>
-                <Link to="/contact" className="text-[15px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors mt-auto">
-                  Learn more <ArrowUpRight className="h-3 w-3" />
-                </Link>
-              </div>
-            ))}
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-12 w-full">
+      <div className="grid lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_348px] gap-8 items-start">
+
+        {/* ─── LEFT COLUMN ─── */}
+        <div className="space-y-12 min-w-0">
+
+          {/* ── Overview / The Opportunity ── */}
+          <div id="overview" className="scroll-mt-52">
+            <SectionHeader label="The Opportunity" id="the-opportunity" accent={isTacto} />
+            <div className="grid sm:grid-cols-2 gap-4">
+              {opportunityCards.map((c, i) => (
+                <div
+                  key={i}
+                  className={`group bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-lg ${c.hoverShadow} hover:-translate-y-0.5 transition-all duration-300 p-6 flex flex-col`}
+                >
+                  <div className={`w-10 h-10 rounded-xl ${c.bg} border ${c.border} ${c.iconColor} flex items-center justify-center mb-5 shrink-0 group-hover:scale-105 transition-transform duration-300`}>
+                    {c.icon}
+                  </div>
+                  <h4 className="text-[14.5px] font-bold text-slate-900 mb-2.5 leading-tight">{c.title}</h4>
+                  <p className="text-[13.5px] text-slate-500 leading-[1.82] flex-1">{c.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Progress & Team Split */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Progress to Date */}
-            <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm flex flex-col">
-              <h3 className="text-xl font-bold text-forest-deep mb-6">Progress to Date</h3>
-              <div className="space-y-4 mb-8">
-                {v.progress.map((p, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-4 w-4 text-forest shrink-0" />
-                    <span className="text-[15px] text-forest/80 leading-relaxed">{p}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="bg-cream rounded-xl p-6 mt-auto">
-                <h4 className="text-[15px] font-bold text-forest-deep mb-4">
-                  Key Metrics <span className="font-normal text-forest/80">(Pilot Stage)</span>
-                </h4>
-                <div className="space-y-3">
-                  {v.metrics.map((m, i) => (
-                    <div key={i} className="flex items-center justify-between border-b border-forest/10 pb-2 last:border-0 last:pb-0">
-                      <span className="text-[15px] text-forest/70 font-medium">{m.l}</span>
-                      <div className="text-right">
-                        <span className="text-[15px] font-bold text-forest-deep">{m.v}</span>
-                        {m.subtitle && <p className="text-[15px] text-forest/70 leading-none">{m.subtitle}</p>}
+          {/* ── Progress to Date ── */}
+          <div id="progress" className="scroll-mt-52">
+            <SectionHeader label="Progress to Date" accent={isTacto} />
+            <div className={`rounded-2xl overflow-hidden relative shadow-xl ${isTacto ? 'bg-[#100820]' : 'bg-[#080E1C]'}`}>
+              {/* Glow orbs */}
+              {isTacto ? (
+                <>
+                  <div className="absolute top-0 right-0 w-72 h-72 bg-violet-600/12 blur-[100px] rounded-full pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-56 h-56 bg-teal-500/10 blur-[80px] rounded-full pointer-events-none" />
+                </>
+              ) : (
+                <>
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-56 h-56 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none" />
+                </>
+              )}
+              <div className="relative z-10 p-7 sm:p-9">
+                {/* Progress items */}
+                <div className="space-y-4 mb-9">
+                  {v.progress.map((p, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 border ${
+                        isTacto
+                          ? 'bg-violet-500/20 border-violet-400/30'
+                          : 'bg-blue-500/20 border-blue-400/30'
+                      }`}>
+                        <CheckCircle2 className={`h-3 w-3 ${isTacto ? 'text-violet-400' : 'text-blue-400'}`} />
                       </div>
+                      <span className="text-[14px] text-slate-300/85 leading-[1.8]">{p}</span>
                     </div>
                   ))}
                 </div>
+
+                {/* Metrics grid */}
+                <div className="border-t border-white/[0.06] pt-7">
+                  <p className="text-[9.5px] font-black uppercase tracking-[0.25em] text-slate-600 mb-5">Key Metrics</p>
+                  <div className={`grid gap-4 ${v.metrics.length === 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'}`}>
+                    {v.metrics.map((m, i) => (
+                      <div
+                        key={i}
+                        className="bg-white/[0.04] border border-white/[0.07] rounded-xl px-3 py-5 text-center hover:bg-white/[0.065] transition-colors group cursor-default"
+                      >
+                        {m.icon && (
+                          <div className={`flex justify-center mb-3 ${isTacto ? 'text-violet-400/60' : 'text-blue-400/60'} group-hover:scale-110 transition-transform`}>
+                            {m.icon}
+                          </div>
+                        )}
+                        <div className={`font-black text-white tracking-tight leading-none mb-2 ${m.v.length > 6 ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'}`}>
+                          {m.v}
+                        </div>
+                        <div className="text-[11px] text-slate-500 leading-snug">{m.l}</div>
+                        {m.subtitle && <div className="text-[10px] text-slate-600 mt-1">{m.subtitle}</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Founding Team */}
-            <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm">
-              <h3 className="text-xl font-bold text-forest-deep mb-6">Founding Team</h3>
-              <div className="space-y-6">
-                {v.team.map((member, i) => (
-                  <div key={i} className="flex items-start gap-4 pb-6 border-b border-forest/5 last:border-0 last:pb-0">
-                    <div className="w-12 h-12 rounded-full bg-forest/10 overflow-hidden shrink-0">
-                      <img src={businessLeadersImg} alt="" className="w-full h-full object-cover" />
+          {/* ── Founding Team ── */}
+          <div id="team" className="scroll-mt-52">
+            <SectionHeader label="Founding Team" accent={isTacto} />
+            <div className={`grid gap-5 ${v.team.length === 3 ? 'sm:grid-cols-3' : v.team.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 xl:grid-cols-3'}`}>
+              {v.team.map((member, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300 overflow-hidden group"
+                >
+                  {/* Card header with portrait */}
+                  <div className="relative bg-gradient-to-b from-slate-50 to-slate-100/80 px-6 pt-7 pb-6 flex flex-col items-center text-center border-b border-slate-100">
+                    <div className={`w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-lg ring-1 mb-4 ${isTacto ? 'ring-violet-100' : 'ring-slate-200'}`}>
+                      {member.img ? (
+                        <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <div className={`w-full h-full flex items-center justify-center text-white text-2xl font-black ${isTacto ? 'bg-gradient-to-br from-violet-500 to-indigo-600' : 'bg-gradient-to-br from-slate-600 to-slate-800'}`}>
+                          {member.name.charAt(0)}
+                        </div>
+                      )}
                     </div>
-                    <div>
-                      <h4 className="text-[15px] font-bold text-forest-deep">{member.name}</h4>
-                      <p className="text-[15px] font-semibold text-gold mb-2">{member.role}</p>
-                      <p className="text-[15px] text-forest/70 leading-relaxed">{member.bio}</p>
+                    <h4 className="text-[15px] font-bold text-slate-900 leading-snug">{member.name}</h4>
+                    <p className={`text-[11px] font-black mt-1 uppercase tracking-[0.15em] ${isTacto ? 'text-violet-600' : 'text-blue-600'}`}>{member.role}</p>
+                  </div>
+                  {/* Bio */}
+                  <div className="px-6 py-5">
+                    <p className="text-[13px] text-slate-500 leading-[1.8] text-center">{member.bio}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12.5px] text-slate-400 italic mt-5 text-center leading-relaxed">
+              {isTacto
+                ? 'Student innovators from Galgotias University, India — building technology that breaks down barriers in STEM education.'
+                : 'Supported by advisors and domain experts across AI, enterprise technology and international markets.'}
+            </p>
+          </div>
+
+          {/* ── Roadmap ── */}
+          <div id="roadmap" className="scroll-mt-52">
+            <SectionHeader label="Roadmap" accent={isTacto} />
+            <div className={`bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm`}>
+              {/* Top accent bar for Tacto */}
+              {isTacto && (
+                <div className="h-1 w-full bg-gradient-to-r from-violet-500 via-indigo-500 to-teal-400" />
+              )}
+              <div className="p-7 sm:p-9">
+                <div className="relative">
+                  {/* Connector line - only on wider screens for 4-column layout */}
+                  {v.roadmap.length === 4 && (
+                    <div className="hidden md:block absolute top-[21px] left-[21px] right-[21px] h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 pointer-events-none" />
+                  )}
+                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-7 ${v.roadmap.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
+                    {v.roadmap.map((stage, i) => (
+                      <div key={i} className="flex flex-col items-start">
+                        {/* Icon + step number */}
+                        <div className="relative z-10 flex items-center gap-3 mb-4">
+                          <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-md shrink-0 border-2 border-white ${
+                            isTacto
+                              ? i === 0 ? 'bg-violet-600' : i === 1 ? 'bg-indigo-600' : i === 2 ? 'bg-blue-600' : 'bg-teal-600'
+                              : 'bg-slate-900'
+                          }`}>
+                            {stage.icon}
+                          </div>
+                          {stage.phase && (
+                            <span className={`text-[9px] font-black uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border hidden md:block ${
+                              i === 0
+                                ? 'bg-violet-50 border-violet-100 text-violet-600'
+                                : 'bg-slate-50 border-slate-200 text-slate-400'
+                            }`}>
+                              {stage.phase}
+                            </span>
+                          )}
+                        </div>
+                        {/* Phase label */}
+                        <h4 className="text-[14px] font-bold text-slate-800 mb-3 leading-tight">{stage.period}</h4>
+                        {/* Items */}
+                        <ul className="space-y-2">
+                          {stage.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2.5 text-[13px] text-slate-500 leading-[1.7]">
+                              <span className={`mt-[8px] w-1.5 h-1.5 rounded-full shrink-0 ${isTacto && i === 0 ? 'bg-violet-400' : 'bg-slate-300'}`} />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── RIGHT SIDEBAR ─── */}
+        <div className="w-full mt-2 lg:mt-0 lg:sticky lg:top-[172px] flex flex-col gap-5">
+
+          {/* Quick Actions CTA */}
+          <div className={`rounded-2xl p-7 text-white relative overflow-hidden shadow-xl ${isTacto ? 'bg-[#18082E]' : 'bg-slate-900'}`}>
+            {isTacto ? (
+              <>
+                <div className="absolute top-0 right-0 w-48 h-48 bg-violet-500/15 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-teal-500/10 blur-[60px] rounded-full pointer-events-none" />
+              </>
+            ) : (
+              <>
+                <div className="absolute top-0 right-0 w-52 h-52 bg-blue-500/10 blur-[70px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-indigo-500/[0.08] blur-[60px] rounded-full pointer-events-none" />
+              </>
+            )}
+            {/* Top accent line */}
+            {isTacto && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500 via-indigo-400 to-teal-400" />}
+            <div className="relative z-10">
+              <h3 className="text-[17px] font-bold mb-2 leading-snug" id="collaborate">
+                Collaborate with {v.name.split(' ')[0]}
+              </h3>
+              <p className="text-[13px] text-white/45 mb-6 leading-relaxed">
+                Connect with the founding team to explore pilots, partnerships, and investment opportunities.
+              </p>
+              <div className="flex flex-col gap-3">
+                <Link
+                  to="/contact"
+                  className={`w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-[13.5px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 ${
+                    isTacto
+                      ? 'bg-violet-500 hover:bg-violet-400 text-white'
+                      : 'bg-white text-slate-900 hover:bg-slate-50'
+                  }`}
+                >
+                  Request Introduction <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
+                >
+                  <Download className="h-4 w-4" /> Venture Brief
+                </Link>
+              </div>
+              <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.07]">
+                <Lock className="h-4 w-4 text-white/25 shrink-0 mt-0.5" />
+                <p className="text-[11.5px] text-white/25 leading-relaxed">
+                  Introductions are subject to relevance and founder approval.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Venture Highlights */}
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="px-6 pt-6 pb-5">
+              <div className="flex items-center gap-3 mb-5">
+                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${isTacto ? 'bg-violet-50 border-violet-100 text-violet-500' : 'bg-amber-50 border-amber-100 text-amber-500'}`}>
+                  <Zap className="h-4 w-4" />
+                </div>
+                <h3 className="text-[14.5px] font-bold text-slate-900">Venture Highlights</h3>
+              </div>
+              <div className="space-y-3.5">
+                {v.highlights.map((h, i) => {
+                  const [bold, rest] = h.split(' — ')
+                  return (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 ${isTacto ? 'bg-violet-50 border-violet-100' : 'bg-amber-50 border-amber-100'}`}>
+                        <CheckCircle2 className={`h-2.5 w-2.5 ${isTacto ? 'text-violet-500' : 'text-amber-500'}`} />
+                      </div>
+                      <span className="text-[13px] text-slate-600 leading-[1.65]">
+                        {rest ? <><strong className="font-semibold text-slate-800">{bold}</strong> — {rest}</> : h}
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Collaboration Areas */}
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" id="collaboration">
+            <div className="px-6 pt-6 pb-5">
+              <div className="flex items-center gap-3 mb-5">
+                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${isTacto ? 'bg-violet-50 border-violet-100 text-violet-500' : 'bg-blue-50 border-blue-100 text-blue-500'}`}>
+                  <Handshake className="h-4 w-4" />
+                </div>
+                <h3 className="text-[14.5px] font-bold text-slate-900">Seeking</h3>
+              </div>
+              <div className="space-y-4">
+                {v.seeking.map((s, i) => (
+                  <div key={i} className="flex items-start gap-3.5">
+                    <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 shadow-sm ${isTacto ? 'bg-violet-50/80 border-violet-100 text-violet-600' : 'bg-slate-50 border-slate-100 text-slate-600'}`}>
+                      {s.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-[13.5px] font-bold text-slate-900 leading-tight mb-0.5">{s.t}</h4>
+                      <p className="text-[12px] text-slate-500 leading-[1.65]">{s.d}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 pt-6 border-t border-forest/5">
-                <p className="text-[15px] text-forest/70 italic mb-4">Advisors and domain experts from security, AI and enterprise technology.</p>
-                <Link to="/team" className="text-[15px] font-bold text-forest hover:text-forest-deep inline-flex items-center gap-1 transition-colors">
-                  View Team <ArrowUpRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Roadmap */}
-          <div className="bg-white rounded-2xl p-8 border border-forest/10 shadow-sm">
-            <h3 className="text-xl font-bold text-forest-deep mb-8">Roadmap</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
-              <div className="hidden md:block absolute top-6 left-12 right-12 h-px border-t-2 border-dashed border-forest/10 -z-10" />
-              {v.roadmap.map((stage, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-white rounded-full border border-forest/10 shadow-sm flex items-center justify-center text-forest mb-4">
-                    {stage.icon}
-                  </div>
-                  <h4 className="text-[15px] font-bold text-forest-deep mb-4">{stage.period}</h4>
-                  <ul className="text-left w-full space-y-2">
-                    {stage.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-[15px] text-forest/70 leading-relaxed">
-                        <CheckCircle2 className="h-3 w-3 text-forest/70 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <Link
+                to="/contact"
+                className={`w-full mt-5 border rounded-xl py-3 text-[13px] font-bold transition-colors inline-flex items-center justify-center gap-2 ${
+                  isTacto
+                    ? 'bg-violet-50 border-violet-100 text-violet-700 hover:bg-violet-100'
+                    : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                }`}
+              >
+                Explore All Opportunities <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
 
         </div>
-
-        {/* Right Column (Sidebar) */}
-        <div className="space-y-6">
-          {/* Venture Highlights */}
-          <div className="bg-white rounded-2xl p-6 border border-forest/10 shadow-sm">
-            <h3 className="text-lg font-bold text-forest-deep mb-6">Venture Highlights</h3>
-            <div className="space-y-4">
-              {v.highlights.map((h, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <Zap className="h-4 w-4 text-forest/70 shrink-0 mt-0.5" />
-                  <span className="text-[15px] text-forest/80 leading-relaxed">{h}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* We are seeking */}
-          <div className="bg-white rounded-2xl p-6 border border-forest/10 shadow-sm">
-            <h3 className="text-lg font-bold text-forest-deep mb-6">We are seeking</h3>
-            <div className="space-y-6">
-              {v.seeking.map((s, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-forest/5 flex items-center justify-center text-forest shrink-0">
-                    {s.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-[15px] font-bold text-forest-deep mb-1">{s.t}</h4>
-                    <p className="text-[15px] text-forest/70 leading-relaxed">{s.d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <Link to="/contact" className="w-full mt-6 bg-white border border-forest/20 text-forest-deep rounded-lg py-3 text-[15px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center justify-center gap-2">
-              See Collaboration Opportunities <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          </div>
-        </div>
-
       </div>
     </div>
   )
 }
 
 function GelsRole({ v }: { v: Venture }) {
+  const isTacto = v.slug === 'project-tacto'
+  const supports = [
+    { icon: <TrendingUp className="h-4 w-4" />, title: "Venture Strategy", desc: "Growth planning and international positioning for scale." },
+    { icon: <Users className="h-4 w-4" />, title: "Investor Access", desc: "Fundraising guidance and curated investor introductions." },
+    { icon: <Globe className="h-4 w-4" />, title: "UK Market Entry", desc: "International market pathways, visas and connections." },
+    { icon: <Lightbulb className="h-4 w-4" />, title: "Expert Mentorship", desc: "Guidance from industry and academic leaders." },
+    { icon: <Network className="h-4 w-4" />, title: "Ecosystem Access", desc: "Partnerships with research bodies and innovation hubs." },
+  ]
   return (
-    <section className="bg-forest-deep text-white py-12 mt-12 mx-auto max-w-7xl px-6 rounded-2xl w-full mb-12 shadow-2xl relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-cover bg-center" style={{backgroundImage: `url(${cambridgeImg})`}} />
-      <div className="absolute inset-0 bg-forest-deep/90" />
-      <div className="relative grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-2xl font-bold mb-4">GEL's Role in {v.name}'s Journey</h2>
-          <p className="text-[15px] text-white/80 leading-relaxed">
-            Through the Global Ventures Programme, GEL supports {v.name} with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners. Our objective is to help the venture scale globally through the UK and beyond.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            "Venture Strategy & Growth Support",
-            "Investor Access & Fundraising Guidance",
-            "UK Market Entry & International Pathways",
-            "Mentorship from Industry & Academia",
-            "Ecosystem & Partnership Development"
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="h-3 w-3 text-gold" />
-              </div>
-              <span className="text-[15px] font-medium leading-relaxed">{item}</span>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-10 w-full">
+      <div
+        id="gel-s-role"
+        className="rounded-3xl overflow-hidden relative shadow-2xl border border-white/[0.06] scroll-mt-52 bg-[#07091A]"
+      >
+        {/* Background gradients */}
+        {isTacto ? (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(109,40,217,0.15),transparent_60%)]" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-700/[0.08] blur-[130px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-teal-500/[0.05] blur-[80px] rounded-full pointer-events-none" />
+          </>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/25 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/[0.08] blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-500/[0.05] blur-[80px] rounded-full pointer-events-none" />
+          </>
+        )}
+        {/* Top accent */}
+        {isTacto && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-600 via-indigo-500 to-teal-400" />}
+
+        <div className="relative z-10 p-8 sm:p-10 lg:p-14">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            {/* Left: Text */}
+            <div>
+              <span className={`text-[9.5px] font-black uppercase tracking-[0.28em] mb-5 block ${isTacto ? 'text-violet-400' : 'text-blue-400'}`}>
+                Strategic Support
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-5">
+                GEL's Role in{' '}
+                <span className={isTacto ? 'text-violet-400' : 'text-blue-400'}>
+                  {v.name.split(' ')[0]}'s
+                </span>{' '}
+                Journey
+              </h2>
+              <p className="text-[15px] text-slate-400 leading-[1.88] mb-6">
+                Through the Global Ventures Programme, GEL supports{' '}
+                <strong className="text-slate-300 font-semibold">{v.name}</strong>{' '}
+                with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners.
+                {isTacto
+                  ? ' Our mission is to help TACTO reach every visually impaired learner across the globe.'
+                  : ' Our objective is to help the venture scale globally through the UK and beyond.'}
+              </p>
+              {isTacto && (
+                <div className="flex flex-wrap gap-2">
+                  {['SDG 4 Aligned', 'Open Source', 'Inclusive EdTech', 'Student Innovation'].map((tag) => (
+                    <span key={tag} className="px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-[11px] font-bold text-violet-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-          ))}
+            {/* Right: Support cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {supports.map((s, i) => (
+                <div
+                  key={i}
+                  className={`bg-white/[0.04] border border-white/[0.07] rounded-2xl p-5 hover:bg-white/[0.065] transition-colors ${i === 4 ? 'sm:col-span-2' : ''}`}
+                >
+                  <div className={`w-8 h-8 rounded-xl border flex items-center justify-center mb-3 ${
+                    isTacto
+                      ? 'bg-violet-500/15 border-violet-500/20 text-violet-400'
+                      : 'bg-blue-500/15 border-blue-500/20 text-blue-400'
+                  }`}>
+                    {s.icon}
+                  </div>
+                  <h4 className="text-[13.5px] font-bold text-white mb-1.5">{s.title}</h4>
+                  <p className="text-[12px] text-slate-500 leading-[1.72]">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
 function BottomCTA({ v }: { v: Venture }) {
+  const isTacto = v.slug === 'project-tacto'
   return (
-    <section className="bg-white border-t border-forest/10 py-12">
-      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex items-center gap-6">
-          <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
-            <Users className="h-8 w-8" />
+    <section className="border-t border-slate-200 bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          {/* Left: Text */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left max-w-2xl">
+            <div className={`w-16 h-16 rounded-2xl border flex items-center justify-center shrink-0 shadow-sm ${
+              isTacto ? 'bg-violet-50 border-violet-100 text-violet-600' : 'bg-slate-50 border-slate-200 text-slate-700'
+            }`}>
+              <Handshake className="h-8 w-8" />
+            </div>
+            <div>
+              <h2 className="text-2xl sm:text-[1.75rem] font-bold text-slate-900 leading-tight mb-2.5">
+                Interested in collaborating with {v.name}?
+              </h2>
+              <p className="text-[15px] text-slate-500 leading-relaxed">
+                {isTacto
+                  ? 'If you are an investor, NGO, educational institution, or domain expert in accessible technology, we would love to connect and facilitate a meaningful introduction.'
+                  : 'If you are an investor, corporate partner, university or domain expert, we would love to connect and facilitate a meaningful introduction.'}
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-forest-deep mb-1">Interested in collaborating with {v.name}?</h2>
-            <p className="text-[15px] text-forest/70">
-              If you are an investor, corporate, university or expert interested in collaborating, we would love to connect.
-            </p>
+          {/* Right: Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
+            <Link
+              to="/contact"
+              className={`w-full sm:w-auto text-white px-8 py-4 rounded-xl text-[14px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 inline-flex items-center justify-center gap-2 ${
+                isTacto
+                  ? 'bg-violet-600 hover:bg-violet-500'
+                  : 'bg-slate-900 hover:bg-slate-800'
+              }`}
+            >
+              Request Introduction <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-xl text-[14px] font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all inline-flex items-center justify-center gap-2"
+            >
+              <Download className="h-4 w-4" /> Venture Brief
+            </Link>
           </div>
-        </div>
-        <div className="flex gap-4 shrink-0">
-          <Link to="/contact" className="bg-gold hover:bg-gold/90 text-forest-deep px-6 py-3 rounded-lg text-[15px] font-bold transition-colors inline-flex items-center gap-2">
-            Request Introduction <ArrowUpRight className="h-3 w-3" />
-          </Link>
-          <Link to="/contact" className="bg-white border border-forest/20 text-forest-deep px-6 py-3 rounded-lg text-[15px] font-bold hover:bg-forest/5 transition-colors inline-flex items-center gap-2">
-            Request Venture Brief <Download className="h-3 w-3" />
-          </Link>
         </div>
       </div>
     </section>

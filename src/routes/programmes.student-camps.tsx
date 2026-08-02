@@ -56,7 +56,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> July 2026
+                <Calendar className="h-4 w-4 text-gold" />
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> University of Cambridge, UK
@@ -89,7 +89,7 @@ function Hero() {
                   { val: '5,000+', label: 'Students Impacted', sub: 'Since 2022' },
                   { val: '2', label: 'Flagship Camps', sub: 'At Cambridge colleges' },
                   { val: '14–17', label: '& 18+ Age Groups', sub: 'Both programmes' },
-                  { val: 'Jul 2026', label: 'Next Intake', sub: 'Applications Open' },
+                  { val: 'Upcoming', label: 'Next Intake', sub: 'Applications Open' },
                 ].map((s) => (
                   <div key={s.label} className="bg-white/5 rounded-2xl p-5 border border-white/10">
                     <p className="text-2xl font-bold text-gold leading-none">{s.val}</p>
@@ -169,7 +169,7 @@ function Camps() {
       badge: 'School · 14–17 Years',
       icon: <Rocket className="h-6 w-6" />,
       title: 'STEM & Entrepreneurship Summer Camp at Cambridge',
-      when: '5–18 July 2026',
+      when: '5–18',
       where: 'University of Cambridge (Hughes Hall)',
       desc: 'A two-week residential deep-dive into STEM thinking and entrepreneurial problem-solving. Students explore real-world challenges, build prototypes and pitch solutions to expert mentors.',
       link: 'https://www.globaledulab.com/sesc',
@@ -180,7 +180,7 @@ function Camps() {
       badge: 'Graduate · 18+ Years',
       icon: <GraduationCap className="h-6 w-6" />,
       title: 'Summer Programme at Girton College — Entrepreneurship & AI',
-      when: '12–25 July 2026',
+      when: '12–25',
       where: 'Girton College, Cambridge',
       desc: 'Undergraduate-level exploration of entrepreneurship and AI, taught in true Cambridge style. Participants engage with faculty, alumni founders and industry experts in one of Cambridge\'s most celebrated historic colleges.',
       link: 'https://www.globaledulab.com/gsp',
@@ -367,7 +367,7 @@ function CTA() {
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">A Cambridge summer awaits.</h2>
-        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications for 2026 cohorts are open — early acceptance is limited.</p>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications for Upcoming cohorts are open — early acceptance is limited.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
           <a
             href="https://www.globaledulab.com/studentprogrammes"

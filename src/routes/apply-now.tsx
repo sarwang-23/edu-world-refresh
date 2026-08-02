@@ -82,10 +82,10 @@ function ApplyNowPage() {
   };
 
   const programmes = [
-    "Global India Leadership - Mar 2026",
-    "London School Leadership - Jan 2026",
-    "Finland Education - Feb 2026",
-    "Bali Green School - May 2026",
+    "Global India Leadership",
+    "London School Leadership",
+    "Finland Education",
+    "Bali Green School",
     "Student Summer Camps",
     "Graduate Summer Camp",
     "Online Workshops",

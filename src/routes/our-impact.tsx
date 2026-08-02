@@ -551,9 +551,9 @@ function Numbers() {
     { y: '2020', v: 1000 },
     { y: '2021', v: 1800 },
     { y: '2022', v: 2700 },
-    { y: '2023', v: 3600 },
-    { y: '2024', v: 4400 },
-    { y: '2025', v: 5500 },
+    { y: 'Year 1', v: 3600 },
+    { y: 'Year 2', v: 4400 },
+    { y: 'Year 3', v: 5500 },
   ]
   const stages = [
     { label: 'Early Stage', pct: 60 },
@@ -606,7 +606,7 @@ function Numbers() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-forest/5 rounded-full blur-3xl group-hover:bg-forest/10 transition-colors duration-500" />
             <div className="flex justify-between items-center mb-12 border-b border-forest/5 pb-5 relative z-10">
               <h3 className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep">Programme Growth</h3>
-              <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — 2025</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">2020 — Year 3</span>
             </div>
             <div className="flex h-[200px] items-end justify-between gap-3 relative mt-10 z-10">
                <div className="absolute inset-0 border-b border-l border-forest/10" />

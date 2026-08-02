@@ -165,7 +165,7 @@ function Hero() {
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -left-6 z-30 rounded-2xl border border-forest/10 bg-white p-6 shadow-xl w-40">
             <p className="text-[15px] font-bold uppercase tracking-widest text-forest/70 mb-1">PUBLICATIONS</p>
-            <p className="text-2xl font-bold text-forest-deep">3 · 2026</p>
+            <p className="text-2xl font-bold text-forest-deep">3</p>
           </div>
         </div>
       </div>
@@ -233,9 +233,9 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string, title?: strin
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-6">FEATURED WHITE PAPER · MARCH 2026</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-6">FEATURED WHITE PAPER · LATEST</p>
             <h2 className="text-4xl font-bold tracking-tight text-cream md:text-6xl leading-[1.1]">
-              Global India Leadership Programme — <span className="font-serif italic text-gold">Cambridge 2026.</span>
+              Global India Leadership Programme — <span className="font-serif italic text-gold">Cambridge.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-md">
               Perspectives from global business leaders and Judge Business School faculty on how artificial intelligence, sustainability, governance and shifting economic dynamics are redefining leadership.
@@ -279,7 +279,7 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
       category: "LEADERSHIP · AI",
       title: "Leadership in the Age of Artificial Intelligence",
       desc: "How leaders must evolve as AI reshapes decision-making, organisational design and the human core of business.",
-      date: "WHITE PAPER · 2026",
+      date: "WHITE PAPER",
       downloadLink: "/leadership-whitepaper.pdf"
     },
     {
@@ -287,9 +287,9 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
       image: frugalHubCover,
       imageClass: "object-contain bg-white",
       category: "FRUGAL AI · EXECUTIVE AGENDA",
-      title: "Frugal AI — Executive Agenda 2026",
+      title: "Frugal AI — Executive Agenda",
       desc: "Doing more with less: a companion research report on responsible, resource-conscious AI strategies for emerging markets.",
-      date: "RESEARCH REPORT · MAY 2026",
+      date: "RESEARCH REPORT · LATEST",
       downloadLink: "/frugal-ai-agenda.pdf"
     },
     {
@@ -299,7 +299,7 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
       category: "GILP · CAMBRIDGE",
       title: "Global India Leadership Programme — Cambridge",
       desc: "Frameworks and forward-looking insights from Judge Business School faculty and global business leaders convened at Cambridge.",
-      date: "WHITE PAPER · MARCH 2026",
+      date: "WHITE PAPER · LATEST",
       downloadLink: "/gilp-brochure.pdf"
     }
   ];

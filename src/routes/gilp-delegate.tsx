@@ -21,8 +21,8 @@ export const Route = createFileRoute("/gilp-delegate")({
   component: GilpDelegatePage,
   head: () => ({
     meta: [
-      { title: "GILP 2026 – Delegate Registration Page" },
-      { name: "description", content: "Register for the Global India Leadership Programme 2026." },
+      { title: "GILP – Delegate Registration Page" },
+      { name: "description", content: "Register for the Global India Leadership Programme." },
     ],
   }),
 });
@@ -125,8 +125,8 @@ function GilpDelegatePage() {
   const steps = [
     { num: "02", title: "FEE PAYMENT", desc: "Within 2 weeks of submitting this form" },
     { num: "03", title: "VISA INVITATION LETTER", desc: "Issued within 5 working days of receiving your fee" },
-    { num: "04", title: "PRE READING & ORIENTATION", desc: "All material will be shared with you by 31st August 2026" },
-    { num: "05", title: "CAMBRIDGE ARRIVAL", desc: "You arrive at Cambridge on 13th September 2026" },
+    { num: "04", title: "PRE READING & ORIENTATION", desc: "All material will be shared with you by 31st" },
+    { num: "05", title: "CAMBRIDGE ARRIVAL", desc: "You arrive at Cambridge on 13th" },
   ];
 
   const inputCls = "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/80 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
@@ -162,7 +162,7 @@ function GilpDelegatePage() {
 
             {/* ── Heading ── */}
             <h1 className="text-[2.4rem] font-bold text-white leading-[1.1] tracking-tight mb-6">
-              GILP 2026 –<br />
+              GILP –<br />
               <em className="text-gold not-italic font-serif italic font-normal">Delegate Page.</em>
             </h1>
 
@@ -370,7 +370,7 @@ function GilpDelegatePage() {
                 <div className="mt-10 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
                   <img
                     src="/gilp-banner.png"
-                    alt="Global India Leadership Programme – 14-18 September 2026, Cambridge Judge Business School"
+                    alt="Global India Leadership Programme – 14-18, Cambridge Judge Business School"
                     className="w-full h-auto block"
                   />
                 </div>

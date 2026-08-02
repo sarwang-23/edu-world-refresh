@@ -11,7 +11,7 @@ export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
     meta: [
       { title: 'Zero-To-One Ideation Weekend | Cambridge Judge Business School — Global Edu Lab' },
-      { name: 'description', content: 'A 48-hour venture-building format that takes you from idea to incubator-ready in Cambridge. June 19–21 2026 at Judge Business School.' },
+      { name: 'description', content: 'A 48-hour venture-building format that takes you from idea to incubator-ready in Cambridge. Upcoming Intake at Judge Business School.' },
       { property: 'og:title', content: 'Zero-To-One Ideation Weekend' },
       { property: 'og:description', content: 'From raw ideas to incubator-ready ventures in 48 hours at Cambridge.' },
     ],
@@ -243,7 +243,7 @@ function ThemeSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">October 2026 Theme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Upcoming Theme</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Food, Agriculture &<br/>Planetary Health
@@ -371,7 +371,7 @@ function ProgrammeFormat() {
   const schedule = [
     {
       day: 'Day 1 · Thursday',
-      date: '19 June 2026',
+      date: '19',
       sessions: [
         { time: 'Afternoon', title: 'Arrival & Registration', desc: 'Check-in at Cambridge Judge Business School. Opening reception with mentors and peers.' },
         { time: 'Evening', title: 'Theme Deep-Dive', desc: 'Expert panel on Food, Agriculture & Planetary Health. Landscape mapping and opportunity framing.' },
@@ -380,7 +380,7 @@ function ProgrammeFormat() {
     },
     {
       day: 'Day 2 · Friday',
-      date: '20 June 2026',
+      date: '20',
       sessions: [
         { time: '9:00am', title: 'Problem-Finding Sprints', desc: 'Facilitated sessions to surface real problems within the theme. Move from interest to insight.' },
         { time: '12:00pm', title: 'Team Formation', desc: 'Form interdisciplinary teams of 3–5. Chemistry over credentials.' },
@@ -391,7 +391,7 @@ function ProgrammeFormat() {
     },
     {
       day: 'Day 3 · Saturday',
-      date: '21 June 2026',
+      date: '21',
       sessions: [
         { time: '9:00am', title: 'Final Preparation', desc: 'Polish your venture story. Final mentor feedback rounds.' },
         { time: '11:00am', title: 'Venture Pitches', desc: 'Present your venture direction to a panel of investors, academics and ecosystem leaders.' },

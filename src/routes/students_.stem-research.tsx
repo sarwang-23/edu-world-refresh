@@ -232,7 +232,7 @@ function CTA() {
           <div className="h-px w-8 bg-blue-500" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Ready to start asking better questions?</h2>
-        <p className="text-[15px] text-forest/80 leading-[1.75] mb-10">Applications are open for the Cambridge Summer 2026 cohort. Secure your place today.</p>
+        <p className="text-[15px] text-forest/80 leading-[1.75] mb-10">Applications are open for the Cambridge Upcoming cohort. Secure your place today.</p>
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-blue-500 transition-all duration-300 shadow-xl shadow-blue-500/25"

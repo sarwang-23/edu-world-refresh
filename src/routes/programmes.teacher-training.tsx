@@ -25,8 +25,8 @@ function Page() {
     { icon: <BookOpen className="h-6 w-6" />, t: 'Ongoing Community', d: 'A network of educators sharing practice long after the programme ends.' },
   ]
   const courses = [
-    { t: 'Pedagogy — Student-Centred Learning', when: '2026 Intake · Online', d: 'Rewire your classroom around how students actually learn best.' },
-    { t: 'Adaptive Teaching Skills', when: '2026 Intake · Online', d: 'Practical strategies to reach every learner in a diverse classroom.' },
+    { t: 'Pedagogy — Student-Centred Learning', when: 'Upcoming Intake · Online', d: 'Rewire your classroom around how students actually learn best.' },
+    { t: 'Adaptive Teaching Skills', when: 'Upcoming Intake · Online', d: 'Practical strategies to reach every learner in a diverse classroom.' },
   ]
   return (
     <div className="flex min-h-screen flex-col pt-4">
@@ -62,7 +62,7 @@ function Page() {
       </section>
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">Ongoing Programmes · 2025–2026</p>
+          <p className="text-[15px] font-semibold uppercase tracking-[0.28em] text-gold">Ongoing Programmes</p>
           <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Enrol in your next course.</h2>
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {courses.map((it, i) => (

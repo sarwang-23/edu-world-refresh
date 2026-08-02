@@ -82,7 +82,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
-                { icon: <Calendar className="h-4 w-4" />, label: '12–25 July 2026' },
+                { icon: <Calendar className="h-4 w-4" />, label: '12–25' },
                 { icon: <Zap className="h-4 w-4" />, label: '2-Week Immersive' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -111,7 +111,7 @@ function Hero() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
-                  <p className="text-white text-[15px] font-bold">12–25 July 2026</p>
+                  <p className="text-white text-[15px] font-bold">12–25</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (

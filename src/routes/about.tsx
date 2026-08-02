@@ -256,10 +256,10 @@ function Journey() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
             {[
               { year: "2022", icon: Users, desc: "Launched with small scale informal student mentoring support" },
-              { year: "2023", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
-              { year: "2024", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
-              { year: "2025", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
-              { year: "2026", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
+              { year: "Phase 1", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
+              { year: "Phase 2", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
+              { year: "Phase 3", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
+              { year: "Phase 4", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
             ].map((item, idx) => (
               <div key={item.year} className="flex flex-col items-center text-center px-2">
                 <div className="relative mb-6">

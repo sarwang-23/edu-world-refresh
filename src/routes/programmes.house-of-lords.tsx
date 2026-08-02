@@ -9,7 +9,7 @@ export const Route = createFileRoute('/programmes/house-of-lords')({
   head: () => ({
     meta: [
       { title: 'Global Impact of Cambridge Startups · House of Lords — Global Edu Lab' },
-      { name: 'description', content: 'An exclusive invite-only evening at the House of Lords celebrating the global impact of Cambridge-born startups. October 2026.' },
+      { name: 'description', content: 'An exclusive invite-only evening at the House of Lords celebrating the global impact of Cambridge-born startups..' },
       { property: 'og:title', content: 'Global Impact of Cambridge Startups · House of Lords' },
       { property: 'og:description', content: 'Invite-only evening celebrating Cambridge startups at the House of Lords, Westminster.' },
     ],
@@ -53,7 +53,7 @@ function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-5 text-[15px] text-forest/70">
               <span className="inline-flex items-center gap-2 font-semibold">
-                <Calendar className="h-4 w-4 text-gold" /> 15 October 2026
+                <Calendar className="h-4 w-4 text-gold" /> 15
               </span>
               <span className="inline-flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold" /> House of Lords, Westminster
@@ -106,7 +106,7 @@ function Hero() {
 
 function StatsStrip() {
   const stats = [
-    { val: '2024', label: 'Inaugural Edition', sub: 'First convening' },
+    { val: 'Inaugural Year', label: 'Inaugural Edition', sub: 'First convening' },
     { val: '100+', label: 'Guests', sub: 'Founders, peers & investors' },
     { val: 'UK–India', label: 'Corridor Focus', sub: 'Cross-border ecosystem' },
     { val: 'Annual', label: 'Recurring Event', sub: 'Growing each year' },
@@ -315,7 +315,7 @@ function CTA() {
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Request your invitation.</h2>
-        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">The October 2026 evening is now open for invitation requests. Submit your interest and our team will be in touch.</p>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">The evening is now open for invitation requests. Submit your interest and our team will be in touch.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
           <Link
             to="/apply-now"

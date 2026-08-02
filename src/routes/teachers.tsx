@@ -56,7 +56,7 @@ function Hero() {
               href="#programmes"
               className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
-              Explore 2026 Programmes <ArrowUpRight className="h-4 w-4" />
+              Explore Programmes <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#school"
@@ -218,7 +218,7 @@ function OngoingProgrammes() {
       audience: "SELF-PACED",
       title: "Pedagogy — Student-Centered Learning",
       location: "ONLINE",
-      date: "2026 INTAKE",
+      date: "UPCOMING INTAKE",
       desc: "A Cambridge-informed online programme for teachers who want to move from lecturer to facilitator. Explore lesson pedagogy — with video lectures, live mentoring, and personalised progress reports.",
       link: "/programmes/teacher-training",
     },
@@ -227,7 +227,7 @@ function OngoingProgrammes() {
       audience: "SELF-PACED",
       title: "Adaptive Teaching Skills",
       location: "ONLINE",
-      date: "2026 INTAKE",
+      date: "UPCOMING INTAKE",
       desc: "Learn how to design differentiated instruction that meets learners where they are. Practical strategies for mixed-ability classrooms, formative assessment, and responsive teaching.",
       link: "/programmes/teacher-training",
     },
@@ -448,12 +448,12 @@ function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">JOIN THE 2026 INTAKE</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">JOIN THE UPCOMING INTAKE</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Elevate your teaching — starting this season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Applications for the 2026 teacher training intake are open. Individual teachers and full school cohorts are welcome.
+          Applications for the teacher training intake are open. Individual teachers and full school cohorts are welcome.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">

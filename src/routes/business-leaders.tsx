@@ -61,7 +61,7 @@ function Hero() {
               href="#programmes"
               className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
-              Explore 2026 Programmes <ArrowUpRight className="h-4 w-4" />
+              Explore Programmes <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#delegations"
@@ -258,7 +258,7 @@ function OngoingProgrammes() {
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES - 2026</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             One flagship. Three ways to join.
           </h2>
@@ -483,7 +483,7 @@ function FinalCTA() {
       <div className="mx-auto max-w-3xl px-6">
         <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
-          Reserve your seats for the 2026 season.
+          Reserve your seats for the season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
           Cohorts are capped and typically fill six to nine months in advance. Register today and our admissions team will be in touch within two working days.
@@ -494,7 +494,7 @@ function FinalCTA() {
             to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
-            ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
+            ENQUIRE <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href="#programmes"
