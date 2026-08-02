@@ -67,12 +67,12 @@ function Hero() {
               Global Education Lab designs and delivers international programmes for education leaders, entrepreneurs and business executives. Each programme combines expert learning, institutional engagement and cultural immersion to create insights that drive meaningful change.
             </p>
 
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
+            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 shrink-0">
                 Explore Our Programme Portfolio
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 shrink-0">
                 Discuss a Custom Programme
               </Link>
             </div>

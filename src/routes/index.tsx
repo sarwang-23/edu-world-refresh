@@ -599,12 +599,10 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[15px] text-muted-foreground md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Global Education Lab Ltd. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-forest transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-forest transition-colors">Terms & Conditions</a>
-          </div>
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[15px] text-muted-foreground">
+          <p className="text-[13px] text-forest/50">
+            © {new Date().getFullYear()} Global Education Lab Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

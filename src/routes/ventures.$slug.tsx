@@ -91,7 +91,57 @@ const VENTURES: Record<string, Venture> = {
   'project-tacto': { slug: 'project-tacto', name: 'PROJECT TACTO', track: 'Venture Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Atom />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
   'vyomveda': { slug: 'vyomveda', name: 'VYOMVEDA', track: 'Research Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Sparkles />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
   'cellunova': { slug: 'cellunova', name: 'CELLUNOVA', track: 'Research Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <Microscope />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
-  'saivyy': { slug: 'saivyy', name: 'SAIVYY', track: 'Venture Track', tagline: '', intro: '', sector: '', stage: '', origin: '', markets: '', logo: <FlaskConical />, color: '', problem: '', solution: '', matters: '', impact: '', highlights: [], progress: [], metrics: [], team: [], seeking: [], roadmap: [] },
+  'saivyy': {
+    slug: 'saivyy', name: 'SAIVYY TECHNOLOGIES', track: 'Venture Track',
+    tagline: 'Empowering businesses with AI-driven automation, analytics and intelligent digital transformation.',
+    intro: 'Saivyy Technologies Pvt. Ltd. develops enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and automate critical business processes — improving efficiency, accelerating decisions and driving sustainable digital transformation.',
+    sector: 'Artificial Intelligence, Generative AI, Big Data Analytics & Intelligent Automation',
+    stage: 'Bootstrapped, Profitable & Growing (Founded 2025)',
+    origin: 'Noida, India',
+    markets: 'India, UK, North America, Europe, Middle East',
+    logo: <Cpu className="h-12 w-12 text-white" />, color: 'from-slate-900 via-blue-950 to-slate-900',
+    problem: 'Organisations generate vast amounts of data but struggle to convert it into actionable business intelligence. Legacy systems, manual processes and fragmented digital infrastructure lead to inefficiency, delayed decisions, higher costs and limited scalability — while technical complexity, integration barriers and scarce expertise slow AI adoption.',
+    solution: 'Saivyy delivers end-to-end AI-driven digital transformation combining Artificial Intelligence, Machine Learning, Big Data Analytics, Intelligent Automation and Cloud. Scalable platforms help organisations automate workflows, extract meaningful insight, optimise operations and accelerate innovation through secure, enterprise-ready technology.',
+    matters: 'Digital transformation is essential to remain competitive in a data-driven economy. Intelligent automation and data-driven decision-making improve productivity, reduce operational costs and enable organisations to focus on innovation and growth.',
+    impact: 'Saivyy has delivered AI, analytics and digital transformation solutions across multiple industry domains. Our ambition is to become a globally recognised AI and intelligent automation partner for enterprises across the UK, Europe, North America and the Middle East.',
+    highlights: [
+      'AI & Intelligent Automation expertise — enterprise AI, ML, Generative AI and Big Data Analytics',
+      'Scalable enterprise technology — secure, cloud-enabled platforms that integrate with existing systems',
+      'Cross-industry transformation — Healthcare, Education, BFSI, Manufacturing, Retail, Logistics, Government & Smart Cities',
+      'Innovation-driven portfolio — custom software, AI consulting, cloud, data engineering and automation services',
+      'Global growth — expanding across India, the UK, Europe, North America and the Middle East',
+    ],
+    progress: [
+      'Incorporated as an AI, Big Data and Digital Transformation company (CIN U62010UP2025PTC233625, 24/09/2025)',
+      'Commercialised AI, Data Analytics, Cloud and Intelligent Automation service offerings for enterprise clients',
+      'Built a team of 12+ professionals delivering solutions to 50+ clients',
+      'Established office at Urbtech Trade Centre, Sector 132, Noida',
+      '20+ AI and digital transformation solutions in the current portfolio',
+    ],
+    metrics: [
+      { l: 'Enterprise Clients Served', v: '50+', subtitle: 'Pilot Stage' },
+      { l: 'Team Size', v: '12+' },
+      { l: 'Industries Served', v: '4' },
+      { l: 'Solutions Offered', v: '20+' },
+      { l: 'Technology Domains', v: '6+' },
+    ],
+    team: [
+      { name: 'Keshav Madan', role: 'Founder & CEO', bio: 'Expert in enterprise technology, Artificial Intelligence and digital transformation. Leads product innovation, strategic partnerships and business growth, driving AI-powered solutions that help organisations modernise operations and make data-driven decisions.' },
+      { name: 'Manas Saxena', role: 'Tech Lead / CTO', bio: 'Leads technology strategy, product engineering and innovation — overseeing AI-driven, cloud-enabled and data-centric enterprise solutions that accelerate digital transformation and operational excellence.' },
+    ],
+    seeking: [
+      { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Manufacturing, education, software and logistics organisations in India and the UK to validate and deploy AI, analytics and automation solutions. Typical pilots run 8–16 weeks.' },
+      { icon: <Handshake className="h-5 w-5" />, t: 'Strategic Partners', d: 'Companies seeking advanced software or hardware integration, technology co-development, or joint innovation on AI-driven solutions with a strong technical or commercial fit.' },
+      { icon: <Lightbulb className="h-5 w-5" />, t: 'Mentors & Experts', d: 'Mentors in enterprise AI commercialisation, international market expansion, product strategy, cybersecurity, regulatory compliance and B2B enterprise sales.' },
+      { icon: <Globe2 className="h-5 w-5" />, t: 'Ecosystem Collaboration', d: 'Industry associations, research organisations, innovation hubs, incubators, universities and public sector bodies to co-develop AI solutions and promote responsible digital innovation.' },
+    ],
+    roadmap: [
+      { period: 'Q3 – Q4 2026', icon: <Rocket className="h-6 w-6" />, items: ['Enter and establish presence in the UK market', 'Close first UK pilots and implementation projects'] },
+      { period: 'Q1 – Q2 2027', icon: <TrendingUp className="h-6 w-6" />, items: ['Scale UK operations through rapid delivery', 'Build case studies and strengthen delivery bandwidth'] },
+      { period: 'Q3 – Q4 2027', icon: <Globe className="h-6 w-6" />, items: ['Deepen UK market share', 'Open early conversations across target European markets'] },
+      { period: '2028 onward', icon: <Target className="h-6 w-6" />, items: ['Go-to AI implementation partner across UK & Europe', 'Expand delivery team and technical partnerships'] },
+    ],
+  },
 }
 
 export const Route = createFileRoute('/ventures/$slug')({
@@ -107,8 +157,15 @@ function VenturePage() {
   const v = Route.useLoaderData()
   const [activeTab, setActiveTab] = useState("Overview")
   
-  if (v.slug !== 'kavach-ai') {
-    return <div className="p-24 text-center">Content placeholder for {v.name}. (Only Kavach AI is fully implemented for this demo)</div>
+  const hasFullData = v.intro !== ''
+  
+  if (!hasFullData) {
+    return (
+      <div className="min-h-screen bg-cream font-sans flex flex-col items-center justify-center text-center px-6">
+        <h1 className="text-4xl font-bold text-forest-deep mb-4">{v.name}</h1>
+        <p className="text-forest/70 text-lg max-w-md">Full venture profile coming soon. <Link to="/global-ventures" className="text-forest font-bold hover:underline">Back to Global Ventures</Link></p>
+      </div>
+    )
   }
 
   const tabs = ["Overview", "The Opportunity", "Solution", "Progress", "Team", "Collaboration", "Roadmap", "GEL's Role"]
@@ -137,8 +194,8 @@ function VenturePage() {
       </div>
 
       <MainContent v={v} />
-      <GelsRole />
-      <BottomCTA />
+      <GelsRole v={v} />
+      <BottomCTA v={v} />
       <Footer />
     </div>
   )
@@ -392,16 +449,16 @@ function MainContent({ v }: { v: Venture }) {
   )
 }
 
-function GelsRole() {
+function GelsRole({ v }: { v: Venture }) {
   return (
     <section className="bg-forest-deep text-white py-12 mt-12 mx-auto max-w-7xl px-6 rounded-2xl w-full mb-12 shadow-2xl relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-cover bg-center" style={{backgroundImage: `url(${cambridgeImg})`}} />
       <div className="absolute inset-0 bg-forest-deep/90" />
       <div className="relative grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-2xl font-bold mb-4">GEL's Role in Kavach AI's Journey</h2>
+          <h2 className="text-2xl font-bold mb-4">GEL's Role in {v.name}'s Journey</h2>
           <p className="text-[15px] text-white/80 leading-relaxed">
-            Through the Global Ventures Programme, GEL supports Kavach AI with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners. Our objective is to help the venture scale globally through the UK and beyond.
+            Through the Global Ventures Programme, GEL supports {v.name} with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners. Our objective is to help the venture scale globally through the UK and beyond.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -425,7 +482,7 @@ function GelsRole() {
   )
 }
 
-function BottomCTA() {
+function BottomCTA({ v }: { v: Venture }) {
   return (
     <section className="bg-white border-t border-forest/10 py-12">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -434,9 +491,9 @@ function BottomCTA() {
             <Users className="h-8 w-8" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-forest-deep mb-1">Let's build a safer future—together.</h2>
+            <h2 className="text-xl font-bold text-forest-deep mb-1">Interested in collaborating with {v.name}?</h2>
             <p className="text-[15px] text-forest/70">
-              If you are an investor, corporate, university or expert interested in collaborating with Kavach AI, we would love to connect.
+              If you are an investor, corporate, university or expert interested in collaborating, we would love to connect.
             </p>
           </div>
         </div>

@@ -1,13 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Footer } from './index'
-import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
+import { ArrowUpRight, Linkedin } from 'lucide-react'
 import businessLeadersImg from '../assets/business-leaders.jpg'
-import studentCampsImg from '../assets/school-leaders.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
-import studentsImg from '../assets/students.jpg'
-import person6Img from '../assets/person6.jpg'
-import person7Img from '../assets/person7.jpg'
-import person10Img from '../assets/person10.jpg'
 
 export const Route = createFileRoute('/team')({
   head: () => ({
@@ -24,7 +18,6 @@ function TeamPage() {
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
       <Leadership />
-      <CoreTeam />
       <JoinTeamCTA />
       <Footer />
     </div>
@@ -75,11 +68,13 @@ function Leadership() {
             </p>
             
             <div className="flex items-center gap-4">
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/10 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors">
+              <a
+                href="https://www.linkedin.com/company/global-education-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/10 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors"
+              >
                 <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/10 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors">
-                <Twitter className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -103,47 +98,6 @@ function Leadership() {
   )
 }
 
-function CoreTeam() {
-  const team = [
-    { name: "Sarah Jenkins", role: "Head of Academic Partnerships", img: person6Img },
-    { name: "David Chen", role: "Director of Innovation", img: person7Img },
-    { name: "Elena Rodriguez", role: "Global Programme Lead", img: person10Img },
-  ]
-  
-  return (
-    <section className="bg-[#F7F5F0] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight mb-4 tracking-tight">
-            Our Core Team
-          </h2>
-          <p className="text-forest/70 max-w-xl mx-auto">
-            A diverse group of experts dedicated to creating transformative learning experiences across the globe.
-          </p>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, i) => (
-            <div key={i} className="group bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all border border-forest/5">
-              <div className="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-square bg-forest/5">
-                <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <h3 className="text-xl font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors">{member.name}</h3>
-              <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-forest/70 mb-4">{member.role}</p>
-              
-              <div className="flex items-center gap-3 pt-4 border-t border-forest/5 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="text-forest/70 hover:text-forest transition-colors"><Linkedin className="h-4 w-4" /></a>
-                <a href="#" className="text-forest/70 hover:text-forest transition-colors"><Twitter className="h-4 w-4" /></a>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-      </div>
-    </section>
-  )
-}
 
 function JoinTeamCTA() {
   return (

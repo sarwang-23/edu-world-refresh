@@ -282,18 +282,18 @@ function Journey() {
 
 function OurPeople() {
   const people = [
-    { name: "Margaret Sema CBE", title: "Advisor", img: person1 },
-    { name: "Andrew Hatcher", title: "Head of Entrepreneurship", img: person2 },
-    { name: "Yves Gaspar", title: "STEM Lead", img: person3 },
-    { name: "Tim Vinopal", title: "Operations Americas", img: person4 },
-    { name: "Jaideep Prabhu", title: "Programme Director - Global India Leadership Programme", img: person5 },
-    { name: "Guy Doza", title: "Advisor", img: person6 },
-    { name: "Sayara Thomson", title: "Programme Manager", img: person7 },
-    { name: "Akshay Kumar", title: "Sales and Marketing", img: person8 },
-    { name: "Khushboo Kundra", title: "Operations", img: person9 },
-    { name: "Gurmeet Kaur", title: "Social Media & Marketing", img: person10 },
-    { name: "Santosh Huralikoppi", title: "Advisor", img: person11 },
-    { name: "Nim Wichienkuer", title: "Gamified L&D", img: person12 },
+    { name: "Guy Doza", title: "Advisor", img: person1, quote: "Empowering the next generation of global leaders through transformative education." },
+    { name: "Gurmeet Kaur", title: "Social Media & Marketing", img: person2, quote: "Building vibrant communities and amplifying our mission to audiences worldwide." },
+    { name: "Dan Stert", title: "Programme Director", img: person3, quote: "Designing immersive experiences that challenge perspectives and inspire growth." },
+    { name: "Andrew Hatcher", title: "Head of Entrepreneurship", img: person4, quote: "Fostering innovation and guiding founders from raw ideas to real-world ventures." },
+    { name: "Akshay Kumar", title: "Sales and Marketing", img: person5, quote: "Connecting passionate learners with opportunities that shape their futures." },
+    { name: "Yves Gaspar", title: "STEM Lead", img: person6, quote: "Inspiring analytical minds to solve the most pressing challenges of tomorrow." },
+    { name: "Wichienkuer Thanuyna", title: "Gamified L&D", img: person7, quote: "Creating engaging, play-driven learning frameworks that maximize retention." },
+    { name: "Charles Roddie", title: "Advisor", img: person8, quote: "Providing strategic insights to scale educational impact across international borders." },
+    { name: "Margaret Sema CBE", title: "Advisor", img: person9, quote: "Championing excellence in education and shaping policies for lasting institutional change." },
+    { name: "Khushboo", title: "Operations", img: person10, quote: "Ensuring seamless delivery of programmes and unparalleled experiences for our delegates." },
+    { name: "Jaideep Prabhu", title: "Programme Director", img: person11, quote: "Bridging emerging markets and global ecosystems to drive sustainable innovation." },
+    { name: "Tim Vinopal", title: "Operations Americas", img: person12, quote: "Expanding our footprint and building strong partnerships across the Americas." },
   ];
 
   return (
@@ -329,12 +329,13 @@ function OurPeople() {
                 </div>
 
                 {/* Content */}
-                <div className="mt-14 flex h-full flex-col items-center justify-between w-full">
+                <div className="mt-14 flex h-full flex-col items-center justify-start w-full">
                   <div>
                     <h4 className="text-[17px] font-bold text-forest-deep transition-colors duration-300 group-hover:text-gold">{person.name}</h4>
-                    <div className="mx-auto mt-3 mb-3 h-[2px] w-8 rounded-full bg-gold/30 transition-all duration-500 group-hover:w-16 group-hover:bg-gold" />
+                    <div className="mx-auto mt-2 mb-2 h-[2px] w-8 rounded-full bg-gold/30 transition-all duration-500 group-hover:w-16 group-hover:bg-gold" />
                   </div>
-                  <p className="text-[13.5px] font-medium text-forest-deep/70 leading-relaxed max-w-[180px]">{person.title}</p>
+                  <p className="text-[13px] font-bold text-forest-deep/90 leading-relaxed">{person.title}</p>
+                  <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2 line-clamp-2">"{person.quote}"</p>
                 </div>
                 
               </div>

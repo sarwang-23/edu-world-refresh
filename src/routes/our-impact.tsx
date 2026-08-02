@@ -23,6 +23,12 @@ import s4 from '@/assets/impact_new_2.jpg'
 import { Footer } from './index'
 import person9Img from '@/assets/person9.jpg'
 import person10Img from '@/assets/person10.jpg'
+import sdg4Img from '@/assets/sdg-4.jpg';
+import sdg5Img from '@/assets/sdg-5.jpg';
+import sdg8Img from '@/assets/sdg-8.jpg';
+import sdg9Img from '@/assets/sdg-9.jpg';
+import sdg13Img from '@/assets/sdg-13.jpg';
+import sdg17Img from '@/assets/sdg-17.jpg';
 
 export const Route = createFileRoute('/our-impact')({
   head: () => ({
@@ -147,81 +153,259 @@ function Stats() {
 }
 
 function Stories() {
-  const [activeStory, setActiveStory] = useState<{tag: string, t: string, d: string, content: string, img: string, link: string} | null>(null)
+  const [activeStory, setActiveStory] = useState<{
+    tag: string
+    t: string
+    d: string
+    content: string
+    img: string
+    imgPos?: string
+    link: string
+    linkedin?: string
+  } | null>(null)
 
   const items = [
     {
-      img: tendaiNzonzo,
-      tag: 'ZERO-TO-ONE',
-      t: 'From Problem to Winning Pitch',
-      d: `"We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast."`,
-      link: "Read Tendai's Story",
-      content: `What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast. — Tendai Nzonzo, Sana AI (Winning team – Zero-to-One)`
+      img: samTully,
+      imgPos: 'object-[center_20%] object-cover',
+      tag: 'TRUSTEE, PRATHAM UK',
+      t: 'A Rolls Royce Experience',
+      d: `"I also learnt so much from my fellow participants, not least coming away feeling hugely positive about the enduring potential and dynamism of Indian entrepreneurialism."`,
+      link: "Read Sam's Story",
+      linkedin: "https://www.linkedin.com/posts/sam-tully_its-like-a-rolls-royce-thats-how-sam-activity-7480318064505462784-Fnbc",
+      content: `I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, covering AI, geopolitics, marketing, branding, strategy, rhetoric, entrepreneurship and so much more. All taught by energetic and engaging leaders in their respective fields. I also learnt so much from my fellow participants, not least coming away feeling hugely positive about the enduring potential and dynamism of Indian entrepreneurialism. That too, in the confines of one of the world's finest Universities and one of its most beautiful cities. Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce. — Sam Tully, GEL Programme Delegate, Trustee – Pratham UK`
     },
     {
-      img: pushkarSingh,
-      tag: 'GRADUATE PROGRAMME',
-      t: 'Cambridge Changed the Way I Think',
-      d: '"I carry back much more than souvenirs and photographs. I leave Cambridge with lifelong friendships, invaluable mentorship, and lessons that will stay with me forever."',
-      link: 'Read Pushkar\'s Story',
-      content: 'These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow — not only as the founder of CARBONSYNQ EARTH, but also as an individual. A heartfelt thank you to the entire Global Education Lab team for creating such a remarkable experience. — Pushkar Singh, Founder, CarbonSynq Earth'
+      img: lucyJung,
+      imgPos: 'object-[center_15%] object-cover',
+      tag: 'FOUNDER & CEO, LYEONS',
+      t: 'Sustainable Growth of Ideas',
+      d: `"I was impressed by how far ventures got in such a short time, considering stakeholders and business models and how to make the sustainable growth of their ideas possible."`,
+      link: "Read Lucy's Story",
+      linkedin: 'https://www.linkedin.com/posts/lyeons_digitalhealth-innovation-brainhealth-activity-7474751134113619968-4SC6',
+      content: 'I was impressed by how far ventures (on GEL programme) got in such a short time, considering stakeholders and business models and how to make the sustainable growth of their ideas possible. Thank you for the opportunity to mentor, and I’m excited to follow more of GEL’s programmes. — Lucy Jung, GEL Mentor, Founder & CEO – LYEONS'
     },
     {
-      img: samvritha,
-      tag: 'YOUNG LEADERS',
-      t: 'A Summer That Changed Everything',
-      d: '"My two weeks at Cambridge felt like a dream — I left feeling excited about my future."',
-      link: 'Read Samvritha\'s Story',
-      content: 'My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring, especially entrepreneurship, pitching, and public speaking. I left feeling excited about my future. — Samvritha, GEL Young Leaders Summer Programme'
+      img: amarjitSingh,
+      imgPos: 'object-[center_20%] object-cover',
+      tag: 'CEO, INDIA BUSINESS FORUM',
+      t: 'Practical Insights & Peer Learning',
+      d: `"Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!"`,
+      link: "Read Amarjit's Story",
+      linkedin: 'https://www.linkedin.com/posts/amarjit-singh-13860aa_great-leaders-know-that-learning-never-stops-activity-7485621706183688192-W-d7',
+      content: 'Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme! — Amarjit Singh, GEL Programme Delegate, CEO, India Business Forum'
     },
   ]
 
   const mainStory = {
-    img: bidishaBanerjee,
-    tag: 'GILP DELEGATE',
-    t: "One of the Best Executive Education Experiences I've Had",
-    d: '"A week at the University of Cambridge with leaders from across the world — every insight was practical enough to take back and apply immediately."',
-    link: "Read Bidisha's Story",
-    content: `One of the best executive education experiences I've had. A week at the University of Cambridge with leaders from across the world, learning from exceptional faculty and exchanging perspectives that challenged my thinking. The biggest takeaway? Every insight was practical enough to take back and apply immediately. If you're considering it and would like to know more from an alumnus' perspective, feel free to reach out for a chat. — Bidisha Banerjee, GEL Programme Delegate, Founder – Rysen Coaching, Author – Your Turn to Rise`
+    img: dhruvGalgotia,
+    imgPos: 'object-[center_15%] object-cover',
+    tag: 'EXECUTIVE LEADERSHIP',
+    t: "A Benchmark for Exciting Initiatives Ahead",
+    d: '"An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances."',
+    link: "Read Dhruv's Story",
+    linkedin: "https://lnkd.in/p/d7vJ9pPF",
+    content: `An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances. This journey has been a true milestone and a benchmark for many exciting initiatives ahead. Grateful for the connections, collaborations, and shared vision that emerged throughout the week. Looking forward to announcing several new engagements and partnerships very soon. The journey has just begun. — Dr. Dhruv Galgotia, CEO, Galgotias Education Group`
   }
 
+  const allStories = [mainStory, ...items]
+
+  const studentItems = [
+    {
+      img: tendaiNzonzo,
+      imgPos: 'object-[center_15%] object-cover',
+      tag: 'ZERO-TO-ONE',
+      t: 'From Problem to Winning Pitch',
+      d: `"We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast."`,
+      link: "Read Tendai's Story",
+      linkedin: "https://lnkd.in/p/dXFGRKvV",
+      content: `What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving and the willingness to test our way toward it, fast. — Tendai Nzonzo, Sana AI (Winning team – Zero-to-One)`
+    },
+    {
+      img: pushkarSingh,
+      imgPos: 'object-[center_20%] object-cover',
+      tag: 'GRADUATE PROGRAMME',
+      t: 'Cambridge Changed the Way I Think',
+      d: '"I carry back much more than souvenirs and photographs. I leave Cambridge with lifelong friendships, invaluable mentorship, and lessons that will stay with me forever."',
+      link: "Read Pushkar's Story",
+      linkedin: 'https://lnkd.in/p/gePkxj4N',
+      content: 'These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow — not only as the founder of CARBONSYNQ EARTH, but also as an individual. A heartfelt thank you to the entire Global Education Lab team for creating such a remarkable experience. — Pushkar Singh, Founder, CarbonSynq Earth'
+    },
+    {
+      img: samvritha,
+      imgPos: 'object-[30%_12%] object-cover',
+      tag: 'YOUNG LEADERS',
+      t: 'A Summer That Changed Everything',
+      d: '"My two weeks at Cambridge felt like a dream — I left feeling excited about my future."',
+      link: "Read Samvritha's Story",
+      linkedin: 'https://www.globaledulab.com/post/just-two-weeks-my-summer-at-cambridge-with-global-education-lab',
+      content: 'My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring, especially entrepreneurship, pitching, and public speaking. I left feeling excited about my future. — Samvritha, GEL Young Leaders Summer Programme'
+    },
+  ]
+
   return (
-    <section className="bg-[#F7F5F0] py-24 md:py-32 border-b border-border/60 relative">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-20">
-          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— Voices of Change</span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem]">Stories that <span className="font-serif italic text-gold">inspire.</span></h2>
-          <p className="mt-6 text-[15px] font-medium text-forest/70 max-w-lg leading-relaxed">Real people, real outcomes — hear journeys that show what our programmes make possible.</p>
+    <section className="bg-[#071918] text-white py-28 md:py-36 relative overflow-hidden border-y border-gold/20">
+      {/* Background Lighting Effects */}
+      <div className="absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-gold/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[35rem] h-[35rem] bg-[#0A3D36]/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#C5A880_1px,transparent_1px),linear-gradient(90deg,#C5A880_1px,transparent_1px)] [background-size:48px_48px]" />
+
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-xs font-bold uppercase tracking-[0.25em] mb-6 shadow-lg shadow-gold/5">
+              <Quote className="w-3.5 h-3.5" /> Voices of Transformation
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-bold tracking-tight text-white leading-[1.1]">
+              Stories that <span className="font-serif italic text-gold font-normal">inspire.</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-base md:text-lg text-cream/70 leading-relaxed font-normal border-l-2 border-gold/30 pl-5">
+            Hear directly from global CEOs, university mentors, and high-impact delegates who experienced GEL's flagship Cambridge & international programmes.
+          </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-12">
-          {/* Main Story */}
-          <div className="lg:col-span-5 relative group overflow-hidden rounded-[2.5rem] border border-border/60 shadow-2xl flex flex-col justify-end min-h-[550px] lg:min-h-full">
-             <img src={mainStory.img} alt="Student" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent" />
-             <div className="relative p-10 md:p-12">
-                <span className="inline-block rounded-full bg-gold px-3.5 py-1.5 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep mb-6">{mainStory.tag}</span>
-                <h3 className="text-3xl md:text-4xl font-bold text-cream mb-5 leading-tight">{mainStory.t}</h3>
-                <p className="text-cream/80 text-[15px] md:text-base leading-relaxed mb-8">{mainStory.d}</p>
-                <button onClick={() => setActiveStory(mainStory)} className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group/link text-left">
-                  {mainStory.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+        {/* Featured Story Hero Card (Dr. Dhruv Galgotia) */}
+        <div className="mb-12">
+          <div className="group relative rounded-[2.5rem] bg-gradient-to-r from-white/[0.07] to-white/[0.03] backdrop-blur-2xl border border-white/15 p-8 md:p-12 shadow-2xl hover:border-gold/60 transition-all duration-500 overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-gold/15 via-transparent to-transparent rounded-bl-[10rem] pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+              <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="relative h-40 w-40 md:h-48 md:w-48 rounded-[2rem] overflow-hidden border-2 border-gold/40 shadow-2xl group-hover:border-gold group-hover:scale-105 transition-all duration-500 bg-black/40 shrink-0">
+                  <img
+                    src={mainStory.img}
+                    alt={mainStory.t}
+                    className={`h-full w-full ${mainStory.imgPos || 'object-cover object-top'}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </div>
+                <span className="mt-5 inline-block rounded-full bg-gold/20 border border-gold/40 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
+                  {mainStory.tag}
+                </span>
+              </div>
+
+              <div className="lg:col-span-8 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-gold/80 text-sm font-semibold tracking-wider uppercase mb-3">
+                    <Sparkles className="w-4 h-4 text-gold" /> Featured Leader Story
+                  </div>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:text-gold transition-colors leading-tight mb-6">
+                    {mainStory.t}
+                  </h3>
+                  <blockquote className="relative pl-6 border-l-2 border-gold text-cream/90 text-base md:text-lg italic font-serif leading-relaxed mb-8">
+                    {mainStory.d}
+                  </blockquote>
+                </div>
+
+                <div className="flex justify-end pt-4 border-t border-white/10">
+                  <button
+                    onClick={() => setActiveStory(mainStory)}
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gold text-forest-deep text-xs font-extrabold uppercase tracking-[0.2em] hover:bg-white hover:text-forest-deep transition-all duration-300 shadow-xl cursor-pointer"
+                  >
+                    <span>{mainStory.link}</span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Executive Leader Grid Cards */}
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-3 mb-24">
+          {items.map((story, i) => (
+            <div
+              key={i}
+              className="group relative flex flex-col justify-between p-8 rounded-[2.2rem] bg-white/[0.04] backdrop-blur-xl border border-white/10 hover:border-gold/50 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:-translate-y-1.5 transition-all duration-500 overflow-hidden"
+            >
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative h-16 w-16 rounded-2xl overflow-hidden border border-gold/40 shadow-md shrink-0 group-hover:border-gold transition-all duration-300 bg-black/40">
+                    <img
+                      src={story.img}
+                      alt={story.tag}
+                      className={`h-full w-full ${story.imgPos || 'object-cover object-top'}`}
+                    />
+                  </div>
+                  <div>
+                    <span className="inline-block rounded-full bg-gold/15 border border-gold/30 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold mb-1">
+                      {story.tag}
+                    </span>
+                    <h3 className="text-lg font-bold text-white group-hover:text-gold transition-colors leading-snug">
+                      {story.t}
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-cream/80 text-sm italic font-serif leading-relaxed pl-4 border-l border-gold/40 mb-6 line-clamp-3">
+                  {story.d}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 flex justify-end">
+                <button
+                  onClick={() => setActiveStory(story)}
+                  className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.18em] text-gold hover:text-white transition-colors group/btn cursor-pointer"
+                >
+                  <span>{story.link}</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
                 </button>
-             </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Student Journeys Sub-section */}
+        <div className="pt-16 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="h-px w-8 bg-gold block" />
+                <span className="text-xs font-extrabold uppercase tracking-[0.25em] text-gold">NEXT GENERATION</span>
+              </div>
+              <h3 className="text-2xl sm:text-4xl font-bold text-white">Student & Founder Journeys</h3>
+            </div>
+            <p className="text-sm font-normal text-cream/60 max-w-md">
+              Inspiring transformation from high school innovators to venture founders.
+            </p>
           </div>
 
-          {/* List of Stories */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            {items.map((s) => (
-              <article key={s.t} className="flex flex-col sm:flex-row gap-8 p-6 md:p-8 rounded-[2.5rem] border border-forest/10 bg-white hover:border-gold/40 hover:shadow-xl transition-all duration-300 group">
-                <div className="sm:w-56 shrink-0 overflow-hidden rounded-2xl border border-border/60">
-                  <img src={s.img} alt={s.t} className="h-40 sm:h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+            {studentItems.map((s) => (
+              <article
+                key={s.t}
+                className="flex flex-col justify-between p-7 rounded-[2.2rem] bg-white/[0.04] backdrop-blur-xl border border-white/10 hover:border-gold/50 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-all duration-500 group"
+              >
+                <div>
+                  <div className="h-60 w-full shrink-0 overflow-hidden rounded-2xl border border-white/15 mb-6 relative bg-black/40 group/img">
+                    <img
+                      src={s.img}
+                      alt={s.t}
+                      className={`h-full w-full ${s.imgPos} transition-transform duration-700 group-hover/img:scale-105`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                    <span className="absolute bottom-3 left-3 bg-black/85 backdrop-blur-md border border-gold/40 px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-lg z-10">
+                      {s.tag}
+                    </span>
+                  </div>
+
+                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors leading-snug">
+                    {s.t}
+                  </h4>
+                  <p className="text-sm text-cream/70 leading-relaxed mb-6 font-serif italic line-clamp-3">
+                    {s.d}
+                  </p>
                 </div>
-                <div className="flex flex-col justify-center py-2 items-start">
-                  <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold mb-3">— {s.tag}</span>
-                  <h3 className="text-2xl font-bold text-forest-deep mb-3 group-hover:text-gold transition-colors">{s.t}</h3>
-                  <p className="text-[15px] text-forest/70 leading-relaxed mb-6">{s.d}</p>
-                  <button onClick={() => setActiveStory(s)} className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.15em] text-forest hover:text-gold transition-colors group/link text-left">
-                    {s.link} <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <button
+                    onClick={() => setActiveStory(s)}
+                    className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.15em] text-gold hover:text-white transition-colors group/link text-left cursor-pointer"
+                  >
+                    <span>{s.link}</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                   </button>
                 </div>
               </article>
@@ -230,35 +414,76 @@ function Stories() {
         </div>
       </div>
 
-      {/* Popup Banner / Modal */}
+      {/* Luxury Popup Modal */}
       {activeStory && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-12">
-          <div className="absolute inset-0 bg-forest-deep/80 backdrop-blur-md transition-opacity" onClick={() => setActiveStory(null)} />
-          <div className="relative w-full max-w-5xl bg-white rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300 max-h-[90vh]">
-            {/* Modal Image */}
-            <div className="w-full md:w-2/5 h-48 md:h-auto relative shrink-0">
-              <img src={activeStory.img} alt={activeStory.t} className="absolute inset-0 w-full h-full object-cover" />
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-8">
+          <div
+            className="absolute inset-0 bg-black/85 backdrop-blur-2xl transition-opacity animate-in fade-in duration-300"
+            onClick={() => setActiveStory(null)}
+          />
+          <div className="relative w-full max-w-4xl bg-[#091D1A] rounded-[2.5rem] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.8)] flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300 max-h-[90vh] border border-gold/40 text-white">
+            {/* Modal Image Sidebar */}
+            <div className="w-full md:w-2/5 h-64 md:h-auto relative shrink-0 bg-black/40">
+              <img
+                src={activeStory.img}
+                alt={activeStory.t}
+                className={`absolute inset-0 w-full h-full ${activeStory.imgPos || 'object-cover object-top'}`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#091D1A] via-transparent to-transparent md:hidden" />
             </div>
-            
+
             {/* Modal Content */}
-            <div className="w-full md:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col overflow-y-auto">
-              <button onClick={() => setActiveStory(null)} className="absolute top-6 right-6 p-2.5 rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors z-10">
+            <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col overflow-y-auto relative">
+              <button
+                onClick={() => setActiveStory(null)}
+                className="absolute top-6 right-6 p-2.5 rounded-full bg-white/10 text-cream hover:bg-gold hover:text-forest-deep transition-all duration-300 z-10 cursor-pointer shadow-lg"
+              >
                 <X className="w-5 h-5" />
               </button>
-              
-              <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold mb-4">— {activeStory.tag}</span>
-              <h3 className="text-3xl md:text-4xl font-bold text-forest-deep mb-5 leading-tight">{activeStory.t}</h3>
-              <p className="text-[15px] md:text-base font-medium text-forest/80 italic mb-8 border-l-[3px] border-gold pl-5 py-1 leading-relaxed">
-                "{activeStory.d}"
-              </p>
-              
-              <div className="text-forest/70 leading-[1.8] mb-10 text-[15px] md:text-[15px]">
+
+              <span className="inline-block self-start rounded-full bg-gold/20 border border-gold/40 px-4 py-1 text-xs font-extrabold uppercase tracking-[0.2em] text-gold mb-4">
+                {activeStory.tag}
+              </span>
+
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                {activeStory.t}
+              </h3>
+
+              <div className="bg-white/5 rounded-2xl p-5 border-l-4 border-gold mb-6 backdrop-blur-md">
+                <p className="text-sm md:text-base font-serif italic text-cream/90 leading-relaxed">
+                  {activeStory.d}
+                </p>
+              </div>
+
+              <div className="text-cream/80 leading-relaxed mb-8 text-sm md:text-base space-y-4">
                 <p>{activeStory.content}</p>
               </div>
-              
-              <div className="mt-auto pt-8 border-t border-forest/10 flex justify-between items-center">
-                <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70">Global Education Lab</span>
-                <button onClick={() => setActiveStory(null)} className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest hover:text-gold transition-colors">
+
+              {activeStory.linkedin && (
+                <div className="mb-8">
+                  <a
+                    href={activeStory.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 text-xs font-bold text-white bg-[#0077b5] hover:bg-[#005582] transition-all px-5 py-3 rounded-xl shadow-lg hover:shadow-xl"
+                  >
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>Read Original Post</span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+              )}
+
+              <div className="mt-auto pt-6 border-t border-white/10 flex justify-between items-center">
+                <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-cream/40">
+                  Global Education Lab
+                </span>
+                <button
+                  onClick={() => setActiveStory(null)}
+                  className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold hover:text-white transition-colors cursor-pointer"
+                >
                   Close Story
                 </button>
               </div>
@@ -272,59 +497,46 @@ function Stories() {
 
 function SDGs() {
   const sdgs = [
-    { num: 1, label: 'No Poverty' },
-    { num: 2, label: 'Zero Hunger' },
-    { num: 3, label: 'Good Health and Well-Being' },
-    { num: 4, label: 'Quality Education' },
-    { num: 5, label: 'Gender Equality' },
-    { num: 6, label: 'Clean Water and Sanitation' },
-    { num: 7, label: 'Affordable and Clean Energy' },
-    { num: 8, label: 'Decent Work & Economic Growth' },
-    { num: 9, label: 'Industry, Innovation & Infrastructure' },
-    { num: 10, label: 'Reduced Inequalities' },
-    { num: 11, label: 'Sustainable Cities and Communities' },
-    { num: 12, label: 'Responsible Consumption and Production' },
-    { num: 13, label: 'Climate Action' },
-    { num: 14, label: 'Life Below Water' },
-    { num: 15, label: 'Life on Land' },
-    { num: 16, label: 'Peace, Justice and Strong Institutions' },
-    { num: 17, label: 'Partnerships for the Goals' },
-  ]
+    { num: 4,  label: 'Quality Education',                    img: sdg4Img  },
+    { num: 5,  label: 'Gender Equality',                      img: sdg5Img  },
+    { num: 8,  label: 'Decent Work & Economic Growth',        img: sdg8Img  },
+    { num: 9,  label: 'Industry, Innovation & Infrastructure',img: sdg9Img  },
+    { num: 13, label: 'Climate Action',                       img: sdg13Img },
+    { num: 17, label: 'Partnerships for the Goals',           img: sdg17Img },
+  ];
+
   return (
     <section className="bg-white py-24 md:py-32 overflow-hidden border-y border-forest-deep/10">
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-         <div className="max-w-2xl mb-16">
-           <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">GLOBAL GOALS</span>
-           <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem] leading-[1.1] mb-6">
-             Advancing the<br />
-             <span className="font-serif italic text-gold">Global Goals.</span>
-           </h2>
-           <p className="text-[16px] text-forest-deep/70 max-w-2xl leading-relaxed">
-             Our programmes align with the United Nations Sustainable Development Goals to create a positive and lasting impact worldwide.
-           </p>
-         </div>
-         
-         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-           {sdgs.map((sdg) => {
-             const formattedNum = sdg.num < 10 ? `0${sdg.num}` : sdg.num;
-             return (
-               <div key={sdg.num} className="relative overflow-hidden rounded-xl shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group aspect-square">
-                 <img
-                   src={`https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-${formattedNum}.jpg`}
-                   alt={`SDG Goal ${sdg.num}: ${sdg.label}`}
-                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onError={(e) => {
-                     // Fallback in case of broken link
-                     (e.target as HTMLImageElement).src = `https://sdgs.un.org/sites/default/files/goals/E_SDG_logo_UN_emblem_square_trans_WEB.png`;
-                   }}
-                 />
-               </div>
-             );
-           })}
-         </div>
+        <div className="max-w-2xl mb-16">
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">GLOBAL GOALS</span>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-forest-deep md:text-[3.5rem] leading-[1.1] mb-6">
+            Advancing the<br />
+            <span className="font-serif italic text-gold">Global Goals.</span>
+          </h2>
+          <p className="text-[16px] text-forest-deep/70 max-w-2xl leading-relaxed">
+            Our programmes align with the United Nations Sustainable Development Goals to create a positive and lasting impact worldwide.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-5">
+          {sdgs.map((sdg) => (
+            <div
+              key={sdg.num}
+              className="relative overflow-hidden rounded-xl shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group aspect-square"
+              title={`SDG ${sdg.num}: ${sdg.label}`}
+            >
+              <img
+                src={sdg.img}
+                alt={`SDG ${sdg.num}: ${sdg.label}`}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
 function Numbers() {
@@ -676,7 +888,7 @@ function CTA() {
         <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">— Get Involved</span>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-cream md:text-[4.5rem] leading-[1.1]">
+            <h2 className="mt-6 text-3xl font-bold tracking-tight text-cream md:text-[2.75rem] leading-[1.15]">
               Together, we create<br />impact that <span className="font-serif italic text-gold">lasts.</span>
             </h2>
             <p className="mt-6 text-[15px] text-cream/80 max-w-2xl">

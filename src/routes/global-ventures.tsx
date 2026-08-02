@@ -3,7 +3,7 @@ import {
   ArrowUpRight, Globe2, Building2, TrendingUp, Handshake, Rocket,
   LineChart, FlaskConical, CheckCircle2, Lightbulb, Search,
   ClipboardCheck, Users, Send, Target, Briefcase, GraduationCap,
-  Network, ChevronRight, Bot, Wind, HeartPulse, Pill, Leaf, Sparkles
+  Network, ChevronRight, Bot, Wind, HeartPulse, Pill, Leaf, Sparkles, Cpu
 } from "lucide-react";
 import { useState } from "react";
 import cambridgeImg from "@/assets/cambridge.jpg";
@@ -268,12 +268,12 @@ function WhatIs() {
 
 /* ─────────────────── VENTURES ─────────────────── */
 const VENTURES = [
-  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, name: "KAVACH AI", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
-  { icon: <Leaf className="h-5 w-5" />, track: "Venture Track", isVenture: true, name: "CARBONSYNQ", desc: "A sustainability intelligence platform that helps organisations measure, manage and reduce carbon impact with precision and transparency.", bgClass: "from-[#163B21] via-[#0E2715] to-[#0A1F11]" },
-  { icon: <Network className="h-5 w-5" />, track: "Venture Track", isVenture: true, name: "PROJECT TACTO", desc: "Building advanced tactile sensing solutions that enhance human-machine interaction across robotics, healthcare and assistive technologies.", bgClass: "from-[#2A163B] via-[#170E24] to-[#0A1F11]" },
-  { icon: <Wind className="h-5 w-5" />, track: "Research Track", isVenture: false, name: "VYOMVEDA", desc: "Researching space weather intelligence and predictive modelling to support resilient space and satellite operations.", bgClass: "from-[#3D2812] via-[#1F170D] to-[#0A1F11]" },
-  { icon: <Pill className="h-5 w-5" />, track: "Research Track", isVenture: false, name: "CELLUNOVA", desc: "Developing innovative cells for therapeutics and biomaterials through cutting-edge research in regenerative medicine.", bgClass: "from-[#3B1622] via-[#210D15] to-[#0A1F11]" },
-  { icon: <HeartPulse className="h-5 w-5" />, track: "Venture Track", isVenture: true, name: "SAIVVY", desc: "A digital health platform bringing AI to quality care through AI-driven diagnostics and patient empowerment tools.", bgClass: "from-[#16213B] via-[#0D1526] to-[#0A1F11]" },
+  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "kavach-ai", name: "KAVACH AI", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
+  { icon: <Leaf className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "carbon-sync", name: "CARBONSYNQ", desc: "A sustainability intelligence platform that helps organisations measure, manage and reduce carbon impact with precision and transparency.", bgClass: "from-[#163B21] via-[#0E2715] to-[#0A1F11]" },
+  { icon: <Network className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "project-tacto", name: "PROJECT TACTO", desc: "Building advanced tactile sensing solutions that enhance human-machine interaction across robotics, healthcare and assistive technologies.", bgClass: "from-[#2A163B] via-[#170E24] to-[#0A1F11]" },
+  { icon: <Wind className="h-5 w-5" />, track: "Research Track", isVenture: false, slug: "vyomveda", name: "VYOMVEDA", desc: "Researching space weather intelligence and predictive modelling to support resilient space and satellite operations.", bgClass: "from-[#3D2812] via-[#1F170D] to-[#0A1F11]" },
+  { icon: <Pill className="h-5 w-5" />, track: "Research Track", isVenture: false, slug: "cellunova", name: "CELLUNOVA", desc: "Developing innovative cells for therapeutics and biomaterials through cutting-edge research in regenerative medicine.", bgClass: "from-[#3B1622] via-[#210D15] to-[#0A1F11]" },
+  { icon: <Cpu className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "saivyy", name: "SAIVYY TECHNOLOGIES", desc: "Enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and drive sustainable digital transformation.", bgClass: "from-[#16213B] via-[#0D1526] to-[#0A1F11]" },
 ];
 
 function OurVentures() {
@@ -315,8 +315,12 @@ function OurVentures() {
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
           {filtered.map((v, i) => (
-            <div key={i} className={`group relative rounded-[2.5rem] border border-white/10 p-8 lg:p-10 flex flex-col transition-all duration-700 hover:-translate-y-2 hover:border-gold/50 shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:shadow-[0_30px_60px_rgba(201,168,76,0.15),inset_0_1px_1px_rgba(201,168,76,0.3)] overflow-hidden isolate bg-gradient-to-br ${v.bgClass}`}>
-              
+            <Link
+              key={i}
+              to="/ventures/$slug"
+              params={{ slug: v.slug }}
+              className={`group relative rounded-[2.5rem] border border-white/10 p-8 lg:p-10 flex flex-col transition-all duration-700 hover:-translate-y-2 hover:border-gold/50 shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:shadow-[0_30px_60px_rgba(201,168,76,0.15),inset_0_1px_1px_rgba(201,168,76,0.3)] overflow-hidden isolate bg-gradient-to-br ${v.bgClass}`}
+            >
               {/* Premium Hover Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-gold/0 via-gold/[0.08] to-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
@@ -337,7 +341,7 @@ function OurVentures() {
                   <ArrowUpRight className="h-4 w-4 text-white/70 group-hover:text-[#0A1F11] transition-colors duration-300" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

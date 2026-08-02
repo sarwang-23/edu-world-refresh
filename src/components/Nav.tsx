@@ -52,7 +52,7 @@ export function Nav() {
                 {/* For students */}
                 <div className="group/students relative">
                   <div className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest cursor-default">
-                    For students
+                    For Students
                     <ChevronRight className="h-4 w-4" />
                   </div>
                   {/* Level 2 Dropdown */}
@@ -78,13 +78,6 @@ export function Nav() {
                   </div>
                 </div>
 
-                {/* For Educators — route not built yet, plain anchor avoids the typed-router error */}
-                <a
-                  href="/programmes/educators"
-                  className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
-                >
-                  For Educators
-                </a>
 
                 {/* For Entrepreneurs */}
                 <div className="group/entrepreneurs relative">
@@ -97,10 +90,8 @@ export function Nav() {
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
                       <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
                       <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
-                      <Link to="/entrepreneurship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Entrepreneurship</Link>
-                      {/* Routes not built yet — plain anchors avoid the typed-router error */}
-                      <a href="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</a>
-                      <a href="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</a>
+                      <Link to="/programmes/graduate" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
+                      <Link to="/entrepreneurship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</Link>
                     </div>
                   </div>
                 </div>

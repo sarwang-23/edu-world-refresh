@@ -6,19 +6,12 @@ import cambridgeImg from "@/assets/cambridge.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
+import frugalAiCover from "@/assets/frugal-ai-cover.jpg";
+import frugalHubCover from "@/assets/frugal-ai-yellow.jpg";
+import gilpBrochureCover from "@/assets/gilp-brochure-cover.jpg";
 import { Footer } from "./index";
 
-// Same Apps Script Web App URL you already use in contact.tsx / apply-now.tsx.
-// Replace this with that exact URL so all three forms hit the same script.
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
-// Maps a download link to the report name that should be saved in the sheet.
-// Featured Paper card + the two "report.pdf" cards in the archive all count
-// as the same report; only the Frugal AI card is different.
-const REPORT_NAMES: Record<string, string> = {
-  "/report.pdf": "Leadership in the age of AI",
-  "/frugal-ai-report.pdf": "Frugal AI — Executive Agenda 2026",
-};
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -43,21 +36,25 @@ export const Route = createFileRoute("/insights")({
 });
 
 function InsightsPage() {
-  const [downloadModalUrl, setDownloadModalUrl] = useState<string | null>(null);
+  const handleDownload = (url: string, title?: string) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = title ? `${title}.pdf` : url.split("/").pop() || "report.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground relative">
       <Hero />
       <PartnersBar />
       <ResearchThemes />
-      <FeaturedPaper onDownload={setDownloadModalUrl} />
-      <PublicationsArchive onDownload={setDownloadModalUrl} />
+      <FeaturedPaper onDownload={handleDownload} />
+      <PublicationsArchive onDownload={handleDownload} />
       <TheBriefing />
       <CTA />
       <Footer />
-      {downloadModalUrl && (
-        <DownloadModal url={downloadModalUrl} onClose={() => setDownloadModalUrl(null)} />
-      )}
     </div>
   );
 }
@@ -127,19 +124,19 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              to="/insights"
+            <a
+              href="#publications"
               className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
               Browse Publications
               <ArrowUpRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/insights"
+            </a>
+            <a
+              href="#featured-paper"
               className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
             >
               Featured White Paper
-            </Link>
+            </a>
           </div>
 
           <div className="mt-16 flex items-center gap-4 text-[15px] font-bold uppercase tracking-widest text-forest/70">
@@ -230,9 +227,9 @@ function ResearchThemes() {
   );
 }
 
-function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
+function FeaturedPaper({ onDownload }: { onDownload: (url: string, title?: string) => void }) {
   return (
-    <section className="py-24 bg-forest-deep">
+    <section id="featured-paper" className="py-24 bg-forest-deep">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
@@ -245,7 +242,7 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
             </p>
             
             <div className="mt-10 flex flex-wrap items-center gap-6">
-              <button onClick={() => onDownload("/report.pdf")} className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[15px] font-bold text-forest-deep transition-colors hover:bg-gold/90">
+              <button onClick={() => onDownload("/leadership-whitepaper.pdf", "Leadership in the Age of AI")} className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[15px] font-bold text-forest-deep transition-colors hover:bg-gold/90">
                 Access Full Report
                 <Download className="h-4 w-4" />
               </button>
@@ -273,39 +270,42 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string) => void }) {
   );
 }
 
-function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void }) {
+function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?: string) => void }) {
   const reports = [
     {
       num: "NO. 01",
-      image: businessLeadersImg,
+      image: frugalAiCover,
+      imageClass: "object-contain bg-white",
       category: "LEADERSHIP · AI",
       title: "Leadership in the Age of Artificial Intelligence",
       desc: "How leaders must evolve as AI reshapes decision-making, organisational design and the human core of business.",
       date: "WHITE PAPER · 2026",
-      downloadLink: "/report.pdf"
+      downloadLink: "/leadership-whitepaper.pdf"
     },
     {
       num: "NO. 02",
-      image: studentsImg,
+      image: frugalHubCover,
+      imageClass: "object-contain bg-white",
       category: "FRUGAL AI · EXECUTIVE AGENDA",
       title: "Frugal AI — Executive Agenda 2026",
       desc: "Doing more with less: a companion research report on responsible, resource-conscious AI strategies for emerging markets.",
       date: "RESEARCH REPORT · MAY 2026",
-      downloadLink: "/frugal-ai-report.pdf"
+      downloadLink: "/frugal-ai-agenda.pdf"
     },
     {
       num: "NO. 03",
-      image: teachersImg,
+      image: cambridgeImg,
+      imageClass: "object-cover",
       category: "GILP · CAMBRIDGE",
       title: "Global India Leadership Programme — Cambridge",
       desc: "Frameworks and forward-looking insights from Judge Business School faculty and global business leaders convened at Cambridge.",
       date: "WHITE PAPER · MARCH 2026",
-      downloadLink: "/report.pdf"
+      downloadLink: "/gilp-brochure.pdf"
     }
   ];
 
   return (
-    <section className="py-24 bg-cream">
+    <section id="publications" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
@@ -333,7 +333,7 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
                 <img 
                   src={r.image} 
                   alt={r.title} 
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${r.imageClass || 'object-cover'}`} 
                 />
               </div>
               <div className="flex flex-col flex-1 p-8">
@@ -344,7 +344,7 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string) => void
                 <div className="flex items-center justify-between border-t border-forest/10 pt-4 mt-auto">
                   <span className="text-[15px] font-bold uppercase tracking-widest text-forest/70">{r.date}</span>
                   {r.downloadLink !== "#" ? (
-                    <button onClick={() => onDownload(r.downloadLink)} className="text-[15px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
+                    <button onClick={() => onDownload(r.downloadLink, r.title)} className="text-[15px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 hover:text-gold transition-colors">
                       DOWNLOAD <Download className="h-3 w-3" />
                     </button>
                   ) : (
@@ -441,113 +441,5 @@ function CTA() {
         </div>
       </div>
     </section>
-  );
-}
-
-function DownloadModal({ url, onClose }: { url: string; onClose: () => void }) {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [organisation, setOrganisation] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-
-  const reportName = REPORT_NAMES[url] || "Unknown Report";
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (submitting) return;
-    setSubmitting(true);
-
-    // Log the submission to the sheet first. mode: "no-cors" is required for
-    // Apps Script Web Apps from the browser — we don't need to read the
-    // response, so this fires the request and moves straight to the download.
-    try {
-      await fetch(WEB_APP_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({
-          formType: "Download",
-          fullName,
-          email,
-          organisation,
-          report: reportName,
-        }),
-      });
-    } catch (err) {
-      console.error("Failed to log report download:", err);
-    }
-
-    // No approval gate — go straight to the download once the details are logged.
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = url.split("/").pop() || "report.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    setSubmitting(false);
-    onClose();
-  };
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-forest-deep/80 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl w-full max-w-md p-8 relative shadow-2xl">
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 text-forest/70 hover:text-forest transition-colors"
-        >
-          <X className="h-5 w-5" />
-        </button>
-        <div className="mb-8">
-          <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mb-6">
-            <Download className="h-6 w-6 text-gold" />
-          </div>
-          <h3 className="text-2xl font-bold text-forest-deep font-serif">Access Full Report</h3>
-          <p className="text-[15px] text-forest/70 mt-2">Please provide your details to download the report.</p>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Full Name</label>
-            <input
-              required
-              type="text"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-              placeholder="Jane Doe"
-            />
-          </div>
-          <div>
-            <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Email</label>
-            <input
-              required
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-              placeholder="jane@example.com"
-            />
-          </div>
-          <div>
-            <label className="block text-[15px] font-bold text-forest-deep uppercase tracking-widest mb-1.5">Organisation</label>
-            <input
-              required
-              type="text"
-              value={organisation}
-              onChange={(e) => setOrganisation(e.target.value)}
-              className="w-full rounded-xl border border-forest/10 px-4 py-3 text-[15px] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-              placeholder="Company or Institution"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full mt-6 bg-gold text-forest-deep font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 transition-colors hover:bg-gold/90 disabled:opacity-60"
-          >
-            {submitting ? "Preparing Download…" : "Download PDF"} <ArrowUpRight className="h-4 w-4" />
-          </button>
-        </form>
-      </div>
-    </div>
   );
 }

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Play, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge.jpg'
-import heroImg from '../assets/startup.jpg'
+import heroImg from '../assets/zero-to-one-past-1.jpg'
 import zeroToOneVideo from '../assets/zero-to-one.mp4'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
@@ -581,15 +581,13 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/70 leading-[1.75] max-w-xl mx-auto">Join Zero-to-One this June at Cambridge and build a venture from the ground up in 48 hours.</p>
         
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <a
-            href="https://www.globaledulab.com/event/zero-to-one"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/apply-now"
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
           >
             Sign Up Now
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-          </a>
+          </Link>
           <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Ask a Question
           </Link>

@@ -225,7 +225,7 @@ function Outcomes() {
 function CTA() {
   return (
     <section className="bg-[#F4EFE6] py-24 text-center">
-      <div className="mx-auto max-w-2xl px-6">
+      <div className="mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-orange-500" />
           <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-orange-600">Join the Track</span>

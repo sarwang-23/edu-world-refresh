@@ -21,6 +21,10 @@ const placeholderImg2 = "https://images.unsplash.com/photo-1552664730-d307ca8849
 const placeholderImg3 = "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80"
 const placeholderImg4 = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
 
+import bgImage from '@/assets/cambridge.jpg'
+import startupImg from '@/assets/startup.jpg'
+import pitchImg from '@/assets/zero-to-one-past-1.jpg'
+
 export const Route = createFileRoute('/entrepreneurship')({
   component: EntrepreneurshipPage,
 })
@@ -64,7 +68,7 @@ function Hero() {
                 </span>
               ))}
             </div>
-            <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-[5rem] leading-[1.05]">
+            <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.05]">
               Entrepreneur<span className="text-gold">ship</span>
             </h1>
             <p className="mt-6 text-2xl font-serif italic text-gold">Ideas. Innovation. Impact.</p>
@@ -72,67 +76,28 @@ function Hero() {
             <p className="mt-8 text-[15px] leading-relaxed text-forest/70 max-w-lg">
               Empowering the next generation of founders and innovators with world-class programmes, mentorship and direct access to Cambridge's innovation ecosystem. <span className="font-semibold text-forest-deep">This is where research, capital and entrepreneurial energy meet.</span>
             </p>
-            <div className="mt-12 flex flex-wrap gap-4">
-              <Link to="/contact" className="group relative inline-flex items-center gap-2 rounded-full bg-forest px-8 py-4 text-[15px] font-bold uppercase tracking-[0.2em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden">
+            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link to="/contact" className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden shrink-0">
                 <span className="relative z-10 flex items-center gap-2">Explore Programmes <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span>
                 <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest-deep to-forest opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-8 py-4 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40">
+              <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40 shrink-0">
                 Connect With Our Team
               </Link>
             </div>
           </div>
-          <div className="relative mt-16 flex gap-4 h-[480px]">
-            {/* Left tall panel - dark green with stats */}
-            <div className="relative flex-[3] overflow-hidden rounded-[2rem] bg-forest-deep shadow-2xl border border-white/10">
-              {/* Ambient glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[80px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-[60px] pointer-events-none" />
-
-              {/* Top badge */}
-              <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
-                <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                <span className="text-[15px] font-bold text-forest-deep tracking-[0.2em] uppercase">100+ Startups</span>
-              </div>
-
-              {/* Center content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8">
-                <div className="text-center">
-                  <p className="text-6xl font-bold text-gold leading-none">5K+</p>
-                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Entrepreneurs Trained</p>
-                </div>
-                <div className="w-px h-12 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-6xl font-bold text-cream leading-none">£2M+</p>
-                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Funding Raised</p>
-                </div>
-                <div className="w-px h-12 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-6xl font-bold text-gold leading-none">18</p>
-                  <p className="text-[15px] text-cream/80 mt-2 uppercase tracking-widest font-semibold">Countries Reached</p>
-                </div>
-              </div>
-
-              {/* Bottom overlay */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4">
-                <p className="text-[15px] font-bold text-cream">Founder Cohort 2025 · Open</p>
-                <p className="text-[15px] text-cream/80 mt-1 uppercase tracking-widest">Cambridge · London · Singapore</p>
-              </div>
+          <div className="relative mt-16 w-full overflow-hidden rounded-[2rem] bg-forest-deep shadow-2xl border border-white/10 h-[600px]">
+            <div className="absolute inset-0 flex flex-col h-max" style={{animation: 'marquee-y 15s linear infinite reverse'}}>
+              <img src={startupImg} alt="Ecosystem" className="w-full h-[600px] object-cover shrink-0" />
+              <img src={pitchImg} alt="Pitch" className="w-full h-[600px] object-cover shrink-0" />
+              <img src={startupImg} alt="Ecosystem" className="w-full h-[600px] object-cover shrink-0" />
+              <img src={pitchImg} alt="Pitch" className="w-full h-[600px] object-cover shrink-0" />
             </div>
-            {/* Right panel - scrolls down (reverse) */}
-            <div className="relative flex-[2] overflow-hidden rounded-[2rem] bg-forest-deep shadow-2xl border border-white/10 h-[480px]">
-              <div className="absolute inset-0 flex flex-col h-max" style={{animation: 'marquee-y 15s linear infinite reverse'}}>
-                <img src={placeholderImg3} alt="Ecosystem" className="w-full h-[480px] object-cover shrink-0" />
-                <img src={placeholderImg4} alt="Pitch" className="w-full h-[480px] object-cover shrink-0" />
-                <img src={placeholderImg3} alt="Ecosystem" className="w-full h-[480px] object-cover shrink-0" />
-                <img src={placeholderImg4} alt="Pitch" className="w-full h-[480px] object-cover shrink-0" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 text-center">
-                <p className="text-3xl font-bold text-gold">35+</p>
-                <p className="text-[15px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 text-center">
+              <p className="text-3xl font-bold text-gold">35+</p>
+              <p className="text-[15px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
             </div>
           </div>
         </div>

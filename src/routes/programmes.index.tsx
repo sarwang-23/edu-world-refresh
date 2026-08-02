@@ -8,6 +8,9 @@ import schoolLeadersImg from "@/assets/school-leaders.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import teachersImg from "@/assets/teachers.jpg";
 import studentsImg from "@/assets/students.jpg";
+import zeroToOneImg from "@/assets/zero-to-one.png";
+import graduateSummerImg from "@/assets/campus-life-2.jpg";
+import youngLeadersImg from "@/assets/young-leaders.png";
 
 export const Route = createFileRoute("/programmes/")({
   head: () => ({
@@ -38,7 +41,7 @@ const upcomingProgrammes = [
     category: "For Executives",
   },
   {
-    img: studentsImg,
+    img: graduateSummerImg,
     tag: "FOR GRADUATES & STUDENTS",
     title: "Graduate Summer Programme",
     desc: "A 2-week immersive experience in Entrepreneurship & AI with 30+ hours of learning, startup exposure, London visit and Cambridge college life.",
@@ -49,7 +52,7 @@ const upcomingProgrammes = [
     category: "For Graduates",
   },
   {
-    img: heroImg,
+    img: zeroToOneImg,
     tag: "FOR FOUNDERS & INNOVATORS",
     title: "Zero-to-One Venture Weekend",
     desc: "A 2.5-day intensive to ideate, validate and build testable ventures in 48 hours with mentorship, expert guidance and pitch to investors.",
@@ -59,7 +62,7 @@ const upcomingProgrammes = [
     category: "For Founders",
   },
   {
-    img: schoolLeadersImg,
+    img: youngLeadersImg,
     tag: "FOR YOUNG LEARNERS",
     title: "Young Leaders Summer Programme",
     desc: "Fast-paced summer experiences in leadership, communication, STEM, entrepreneurship and personal growth for ages 14–18.",
