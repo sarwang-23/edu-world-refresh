@@ -10,6 +10,8 @@ import frugalAiCover from "@/assets/frugal-ai-cover.jpg";
 import frugalHubCover from "@/assets/frugal-ai-yellow.jpg";
 import gilpBrochureCover from "@/assets/gilp-brochure-cover.jpg";
 import { Footer } from "./index";
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 
 
@@ -53,6 +55,7 @@ function InsightsPage() {
       <FeaturedPaper onDownload={handleDownload} />
       <PublicationsArchive onDownload={handleDownload} />
       <TheBriefing />
+      <SharedTestimonials />
       <CTA />
       <Footer />
     </div>

@@ -2,6 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Footer } from './index'
 import { ArrowUpRight, Linkedin } from 'lucide-react'
 import businessLeadersImg from '../assets/business-leaders.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/team')({
   head: () => ({
@@ -18,6 +20,7 @@ function TeamPage() {
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
       <Leadership />
+      <SharedTestimonials />
       <JoinTeamCTA />
       <Footer />
     </div>

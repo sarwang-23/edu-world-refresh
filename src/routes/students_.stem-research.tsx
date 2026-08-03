@@ -6,6 +6,8 @@ import {
 import { Footer } from './index'
 import heroImg from '../assets/STEM1.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/students_/stem-research')({
   head: () => ({
@@ -24,6 +26,7 @@ function StemResearchTrack() {
       <WhatYoullDo />
       <Modules />
       <Outcomes />
+      <SharedTestimonials />
       <CTA />
       <Footer />
     </div>

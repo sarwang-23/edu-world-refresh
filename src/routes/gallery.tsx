@@ -58,6 +58,8 @@ import bali4 from "@/assets/bali_new_4.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import impactNew1 from "@/assets/impact_new_1.jpg";
 import impactNew2 from "@/assets/impact_new_2.jpg";
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
@@ -446,6 +448,7 @@ function GalleryPage() {
         </div>
       </section>
 
+      <SharedTestimonials />
       <Footer />
 
       {/* ── slowZoom keyframe ── */}

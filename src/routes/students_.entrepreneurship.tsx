@@ -6,6 +6,8 @@ import {
 import { Footer } from './index'
 import studentsImg from '../assets/students.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/students_/entrepreneurship')({
   head: () => ({
@@ -24,6 +26,7 @@ function EntrepreneurshipTrack() {
       <WhatYoullDo />
       <Modules />
       <Outcomes />
+      <SharedTestimonials />
       <CTA />
       <Footer />
     </div>

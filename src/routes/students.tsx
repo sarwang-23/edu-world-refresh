@@ -18,6 +18,8 @@ import mentor2 from '../assets/IMG_4915.jpg'
 import mentor3 from '../assets/IMG_5138_2.jpg'
 import mentor4 from '../assets/person4.jpg'
 import mentor5 from '../assets/person5.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/students')({
   head: () => ({
@@ -38,6 +40,7 @@ function YoungLeaders() {
       <PartnersAndMentors />
       <ChooseYourTrack />
       <ValueProps />
+      <SharedTestimonials />
       <BottomCTA />
       <Footer />
     </div>

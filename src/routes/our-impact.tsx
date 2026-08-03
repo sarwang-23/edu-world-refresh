@@ -746,6 +746,20 @@ function Testimonials() {
           <h2 className="text-4xl font-bold tracking-tight text-cream md:text-[3.5rem]">
             Perspectives on <span className="font-serif italic text-gold">impact.</span>
           </h2>
+        {/* 3 Frames Placeholders */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
+          {[1, 2, 3].map((_, i) => (
+            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
+                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
+                </div>
+                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-16 bg-gold/40" />
             <div className="h-1.5 w-1.5 rounded-full bg-gold" />

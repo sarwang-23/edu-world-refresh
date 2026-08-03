@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Clock, MapPin, Lightbulb, Users, Zap, Star, CheckCircle2, Rocket, Brain, Target, Globe2 } from 'lucide-react'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/entrepreneurship_/zero-to-one')({
   head: () => ({
@@ -20,6 +22,7 @@ function Page() {
       <HowItWorks />
       <WhoShouldJoin />
       <Outcomes />
+      <SharedTestimonials />
       <CTA />
       <Footer />
     </div>

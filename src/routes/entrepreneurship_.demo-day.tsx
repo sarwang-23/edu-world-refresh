@@ -3,6 +3,8 @@ import { ArrowUpRight, CheckCircle2, Trophy, MapPin, Globe2, Sparkles, Building2
 import { Footer } from './index'
 import heroImg from '../assets/students.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/entrepreneurship_/demo-day')({
   head: () => ({
@@ -20,6 +22,7 @@ function DemoDayPage() {
       <Hero />
       <FeaturesStrip />
       <DetailsSection />
+      <SharedTestimonials />
       <BottomCTA />
       <Footer />
     </div>

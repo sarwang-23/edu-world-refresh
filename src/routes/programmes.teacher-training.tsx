@@ -2,6 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Sparkles, Compass, ClipboardCheck, BookOpen, Users } from 'lucide-react'
 import heroImg from '../assets/teachers.jpg'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/programmes/teacher-training')({
   head: () => ({
@@ -89,6 +91,7 @@ function Page() {
           </a>
         </div>
       </section>
+      <SharedTestimonials />
       <Footer />
     </div>
   )
