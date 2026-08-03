@@ -15,6 +15,8 @@ import person9 from "@/assets/person9.jpg";
 import person10 from "@/assets/person10.jpg";
 import person11 from "@/assets/person11.jpg";
 import person12 from "@/assets/person12.jpg";
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -38,6 +40,7 @@ function AboutPage() {
       <Journey />
       <Impact />
       <OurPeople />
+      <SharedTestimonials />
       <Cta />
       <Footer />
     </div>

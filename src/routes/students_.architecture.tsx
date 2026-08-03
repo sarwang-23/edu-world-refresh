@@ -6,6 +6,8 @@ import {
 import { Footer } from './index'
 import heroImg from '../assets/cambridge_3.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/students_/architecture')({
   head: () => ({
@@ -24,6 +26,7 @@ function ArchitectureTrack() {
       <WhatYoullDo />
       <Modules />
       <Outcomes />
+      <SharedTestimonials />
       <CTA />
       <Footer />
     </div>

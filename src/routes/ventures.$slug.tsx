@@ -34,6 +34,8 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 type Venture = {
   slug: string
@@ -289,6 +291,7 @@ function VenturePage() {
       <MainContent v={v} />
       <GelsRole v={v} />
       <BottomCTA v={v} />
+      <SharedTestimonials />
       <Footer />
     </div>
   )

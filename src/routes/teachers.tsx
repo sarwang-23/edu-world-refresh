@@ -373,6 +373,11 @@ function Testimonials() {
               className="flex flex-col justify-between rounded-2xl border border-cream/15 bg-forest-deep/60 p-8 backdrop-blur-sm"
             >
               <div>
+                <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <span className="text-foreground/50 text-sm font-medium">Video Frame Placeholder</span>
+                   </div>
+                </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>

@@ -3,6 +3,8 @@ import { ArrowUpRight, CheckCircle2, Handshake, Users, Globe2, Sparkles, Buildin
 import { Footer } from './index'
 import heroImg from '../assets/gilp-march-10.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/entrepreneurship_/mentorship')({
   head: () => ({
@@ -20,6 +22,7 @@ function MentorshipPage() {
       <Hero />
       <FeaturesStrip />
       <DetailsSection />
+      <SharedTestimonials />
       <BottomCTA />
       <Footer />
     </div>

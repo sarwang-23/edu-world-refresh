@@ -18,6 +18,8 @@ import ecosystemImg from '@/assets/IMG_5277.jpg'
 import campusLife1 from '@/assets/campus-life-1.jpg'
 import campusLife2 from '@/assets/campus-life-2.jpg'
 import campusLife3 from '@/assets/campus-life-3.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute('/programmes/graduate')({
   head: () => ({
@@ -39,6 +41,7 @@ function GraduateProgramme() {
       <CampusLife />
       <Tracks />
       <Impact />
+      <SharedTestimonials />
       <BottomCTA />
       <Footer />
     </div>

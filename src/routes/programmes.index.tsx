@@ -11,6 +11,8 @@ import studentsImg from "@/assets/students.jpg";
 import zeroToOneImg from "@/assets/zero-to-one.png";
 import graduateSummerImg from "@/assets/campus-life-2.jpg";
 import youngLeadersImg from "@/assets/young-leaders.png";
+import { SharedTestimonials } from '@/components/SharedTestimonials';
+
 
 export const Route = createFileRoute("/programmes/")({
   head: () => ({
@@ -286,6 +288,7 @@ function ProgrammesPage() {
         </div>
       </section>
 
+      <SharedTestimonials />
       <Footer />
     </div>
   );
