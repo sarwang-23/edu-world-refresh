@@ -1,8 +1,10 @@
 import { Link, useLocation } from '@tanstack/react-router'
-import { ArrowUpRight, ChevronDown, ChevronRight } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
+import { useState } from 'react'
 
 export function Nav() {
   const location = useLocation()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   // Extra items not in the provided image are placed here
   const addons: { label: string; href: string }[] = []
@@ -11,9 +13,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">
-            Global<span className="text-gold">.</span>Edu<span className="text-gold">.</span>Lab
-          </span>
+          <img src="/gel-logo-transparent.png" alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
           
@@ -176,7 +176,45 @@ export function Nav() {
         >
           Apply Now <ArrowUpRight className="h-4 w-4" />
         </Link>
+        <div className="flex items-center gap-3 md:hidden">
+          <Link
+            to="/apply-now"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="inline-flex items-center gap-1 rounded-full bg-forest-deep px-4 py-2 text-[13px] font-bold tracking-wide text-gold transition-all hover:bg-forest"
+          >
+            Apply <ArrowUpRight className="h-3 w-3" />
+          </Link>
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1 text-forest">
+            {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-[100%] left-0 w-full bg-white border-b border-forest/10 shadow-2xl md:hidden overflow-y-auto max-h-[80vh]">
+          <div className="flex flex-col p-4 gap-1">
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Home</Link>
+            <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Programmes</div>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">All Programmes</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/gilp" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global India Leadership Programme</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/zero-to-one" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Zero-to-One</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/students" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">For Students (13-17 yrs)</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Graduate Summer Programme</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/entrepreneurship" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Mentorship & Support</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/past-programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Past Programmes</Link>
+            
+            <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Explore</div>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global Ventures</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/about" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">About Us</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

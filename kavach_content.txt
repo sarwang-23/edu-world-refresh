@@ -1,0 +1,2450 @@
+ (0–100) estimates the consequence when a single SOP deviation goes uncaught, weighting regulatory penalty exposure against irreversibility — life safety, data loss, licence risk.
+
+ Driver/Handler collusion (Ghost Shipments).
+
+ Dual ROI. Selling prevention against immediate inventory loss alongside protection from massive regulatory/liability fines.
+
+ Ensure real-time process compliance and immediate intervention before the mistake escalates.
+
+ Hardware/proprietary server theft.
+
+ Human error, unverified access, or safety breaches leading to regulatory fines, disaster, or loss of life.
+
+ Leaving medication carts unlocked or improper vial disposal leading to life loss.
+
+ Narcotics diversion (Internal).
+
+ Organised retail crime and sophisticated internal fraud bypassing passive systems.
+
+ Pharma Vaults, High-Value Logistics hubs, Critical Infrastructure.
+
+ Retail, Jewellery, Cash Logistics.
+
+ Schools, Healthcare, Manufacturing, Data Centers.
+
+ Tailgating into server racks. One unbadged entry = total data breach risk.
+
+ These industries are most desperate for AI-driven proactive measures because traditional systems have completely failed them.
+
+ Top 5 Verticals: High Theft
+
+ Top 5 Verticals: Risk of Abnormality
+
+ Unmanifested loading or seal tampering leading to millions in cargo loss.
+
+ because the `*` character must ')+
+
+ could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent '+(
+
+ early AI-powered threat detection can mean the difference between prevention and tragedy.
+
+ for KavachAI because they suffer from both shrinkage and extreme liability.'}),x.jsxs(
+
+ for KavachAI. Verticals that lose millions to theft AND face extreme penalties for safety abnormalities.'}),x.jsxs(
+
+ for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+
+ instead.'),!u||!c)return null;var f=obe(this.props);if(!f)return null;var d=f.x,h=f.y,m=this.props,p=m.shape,y=m.className,v=kr(this.props,
+
+ instead.');var f=ct(i),d=ct(o),h=ct(a),m=ct(s),p=this.props.shape;if(!f&&!d&&!h&&!m&&!p)return null;var y=pbe(f,d,h,m,this.props);if(!y&&!p)return null;var v=kr(this.props,
+
+ is a normalised comparative score, not a currency figure. It weights reported incident volume against average value per incident within a region, indexed so verticals can be read side by side.
+
+ is not an animatable value.`,
+
+ is not valid. An absolute child route path ')+
+
+ nested under path '+('
+
+ represents deliberate financial loss, while the 
+
+ represents operational deviations where small mistakes lead to massive liabilities.
+
+ will be treated as if it were '+('
+
+&&(((t=e.match(l1))==null?void 0:t.length)||0)+(((n=e.match(oU))==null?void 0:n.length)||0)>0}const i$=
+
+&&(F4.has(n)||sy(n,!1,e),sy(n,!0,e))});var t=e.nodeType===9?e:e.ownerDocument;t===null||t[gf]||(t[gf]=!0,sy(
+
+&&(b=m+g*a,S=p),S=v<=0?S:!S;var w=Ae(u,c,y,b),P=Ae(u,c,y,b+(S?1:-1)*359),E=
+
+&&(document.activeElement===L.current||(le=L.current)!=null&&le.contains(document.activeElement))&&_(!1)};return document.addEventListener(
+
+&&(e.onclick=Rd)}Iv(n,r);var a;n=null;for(u in i)if(!r.hasOwnProperty(u)&&i.hasOwnProperty(u)&&i[u]!=null)if(u===
+
+&&(e=o,t(e)),typeof o==
+
+&&(i.current=!0));const a=o.target;((u=n.triggerRef.current)==null?void 0:u.contains(a))&&o.preventDefault(),o.detail.originalEvent.type===
+
+&&(i[2+a]/=u),typeof i[3+a]==
+
+&&(ng(e,t,o,n),i.state=e.memoizedState),typeof t.getDerivedStateFromProps==
+
+&&(ng(t,n,c,r),l=t.memoizedState),(s=ji||NS(t,n,s,r,d,l,u))?(f||typeof a.UNSAFE_componentWillMount!=
+
+&&(ng(t,n,h,r),m=t.memoizedState),(u=ji||NS(t,n,u,r,d,m,l)||!1)?(c||typeof a.UNSAFE_componentWillUpdate!=
+
+&&(t.flags|=1024)):(typeof a.componentDidUpdate!=
+
+&&(t.flags|=4),typeof a.getSnapshotBeforeUpdate==
+
+&&(t.flags|=4194308)):(typeof a.componentDidMount==
+
+&&(t.flags|=4194308),t.memoizedProps=r,t.memoizedState=l),a.props=r,a.state=l,a.context=u,r=s):(typeof a.componentDidMount==
+
+&&(t=e.variants&&e.variants[t]),typeof t==
+
+&&B!==null?(B=B.delay,B=typeof B==
+
+&&G(l)?l:0);var d=[],h=s===
+
+&&S instanceof S&&typeof w==
+
+&&`
+    padding-left: `.concat(i,`px;
+    padding-top: `).concat(o,`px;
+    padding-right: `).concat(a,`px;
+    margin-left:0;
+    margin-top:0;
+    margin-right: `).concat(s,
+
+&&a.UNSAFE_componentWillMount()),typeof a.componentDidMount==
+
+&&a.UNSAFE_componentWillUpdate(r,m,l)),typeof a.componentDidUpdate==
+
+&&a.componentWillMount(),typeof a.UNSAFE_componentWillMount==
+
+&&a.componentWillUpdate(r,m,l),typeof a.UNSAFE_componentWillUpdate==
+
+&&aW.test(e[t]))return!0;return!1}const lW=new Set([
+
+&&b!==null&&b.type===$a&&b.key===null&&(b=b.props.children),typeof b==
+
+&&e!==null&&(e.$$typeof===um||e.$$typeof===lm||e.$$typeof===rm||e.$$typeof===im||e.$$typeof===om||e.$$typeof===gR||e.getModuleId!==void 0)};Pe.typeOf=$n;vR.exports=Pe;var HX=vR.exports,KX=yi,GX=vi,qX=
+
+&&e!=null)throw Error(
+
+&&e.toString()===t.toString())return!0;let n,r,i;if(e&&t&&typeof e==
+
+&&e>-1&&e%1==0&&e<=qee}var tw=Yee,Xee=yi,Qee=tw,Zee=vi,Jee=
+
+&&i!==null&&typeof i.render==
+
+&&i.UNSAFE_componentWillMount(),t!==i.state&&Sp.enqueueReplaceState(i,i.state,null),Vd(e,n,i,r),i.state=e.memoizedState),typeof i.componentDidMount==
+
+&&i.componentWillMount(),typeof i.UNSAFE_componentWillMount==
+
+&&l!==null?l=jn(l):(l=Zt(n)?Xo:Mt.current,l=bs(t,l));var h=n.getDerivedStateFromProps;(c=typeof h==
+
+&&l)return!1}return!(typeof s==
+
+&&lf&&lf.Object===Object&&lf,lR=PG,OG=lR,EG=typeof self==
+
+&&n instanceof n&&nL.call(n)==Bye}var zye=Fye;const Vye=be(zye);var Uye=yi,Wye=vi,Hye=
+
+&&n(i)};return t.addEventListener(
+
+&&n.focus(),n=0;n<t.length;n++)e=t[n],e.element.scrollLeft=e.left,e.element.scrollTop=e.top}}var D4=ri&&
+
+&&o!==null?i.context=jn(o):(o=Zt(t)?Xo:Mt.current,i.context=bs(e,o)),i.state=e.memoizedState,o=t.getDerivedStateFromProps,typeof o==
+
+&&o(!1)};return document.addEventListener(
+
+&&p.ctrlKey)return!a.current.allowPinchZoom;var v=Df(p),g=n.current,b=
+
+&&t!==null)throw new TypeError(
+
+&&t++}e=e.previousSibling}return null}var il=Math.random().toString(36).slice(2),wr=
+
+&&t.componentWillReceiveProps(n,r),typeof t.UNSAFE_componentWillReceiveProps==
+
+&&t.dangerouslySetInnerHTML!==null&&t.dangerouslySetInnerHTML.__html!=null}var Xv=typeof setTimeout==
+
+&&this.scheduleResolve()}}const XU=e=>e.startsWith(
+
+&&this.unit!==n.unit?new e(NaN,
+
+&&typeof Symbol.iterator==
+
+&&typeof a.componentWillMount!=
+
+&&typeof a.componentWillReceiveProps!=
+
+&&typeof a.componentWillUpdate!=
+
+&&typeof e.internal==
+
+&&typeof e.statusText==
+
+&&typeof i.componentWillMount!=
+
+&&typeof performance.now==
+
+&&typeof r.onClick==
+
+&&typeof t.toString!=
+
+&&typeof window.document.createElement<
+
+&&typeof window.document<
+
+&&u!==null?u=jn(u):(u=Zt(n)?Xo:Mt.current,u=bs(t,u));var c=n.getDerivedStateFromProps,f=typeof c==
+
+&&w instanceof w)&&(p=!1)}return o.delete(e),o.delete(t),p}var mne=pne,yne=pa,vne=Ir,gne=yne(vne,
+
+' character in a manually specified 
+
+(prefers-color-scheme: dark)
+
+)&&!UB(e)}const HB=[
+
+)&&(rt(l.relativePath.startsWith(r),'Absolute route path 
+
+)&&rs(e.slice(0,-1)),ue=e=>Q_.test(e),Oi=e=>Az.test(e),Mz=new Set([
+
+)&&t.constructor;return typeof n==
+
+)&&xu(e,l):typeof l==
+
+)))});return T.createElement(
+
+)),Array.isArray(k)&&(E=k)}return T.createElement(
+
+)),e=!r;break e;default:e=!1}if(e)return null;if(n&&typeof n!=
+
+)),s=[];return s.push(...a.map(l=>l===
+
+));return e.endsWith(
+
+))==null?void 0:i.get,n=t&&
+
+))==null?void 0:r.get,n=t&&
+
+))return t;if(t!==void 0)throw new TypeError(
+
+))return;for(const i of document.querySelectorAll('link[rel=
+
+))||0),vo=new Date().getTime()-((Be=dr.current)==null?void 0:Be.getTime()),Ln=K===
+
+))||0),xi=Number(((Oe=Rn.current)==null?void 0:Oe.style.getPropertyValue(
+
+))});return T.createElement(
+
+))}else h?_=tp(0,k):s&&s[C]&&s[C].hasStack&&g===
+
+))}return P&&D.push(
+
+)+(this.precision===void 0?
+
+)+(this.width===void 0?
+
+),0<r.length&&(t=new tx(
+
+),0<t.length&&(n=new tx(
+
+),0<u.length&&(c=new uS(
+
+),VP[e];return e},_f=[
+
+),[new RegExp(i,t?void 0:
+
+),e;case qb:return t=e.displayName||null,t!==null?t:kv(e.type)||
+
+),i=null;const o=ur(e).position===
+
+),l.relativePath=l.relativePath.slice(r.length));let u=Zi([r,l.relativePath]),c=n.concat(l);o.children&&o.children.length>0&&(rt(o.index!==!0,
+
+),l}const Zi=e=>e.join(
+
+),n=e.currency===void 0?
+
+),r+=n)}else for(n in e)e[n]&&(r&&(r+=
+
+),r+=t);return r}const PP=e=>typeof e==
+
+),r=n.length;return n.some(cP)&&(r+=cB),t&&(r+=sB),n.filter(i=>!cP(i)).reduce((i,o)=>i+(oB.test(o)?aB:o===
+
+),ry=typeof pS.oninput==
+
+),t.throwOnError===void 0&&(t.throwOnError=!!t.suspense),!t.networkMode&&t.persister&&(t.networkMode=
+
+),y=h==null?d:Da(h),b=m==null?d:Da(m),d=new p(S,g+
+
+). If you meant to render a collection of children, use an array instead.
+
+).concat(+(a<=u),`,
+            `).concat(h.x,
+
+).concat(+(a>u),`,
+    `).concat(f.x,
+
+).concat(E.y,`
+      A`).concat(a,
+
+).concat(S?0:1,`,
+    `).concat(P.x,
+
+).concat(_.y,`
+      A`).concat(a,
+
+).concat(a*2,`,0
+        a`).concat(a,
+
+).concat(c.y,`
+    A `).concat(o,
+
+).concat(f==null?void 0:f.value,
+
+).concat(f==null?void 0:f.y,
+
+).concat(h.y,`
+    A`).concat(o,
+
+).concat(i,`,0,
+            `).concat(+(Math.abs(l)>180),
+
+).concat(k.y,`
+      A`).concat(i,
+
+).concat(m.y,`
+            A `).concat(i,
+
+).concat(m.y,`
+        a`).concat(a,
+
+).concat(m.y,`
+    A`).concat(a,
+
+).concat(n+i,`
+            A `).concat(m,
+
+).concat(n+i,`
+            L `).concat(t+l*m,
+
+).concat(n+i-s*m,`
+            A `).concat(m,
+
+).concat(n+s*m,`
+            A `).concat(m,
+
+).concat(n+s*m,`
+            L `).concat(t+r,
+
+).concat(n,`
+            A `).concat(m,
+
+).concat(n,`
+            L `).concat(t+r-l*m,
+
+).concat(o,`
+            A`).concat(a,
+
+).concat(o,`
+            H`).concat(bn,
+
+).concat(o,`,0,
+    `).concat(+(Math.abs(l)>180),
+
+).concat(r,`;
+    `),n===
+
+).concat(r,`;
+  }
+  
+  .`).concat(Ed,
+
+).concat(s,`
+            A`).concat(a,
+
+).concat(u,`,
+        `).concat(t+r,
+
+).concat(u,`,
+        `).concat(t+r-l*f[2],
+
+).concat(u,`,
+        `).concat(t,
+
+).concat(v.y,`
+    A`).concat(a,
+
+).concat(w.y,`
+    A`).concat(y,
+
+).map(HU);return typeof o==
+
+).replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
+
+).trim().toLowerCase(),(t=Ele.exec(e))?(n=t[1].length,t=parseInt(t[1],16),n===6?rT(t):n===3?new Xt(t>>8&15|t>>4&240,t>>4&15|t&240,(t&15)<<4|t&15,1):n===8?Kf(t>>24&255,t>>16&255,t>>8&255,(t&255)/255):n===4?Kf(t>>12&15|t>>8&240,t>>8&15|t>>4&240,t>>4&15|t&240,((t&15)<<4|t&15)/255):null):(t=Ale.exec(e))?new Xt(t[1],t[2],t[3],1):(t=Tle.exec(e))?new Xt(t[1]*255/100,t[2]*255/100,t[3]*255/100,1):(t=Cle.exec(e))?Kf(t[1],t[2],t[3],t[4]):(t=jle.exec(e))?Kf(t[1]*255/100,t[2]*255/100,t[3]*255/100,t[4]):(t=kle.exec(e))?aT(t[1],t[2]/100,t[3]/100,1):(t=_le.exec(e))?aT(t[1],t[2]/100,t[3]/100,t[4]):eT.hasOwnProperty(e)?rT(eT[e]):e===
+
+).types;return l||a&&a.binding&&a.binding(
+
+):fT[w]||(b===void 0&&(b=12),S=!0,w=
+
+):t instanceof WeakSet?t.add(e):t.set(e,n),ae=(e,t,n,r)=>(Km(e,t,
+
+):t.id;return T.createElement(
+
+):t.slice(1);return r[e]()+i}}var sZ=aZ,lZ=sZ,uZ=lZ(
+
+):void 0,this.updateSnapshot(),a&&this.notifyListeners(
+
+);case 0:case 2:case 15:return e=Xm(e.type,!1),e;case 11:return e=Xm(e.type.render,!1),e;case 1:return e=Xm(e.type,!0),e;default:return
+
+);case 13:return Kl(
+
+);case 19:return Kl(
+
+);if(n.s<1)throw Error(_n+(n.s?
+
+);if(r.length===0)return i?[o,
+
+);let o=RW.has(t)?1:0;return r!==n&&(o*=100),t+
+
+);n>=0&&(t.hash=e.substr(n),e=e.substr(0,n));let r=e.indexOf(
+
+);return P.length?T.createElement(
+
+);return T.createElement(
+
+);return document.body.insertAdjacentElement(
+
+);return e.displayName&&l.includes(
+
+);return e.setAttribute(
+
+);return r.length===1?
+
+);return[t,n]}var h8=wM,p8=SM,m8=OM,[Bp,h1e]=Fc(
+
+);u&&(E.nonce=u);const A=i??document.head;return A.appendChild(E),E.sheet&&E.sheet.insertRule(`
+          [data-motion-pop-id=
+
+);var r=Array.from(Array.isArray(e)?e:[e]),i=MK(e);return i?(r.push.apply(r,Array.from(i.querySelectorAll(
+
+);var r=t.read();if(!r)throw new Error(
+
+)===-1)return typeof t.is==
+
+)?t.length-1:t.length,r=e.charAt(n);return r&&r!==
+
+)?yW(t[1]):mW:gW,xW=new Set([
+
+)Cx(e)&&(a=1);else if(typeof e==
+
+)R=C(M,P);else if(C===
+
+)_=Nb(f,_,C,o,E),L&&(_=J0(L,_,S));else if(g===
+
+)for(const a of o.addedNodes)a.tagName===
+
+)for(e=l.call(e),s=0;!(o=e.next()).done;)o=o.value,l=r+Gm(o,s++),a+=nd(o,t,n,l,i);else if(o===
+
+)i=t.y,a=i,r=n.left,o=n.left+n.width;else if(t.cx!=null&&t.cy!=null)if(e===
+
+)m=Oxe(f,a,l,c),p=_w;else if(f===
+
+)m=a,p=zme;else if(d===
+
+)r+=e;else if(typeof e==
+
+)r=jV(e,n);else if(t===
+
+)r=t.x,o=r,i=n.top,a=n.top+n.height;else if(e===
+
+)return $b(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return Array.from(e);if(n===
+
+)return DC(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return DT(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return FA(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return GA(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return GT(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return IA(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return Ib(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return K0(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return OA(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return PC(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return T.createElement(
+
+)return X0(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return Z0(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return bC(i)}return typeof i==
+
+)return e.displayName||e.name||null;if(typeof e==
+
+)return e;const[r]=n.match(l1)||[];if(!r)return e;const i=n.replace(r,
+
+)return e;if(!e.toLowerCase().startsWith(t.toLowerCase()))return null;let n=t.endsWith(
+
+)return e;if(yX(e))return mX(e,hR)+
+
+)return e===0?e:+e;e=lse(e);var n=fse.test(e);return n||dse.test(e)?hse(e.slice(2),n?2:8):cse.test(e)?$A:+e}var wI=pse,mse=fo,lv=ese,NA=wI,yse=
+
+)return eb(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return hb(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return n;r=r.getChildContext();for(var i in r)if(!(i in t))throw Error(H(108,_3(e)||
+
+)return null;if(o&&i===
+
+)return null;var m,p=iC;if(d===
+
+)return null;var r=t.fillOpacity,i=t.x,o=t.y,a=t.width,s=t.height,l=t.ry;return T.createElement(
+
+)return null;var v=ie(h.value)?null:h.value;ei(!ie(h.value),`The name property is also required when using a function for the dataKey of a chart's cartesian components. Ex: <Bar name=
+
+)return ob(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return pC(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return r;throw new TypeError(
+
+)return s2(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return sb(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return t.displayName||t.name||null;if(typeof t==
+
+)return t;var o=G(r)||eQ(r);return o?t(r,i):(o||aa(),n)}},Gge=[
+
+)return t[n].width;if(n===
+
+)return tb(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return t}return e.type===
+
+)return ub(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n===
+
+)return v=v.get(b)||null,s(g,v,
+
+)return w!==null?null:s(v,g,
+
+)return!1;var A=pE(E,P);if(!A)return!0;if(A?w=E:(w=E===
+
+)return;let n=document.head||document.getElementsByTagName(
+
+)return;let z=window.matchMedia(
+
+)throw new TypeError(
+
+)throw new TypeError(Pse);return Sse(n)&&(r=
+
+)throw new TypeError(yse);t=NA(t)||0,mse(n)&&(c=!!n.leading,f=
+
+)throw t=String(e),Error(
+
+)||((i=e.onMouseDown)==null||i.call(e,n),!n.defaultPrevented&&n.detail>1&&n.preventDefault())}}));PN.displayName=FH;var ON=PN;const zH=zx(
+
+)||(t||n!==void 0)&&(!!t0[e]||e===
+
+)||typeof a.UNSAFE_componentWillReceiveProps!=
+
+)}))}return o}}])}(O.PureComponent);Kr(nf,
+
+)})},s0=!1;if(typeof window<
+
+)}const PV=new Set([
+
+)}const m=s[f];return h&&!m?u[d]=void 0:u[d]=(m||
+
+)}var fo=ZG;const pl=be(fo);var JG=yi,eq=fo,tq=
+
++('all child routes from route path 
+
++('please change the route path to 
+
++e;return t!==null&&t.ref!==null&&typeof t.ref==
+
++e[t];if(!e.hasOwnProperty(t)&&typeof n<
+
++g,v.mode,b),g.return=v,g;if(typeof g==
+
++n),t.key!==void 0&&(o=
+
++n);var V=(e,t,n)=>(Km(e,t,
+
++n,r?e.setAttributeNS(r,t,n):e.setAttribute(t,n))))}var mi=E3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,cf=Symbol.for(
+
++n.slice(1))}else return l=vv(p,u+2,y).times(o+
+
++new Array(-i).join(
+
++new Array(1-o).join(
+
++r.slice(i+1):r+new Array(i-r.length+2).join(
+
++s:s);continue}m=!1}const y=gz(c).join(
+
+,!1);this.isExitComplete=!1;return}const i=this.node.animationState.setActive(
+
+,(Ht=te[Le])&&(Le=Ht(ne,dt)),U.push(Le),fe=ge+1);return U.push(q.slice(fe,ge)),U.join(
+
+,0),fe,Ue;if(ge!=ne.length)return null;if(
+
+,0,1/0];for(t=0;t<i.length;t+=3)if((r=e[n=i[t]])!==void 0)if(Pl(r)===r&&r>=i[t+1]&&r<=i[t+2])this[n]=r;else throw Error(Yo+n+
+
+,JM=e=>Array.isArray(e)&&typeof e[0]==
+
+,JS);return e._reactRootContainer=a,e[ii]=a.current,Tu(e.nodeType===8?e.parentNode:e),ea(),a}for(;i=e.lastChild;)e.removeChild(i);if(typeof r==
+
+,`Mini animate() doesn't support 
+
+,a.pointerEvents=Pd(s==null?void 0:s.pointerEvents)||
+
+,axisLine:!0,tickLine:!0,tickSize:8,tick:!0,hide:!1,allowDuplicatedCategory:!0});var jye=nI,kye=jye(Object.getPrototypeOf,Object),_ye=kye,Mye=yi,$ye=_ye,Nye=vi,Rye=
+
+,children:'The strategic 
+
+,children:i||r})})]})})});kM.displayName=As;var MM=
+
+,children:n=null,location:r,navigationType:i=zi.Pop,navigator:o,static:a=!1,future:s}=e;Bc()&&rt(!1);let l=t.replace(/^\/*/,
+
+,children:r.children},i,0,null),o=Ho(o,i,a,null),o.flags|=2,r.return=t,o.return=t,r.sibling=o,t.child=r,t.mode&1&&ws(t,e.child,null,a),t.child.memoizedState=lg(a),t.memoizedState=sg,o);if(!(t.mode&1))return Sf(e,t,a,null);if(i.data===
+
+,className:Fn($==null?void 0:$.content,(s=h==null?void 0:h.classNames)==null?void 0:s.content)},T.createElement(
+
+,className:Fn($==null?void 0:$.icon,(a=h==null?void 0:h.classNames)==null?void 0:a.icon)},h.promise||h.type===
+
+,className:Fn($==null?void 0:$.title,(l=h==null?void 0:h.classNames)==null?void 0:l.title)},typeof h.title==
+
+,className:Fn(D,XL,$==null?void 0:$.description,(u=h==null?void 0:h.classNames)==null?void 0:u.description)},typeof h.description==
+
+,d),bd.has(l)&&bd.delete(l),lO(h)&&typeof u==
+
+,d:vu(i,o)})):null)}var c=vu(n,o);return T.createElement(
+
+,delete f.transformBox);for(const h of j9)f[h]!==void 0&&(d[h]=f[h],delete f[h]);t!==void 0&&(f.x=t),n!==void 0&&(f.y=n),r!==void 0&&(f.scale=r),i!==void 0&&C9(f,i,o,a,!1)}const q$=new Set([
+
+,delete f.transformOrigin),d.transform&&(d.transformBox=(c==null?void 0:c.transformBox)??
+
+,e),...t}));J_.displayName=N_.displayName;const Wz=zx(
+
+,e),...t}));aR.displayName=tR.displayName;const ZK=
+
+,e=e.removeChild(e.firstChild)):typeof r.is==
+
+,h,i)}),o}const R$=(e,t)=>t?e===t?!0:R$(e,t.parentElement):!1,x1=e=>e.pointerType===
+
+,h,n,c),d.target=y,d.relatedTarget=b,S=null,jo(c)===u&&(p=new p(v,g+
+
+,h.className)});return O.isValidElement(h)?O.cloneElement(h,P):O.createElement(p,P)}var kxe=[
+
+,hpe=Array.isArray,fC=typeof ArrayBuffer==
+
+,i);o&&!o.layout&&(o.root&&o.root.updateScroll(),o.updateLayout()),je.read(i);const s=Gu(window,
+
+,i=e.decimal===void 0?
+
+,layoutShift:s=typeof IntersectionObserver==
+
+,message:t.loading,description:typeof t.description!=
+
+,n);var R=No(a)?D:a,I=No(l)?N:l;n&&n>0&&(R?I=R/n:I&&(R=I*n),d&&I>d&&(I=d)),ei(R>0||I>0,`The width(%s) and height(%s) of chart should be greater than 0,
+       please check the style of container, or the props width(%s) and height(%s),
+       or add a minWidth(%s) or minHeight(%s) or use aspect(%s) to control the
+       height and width.`,R,I,a,l,c,f,n);var L=!Array.isArray(h)&&Jr(h.type).endsWith(
+
+,n=Ie-r.length,n&&(o+=ki(n))}else if(a===0)return
+
+,new TextEncoder().encode(e));return Array.from(new Uint8Array(t)).map(n=>n.toString(16).padStart(2,
+
+,null,l),t)}var gQ=[
+
+,o);return T.createElement(
+
+,o);return n===+n&&r===+r&&i===+i?O.createElement(
+
+,o=e.numerals===void 0?dT:tue(hT.call(e.numerals,String)),a=e.percent===void 0?
+
+,onPlaced:m,...p}=e,y=bM(Jx,n),[v,g]=O.useState(null),b=zt(t,ge=>g(ge)),[S,w]=O.useState(null),P=s8(S),E=(P==null?void 0:P.width)??0,A=(P==null?void 0:P.height)??0,C=r+(o!==
+
+,pauseWhenPageIsHidden:w}=e,[P,E]=T.useState([]),A=T.useMemo(()=>Array.from(new Set([r].concat(P.filter(z=>z.position).map(z=>z.position)))),[P,r]),[C,j]=T.useState([]),[k,_]=T.useState(!1),[D,N]=T.useState(!1),[R,I]=T.useState(c!==
+
+,payload:A.payload,value:A.value},ee(R,!1)),mh(R));return _.push(v.renderActiveDot(R,L,
+
+,r);return T.createElement(
+
+,r);return i&&(o=o.map(a=>a+
+
+,r=e.currency===void 0?
+
+,s=e.minus===void 0?
+
+,t),t()}else Zg.current=!1}const hO=[
+
+,this.align=e.align===void 0?
+
+,this.layout.layoutBox,a?a.layoutBox:void 0)}updateScroll(a=
+
+,this.sign=e.sign===void 0?
+
+,this.symbol=e.symbol===void 0?
+
+,this.zero=!!e.zero,this.width=e.width===void 0?void 0:+e.width,this.comma=!!e.comma,this.precision=e.precision===void 0?void 0:+e.precision,this.trim=!!e.trim,this.type=e.type===void 0?
+
+,top:0,left:0},g);return T.createElement(
+
+,u=Mme(n,i,o);return T.createElement(
+
+. All rights reserved.
+
+. This analysis maps the critical intersection of high financial theft and high-consequence operational abnormalities.
+
+. This may indicate a circular fallback dependency.`,
+
+.concat((b=g.id)!==null&&b!==void 0?b:cm(
+
+.concat((o=m[p])===null||o===void 0?void 0:o.name,
+
+.concat(f==null?void 0:f.x,
+
+.concat(l),index:l});return ML(i,u)});return T.createElement(
+
+.concat(y):void 0,className:se(
+
+/>`);var g=h.inactive?u:h.color;return T.createElement(
+
+24/7 automated analysis
+
+404 Error: User attempted to access non-existent route:
+
+:_1(i.open),...r,ref:o,onClick:ze(e.onClick,i.onOpenToggle)})});BN.displayName=LN;var j1=
+
+:a,l=t.capHeight,u=l===void 0?
+
+:b,w=y.style,P=y.properties,E=y.onAnimationEnd,A=v>0?a[v-1]:y,C=P||Object.keys(w);if(typeof S==
+
+:break;default:typeof o.onClick==
+
+:c,d=t.radialLines,h=d===void 0?!0:d,m=Ume(t,Vme);return u<=0?null:T.createElement(
+
+:d,m=t.verticalAnchor,p=m===void 0?
+
+:e.multiple=!!r.multiple,o=r.value,o!=null?Qa(e,!!r.multiple,o,!1):r.defaultValue!=null&&Qa(e,!!r.multiple,r.defaultValue,!0);break;default:typeof i.onClick==
+
+:h=b4;break;case Ij:case Dj:case Lj:h=s4;break;case Bj:h=w4;break;case
+
+:h=cS}var p=(t&4)!==0,y=!p&&e===
+
+:h=m=r.coordinate,y=a+ +!f*l,p=y-b*S,g=p-b*d,v=w;break;case
+
+:i,a=t.validateTooltipEventTypes,s=a===void 0?[
+
+:i.open?i.contentId:void 0,
+
+:i=Nv(e,i),r=Nv(e,r),o=[];break;default:typeof i.onClick!=
+
+:if(ad(n)===0)break e;case
+
+:if(n.button===2)break e;case
+
+:l,c=t.scaleToFit,f=c===void 0?!1:c,d=t.textAnchor,h=d===void 0?
+
+:n,i=t.size,o=i===void 0?64:i,a=t.sizeType,s=a===void 0?
+
+:o,s=e.height,l=s===void 0?
+
+:p=y=r.coordinate,m=o+ +!f*s,h=m-b*S,v=h-b*d,g=w;break;case
+
+:r=!!r.autoFocus;break e;case
+
+:return .5*t*t/Math.sqrt(3);case
+
+:return 5*t*t/9;case
+
+:return Hi=Tl(Hi,e,t,n,r,i),!0;case
+
+:return Ki=Tl(Ki,e,t,n,r,i),!0;case
+
+:return Math.sqrt(3)*t*t/4;case
+
+:return O4.indexOf(t.keyCode)!==-1;case
+
+:return T.createElement(BD,n);case
+
+:return T.createElement(_w,n);case
+
+:return T.createElement(ive,n);case
+
+:return Tj&&t.locale!==
+
+:return Wi=Tl(Wi,e,t,n,r,i),!0;case
+
+:return e;default:return
+
+:return n?t?_P:kP:t?kP:_P;case
+
+:return r?!1:n!==null?!n.acceptsBooleans:(e=e.toLowerCase().slice(0,5),e!==
+
+:return t.keyCode!==229;case
+
+:return t.which!==32?null:(dS=!0,fS);case
+
+:return this.scale(n);case
+
+:return zpe();default:if(i.split(
+
+:t=e.tail;for(var n=null;t!==null;)t.alternate!==null&&(n=t),t=t.sibling;n===null?e.tail=null:n.sibling=null;break;case
+
+:typeof t},$s(e)}var Rie=[
+
+:typeof t},bc(e)}var $me=[
+
+:typeof t},fc(e)}var Vde=[
+
+:typeof t},h0(e)}var iQ=[
+
+:typeof t},hc(e)}var uhe=[
+
+:typeof t},qu(e)}var WZ=[
+
+:typeof t},zs(e)}var eme=[
+
+:var d=i._wrapperState.wasMultiple;i._wrapperState.wasMultiple=!!o.multiple;var h=o.value;h!=null?Qa(i,!!o.multiple,h,!1):d!==!!o.multiple&&(o.defaultValue!=null?Qa(i,!!o.multiple,o.defaultValue,!0):Qa(i,!!o.multiple,o.multiple?[]:
+
+:var o=i.pointerId;return Su.set(o,Tl(Su.get(o)||null,e,t,n,r,i)),!0;case
+
+:void 0,...e.style},onFocusCapture:ze(e.onFocusCapture,P.onFocusCapture),onBlurCapture:ze(e.onBlurCapture,P.onBlurCapture),onPointerDownCapture:ze(e.onPointerDownCapture,w.onPointerDownCapture)})});$p.displayName=GF;var XF=
+
+;break e}A=void 0}else Na?Cj(e,n)&&(A=
+
+;case 10:return(t._context.displayName||
+
+;case 11:return e=t.render,e=e.displayName||e.name||
+
+;case 16:return kv(t);case 8:return t===Kb?
+
+;case 1:case 0:case 17:case 2:case 14:case 15:if(typeof t==
+
+;case 5:return t;case 4:return
+
+;case 9:return(t.displayName||
+
+;case Gb:var t=e.render;return e=e.displayName,e||(e=t.displayName||t.name||
+
+;case X2:return(e._context.displayName||
+
+;const i=Math.max(Math.round(t/n),2);for(let o=0;o<i;o++)r+=Math.round(e(o/(i-1))*1e4)/1e4+
+
+;default:throw new Error(
+
+;for(let r=0;r<e.length;r++)e[r]&&(t=X_(e[r]))&&(n&&(n+=
+
+;f||typeof a.UNSAFE_componentWillReceiveProps!=
+
+;if(vX(e))return $E?$E.call(e):
+
+;let e=document.documentElement.getAttribute(
+
+;position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted=
+
+;return $s=typeof Symbol==
+
+;return Cc=typeof Symbol==
+
+;return Ec=typeof Symbol==
+
+;return Gs=typeof Symbol==
+
+;return Hs=typeof Symbol==
+
+;return Js=typeof Symbol==
+
+;return Ms=typeof Symbol==
+
+;return Ns=typeof Symbol==
+
+;return Qu=typeof Symbol==
+
+;return Rs=typeof Symbol==
+
+;return Sc=typeof Symbol==
+
+;return Tc=typeof Symbol==
+
+;return Us=typeof Symbol==
+
+;return Xs=typeof Symbol==
+
+;return Xu=typeof Symbol==
+
+;return Ys=typeof Symbol==
+
+;return Zu=typeof Symbol==
+
+;return bc=typeof Symbol==
+
+;return cc=typeof Symbol==
+
+;return e&&(r=J2(e)?e.checked?
+
+;return ec=typeof Symbol==
+
+;return gc=typeof Symbol==
+
+;return h0=typeof Symbol==
+
+;return hc=typeof Symbol==
+
+;return ib=typeof Symbol==
+
+;return kc=typeof Symbol==
+
+;return mc=typeof Symbol==
+
+;return pc=typeof Symbol==
+
+;return qs=typeof Symbol==
+
+;return qu=typeof Symbol==
+
+;return uc=typeof Symbol==
+
+;return vc=typeof Symbol==
+
+;return yc=typeof Symbol==
+
+;return zs=typeof Symbol==
+
+;var r=n[0],i=n[1],o=i-(RI=Math.max(-8,Math.min(8,Math.floor(i/3)))*3)+1,a=r.length;return o===a?r:o>a?r+new Array(o-a+1).join(
+
+;var r=n[0],i=n[1];return i<0?
+
+;var t=aK();return t&&e.setAttribute(
+
+?!1:e instanceof ShadowRoot||e instanceof dn(e).ShadowRoot}const mV=new Set([
+
+?(l=l?l.__html:void 0,s=s?s.__html:void 0,l!=null&&s!==l&&(o=o||[]).push(u,l)):u===
+
+?(r=ic(t))?(t=r,lT):Gle:t instanceof ic?lT:t instanceof Date?Ule:zle(t)?Fle:Array.isArray(t)?Vle:typeof t.valueOf!=
+
+?(y=f,v=d===(await(a.isRTL==null?void 0:a.isRTL(s.floating))?
+
+?0:tt.test(e)?tt.getAnimatableNone(e):e,hU=(e,t)=>typeof e==
+
+?1:0,s=n.x.scale*t.x,l=n.y.scale*t.y;i[0+a]/=s,i[1+a]/=l;const u=Te(s,l,.5);return typeof i[2+a]==
+
+?Promise:void 0,W4=typeof queueMicrotask==
+
+?String:Number)(e)}var Dl=
+
+?String:Number)(e)}var Zve=[
+
+?V(this,Lo):((t=globalThis.document)==null?void 0:t.visibilityState)!==
+
+?a.set(c.target,d):l.unobserve(c.target)}else typeof f==
+
+?await t.error(l):t.error,c=typeof t.description==
+
+?await t.success(l):t.success,c=typeof t.description==
+
+?b(n,v):b,w=g===!0||typeof g==
+
+?clearTimeout:null,g=typeof setImmediate<
+
+?clearTimeout:void 0,PS=typeof Promise==
+
+?document:void 0),typeof e>
+
+?e.initialData():e.initialData,n=t!==void 0,r=n?typeof e.initialDataUpdatedAt==
+
+?e:_e(e||Y1),t=typeof t==
+
+?e:e===void 0?kR:_e(+e),t=typeof t==
+
+?e:e===void 0?kR:_e(e),t=typeof t==
+
+?e:e==null?Xre:typeof e==
+
+?global:typeof self<
+
+?globalThis:typeof window<
+
+?h.icon||(B==null?void 0:B[yn])||nF(yn):null):null,T.createElement(
+
+?i(m,p,y):!1;var g=m.constructor;if(g!==p.constructor)return!1;if(g===Object)return s(m,p,y);if(hpe(m))return t(m,p,y);if(fC!=null&&fC(m))return f(m,p,y);if(g===Date)return n(m,p,y);if(g===RegExp)return u(m,p,y);if(g===Map)return o(m,p,y);if(g===Set)return c(m,p,y);var b=ppe(m);return b===ipe?n(m,p,y):b===upe?u(m,p,y):b===ape?o(m,p,y):b===cpe?c(m,p,y):b===lpe?typeof m.then!=
+
+?i.location.origin:i.location.href,g=typeof y==
+
+?l.multiply(u):l.divide(u);if(c.isNaN())return Ga;t=t.replace(VA,c.toString())}for(;t.includes(
+
+?parseFloat(e):e,RO=e=>typeof e==
+
+?queueMicrotask:typeof PS<
+
+?r.height:p.height});return K.bandSize=Vh(K,z),!p.hide&&i===
+
+?s1(e)?oh:tt.test(e)?YP:SU:Array.isArray(e)?s$:typeof e==
+
+?setImmediate:null;typeof navigator<
+
+?setTimeout:null,v=typeof clearTimeout==
+
+?setTimeout:void 0,U4=typeof clearTimeout==
+
+?t:_e(t===void 0?0:+t),n=typeof n==
+
+?t:jP(t,i);o.classGroupId=n;return}if(typeof i==
+
+?this.interpolator(t):this.range(t);break}}return this}const V0=Symbol(
+
+?u(o[1]):l(o[1])).catch(u));return typeof n!=
+
+?window:typeof global<
+
+?y:Zd(y);return g=g.replace(/ $/,
+
+@babel/helpers - typeof
+
+A deep-dive into how KavachAI maps the intersection of high-value theft and high-consequence operational abnormalities across India, UK/EU, and global markets — and why the verticals sitting in that overlap have the strongest case for preventive surveillance.
+
+A history only accepts one active listener
+
+A streamlined four-stage pipeline that turns raw video into real-time threat detection and predictive insights.
+
+AI surveillance command center
+
+AI-Based Early Warning
+
+AI-Powered Surveillance Platform
+
+AI-powered drones & smart barriers
+
+AI-powered video analysis for continuous surveillance and threat detection across all connected feeds.
+
+Actionable Intelligence
+
+AltF Noida, Sector 142, Nepz Post Office
+
+Architecture & Workflow
+
+Automated real-time notifications sent to security teams. Dashboard provides live monitoring, heatmaps, and predictive insights for rapid response.
+
+Behavior & Emotion Intelligence
+
+Both are KavachAI estimates derived from the public sources cited below. They are built for prioritisation, not for valuation or underwriting.
+
+CCTV cameras, drones, or smartphones capture real-time video feeds. Google Maps API fetches live busyness data for the location.
+
+CCTV · IP Cameras · Drones
+
+Child safety. Unattended pool/road entry = Catastrophic liability.
+
+Chronological Tracing
+
+Circle of Abnormality
+
+Click on the circles or the intersection to explore specific vertical risks and data points across regions.
+
+Cloud-based, modular platform that scales from a single storefront to entire smart city deployments with centralized monitoring.
+
+Computer vision (OpenCV, MediaPipe) detects people and calculates crowd density. AI models analyze behavior and detect congestion hotspots.
+
+Critical Infrastructure
+
+Crowd Data Collection
+
+Crowd Density Heatmaps
+
+Current CCTV systems are recording-only — they capture footage but cannot detect, analyze, or prevent threats in real time.
+
+Custom pricing for large events — festivals, concerts, mega gatherings
+
+Dashboard · SMS · Push Notifications
+
+Data Insights & Analytics
+
+Detects early signs of threats by analyzing identity, movement, and distress cues to trigger preventive alerts.
+
+Detects suspicious movements, aggression, loitering, or unusual activity patterns using advanced computer vision models.
+
+Distress signal detection
+
+Distribution Centers
+
+Documentation-related non-conformities are the #1 cause of ISO 9001 audit failures.
+
+Don't have credentials yet?
+
+E-commerce Fulfillment
+
+Educational Campuses
+
+Ensure student safety with automated monitoring of restricted areas, crowd management during events, and emergency distress detection.
+
+Exponent out of range: 
+
+Facility thefts rising (33% of incidents). UK cargo theft losses reached $149m in 2024.
+
+Focuses on environments where minor Standard Operating Procedure (SOP) deviations have catastrophic consequences.
+
+Focuses on verticals suffering deliberate financial loss due to asset diversion.
+
+From Camera Feed to 
+
+From retail storefronts to national transit infrastructure — KavachAI scales to protect any environment where people gather.
+
+Gases/Boilers. Small valve error = Industrial disaster.
+
+Global cargo theft losses increased by 27% in 2024, predicted to rise 22% in 2025.
+
+Global event partnerships & retail analytics
+
+Google Cloud Vision · Predictive Models
+
+Google Search Your Footage
+
+Google-Like Footage Search
+
+Government & Public Safety
+
+Government Contracts
+
+Ground Floor, Plot No. 21 & 21A, AltF Noida, Sector 142, Nepz Post Office
+
+Ground handling errors. Engine safety breaches cause mass disruption.
+
+Healthcare Facilities
+
+Heatmaps and risk zones are generated based on real-time movement patterns. Threshold-based alerts predict potential stampede risks before escalation.
+
+High Value + High Risk
+
+High value/low volume. Single smash-and-grabs cause ₹20L to crores in loss under 2 mins.
+
+High-stake heists bypassing passive CCTV. Copper theft specifically rising rapidly.
+
+Identifies aggression, distress, and suspicious intent — not just faces — enabling proactive threat prevention.
+
+In Indian environments like railway stations, markets, and campuses —
+
+India alone has over 20 million CCTV cameras — and the number is growing rapidly. Yet most incidents are only reviewed after the fact. The infrastructure exists, but the intelligence doesn't.
+
+Instant notifications when suspicious activity or emergencies are detected. Silent alerts for rapid, discreet response.
+
+Integrates seamlessly with existing CCTV infrastructure. No hardware replacement needed — works from small facilities to large public spaces.
+
+Intelligent Sentinel
+
+Intelligent Surveillance
+
+Internal inventory manipulation and fraudulent pickups.
+
+Internal shrinkage and last-mile delivery diversion.
+
+Invalid username or password.
+
+Join the next generation of public safety infrastructure. See KavachAI in action with a live platform demonstration.
+
+KavachAI Vision Systems Private Limited
+
+KavachAI layers real-time AI intelligence over your existing camera infrastructure — enabling predictive crowd management, behavioral analysis, and instant threat response without replacing a single piece of hardware.
+
+KavachAI transforms passive CCTV infrastructure into a proactive security intelligence layer — detecting aggression, distress, and crowd anomalies in real time before incidents escalate.
+
+KavachAI transforms passive CCTV into proactive security intelligence with real-time threat detection, behavior analysis, and crowd management.
+
+Leading all stolen commodity categories globally in cargo theft.
+
+M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z
+
+M10.3 21a1.94 1.94 0 0 0 3.4 0
+
+M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49
+
+M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20
+
+M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z
+
+M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z
+
+M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2
+
+M14 2v4a2 2 0 0 0 2 2h4
+
+M14.084 14.158a3 3 0 0 1-4.242-4.242
+
+M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z
+
+M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4
+
+M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4
+
+M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z
+
+M16 10a4 4 0 0 1-8 0
+
+M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2
+
+M16 3.13a4 4 0 0 1 0 7.75
+
+M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143
+
+M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z
+
+M17.599 6.5a3 3 0 0 0 .399-1.375
+
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z
+
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z
+
+M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2
+
+M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z
+
+M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14
+
+M19.938 10.5a4 4 0 0 1 .585.396
+
+M19.967 17.484A4 4 0 0 1 18 18
+
+M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0
+
+M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0
+
+M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z
+
+M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z
+
+M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z
+
+M22 21v-2a4 4 0 0 0-3-3.87
+
+M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7
+
+M3 3v16a2 2 0 0 0 2 2h16
+
+M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27
+
+M3.34 19a10 10 0 1 1 17.32 0
+
+M3.477 10.896a4 4 0 0 1 .585-.396
+
+M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8
+
+M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z
+
+M4.5 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.5
+
+M4.5 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-.5
+
+M6 12.5V16a6 3 0 0 0 12 0v-3.5
+
+M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2
+
+M6 18a4 4 0 0 1-1.967-.516
+
+M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z
+
+M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z
+
+M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9
+
+M6.003 5.125A3 3 0 0 0 6.401 6.5
+
+M7 11V7a5 5 0 0 1 10 0v4
+
+M8 3.1V7a4 4 0 0 0 8 0V3.1
+
+M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4
+
+M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z
+
+M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z
+
+Made in India · Built for critical environments
+
+Monitor foot traffic, detect shoplifting behavior, optimize store layouts with real-time density analytics and customer flow patterns.
+
+Monitoring hundreds of feeds requires massive manpower. Human operators miss 95% of critical events due to fatigue and distraction.
+
+Monthly/annual plans for event organizers & venues
+
+Multiple revenue streams across B2B, B2G, and API licensing — built for sustainable growth and large-scale government partnerships.
+
+NRF National Retail Security Survey (2023); BRC Retail Crime Survey; BSIA and TAPA EMEA cargo loss reporting; industry cargo theft loss estimates (2024). Regional figures are the latest published at time of writing and are restated as comparative indices, not as absolute market sizes.
+
+New UK regulations (DUAA/MHCTR) enforce strict compliance; deviations risk trial integrity.
+
+No Predictive Capability
+
+No window.location.(origin|href) available to create URL for href: 
+
+Noida, Gautam Buddha Nagar
+
+Noida, Gautam Buddha Nagar – 201305
+
+Non-compliance incidents cost ~$4.61M per event. OSHA/HIPAA fines exceed $1.5M.
+
+Not ready to book? Reach us anytime at
+
+Oops! Page not found
+
+OpenCV · MediaPipe · TensorFlow
+
+Organised smash-and-grab operations in premium districts.
+
+Passive Surveillance
+
+Patient safety monitoring, restricted area access control, and real-time alert systems for emergency situations in hospitals and clinics.
+
+Patient wandering/falls. Heavy legal liability and safeguarding reviews.
+
+Persons and events can be searched & tracked through their features, descriptions, or photos — like Googling your video database.
+
+Physical access violations lead to corporate espionage or network injection.
+
+Platform Capabilities
+
+Plug-and-Play Deployment
+
+Predictive analytics reports and crowd management intelligence
+
+Predictive crowd management for railway stations, metro systems, and bus terminals — preventing stampedes and optimizing passenger flow.
+
+Predictive risk zones
+
+Preventive surveillance intelligence — turning passive CCTV into a real-time layer that acts before an incident becomes a loss.
+
+Priority Zone: High Loss + High Danger
+
+Public Transportation Hubs
+
+Public safety agencies, metros, malls — annual fixed-fee agreements
+
+ROI Potential: 10/10
+
+ROI Potential: 9.5/10
+
+Ready to Make Surveillance
+
+Real-Time Monitoring
+
+Real-Time Smart Alerts
+
+Real-time heatmap generation based on movement patterns. Identify congestion hotspots and predict stampede risks.
+
+Recognizes fear, panic, or distress on faces to identify potential danger before it escalates to violence.
+
+Regional Vertical Analysis
+
+Research & Intelligence
+
+Retail & Convenience Stores
+
+Retail industry projected to lose $55 billion globally to theft by 2028.
+
+Risk Assessment & Prediction
+
+SOP breach in Narcotics or documentation. Fines for safety/compliance breaches are severe.
+
+SOP compliance gaps cost millions. Minor errors turn into major SOP deviation tracking issues.
+
+Scalable Cloud Architecture
+
+Seal tampering. Fraud in manifest tracking opening massive liability.
+
+Search your entire footage database using keywords, descriptions, or a photo of the subject. Deep-track events instantly.
+
+Security & Surveillance Firms
+
+Security teams review footage after incidents occur. By then, the damage is done. Response times can stretch to hours or days.
+
+Select a Zone to Analyze
+
+Self-checkout fraud using barcode switching and cart push-outs.
+
+Sell AI integration capabilities to security & surveillance firms
+
+Semantic video search
+
+Shrinkage costs nearly doubled recently. Sweethearting and organised networks are primary vectors.
+
+Significant losses in transit. India ranks among top countries for recorded cargo theft incidents globally.
+
+Six core capabilities working together to deliver predictive, proactive security intelligence.
+
+Smart Cities & Transport Hubs
+
+Smart city integration & infrastructure layer
+
+Smartphones/Laptops targeted during fulfillment and in premium retail outlets.
+
+Steel and machinery theft during night shifts.
+
+Strategic Risk & Theft Analysis
+
+Strategic Risk & Theft Analysis — KavachAI Research
+
+Strategic analyses and market intelligence from KavachAI on where preventive surveillance creates the most value — across retail, logistics, healthcare and critical infrastructure.
+
+Strategic analyses, market intelligence, and data-driven insights that inform how we build preventive surveillance for the industries that need it most.
+
+Supply Chain Logistics
+
+Surveillance Today Is
+
+Tailgating. GDPR and DPA violation penalties can reach millions of pounds.
+
+Temp control/SOP. One batch error = £Millions lost and regulatory shutdown.
+
+The Framework: Two Circles of Risk
+
+The Priority Intersection:
+
+To identify KavachAI's high-priority markets, we analyze two distinct risk types. The 
+
+Track a subject's complete journey across multiple cameras with timestamped waypoints and movement logs.
+
+Traditional systems have zero ability to detect behavioral patterns, emotional distress signals, or crowd anomalies before escalation.
+
+Transforming surveillance from reactive forensic review to
+
+Turn Every Camera Into an
+
+Unexpected Application Error!
+
+Uttar Pradesh, India
+
+Vault door SOPs. Unlocked for 2 mins = Extreme robbery risk.
+
+Verticals with high-volume or high-value deliberate asset diversion.
+
+Want this mapped against your own sites?
+
+We run the same analysis on your footprint before any deployment.
+
+Where a minor SOP deviation leads to massive penalties or catastrophe.
+
+Where high-value theft overlaps with high-consequence operational abnormality: a vertical-by-vertical risk analysis across India, UK/EU and global markets, and what it means for preventive surveillance.
+
+Zero tolerance for deviation. Global disaster risk.
+
+[object ArrayBuffer]
+
+[object Float32Array]
+
+[object Float64Array]
+
+[object GeneratorFunction]
+
+[object Uint16Array]
+
+[object Uint32Array]
+
+[object Uint8ClampedArray]
+
+])!==void 0)if(r==Math.LN10)this[n]=new this(r);else throw Error(Yo+n+
+
+]),eO=e=>e===cl||e===Q,KU=new Set([
+
+]);if(!t)throw new Error(
+
+],dl=new Set([...fl,
+
+].  Please separate it out to the 
+
+]:[o];let a=i_(r.join(
+
+];new Set(s_);const PB=[
+
+` field. Alternatively you may provide the full path as 
+
+abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel
+
+abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting
+
+absolute inset-0 bg-background/85
+
+absolute inset-0 grid-bg opacity-20
+
+absolute inset-0 grid-bg opacity-30
+
+absolute inset-0 overflow-hidden pointer-events-none
+
+absolute inset-0 radial-fade
+
+absolute inset-0 radial-fade opacity-40
+
+absolute inset-0 radial-fade opacity-50
+
+absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent
+
+absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent animate-scan-line
+
+aspect-[16/9] overflow-hidden border-b border-border/40
+
+automated monitoring
+
+bg-destructive text-destructive-foreground hover:bg-destructive/90
+
+bg-gradient-to-br from-primary/10 to-destructive/10 hover:from-primary/20 hover:to-destructive/20
+
+bg-gradient-to-br from-primary/30 to-destructive/30 shadow-[0_0_30px_rgba(139,92,246,0.2)]
+
+bg-primary text-primary-foreground hover:bg-primary/90
+
+bg-primary text-primary-foreground hover:bg-primary/90 glow-sm font-semibold
+
+bg-primary text-primary-foreground hover:bg-primary/90 glow-sm font-semibold px-8
+
+bg-secondary text-secondary-foreground hover:bg-secondary/80
+
+border border-border/50 bg-card/30 text-muted-foreground hover:text-foreground hover:border-primary/30
+
+border border-input bg-background hover:bg-accent hover:text-accent-foreground
+
+border-border hover:bg-secondary text-foreground
+
+border-destructive bg-destructive/15 opacity-100 shadow-[0_0_30px_rgba(244,63,94,0.15)]
+
+border-destructive/40 bg-destructive/5 opacity-60 hover:opacity-90
+
+border-primary bg-primary/15 opacity-100 shadow-[0_0_30px_rgba(0,212,255,0.15)]
+
+border-primary/30 text-primary hover:bg-primary/10
+
+border-primary/40 bg-primary/5 opacity-60 hover:opacity-90
+
+border-t border-border/30 pt-10 mt-4
+
+cancel close invalid load scroll toggle
+
+change click focusin focusout input keydown keyup selectionchange
+
+compositionend focusout keydown keypress keyup mousedown
+
+compositionstart focusout keydown keypress keyup mousedown
+
+compositionupdate focusout keydown keypress keyup mousedown
+
+container mx-auto flex items-center justify-between py-4 px-6
+
+container mx-auto px-6
+
+container mx-auto px-6 py-16
+
+container mx-auto px-6 relative z-10
+
+container mx-auto px-6 relative z-10 pt-24
+
+coverage scalability
+
+destructive group border-destructive bg-destructive text-destructive-foreground
+
+faster response time
+
+flex flex-1 flex-col p-6
+
+flex flex-col gap-1.5 text-xs text-muted-foreground lg:items-end
+
+flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between
+
+flex flex-col items-center flex-shrink-0
+
+flex flex-col justify-center p-8 lg:p-12
+
+flex flex-col lg:flex-row gap-8 items-center p-8 rounded-2xl border border-border/40 bg-card/30
+
+flex flex-col md:flex-row justify-between items-center mb-8 mt-8 border-b border-border/40 pb-4
+
+flex flex-col space-y-1.5 text-center sm:text-left
+
+flex flex-shrink-0 flex-wrap items-center gap-3
+
+flex flex-wrap gap-2
+
+flex flex-wrap gap-4
+
+flex flex-wrap justify-center gap-4
+
+flex flex-wrap justify-center gap-6
+
+flex gap-2 mt-4 md:mt-0
+
+flex gap-6 items-start p-6 rounded-xl border border-border/40 bg-card/30 hover:border-primary/20 transition-all duration-300 group
+
+flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors duration-200 bg-transparent border-none cursor-pointer
+
+flex items-center gap-2 group
+
+flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-secondary/50
+
+flex items-center gap-2 text-sm text-muted-foreground
+
+flex items-center gap-3
+
+flex items-center gap-3 mb-2
+
+flex items-center gap-3 mb-3
+
+flex items-start gap-3 rounded-xl border border-border/40 bg-secondary/20 p-5
+
+flex items-start gap-3 text-sm text-muted-foreground
+
+flex items-start justify-between mb-4
+
+flex items-start justify-between mb-5
+
+flex justify-between items-center mb-1
+
+flex justify-center py-1
+
+flex min-h-screen items-center justify-center bg-muted
+
+focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange
+
+font-display font-bold text-destructive text-[10px] sm:text-base tracking-wide
+
+font-display font-bold text-foreground text-[9px] sm:text-[10px] uppercase tracking-wider leading-tight
+
+font-display font-bold text-lg mb-2 group-hover:text-destructive transition-colors
+
+font-display font-bold text-lg mb-2 group-hover:text-foreground transition-colors
+
+font-display font-bold text-lg mb-2 group-hover:text-primary transition-colors
+
+font-display font-bold text-primary text-[10px] sm:text-base tracking-wide
+
+font-display font-semibold text-foreground
+
+font-display font-semibold text-lg mb-2 text-foreground
+
+font-display font-semibold text-lg mb-3 text-foreground
+
+font-display font-semibold text-lg text-center mb-8 text-foreground
+
+font-display font-semibold text-lg text-foreground mb-2
+
+font-display font-semibold text-sm text-foreground
+
+font-display font-semibold text-xl mb-3 text-foreground
+
+font-display text-2xl font-bold text-primary
+
+font-display text-2xl font-bold tracking-tight text-foreground
+
+font-display text-2xl font-semibold text-foreground transition-colors duration-200 group-hover:text-primary sm:text-3xl
+
+font-display text-lg font-semibold text-foreground
+
+font-mono tracking-tight
+
+font-semibold text-foreground
+
+grid gap-12 lg:grid-cols-12 lg:gap-8
+
+grid grid-cols-1 lg:grid-cols-2 gap-8 py-4 pt-8
+
+grid grid-cols-1 lg:grid-cols-3 gap-6
+
+grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border/30 rounded-2xl overflow-hidden border border-border/40
+
+grid sm:grid-cols-2 gap-6
+
+grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16
+
+grid sm:grid-cols-2 lg:grid-cols-3 gap-6
+
+group bg-background p-8 hover:bg-card/60 transition-all duration-300 relative
+
+group flex h-full flex-col overflow-hidden rounded-2xl border border-border/40 bg-card/30 transition-all duration-300 hover:border-primary/30 hover:bg-card/50
+
+group grid overflow-hidden rounded-2xl border border-border/40 bg-card/30 transition-all duration-300 hover:border-primary/30 hover:bg-card/50 lg:grid-cols-2
+
+group inline-flex items-center gap-2
+
+group p-6 rounded-xl border border-border/60 bg-card/40 hover:border-destructive/30 transition-all duration-300
+
+group p-8 rounded-xl border border-border/40 bg-card/30 hover:border-primary/25 transition-all duration-300
+
+group relative p-6 rounded-xl border border-border/50 bg-card/30 hover:border-primary/30 hover:bg-card/60 transition-all duration-300
+
+group-[.toast]:bg-muted group-[.toast]:text-muted-foreground
+
+group-[.toast]:bg-primary group-[.toast]:text-primary-foreground
+
+h-1.5 w-1.5 rounded-full bg-primary
+
+h-10 w-10 text-primary
+
+h-11 rounded-md px-8
+
+h-2 w-2 rounded-full bg-primary animate-pulse-glow
+
+h-4 w-4 text-primary
+
+h-4 w-4 text-primary/30
+
+h-5 w-5 text-destructive
+
+h-5 w-5 text-foreground/80
+
+h-5 w-5 text-primary
+
+h-6 w-6 text-primary
+
+h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110
+
+h-9 w-9 object-contain transition-transform group-hover:scale-110
+
+h-full w-full transition-transform duration-500 group-hover:scale-[1.04]
+
+hidden md:flex items-center gap-2
+
+hidden md:flex items-center gap-8
+
+hover:bg-accent hover:text-accent-foreground
+
+hover:text-primary transition-colors
+
+in P.props?P.props.hide:(A=P.type.defaultProps)===null||A===void 0?void 0:A.hide;return C===b&&!j}),
+
+in U&&(U.H=U.H%12+U.p*12),U.m===void 0&&(U.m=
+
+in U)return new Date(U.Q);if(
+
+in U)return new Date(U.s*1e3+(
+
+in U?(U.w+6)%7+U.W*7-(Ue+5)%7:U.w+U.U*7-(Ue+6)%7);return
+
+in U?(fe=yv(Bl(U.y,0,1)),Ue=fe.getUTCDay(),fe=Ue>4||Ue===0?Lh.ceil(fe):Lh(fe),fe=bm.offset(fe,(U.V-1)*7),U.y=fe.getUTCFullYear(),U.m=fe.getUTCMonth(),U.d=fe.getUTCDate()+(U.w+6)%7):(fe=mv(Bl(U.y,0,1)),Ue=fe.getDay(),fe=Ue>4||Ue===0?Dh.ceil(fe):Dh(fe),fe=Jc.offset(fe,(U.V-1)*7),U.y=fe.getFullYear(),U.m=fe.getMonth(),U.d=fe.getDate()+(U.w+6)%7)}else(
+
+in U?U.L:0));if(te&&!(
+
+in U?yv(Bl(U.y,0,1)).getUTCDay():mv(Bl(U.y,0,1)).getDay(),U.m=0,U.d=
+
+in document&&(tu=document.documentMode);var E4=ri&&
+
+in e&&typeof e.status==
+
+in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),P4=mn(S4),O4=[9,13,27,32],rx=ri&&
+
+in e?-e.wheelDeltaY:
+
+in e?e.movementX:(e!==jl&&(jl&&e.type===
+
+in e}const xd=new WeakMap;let Ai;const I$=(e,t,n)=>(r,i)=>i&&i[0]?i[0][e+
+
+in n,o=f?vse(NA(n.maxWait)||0,t):o,d=
+
+in n?!!n.leading:r,i=
+
+in not contained inside
+
+in p&&(b||S)&&(r.current=w),!w)return!0;var C=r.current||w;return EK(C,y,p,C===
+
+in p&&p.touches.length===2||p.type===
+
+in p?p.deltaX:g[0]-v[0],S=
+
+in p?p.deltaY:g[1]-v[1],w,P=p.target,E=Math.abs(b)>Math.abs(S)?
+
+in r?r.getBBox()[t]:r[n],JW=I$(
+
+in t&&t.isReactWarning,n?e.props.ref:e.props.ref||e.ref)}var o6=Vb[
+
+in t&&t.isReactWarning;return n?e.ref:(t=(i=Object.getOwnPropertyDescriptor(e,
+
+in t.dangerouslySetInnerHTML))throw Error(H(61))}if(t.style!=null&&typeof t.style!=
+
+in window&&!tu,Tj=ri&&(!rx||tu&&8<tu&&11>=tu),fS=
+
+in window,tu=null;ri&&
+
+in window||(delete Ia.animationend.animation,delete Ia.animationiteration.animation,delete Ia.animationstart.animation),
+
+in z.props?z.props.hide:(Z=z.type.defaultProps)===null||Z===void 0?void 0:Z.hide;return le===C&&(A||!xe)}),b,o,c);$&&(_=$)}h&&(g===
+
+in z.props?z.props.hide:z.type.defaultProps.hide;return K===C&&(A||!Z)}),g,c,!0);if(g===
+
+inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8
+
+inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary
+
+inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6
+
+inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+
+inline-flex items-center justify-center p-3 rounded-xl bg-primary/10 border border-primary/20 w-fit mb-2 mx-auto sm:mx-0
+
+inline-flex items-center justify-center p-4 rounded-2xl bg-primary/10 border border-primary/20 mb-8 glow-md
+
+list-disc pl-5 space-y-1 text-muted-foreground text-sm
+
+m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z
+
+m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7
+
+m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3
+
+m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65
+
+m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65
+
+m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7
+
+max-w-3xl mx-auto space-y-1
+
+max-w-3xl mx-auto text-center
+
+mb-1 block text-xs font-medium uppercase tracking-wider text-foreground/70
+
+mb-10 text-muted-foreground max-w-2xl
+
+mb-4 text-4xl font-bold
+
+mb-4 text-xl text-muted-foreground
+
+mb-5 flex items-center gap-3
+
+mb-5 inline-flex rounded-xl border border-border/50 bg-secondary/60 p-3
+
+mb-5 inline-flex rounded-xl border border-destructive/15 bg-destructive/10 p-3
+
+mb-5 inline-flex rounded-xl border border-primary/15 bg-primary/10 p-3 transition-shadow duration-300 group-hover:glow-sm
+
+mb-8 text-muted-foreground max-w-3xl
+
+md:hidden glass border-t border-border/50 px-6 py-4 space-y-3
+
+md:hidden text-foreground
+
+min-h-screen bg-background
+
+min-h-screen bg-background flex flex-col
+
+mt-0.5 h-4 w-4 flex-shrink-0 text-primary/70
+
+mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground
+
+mt-1.5 text-sm text-muted-foreground
+
+mt-10 flex flex-col items-start gap-6 rounded-2xl border border-border/40 bg-card/30 p-8 sm:flex-row sm:items-center sm:justify-between
+
+mt-12 p-6 rounded-xl border border-border/40 bg-card/30 text-center
+
+mt-14 border-t border-border/30 pt-8
+
+mt-3 font-display text-lg font-semibold text-foreground transition-colors duration-200 group-hover:text-primary
+
+mt-3 line-clamp-4 text-sm leading-relaxed text-muted-foreground
+
+mt-3 max-w-3xl text-xs leading-relaxed text-muted-foreground
+
+mt-4 pt-4 border-t border-border/30
+
+mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base
+
+mt-5 flex flex-wrap gap-2
+
+mt-5 inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/40 px-3 py-1.5 text-[11px] text-muted-foreground
+
+mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground
+
+mt-6 flex flex-wrap gap-2
+
+mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted-foreground
+
+mt-6 flex items-center gap-2 pt-2 text-sm font-medium text-primary
+
+mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3
+
+mt-6 text-sm text-muted-foreground
+
+mt-8 flex items-center gap-2 text-sm font-medium text-primary
+
+mt-8 grid sm:grid-cols-3 gap-4
+
+not-italic leading-relaxed
+
+p-2 rounded-lg bg-primary/10 border border-primary/20
+
+p-3 rounded-lg bg-destructive/10 border border-destructive/20 w-fit mb-4
+
+p-3 rounded-lg bg-primary/10 border border-primary/15
+
+p-3 rounded-lg bg-primary/10 border border-primary/15 w-fit mb-4 group-hover:glow-sm transition-shadow duration-300
+
+p-4 rounded-xl border border-border/40 bg-card/20 hover:border-destructive/25 transition-colors
+
+p-4 rounded-xl border border-border/40 bg-card/20 hover:border-primary/25 transition-colors
+
+p-5 rounded-xl border border-border/30 bg-card/20 text-center
+
+p-6 rounded-2xl border border-border/40 bg-card/30
+
+p-6 rounded-2xl border border-border/40 bg-gradient-to-br from-card/50 to-secondary/30 hover:border-muted-foreground/30 transition-colors group
+
+p-6 rounded-2xl border border-destructive/20 bg-gradient-to-br from-card/50 to-destructive/5 hover:border-destructive/30 transition-colors group
+
+p-6 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/50 to-primary/5 hover:border-primary/30 transition-colors group
+
+p-6 rounded-xl bg-secondary/30 border border-border/40 min-h-[160px]
+
+p-6 rounded-xl border border-border/40 bg-card/30 hover:border-primary/20 transition-all
+
+p-8 rounded-2xl border border-border/40 bg-card/20
+
+preventive real-time intelligence
+
+py-16 border-t border-border/40 mt-12
+
+py-24 sm:py-32 relative
+
+relative aspect-[16/9] overflow-hidden border-b border-border/40 lg:aspect-auto lg:border-b-0 lg:border-r
+
+relative border-t border-border/30 bg-background
+
+relative min-h-screen flex items-center overflow-hidden
+
+relative pt-32 pb-16 overflow-hidden
+
+relative w-full max-w-md aspect-[100/62] flex-shrink-0
+
+rgba(200,200,200, 0.5)
+
+rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 font-medium uppercase tracking-wider text-primary
+
+rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-primary
+
+sm:max-w-md border-border bg-card
+
+space-y-2 text-xs leading-relaxed text-muted-foreground
+
+text-2xl font-semibold
+
+text-2xl font-semibold mb-2
+
+text-2xl font-semibold mb-4
+
+text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4
+
+text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6
+
+text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-6
+
+text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6
+
+text-[10px] uppercase tracking-wider px-2 py-1 rounded-md bg-secondary border border-border/50 text-muted-foreground
+
+text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-border/50 bg-secondary/50 text-muted-foreground
+
+text-[10px] uppercase tracking-wider text-muted-foreground
+
+text-[10px] uppercase tracking-widest text-primary/60 font-medium mt-1
+
+text-center max-w-3xl mx-auto mb-16
+
+text-center text-sm text-muted-foreground space-y-1
+
+text-foreground font-medium
+
+text-lg font-bold mb-1 flex items-center gap-2
+
+text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed
+
+text-lg text-muted-foreground leading-relaxed
+
+text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto
+
+text-lg text-muted-foreground max-w-3xl leading-relaxed
+
+text-muted-foreground hover:text-primary
+
+text-muted-foreground text-sm
+
+text-primary underline hover:text-primary/90
+
+text-primary underline-offset-4 hover:underline
+
+text-sm font-medium text-foreground/80
+
+text-sm text-destructive
+
+text-sm text-muted-foreground
+
+text-sm text-muted-foreground hover:text-primary transition-colors duration-200
+
+text-sm text-muted-foreground leading-relaxed
+
+text-sm text-muted-foreground leading-relaxed mb-3
+
+text-sm text-muted-foreground mb-3 leading-relaxed
+
+text-sm text-muted-foreground mb-6
+
+text-xl font-bold text-foreground mb-3
+
+text-xs font-bold uppercase tracking-wider text-destructive
+
+text-xs font-bold uppercase tracking-wider text-muted-foreground
+
+text-xs font-bold uppercase tracking-wider text-primary
+
+text-xs font-medium text-primary tracking-wide uppercase
+
+text-xs font-mono bg-destructive/10 text-destructive px-2 py-1 rounded
+
+text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded
+
+text-xs font-mono text-primary/60 tracking-wider
+
+text-xs font-mono text-primary/70 tracking-wider
+
+text-xs font-semibold tracking-widest uppercase text-destructive mb-4 block
+
+text-xs font-semibold tracking-widest uppercase text-primary mb-4 block
+
+text-xs font-semibold uppercase tracking-[0.12em] text-foreground/70
+
+text-xs font-semibold uppercase tracking-widest text-primary mb-2 block
+
+text-xs text-muted-foreground
+
+text-xs text-muted-foreground italic
+
+translateY(50%) rotate(-90deg) translateX(50%)
+
+translateY(50%) rotate(90deg) translateX(-50%)
+
+w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:glow-sm transition-shadow
+
+w-full border-primary/30 text-primary hover:bg-primary/10 mt-2
+
+w-full h-full object-cover
+
+w-full text-muted-foreground hover:text-primary mt-2
+
+||!Reflect.construct||Reflect.construct.sham)return!1;if(typeof Proxy==
+
+||(f=y.pathname)!=null&&f.startsWith(l)||rt(!1),c=y}else c=u;let d=c.pathname||
+
+||(s!==f||d!==l)&&RS(t,a,r,l),ji=!1,d=t.memoizedState,a.state=d,Vd(t,r,a,i);var m=t.memoizedState;s!==f||d!==m||Qt.current||ji?(typeof h==
+
+||(s!==r||l!==u)&&RS(t,a,r,u),ji=!1;var d=t.memoizedState;a.state=d,Vd(t,r,a,i),l=t.memoizedState,s!==r||d!==l||Qt.current||ji?(typeof c==
+
+||(t=i.state,typeof i.componentWillMount==
+
+||(typeof a.componentWillMount==
+
+||(typeof a.componentWillUpdate==
+
+||(u==null?void 0:u.display)===
+
+||Array.isArray(e)||typeof e==
+
+||Array.isArray(e)}const S1=[
+
+||TX(e))return e;var t=e+
+
+||WG(e)&&UG(e)==HG}var hl=KG,GG=tn,qG=hl,YG=/\.|\[(?:[^[\]]*|([
+
+||b!==null&&typeof b.componentDidCatch==
+
+||e.button<=0:e.isPrimary!==!1,GW=new Set([
+
+||e===em||e===nm||e===tm||e===am||e===sm||e===WX||typeof e==
+
+||e===null||typeof t!=
+
+||he(K)?z:[].concat(tl(z),[K])},[]);else if(g===
+
+||s===e.memoizedProps&&d===e.memoizedState||(t.flags|=1024),t.memoizedProps=r,t.memoizedState=m),a.props=r,a.state=m,a.context=l,r=u):(typeof a.componentDidUpdate!=
+
+||s===e.memoizedProps&&d===e.memoizedState||(t.flags|=4),typeof a.getSnapshotBeforeUpdate!=
+
+||t!=null&&typeof t!=
+
+||t.value!==void 0&&t.value!==null))return;t=
+
+||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!=
+
+||typeof a.getSnapshotBeforeUpdate==
+
+||typeof f.latestValues.y==
+
+||typeof i.UNSAFE_componentWillMount!=
+
+||typeof i.getSnapshotBeforeUpdate==
+
+||typeof r.componentDidCatch==
+
+||typeof t.children==
+
+||typeof t.dangerouslySetInnerHTML==
+
+||typeof window.document.createElement>
+
+||typeof window.document>
+
+||zM(e):!0}const RW=new Set([
+
+}),()=>r.unobserve(e)}else n(void 0)},[e]),t}var yM=
+
+}),D=_.findIndex(N=>N===A);Py(_.slice(D+1))?g.preventDefault():C?(P=u.current)==null||P.focus():(E=c.current)==null||E.focus()}};return y.addEventListener(
+
+}):d.y.rangeMax};return kr(o,
+
+});Py(y)}})]})});O_.displayName=P_;var E_=
+
+});const[e,...t]=xG;return x.jsxs(
+
+});return T.createElement(
+
+})});return T.createElement(
+
+})},onContinue:n,retry:this.options.retry??0,retryDelay:this.options.retryDelay,networkMode:this.options.networkMode,canRun:()=>V(this,$t).canRun(this)}));const r=this.state.status===
+
+})}return T.createElement(
+
+},ee(t,!1));return T.createElement(
+
+},this.getDefaultPosition(l)),l);return T.createElement(
+
+};if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<
+
+};return T.createElement(
+
+}[c],d=(((v=i.arrow)==null?void 0:v.x)??0)+s/2,h=(((g=i.arrow)==null?void 0:g.y)??0)+l/2;let m=
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const $6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const AP=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const B6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const D6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const EP=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const F6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const G6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const G_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const H6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const H_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const I6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const J6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const K6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const K_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const L6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const N6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Q6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const R6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const TP=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const U6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const U_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Ux=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const V6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const V_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Vx=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const W6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const W_=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Wx=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const X6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Y6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Z6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const az=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const cz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const ez=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const iz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const lz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const nz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const oz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const q6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const rz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const sz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const tz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const uz=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const z6=re(
+
+}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const zu=re(
+
+}let l=yB(i,s),u=a&&a!==
+
+}return!0}).map(M=>[M.placement,M.overflows.filter($=>$>0).reduce(($,B)=>$+B,0)]).sort((M,$)=>M[1]-$[1])[0])==null?void 0:D[0];L&&(I=L);break}case
+
+}var vi=VG,UG=yi,WG=vi,HG=
+
+}})})})});SM.displayName=Jx;var PM=
+
+£1.8bn losses. 5.8m incidents in convenience sector alone, up from previous years.
+
