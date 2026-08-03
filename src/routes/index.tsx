@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin } from "lucide-react";
+import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail } from "lucide-react";
 import heroImg from "@/assets/hero-image.jpg";
 import cambridgeImg from "@/assets/cambridge.jpg";
 import schoolLeadersImg from "@/assets/partner.png";
@@ -383,6 +383,22 @@ function Voices() {
       img: schoolLeadersImg,
       featured: false,
     },
+    {
+      q: "The programme gave me Sharper thinking, real confidence, a global network.",
+      a: "Priya Shah",
+      r: "School Leader",
+      tag: "Leadership",
+      img: schoolLeadersImg,
+      featured: false,
+    },
+    {
+      q: "The sessions were practical, energising, and deeply relevant to the real challenges we face in education.",
+      a: "Daniel Ross",
+      r: "Teacher",
+      tag: "Teacher Training",
+      img: teachersImg,
+      featured: false,
+    },
   ];
 
   const [featured, ...rest] = testimonials;
@@ -465,40 +481,33 @@ function Voices() {
             </div>
           </div>
 
-          {/* Two stacked cards on right */}
-          <div className="flex flex-col gap-6">
+          {/* Four compact cards on right */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {rest.map((t, i) => (
               <div
                 key={i}
-                className="group flex-1 flex flex-col bg-white rounded-3xl p-8 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                className="group flex flex-col bg-white rounded-2xl p-5 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 min-h-[220px]"
               >
-                {/* Top row */}
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, si) => (
-                      <span key={si} className="text-gold text-[15px]">★</span>
+                      <span key={si} className="text-gold text-[13px]">★</span>
                     ))}
                   </div>
-                  <span className="bg-forest-deep text-white text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
+                  <span className="bg-forest-deep text-white text-[11px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full">
                     {t.tag}
                   </span>
                 </div>
 
-                {/* Big gold quote */}
-                <span className="text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
+                <span className="text-[3rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
 
-                {/* Quote text */}
-                <p className="text-[15px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
+                <p
+                  className="text-[14px] text-forest-deep/85 leading-[1.7] -mt-4 mb-4 flex-1"
+                  style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                >
                   {t.q}
                 </p>
 
-                {/* Divider with hover gold accent */}
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
-                  <div className="w-1 h-1 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
-                </div>
-
-                {/* Author */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                     {t.img ? (
@@ -508,8 +517,8 @@ function Voices() {
                     )}
                   </div>
                   <div>
-                    <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[15px] text-forest/70 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <p className="text-[13px] font-bold text-forest-deep">{t.a}</p>
+                    <p className="text-[12px] text-forest/70 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
                   </div>
                 </div>
               </div>
@@ -594,14 +603,33 @@ export function Footer() {
           </div>
           <div className="lg:col-span-2">
             <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/80 mb-4">Connect</p>
-            <a href="mailto:hello@globaledulab.com" className="text-[15px] text-forest/80 hover:text-forest transition-colors">
-              hello@globaledulab.com
-            </a>
+            <div className="space-y-3 text-[15px] text-forest/80">
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-forest" />
+                <a href="mailto:info@globaledulab.com" className="hover:text-forest transition-colors">
+                  info@globaledulab.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe2 className="h-4 w-4 text-forest" />
+                <a href="https://www.globaledulab.com" target="_blank" rel="noreferrer" className="hover:text-forest transition-colors">
+                  www.globaledulab.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[15px] text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/privacy-policy" className="hover:text-forest transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-forest transition-colors">
+              Terms of Service
+            </Link>
+          </div>
           <p className="text-[13px] text-forest/50">
-            © {new Date().getFullYear()} Global Education Lab Ltd. All rights reserved.
+            © Global Education Lab Ltd. All rights reserved.
           </p>
         </div>
       </div>

@@ -64,7 +64,7 @@ function Hero() {
               href="#cohorts"
               className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
-              Explore 2026 Cohorts <ArrowUpRight className="h-4 w-4" />
+              Explore Cohorts <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#delegations"
@@ -288,7 +288,7 @@ function ProgrammesCohorts() {
     <section id="cohorts" className="border-b border-border/60 bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">2026 COHORTS</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">COHORTS</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             Four programmes. One passport.
           </h2>
@@ -526,7 +526,7 @@ function FinalCTA() {
       <div className="mx-auto max-w-3xl px-6">
         <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
-          Reserve your delegation for the 2026 season.
+          Reserve your delegation for the next season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
           Cohorts are capped and fill six to nine months in advance. Register your school today and our admissions team will be in touch within two working days.
@@ -537,7 +537,7 @@ function FinalCTA() {
             to="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
-            ENQUIRE FOR 2026 <ArrowUpRight className="h-4 w-4" />
+            ENQUIRE NOW <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href="#cohorts"

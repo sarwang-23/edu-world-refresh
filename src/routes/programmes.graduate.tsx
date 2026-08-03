@@ -48,24 +48,24 @@ function GraduateProgramme() {
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-36 md:pt-4 md:pb-44">
+    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-28 md:pt-6 md:pb-36">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto max-w-[1280px] px-6 relative z-10 pt-6">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14 xl:gap-18">
 
           {/* Text column */}
-          <div>
+          <div className="max-w-[590px]">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Graduate Summer Programme</span>
             </div>
 
-            <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
+            <h1 className="text-[3rem] md:text-[4.25rem] lg:text-[4.6rem] font-bold text-forest-deep leading-[0.98] tracking-tight">
               Experience Cambridge.<br />
               Expand your thinking.<br />
               <span className="font-serif italic text-gold">Shape what comes next.</span>
@@ -74,15 +74,15 @@ function Hero() {
             <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
               An immersive academic and professional experience for ambitious graduates.
             </p>
-            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
+            <p className="mt-4 max-w-[560px] text-[15px] text-forest/80 leading-[1.75]">
               Learn from leading minds, explore world-class institutions, build global connections and turn ideas into real-world impact.
             </p>
 
             {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
-                { icon: <Calendar className="h-4 w-4" />, label: '12–25 July 2026' },
+                { icon: <Calendar className="h-4 w-4" />, label: 'Immersive Summer Programme' },
                 { icon: <Zap className="h-4 w-4" />, label: '2-Week Immersive' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -92,7 +92,7 @@ function Hero() {
               ))}
             </div>
 
-            <div className="mt-8 flex gap-4 flex-wrap">
+            <div className="mt-8 flex flex-wrap gap-4">
               <a href="#tracks" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -104,16 +104,16 @@ function Hero() {
           </div>
 
           {/* Image column */}
-          <div className="relative">
-            <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
+          <div className="relative mx-auto w-full max-w-[620px] lg:mx-0">
+            <div className="rounded-[2.25rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
               <img src={newHeroImg} alt="Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
-                  <p className="text-white text-[15px] font-bold">12–25 July 2026</p>
+                  <p className="text-white text-[15px] font-bold">Immersive Summer Programme</p>
                 </div>
-                <div className="flex -space-x-2">
+                <div className="flex -space-x-2 shrink-0">
                   {[1,2,3].map(i => (
                     <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
                       <User className="h-4 w-4 text-white" />
@@ -125,7 +125,7 @@ function Hero() {
             </div>
 
             {/* Floating card */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
+            <div className="absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
               <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
                 <GraduationCap className="h-5 w-5 text-gold" />
               </div>
@@ -135,13 +135,15 @@ function Hero() {
               </div>
             </div>
 
-            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Globe2 className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-white uppercase tracking-wider">3 Tracks</p>
-                <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship, Research & Architecture</p>
+            <div className="absolute -top-5 -right-5 max-w-[280px] rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                  <Globe2 className="h-5 w-5 text-gold" />
+                </div>
+                <div>
+                  <p className="text-[15px] font-bold text-white uppercase tracking-wider">3 Tracks</p>
+                  <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship, Research & Architecture</p>
+                </div>
               </div>
             </div>
 

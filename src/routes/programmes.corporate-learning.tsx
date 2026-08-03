@@ -84,8 +84,8 @@ function Hero() {
                 <Building2 className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Delivered Since</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">2022</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Delivered Across</p>
+                <p className="text-[15px] text-forest/80 mt-0.5">Global Programmes</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
@@ -106,7 +106,7 @@ function Hero() {
 
 function StatsStrip() {
   const stats = [
-    { val: '2022', label: 'Delivering Since', sub: 'Trusted & established' },
+    { val: 'Global', label: 'Delivering Since', sub: 'Trusted & established' },
     { val: '50+', label: 'Teams Trained', sub: 'Boards & senior leadership' },
     { val: 'Bespoke', label: 'Every Workshop', sub: 'Built around your org' },
     { val: '2 Formats', label: 'Flexible Delivery', sub: 'On-site or at Cambridge' },

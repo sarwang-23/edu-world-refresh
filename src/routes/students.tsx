@@ -82,7 +82,7 @@ function Hero() {
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
                 { icon: <Users className="h-4 w-4" />, label: 'Ages 13–18' },
-                { icon: <Star className="h-4 w-4" />, label: 'Summer 2027' },
+                { icon: <Star className="h-4 w-4" />, label: 'Summer Experience' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
@@ -118,7 +118,7 @@ function Hero() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                  <p className="text-white text-[15px] font-bold">Summer 2027</p>
+                  <p className="text-white text-[15px] font-bold">Summer Experience</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
@@ -168,7 +168,7 @@ function StatsMarquee() {
     { val: '2 Tracks', label: 'Academic Pathways', sub: 'Entrepreneurship & STEM' },
     { val: 'Ages 13–18', label: 'Target Cohort', sub: 'Young leaders & innovators' },
     { val: 'Cambridge', label: 'Base', sub: 'Girton College, Cambridge' },
-    { val: 'Summer', label: 'Next Cohort', sub: '2026' },
+    { val: 'Summer', label: 'Next Cohort', sub: 'Applications Open' },
     { val: '30+', label: 'Expert Sessions', sub: 'Academics & industry leaders' },
     { val: '100%', label: 'Supervised', sub: 'Safe residential environment' },
   ]
@@ -637,7 +637,7 @@ function BottomCTA() {
 
         {/* Bottom trust note */}
         <p className="mt-10 text-[15px] text-cream/80 uppercase tracking-[0.2em]">
-          Cambridge, UK · Summer 2027 · Fully Supervised
+          Cambridge, UK · Summer Experience · Fully Supervised
         </p>
       </div>
     </section>

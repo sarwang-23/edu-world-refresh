@@ -22,11 +22,13 @@ import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as OurImpactRouteImport } from './routes/our-impact'
 import { Route as PartnerWithGelRouteImport } from './routes/partner-with-gel'
 import { Route as PastProgrammesRouteImport } from './routes/past-programmes'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProgrammesRouteImport } from './routes/programmes'
 import { Route as SchoolLeadersRouteImport } from './routes/school-leaders'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship_.accelerator'
 import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
 import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
@@ -113,6 +115,11 @@ const PastProgrammesRoute = PastProgrammesRouteImport.update({
   path: '/past-programmes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesRoute = ProgrammesRouteImport.update({
   id: '/programmes',
   path: '/programmes',
@@ -136,6 +143,11 @@ const TeachersRoute = TeachersRouteImport.update({
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrepreneurshipAcceleratorRoute =
@@ -259,11 +271,13 @@ export interface FileRoutesByFullPath {
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
   '/past-programmes': typeof PastProgrammesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/programmes': typeof ProgrammesRouteWithChildren
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -299,10 +313,12 @@ export interface FileRoutesByTo {
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
   '/past-programmes': typeof PastProgrammesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -339,11 +355,13 @@ export interface FileRoutesById {
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
   '/past-programmes': typeof PastProgrammesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/programmes': typeof ProgrammesRouteWithChildren
   '/school-leaders': typeof SchoolLeadersRoute
   '/students': typeof StudentsRoute
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/entrepreneurship_/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -381,11 +399,13 @@ export interface FileRouteTypes {
     | '/our-impact'
     | '/partner-with-gel'
     | '/past-programmes'
+    | '/privacy-policy'
     | '/programmes'
     | '/school-leaders'
     | '/students'
     | '/teachers'
     | '/team'
+    | '/terms-of-service'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -421,10 +441,12 @@ export interface FileRouteTypes {
     | '/our-impact'
     | '/partner-with-gel'
     | '/past-programmes'
+    | '/privacy-policy'
     | '/school-leaders'
     | '/students'
     | '/teachers'
     | '/team'
+    | '/terms-of-service'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -460,11 +482,13 @@ export interface FileRouteTypes {
     | '/our-impact'
     | '/partner-with-gel'
     | '/past-programmes'
+    | '/privacy-policy'
     | '/programmes'
     | '/school-leaders'
     | '/students'
     | '/teachers'
     | '/team'
+    | '/terms-of-service'
     | '/entrepreneurship_/accelerator'
     | '/entrepreneurship_/demo-day'
     | '/entrepreneurship_/mentorship'
@@ -501,11 +525,13 @@ export interface RootRouteChildren {
   OurImpactRoute: typeof OurImpactRoute
   PartnerWithGelRoute: typeof PartnerWithGelRoute
   PastProgrammesRoute: typeof PastProgrammesRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProgrammesRoute: typeof ProgrammesRouteWithChildren
   SchoolLeadersRoute: typeof SchoolLeadersRoute
   StudentsRoute: typeof StudentsRoute
   TeachersRoute: typeof TeachersRoute
   TeamRoute: typeof TeamRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
   EntrepreneurshipAcceleratorRoute: typeof EntrepreneurshipAcceleratorRoute
   EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
   EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
@@ -609,6 +635,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PastProgrammesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes': {
       id: '/programmes'
       path: '/programmes'
@@ -642,6 +675,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/entrepreneurship_/accelerator': {
@@ -835,11 +875,13 @@ const rootRouteChildren: RootRouteChildren = {
   OurImpactRoute: OurImpactRoute,
   PartnerWithGelRoute: PartnerWithGelRoute,
   PastProgrammesRoute: PastProgrammesRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProgrammesRoute: ProgrammesRouteWithChildren,
   SchoolLeadersRoute: SchoolLeadersRoute,
   StudentsRoute: StudentsRoute,
   TeachersRoute: TeachersRoute,
   TeamRoute: TeamRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
   EntrepreneurshipAcceleratorRoute: EntrepreneurshipAcceleratorRoute,
   EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
   EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,

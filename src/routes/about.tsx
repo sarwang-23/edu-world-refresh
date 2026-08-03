@@ -255,13 +255,13 @@ function Journey() {
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
             {[
-              { year: "2022", icon: Users, desc: "Launched with small scale informal student mentoring support" },
-              { year: "2023", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
-              { year: "2024", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
-              { year: "2025", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
-              { year: "2026", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
+              { label: "Mentoring", icon: Users, desc: "Launched with small scale informal student mentoring support" },
+              { label: "K12 Learning", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
+              { label: "Global Reach", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
+              { label: "Graduate Pathways", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
+              { label: "Innovation Growth", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
             ].map((item, idx) => (
-              <div key={item.year} className="flex flex-col items-center text-center px-2">
+              <div key={item.label} className="flex flex-col items-center text-center px-2">
                 <div className="relative mb-6">
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-forest-deep text-white shadow-md border-4 border-[#F7F5F0] z-10 relative">
                     <item.icon className="h-8 w-8" />
@@ -269,7 +269,7 @@ function Journey() {
                   {/* Small gold dot indicator */}
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-gold"></div>
                 </div>
-                <h3 className="text-xl font-bold text-forest-deep">{item.year}</h3>
+                <h3 className="text-xl font-bold text-forest-deep">{item.label}</h3>
                 <p className="mt-3 text-[15px] text-forest-deep/80 leading-relaxed max-w-[150px] mx-auto">{item.desc}</p>
               </div>
             ))}

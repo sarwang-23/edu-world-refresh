@@ -1071,7 +1071,7 @@ function CohortGallery() {
   return (
     <section className="bg-white py-24 border-t border-forest/5">
       <div className="mx-auto w-[96%] xl:max-w-[1400px]">
-        <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-10">March 2026 Cohort</h2>
+        <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-10">Featured Cohort</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {allImages.slice(0, visibleCount).map((img, idx) => (
             <div key={idx} className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
