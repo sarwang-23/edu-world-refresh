@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Play, Utensils, Landmark, Castle } from 'lucide-react'
+import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Utensils, Landmark, Castle } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from './index'
-import gilpHeroImg from '../assets/executive-education.jpg'
 import newCertificateImg from '../assets/new-certificate.png'
 import speaker1Img from '../assets/speaker1.jpg'
 import speaker2Img from '../assets/speaker2.jpg'
@@ -237,10 +236,14 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             {/* outer shadow card */}
             <div className="relative bg-white rounded-3xl shadow-[0_8px_40px_rgba(10,48,29,0.12)] p-3 w-full max-w-[660px]">
               <div className="rounded-2xl overflow-hidden aspect-[16/10]">
-                <img
-                  src={gilpHeroImg}
-                  alt="GILP participants at Cambridge Judge Business School"
+                <video
+                  src="/Globalindialeadershipprogramme.mp4"
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
               {/* floating badge */}
@@ -259,7 +262,6 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
 /* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
 /* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
 function ProgrammeOverview() {
-  const [videoOpen, setVideoOpen] = useState(false)
 
   return (
     <section className="bg-[#FAF8F5] py-24 relative border-t border-forest/5">
@@ -316,62 +318,29 @@ function ProgrammeOverview() {
             <div className="absolute -inset-4 bg-gold/10 rounded-3xl blur-2xl pointer-events-none" />
 
             <div className="relative bg-white rounded-2xl shadow-[0_8px_40px_rgba(10,48,29,0.08)] overflow-hidden ring-1 ring-forest/5">
-              {!videoOpen ? (
-                <button
-                  onClick={() => setVideoOpen(true)}
-                  className="relative w-full aspect-video group cursor-pointer block"
-                  aria-label="Play GILP testimonial video"
-                >
-                  <img
-                    src="https://static.wixstatic.com/media/bf78a9_a29139fafe4a4d3691b7d683e4fdfe0df002.jpg"
-                    alt="GILP testimonial — Bidisha Banerjee, Partner, Talent Element"
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  />
-                  {/* overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-forest-deep/20 to-transparent group-hover:from-forest-deep/60 transition-all duration-500" />
+              <div className="relative w-full aspect-video group">
+                <img
+                  src="https://static.wixstatic.com/media/bf78a9_a29139fafe4a4d3691b7d683e4fdfe0df002.jpg"
+                  alt="GILP testimonial — Bidisha Banerjee, Partner, Talent Element"
+                  className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
+                {/* overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-forest-deep/20 to-transparent" />
 
-                  {/* Play ring */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-                      <div className="relative w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                        <Play className="h-6 w-6 text-forest-deep fill-forest-deep ml-1" />
-                      </div>
+                {/* Bottom caption */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-1 h-10 bg-gold rounded-full shrink-0" />
+                    <div>
+                      <p className="text-[15px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
+                      <p className="text-[15px] text-white/80 mt-1">Partner, Talent Element</p>
+                    </div>
+                    <div className="ml-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2">
+                      <p className="text-[15px] italic text-white font-medium">"I'm loving it here"</p>
                     </div>
                   </div>
-
-                  {/* Bottom caption */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-1 h-10 bg-gold rounded-full shrink-0" />
-                      <div>
-                        <p className="text-[15px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
-                        <p className="text-[15px] text-white/80 mt-1">Partner, Talent Element</p>
-                      </div>
-                      <div className="ml-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2">
-                        <p className="text-[15px] italic text-white font-medium">"I'm loving it here"</p>
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              ) : (
-                <div className="relative w-full aspect-video bg-black">
-                  <video
-                    src="/Globalindialeadershipprogramme.mp4"
-                    className="w-full h-full object-cover"
-                    controls
-                    autoPlay
-                    playsInline
-                  />
-                  <button
-                    onClick={() => setVideoOpen(false)}
-                    aria-label="Close video"
-                    className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center text-[16px] transition-colors"
-                  >
-                    ×
-                  </button>
                 </div>
-              )}
+              </div>
 
               {/* bottom label strip */}
               <div className="px-6 py-4 flex items-center justify-between border-t border-forest/6 bg-white">
@@ -411,7 +380,7 @@ function Outcomes() {
     <section className="bg-forest-deep py-24 relative overflow-hidden">
       {/* decorative dark grid for premium feel */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-      
+
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -421,7 +390,7 @@ function Outcomes() {
           </div>
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white leading-tight">As a GILP participant, you will</h2>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, i) => (
             <div key={i} className="group bg-[#F5EFD8] rounded-2xl p-7 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-[#FDFBF7] transition-all duration-300">
@@ -514,7 +483,7 @@ function Curriculum() {
             <div key={i} className="group bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1.5 transition-all duration-500 relative overflow-hidden border border-forest/5">
               {/* Premium top accent */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold to-gold/40 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               {/* Header section */}
               <div className="mb-6 pb-5 border-b border-forest/5">
                 <div className="flex items-center gap-2.5 mb-3">
@@ -523,7 +492,7 @@ function Curriculum() {
                 </div>
                 <h3 className="text-[18px] font-bold text-forest-deep leading-snug group-hover:text-gold-deep transition-colors duration-300">{m.title}</h3>
               </div>
-              
+
               {/* List items */}
               <ul className="space-y-3.5">
                 {m.items.map((item, k) => (
@@ -693,17 +662,17 @@ function ProgrammeStructure() {
             <div key={i} className="group rounded-2xl bg-white shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 overflow-hidden hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1.5 transition-all duration-500 relative">
               {/* Thicker premium top accent */}
               <div className={`h-1.5 w-full ${ph.color} opacity-90 group-hover:opacity-100 transition-opacity`} />
-              
+
               <div className="p-8 relative">
                 {/* Premium Watermark Number */}
                 <div className="absolute top-4 right-6 text-[4.5rem] font-bold text-forest/5 font-serif leading-none select-none group-hover:text-gold/10 transition-colors duration-500">
                   {ph.num}
                 </div>
-                
+
                 <div className="relative z-10">
                   <h3 className="text-[19px] font-bold text-forest-deep mb-1.5 group-hover:text-gold-deep transition-colors duration-300">{ph.phase}</h3>
                   <p className="text-[13.5px] uppercase tracking-wide text-gold font-bold mb-6">{ph.date}</p>
-                  
+
                   <ul className="space-y-4">
                     {ph.items.map((item, k) => (
                       <li key={k} className="flex items-start gap-3 text-[14.5px] text-forest/75 leading-relaxed">
@@ -740,11 +709,11 @@ function Faculty() {
         <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">Learn from Cambridge's finest</h2>
         <p className="mt-3 text-[15px] font-medium text-white/70 max-w-lg mx-auto">World-class academics and practitioners from Cambridge Judge Business School.</p>
       </div>
-      
+
       <div className="relative flex">
         <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-forest-deep via-forest-deep/90 to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-forest-deep via-forest-deep/90 to-transparent z-10 pointer-events-none" />
-        
+
         <div className="animate-[marquee_40s_linear_infinite] flex items-start">
           {repeatedFaculty.map((f, i) => (
             <div key={i} className="group text-center shrink-0 w-[280px] px-6">
@@ -773,7 +742,7 @@ function WhoShouldAttend() {
             “The right opportunity often starts with the right conversation.”
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {/* Next Steps Card */}
           <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500">
@@ -790,7 +759,7 @@ function WhoShouldAttend() {
               </li>
             </ul>
           </div>
-          
+
           {/* Who Should Attend Card */}
           <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500 md:col-span-2">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-forest-deep transition-opacity duration-300" />
@@ -810,7 +779,7 @@ function WhoShouldAttend() {
               ))}
             </div>
           </div>
-          
+
           {/* Selective Criteria Card */}
           <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500 md:col-span-3">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-forest/80 transition-opacity duration-300" />
@@ -901,7 +870,8 @@ function Packages() {
                 <p className="text-[15px] text-forest/80 mt-1 leading-relaxed">{pkg.detail}</p>
                 <p className="text-[15px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
                 <Link
-                  to="/contact" search={{ source: "Global India Leadership Programme" }}
+                  to="/contact"
+                  search={{ source: "GILP — Enquire Now" }}
                   className={`mt-8 w-full inline-flex items-center justify-center gap-2 rounded-lg py-3.5 text-[12.5px] font-bold uppercase tracking-[0.18em] transition-all duration-200 ${pkg.highlight ? 'bg-forest-deep text-white hover:bg-forest shadow-md' : 'border-2 border-forest-deep/20 text-forest-deep hover:border-gold hover:bg-[#EDE0C4]'}`}
                 >
                   Enquire Now <ArrowUpRight className="h-4 w-4" />
@@ -1019,7 +989,7 @@ function AccommodationSection() {
                 {/* Walk badge */}
                 <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[13px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
+                    <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
                   </svg>
                   {hotel.walk}
                 </div>
@@ -1038,7 +1008,7 @@ function AccommodationSection() {
                 >
                   Check Hotel Website
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </a>
               </div>
@@ -1081,7 +1051,7 @@ function CohortGallery() {
         </div>
         {visibleCount < allImages.length && (
           <div className="mt-12 text-center">
-            <button 
+            <button
               onClick={handleLoadMore}
               className="bg-forest-deep text-white px-8 py-3 rounded-full font-bold hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md"
             >
@@ -1097,32 +1067,32 @@ function CohortGallery() {
 /* ─── 11. ALUMNI TESTIMONIALS ─── */
 function AlumniTestimonials() {
   const alumni = [
-    { 
-      name: 'Snigdha Manchanda', 
+    {
+      name: 'Snigdha Manchanda',
       role: 'Founder, TeaTrunk (India)',
       quote: "This programme helped articulate something critical: leadership is also about language. It equips founders to translate their journey into frameworks that resonate with investors and stakeholders. That shift, from building to being understood, unlocks the next level of growth and influence.",
       img: alumni1Img
     },
-    { 
-      name: 'Dr. Fatin Al Zadjali', 
+    {
+      name: 'Dr. Fatin Al Zadjali',
       role: 'L&D Head - Bank Dhofar (Oman)',
       quote: "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
       img: alumni2Img
     },
-    { 
-      name: 'Johannes Samwer', 
+    {
+      name: 'Johannes Samwer',
       role: 'MD, Rhenus Lub (Germany)',
       quote: "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
       img: alumni3Img
     },
-    { 
-      name: 'Dr. Aashish Chaudhry', 
+    {
+      name: 'Dr. Aashish Chaudhry',
       role: 'MD, Aakash Healthcare (India)',
       quote: 'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.',
       img: alumni4Img
     },
-    { 
-      name: 'Dr. Johannes Mario Schmidt', 
+    {
+      name: 'Dr. Johannes Mario Schmidt',
       role: 'MD, Lingel Windows and Doors Technologies (India)',
       quote: "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.",
       img: alumni5Img
@@ -1243,9 +1213,9 @@ function CertificateSection() {
             {/* Certificate image */}
             <div className="relative flex justify-center w-full">
               <div className="absolute -inset-6 bg-[#C9913D]/15 rounded-3xl blur-2xl" />
-              <img 
-                src={newCertificateImg} 
-                alt="Cambridge Judge Business School Certificate" 
+              <img
+                src={newCertificateImg}
+                alt="Cambridge Judge Business School Certificate"
                 className="relative w-full h-auto rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-[#C9913D]/30 object-contain bg-white"
               />
             </div>
@@ -1353,7 +1323,7 @@ function FacultyGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {faculty.map((f, i) => (
             <div key={i} className="group bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-2 transition-all duration-700 flex flex-col relative">
-              
+
               <div className="relative aspect-[4/5] overflow-hidden m-2 mb-0 rounded-[1.5rem]">
                 <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 bg-forest-deep/0 group-hover:bg-forest-deep/10 transition-colors duration-700 mix-blend-overlay" />
@@ -1479,8 +1449,8 @@ function ContactSection() {
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
                 <div>
@@ -1494,7 +1464,7 @@ function ContactSection() {
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                   </svg>
                 </div>
                 <div>
@@ -1508,8 +1478,8 @@ function ContactSection() {
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
                 </div>
                 <div>
@@ -1590,7 +1560,7 @@ function ApplyNow() {
             <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-tight">Apply Now</h2>
             <h3 className="text-[1.15rem] font-bold text-forest/80 mb-2">Global India Leadership Programme at Cambridge</h3>
             <div className="flex items-center gap-2 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-forest/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-forest/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
               <span className="text-[14px] text-forest/60">A Cambridge-led, executive leadership journey</span>
             </div>
             <div className="flex items-center gap-3 mb-8">
@@ -1740,7 +1710,8 @@ function CTA() {
             Apply for GILP <ArrowUpRight className="h-4 w-4" />
           </button>
           <Link
-            to="/contact" search={{ source: "Global India Leadership Programme" }}
+            to="/contact"
+            search={{ source: "GILP — Bottom CTA" }}
             className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
           >
             Contact Us
