@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail } from "lucide-react";
 import heroImg from "@/assets/hero-image.jpg";
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from '@/assets/cambridge_4.jpg'
 import schoolLeadersImg from "@/assets/partner.png";
 import businessLeadersImg from "@/assets/executive-education.jpg";
 import teachersImg from "@/assets/teachers.jpg";

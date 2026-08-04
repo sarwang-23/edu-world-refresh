@@ -5,7 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { Footer } from "./index";
 
 // ── Cambridge / Leadership
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from "@/assets/cambridge_7.jpg";
 import cambridge1 from "@/assets/cambridge_1.jpg";
 import cambridge2 from "@/assets/cambridge_2.jpg";
 import cambridge3 from "@/assets/cambridge_3.jpg";

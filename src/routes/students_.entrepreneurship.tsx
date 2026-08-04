@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 import { Footer } from './index'
 import studentsImg from '../assets/students.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_4.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 

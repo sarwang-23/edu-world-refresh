@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 import { Footer } from './index'
 import studentsImg from '../assets/students.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_6.jpg'
 import heroImg from '../assets/young-leaders.png'
 import teachersImg from '../assets/teachers.jpg'
 import stemImg from '../assets/STEM1.jpg'

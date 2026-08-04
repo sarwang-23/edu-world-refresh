@@ -6,7 +6,7 @@ import {
   Network, ChevronRight, Bot, Wind, HeartPulse, Pill, Leaf, Sparkles, Cpu
 } from "lucide-react";
 import { useState } from "react";
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from "@/assets/cambridge_6.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import heroClassroomImg from "@/assets/hero-classroom.jpg";
 import { Footer } from "./index";

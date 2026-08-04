@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Award, Users, Landmark, Globe2, Star, Rocket, Building2, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react'
 import heroImg from '../assets/gilp-march-15.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_2.jpg'
 import { Footer } from './index'
 import { useState } from 'react'
 

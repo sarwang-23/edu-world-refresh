@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Handshake, Users, Globe2, Sparkles, Building2, Quote, Lightbulb } from 'lucide-react'
 import { Footer } from './index'
 import heroImg from '../assets/gilp-march-10.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_2.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 

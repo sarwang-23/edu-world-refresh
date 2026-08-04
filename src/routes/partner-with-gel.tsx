@@ -24,7 +24,7 @@ import {
   Quote,
 } from 'lucide-react'
 import heroImg from '../assets/IMG_5277.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_3.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 
 export const Route = createFileRoute('/partner-with-gel')({

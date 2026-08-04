@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar } from 'lucide-react'
 import { Footer } from './index'
 
-import cambridgeImg from '@/assets/cambridge.jpg'
+import cambridgeImg from '@/assets/cambridge_8.jpg'
 import heroImgOld from '@/assets/hero-classroom.jpg'
 import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'

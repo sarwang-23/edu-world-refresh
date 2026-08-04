@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_7.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import { useState } from 'react'
 
