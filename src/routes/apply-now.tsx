@@ -1,8 +1,11 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Sparkles, CheckCircle2, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/apply-now")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    source: (search.source as string) || "Direct",
+  }),
   component: ApplyNowPage,
   head: () => ({
     meta: [
@@ -16,6 +19,7 @@ export const Route = createFileRoute("/apply-now")({
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
 function ApplyNowPage() {
+  const { source } = Route.useSearch();
   const [selectedProgrammes, setSelectedProgrammes] = useState<string[]>([]);
 
   const [formData, setFormData] = useState({
@@ -55,6 +59,7 @@ function ApplyNowPage() {
           formType: "ApplyNow",
           ...formData,
           programmes: selectedProgrammes,
+          sourcePage: source,
         }),
       });
 
@@ -95,7 +100,7 @@ function ApplyNowPage() {
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-gold/30">
       <section className="min-h-screen flex flex-col lg:flex-row">
-        
+
         {/* LEFT PANEL — Bespoke Immersive Experience */}
         <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] flex flex-col justify-between overflow-hidden bg-forest-deep">
           <img
@@ -104,10 +109,10 @@ function ApplyNowPage() {
             className="absolute inset-0 w-full h-full object-cover object-center opacity-30 mix-blend-luminosity scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-forest-deep/95" />
-          
+
           {/* Subtle noise texture */}
           <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
-          
+
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
           <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-forest-deep/50 to-transparent" />
 
@@ -124,7 +129,7 @@ function ApplyNowPage() {
                 Curating <br />
                 <em className="font-serif italic font-normal text-gold not-italic">global leaders.</em>
               </h1>
-              
+
               <div className="space-y-6 text-[15px] text-white/80 leading-[1.8] max-w-[380px] font-normal">
                 <p>
                   Thank you for your interest in our premium educational experiences.
@@ -137,18 +142,18 @@ function ApplyNowPage() {
                 </p>
               </div>
             </div>
-            
+
             {/* Watermark Logo */}
             <div className="mt-12">
-               <div className="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                  <div className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 bg-forest-deep shadow-inner">
-                    <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
-                  </div>
-                  <div>
-                    <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
-                    <p className="text-[15px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
-                  </div>
+              <div className="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 bg-forest-deep shadow-inner">
+                  <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                 </div>
+                <div>
+                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
+                  <p className="text-[15px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -183,179 +188,179 @@ function ApplyNowPage() {
                 </button>
               </div>
             ) : (
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              
-              {/* Name */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="group">
-                  <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">First Name</label>
+              <form className="space-y-6" onSubmit={handleSubmit}>
+
+                {/* Name */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">First Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Karan"
+                      value={formData.firstName}
+                      onChange={handleChange("firstName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
                   </div>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Karan"
-                    value={formData.firstName}
-                    onChange={handleChange("firstName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-                <div className="group">
-                  <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Last Name</label>
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">Last Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Sharma"
+                      value={formData.lastName}
+                      onChange={handleChange("lastName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
                   </div>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Sharma"
-                    value={formData.lastName}
-                    onChange={handleChange("lastName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
                 </div>
-              </div>
 
-              {/* Email */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
-                </div>
-                <input
-                  type="email"
-                  required
-                  placeholder="you@organisation.com"
-                  value={formData.email}
-                  onChange={handleChange("email")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Phone Number</label>
-                </div>
-                <div className="flex gap-2">
-                  <select
-                    value={formData.phoneCode}
-                    onChange={handleChange("phoneCode")}
-                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
-                  >
-                    <option>+91 IN</option>
-                    <option>+44 UK</option>
-                    <option>+1 US</option>
-                    <option>+971 AE</option>
-                  </select>
-                  <input
-                    type="tel"
-                    placeholder="98765 43210"
-                    value={formData.phone}
-                    onChange={handleChange("phone")}
-                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Professional Details */}
-              <div className="grid grid-cols-2 gap-4">
+                {/* Email */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
                   </div>
                   <input
-                    type="text"
-                    placeholder="School/Company"
-                    value={formData.organisation}
-                    onChange={handleChange("organisation")}
+                    type="email"
+                    required
+                    placeholder="you@organisation.com"
+                    value={formData.email}
+                    onChange={handleChange("email")}
                     className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
+
+                {/* Phone */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Designation</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Phone Number</label>
                   </div>
-                  <input
-                    type="text"
-                    placeholder="E.g. Principal"
-                    value={formData.designation}
-                    onChange={handleChange("designation")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Portfolio Selection */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-3">
-                  <label className="text-[15px] font-semibold text-forest/80">Select Programmes</label>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {programmes.map((tag, i) => {
-                    const isSelected = selectedProgrammes.includes(tag);
-                    return (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => toggleProgramme(tag)}
-                      className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
-                        isSelected
-                          ? "bg-forest-deep border-forest-deep text-white shadow-md"
-                          : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
-                      }`}
+                  <div className="flex gap-2">
+                    <select
+                      value={formData.phoneCode}
+                      onChange={handleChange("phoneCode")}
+                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
                     >
-                      {isSelected ? (
-                        <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                      <option>+91 IN</option>
+                      <option>+44 UK</option>
+                      <option>+1 US</option>
+                      <option>+971 AE</option>
+                    </select>
+                    <input
+                      type="tel"
+                      placeholder="98765 43210"
+                      value={formData.phone}
+                      onChange={handleChange("phone")}
+                      className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                {/* Professional Details */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="School/Company"
+                      value={formData.organisation}
+                      onChange={handleChange("organisation")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">Designation</label>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="E.g. Principal"
+                      value={formData.designation}
+                      onChange={handleChange("designation")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                {/* Portfolio Selection */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-3">
+                    <label className="text-[15px] font-semibold text-forest/80">Select Programmes</label>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {programmes.map((tag, i) => {
+                      const isSelected = selectedProgrammes.includes(tag);
+                      return (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => toggleProgramme(tag)}
+                          className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${isSelected
+                              ? "bg-forest-deep border-forest-deep text-white shadow-md"
+                              : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
+                            }`}
+                        >
+                          {isSelected ? (
+                            <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                          ) : (
+                            <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                          )}
+                          {tag}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[15px] font-semibold text-forest/80">Additional Details</label>
+                  </div>
+                  <textarea
+                    rows={4}
+                    placeholder="Share any specific requirements or questions..."
+                    value={formData.message}
+                    onChange={handleChange("message")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p className="text-[12.5px] text-red-600 font-medium">
+                    Something went wrong submitting your application. Please try again.
+                  </p>
+                )}
+
+                {/* CTA */}
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                  <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[200px]">
+                    By submitting, you consent to be contacted by the Global Education Lab team.
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Submitting..." : "Submit Application"}
+                    <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
+                      {status === "submitting" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
                       ) : (
-                        <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                        <ArrowUpRight className="h-4 w-4" />
                       )}
-                      {tag}
-                    </button>
-                  )})}
+                    </span>
+                  </button>
                 </div>
-              </div>
 
-              {/* Message */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Additional Details</label>
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Share any specific requirements or questions..."
-                  value={formData.message}
-                  onChange={handleChange("message")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
-                />
-              </div>
-
-              {status === "error" && (
-                <p className="text-[12.5px] text-red-600 font-medium">
-                  Something went wrong submitting your application. Please try again.
-                </p>
-              )}
-
-              {/* CTA */}
-              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[200px]">
-                  By submitting, you consent to be contacted by the Global Education Lab team.
-                </p>
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
-                >
-                  {status === "submitting" ? "Submitting..." : "Submit Application"}
-                  <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
-                    {status === "submitting" ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <ArrowUpRight className="h-4 w-4" />
-                    )}
-                  </span>
-                </button>
-              </div>
-
-            </form>
+              </form>
             )}
           </div>
         </div>

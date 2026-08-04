@@ -21,7 +21,7 @@ const placeholderImg2 = "https://images.unsplash.com/photo-1552664730-d307ca8849
 const placeholderImg3 = "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80"
 const placeholderImg4 = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
 
-import bgImage from '@/assets/cambridge.jpg'
+import bgImage from '@/assets/hero-image.jpg';
 import startupImg from '@/assets/startup.jpg'
 import pitchImg from '@/assets/zero-to-one-past-1.jpg'
 
@@ -77,11 +77,11 @@ function Hero() {
               Empowering the next generation of founders and innovators with world-class programmes, mentorship and direct access to Cambridge's innovation ecosystem. <span className="font-semibold text-forest-deep">This is where research, capital and entrepreneurial energy meet.</span>
             </p>
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link to="/contact" className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden shrink-0">
+              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden shrink-0">
                 <span className="relative z-10 flex items-center gap-2">Explore Programmes <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span>
                 <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest-deep to-forest opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40 shrink-0">
+              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40 shrink-0">
                 Connect With Our Team
               </Link>
             </div>
@@ -254,11 +254,11 @@ function FounderJourney() {
               A structured arc that meets founders wherever they are — from first idea to companies scaling internationally. Every step is backed by Cambridge faculty, funding networks and active investors.
             </p>
             <div className="mt-8 flex flex-wrap gap-6 text-[15px] font-bold uppercase tracking-[0.2em] text-gold">
-              <Link to="/contact" className="flex items-center gap-2 hover:text-cream transition-colors group">
+              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="flex items-center gap-2 hover:text-cream transition-colors group">
                 <div className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold/20 transition-colors"><ArrowUpRight className="w-3 h-3" /></div>
                 PORTFOLIO
               </Link>
-              <Link to="/contact" className="flex items-center gap-2 hover:text-cream transition-colors group">
+              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="flex items-center gap-2 hover:text-cream transition-colors group">
                 <div className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center group-hover:bg-gold/20 transition-colors"><Globe2 className="w-3 h-3" /></div>
                 GLOBAL REACH
               </Link>
@@ -436,7 +436,7 @@ function Community() {
             </div>
             
             <div className="flex flex-col items-start md:items-end gap-5 shrink-0 md:pb-2">
-              <Link to="/contact" className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-[15px] font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
+              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-[15px] font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
                 Explore Programmes <ArrowUpRight className="h-5 w-5" />
               </Link>
               <a href="mailto:hello@globaledulab.com" className="text-[15px] font-bold uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition-colors">

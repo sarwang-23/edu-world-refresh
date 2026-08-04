@@ -103,7 +103,7 @@ function Hero() {
                 Explore Our Programme Portfolio
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 shrink-0">
+              <Link to="/contact" search={{ source: "Past Programmes" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 shrink-0">
                 Discuss a Custom Programme
               </Link>
             </div>
@@ -353,7 +353,7 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/70 leading-[1.75] max-w-xl mx-auto">We partner with schools, universities, corporations and governments to design impactful global programmes.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" search={{ source: "Past Programmes" }} className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Discuss a Custom Programme
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </Link>

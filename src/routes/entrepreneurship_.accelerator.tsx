@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Rocket, Calendar, Globe2, Sparkles, Building2, BookOpen, Users, TrendingUp } from 'lucide-react'
 import { Footer } from './index'
 import heroImg from '../assets/startup.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_1.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -70,7 +70,7 @@ function Hero() {
 
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Startup Accelerator (12 Months)" }}
                 className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Apply for Next Cohort
@@ -174,7 +174,7 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications are reviewed on a rolling basis. Reach out to our team to start the conversation.</p>
         <div className="mt-10 flex justify-center">
           <Link
-            to="/apply-now"
+            to="/apply-now" search={{ source: "Startup Accelerator (12 Months)" }}
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl"
           >
             Apply Now

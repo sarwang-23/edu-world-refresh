@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 import { Footer } from './index'
 import heroImg from '../assets/cambridge_3.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_5.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -68,7 +68,7 @@ function Hero() {
 
             <div className="flex gap-4 flex-wrap">
               <Link
-                to="/apply-now"
+                to="/apply-now" search={{ source: "Architecture Track" }}
                 className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-orange-400 transition-all duration-300 shadow-xl shadow-orange-500/25"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
@@ -237,7 +237,7 @@ function CTA() {
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4">Ready to shape experiences?</h2>
         <p className="text-[15px] text-forest/80 leading-[1.75] mb-10">Applications are open for the Cambridge summer track. Secure your place today.</p>
         <Link
-          to="/contact"
+          to="/contact" search={{ source: "Architecture Track" }}
           className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-10 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-orange-400 transition-all duration-300 shadow-xl shadow-orange-500/25"
         >
           Apply for Track 03 <ArrowUpRight className="h-4 w-4" />

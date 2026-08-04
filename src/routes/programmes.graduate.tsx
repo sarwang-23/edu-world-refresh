@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar } from 'lucide-react'
 import { Footer } from './index'
 
-import cambridgeImg from '@/assets/cambridge.jpg'
+import cambridgeImg from '@/assets/cambridge_8.jpg'
 import heroImgOld from '@/assets/hero-classroom.jpg'
 import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'
@@ -100,24 +100,24 @@ function Hero() {
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <Link to="/contact" search={{ source: "Graduate Summer Programme (Hero)" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 Register Your Interest
               </Link>
             </div>
           </div>
 
           {/* Image column */}
-          <div className="relative mx-auto w-full max-w-[620px] lg:mx-0">
-            <div className="rounded-[2.25rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={newHeroImg} alt="Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
+          <div className="relative mx-auto w-full max-w-[760px] lg:mx-0">
+            <div className="rounded-[3rem] overflow-hidden aspect-video shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
+              <video src="/graduatesummerprogramme.mp4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" controls autoPlay loop muted playsInline />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 pointer-events-none">
                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
                   <p className="text-white text-[15px] font-bold">Immersive Summer Programme</p>
                 </div>
                 <div className="flex -space-x-2 shrink-0">
-                  {[1,2,3].map(i => (
+                  {[1, 2, 3].map(i => (
                     <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
                       <User className="h-4 w-4 text-white" />
                     </div>
@@ -308,7 +308,7 @@ function Tracks() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          
+
           {/* ── Track 1: Entrepreneurship & AI ── */}
           <div className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-forest/8 shadow-[0_4px_32px_rgba(26,53,35,0.08)] hover:shadow-[0_32px_80px_rgba(26,53,35,0.2)] hover:-translate-y-3 transition-all duration-500 flex flex-col">
             <div className="h-[3px] w-full bg-gradient-to-r from-gold/40 via-gold to-gold/20" />
@@ -320,11 +320,11 @@ function Tracks() {
                 </span>
                 <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Entrepreneurship</span>
               </div>
-              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-gold transition-colors duration-400">Entrepreneurship<br/>& AI</h3>
+              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-gold transition-colors duration-400">Entrepreneurship<br />& AI</h3>
               <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Build ideas. Solve problems.</p>
               <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Build ideas for an AI-enabled world and transform them into viable ventures.</p>
               <div className="flex flex-col gap-3">
-                {["Opportunity discovery","AI tools in real world","Prototyping & validation","Pitch to experts"].map((item, i) => (
+                {["Opportunity discovery", "AI tools in real world", "Prototyping & validation", "Pitch to experts"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold" />
@@ -357,11 +357,11 @@ function Tracks() {
                 </span>
                 <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Research</span>
               </div>
-              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-blue-600 transition-colors duration-400">Research<br/>Methods</h3>
+              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-blue-600 transition-colors duration-400">Research<br />Methods</h3>
               <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Ask questions. Discover.</p>
               <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Develop research skills, explore topics and connect ideas with impact.</p>
               <div className="flex flex-col gap-3">
-                {["Research design","Data analysis & evidence","Engage with researchers","Present your proposal"].map((item, i) => (
+                {["Research design", "Data analysis & evidence", "Engage with researchers", "Present your proposal"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-blue-500/10 border border-blue-400/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
@@ -394,11 +394,11 @@ function Tracks() {
                 </span>
                 <span className="text-[15px] font-semibold text-forest/80 uppercase tracking-widest">Architecture</span>
               </div>
-              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-orange-600 transition-colors duration-400">Architecture<br/>& Design</h3>
+              <h3 className="text-[2rem] font-bold text-forest-deep leading-[1.1] mb-2 group-hover:text-orange-600 transition-colors duration-400">Architecture<br />& Design</h3>
               <p className="text-[15px] font-semibold text-forest/80 mb-4 tracking-wide">Design spaces. Shape experiences.</p>
               <p className="text-[15px] text-forest/80 leading-[1.65] mb-6">Explore architecture through design, heritage and human-centred spaces.</p>
               <div className="flex flex-col gap-3">
-                {["Sustainable design","Heritage & urban design","Site analysis workshops","Present design concept"].map((item, i) => (
+                {["Sustainable design", "Heritage & urban design", "Site analysis workshops", "Present design concept"].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[15px] text-forest/70">
                     <span className="h-4 w-4 rounded-full bg-orange-500/10 border border-orange-400/30 flex items-center justify-center shrink-0">
                       <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
@@ -456,7 +456,7 @@ function CampusLife() {
               <p className="text-cream/80 text-[15px]">Engage deeply with peers and facilitators in modern, dynamic learning spaces.</p>
             </div>
           </div>
-          
+
           {/* Two smaller images */}
           <div className="flex flex-col gap-6">
             <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
@@ -467,7 +467,7 @@ function CampusLife() {
                 <p className="text-cream/80 text-[15px]">Explore the beautiful college gardens.</p>
               </div>
             </div>
-            
+
             <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
               <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
               <img src={campusLife3} alt="Dorm Room" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -538,11 +538,11 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/80 leading-[1.75] max-w-xl mx-auto">Gain knowledge, build global connections and create the future you envision. A lifetime of impact. A summer to remember.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" search={{ source: "Graduate Summer Programme (Bottom CTA)" }} className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
             Register Your Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </Link>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <Link to="/contact" search={{ source: "Graduate Summer Programme (Bottom CTA Secondary)" }} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Download Overview <ArrowDownToLine className="h-4 w-4" />
           </Link>
         </div>

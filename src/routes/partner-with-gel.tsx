@@ -25,7 +25,7 @@ import {
   Quote,
 } from 'lucide-react'
 import heroImg from '../assets/IMG_5277.jpg'
-import cambridgeImg from '../assets/cambridge.jpg'
+import cambridgeImg from '../assets/cambridge_3.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import dhruvGalgotia from '@/assets/people/dhruv_galgotia.jpg';
 import samTully from '@/assets/people/sam_tully.jpg';
@@ -116,13 +116,13 @@ function Hero() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Partner with GEL" }}
                 className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Start a Conversation <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Partner with GEL" }}
                 className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
               >
                 Explore Opportunities <ArrowUpRight className="h-4 w-4" />
@@ -542,7 +542,7 @@ function CTA() {
 
         <div className="flex flex-col items-start lg:items-center gap-6 shrink-0 w-full lg:w-auto">
           <Link
-            to="/contact"
+            to="/contact" search={{ source: "Partner with GEL" }}
             className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-[#CE9D45] px-10 py-5 text-[15px] font-bold text-[#141414] transition-all hover:bg-[#E5B254] hover:-translate-y-1 w-full md:w-auto min-w-[260px]"
           >
             Start a Conversation <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

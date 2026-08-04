@@ -463,7 +463,7 @@ function FinalCTA() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
-            to="/contact"
+            to="/contact" search={{ source: "Teachers" }}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             APPLY NOW <ArrowUpRight className="h-4 w-4" />

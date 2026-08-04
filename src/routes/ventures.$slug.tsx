@@ -388,13 +388,13 @@ function Hero({ v }: { v: Venture }) {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-3">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: v.name }}
                 className="inline-flex items-center gap-2 bg-white text-slate-900 px-7 py-3.5 rounded-xl text-[14px] font-bold hover:bg-slate-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 duration-200"
               >
                 Request Introduction <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/contact"
+                to="/contact" search={{ source: v.name }}
                 className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
               >
                 <Download className="h-4 w-4" /> Venture Brief
@@ -726,7 +726,7 @@ function MainContent({ v }: { v: Venture }) {
               </p>
               <div className="flex flex-col gap-3">
                 <Link
-                  to="/contact"
+                  to="/contact" search={{ source: v.name }}
                   className={`w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-[13.5px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 ${
                     isTacto
                       ? 'bg-violet-500 hover:bg-violet-400 text-white'
@@ -736,7 +736,7 @@ function MainContent({ v }: { v: Venture }) {
                   Request Introduction <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/contact" search={{ source: v.name }}
                   className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
                 >
                   <Download className="h-4 w-4" /> Venture Brief
@@ -801,7 +801,7 @@ function MainContent({ v }: { v: Venture }) {
                 ))}
               </div>
               <Link
-                to="/contact"
+                to="/contact" search={{ source: v.name }}
                 className={`w-full mt-5 border rounded-xl py-3 text-[13px] font-bold transition-colors inline-flex items-center justify-center gap-2 ${
                   isTacto
                     ? 'bg-violet-50 border-violet-100 text-violet-700 hover:bg-violet-100'
@@ -936,7 +936,7 @@ function BottomCTA({ v }: { v: Venture }) {
           {/* Right: Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
             <Link
-              to="/contact"
+              to="/contact" search={{ source: v.name }}
               className={`w-full sm:w-auto text-white px-8 py-4 rounded-xl text-[14px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 inline-flex items-center justify-center gap-2 ${
                 isTacto
                   ? 'bg-violet-600 hover:bg-violet-500'
@@ -946,7 +946,7 @@ function BottomCTA({ v }: { v: Venture }) {
               Request Introduction <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/contact"
+              to="/contact" search={{ source: v.name }}
               className="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-xl text-[14px] font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all inline-flex items-center justify-center gap-2"
             >
               <Download className="h-4 w-4" /> Venture Brief

@@ -1,4 +1,4 @@
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from "@/assets/hero-image.jpg";
 import schoolLeadersImg from "@/assets/partner.png";
 import teachersImg from "@/assets/teachers.jpg";
 import studentsImg from "@/assets/young-leaders.png";

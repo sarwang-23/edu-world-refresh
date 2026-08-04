@@ -5,7 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { Footer } from "./index";
 
 // ── Cambridge / Leadership
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from "@/assets/cambridge_7.jpg";
 import cambridge1 from "@/assets/cambridge_1.jpg";
 import cambridge2 from "@/assets/cambridge_2.jpg";
 import cambridge3 from "@/assets/cambridge_3.jpg";
@@ -441,7 +441,7 @@ function GalleryPage() {
           </div>
           <div className="shrink-0 flex flex-col gap-4">
             <Link
-              to="/contact"
+              to="/contact" search={{ source: "Gallery" }}
               className="inline-flex items-center gap-3 rounded-full bg-[#C19842] px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-[#080d07] transition-all hover:bg-white"
             >
               Start a Conversation <ArrowUpRight className="h-4 w-4" />

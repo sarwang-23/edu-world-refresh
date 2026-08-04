@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Mail, Newspaper, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import cambridgeImg from "@/assets/cambridge.jpg";
+import cambridgeImg from "@/assets/cambridge_5.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
@@ -461,7 +461,7 @@ function CTA() {
           </div>
           <div className="md:col-span-4">
             <Link
-              to="/contact"
+              to="/contact" search={{ source: "Insights & Research" }}
               className="inline-flex w-full items-center justify-between gap-4 rounded-2xl bg-gold px-8 py-6 text-forest-deep transition-all hover:bg-gold/90"
             >
               <span className="text-lg font-bold tracking-tight">Partner With Us</span>
