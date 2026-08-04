@@ -11,6 +11,10 @@ import studentsImg from "@/assets/students.jpg";
 import zeroToOneImg from "@/assets/zero-to-one.png";
 import graduateSummerImg from "@/assets/campus-life-2.jpg";
 import youngLeadersImg from "@/assets/young-leaders.png";
+import cambridgeRealImg from "@/assets/cambridge_7.jpg";
+import finlandImg from "@/assets/finland_1.jpg";
+import baliImg from "@/assets/bali_new_1.jpg";
+import gilpImg from "@/assets/gilp-march-1.jpg";
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -98,7 +102,7 @@ const institutionalPartners = [
   },
 ];
 
-const pastImpactImgs = [cambridgeImg, heroImg, teachersImg, businessLeadersImg];
+const pastImpactImgs = [finlandImg, baliImg, cambridgeRealImg, gilpImg];
 
 function ProgrammesPage() {
   const [activeFilter, setActiveFilter] = useState<Filter>("All Programmes");
@@ -256,6 +260,7 @@ function ProgrammesPage() {
           </div>
         </div>
       </section>
+      <SharedTestimonials />
 
       {/* Bottom CTA Strip */}
       <section className="bg-forest-deep py-24 relative overflow-hidden border-t border-white/5">
@@ -288,7 +293,7 @@ function ProgrammesPage() {
         </div>
       </section>
 
-      <SharedTestimonials />
+
       <Footer />
     </div>
   );
@@ -338,7 +343,7 @@ function ProgrammesHero() {
           <div className="lg:col-span-6 relative z-10">
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] ring-1 ring-forest/10">
               <img
-                src={cambridgeImg}
+                src={cambridgeRealImg}
                 alt="Cambridge University"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />

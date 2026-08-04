@@ -59,10 +59,10 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
       <div className="mx-auto max-w-[1280px] px-6 relative z-10 pt-6">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14 xl:gap-18">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14 xl:gap-18">
 
           {/* Text column */}
-          <div className="max-w-[590px]">
+          <div className="lg:col-span-6">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Graduate Summer Programme</span>
@@ -107,12 +107,12 @@ function Hero() {
           </div>
 
           {/* Image column */}
-          <div className="relative mx-auto w-full max-w-[760px] lg:mx-0">
-            <div className="rounded-[3rem] overflow-hidden aspect-video shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <video src="/graduatesummerprogramme.mp4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" controls autoPlay loop muted playsInline />
+          <div className="relative mx-auto w-full lg:col-span-6">
+            <div className="rounded-[3rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
+               <video src="/graduatesummerprogramme.mp4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" autoPlay loop muted playsInline />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 pointer-events-none">
-                <div>
+                 <div>
                   <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
                   <p className="text-white text-[15px] font-bold">Immersive Summer Programme</p>
                 </div>

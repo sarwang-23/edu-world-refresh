@@ -1,7 +1,7 @@
 import cambridgeImg from "@/assets/hero-image.jpg";
-import schoolLeadersImg from "@/assets/partner.png";
-import teachersImg from "@/assets/teachers.jpg";
-import studentsImg from "@/assets/young-leaders.png";
+import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
+import samTully from '@/assets/people/sam_tully.jpg';
+import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
 
 type TestimonialProps = {
   q: string;
@@ -21,29 +21,29 @@ export function SharedTestimonials({
 }) {
   const testimonials = customTestimonials || [
     {
-      q: "The GEL was a game changer. The Cambridge ecosystem, combined with high-quality peer learning, was truly invaluable. A transformational experience unlike anything else.",
-      a: "Neha Aran",
-      r: "MD, Consumer Goods Company",
-      tag: "Executive Education",
-      img: teachersImg,
+      q: "There were times during the weekend when I knew that what I was learning would stick with me throughout my career journey... There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence.",
+      a: "Rosalind Howell",
+      r: "Zero-to-One Participant",
+      tag: "Startup Bootcamp",
+      img: rosalindHowell,
       featured: true,
     },
     {
-      q: "Zero to One gave me the clarity, tools and network to turn an idea into a viable startup. The mentors were incredible!",
-      a: "Arjun Mehta",
-      r: "Co-founder, MedVise AI",
-      tag: "Zero to One",
-      img: studentsImg,
+      q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
+      a: "Sam Tully",
+      r: "Trustee, Pratham UK",
+      tag: "GILP Delegate",
+      img: samTully,
       featured: false,
     },
     {
-      q: "This student programme opened my eyes to the power of innovation and leadership. I left with confidence and lasting friendships.",
-      a: "Emily Chen",
-      r: "GSP Participant",
-      tag: "Student Programme",
-      img: schoolLeadersImg,
+      q: "I was humbled and exhilarated for the recognition of the potential of EquiGen... This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
+      a: "Dr. Yvonne Walburga",
+      r: "Post-doctoral Research Affiliate",
+      tag: "University of Cambridge",
+      img: yvonneWalburga,
       featured: false,
-    },
+    }
   ];
 
   const [featured, ...rest] = testimonials;
