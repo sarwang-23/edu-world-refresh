@@ -11,6 +11,9 @@ import frugalHubCover from "@/assets/frugal-ai-yellow.jpg";
 import gilpBrochureCover from "@/assets/gilp-brochure-cover.jpg";
 import { Footer } from "./index";
 import { SharedTestimonials } from '@/components/SharedTestimonials';
+import abhishekKumar from '@/assets/people/abhishek_kumar.jpg';
+import sydneyConner from '@/assets/people/sydney_conner.jpg';
+import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
 
 
 
@@ -47,6 +50,33 @@ function InsightsPage() {
     document.body.removeChild(link);
   };
 
+  const insightsTestimonials = [
+    {
+      q: "Building an entrepreneurial mindset as a researcher is a powerful toolkit. However, the right team and the right people to support and back your idea will make a huge difference.",
+      a: "Dr. Yvonne Walburga Joko-Fru",
+      r: "Post-doctoral Research Affiliate, University of Cambridge",
+      tag: "Research & Entrepreneurship",
+      img: yvonneWalburga,
+      featured: true,
+    },
+    {
+      q: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle, as a market structure failure, not just a research gap. That reframe was the most valuable part.",
+      a: "Sydney Conner",
+      r: "PhD in Biomedical Engineering",
+      tag: "Zero-to-One",
+      img: sydneyConner,
+      featured: false,
+    },
+    {
+      q: "Building for the UK means meeting some of the world's highest expectations around privacy and accountability. Those standards don't just prepare us for a new market—they make our product stronger everywhere.",
+      a: "Abhishek Kumar",
+      r: "Founder, Kavach AI",
+      tag: "GEL Global Ventures",
+      img: abhishekKumar,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground relative">
       <Hero />
@@ -55,7 +85,7 @@ function InsightsPage() {
       <FeaturedPaper onDownload={handleDownload} />
       <PublicationsArchive onDownload={handleDownload} />
       <TheBriefing />
-      <SharedTestimonials />
+      <SharedTestimonials customTestimonials={insightsTestimonials} />
       <CTA />
       <Footer />
     </div>

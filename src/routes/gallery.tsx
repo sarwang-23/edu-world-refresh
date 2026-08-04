@@ -58,7 +58,46 @@ import bali4 from "@/assets/bali_new_4.jpg";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import impactNew1 from "@/assets/impact_new_1.jpg";
 import impactNew2 from "@/assets/impact_new_2.jpg";
+import executiveEducation from "@/assets/executive-education.jpg";
+import campusLife1 from "@/assets/campus-life-1.jpg";
+import startupImg from "@/assets/startup.jpg";
+import studentsGeneral from "@/assets/students.jpg";
+import zeroToOneImg from "@/assets/zero-to-one.png";
+import heroClassroom from "@/assets/hero-classroom.jpg";
+
+// ── People
+import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
+import amarjitSingh from '@/assets/people/amarjit_singh.jpg';
+import lindaTang from '@/assets/people/linda_tang.jpg';
+
 import { SharedTestimonials } from '@/components/SharedTestimonials';
+
+const galleryTestimonials = [
+  {
+    q: "Sometimes life changes on a random Monday afternoon. Mine did - at THE UNIVERSITY OF CAMBRIDGE !!!!! What started as a quiet summer turned into a turning point I didn’t even know I needed. A place, a community, a classroom, conversations and souls that shifted my mind and my path, forever. If there’s one thing this journey taught me, it’s that opportunities like this don’t just appear - they are created by people who believe in the power of education to change lives.",
+    a: "Jivika Vikamshi",
+    r: "Co-Founder, Manashakti",
+    tag: "Summer Immersion",
+    img: jivikaVikamshi,
+    featured: true,
+  },
+  {
+    q: "Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!",
+    a: "Amarjit Singh",
+    r: "CEO, India Business Forum",
+    tag: "GILP Delegate",
+    img: amarjitSingh,
+    featured: false,
+  },
+  {
+    q: "Good team vibe, good organisation, like the short content inserts. There aren't many experiences where you can feel yourself changing and growing in real time, but I felt myself growing in confidence and expertise.",
+    a: "Linda Tang",
+    r: "Science Student",
+    tag: "Cambridge",
+    img: lindaTang,
+    featured: false,
+  },
+];
 
 
 export const Route = createFileRoute("/gallery")({
@@ -78,43 +117,45 @@ function Photo({
   src: string; alt: string; label?: string; location?: string; className?: string;
 }) {
   return (
-    <div className={`group relative overflow-hidden rounded-2xl ${className}`}>
+    <div className={`group relative overflow-hidden rounded-[2rem] border border-white/5 bg-[#080d07] ${className}`}>
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+        className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
       />
-      {/* dark overlay on hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Subtle vignette instead of harsh overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.4)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      
       {(label || location) && (
-        <div className="absolute bottom-0 left-0 w-full p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          {label && <p className="text-white font-semibold text-sm leading-snug">{label}</p>}
-          {location && (
-            <div className="flex items-center gap-1.5 mt-1.5">
-              <MapPin className="h-3 w-3 text-[#C19842]" />
-              <span className="text-[#C19842] text-xs font-bold tracking-widest uppercase">{location}</span>
-            </div>
-          )}
+        <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-[80%] translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none">
+          <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-4 shadow-2xl">
+            {label && <p className="text-white font-semibold text-[15px] leading-snug tracking-tight">{label}</p>}
+            {location && (
+              <div className="flex items-center gap-1.5 mt-2">
+                <MapPin className="h-3.5 w-3.5 text-[#C19842]" />
+                <span className="text-[#C19842] text-[10px] font-bold tracking-[0.2em] uppercase">{location}</span>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-/* ─── Section header ─── */
 function SectionHeader({ eyebrow, title, accent, desc }: { eyebrow: string; title: string; accent?: string; desc?: string }) {
   return (
-    <div className="mb-14">
-      <div className="flex items-center gap-3 mb-5">
-        <span className="h-px w-8 bg-[#C19842] block" />
-        <span className="text-xs font-bold tracking-[0.3em] text-[#C19842] uppercase">{eyebrow}</span>
+    <div className="mb-14 max-w-2xl">
+      <div className="flex items-center gap-4 mb-6">
+        <span className="h-[2px] w-12 bg-gradient-to-r from-[#C19842] to-transparent block rounded-full" />
+        <span className="text-[11px] font-bold tracking-[0.3em] text-[#C19842] uppercase">{eyebrow}</span>
       </div>
-      <h2 className="text-4xl md:text-[3.25rem] font-bold tracking-tight text-white leading-[1.08]">
+      <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-white/95 leading-[1.1]">
         {title}{" "}
-        {accent && <span className="font-serif italic text-[#C19842] font-normal">{accent}</span>}
+        {accent && <span className="font-serif italic text-[#C19842] font-normal drop-shadow-[0_0_15px_rgba(193,152,66,0.25)]">{accent}</span>}
       </h2>
-      {desc && <p className="mt-4 text-white/60 text-[15px] leading-relaxed max-w-lg">{desc}</p>}
+      {desc && <p className="mt-6 text-white/60 text-[16px] leading-relaxed font-light">{desc}</p>}
     </div>
   );
 }
@@ -221,30 +262,18 @@ function GalleryPage() {
           desc="Over 150 business leaders trained through advanced workshops in partnership with the University of Cambridge."
         />
 
-        {/* 3-col editorial: big left, stacked right */}
-        <div className="flex flex-col gap-3">
-          {/* Row A */}
-          <div className="grid grid-cols-12 gap-3 h-[480px]">
-            <Photo src={cambridge1} alt="Cambridge" label="Leadership Forum" location="Cambridge, UK" className="col-span-8 h-full" />
-            <div className="col-span-4 flex flex-col gap-3">
-              <Photo src={cambridge2} alt="Cambridge" label="Judge Business School" location="Cambridge, UK" className="flex-1" />
-              <Photo src={cambridge3} alt="Cambridge" location="Cambridge, UK" className="flex-1" />
-            </div>
-          </div>
-
-          {/* Row B */}
-          <div className="grid grid-cols-3 gap-3 h-[300px]">
-            <Photo src={cambridge4} alt="Cambridge" location="Cambridge, UK" className="h-full" />
-            <Photo src={cambridge5} alt="Cambridge" location="Cambridge, UK" className="h-full" />
-            <Photo src={cambridge6} alt="Cambridge" location="Cambridge, UK" className="h-full" />
-          </div>
-
-          {/* Row C: wide panorama + portrait */}
-          <div className="grid grid-cols-12 gap-3 h-[380px]">
-            <Photo src={cambridge7} alt="Cambridge" label="Michaelmas '24" location="Cambridge, UK" className="col-span-5 h-full" />
-            <Photo src={cambridge8} alt="Cambridge" location="Cambridge, UK" className="col-span-4 h-full" />
-            <Photo src={cambridgeImg} alt="Cambridge" label="King's College" location="Cambridge, UK" className="col-span-3 h-full" />
-          </div>
+        {/* Premium Bento Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
+          <Photo src={executiveEducation} alt="Executive Education" label="Executive Education" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
+          <Photo src={cambridge2} alt="Cambridge" label="Judge Business School" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={businessLeadersImg} alt="Business Leaders" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={cambridge4} alt="Cambridge" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={campusLife1} alt="Campus Life" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
+          <Photo src={cambridge5} alt="Cambridge" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={cambridge7} alt="Cambridge" label="Michaelmas '24" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={cambridge1} alt="Leadership Forum" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
         </div>
       </section>
 
@@ -279,26 +308,17 @@ function GalleryPage() {
           desc="Business leaders across India engaging with global faculty at landmark venues and campuses."
         />
 
-        <div className="flex flex-col gap-3">
-          {/* Row A: 3 equal */}
-          <div className="grid grid-cols-3 gap-3 h-[320px]">
-            {[gilpMarch2, gilpMarch4, gilpMarch5].map((img, i) => (
-              <Photo key={i} src={img} alt="GILP India" location="India" className="h-full" />
-            ))}
-          </div>
-
-          {/* Row B: small + panorama */}
-          <div className="grid grid-cols-12 gap-3 h-[420px]">
-            <Photo src={gilpMarch6} alt="GILP" label="Summit Plenary" location="New Delhi" className="col-span-4 h-full" />
-            <Photo src={gilpMarch7} alt="GILP" location="India" className="col-span-8 h-full" />
-          </div>
-
-          {/* Row C: 4 equal */}
-          <div className="grid grid-cols-4 gap-3 h-[240px]">
-            {[gilpMarch8, gilpMarch9, gilpMarch10, impactNew1].map((img, i) => (
-              <Photo key={i} src={img} alt="GILP" location="India" className="h-full" />
-            ))}
-          </div>
+        {/* Premium Bento Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
+          <Photo src={gilpMarch6} alt="GILP" label="Summit Plenary" location="New Delhi" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
+          <Photo src={gilpMarch2} alt="GILP India" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch5} alt="GILP India" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={gilpMarch4} alt="GILP India" location="India" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
+          <Photo src={gilpMarch7} alt="GILP" location="India" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-1" />
+          
+          <Photo src={gilpMarch8} alt="GILP" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch9} alt="GILP" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
         </div>
       </section>
 
@@ -328,30 +348,27 @@ function GalleryPage() {
           desc="Executive education in one of the world's most innovative ecosystems — Scandinavia's frontier."
         />
 
-        <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-12 gap-3 h-[420px]">
-            <Photo src={finland1} alt="Finland" label="Helsinki Campus" location="Helsinki, Finland" className="col-span-7 h-full" />
-            <div className="col-span-5 flex flex-col gap-3">
-              <Photo src={finland2} alt="Finland" location="Finland" className="flex-1" />
-              <Photo src={finland3} alt="Finland" location="Finland" className="flex-1" />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-3 h-[300px]">
-            <Photo src={finland4} alt="Finland" location="Finland" className="h-full" />
-            <Photo src={finland5} alt="Finland" location="Finland" className="h-full" />
-          </div>
+        {/* Premium Bento Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
+          <Photo src={finland1} alt="Finland" label="Helsinki Campus" location="Helsinki, Finland" className="col-span-1 md:col-span-2 lg:col-span-7 row-span-2" />
+          <Photo src={finland2} alt="Finland" location="Finland" className="col-span-1 md:col-span-1 lg:col-span-5 row-span-1" />
+          <Photo src={finland3} alt="Finland" location="Finland" className="col-span-1 md:col-span-1 lg:col-span-5 row-span-1" />
+          
+          <Photo src={finland4} alt="Finland" location="Finland" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
+          <Photo src={finland5} alt="Finland" location="Finland" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
         </div>
 
         {/* BALI sub-chapter */}
-        <div className="mt-20">
+        <div className="mt-24">
           <div className="flex items-center gap-3 mb-10">
             <span className="h-px w-8 bg-[#C19842] block" />
             <span className="text-xs font-bold tracking-[0.3em] text-[#C19842] uppercase">Bali — Indonesia</span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 h-[260px]">
-            {[bali1, bali2, bali3, bali4].map((img, i) => (
-              <Photo key={i} src={img} alt="Bali" location="Bali, Indonesia" className="h-full" />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
+            <Photo src={bali1} alt="Bali" location="Bali, Indonesia" className="col-span-1 md:col-span-1 lg:col-span-5 row-span-1" />
+            <Photo src={bali2} alt="Bali" location="Bali, Indonesia" className="col-span-1 md:col-span-1 lg:col-span-7 row-span-1" />
+            <Photo src={bali3} alt="Bali" location="Bali, Indonesia" className="col-span-1 md:col-span-1 lg:col-span-7 row-span-1" />
+            <Photo src={bali4} alt="Bali" location="Bali, Indonesia" className="col-span-1 md:col-span-1 lg:col-span-5 row-span-1" />
           </div>
         </div>
       </section>
@@ -360,8 +377,8 @@ function GalleryPage() {
           CINEMATIC DIVIDER — STUDENTS
       ══════════════════════════════ */}
       <div className="relative h-[70vh] min-h-[500px] overflow-hidden">
-        <img src={impactNew2} alt="Students" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080d07] via-[#080d07]/30 to-transparent" />
+        <img src={startupImg} alt="Students" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080d07] via-[#080d07]/40 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full px-6 md:px-24 pb-16 max-w-[1500px] mx-auto">
           <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-4">Chapter 04 — Student Programmes</p>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white max-w-2xl">
@@ -385,36 +402,27 @@ function GalleryPage() {
           desc="From STEM research workshops to entrepreneurship boot camps, shaping the leaders of tomorrow."
         />
 
-        <div className="flex flex-col gap-3">
-          {/* Row A: big + 2 stacked */}
-          <div className="grid grid-cols-12 gap-3 h-[440px]">
-            <Photo src={stem1Img} alt="STEM" label="STEM Research Workshop" location="Cambridge, UK" className="col-span-8 h-full" />
-            <div className="col-span-4 flex flex-col gap-3">
-              <Photo src={yusufHImg} alt="Student" label="Young Leaders" location="India" className="flex-1" />
-              <Photo src={stemYvesImg} alt="STEM Yves" location="Cambridge, UK" className="flex-1" />
-            </div>
-          </div>
-
-          {/* Row B: 3 equal */}
-          <div className="grid grid-cols-3 gap-3 h-[300px]">
-            {[stemAstroImg, siteVisitImg, img0719].map((img, i) => (
-              <Photo key={i} src={img} alt="Student programme" location="India / UK" className="h-full" />
-            ))}
-          </div>
-
-          {/* Row C: 4 equal */}
-          <div className="grid grid-cols-4 gap-3 h-[220px]">
-            {[img4915, img4929, img5105, img5138].map((img, i) => (
-              <Photo key={i} src={img} alt="Student programme" className="h-full" />
-            ))}
-          </div>
-
-          {/* Row D: panorama */}
-          <div className="h-[340px]">
-            <Photo src={img5277} alt="Student programme" label="GEL Summer Programme" location="Cambridge, UK" className="h-full w-full" />
-          </div>
+        {/* Premium Bento Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
+          <Photo src={siteVisitImg} alt="STEM Field Trip" label="Site Visit" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
+          <Photo src={yusufHImg} alt="Student" label="Young Leaders" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={stemYvesImg} alt="STEM Yves" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={studentsGeneral} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={zeroToOneImg} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
+          <Photo src={stem1Img} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={img4929} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={img5105} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          
+          <Photo src={heroClassroom} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
+          <Photo src={img5138} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
+          
+          <Photo src={img5277} alt="Student programme" label="GEL Summer Programme" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-12 row-span-1" />
         </div>
       </section>
+
+      <SharedTestimonials customTestimonials={galleryTestimonials} featuredBgImage={cambridgeImg} />
 
       {/* ══════════════════════════════
           PREMIUM CTA
@@ -448,7 +456,6 @@ function GalleryPage() {
         </div>
       </section>
 
-      <SharedTestimonials />
       <Footer />
 
       {/* ── slowZoom keyframe ── */}

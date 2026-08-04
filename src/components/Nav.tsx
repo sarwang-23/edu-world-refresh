@@ -12,8 +12,20 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/gel-logo-transparent.png" alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
+        <Link to="/" className="flex items-center gap-2 py-1">
+          <div className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[22px] lowercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <div className="relative w-max">
+              <span className="relative z-10">
+                <span className="relative inline-block">
+                  g
+                  <span className="absolute top-[45%] left-[-10%] w-[120%] h-[2.5px] bg-forest -rotate-[45deg] z-20 rounded-full pointer-events-none"></span>
+                </span>
+                lobal
+              </span>
+            </div>
+            <span>education</span>
+            <span>lab</span>
+          </div>
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
           

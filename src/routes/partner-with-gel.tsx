@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials'
 import {
   ArrowUpRight,
   Globe2,
@@ -26,6 +27,9 @@ import {
 import heroImg from '../assets/IMG_5277.jpg'
 import cambridgeImg from '../assets/cambridge.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
+import dhruvGalgotia from '@/assets/people/dhruv_galgotia.jpg';
+import samTully from '@/assets/people/sam_tully.jpg';
+import lucyJung from '@/assets/people/lucy_jung.jpg';
 
 export const Route = createFileRoute('/partner-with-gel')({
   head: () => ({
@@ -37,6 +41,33 @@ export const Route = createFileRoute('/partner-with-gel')({
   component: PartnerWithGelPage,
 })
 
+const partnerTestimonials = [
+  {
+    q: "An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances... Looking forward to announcing several new engagements and partnerships very soon.",
+    a: "Dr. Dhruv Galgotia",
+    r: "CEO, Galgotias Education Group",
+    tag: "Global Partnerships",
+    img: dhruvGalgotia,
+    featured: true,
+  },
+  {
+    q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
+    a: "Sam Tully",
+    r: "Trustee, Pratham UK",
+    tag: "Institutional Growth",
+    img: samTully,
+    featured: false,
+  },
+  {
+    q: "I was impressed by how far ventures (on GEL programme) got in such a short time, considering stakeholders and business models and how to make the sustainable growth of their ideas possible. Thank you for the opportunity to mentor.",
+    a: "Lucy Jung",
+    r: "Founder & CEO, LYEONS",
+    tag: "GEL Mentor",
+    img: lucyJung,
+    featured: false,
+  }
+];
+
 function PartnerWithGelPage() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
@@ -46,7 +77,7 @@ function PartnerWithGelPage() {
       <WhyPartner />
       <PartnershipJourney />
       <TrustedByMarquee />
-      <TestimonialSection />
+      <SharedTestimonials customTestimonials={partnerTestimonials} featuredBgImage={cambridgeImg} />
       <CTA />
       <Footer />
     </div>
@@ -484,70 +515,7 @@ function TrustedByMarquee() {
   )
 }
 
-/* ── Testimonial Section ── */
-function TestimonialSection() {
-  return (
-    <section className="bg-[#F4F1E8] py-24 md:py-32 px-6">
-      <div className="mx-auto max-w-[1000px]">
-        
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="h-px w-6 bg-[#C19842]" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-[#C19842]">Partner Success</span>
-          </div>
-          <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep leading-[1.1] mb-8 tracking-tight">
-            Partnering for <span className="font-serif italic text-[#C19842]">excellence.</span>
-          </h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
-              </div>
-            </div>
-          ))}
-        </div>
 
-          <div className="mx-auto h-px w-20 bg-[#C19842]/40" />
-        </div>
-
-        {/* 1 Frame (Single Card) */}
-        <div className="relative bg-white rounded-[2.5rem] p-10 md:p-16 lg:p-20 shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-forest/5 flex flex-col items-center text-center overflow-hidden">
-          
-          {/* Watermark Quote Icon */}
-          <div className="absolute top-4 left-6 md:left-12 text-[12rem] md:text-[16rem] font-serif text-forest-deep/[0.02] leading-none pointer-events-none select-none">
-            "
-          </div>
-          
-          <div className="relative z-10 w-full max-w-3xl mx-auto mb-10 md:mb-12">
-            <p className="text-[1.5rem] md:text-[2rem] lg:text-[2.4rem] font-serif italic text-forest-deep leading-[1.5] tracking-tight">
-              "Our partnership with GEL has opened new doors for our students and faculty. The Cambridge experience, combined with practical learning, created exceptional outcomes."
-            </p>
-          </div>
-          
-          <div className="flex flex-col items-center shrink-0 w-full relative z-10">
-            <img
-              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=150&q=80"
-              alt="Dr. Ted Laursen"
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border border-forest/5 mb-5"
-            />
-            <h4 className="text-[17px] md:text-[19px] font-bold text-forest-deep mb-1">Dr. Ted Laursen</h4>
-            <p className="text-[15px] md:text-[15px] text-forest/70 uppercase tracking-[0.2em] font-extrabold leading-[1.6]">
-              Chancellor, American University of Sharjah
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  )
-}
 
 /* ── CTA ── */
 function CTA() {

@@ -347,7 +347,7 @@ function CambridgeOrigin() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5]">
-              <img src={cambridgeImg} alt="Cambridge courtyard" className="w-full h-full object-cover" />
+              <img src={startupImg} alt="Innovation and Purpose" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             </div>
           </div>

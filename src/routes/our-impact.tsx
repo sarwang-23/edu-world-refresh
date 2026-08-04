@@ -21,6 +21,7 @@ import s2 from '@/assets/school-leaders.jpg'
 import s3 from '@/assets/business-leaders.jpg'
 import s4 from '@/assets/impact_new_2.jpg'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
 import person9Img from '@/assets/person9.jpg'
 import person10Img from '@/assets/person10.jpg'
 import sdg4Img from '@/assets/sdg-4.jpg';
@@ -41,6 +42,33 @@ export const Route = createFileRoute('/our-impact')({
 })
 
 function Page() {
+  const impactTestimonials = [
+    {
+      q: "There were times during the weekend when I knew that what I was learning would stick with me throughout my career journey... There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence.",
+      a: "Rosalind Howell",
+      r: "Zero-to-One Participant",
+      tag: "Startup Bootcamp",
+      img: rosalindHowell,
+      featured: true,
+    },
+    {
+      q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
+      a: "Sam Tully",
+      r: "Trustee, Pratham UK",
+      tag: "GILP Delegate",
+      img: samTully,
+      featured: false,
+    },
+    {
+      q: "I was humbled and exhilarated for the recognition of the potential of EquiGen... This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
+      a: "Dr. Yvonne Walburga",
+      r: "Post-doctoral Research Affiliate",
+      tag: "University of Cambridge",
+      img: yvonneWalburga,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground bg-background">
       <Hero />
@@ -50,6 +78,7 @@ function Page() {
       <Numbers />
       <SDGs />
 
+      <SharedTestimonials customTestimonials={impactTestimonials} featuredBgImage={heroImg} />
       <CTA />
       <Footer />
     </div>
@@ -741,26 +770,13 @@ function Testimonials() {
 
       <div className="mx-auto max-w-[100rem] px-6 lg:px-12 relative z-10">
         {/* Header */}
-        <div className="mb-24 text-center flex flex-col items-center">
+        <div className="mb-12 text-center flex flex-col items-center">
           <span className="text-[15px] font-bold uppercase tracking-[0.4em] text-gold mb-4">— What They Say</span>
           <h2 className="text-4xl font-bold tracking-tight text-cream md:text-[3.5rem]">
             Perspectives on <span className="font-serif italic text-gold">impact.</span>
           </h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
-              </div>
-            </div>
-          ))}
-        </div>
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-10 flex items-center gap-4">
             <div className="h-px w-16 bg-gold/40" />
             <div className="h-1.5 w-1.5 rounded-full bg-gold" />
             <div className="h-px w-16 bg-gold/40" />

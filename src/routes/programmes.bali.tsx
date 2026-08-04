@@ -13,6 +13,7 @@ import bali6Img from '../assets/bali_new_6.jpg'
 import bali7Img from '../assets/bali_new_7.jpg'
 import bali8Img from '../assets/bali_new_8.jpg'
 import bali9Img from '../assets/bali_new_9.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/bali')({
   head: () => ({
@@ -27,13 +28,32 @@ export const Route = createFileRoute('/programmes/bali')({
 })
 
 function Page() {
+  const baliTestimonials = [
+    {
+      q: "The Bali experience shook every preconception I had about what a school could look like. Green School has created something truly miraculous — and GEL brought us inside it. I returned with a completely refreshed vision for our institution.",
+      a: "Priya Menon",
+      r: "The Orchid School, Pune",
+      tag: "Bali Programme",
+      img: person6Img,
+      featured: true,
+    },
+    {
+      q: "Five days among bamboo classrooms and student-led sustainability projects transformed the way I think about curriculum design. The immersion with Global Edu Lab was deeply impactful — both personally and professionally.",
+      a: "Rajesh Nair",
+      r: "Principal, Kerala International School",
+      tag: "Bali Programme",
+      img: person7Img,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Hero />
       <ExperienceSection />
       <WhoShouldEnroll />
       <Schedule />
-      <Testimonials />
+      <SharedTestimonials customTestimonials={baliTestimonials} />
       <GallerySection />
       <ProgrammeDetails />
       <CTA />
@@ -227,58 +247,6 @@ function Schedule() {
   )
 }
 
-function Testimonials() {
-  const testimonials = [
-    { name: 'Priya Menon', school: 'The Orchid School, Pune', quote: 'The Bali experience shook every preconception I had about what a school could look like. Green School has created something truly miraculous — and GEL brought us inside it. I returned with a completely refreshed vision for our institution.', img: person6Img },
-    { name: 'Rajesh Nair', school: 'Principal, Kerala International School', quote: 'Five days among bamboo classrooms and student-led sustainability projects transformed the way I think about curriculum design. The immersion with Global Edu Lab was deeply impactful — both personally and professionally.', img: person7Img },
-  ]
-  const [current, setCurrent] = useState(0)
-  const t = testimonials[current]
-  return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <div className="h-px w-8 bg-gold" />
-          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-          <div className="h-px w-8 bg-gold" />
-        </div>
-        <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What participants say about our programme?</h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
-        <div className="flex items-center justify-center gap-1 mb-6">
-          {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-        </div>
-        <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
-        <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[15px] text-forest/70 mt-1">{t.school}</p>
-        <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
-          </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function ProgrammeDetails() {
   const details = [

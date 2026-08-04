@@ -10,6 +10,10 @@ import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'
 import cambridgeImg from '@/assets/cambridge_1.jpg'
 import baliImg from '@/assets/bali_new_4.jpg'
+import samvritha from '@/assets/people/samvritha.png';
+import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
+import pushkarSingh from '@/assets/people/pushkar_singh.jpg';
+import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/past-programmes')({
   head: () => ({
@@ -22,13 +26,40 @@ export const Route = createFileRoute('/past-programmes')({
 })
 
 function PastProgrammes() {
+  const pastTestimonials = [
+    {
+      q: "These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow.",
+      a: "Pushkar Singh",
+      r: "Founder, CarbonSynq Earth",
+      tag: "Summer Immersion",
+      img: pushkarSingh,
+      featured: true,
+    },
+    {
+      q: "What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving.",
+      a: "Tendai Nzonzo",
+      r: "Founder, Sana AI",
+      tag: "Zero-to-One",
+      img: tendaiNzonzo,
+      featured: false,
+    },
+    {
+      q: "My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day.",
+      a: "Samvritha",
+      r: "Student",
+      tag: "Young Leaders Programme",
+      img: samvritha,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
       <StatsMarquee />
       <OurProgrammes />
       <ImpactBanner />
-      <Voices />
+      <SharedTestimonials customTestimonials={pastTestimonials} />
       <BottomCTA />
       <Footer />
     </div>
@@ -299,64 +330,6 @@ function ImpactBanner() {
   )
 }
 
-/* ─── VOICES ─────────────────────────────────────────────────────────────── */
-function Voices() {
-  const testimonials = [
-    {
-      q: "The programme broadened my perspective on education leadership. The school visits and conversations with educators were truly transformative.",
-      a: "Priya Nair",
-      r: "Principal, India",
-      img: teachersImg,
-    },
-    {
-      q: "A perfect blend of academic excellence, practical frameworks and global networking. I returned with ideas I could immediately apply in my organisation.",
-      a: "Rohan Mehta",
-      r: "Director, Business Development",
-      img: studentsImg,
-    },
-    {
-      q: "The focus on sustainability and systems thinking at Bali Green School was inspiring. It reshaped how we think about learning and impact.",
-      a: "Emma Roberts",
-      r: "Education Leader, UK",
-      img: schoolLeadersImg,
-    },
-  ]
-  return (
-    <section className="bg-white py-32 border-t border-forest/5 relative overflow-hidden">
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-gold/5 blur-[100px]" />
-      <div className="mx-auto max-w-7xl px-6 relative z-10">
-
-        {/* Title and Content Centered at Top */}
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-            <div className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-5 leading-[1.1]">Voices from Our Participants</h2>
-          <p className="text-[15px] text-forest/70 leading-[1.7]">
-            Real stories from the people who have experienced our programmes firsthand.
-          </p>
-        </div>
-
-        {/* 3 Testimonial Cards in a Row */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="group bg-[#F4EFE6] rounded-[1.75rem] p-8 border border-forest/8 flex flex-col hover:border-gold/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-400 relative overflow-hidden">
-              <span className="text-6xl text-gold/80 font-serif leading-none absolute top-5 right-7 group-hover:text-gold/80 transition-colors duration-300">"</span>
-              <img src={t.img} alt={t.a} className="w-14 h-14 rounded-2xl object-cover border-2 border-white shadow-md mb-5" />
-              <p className="text-[15px] text-forest/75 leading-[1.8] mb-6 italic flex-1">{t.q}</p>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                <p className="text-[15px] text-forest/80 mt-0.5 uppercase tracking-wide font-semibold">{t.r}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 /* ─── BOTTOM CTA ──────────────────────────────────────────────────────────── */
 function BottomCTA() {

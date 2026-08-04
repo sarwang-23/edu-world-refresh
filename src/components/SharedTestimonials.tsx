@@ -3,8 +3,23 @@ import schoolLeadersImg from "@/assets/partner.png";
 import teachersImg from "@/assets/teachers.jpg";
 import studentsImg from "@/assets/young-leaders.png";
 
-export function SharedTestimonials() {
-  const testimonials = [
+type TestimonialProps = {
+  q: string;
+  a: string;
+  r: string;
+  tag: string;
+  img?: string;
+  featured?: boolean;
+};
+
+export function SharedTestimonials({
+  customTestimonials,
+  featuredBgImage = cambridgeImg
+}: {
+  customTestimonials?: TestimonialProps[],
+  featuredBgImage?: string
+}) {
+  const testimonials = customTestimonials || [
     {
       q: "The GEL was a game changer. The Cambridge ecosystem, combined with high-quality peer learning, was truly invaluable. A transformational experience unlike anything else.",
       a: "Neha Aran",
@@ -54,56 +69,53 @@ export function SharedTestimonials() {
         </div>
 
         {/* Asymmetric Layout */}
-        <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[5fr_4fr] gap-6">
+        <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[4fr_5fr] gap-6">
 
-          {/* Featured Card — image with dark green overlay */}
-          <div className="group relative rounded-3xl overflow-hidden min-h-[520px] flex flex-col justify-end shadow-2xl">
-            {/* Background — Cambridge looks much better */}
-            <img src={cambridgeImg} alt="Cambridge" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            {/* Gradient: transparent top, dark green bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/60 to-forest-deep/20" />
-
-            {/* Content pinned to bottom */}
-            <div className="relative z-10 p-10 pb-10">
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-gold text-base">★</span>
-                ))}
+          {/* Featured Card — White background */}
+          <div className="group relative rounded-3xl bg-white p-10 md:p-12 border border-forest/8 min-h-[520px] flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+            <div>
+              {/* Top row: stars and tag */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-gold text-xl">★</span>
+                  ))}
+                </div>
+                <span className="bg-forest-deep text-white text-[15px] font-bold uppercase tracking-[0.18em] px-4 py-2 rounded-full shadow-sm">
+                  {featured.tag}
+                </span>
               </div>
 
               {/* Big quote mark */}
-              <span className="block text-[5rem] text-gold/80 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
+              <span className="block text-[6rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">"</span>
 
-              <p className="text-[16px] text-white/95 leading-[1.75] font-normal mb-8 max-w-md">
+              {/* Quote text - Made larger to fill space */}
+              <p className="text-[20px] md:text-[24px] text-forest-deep/90 leading-[1.65] font-medium -mt-6 mb-8 max-w-xl">
                 {featured.q}
               </p>
+            </div>
 
-              {/* Divider */}
-              <div className="h-px bg-white/20 mb-6 w-16" />
+            {/* Divider with hover gold accent */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
+              <div className="w-1.5 h-1.5 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
+            </div>
 
-              {/* Author Row */}
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="relative shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-forest border-2 border-gold/50 flex items-center justify-center text-white font-bold text-lg overflow-hidden">
-                      {featured.img ? (
-                        <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" />
-                      ) : (
-                        featured.a[0]
-                      )}
-                    </div>
-                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-gold border-2 border-forest-deep" />
-                  </div>
-                  <div>
-                    <p className="text-[15px] font-bold text-white">{featured.a}</p>
-                    <p className="text-[15px] text-white/80 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
-                  </div>
+            {/* Author Row */}
+            <div className="flex items-center gap-4">
+              <div className="relative shrink-0">
+                <div className="w-14 h-14 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-xl overflow-hidden group-hover:border-gold/40 transition-colors duration-300">
+                  {featured.img ? (
+                    <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" />
+                  ) : (
+                    featured.a[0]
+                  )}
                 </div>
-                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
-                  {featured.tag}
-                </span>
+                <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-gold border-2 border-white" />
+              </div>
+              <div>
+                <p className="text-[16px] font-bold text-forest-deep">{featured.a}</p>
+                <p className="text-[13px] text-forest/70 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
               </div>
             </div>
           </div>

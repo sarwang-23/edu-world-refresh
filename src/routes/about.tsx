@@ -15,6 +15,9 @@ import person9 from "@/assets/person9.jpg";
 import person10 from "@/assets/person10.jpg";
 import person11 from "@/assets/person11.jpg";
 import person12 from "@/assets/person12.jpg";
+import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
+import amarjitSingh from '@/assets/people/amarjit_singh.jpg';
+import lindaTang from '@/assets/people/linda_tang.jpg';
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -32,6 +35,33 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const aboutTestimonials = [
+    {
+      q: "Sometimes life changes on a random Monday afternoon. Mine did - at THE UNIVERSITY OF CAMBRIDGE !!!!! What started as a quiet summer turned into a turning point I didn’t even know I needed. A place, a community, a classroom, conversations and souls that shifted my mind and my path, forever.",
+      a: "Jivika Vikamshi",
+      r: "Co-Founder, Manashakti",
+      tag: "GEL Summer Immersion",
+      img: jivikaVikamshi,
+      featured: true,
+    },
+    {
+      q: "Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!",
+      a: "Amarjit Singh",
+      r: "CEO, India Business Forum",
+      tag: "GILP Delegate",
+      img: amarjitSingh,
+      featured: false,
+    },
+    {
+      q: "Good team vibe, good organisation, like the short content inserts. There aren't many experiences where you can feel yourself changing and growing in real time, but I felt myself growing in confidence and expertise.",
+      a: "Linda Tang",
+      r: "Medicine Student",
+      tag: "University of Cambridge",
+      img: lindaTang,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Hero />
@@ -40,7 +70,7 @@ function AboutPage() {
       <Journey />
       <Impact />
       <OurPeople />
-      <SharedTestimonials />
+      <SharedTestimonials customTestimonials={aboutTestimonials} />
       <Cta />
       <Footer />
     </div>
