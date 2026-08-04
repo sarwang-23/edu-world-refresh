@@ -71,6 +71,7 @@ function Hero() {
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
                 to="/apply-now"
+                search={{ source: 'Finland Education Programme' }}
                 className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
@@ -382,7 +383,7 @@ function CTA() {
         <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">Bring Finland's education miracle to your school.</h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Get in touch to tailor the programme dates and details to your institution's needs.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
-          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
+          <Link to="/apply-now" search={{ source: "Finland Education Study Visit" }} className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
           <Link to="/school-leaders" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">

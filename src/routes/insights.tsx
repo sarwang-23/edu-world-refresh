@@ -431,7 +431,7 @@ function CTA() {
           </div>
           <div className="md:col-span-4">
             <Link
-              to="/contact"
+              to="/contact" search={{ source: "Insights & Research" }}
               className="inline-flex w-full items-center justify-between gap-4 rounded-2xl bg-gold px-8 py-6 text-forest-deep transition-all hover:bg-gold/90"
             >
               <span className="text-lg font-bold tracking-tight">Partner With Us</span>

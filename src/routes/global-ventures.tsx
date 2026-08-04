@@ -117,7 +117,7 @@ function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Global Ventures" }}
                 className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Apply to the Programme <ArrowUpRight className="h-4 w-4" />
@@ -236,7 +236,7 @@ function WhatIs() {
               </p>
             </div>
             <div className="pt-6">
-              <Link to="/contact" className="group inline-flex items-center gap-3 rounded-full bg-forest-deep px-9 py-4.5 text-[15px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-forest shadow-xl shadow-forest/15 hover:shadow-forest/30">
+              <Link to="/contact" search={{ source: "Global Ventures" }} className="group inline-flex items-center gap-3 rounded-full bg-forest-deep px-9 py-4.5 text-[15px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-forest shadow-xl shadow-forest/15 hover:shadow-forest/30">
                 Explore the Programme <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
@@ -534,7 +534,7 @@ function BottomCTA() {
               <p className="text-[15px] text-white/80 leading-relaxed mb-8">
                 Partner with us to empower ventures, create value and shape a better future.
               </p>
-              <Link to="/contact" className="self-start inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.2em] text-[#0A1F11] transition-all hover:bg-white">
+              <Link to="/contact" search={{ source: "Global Ventures" }} className="self-start inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.2em] text-[#0A1F11] transition-all hover:bg-white">
                 Get in Touch <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
@@ -548,7 +548,7 @@ function BottomCTA() {
                   </div>
                   <h4 className="text-[15px] font-bold text-white mb-2">{cta.title}</h4>
                   <p className="text-[15px] text-white/80 leading-relaxed mb-5 flex-1">{cta.desc}</p>
-                  <Link to="/contact" className="inline-flex items-center gap-1.5 text-[15px] font-bold text-gold hover:text-white transition-colors uppercase tracking-[0.15em]">
+                  <Link to="/contact" search={{ source: "Global Ventures" }} className="inline-flex items-center gap-1.5 text-[15px] font-bold text-gold hover:text-white transition-colors uppercase tracking-[0.15em]">
                     {cta.link} <ArrowUpRight className="h-3 w-3" />
                   </Link>
                 </div>

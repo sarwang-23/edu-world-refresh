@@ -1,11 +1,12 @@
-import { Link, useLocation } from '@tanstack/react-router'
+import { Link, useLocation } from '@tanstack/react-router';
+import { getSourceLabel } from '../utils/sourceLabel';
 import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 export function Nav() {
   const location = useLocation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
+
   // Extra items not in the provided image are placed here
   const addons: { label: string; href: string }[] = []
 
@@ -16,27 +17,25 @@ export function Nav() {
           <img src="/gel-logo-transparent.png" alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
-          
+
           <Link
             to="/"
-            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/' ? "text-forest" : "text-forest/75"
-            }`}
+            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/' ? "text-forest" : "text-forest/75"
+              }`}
           >
             Home
           </Link>
-          
+
           {/* Programmes Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
-            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-                location.pathname.startsWith('/programmes') || 
-                location.pathname.startsWith('/students') || 
+            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname.startsWith('/programmes') ||
+                location.pathname.startsWith('/students') ||
                 location.pathname.startsWith('/past-programmes') ? "text-forest" : "text-forest/75"
               }`}>
               Programmes
             </span>
             <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
-            
+
             {/* Level 1 Dropdown */}
             <div className="absolute top-[100%] left-0 hidden w-64 flex-col group-hover:flex">
               {/* Added a transparent bridge to prevent losing hover when moving mouse down */}
@@ -48,7 +47,7 @@ export function Nav() {
                 >
                   All Programmes
                 </Link>
-                
+
                 {/* For students */}
                 <div className="group/students relative">
                   <div className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest cursor-default">
@@ -108,17 +107,15 @@ export function Nav() {
 
           <Link
             to="/about"
-            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/about' ? "text-forest" : "text-forest/75"
-            }`}
+            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/about' ? "text-forest" : "text-forest/75"
+              }`}
           >
             About
           </Link>
 
           {/* Explore Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
-            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-                location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' ? "text-forest" : "text-forest/75"
+            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' ? "text-forest" : "text-forest/75"
               }`}>
               Explore
             </span>
@@ -135,18 +132,17 @@ export function Nav() {
 
           <Link
             to="/gallery"
-            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/gallery' ? "text-forest" : "text-forest/75"
-            }`}
+            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/gallery' ? "text-forest" : "text-forest/75"
+              }`}
           >
             Gallery
           </Link>
 
           <Link
             to="/contact"
-            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/contact' ? "text-forest" : "text-forest/75"
-            }`}
+            search={{ source: getSourceLabel(location.pathname) }}
+            className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/contact' ? "text-forest" : "text-forest/75"
+              }`}
           >
             Contact us
           </Link>
@@ -172,6 +168,7 @@ export function Nav() {
         </nav>
         <Link
           to="/apply-now"
+          search={{ source: getSourceLabel(location.pathname) }}
           className="hidden items-center gap-2 rounded-full bg-forest-deep px-5 py-2.5 text-[15px] font-bold tracking-wide text-gold transition-all hover:bg-forest md:inline-flex"
         >
           Apply Now <ArrowUpRight className="h-4 w-4" />
@@ -179,6 +176,7 @@ export function Nav() {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             to="/apply-now"
+            search={{ source: getSourceLabel(location.pathname) }}
             onClick={() => setIsMobileMenuOpen(false)}
             className="inline-flex items-center gap-1 rounded-full bg-forest-deep px-4 py-2 text-[13px] font-bold tracking-wide text-gold transition-all hover:bg-forest"
           >
@@ -203,7 +201,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Graduate Summer Programme</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/entrepreneurship" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Mentorship & Support</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/past-programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Past Programmes</Link>
-            
+
             <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Explore</div>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global Ventures</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/about" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">About Us</Link>
@@ -211,7 +209,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
           </div>
         </div>
       )}

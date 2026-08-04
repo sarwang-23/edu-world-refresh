@@ -901,7 +901,7 @@ function Packages() {
                 <p className="text-[15px] text-forest/80 mt-1 leading-relaxed">{pkg.detail}</p>
                 <p className="text-[15px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
                 <Link
-                  to="/contact"
+                  to="/contact" search={{ source: "Global India Leadership Programme" }}
                   className={`mt-8 w-full inline-flex items-center justify-center gap-2 rounded-lg py-3.5 text-[12.5px] font-bold uppercase tracking-[0.18em] transition-all duration-200 ${pkg.highlight ? 'bg-forest-deep text-white hover:bg-forest shadow-md' : 'border-2 border-forest-deep/20 text-forest-deep hover:border-gold hover:bg-[#EDE0C4]'}`}
                 >
                   Enquire Now <ArrowUpRight className="h-4 w-4" />
@@ -1740,7 +1740,7 @@ function CTA() {
             Apply for GILP <ArrowUpRight className="h-4 w-4" />
           </button>
           <Link
-            to="/contact"
+            to="/contact" search={{ source: "Global India Leadership Programme" }}
             className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
           >
             Contact Us

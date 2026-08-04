@@ -70,7 +70,7 @@ function Hero() {
 
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Mentorship & Founder Network" }}
                 className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Join the Network
@@ -174,7 +174,7 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Access to the network is currently open for eligible founders. Get in touch to learn how you can join our community.</p>
         <div className="mt-10 flex justify-center">
           <Link
-            to="/apply-now"
+            to="/apply-now" search={{ source: "Mentorship & Founder Network" }}
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl"
           >
             Apply Now

@@ -911,7 +911,7 @@ function CTA() {
           </div>
           
           <div className="flex flex-col items-start lg:items-end gap-6">
-             <Link to="/contact" className="group relative inline-flex items-center gap-8 rounded-2xl bg-gold px-8 py-6 text-[15px] font-bold tracking-wide text-forest-deep transition-all hover:bg-white hover:scale-105 shadow-xl hover:shadow-2xl">
+             <Link to="/contact" search={{ source: "Our Impact" }} className="group relative inline-flex items-center gap-8 rounded-2xl bg-gold px-8 py-6 text-[15px] font-bold tracking-wide text-forest-deep transition-all hover:bg-white hover:scale-105 shadow-xl hover:shadow-2xl">
                 Get Involved
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
              </Link>

@@ -64,7 +64,7 @@ function Hero() {
             </div>
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
-                to="/contact"
+                to="/contact" search={{ source: "Corporate Learning & ESG Workshops" }}
                 className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
               >
                 Enquire Now <ArrowUpRight className="h-4 w-4" />
@@ -340,7 +340,7 @@ function Formats() {
                   </li>
                 ))}
               </ul>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[15px] font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300">
+              <Link to="/contact" search={{ source: "Corporate Learning & ESG Workshops" }} className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3 text-[15px] font-bold uppercase tracking-widest text-white hover:bg-forest transition-all duration-300">
                 {f.cta} <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
@@ -469,12 +469,12 @@ function CTA() {
         <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Tell us about your organisation and your goals. We'll design a bespoke workshop that creates real, lasting impact for your leadership team.</p>
         <div className="mt-10 flex gap-4 justify-center flex-wrap">
           <Link
-            to="/contact"
+            to="/contact" search={{ source: "Corporate Learning & ESG Workshops" }}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-lg"
           >
             Enquire Now <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link to="/apply-now" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
+          <Link to="/apply-now" search={{ source: "Corporate Learning & ESG Workshops" }} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/50 transition-all duration-300">
             Bespoke Advisory &amp; ESG Workshops <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

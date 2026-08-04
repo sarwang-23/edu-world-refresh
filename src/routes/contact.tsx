@@ -3,6 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    source: (search.source as string) || "Direct",
+  }),
   component: ContactPage,
   head: () => ({
     meta: [
@@ -16,6 +19,7 @@ export const Route = createFileRoute("/contact")({
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
 function ContactPage() {
+  const { source } = Route.useSearch();
   const [selectedInterest, setSelectedInterest] = useState("");
 
   const [formData, setFormData] = useState({
@@ -48,6 +52,7 @@ function ContactPage() {
           formType: "Contact",
           ...formData,
           interest: selectedInterest,
+          sourcePage: source,
         }),
       });
 
@@ -180,169 +185,168 @@ function ContactPage() {
                 </button>
               </div>
             ) : (
-            <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
 
-              {/* Name */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="group">
+                {/* Name */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">First Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Karan"
+                      value={formData.firstName}
+                      onChange={handleChange("firstName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[15px] font-semibold text-forest/80">Last Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Sharma"
+                      value={formData.lastName}
+                      onChange={handleChange("lastName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">First Name</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
                   </div>
                   <input
-                    type="text"
+                    type="email"
                     required
-                    placeholder="Karan"
-                    value={formData.firstName}
-                    onChange={handleChange("firstName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    placeholder="you@organisation.com"
+                    value={formData.email}
+                    onChange={handleChange("email")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
-                <div className="group">
+
+                {/* Phone */}
+                <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Last Name</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Phone Number</label>
                   </div>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Sharma"
-                    value={formData.lastName}
-                    onChange={handleChange("lastName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
-                </div>
-                <input
-                  type="email"
-                  required
-                  placeholder="you@organisation.com"
-                  value={formData.email}
-                  onChange={handleChange("email")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Phone Number</label>
-                </div>
-                <div className="flex gap-2">
-                  <select
-                    value={formData.phoneCode}
-                    onChange={handleChange("phoneCode")}
-                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
-                  >
-                    <option>+91 IN</option>
-                    <option>+44 UK</option>
-                    <option>+1 US</option>
-                    <option>+971 AE</option>
-                  </select>
-                  <input
-                    type="tel"
-                    placeholder="98765 43210"
-                    value={formData.phone}
-                    onChange={handleChange("phone")}
-                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Interest */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-3">
-                  <label className="text-[15px] font-semibold text-forest/80">I am Interested In</label>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    "General Enquiry",
-                    "School Leaders",
-                    "Business Leaders",
-                    "Students & Teachers",
-                    "Global Ventures",
-                    "Media & Press",
-                  ].map((tag, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setSelectedInterest(tag)}
-                      className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
-                        selectedInterest === tag
-                          ? "bg-forest-deep border-forest-deep text-white shadow-md"
-                          : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
-                      }`}
+                  <div className="flex gap-2">
+                    <select
+                      value={formData.phoneCode}
+                      onChange={handleChange("phoneCode")}
+                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
                     >
-                      {selectedInterest === tag ? (
-                        <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                      <option>+91 IN</option>
+                      <option>+44 UK</option>
+                      <option>+1 US</option>
+                      <option>+971 AE</option>
+                    </select>
+                    <input
+                      type="tel"
+                      placeholder="98765 43210"
+                      value={formData.phone}
+                      onChange={handleChange("phone")}
+                      className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                {/* Interest */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-3">
+                    <label className="text-[15px] font-semibold text-forest/80">I am Interested In</label>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      "General Enquiry",
+                      "School Leaders",
+                      "Business Leaders",
+                      "Students & Teachers",
+                      "Global Ventures",
+                      "Media & Press",
+                    ].map((tag, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSelectedInterest(tag)}
+                        className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${selectedInterest === tag
+                            ? "bg-forest-deep border-forest-deep text-white shadow-md"
+                            : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
+                          }`}
+                      >
+                        {selectedInterest === tag ? (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                        ) : (
+                          <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                        )}
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Organisation */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Your school or company name"
+                    value={formData.organisation}
+                    onChange={handleChange("organisation")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[15px] font-semibold text-forest/80">Your Message</label>
+                  </div>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us a little about what you are planning..."
+                    value={formData.message}
+                    onChange={handleChange("message")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p className="text-[12.5px] text-red-600 font-medium">
+                    Something went wrong sending your message. Please try again.
+                  </p>
+                )}
+
+                {/* CTA */}
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                  <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[200px]">
+                    By submitting, you consent to be contacted by the Global Education Lab team.
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Sending..." : "Send Message"}
+                    <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
+                      {status === "submitting" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
                       ) : (
-                        <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                        <ArrowUpRight className="h-4 w-4" />
                       )}
-                      {tag}
-                    </button>
-                  ))}
+                    </span>
+                  </button>
                 </div>
-              </div>
-
-              {/* Organisation */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Your school or company name"
-                  value={formData.organisation}
-                  onChange={handleChange("organisation")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[15px] font-semibold text-forest/80">Your Message</label>
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us a little about what you are planning..."
-                  value={formData.message}
-                  onChange={handleChange("message")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
-                />
-              </div>
-
-              {status === "error" && (
-                <p className="text-[12.5px] text-red-600 font-medium">
-                  Something went wrong sending your message. Please try again.
-                </p>
-              )}
-
-              {/* CTA */}
-              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[200px]">
-                  By submitting, you consent to be contacted by the Global Education Lab team.
-                </p>
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
-                >
-                  {status === "submitting" ? "Sending..." : "Send Message"}
-                  <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
-                    {status === "submitting" ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <ArrowUpRight className="h-4 w-4" />
-                    )}
-                  </span>
-                </button>
-              </div>
-            </form>
+              </form>
             )}
           </div>
         </div>

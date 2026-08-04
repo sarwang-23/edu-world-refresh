@@ -433,7 +433,7 @@ function GalleryPage() {
           </div>
           <div className="shrink-0 flex flex-col gap-4">
             <Link
-              to="/contact"
+              to="/contact" search={{ source: "Gallery" }}
               className="inline-flex items-center gap-3 rounded-full bg-[#C19842] px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-[#080d07] transition-all hover:bg-white"
             >
               Start a Conversation <ArrowUpRight className="h-4 w-4" />

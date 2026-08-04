@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
 import { ArrowUpRight, Linkedin } from 'lucide-react'
 import businessLeadersImg from '../assets/business-leaders.jpg'
@@ -112,9 +112,9 @@ function JoinTeamCTA() {
         <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
           We are always looking for passionate educators and operators to join our global network.
         </p>
-        <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold tracking-[0.2em] uppercase text-forest-deep transition-all hover:bg-white">
+        <Link to="/contact" search={{ source: "Our Team" }} className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold tracking-[0.2em] uppercase text-forest-deep transition-all hover:bg-white">
           View Openings <ArrowUpRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </section>
   )
