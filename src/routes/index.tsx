@@ -346,7 +346,7 @@ function CambridgeOrigin() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5]">
-              <img src={cambridgeImg} alt="Cambridge courtyard" className="w-full h-full object-cover" />
+              <img src={schoolLeadersImg} alt="Innovation and Purpose" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             </div>
           </div>
@@ -552,10 +552,20 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <span className="text-[1.5rem] font-bold leading-none tracking-tight text-forest">
-              global<br />education<br />lab
-            </span>
-            <p className="mt-5 max-w-sm text-[15px] leading-[1.7] text-muted-foreground">
+            <div className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[28px] lowercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              <div className="relative w-max">
+                <span className="relative z-10">
+                  <span className="relative inline-block">
+                    g
+                    <span className="absolute top-[45%] left-[-10%] w-[120%] h-[3px] bg-forest -rotate-[45deg] z-20 rounded-full pointer-events-none"></span>
+                  </span>
+                  lobal
+                </span>
+              </div>
+              <span>education</span>
+              <span>lab</span>
+            </div>
+            <p className="mt-6 max-w-sm text-[15px] leading-[1.7] text-muted-foreground">
               Transformational educational experiences for a lifetime of a learner's life.
             </p>
           </div>

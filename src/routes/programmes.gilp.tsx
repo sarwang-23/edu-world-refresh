@@ -141,60 +141,65 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
   )
 }
 
-/* ─── 1. HERO — matches screenshot exactly ─── */
+/* ─── 1. HERO — Rich Aesthetics ─── */
 function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
   return (
-    <section className="relative bg-[#E8DCC8] pt-28 pb-20 border-b border-forest/10 overflow-hidden">
-      {/* subtle grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#0A301D_1px,transparent_1px),linear-gradient(90deg,#0A301D_1px,transparent_1px)] [background-size:48px_48px]" />
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-[1fr_1.15fr] gap-12 items-center">
-
-          {/* LEFT */}
+    <section className="relative bg-[#F4EFE6] pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
+      {/* ambient glows */}
+      <div className="pointer-events-none absolute -top-40 right-10 h-[600px] w-[600px] rounded-full bg-gold/10 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 left-10 h-[500px] w-[500px] rounded-full bg-forest/6 blur-[120px]" />
+      
+      {/* grid texture */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10 z-10">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-20 items-center">
+          
+          {/* LEFT CONTENT */}
           <div>
-            {/* Title + India flag */}
-            <div className="flex items-start justify-between mb-5">
-              <div>
-                <h1 className="text-[2.3rem] md:text-[2.9rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
-                  Global India Leadership Programme
-                </h1>
-                <p className="text-[1.7rem] md:text-[2.1rem] font-bold text-forest-deep leading-tight mt-1">
-                  14-18 September 2026
-                </p>
-              </div>
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-4 py-2 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">Executive Programme</span>
+            </div>
+
+            <div className="flex items-start gap-4 mb-4">
+              <h1 className="text-[3rem] md:text-[4rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
+                Global India<br />
+                Leadership<br />
+                Programme
+              </h1>
               <img
                 src="https://static.wixstatic.com/media/bf78a9_2b40f76be34f43f5b8b02526672c5416~mv2.png"
                 alt="India Flag"
-                className="h-14 w-auto object-contain shrink-0 ml-4 mt-1"
+                className="h-14 md:h-16 w-auto object-contain shrink-0 mt-3 hidden sm:block"
               />
             </div>
 
-            <p className="text-[15px] text-forest/65 leading-relaxed max-w-[420px] mb-7">
+            <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep/90 leading-[1.15] tracking-tight mb-6 font-serif italic">
+              “Leadership grows where<br />perspective widens.”
+            </h2>
+
+            <p className="text-[16px] md:text-[17px] text-forest/75 leading-relaxed max-w-[480px] mb-8 font-medium">
               Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
-              experience at Cambridge equips you with cutting-edge insights in AI, strategy,
-              and leadership to navigate complexity and lead with confidence in a rapidly evolving
-              global landscape.
+              experience equips you with cutting-edge insights in AI, strategy, and leadership to navigate complexity.
             </p>
 
-            <div className="flex items-center gap-2.5 mb-4">
-              <Calendar className="h-[18px] w-[18px] text-forest-deep shrink-0" />
-              <span className="text-[15px] font-semibold text-forest-deep">14-18 September, 2026</span>
+            <div className="flex flex-wrap items-center gap-4 mb-10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/60 border border-forest/10 px-4 py-2.5 text-[14px] font-bold text-forest-deep shadow-sm backdrop-blur-sm">
+                <Calendar className="h-4 w-4 text-gold" />
+                14-18 September, 2026
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/60 border border-forest/10 px-4 py-2.5 text-[14px] font-bold text-forest-deep shadow-sm backdrop-blur-sm">
+                <MapPin className="h-4 w-4 text-gold" />
+                Cambridge, UK
+              </div>
             </div>
 
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-[14px] text-forest/55 font-medium">certified by</span>
-              <img
-                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                alt="University of Cambridge — Judge Business School"
-                className="h-9 w-auto object-contain"
-              />
-            </div>
-
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex flex-wrap gap-4 items-center mb-10">
               <button
                 type="button"
                 onClick={onDownloadBrochure}
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[14px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/20"
               >
                 Download Brochure
               </button>
@@ -202,31 +207,56 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
                 href="https://www.globaledulab.com/indialeadership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[14px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-8 py-4 text-[14px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
-          </div>
 
-          {/* RIGHT — floating card style like live site */}
-          <div className="relative flex justify-center">
-            {/* outer shadow card */}
-            <div className="relative bg-white rounded-3xl shadow-[0_8px_40px_rgba(10,48,29,0.12)] p-3 w-full max-w-[500px]">
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img
-                  src="https://static.wixstatic.com/media/bf78a9_488e24a00450410faa1dc07cdebebefc~mv2.jpg"
-                  alt="GILP participants at Cambridge Judge Business School"
-                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-              {/* floating badge */}
-              <div className="absolute -bottom-4 left-6 bg-forest-deep text-white rounded-xl px-4 py-2 shadow-lg flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-gold shrink-0" />
-                <span className="text-[13px] font-bold">Cambridge Judge Business School</span>
-              </div>
+            <div className="flex items-center gap-4 border-t border-forest/10 pt-6">
+              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-forest/50">Certified By</span>
+              <img
+                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
+                alt="University of Cambridge — Judge Business School"
+                className="h-10 w-auto object-contain opacity-90 grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
           </div>
+
+          {/* RIGHT IMAGE & GLASS CARDS */}
+          <div className="relative mt-10 lg:mt-0">
+            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] ring-1 ring-forest/10">
+              <img
+                src="https://static.wixstatic.com/media/bf78a9_488e24a00450410faa1dc07cdebebefc~mv2.jpg"
+                alt="GILP participants at Cambridge Judge Business School"
+                className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-forest-deep/10 to-transparent" />
+              
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 px-4 py-2">
+                  <MapPin className="h-4 w-4 text-gold shrink-0" />
+                  <span className="text-[14px] font-bold text-white">Cambridge Judge Business School</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Quote Card */}
+            <div className="absolute -left-6 md:-left-12 top-1/2 -translate-y-1/2 bg-white rounded-2xl p-5 shadow-2xl shadow-forest/15 border border-forest/10 max-w-[240px] animate-[float_6s_ease-in-out_infinite]">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
+                  <Quote className="h-5 w-5 text-gold" />
+                </div>
+                <p className="text-[14px] font-bold text-forest-deep leading-snug">
+                  “The next bold move begins with a conversation.”
+                </p>
+              </div>
+            </div>
+
+            {/* Decorative Element */}
+            <div className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:10px_10px] rounded-full z-[-1]" />
+          </div>
+
         </div>
       </div>
     </section>
