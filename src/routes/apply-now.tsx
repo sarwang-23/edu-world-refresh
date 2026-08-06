@@ -18,6 +18,8 @@ export const Route = createFileRoute("/apply-now")({
 // Apps Script Web App URL — deployed from Code.gs
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
+import { COUNTRY_CODES } from "@/data/countryCodes";
+
 function ApplyNowPage() {
   const { source } = Route.useSearch();
   const [selectedProgrammes, setSelectedProgrammes] = useState<string[]>([]);
@@ -26,7 +28,7 @@ function ApplyNowPage() {
     firstName: "",
     lastName: "",
     email: "",
-    phoneCode: "+91 IN",
+    phoneCode: "🇮🇳 +91",
     phone: "",
     organisation: "",
     designation: "",
@@ -71,7 +73,7 @@ function ApplyNowPage() {
           firstName: "",
           lastName: "",
           email: "",
-          phoneCode: "+91 IN",
+          phoneCode: "🇮🇳 +91",
           phone: "",
           organisation: "",
           designation: "",
@@ -87,14 +89,12 @@ function ApplyNowPage() {
   };
 
   const programmes = [
-    "Global India Leadership",
-    "London School Leadership",
-    "Finland Education",
-    "Bali Green School",
-    "Student Summer Camps",
-    "Graduate Summer Camp",
-    "Online Workshops",
-    "Custom Organisation Programme",
+    "Global India Leadership Programme",
+    "Zero-to-One",
+    "Graduate Summer Programme",
+    "Young Leaders Summer Programme",
+    "Global Ventures",
+    "Other",
   ];
 
   return (
@@ -244,12 +244,13 @@ function ApplyNowPage() {
                     <select
                       value={formData.phoneCode}
                       onChange={handleChange("phoneCode")}
-                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
+                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] font-medium text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 min-w-[125px] cursor-pointer"
                     >
-                      <option>+91 IN</option>
-                      <option>+44 UK</option>
-                      <option>+1 US</option>
-                      <option>+971 AE</option>
+                      {COUNTRY_CODES.map((c) => (
+                        <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
+                          {c.flag} {c.country} ({c.code})
+                        </option>
+                      ))}
                     </select>
                     <input
                       type="tel"
@@ -292,7 +293,7 @@ function ApplyNowPage() {
                 {/* Portfolio Selection */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-3">
-                    <label className="text-[15px] font-semibold text-forest/80">Select Programmes</label>
+                    <label className="text-[15px] font-semibold text-forest/80">Upcoming Programmes</label>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {programmes.map((tag, i) => {

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { useState } from 'react'
 import {
   ArrowUpRight, ArrowDownToLine, GraduationCap, Users, Globe2, Lightbulb,
   Compass, MonitorPlay, Code, Target, MessageSquare, Microscope,
@@ -18,6 +19,11 @@ import mentor2 from '../assets/IMG_4915.jpg'
 import mentor3 from '../assets/IMG_5138_2.jpg'
 import mentor4 from '../assets/person4.jpg'
 import mentor5 from '../assets/person5.jpg'
+import ylGallery1 from '../assets/young_leaders_1.jpg'
+import ylGallery2 from '../assets/young_leaders_2.jpg'
+import ylGallery3 from '../assets/young_leaders_3.jpg'
+import ylGallery4 from '../assets/young_leaders_4.jpg'
+import ylGallery5 from '../assets/young_leaders_5.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -40,6 +46,7 @@ function YoungLeaders() {
       <PartnersAndMentors />
       <ChooseYourTrack />
       <ValueProps />
+      <CohortGallery />
       <SharedTestimonials />
       <BottomCTA />
       <Footer />
@@ -50,61 +57,58 @@ function YoungLeaders() {
 /* ─── 1. HERO · cream bg ─────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-6 pb-36 md:pt-6 md:pb-44">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-12 md:pt-6 md:pb-16 border-b border-forest/10">
       {/* layered ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] -translate-y-0 translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* ── Text column ── */}
-          <div>
+          <div className="lg:col-span-6">
             {/* eyebrow */}
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-4 py-1.5 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Young Leaders Summer Programme</span>
+              <span className="text-[13px] font-bold uppercase tracking-[0.24em] text-gold">Young Leaders Summer Programme</span>
             </div>
 
-            <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.04] tracking-tight">
+            <h1 className="text-[2.75rem] md:text-5xl lg:text-[3.75rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
               Learn. Lead.<br />
               <span className="font-serif italic text-gold">Shape the future.</span>
             </h1>
 
-            <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
-              An immersive summer experience in Cambridge for ambitious young learners.
-            </p>
-            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
-              Explore STEM, AI, entrepreneurship and public speaking — while building confidence, friendships and a global mindset at one of the world's most prestigious universities.
+            <p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-[1.7] text-forest/80 font-medium">
+              An immersive summer experience in Cambridge for ambitious young learners. Explore STEM, AI, entrepreneurship and public speaking while building confidence and a global mindset.
             </p>
 
             {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-2.5">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
                 { icon: <Users className="h-4 w-4" />, label: 'Ages 13–18' },
                 { icon: <Star className="h-4 w-4" />, label: 'Summer Experience' },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-forest/10 px-4 py-2 text-[13.5px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex gap-4 flex-wrap">
+            <div className="mt-8 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <a
                 href="#tracks"
-                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-3.5 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 whitespace-nowrap shrink-0"
               >
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
               <Link
                 to="/apply-now" search={{ source: "Young Leaders Summer Programme" }}
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 sm:px-7 py-3.5 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -112,16 +116,16 @@ function Hero() {
           </div>
 
           {/* ── Image column ── */}
-          <div className="relative">
+          <div className="relative lg:col-span-6">
             {/* Main image */}
-            <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={heroImg} alt="Students at Cambridge" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={heroImg} alt="Students at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/75 via-forest-deep/20 to-transparent" />
               {/* Bottom overlay label */}
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                  <p className="text-white text-[15px] font-bold">Summer Experience</p>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Cambridge, UK</p>
+                  <p className="text-white text-[16px] font-bold">Summer Experience</p>
                 </div>
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
@@ -129,36 +133,12 @@ function Hero() {
                       <User className="h-4 w-4 text-white" />
                     </div>
                   ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+40</div>
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+40</div>
                 </div>
               </div>
             </div>
-
-            {/* Floating card — Cambridge badge */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
-              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                <GraduationCap className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Cambridge</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">Immersive Experience</p>
-              </div>
-            </div>
-
-            {/* Floating card — Cohort size */}
-            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Award className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-white uppercase tracking-wider">2 Tracks</p>
-                <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship & STEM</p>
-              </div>
-            </div>
-
-            {/* Decorative dot pattern */}
-            <div className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
           </div>
+
         </div>
       </div>
     </section>
@@ -599,6 +579,69 @@ function ValueProps() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── COHORT GALLERY ─── */
+function CohortGallery() {
+  const images = [
+    ylGallery1,
+    ylGallery2,
+    ylGallery3,
+    ylGallery4,
+    ylGallery5,
+    stemImg,
+    publicSpeakingImg,
+    siteVisitImg,
+    socialCulturalImg
+  ]
+  const [visibleCount, setVisibleCount] = useState(3)
+
+  return (
+    <section className="bg-white py-24 border-t border-forest/5 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="mb-12">
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.24em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-3">
+            Programme Gallery
+          </span>
+          <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold text-forest-deep leading-tight">
+            Life at Cambridge Summer Programme
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {images.slice(0, visibleCount).map((img, idx) => (
+            <div 
+              key={idx} 
+              className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
+            >
+              <img 
+                src={img} 
+                alt={`Young Leaders Gallery ${idx + 1}`} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">
+                  Cambridge Summer
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {visibleCount < images.length && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setVisibleCount(prev => Math.min(prev + 6, images.length))}
+              className="inline-flex items-center gap-2 bg-forest-deep text-white px-8 py-3.5 rounded-full text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md hover:shadow-xl"
+            >
+              Load More Photos <ArrowUpRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

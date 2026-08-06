@@ -14,19 +14,14 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2 py-1">
-          <div className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[22px] lowercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-            <div className="relative w-max">
-              <span className="relative z-10">
-                <span className="relative inline-block">
-                  g
-                  <span className="absolute top-[45%] left-[-10%] w-[120%] h-[2.5px] bg-forest -rotate-[45deg] z-20 rounded-full pointer-events-none"></span>
-                </span>
-                lobal
-              </span>
-            </div>
-            <span>education</span>
-            <span>lab</span>
-          </div>
+          <div style={{
+            height: '3.5rem',
+            width: '180px',
+            backgroundImage: 'url(/gel-logo-transparent.png)',
+            backgroundSize: 'auto 100%',
+            backgroundPosition: '12px center',
+            backgroundRepeat: 'no-repeat'
+          }} aria-label="Global Education Lab" />
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
 
@@ -138,6 +133,9 @@ export function Nav() {
                 <Link to="/our-impact" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Impact</Link>
                 <Link to="/insights" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Knowledge & Insights</Link>
                 <Link to="/partner-with-gel" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Partner with GEL</Link>
+                <Link to="/ai-learning-games" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest flex items-center gap-2">
+                  AI Learning Games
+                </Link>
               </div>
             </div>
           </div>
@@ -220,6 +218,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
           </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
+import { Footer } from "./index";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -18,6 +19,8 @@ export const Route = createFileRoute("/contact")({
 // Apps Script Web App URL — deployed from Code.gs
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
+import { COUNTRY_CODES } from "@/data/countryCodes";
+
 function ContactPage() {
   const { source } = Route.useSearch();
   const [selectedInterest, setSelectedInterest] = useState("");
@@ -26,7 +29,7 @@ function ContactPage() {
     firstName: "",
     lastName: "",
     email: "",
-    phoneCode: "+91 IN",
+    phoneCode: "🇮🇳 +91",
     phone: "",
     organisation: "",
     message: "",
@@ -64,7 +67,7 @@ function ContactPage() {
           firstName: "",
           lastName: "",
           email: "",
-          phoneCode: "+91 IN",
+          phoneCode: "🇮🇳 +91",
           phone: "",
           organisation: "",
           message: "",
@@ -121,7 +124,7 @@ function ContactPage() {
               {[
                 { icon: <Phone className="h-3.5 w-3.5 text-gold" />, val: "+44 (01223) 362994", href: "tel:+441223362994" },
                 { icon: <Mail className="h-3.5 w-3.5 text-gold" />, val: "info@globaledulab.com", href: "mailto:info@globaledulab.com" },
-                { icon: <MapPin className="h-3.5 w-3.5 text-gold" />, val: "Stirling House, Waterbeach, Cambridge CB25 9PB", href: null },
+                { icon: <MapPin className="h-3.5 w-3.5 text-gold" />, val: "Newnham Road, Cambridge, UK, CB3 9EY", href: null },
                 { icon: <Clock className="h-3.5 w-3.5 text-gold" />, val: "Mon–Fri · 09:00–18:00 GMT", href: null },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3.5 group">
@@ -145,11 +148,6 @@ function ContactPage() {
                 <p className="text-[15px] uppercase tracking-[0.25em] text-white/80 mb-1">Reply within</p>
                 <p className="text-[2.2rem] font-bold text-white leading-none">24h</p>
               </div>
-              <img
-                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                alt="Cambridge Judge Business School"
-                className="h-8 w-auto object-contain opacity-25"
-              />
             </div>
           </div>
         </div>
@@ -241,12 +239,13 @@ function ContactPage() {
                     <select
                       value={formData.phoneCode}
                       onChange={handleChange("phoneCode")}
-                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
+                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[15px] font-medium text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 min-w-[125px] cursor-pointer"
                     >
-                      <option>+91 IN</option>
-                      <option>+44 UK</option>
-                      <option>+1 US</option>
-                      <option>+971 AE</option>
+                      {COUNTRY_CODES.map((c) => (
+                        <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
+                          {c.flag} {c.country} ({c.code})
+                        </option>
+                      ))}
                     </select>
                     <input
                       type="tel"
@@ -365,10 +364,10 @@ function ContactPage() {
               <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">Our Location</h2>
               <div className="space-y-3 text-[13.5px] text-forest/80 leading-relaxed">
                 <p className="font-semibold text-forest-deep">Global Education Lab Ltd</p>
-                <p>Stirling House<br />Denny End Road<br />Waterbeach, CB25 9PB<br />Cambridge, United Kingdom</p>
+                <p>Newnham Road<br />Cambridge, UK<br />CB3 9EY</p>
               </div>
               <a
-                href="https://www.google.com/maps/search/Stirling+House+Denny+End+Road+Waterbeach+Cambridge+CB25+9PB"
+                href="https://www.google.com/maps/search/Newnham+Road+Cambridge+UK+CB3+9EY"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep border-b-2 border-forest-deep/20 hover:border-gold hover:text-gold transition-all duration-200 pb-0.5"
@@ -379,7 +378,7 @@ function ContactPage() {
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(10,48,29,0.12)] border border-forest/8">
               <iframe
                 title="Global Education Lab Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.2!2d0.19012!3d52.27537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d870ef1f2b2e7b%3A0xa23c5fae47e3f521!2sStirling%20House%2C%20Denny%20End%20Rd%2C%20Waterbeach%2C%20Cambridge%20CB25%209PB%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000001!5m2!1sen!2suk"
+                src="https://maps.google.com/maps?q=Newnham%20Road,%20Cambridge,%20UK,%20CB3%209EY&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="400"
                 style={{ border: 0, display: "block" }}
@@ -430,6 +429,7 @@ function ContactPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

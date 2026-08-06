@@ -220,7 +220,8 @@
 .animate-marquee-reverse {
   display: flex;
   width: max-content;
-  animation: marquee 20s linear infinite reverse;
+  animation: marquee 20s linear infinite !important;
+  animation-direction: normal !important;
 }
 
 .animate-marquee-reverse:hover {
@@ -228,14 +229,15 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+  0% { transform: translateX(-33.3333%); }
+  100% { transform: translateX(0); }
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 22s linear infinite;
+  animation: marquee 22s linear infinite !important;
+  animation-direction: normal !important;
 }
 
 .animate-marquee:hover {

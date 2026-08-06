@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
 import { ArrowUpRight, Linkedin } from 'lucide-react'
-import businessLeadersImg from '../assets/business-leaders.jpg'
+import founderImg from '@/assets/founder.png'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -72,12 +72,21 @@ function Leadership() {
             
             <div className="flex items-center gap-4">
               <a
+                href="https://www.linkedin.com/in/suyashbhatt?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/10 text-forest hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-colors"
+                title="Suyash Bhatt LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
                 href="https://www.linkedin.com/company/global-education-lab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/10 text-forest hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                className="text-xs font-semibold uppercase tracking-wider text-forest/70 hover:text-forest transition-colors"
               >
-                <Linkedin className="h-4 w-4" />
+                Company LinkedIn
               </a>
             </div>
           </div>
@@ -85,13 +94,13 @@ function Leadership() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gold/5 rounded-[3rem] transform rotate-3 transition-transform group-hover:rotate-0 duration-500" />
             <img 
-              src={businessLeadersImg} 
-              alt="Suyash Bharti" 
-              className="relative w-full aspect-[4/5] object-cover rounded-[2.5rem] shadow-2xl z-10" 
+              src={founderImg} 
+              alt="Suyash Bhatt" 
+              className="relative w-full aspect-[4/5] object-cover object-[65%_20%] rounded-[2.5rem] shadow-2xl z-10" 
             />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
-              <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bharti</span>
-              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/80">Founder & CEO</span>
+              <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bhatt</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/80">Founder & Director</span>
             </div>
           </div>
         </div>

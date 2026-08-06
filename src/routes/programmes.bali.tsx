@@ -53,7 +53,6 @@ function Page() {
       <ExperienceSection />
       <WhoShouldEnroll />
       <Schedule />
-      <SharedTestimonials customTestimonials={baliTestimonials} />
       <GallerySection />
       <ProgrammeDetails />
       <CTA />
@@ -89,24 +88,24 @@ function Hero() {
                 <MapPin className="h-4 w-4 text-gold" /> Ubud, Bali, Indonesia
               </span>
             </div>
-            <div className="mt-10 flex gap-4 flex-wrap">
+            <div className="mt-10 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <Link
                 to="/apply-now" search={{ source: "Bali Green School Immersive Programme" }}
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20 whitespace-nowrap shrink-0"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
                 href="#schedule"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 View Schedule
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3] group">
-              <img src={bali4Img} alt="Green School Bali" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={bali4Img} alt="Green School Bali" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
               <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">

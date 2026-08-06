@@ -52,7 +52,6 @@ function Page() {
       <ExperienceSection />
       <WhoShouldEnroll />
       <Schedule />
-      <SharedTestimonials customTestimonials={finlandTestimonials} />
       <GallerySection />
       <ProgrammeDetails />
       <CTA />
@@ -65,8 +64,8 @@ function Hero() {
   return (
     <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
       <div className="mx-auto max-w-7xl px-6 pt-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-6">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
               <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
@@ -88,33 +87,32 @@ function Hero() {
                 <MapPin className="h-4 w-4 text-gold" /> Helsinki & Espoo, Finland
               </span>
             </div>
-            <div className="mt-10 flex gap-4 flex-wrap">
+            <div className="mt-10 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <Link
                 to="/apply-now"
                 search={{ source: 'Finland Education Programme' }}
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20 whitespace-nowrap shrink-0"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
                 href="#schedule"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 View Schedule
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3] group">
-              <img src={helsinkiBoardImg} alt="Finland Education Visit" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            </div>
-            <div className="absolute -bottom-5 -left-5 z-10 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
-              <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
-                <GraduationCap className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">GEL Certified</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">Certificate of Participation</p>
+          
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={helsinkiBoardImg} alt="Finland Education Visit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
+                <div>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">GEL Certified</p>
+                  <p className="text-[16px] font-bold">Helsinki & Espoo, Finland</p>
+                </div>
               </div>
             </div>
           </div>

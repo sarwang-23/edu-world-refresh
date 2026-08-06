@@ -2,12 +2,13 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Mail, Newspaper, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import insightsHeroImg from "@/assets/insights-hero-new.jpg";
 import cambridgeImg from "@/assets/cambridge_5.jpg";
-import businessLeadersImg from "@/assets/business-leaders.jpg";
+import featuredRealImg from "@/assets/hero-image.jpg";
 import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
 import frugalAiCover from "@/assets/frugal-ai-cover.jpg";
-import frugalHubCover from "@/assets/frugal-ai-yellow.jpg";
+import frugalHubCover from "@/assets/frugal-ai-yellow-hq.jpg";
 import gilpBrochureCover from "@/assets/gilp-brochure-cover.jpg";
 import { Footer } from "./index";
 import { SharedTestimonials } from '@/components/SharedTestimonials';
@@ -80,57 +81,17 @@ function InsightsPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground relative">
       <Hero />
-      <PartnersBar />
       <ResearchThemes />
       <FeaturedPaper onDownload={handleDownload} />
       <PublicationsArchive onDownload={handleDownload} />
       <TheBriefing />
-      <SharedTestimonials customTestimonials={insightsTestimonials} />
       <CTA />
       <Footer />
     </div>
   );
 }
 
-function PartnersBar() {
-  const partners = [
-    "Harvard Graduate School of Education",
-    "University of Helsinki",
-    "Stanford d.school",
-    "NUS Singapore",
-    "MIT Media Lab",
-    "University of Cambridge",
-  ]
-  // Duplicate 4× for seamless loop
-  const items = [...partners, ...partners, ...partners, ...partners]
 
-  return (
-    <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
-      <p className="text-center text-[15px] font-bold uppercase tracking-[0.3em] text-forest/70 mb-5">
-        PARTNERED WITH THE WORLD'S LEADING UNIVERSITY ECOSYSTEMS
-      </p>
-      <div className="relative flex overflow-hidden">
-        <div
-          className="flex min-w-full shrink-0 gap-x-14 items-center"
-          style={{
-            animation: 'marquee-rtl 25s linear infinite',
-            willChange: 'transform',
-          }}
-        >
-          {items.map((partner, idx) => (
-            <span
-              key={idx}
-              className="whitespace-nowrap text-[15px] font-serif font-semibold text-forest/80 hover:text-forest transition-colors cursor-default"
-            >
-              {partner}
-              <span className="ml-14 text-gold/80 select-none">✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function Hero() {
   return (
@@ -145,12 +106,9 @@ function Hero() {
             <BookOpen className="h-3.5 w-3.5 text-gold" />
             INSIGHTS & RESEARCH
           </div>
-          <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-7xl lg:text-[5.5rem] leading-[1.05]">
+          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-5xl lg:text-[3.25rem] xl:text-[4rem]">
             Ideas that shape<br />
-            <span className="font-serif italic text-gold relative inline-block">
-              global leaders.
-              <span className="absolute bottom-2 left-0 h-[3px] w-full bg-gold/30"></span>
-            </span>
+            <span className="text-gold">global leaders.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
             White papers, executive briefings and research reports from <strong>Global Education Lab</strong> — capturing perspectives on leadership, artificial intelligence, sustainability and the future of global business.
@@ -183,8 +141,8 @@ function Hero() {
           <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
             <div className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply z-10" />
             <img
-              src={cambridgeImg}
-              alt="Cambridge University Court"
+              src={insightsHeroImg}
+              alt="Ideas that shape global leaders"
               className="h-[480px] w-full object-cover"
             />
             
@@ -193,12 +151,6 @@ function Hero() {
               <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold mb-2">LATEST EDITION</p>
               <p className="text-white font-bold text-xl leading-snug">White Paper — Cambridge</p>
             </div>
-          </div>
-          
-          {/* Floating Badge */}
-          <div className="absolute -bottom-6 -left-6 z-30 rounded-2xl border border-forest/10 bg-white p-6 shadow-xl w-40">
-            <p className="text-[15px] font-bold uppercase tracking-widest text-forest/70 mb-1">PUBLICATIONS</p>
-            <p className="text-2xl font-bold text-forest-deep">3 Publications</p>
           </div>
         </div>
       </div>
@@ -271,7 +223,7 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string, title?: strin
               Global India Leadership Programme — <span className="font-serif italic text-gold">Cambridge.</span>
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-md">
-              Perspectives from global business leaders and Judge Business School faculty on how artificial intelligence, sustainability, governance and shifting economic dynamics are redefining leadership.
+              Perspectives from global business leaders and Cambridge Judge Business School faculty on how artificial intelligence, sustainability, governance and shifting economic dynamics are redefining leadership.
             </p>
             
             <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -279,14 +231,14 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string, title?: strin
                 Access Full Report
                 <Download className="h-4 w-4" />
               </button>
-              <span className="text-[15px] font-bold uppercase tracking-widest text-cream/70">JUDGE BUSINESS SCHOOL · CAMBRIDGE</span>
+              <span className="text-[15px] font-bold uppercase tracking-widest text-cream/70">CAMBRIDGE JUDGE BUSINESS SCHOOL</span>
             </div>
           </div>
           
           <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
               <img 
-                src={cambridgeImg} 
+                src={featuredRealImg} 
                 alt="Cambridge courtyard" 
                 className="h-full w-full object-cover"
               />
@@ -324,16 +276,6 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
       desc: "Doing more with less: a companion research report on responsible, resource-conscious AI strategies for emerging markets.",
       date: "RESEARCH REPORT",
       downloadLink: "/frugal-ai-agenda.pdf"
-    },
-    {
-      num: "NO. 03",
-      image: cambridgeImg,
-      imageClass: "object-cover",
-      category: "GILP · CAMBRIDGE",
-      title: "Global India Leadership Programme — Cambridge",
-      desc: "Frameworks and forward-looking insights from Judge Business School faculty and global business leaders convened at Cambridge.",
-      date: "WHITE PAPER",
-      downloadLink: "/gilp-brochure.pdf"
     }
   ];
 
@@ -347,13 +289,9 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
               Latest analysis & reports.
             </h2>
           </div>
-          <Link to="/insights" className="text-[15px] font-bold uppercase tracking-widest text-forest-deep hover:text-forest flex items-center gap-1 group">
-            FULL ARCHIVE 
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
           {reports.map((r, idx) => (
             <div key={idx} className="group flex flex-col rounded-2xl bg-[#F7F5F0] border border-forest/5 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -468,7 +406,7 @@ function CTA() {
               <ArrowUpRight className="h-6 w-6" />
             </Link>
             <p className="mt-4 text-center text-[15px] uppercase tracking-[0.2em] text-cream/80">
-              hello@globaledulab.com
+              info@globaledulab.com
             </p>
           </div>
         </div>

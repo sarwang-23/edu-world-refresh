@@ -300,14 +300,28 @@ function ProgrammesPage() {
 }
 
 function ProgrammesHero() {
+  const items = [
+    { img: gilpImg, label: "Executive Leadership", subtitle: "Global India Leadership Programme at Cambridge Judge" },
+    { img: zeroToOneImg, label: "Venture Ideation", subtitle: "48-Hour Zero-to-One Venture Building Weekend" },
+    { img: youngLeadersImg, label: "Young Leaders", subtitle: "Immersive Cambridge Summer Experience for Ages 14-18" },
+    { img: finlandImg, label: "Teacher Training", subtitle: "International Educator & Pedagogy Immersion" },
+    { img: cambridgeRealImg, label: "Cambridge Experience", subtitle: "Historic College Architecture & Academic Innovation" },
+    { img: graduateSummerImg, label: "Graduate Summer", subtitle: "2-Week Entrepreneurship & AI Summer School" },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeItem = items[activeIndex];
+
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-32 md:pt-4 md:pb-40 border-b border-forest/5">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-28 md:pt-4 md:pb-36 border-b border-forest/5">
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[100px]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 z-10">
-        <div className="grid lg:grid-cols-12 gap-14 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Text Content */}
           <div className="lg:col-span-6 relative z-20">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
@@ -340,37 +354,56 @@ function ProgrammesHero() {
             </div>
           </div>
           
+          {/* Right Column: Large Premium Interactive Showcase + 6-Photo Selector */}
           <div className="lg:col-span-6 relative z-10">
-            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] ring-1 ring-forest/10">
-              <img
-                src={cambridgeRealImg}
-                alt="Cambridge University"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-forest-deep/10 to-transparent opacity-80" />
-            </div>
-            
-            {/* Floating Badges */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm animate-[float_6s_ease-in-out_infinite]">
-              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                <Globe2 className="h-5 w-5 text-gold" />
+            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-forest-deep via-[#0d2a20] to-forest p-4 md:p-5 shadow-2xl shadow-forest/30 border border-gold/25 backdrop-blur-xl">
+              {/* Ambient lighting glow */}
+              <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gold/15 blur-[80px]" />
+              
+              {/* Main Feature Display (Large, Bold, High Resolution) */}
+              <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-forest-deep/60">
+                <img 
+                  key={activeIndex}
+                  src={activeItem.img} 
+                  alt={activeItem.label} 
+                  className="w-full h-full object-cover transition-opacity duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/30 to-transparent" />
+                
+                {/* Overlay Text Details */}
+                <div className="absolute bottom-5 left-5 right-5 flex flex-col justify-end">
+                  <span className="inline-block self-start text-[11px] font-bold uppercase tracking-[0.2em] text-gold bg-gold/15 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md mb-2 shadow">
+                    {activeItem.label}
+                  </span>
+                  <p className="text-white text-[15px] sm:text-[17px] font-bold leading-tight drop-shadow-sm">
+                    {activeItem.subtitle}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">5+ Countries</p>
-              </div>
-            </div>
 
-            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm animate-[float_8s_ease-in-out_infinite_reverse]">
-              <div className="w-11 h-11 rounded-xl bg-forest/8 flex items-center justify-center shrink-0">
-                <Users className="h-5 w-5 text-forest-deep" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Alumni Network</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">1000+ Learners</p>
+              {/* 6-Photo Thumbnail Selector Strip */}
+              <div className="mt-3.5 grid grid-cols-6 gap-2">
+                {items.map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveIndex(idx)}
+                    onMouseEnter={() => setActiveIndex(idx)}
+                    className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                      activeIndex === idx
+                        ? "border-gold ring-2 ring-gold/40 scale-105 shadow-lg shadow-gold/25"
+                        : "border-white/20 opacity-60 hover:opacity-100 hover:scale-105 hover:border-gold/50"
+                    }`}
+                  >
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                    {activeIndex === idx && (
+                      <div className="absolute inset-0 bg-gold/15" />
+                    )}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

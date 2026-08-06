@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Users, Lightbulb, TrendingUp, BookOpen, Building2, CheckCircle2, ChevronRight, GraduationCap, Leaf, User, Calendar, MapPin, Sparkles } from 'lucide-react'
 import { Footer } from './index'
 
-import heroImg from '@/assets/site visit.jpg'
+import heroImg from '@/assets/executive-education.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
 import finlandImg from '@/assets/finland_1.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
@@ -77,10 +77,10 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10 pt-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* Text column */}
-          <div>
+          <div className="lg:col-span-6">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Our Portfolio</span>
@@ -98,60 +98,22 @@ function Hero() {
               Global Education Lab designs and delivers international programmes for education leaders, entrepreneurs and business executives. Each programme combines expert learning, institutional engagement and cultural immersion to create insights that drive meaningful change.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 shrink-0">
-                Explore Our Programme Portfolio
+            <div className="mt-8 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
+              <Link to="/programmes" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-5 sm:px-6 py-3.5 text-[13.5px] sm:text-[14px] font-bold uppercase tracking-[0.12em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 whitespace-nowrap shrink-0">
+                Explore Portfolio
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <Link to="/contact" search={{ source: "Past Programmes" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 shrink-0">
-                Discuss a Custom Programme
+              <Link to="/contact" search={{ source: "Past Programmes" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/70 px-5 sm:px-6 py-3.5 text-[13.5px] sm:text-[14px] font-bold uppercase tracking-[0.12em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0">
+                Discuss Custom Programme
               </Link>
             </div>
           </div>
 
           {/* Image column */}
-          <div className="relative">
-            <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
               <img src={heroImg} alt="Past Programmes" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                <div>
-                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Global Reach</p>
-                  <p className="text-white text-[15px] font-bold">15+ Countries</p>
-                </div>
-                <div className="flex -space-x-2">
-                  {[1,2,3].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
-                      <User className="h-4 w-4 text-white" />
-                    </div>
-                  ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+500</div>
-                </div>
-              </div>
             </div>
-
-            {/* Floating card */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
-              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                <Globe2 className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Global Reach</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">15+ Countries</p>
-              </div>
-            </div>
-
-            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Users className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-white uppercase tracking-wider">500+ Alumni</p>
-                <p className="text-[15px] text-cream/80 mt-0.5">Leaders & Professionals</p>
-              </div>
-            </div>
-
-            <div className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
           </div>
         </div>
       </div>

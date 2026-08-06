@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Sparkles, Compass, ClipboardCheck, BookOpen, Users } from 'lucide-react'
 import heroImg from '../assets/teachers.jpg'
 import { Footer } from './index'
@@ -68,16 +68,13 @@ function Page() {
           <h2 className="mt-6 text-4xl font-bold text-forest-deep md:text-5xl">Enrol in your next course.</h2>
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {courses.map((it, i) => (
-              <a key={i} href="https://www.globaledulab.com/applynow" target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between rounded-3xl border border-forest/10 bg-cream/40 p-10 transition-all hover:bg-cream/70 hover:shadow-lg">
+              <div key={i} className="flex flex-col justify-between rounded-3xl border border-forest/10 bg-cream/40 p-10">
                 <div>
                   <p className="text-[15px] font-medium uppercase tracking-[0.2em] text-gold">{it.when}</p>
-                  <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep group-hover:text-gold transition-colors">{it.t}</h3>
+                  <h3 className="mt-4 text-2xl font-bold leading-tight text-forest-deep">{it.t}</h3>
                   <p className="mt-4 text-forest/70 leading-relaxed">{it.d}</p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 font-semibold text-forest uppercase tracking-widest text-[15px] group-hover:text-gold transition-colors">
-                  Read More <ArrowUpRight className="h-4 w-4" />
-                </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -86,12 +83,11 @@ function Page() {
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-4xl font-bold text-cream md:text-5xl">Level up your practice.</h2>
           <p className="mt-6 text-lg text-cream/80">Join thousands of teachers already growing with Global Education Lab.</p>
-          <a href="https://www.globaledulab.com/forteachers" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
+          <Link to="/apply-now" search={{ source: "Teacher Training Programmes" }} className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-transform hover:scale-105">
             Apply Now <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </section>
-      <SharedTestimonials />
       <Footer />
     </div>
   )

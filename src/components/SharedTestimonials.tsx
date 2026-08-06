@@ -125,46 +125,50 @@ export function SharedTestimonials({
             {rest.map((t, i) => (
               <div
                 key={i}
-                className="group flex-1 flex flex-col bg-white rounded-3xl p-8 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                className="group flex-1 flex flex-col justify-between bg-white rounded-3xl p-8 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
               >
-                {/* Top row */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, si) => (
-                      <span key={si} className="text-gold text-[15px]">★</span>
-                    ))}
+                <div>
+                  {/* Top row */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, si) => (
+                        <span key={si} className="text-gold text-[15px]">★</span>
+                      ))}
+                    </div>
+                    <span className="bg-forest-deep text-white text-[11.5px] font-bold uppercase tracking-[0.14em] px-3.5 py-1.5 rounded-full shrink-0">
+                      {t.tag}
+                    </span>
                   </div>
-                  <span className="bg-forest-deep text-white text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
-                    {t.tag}
-                  </span>
+
+                  {/* Big gold quote */}
+                  <span className="block text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
+
+                  {/* Quote text */}
+                  <p className="text-[15px] text-forest-deep/95 leading-[1.75] -mt-5 mb-6 font-normal">
+                    {t.q}
+                  </p>
                 </div>
 
-                {/* Big gold quote */}
-                <span className="text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
-
-                {/* Quote text */}
-                <p className="text-[15px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
-                  {t.q}
-                </p>
-
-                {/* Divider with hover gold accent */}
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
-                  <div className="w-1 h-1 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
-                    {t.img ? (
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
-                    ) : (
-                      t.a[0]
-                    )}
+                <div>
+                  {/* Divider with hover gold accent */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
+                    <div className="w-1 h-1 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
                   </div>
-                  <div>
-                    <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[15px] text-forest/70 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
+                      {t.img ? (
+                        <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      ) : (
+                        t.a[0]
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-[15px] font-bold text-forest-deep leading-tight">{t.a}</p>
+                      <p className="text-[12.5px] font-semibold text-forest/80 uppercase tracking-[0.12em] mt-0.5 leading-snug">{t.r}</p>
+                    </div>
                   </div>
                 </div>
               </div>
