@@ -565,4 +565,6 @@ function CTA() {
       </div>
     </section>
   );
-}// Footer removed from here, now imported from components
+}
+
+
