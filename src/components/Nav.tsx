@@ -2,6 +2,7 @@ import { Link, useLocation } from '@tanstack/react-router';
 import { getSourceLabel } from '../utils/sourceLabel';
 import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import logoImg from '../assets/Logo png.png'
 
 export function Nav() {
   const location = useLocation()
@@ -11,10 +12,10 @@ export function Nav() {
   const addons: { label: string; href: string }[] = []
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/gel-logo-transparent.png" alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
+          <img src={logoImg} alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
 
