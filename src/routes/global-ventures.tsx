@@ -307,7 +307,7 @@ function OurVentures() {
           {filtered.map((v, i) => (
             <Link
               key={i}
-              // @ts-expect-error - conditionally rendering explicit vs dynamic route
+
               to={v.slug === 'carbonsynq' ? '/ventures/carbonsynq' : '/ventures/$slug'}
               params={v.slug === 'carbonsynq' ? {} : { slug: v.slug }}
               className={`group relative rounded-[2.5rem] border border-white/10 p-1 lg:p-1 flex flex-col transition-all duration-700 hover:-translate-y-2 hover:border-gold/40 shadow-2xl hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)] overflow-hidden isolate bg-gradient-to-br ${v.bgClass}`}

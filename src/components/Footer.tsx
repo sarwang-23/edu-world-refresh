@@ -18,7 +18,7 @@ export function Footer() {
           <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Quick Links</p>
             <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
-              {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"]].map(([label, href]) => (
+              {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"], ["Blogs", "/blog"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
               ))}
             </ul>
