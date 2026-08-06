@@ -30,6 +30,7 @@ import { Route as StudentsRouteImport } from './routes/students'
 import { Route as TeachersRouteImport } from './routes/teachers'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as UniversitiesRouteImport } from './routes/universities'
 import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship_.accelerator'
 import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
 import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
@@ -50,6 +51,7 @@ import { Route as StudentsArchitectureRouteImport } from './routes/students_.arc
 import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students_.entrepreneurship'
 import { Route as StudentsStemResearchRouteImport } from './routes/students_.stem-research'
 import { Route as VenturesSlugRouteImport } from './routes/ventures.$slug'
+import { Route as VenturesCarbonsynqRouteImport } from './routes/ventures.carbonsynq'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -154,6 +156,11 @@ const TeamRoute = TeamRouteImport.update({
 const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
   id: '/terms-of-service',
   path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UniversitiesRoute = UniversitiesRouteImport.update({
+  id: '/universities',
+  path: '/universities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrepreneurshipAcceleratorRoute =
@@ -262,6 +269,11 @@ const VenturesSlugRoute = VenturesSlugRouteImport.update({
   path: '/ventures/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VenturesCarbonsynqRoute = VenturesCarbonsynqRouteImport.update({
+  id: '/ventures/carbonsynq',
+  path: '/ventures/carbonsynq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -285,6 +297,7 @@ export interface FileRoutesByFullPath {
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
+  '/universities': typeof UniversitiesRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -304,6 +317,7 @@ export interface FileRoutesByFullPath {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -327,6 +341,7 @@ export interface FileRoutesByTo {
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
+  '/universities': typeof UniversitiesRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -346,6 +361,7 @@ export interface FileRoutesByTo {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesById {
@@ -371,6 +387,7 @@ export interface FileRoutesById {
   '/teachers': typeof TeachersRoute
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
+  '/universities': typeof UniversitiesRoute
   '/entrepreneurship_/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -390,6 +407,7 @@ export interface FileRoutesById {
   '/students_/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students_/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRouteTypes {
@@ -416,6 +434,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/team'
     | '/terms-of-service'
+    | '/universities'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -435,6 +454,7 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
     | '/programmes/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -458,6 +478,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/team'
     | '/terms-of-service'
+    | '/universities'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -477,6 +498,7 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
     | '/programmes'
   id:
     | '__root__'
@@ -501,6 +523,7 @@ export interface FileRouteTypes {
     | '/teachers'
     | '/team'
     | '/terms-of-service'
+    | '/universities'
     | '/entrepreneurship_/accelerator'
     | '/entrepreneurship_/demo-day'
     | '/entrepreneurship_/mentorship'
@@ -520,6 +543,7 @@ export interface FileRouteTypes {
     | '/students_/entrepreneurship'
     | '/students_/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
     | '/programmes/'
   fileRoutesById: FileRoutesById
 }
@@ -545,6 +569,7 @@ export interface RootRouteChildren {
   TeachersRoute: typeof TeachersRoute
   TeamRoute: typeof TeamRoute
   TermsOfServiceRoute: typeof TermsOfServiceRoute
+  UniversitiesRoute: typeof UniversitiesRoute
   EntrepreneurshipAcceleratorRoute: typeof EntrepreneurshipAcceleratorRoute
   EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
   EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
@@ -553,6 +578,7 @@ export interface RootRouteChildren {
   StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
   StudentsStemResearchRoute: typeof StudentsStemResearchRoute
   VenturesSlugRoute: typeof VenturesSlugRoute
+  VenturesCarbonsynqRoute: typeof VenturesCarbonsynqRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -704,6 +730,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsOfServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/universities': {
+      id: '/universities'
+      path: '/universities'
+      fullPath: '/universities'
+      preLoaderRoute: typeof UniversitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/entrepreneurship_/accelerator': {
       id: '/entrepreneurship_/accelerator'
       path: '/entrepreneurship/accelerator'
@@ -844,6 +877,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VenturesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ventures/carbonsynq': {
+      id: '/ventures/carbonsynq'
+      path: '/ventures/carbonsynq'
+      fullPath: '/ventures/carbonsynq'
+      preLoaderRoute: typeof VenturesCarbonsynqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -903,6 +943,7 @@ const rootRouteChildren: RootRouteChildren = {
   TeachersRoute: TeachersRoute,
   TeamRoute: TeamRoute,
   TermsOfServiceRoute: TermsOfServiceRoute,
+  UniversitiesRoute: UniversitiesRoute,
   EntrepreneurshipAcceleratorRoute: EntrepreneurshipAcceleratorRoute,
   EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
   EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,
@@ -911,6 +952,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
   StudentsStemResearchRoute: StudentsStemResearchRoute,
   VenturesSlugRoute: VenturesSlugRoute,
+  VenturesCarbonsynqRoute: VenturesCarbonsynqRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

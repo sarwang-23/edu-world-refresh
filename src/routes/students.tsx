@@ -57,7 +57,7 @@ function YoungLeaders() {
 /* ─── 1. HERO · cream bg ─────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-12 md:pt-6 md:pb-16 border-b border-forest/10">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-16 md:pt-20 pb-32 md:pb-40 border-b border-forest/10">
       {/* layered ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] -translate-y-0 translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />

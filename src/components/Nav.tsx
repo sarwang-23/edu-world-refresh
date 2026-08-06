@@ -218,6 +218,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/universities" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Universities</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>

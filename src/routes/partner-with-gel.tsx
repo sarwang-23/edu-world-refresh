@@ -197,7 +197,7 @@ function Opportunities() {
       icon: <Landmark className="w-6 h-6" />,
       title: 'Universities',
       desc: 'Student mobility, faculty collaboration, research engagement and innovation initiatives.',
-      link: '/students'
+      link: '/universities'
     },
     {
       icon: <Building2 className="w-6 h-6" />,
