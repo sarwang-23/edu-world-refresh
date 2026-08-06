@@ -14,6 +14,8 @@ import {
   BookOpen,
   Shield,
   Handshake,
+  GraduationCap,
+  User,
 } from 'lucide-react'
 
 const placeholderImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
@@ -24,6 +26,9 @@ const placeholderImg4 = "https://images.unsplash.com/photo-1497366216548-3752607
 import bgImage from '@/assets/hero-image.jpg';
 import startupImg from '@/assets/startup.jpg'
 import pitchImg from '@/assets/zero-to-one-past-1.jpg'
+import sydneyConner from '@/assets/people/sydney_conner.jpg';
+import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
+import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
 
 export const Route = createFileRoute('/entrepreneurship')({
   component: EntrepreneurshipPage,
@@ -44,62 +49,89 @@ function EntrepreneurshipPage() {
 }
 
 function Hero() {
-  const pills = [
-    { t: "Founders Programme", icon: <Lightbulb className="h-3 w-3" /> },
-    { t: "Cambridge & Global", icon: <Globe2 className="h-3 w-3" /> },
-  ]
-  const stats = [
-    { label: "Launchpad Ideas", icon: <Rocket className="h-4 w-4" />, val: "Turn ideas into viable ventures." },
-    { label: "Expert Mentorship", icon: <Users className="h-4 w-4" />, val: "Learn from founders, investors and experts." },
-    { label: "Global Ecosystem", icon: <Globe2 className="h-4 w-4" />, val: "Access Cambridge networks, partners and markets." },
-    { label: "Real Impact", icon: <TrendingUp className="h-4 w-4" />, val: "Build scalable ventures that matter today." },
-  ]
   return (
-    <section className="relative border-b border-border/60 bg-cream overflow-hidden pb-20">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-12 md:pt-6 md:pb-16 border-b border-forest/10">
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
+      {/* Grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-6 pb-8 relative z-10 pt-6">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-start pt-0 mt-0">
-          <div className="mt-0 pt-0">
-            <div className="flex flex-wrap gap-2 mb-8">
-              {pills.map((p) => (
-                <span key={p.t} className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 backdrop-blur-sm px-4 py-2 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-sm">
-                  {p.icon} {p.t}
-                </span>
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          {/* Text column */}
+          <div className="lg:col-span-6">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-4 py-1.5 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-[13px] font-bold uppercase tracking-[0.24em] text-gold">Entrepreneurship & Innovation</span>
+            </div>
+
+            <h1 className="text-[2.75rem] md:text-5xl lg:text-[3.75rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
+              Experience Cambridge.<br />
+              <span className="font-serif italic text-gold">Build your venture & shape what comes next.</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-[1.7] text-forest/80 font-medium">
+              Empowering founders, researchers and innovators with Cambridge's global venture ecosystem — offering world-class mentorship, venture building frameworks, and direct connections to investors.
+            </p>
+
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {[
+                { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
+                { icon: <Zap className="h-4 w-4" />, label: 'Ventures & AI' },
+                { icon: <Globe2 className="h-4 w-4" />, label: 'Global Ecosystem' },
+              ].map((b, i) => (
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-forest/10 px-4 py-2 text-[13.5px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                  <span className="text-gold">{b.icon}</span>
+                  {b.label}
+                </div>
               ))}
             </div>
-            <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.05]">
-              Entrepreneur<span className="text-gold">ship</span>
-            </h1>
-            <p className="mt-6 text-2xl font-serif italic text-gold">Ideas. Innovation. Impact.</p>
-            <p className="mt-3 text-forest/70 font-medium text-lg uppercase tracking-widest text-[15px]">From campus to global markets.</p>
-            <p className="mt-8 text-[15px] leading-relaxed text-forest/70 max-w-lg">
-              Empowering the next generation of founders and innovators with world-class programmes, mentorship and direct access to Cambridge's innovation ecosystem. <span className="font-semibold text-forest-deep">This is where research, capital and entrepreneurial energy meet.</span>
-            </p>
-            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-cream transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(20,40,30,0.3)] overflow-hidden shrink-0">
-                <span className="relative z-10 flex items-center gap-2">Explore Programmes <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span>
-                <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest-deep to-forest opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Buttons inline row */}
+            <div className="mt-8 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
+              <Link
+                to="/contact"
+                search={{ source: "Entrepreneurship" }}
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-7 py-3.5 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 whitespace-nowrap shrink-0"
+              >
+                Explore Programmes
+                <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <Link to="/contact" search={{ source: "Entrepreneurship" }} className="inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 backdrop-blur-sm px-6 py-4 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep transition-all hover:bg-forest/5 hover:border-forest/40 shrink-0">
+              <Link
+                to="/contact"
+                search={{ source: "Entrepreneurship" }}
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-5 sm:px-6 py-3.5 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0"
+              >
                 Connect With Our Team
               </Link>
             </div>
           </div>
-          <div className="relative mt-16 w-full overflow-hidden rounded-[2rem] bg-forest-deep shadow-2xl border border-white/10 h-[600px]">
-            <div className="absolute inset-0 flex flex-col h-max" style={{animation: 'marquee-y 15s linear infinite reverse'}}>
-              <img src={startupImg} alt="Ecosystem" className="w-full h-[600px] object-cover shrink-0" />
-              <img src={pitchImg} alt="Pitch" className="w-full h-[600px] object-cover shrink-0" />
-              <img src={startupImg} alt="Ecosystem" className="w-full h-[600px] object-cover shrink-0" />
-              <img src={pitchImg} alt="Pitch" className="w-full h-[600px] object-cover shrink-0" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent pointer-events-none" />
-            
-            <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 text-center">
-              <p className="text-3xl font-bold text-gold">35+</p>
-              <p className="text-[15px] text-cream/90 mt-1 uppercase tracking-widest font-semibold">Funded Startups</p>
+
+          {/* Image column */}
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={startupImg} alt="Entrepreneurship at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/75 via-forest-deep/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                <div>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">Cambridge Ecosystem</p>
+                  <p className="text-white text-[16px] font-bold">Venture Launchpad</p>
+                </div>
+                <div className="flex -space-x-2">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
+                      <User className="h-4 w-4 text-white" />
+                    </div>
+                  ))}
+                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[13px] font-bold">+35</div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -382,12 +414,27 @@ function Ecosystem() {
 
 function Community() {
   const testimonials = [
-    { q: "Zero-to-One gave us clarity, mentors and the confidence to build our MVP in just 48 hours.", a: "Avani Patel", r: "CO-FOUNDER, EDTECH HUB \u00b7 IDEATION ALUMNI" },
-    { q: "The accelerator and mentor network helped us secure our first round of funding.", a: "Ravi Kapoor", r: "FOUNDER, GREENGRID \u00b7 ACCELERATOR COHORT" },
-    { q: "The Cambridge ecosystem is unmatched. It opened doors we never imagined.", a: "David Lee", r: "CO-FOUNDER, DEEPSEARCH \u00b7 ACCELERATOR COHORT" },
+    {
+      q: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle — as a market structure failure, not just a research gap. That reframe was the most valuable part.",
+      a: "Sydney Conner",
+      r: "PhD in Biomedical Engineering, Cambridge · Zero-to-One",
+      img: sydneyConner,
+    },
+    {
+      q: "What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills. We didn't begin with a finished product. We began with a problem worth solving.",
+      a: "Tendai Nzonzo",
+      r: "Founder, Sana AI · Zero-to-One Alumni",
+      img: tendaiNzonzo,
+    },
+    {
+      q: "This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
+      a: "Dr. Yvonne Walburga",
+      r: "Post-doctoral Affiliate, Cambridge · EquiGen Founder",
+      img: yvonneWalburga,
+    },
   ]
   return (
-    <section className="bg-cream pt-24 md:pt-16 pb-0">
+    <section className="bg-cream pt-24 md:pt-16 pb-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 flex flex-col items-center text-center max-w-3xl mx-auto">
           <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">VOICES FROM OUR FOUNDERS</span>
@@ -402,17 +449,21 @@ function Community() {
         
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {testimonials.map((t, i) => (
-            <div key={i} className="group rounded-[2rem] border border-forest/10 bg-white p-10 hover:shadow-[0_20px_40px_rgba(20,40,30,0.08)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative overflow-hidden flex flex-col">
+            <div key={i} className="group rounded-[2rem] border border-forest/10 bg-white p-8 hover:shadow-[0_20px_40px_rgba(20,40,30,0.08)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/10 transition-colors duration-500 pointer-events-none" />
-              <Quote className="h-8 w-8 text-gold/80 mb-8 group-hover:text-gold/80 transition-colors duration-500" />
-              <p className="text-[15px] text-forest-deep/80 font-medium leading-relaxed mb-10 flex-1">"{t.q}"</p>
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="w-10 h-10 rounded-full bg-forest-deep text-gold flex items-center justify-center font-serif text-lg font-bold">
-                  {t.a.charAt(0)}
-                </div>
+              <Quote className="h-8 w-8 text-gold/80 mb-6 group-hover:text-gold transition-colors duration-500" />
+              <p className="text-[15px] text-forest-deep/80 font-medium leading-relaxed mb-8 flex-1">"{t.q}"</p>
+              <div className="flex items-center gap-4 mt-auto pt-4 border-t border-forest/5">
+                {t.img ? (
+                  <img src={t.img} alt={t.a} className="w-12 h-12 rounded-full object-cover border border-gold/30 shrink-0" />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-forest-deep text-gold flex items-center justify-center font-serif text-lg font-bold shrink-0">
+                    {t.a.charAt(0)}
+                  </div>
+                )}
                 <div>
                   <p className="text-[15px] font-bold text-forest-deep leading-tight">{t.a}</p>
-                  <p className="text-[15px] text-forest/70 uppercase tracking-[0.15em] font-semibold mt-1">{t.r}</p>
+                  <p className="text-[12px] text-forest/70 uppercase tracking-[0.1em] font-semibold mt-1">{t.r}</p>
                 </div>
               </div>
             </div>
@@ -439,8 +490,8 @@ function Community() {
               <Link to="/contact" search={{ source: "Entrepreneurship" }} className="inline-flex items-center justify-between w-full md:w-auto min-w-[260px] gap-4 rounded-xl bg-gold px-8 py-4 text-[15px] font-bold text-forest-deep transition-all hover:scale-[1.02] hover:bg-white hover:shadow-[0_0_30px_rgba(200,160,90,0.3)]">
                 Explore Programmes <ArrowUpRight className="h-5 w-5" />
               </Link>
-              <a href="mailto:hello@globaledulab.com" className="text-[15px] font-bold uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition-colors">
-                HELLO@GLOBALEDULAB.COM
+              <a href="mailto:info@globaledulab.com" className="text-[15px] font-bold uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition-colors">
+                INFO@GLOBALEDULAB.COM
               </a>
             </div>
           </div>

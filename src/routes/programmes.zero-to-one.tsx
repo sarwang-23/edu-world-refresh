@@ -3,6 +3,27 @@ import { ArrowUpRight, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, G
 import { Footer } from './index'
 import cambridgeImg from '../assets/cambridge_7.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
+import zeroToOneImg from '../assets/zero-to-one.png'
+import foodAgriImg from '../assets/food-agri-theme.jpg'
+import alumniImpactImg from '../assets/alumni-impact.jpg'
+import fatinImg from '../assets/alumni2.jpg'
+import samwerImg from '../assets/alumni3.jpg'
+import marioImg from '../assets/alumni5.jpg'
+import z21Gallery1 from '../assets/z21_gallery_1.jpg'
+import z21Gallery2 from '../assets/z21_gallery_2.jpg'
+import z21Gallery3 from '../assets/z21_gallery_3.jpg'
+import z21Gallery4 from '../assets/z21_gallery_4.jpg'
+import z21Gallery5 from '../assets/z21_gallery_5.jpg'
+import z21Gallery6 from '../assets/z21_gallery_6.jpg'
+import z21Gallery7 from '../assets/z21_gallery_7.jpg'
+import z21Gallery8 from '../assets/z21_gallery_8.jpg'
+import z21Gallery9 from '../assets/z21_gallery_9.jpg'
+import z21Gallery10 from '../assets/z21_gallery_10.jpg'
+import z21Gallery11 from '../assets/z21_gallery_11.jpg'
+import z21Gallery12 from '../assets/z21_gallery_12.jpg'
+import z21Gallery13 from '../assets/z21_gallery_13.jpg'
+import z21Gallery14 from '../assets/z21_gallery_14.jpg'
+import z21Gallery15 from '../assets/z21_gallery_15.jpg'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
@@ -27,6 +48,7 @@ function ZeroToOne() {
       <SuccessStory />
       <ProgrammeFormat />
       <WhoShouldApply />
+      <CohortGallery />
       <Testimonials />
       <BottomCTA />
       <Footer />
@@ -44,11 +66,11 @@ function Hero() {
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-4 md:pt-6">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* Text column */}
-          <div>
+          <div className="lg:col-span-6">
             {/* eyebrow */}
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
@@ -80,61 +102,34 @@ function Hero() {
               ))}
             </div>
 
-            <div className="mt-8 flex gap-4 flex-wrap">
+            <div className="mt-8 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <Link
                 to="/apply-now"
                 search={{ source: "Zero-to-One Ideation Weekend (Hero)" }}
-                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
+                className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 whitespace-nowrap shrink-0"
               >
                 Sign Up Now
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </Link>
-              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <a href="#format" className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0">
                 See Format
               </a>
             </div>
           </div>
 
           {/* Image column */}
-          <div className="relative">
-            <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <video src="/zerotoone.mp4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" controls autoPlay loop muted playsInline />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
-                <div>
-                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Cambridge, UK</p>
-                </div>
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
-                      <User className="h-4 w-4 text-white" />
-                    </div>
-                  ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+30</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating card — King's E-Lab */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
-              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                <Rocket className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">King's E-Lab</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">& Cambridge Judge</p>
-              </div>
-            </div>
-
-            {/* Floating card — 48h */}
-            <div className="absolute -top-6 -right-6 flex items-center gap-3 rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                <Zap className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-white uppercase tracking-wider">48 Hours</p>
-                <p className="text-[15px] text-cream/80 mt-0.5">Idea to venture</p>
-              </div>
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-forest-deep">
+              <video 
+                src="/zerotoone.mp4" 
+                poster={zeroToOneImg} 
+                className="w-full h-full object-cover scale-[1.35] contrast-[1.05] saturate-[1.1]" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Dot pattern */}
@@ -150,7 +145,7 @@ function Hero() {
 function StatsMarquee() {
   const stats = [
     { val: '48h', label: 'Intensive Format', sub: 'Idea to venture direction' },
-    { val: '4/10', label: 'Ideas Incubated', sub: 'From inaugural cohort' },
+    { val: '4', label: 'Ideas Incubated', sub: 'From inaugural cohort' },
     { val: 'Spark', label: 'Cambridge Incubator', sub: 'Placement pipeline' },
     { val: 'Food & Agri', label: 'October Theme', sub: 'Planetary Health Focus' },
     { val: '100%', label: 'Form Real Teams', sub: 'Across disciplines' },
@@ -260,8 +255,8 @@ function ThemeSection() {
             </div>
           </div>
           <div className="relative h-full min-h-[480px]">
-            <div className="h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/40 border border-white/10 min-h-[480px] group">
-              <img src={cambridgeImg} alt="Theme" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+            <div className="h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/40 border border-white/10 relative group">
+              <img src={foodAgriImg} alt="Theme" className="w-full h-full object-cover object-[80%_center] block opacity-80 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-10">
                 <div className="inline-flex items-center gap-2 mb-4 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3.5 py-1.5 rounded-full">
@@ -307,7 +302,7 @@ function SuccessStory() {
               </p>
               <div className="grid grid-cols-3 gap-5">
                 {[
-                  { val: '4/10', label: 'Ideas on Spark Incubator' },
+                  { val: '4', label: 'Ideas on Spark Incubator' },
                   { val: '2', label: 'Teams in active pilot support' },
                   { val: '100%', label: 'Participants form real teams' },
                 ].map((s, i) => (
@@ -321,7 +316,7 @@ function SuccessStory() {
 
             {/* Image frame — dimensions unchanged (aspect-[16/10]) */}
             <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] shadow-xl border border-forest/8">
-              <img src={businessLeadersImg} alt="Zero to One outcome" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={alumniImpactImg} alt="Zero to One outcome" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-forest-deep/30" />
               <div className="absolute bottom-6 left-6">
                 <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">The Experience</p>
@@ -339,16 +334,15 @@ function SuccessStory() {
 function ProgrammeFormat() {
   const schedule = [
     {
-      day: 'Day 1 · Thursday',
+      day: 'Day 1 · Friday',
       date: 'Day 1',
       sessions: [
-        { time: 'Afternoon', title: 'Arrival & Registration', desc: 'Check-in at Cambridge Judge Business School. Opening reception with mentors and peers.' },
-        { time: 'Evening', title: 'Theme Deep-Dive', desc: 'Expert panel on Food, Agriculture & Planetary Health. Landscape mapping and opportunity framing.' },
-        { time: 'Night', title: 'Networking Dinner', desc: 'Informal dinner to meet your cohort, mentors and Cambridge ecosystem leaders.' },
+        { time: 'Evening', title: 'Arrival & Registration', desc: 'Check-in at Cambridge Judge Business School. Opening reception with mentors and peers.' },
+        { time: 'Night', title: 'Networking', desc: 'Meet your cohort, mentors and Cambridge ecosystem leaders.' },
       ],
     },
     {
-      day: 'Day 2 · Friday',
+      day: 'Day 2 · Saturday',
       date: 'Day 2',
       sessions: [
         { time: '9:00am', title: 'Problem-Finding Sprints', desc: 'Facilitated sessions to surface real problems within the theme. Move from interest to insight.' },
@@ -359,7 +353,7 @@ function ProgrammeFormat() {
       ],
     },
     {
-      day: 'Day 3 · Saturday',
+      day: 'Day 3 · Sunday',
       date: 'Day 3',
       sessions: [
         { time: '9:00am', title: 'Final Preparation', desc: 'Polish your venture story. Final mentor feedback rounds.' },
@@ -490,52 +484,132 @@ function Testimonials() {
   return (
     <section className="bg-[#F4EFE6] py-32 border-t border-forest/5 relative overflow-hidden">
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-gold/8 blur-[100px]" />
-      <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <div className="h-px w-8 bg-gold" />
-          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-          <div className="h-px w-8 bg-gold" />
+      <div className="mx-auto max-w-7xl px-6 relative z-10 text-center">
+        <div className="flex flex-col items-center justify-center gap-6 mb-16">
+          <div>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="h-px w-8 bg-gold" />
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
+              <div className="h-px w-8 bg-gold" />
+            </div>
+            <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
+              Voices from Our{" "}
+              <span className="italic font-serif text-forest">Community</span>
+            </h2>
+          </div>
         </div>
-        <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep mb-16">What participants say.</h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
+
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-3 gap-x-12 gap-y-16 max-w-7xl mx-auto">
+          
+          {/* Dr. Fatin Al Zadjali */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
+              <img src={fatinImg} alt="Dr. Fatin Al Zadjali" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
+            <h3 className="text-lg font-bold text-forest-deep">Dr. Fatin Al Zadjali</h3>
+            <p className="text-[14px] text-forest/70 mb-6 font-medium">L&D Head - Bank Dhofar (Oman)</p>
+            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
+              An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.
+            </p>
+          </div>
+
+          {/* Johannes Samwer */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
+              <img src={samwerImg} alt="Johannes Samwer" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
+            <h3 className="text-lg font-bold text-forest-deep">Johannes Samwer</h3>
+            <p className="text-[14px] text-forest/70 mb-6 font-medium">MD, Rhenus Lub (Germany)</p>
+            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
+              The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.
+            </p>
+          </div>
+
+          {/* Dr. Johannes Mario Schmidt */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
+              <img src={marioImg} alt="Dr. Johannes Mario Schmidt" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
+            <h3 className="text-lg font-bold text-forest-deep">Dr. Johannes Mario Schmidt</h3>
+            <p className="text-[14px] text-forest/70 mb-6 font-medium">MD, Lingel Windows and Doors Technologies (India)</p>
+            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
+              A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── COHORT GALLERY ─── */
+function CohortGallery() {
+  const images = [
+    z21Gallery1,
+    z21Gallery2,
+    z21Gallery3,
+    z21Gallery5,
+    z21Gallery6,
+    z21Gallery7,
+    z21Gallery8,
+    z21Gallery9,
+    z21Gallery10,
+    z21Gallery11,
+    z21Gallery12,
+    z21Gallery13,
+    z21Gallery14,
+    z21Gallery15,
+  ]
+  const [visibleCount, setVisibleCount] = useState(3)
+
+  return (
+    <section className="bg-white py-24 border-t border-forest/5 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="mb-12">
+          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.24em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-3">
+            Programme Gallery
+          </span>
+          <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold text-forest-deep leading-tight">
+            Moments from Zero-to-One Ideation Weekend
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {images.slice(0, visibleCount).map((img, idx) => (
+            <div 
+              key={idx} 
+              className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
+            >
+              <img 
+                src={img} 
+                alt={`Zero to One Gallery ${idx + 1}`} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">
+                  Zero-to-One Ideation
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-
-        <div className="bg-white rounded-[2.5rem] p-12 border border-forest/8 shadow-[0_8px_32px_rgba(26,53,35,0.06)] relative">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-            <div className="h-20 w-20 rounded-[1.25rem] bg-gold flex items-center justify-center text-2xl font-bold text-forest-deep shadow-xl border-4 border-[#F4EFE6]">{t.initials}</div>
-          </div>
-
-          <div className="flex items-center justify-center gap-1.5 mb-8 mt-4">
-            {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-          </div>
-          <blockquote className="text-[17px] leading-[1.8] text-forest/75 max-w-2xl mx-auto italic mb-8">"{t.quote}"</blockquote>
-          <p className="text-[15px] font-bold text-forest-deep">{t.name}</p>
-          <p className="text-[15px] text-forest/80 mt-1.5 uppercase tracking-wide font-semibold">{t.role}</p>
-
-          <div className="flex items-center justify-center gap-4 mt-10">
-            <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
-            </div>
-            <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 bg-[#F4EFE6] flex items-center justify-center text-forest/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300">
-              <ChevronRight className="h-4 w-4" />
+        {visibleCount < images.length && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setVisibleCount(prev => Math.min(prev + 6, images.length))}
+              className="inline-flex items-center gap-2 bg-forest-deep text-white px-8 py-3.5 rounded-full text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md hover:shadow-xl"
+            >
+              Load More Photos <ArrowUpRight className="h-4 w-4" />
             </button>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

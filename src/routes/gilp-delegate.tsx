@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Camera, FileText, ChevronDown } from "lucide-react";
 import { useState, useRef } from "react";
+import { COUNTRY_CODES } from "@/data/countryCodes";
 
 // TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec";
@@ -86,12 +87,12 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
 
 function GilpDelegatePage() {
   const [form, setForm] = useState({
-    title: "",
+    title: "Mr",
     firstName: "",
     lastName: "",
     dietary: "",
     organisation: "",
-    phoneCode: "+91 IN",
+    phoneCode: "🇮🇳 +91",
     phone: "",
     email: "",
     funding: "",
@@ -283,12 +284,13 @@ function GilpDelegatePage() {
                 <div>
                   <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
                   <div className="flex gap-2">
-                    <div className={`${selectWrapCls} w-[108px] flex-shrink-0`}>
+                    <div className={`${selectWrapCls} min-w-[125px] flex-shrink-0`}>
                       <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
-                        <option>+91 IN</option>
-                        <option>+44 UK</option>
-                        <option>+1 US</option>
-                        <option>+971 AE</option>
+                        {COUNTRY_CODES.map((c) => (
+                          <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
+                            {c.flag} {c.country} ({c.code})
+                          </option>
+                        ))}
                       </select>
                       <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                     </div>

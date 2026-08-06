@@ -4,6 +4,9 @@ import heroImg from '../assets/gilp-march-15.jpg'
 import cambridgeImg from '../assets/cambridge_2.jpg'
 import { Footer } from './index'
 import { useState } from 'react'
+import alumni2Img from '../assets/alumni2.jpg'
+import alumni3Img from '../assets/alumni3.jpg'
+import alumni4Img from '../assets/alumni4.jpg'
 
 export const Route = createFileRoute('/programmes/house-of-lords')({
   head: () => ({
@@ -36,8 +39,8 @@ function Hero() {
   return (
     <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
       <div className="mx-auto max-w-7xl px-6 pt-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-6">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
               <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Invite-Only · UK Parliament</span>
@@ -62,39 +65,22 @@ function Hero() {
             <div className="mt-10 flex gap-4 flex-wrap">
               <Link
                 to="/apply-now" search={{ source: "House of Lords — Cambridge Startups" }}
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20 whitespace-nowrap shrink-0"
               >
                 Request Invitation <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/contact" search={{ source: "House of Lords — Cambridge Startups" }}
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
-              >
-                Learn More
-              </Link>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3]">
-              <img src={heroImg} alt="House of Lords" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/20 to-transparent" />
-            </div>
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
-              <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
-                <Landmark className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">UK Parliament</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">Westminster</p>
-              </div>
-            </div>
-            <div className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
-              <div className="w-10 h-10 rounded-xl bg-forest/8 flex items-center justify-center">
-                <Award className="h-5 w-5 text-forest-deep" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">By Invitation</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">Only</p>
+          
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={heroImg} alt="House of Lords" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
+                <div>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">UK Parliament</p>
+                  <p className="text-[16px] font-bold">House of Lords, Westminster</p>
+                </div>
               </div>
             </div>
           </div>
@@ -252,52 +238,46 @@ function WhoAttends() {
 function PastEditions() {
   const testimonials = [
     {
-      name: 'Lord Bilimoria of Chelsea',
-      role: 'Member of the House of Lords',
-      initials: 'LB',
-      quote: 'A remarkable evening that captured the very best of what the Cambridge-India relationship can produce. The calibre of founders and investors in the room was extraordinary.',
+      name: 'Dr. Fatin Al Zadjali',
+      role: 'L&D Head - Bank Dhofar (Oman)',
+      quote: "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
+      img: alumni2Img
     },
     {
-      name: 'Priya Nair',
-      role: 'Partner, UK-India Venture Fund',
-      initials: 'PN',
-      quote: 'I made three introductions at this event that have since led to term sheets. There is nowhere else in London where you get this precise combination of Cambridge innovation and UK-India capital in one room.',
+      name: 'Johannes Samwer',
+      role: 'MD, Rhenus Lub (Germany)',
+      quote: "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
+      img: alumni3Img
     },
     {
-      name: 'Dr. Arjun Singh',
-      role: 'Cambridge Founder, DeepTech',
-      initials: 'AS',
-      quote: 'Being showcased at the House of Lords was one of the proudest moments of our startup journey. The doors it opened — with investors, partners and policymakers — were genuinely transformative.',
+      name: 'Dr. Aashish Chaudhry',
+      role: 'MD, Aakash Healthcare (India)',
+      quote: 'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.',
+      img: alumni4Img
     },
   ]
-  const [current, setCurrent] = useState(0)
-  const t = testimonials[current]
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+      <div className="mx-auto max-w-6xl px-6 text-center">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-8 bg-gold" />
           <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Voices from Past Editions</span>
           <div className="h-px w-8 bg-gold" />
         </div>
         <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What guests say about the evening.</h2>
-        <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-forest-deep to-forest flex items-center justify-center text-2xl font-bold text-white shadow-xl mb-6">{t.initials}</div>
-        <div className="flex items-center justify-center gap-1 mb-6">
-          {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-        </div>
-        <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
-        <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[15px] text-forest/70 mt-1">{t.role}</p>
-        <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
-          </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronRight className="h-4 w-4" />
-          </button>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 xl:gap-12">
+          {testimonials.map((t, i) => (
+            <div key={i} className="flex flex-col items-center text-center">
+              <div className="h-[90px] w-[90px] rounded-full overflow-hidden mb-5 shadow-sm border border-forest/10">
+                <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+              </div>
+              <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">“</span>
+              <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">{t.name}</h3>
+              <p className="text-[11.5px] text-forest/80 mb-5">{t.role}</p>
+              <p className="text-[12.5px] text-forest-deep/80 leading-[1.7] hyphens-auto">{t.quote}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

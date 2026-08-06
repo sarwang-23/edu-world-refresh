@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiLearningGamesRouteImport } from './routes/ai-learning-games'
 import { Route as ApplyNowRouteImport } from './routes/apply-now'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -58,6 +59,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiLearningGamesRoute = AiLearningGamesRouteImport.update({
+  id: '/ai-learning-games',
+  path: '/ai-learning-games',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApplyNowRoute = ApplyNowRouteImport.update({
@@ -260,6 +266,7 @@ const VenturesSlugRoute = VenturesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-learning-games': typeof AiLearningGamesRoute
   '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
@@ -302,6 +309,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-learning-games': typeof AiLearningGamesRoute
   '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
@@ -344,6 +352,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-learning-games': typeof AiLearningGamesRoute
   '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
@@ -388,6 +397,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ai-learning-games'
     | '/apply-now'
     | '/business-leaders'
     | '/contact'
@@ -430,6 +440,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ai-learning-games'
     | '/apply-now'
     | '/business-leaders'
     | '/contact'
@@ -471,6 +482,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ai-learning-games'
     | '/apply-now'
     | '/business-leaders'
     | '/contact'
@@ -514,6 +526,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiLearningGamesRoute: typeof AiLearningGamesRoute
   ApplyNowRoute: typeof ApplyNowRoute
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
@@ -556,6 +569,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-learning-games': {
+      id: '/ai-learning-games'
+      path: '/ai-learning-games'
+      fullPath: '/ai-learning-games'
+      preLoaderRoute: typeof AiLearningGamesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apply-now': {
@@ -864,6 +884,7 @@ const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiLearningGamesRoute: AiLearningGamesRoute,
   ApplyNowRoute: ApplyNowRoute,
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,

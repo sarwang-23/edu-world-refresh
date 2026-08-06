@@ -1,5 +1,6 @@
+import { useState, useRef } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar } from 'lucide-react'
+import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar, Play, Pause, Volume2, VolumeX } from 'lucide-react'
 import { Footer } from './index'
 
 import cambridgeImg from '@/assets/cambridge_8.jpg'
@@ -9,15 +10,17 @@ import teachersImg from '@/assets/teachers.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
 
-import newHeroImg from '@/assets/finland_1.jpg'
+import academicImg from '@/assets/executive-education.jpg'
+import cambridgeEcosystemImg from '@/assets/cambridge_3.jpg'
+import handsOnImg from '@/assets/zero-to-one-past-1.jpg'
 import siteVisitImg from '@/assets/site visit.jpg'
+import globalNetworkImg from '@/assets/gilp-march-15.jpg'
 import socialCulturalImg from '@/assets/IMG_5138_2.jpg'
-import globalNetworkImg from '@/assets/IMG_4929.jpg'
-import ecosystemImg from '@/assets/IMG_5277.jpg'
 
 import campusLife1 from '@/assets/campus-life-1.jpg'
 import campusLife2 from '@/assets/campus-life-2.jpg'
 import campusLife3 from '@/assets/campus-life-3.jpg'
+import campusLifeWorkshop from '@/assets/campus_life_workshop.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -50,107 +53,143 @@ function GraduateProgramme() {
 
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 function Hero() {
+  const [isPlaying, setIsPlaying] = useState(true)
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+      setIsMuted(!isMuted)
+    }
+  }
+
   return (
-    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-28 md:pt-6 md:pb-36">
+    <section className="relative overflow-hidden bg-[#F4EFE6] pt-4 pb-16 md:pt-6 md:pb-20 border-b border-forest/10">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="mx-auto max-w-[1280px] px-6 relative z-10 pt-6">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14 xl:gap-18">
+      <div className="mx-auto max-w-[1280px] px-6 relative z-10 pt-4">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
 
           {/* Text column */}
-          <div className="max-w-[590px]">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
+          <div className="lg:col-span-6">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-4 py-1.5 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">Graduate Summer Programme</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">Graduate Summer Programme</span>
             </div>
 
-            <h1 className="text-[3rem] md:text-[4.25rem] lg:text-[4.6rem] font-bold text-forest-deep leading-[0.98] tracking-tight">
+            <h1 className="text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
               Experience Cambridge.<br />
               Expand your thinking.<br />
               <span className="font-serif italic text-gold">Shape what comes next.</span>
             </h1>
 
-            <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
+            <p className="mt-5 text-[16px] font-semibold text-forest/80 leading-snug">
               An immersive academic and professional experience for ambitious graduates.
             </p>
-            <p className="mt-4 max-w-[560px] text-[15px] text-forest/80 leading-[1.75]">
+            <p className="mt-3 max-w-[520px] text-[15px] text-forest/75 leading-[1.7]">
               Learn from leading minds, explore world-class institutions, build global connections and turn ideas into real-world impact.
             </p>
 
             {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-2.5">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
                 { icon: <Calendar className="h-4 w-4" />, label: 'Immersive Summer Programme' },
                 { icon: <Zap className="h-4 w-4" />, label: '2-Week Immersive' },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-3.5 py-1.5 text-[14px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#tracks" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
+            <div className="mt-6 flex flex-wrap gap-3.5">
+              <a href="#tracks" className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-7 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25">
                 Explore Tracks
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
-              <Link to="/contact" search={{ source: "Graduate Summer Programme (Hero)" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
+              <Link to="/contact" search={{ source: "Graduate Summer Programme (Hero)" }} className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 py-3.5 text-[14px] font-bold uppercase tracking-[0.15em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300">
                 Register Your Interest
               </Link>
             </div>
           </div>
 
-          {/* Image column */}
-          <div className="relative mx-auto w-full max-w-[760px] lg:mx-0">
-            <div className="rounded-[3rem] overflow-hidden aspect-video shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <video src="/graduatesummerprogramme.mp4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" controls autoPlay loop muted playsInline />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 pointer-events-none">
-                <div>
-                  <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold mb-1">Girton College, Cambridge</p>
-                  <p className="text-white text-[15px] font-bold">Immersive Summer Programme</p>
+          {/* Image/Video column with Play/Pause & Sound controls */}
+          <div className="relative mx-auto w-full lg:col-span-6">
+            <div 
+              onClick={togglePlay}
+              className="group relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-forest-deep cursor-pointer"
+            >
+              <video
+                ref={videoRef}
+                src="/graduatesummerprogramme.mp4"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+              />
+
+              {/* Ambient bottom shadow gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+
+              {/* Center Big Play Button overlay (shown when paused) */}
+              {!isPlaying && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] z-10">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold text-forest-deep shadow-2xl scale-100 hover:scale-110 transition-transform">
+                    <Play className="h-8 w-8 ml-1 fill-current" />
+                  </div>
                 </div>
-                <div className="flex -space-x-2 shrink-0">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gold/30 border-2 border-white/40 backdrop-blur-sm flex items-center justify-center">
-                      <User className="h-4 w-4 text-white" />
-                    </div>
-                  ))}
-                  <div className="w-8 h-8 rounded-full bg-forest-deep border-2 border-white/40 flex items-center justify-center text-white text-[15px] font-bold">+30</div>
-                </div>
+              )}
+
+              {/* Bottom Control Bar Overlay */}
+              <div className="absolute bottom-4 right-4 flex items-center gap-2.5 z-20">
+                {/* Play / Pause Toggle Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    togglePlay()
+                  }}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-forest-deep/80 text-white backdrop-blur-md border border-white/20 shadow-lg hover:bg-forest hover:scale-105 transition-all"
+                  title={isPlaying ? "Pause Video" : "Play Video"}
+                >
+                  {isPlaying ? <Pause className="h-5 w-5 text-gold" /> : <Play className="h-5 w-5 text-gold ml-0.5 fill-current" />}
+                </button>
+
+                {/* Mute / Unmute Toggle Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    toggleMute()
+                  }}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-forest-deep/80 text-white backdrop-blur-md border border-white/20 shadow-lg hover:bg-forest hover:scale-105 transition-all"
+                  title={isMuted ? "Unmute Audio" : "Mute Audio"}
+                >
+                  {isMuted ? <VolumeX className="h-5 w-5 text-gold" /> : <Volume2 className="h-5 w-5 text-gold" />}
+                </button>
               </div>
             </div>
 
-            {/* Floating card */}
-            <div className="absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-2xl shadow-forest/15 border border-forest/8 backdrop-blur-sm">
-              <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                <GraduationCap className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Girton College</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">University of Cambridge</p>
-              </div>
-            </div>
-
-            <div className="absolute -top-5 -right-5 max-w-[280px] rounded-2xl bg-forest-deep p-4 shadow-2xl shadow-forest-deep/25 border border-white/10">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                  <Globe2 className="h-5 w-5 text-gold" />
-                </div>
-                <div>
-                  <p className="text-[15px] font-bold text-white uppercase tracking-wider">3 Tracks</p>
-                  <p className="text-[15px] text-cream/80 mt-0.5">Entrepreneurship, Research & Architecture</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
+            <div className="pointer-events-none absolute -bottom-6 -right-6 h-28 w-28 opacity-20 [background-image:radial-gradient(var(--forest)_1px,transparent_1px)] [background-size:8px_8px] rounded-3xl z-[-1]" />
           </div>
         </div>
       </div>
@@ -189,9 +228,9 @@ function StatsMarquee() {
 /* ─── WHY DIFFERENT ─────────────────────────────────────────────────────── */
 function WhyDifferent() {
   const elements = [
-    { img: teachersImg, icon: <GraduationCap className="h-5 w-5" />, num: '01', title: 'Academic Excellence', tag: 'World-Class', desc: 'Engage with world-class teaching and cutting-edge research.' },
-    { img: ecosystemImg, icon: <Building2 className="h-5 w-5" />, num: '02', title: 'Cambridge Ecosystem', tag: 'Innovation', desc: 'Access universities, research centres, startups, investors and innovation hubs.' },
-    { img: heroImgOld, icon: <Presentation className="h-5 w-5" />, num: '03', title: 'Hands-on Learning', tag: 'Practical', desc: 'Interactive workshops, team projects and real-world problem solving.' },
+    { img: academicImg, icon: <GraduationCap className="h-5 w-5" />, num: '01', title: 'Academic Excellence', tag: 'World-Class', desc: 'Engage with world-class teaching and cutting-edge research.' },
+    { img: cambridgeEcosystemImg, icon: <Building2 className="h-5 w-5" />, num: '02', title: 'Cambridge Ecosystem', tag: 'Innovation', desc: 'Access universities, research centres, startups, investors and innovation hubs.' },
+    { img: handsOnImg, icon: <Presentation className="h-5 w-5" />, num: '03', title: 'Hands-on Learning', tag: 'Practical', desc: 'Interactive workshops, team projects and real-world problem solving.' },
     { img: siteVisitImg, icon: <MapPin className="h-5 w-5" />, num: '04', title: 'Site Visits', tag: 'Real-World', desc: 'Visit leading institutions, labs, companies and cultural landmarks.' },
     { img: globalNetworkImg, icon: <Globe2 className="h-5 w-5" />, num: '05', title: 'Global Network', tag: 'Connections', desc: 'Build lifelong friendships and professional connections.' },
     { img: socialCulturalImg, icon: <Heart className="h-5 w-5" />, num: '06', title: 'Social & Cultural', tag: 'Experience', desc: 'Explore Cambridge life, activities and the rich UK culture.' },
@@ -249,10 +288,10 @@ function WhyDifferent() {
 /* ─── ECOSYSTEM EXPERIENCE ───────────────────────────────────────────────── */
 function EcosystemExperience() {
   const elements = [
-    { img: newHeroImg, title: "Expert-led Sessions", desc: "Learn from academics, researchers and industry leaders." },
+    { img: academicImg, title: "Expert-led Sessions", desc: "Learn from academics, researchers and industry leaders." },
     { img: globalNetworkImg, title: "Workshops & Projects", desc: "Collaborate, ideate and build solutions with global peers." },
     { img: siteVisitImg, title: "Site Visits", desc: "Explore universities, labs, companies and innovation hubs." },
-    { img: ecosystemImg, title: "Startup & Research Access", desc: "Meet founders, researchers and innovators driving change." },
+    { img: cambridgeEcosystemImg, title: "Startup & Research Access", desc: "Meet founders, researchers and innovators driving change." },
     { img: socialCulturalImg, title: "Social & Cultural Activities", desc: "Punting, college visits, dinners, city tours and more." },
   ]
   return (
@@ -450,7 +489,7 @@ function CampusLife() {
           {/* Main big image */}
           <div className="lg:col-span-2 group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md">
             <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-            <img src={campusLife2} alt="Classroom and Workshops" className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={campusLifeWorkshop} alt="Classroom and Workshops" className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
               <h3 className="text-2xl font-bold text-white mb-2">Interactive Workshops</h3>
               <p className="text-cream/80 text-[15px]">Engage deeply with peers and facilitators in modern, dynamic learning spaces.</p>

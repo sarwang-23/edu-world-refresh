@@ -127,6 +127,9 @@ export function Nav() {
                 <Link to="/our-impact" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Impact</Link>
                 <Link to="/insights" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Knowledge & Insights</Link>
                 <Link to="/partner-with-gel" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Partner with GEL</Link>
+                <Link to="/ai-learning-games" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest flex items-center gap-2">
+                  AI Learning Games
+                </Link>
               </div>
             </div>
           </div>
@@ -209,6 +212,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
           </div>

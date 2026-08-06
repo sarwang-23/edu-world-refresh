@@ -66,16 +66,16 @@ function Hero() {
               Discover the world of innovation and entrepreneurship. Learn how world-changing ideas are born, tested and transformed into real solutions — at Cambridge.
             </p>
 
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <Link
-                to="/apply-now" search={{ source: "Entrepreneurship Track (Students)" }}
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
+                to="/apply-now" search={{ source: "Entrepreneurship Track" }}
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25 whitespace-nowrap shrink-0"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/students"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest hover:border-gold/40 transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest hover:border-gold/40 transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 View All Tracks
               </Link>
@@ -83,20 +83,22 @@ function Hero() {
           </div>
 
           {/* Image */}
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl h-80 md:h-[440px]">
-            <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 flex gap-3">
-              {[
-                { val: '6', label: 'Days' },
-                { val: '30+', label: 'Participants' },
-                { val: '100%', label: 'Hands-on' },
-              ].map((s, i) => (
-                <div key={i} className="rounded-xl bg-white/15 backdrop-blur-md border border-white/20 px-4 py-3 text-center">
-                  <p className="text-[18px] font-bold text-white">{s.val}</p>
-                  <p className="text-[15px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
-                </div>
-              ))}
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
+              <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/50 to-transparent" />
+              <div className="absolute bottom-6 left-6 flex gap-3">
+                {[
+                  { val: '6', label: 'Days' },
+                  { val: '30+', label: 'Participants' },
+                  { val: '100%', label: 'Hands-on' },
+                ].map((s, i) => (
+                  <div key={i} className="rounded-xl bg-white/15 backdrop-blur-md border border-white/20 px-4 py-3 text-center">
+                    <p className="text-[18px] font-bold text-white">{s.val}</p>
+                    <p className="text-[15px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

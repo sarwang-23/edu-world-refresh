@@ -19,9 +19,13 @@ import {
   Utensils,
   Quote,
 } from 'lucide-react'
-import schoolLeadersImg from '../assets/school-leaders.jpg'
-import person11Img from '../assets/person11.jpg'
-import person12Img from '../assets/person12.jpg'
+import schoolLeadersImg from '../assets/gilp-march-10.jpg'
+import person6Img from '../assets/person6.jpg'
+import jaideepImg from '../assets/faculty-jaideep.jpg'
+import samTullyImg from '../assets/people/sam_tully.jpg'
+import cambridgeTestimonialImg from '../assets/cambridge_1.jpg'
+import finlandTestimonialImg from '../assets/finland_1.jpg'
+import londonTestimonialImg from '../assets/executive-education.jpg'
 
 export const Route = createFileRoute('/school-leaders')({
   component: SchoolLeaders,
@@ -31,7 +35,6 @@ function SchoolLeaders() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground bg-cream">
       <Hero />
-      <CollaboratorsBar />
       <WhyLeadersTravel />
       <StatsBar />
       <ProgrammesCohorts />
@@ -49,7 +52,7 @@ function Hero() {
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-16 md:pb-24">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries
           </span>
@@ -59,16 +62,16 @@ function Hero() {
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
             Global Education Lab curates immersive leadership programmes for school owners, principals and trustees — connecting them with Cambridge academics, Finnish policymakers, and pioneering institutions across four continents.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
             <a
               href="#cohorts"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep whitespace-nowrap shrink-0"
             >
               Explore Cohorts <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#delegations"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5 whitespace-nowrap shrink-0"
             >
               Delegate Support
             </a>
@@ -79,12 +82,12 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-5 lg:mt-14">
-          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl shadow-forest/15">
+        <div className="relative lg:col-span-6">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={schoolLeadersImg}
               alt="School Leaders & Educators"
-              className="h-[480px] w-full object-cover"
+              className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
               <p className="text-[15px] uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
@@ -322,13 +325,12 @@ function ProgrammesCohorts() {
 
                   <h3 className="text-2xl font-bold text-forest-deep">{p.title}</h3>
 
-                  <div className="mt-3 flex items-center gap-4 text-[15px] font-semibold uppercase tracking-wider text-gold">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="h-3.5 w-3.5" /> {p.location}
+                  <div className="mt-4 flex flex-col gap-2 text-[14.5px] text-forest/80 italic">
+                    <span className="flex items-center gap-1.5 not-italic font-medium text-forest-deep">
+                      <MapPin className="h-4 w-4 text-gold" /> {p.location}
                     </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <Quote className="h-3.5 w-3.5" /> {p.quote}
+                    <span className="flex items-start gap-1.5 leading-snug">
+                      <Quote className="h-4 w-4 text-gold shrink-0 mt-0.5" /> "{p.quote}"
                     </span>
                   </div>
 
@@ -408,24 +410,27 @@ function Testimonials() {
   const reviews = [
     {
       quote:
-        '"The Cambridge programme reframed how our board thinks about school leadership. We came as visitors and left as peers."',
-      author: "Dr. Aisha Rahman",
-      role: "CHAIR OF TRUSTEES — CRESCENT INTERNATIONAL SCHOOL, DUBAI",
-      img: person11Img,
+        '"Through my participation in both the Cambridge and Finland programmes, I gained exceptional exposure to the best global practices in education. This experience has truly inspired me to implement some of these changes, which will positively impact over 30,000 students across our institutions."',
+      author: "Lakshmi Samyuktha Kotha",
+      role: "Executive Dean, Narayana Group of Schools – India",
+      img: person6Img,
+      bannerImg: cambridgeTestimonialImg,
     },
     {
       quote:
-        '"Finland was not a study tour — it was a mirror. Six months on, we have rebuilt our primary curriculum around what we saw."',
-      author: "Kwame Mensah",
-      role: "HEAD OF SCHOOL — ACHIMOTA LEARNING GROUP, ACCRA",
-      img: person12Img,
+        '"GEL\'s programmes offer a roadmap for frugal innovation across a broad segment of learners. Learners return with fresh ideas, deeper confidence, and a renewed sense of purpose, ready to lead change for businesses, teams or themselves."',
+      author: "Prof. Jaideep Prabhu FBA",
+      role: "Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge",
+      img: jaideepImg,
+      bannerImg: finlandTestimonialImg,
     },
     {
       quote:
-        '"For our senior team, the London programme was worth every mile. The access GEL arranged was extraordinary."',
-      author: "Priya Venkatesh",
-      role: "FOUNDER-PRINCIPAL — SATTVA ACADEMIES, BENGALURU",
-      img: person11Img,
+        '"I was privileged to attend the Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, in the confines of one of the world\'s finest Universities and one of its most beautiful cities. Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce experience."',
+      author: "Sam Tully",
+      role: "GEL Programme delegate, Trustee – Pratham UK",
+      img: samTullyImg,
+      bannerImg: londonTestimonialImg,
     },
   ]
 
@@ -447,9 +452,7 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <div className="absolute inset-0 flex items-center justify-center">
-                     <span className="text-foreground/50 text-sm font-medium">Video Frame Placeholder</span>
-                   </div>
+                   <img src={r.bannerImg} alt={r.author} className="w-full h-full object-cover" />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>

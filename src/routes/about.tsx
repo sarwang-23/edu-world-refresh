@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap } from "lucide-react";
-import heroClassroomImg from "@/assets/hero-classroom.jpg";
-import founderImg from "@/assets/founder.png";
+import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap, Linkedin } from "lucide-react";
+import heroGlobalImg from "@/assets/students.jpg";
+import founderImg from "@/assets/founder_hd.png";
 import { Footer } from "./index";
 import person1 from "@/assets/person1.jpg";
 import person2 from "@/assets/person2.jpg";
@@ -15,6 +15,9 @@ import person9 from "@/assets/person9.jpg";
 import person10 from "@/assets/person10.jpg";
 import person11 from "@/assets/person11.jpg";
 import person12 from "@/assets/person12.jpg";
+import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
+import amarjitSingh from '@/assets/people/amarjit_singh.jpg';
+import lindaTang from '@/assets/people/linda_tang.jpg';
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
@@ -32,6 +35,33 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const aboutTestimonials = [
+    {
+      q: "Sometimes life changes on a random Monday afternoon. Mine did - at THE UNIVERSITY OF CAMBRIDGE !!!!! What started as a quiet summer turned into a turning point I didn’t even know I needed. A place, a community, a classroom, conversations and souls that shifted my mind and my path, forever.",
+      a: "Jivika Vikamshi",
+      r: "Co-Founder, Manashakti",
+      tag: "GEL Summer Immersion",
+      img: jivikaVikamshi,
+      featured: true,
+    },
+    {
+      q: "Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!",
+      a: "Amarjit Singh",
+      r: "CEO, India Business Forum",
+      tag: "GILP Delegate",
+      img: amarjitSingh,
+      featured: false,
+    },
+    {
+      q: "Good team vibe, good organisation, like the short content inserts. There aren't many experiences where you can feel yourself changing and growing in real time, but I felt myself growing in confidence and expertise.",
+      a: "Linda Tang",
+      r: "Medicine Student",
+      tag: "University of Cambridge",
+      img: lindaTang,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Hero />
@@ -40,7 +70,7 @@ function AboutPage() {
       <Journey />
       <Impact />
       <OurPeople />
-      <SharedTestimonials />
+      <SharedTestimonials customTestimonials={aboutTestimonials} />
       <Cta />
       <Footer />
     </div>
@@ -59,7 +89,7 @@ function Hero() {
           <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70 mb-4">
             ABOUT GLOBAL EDUCATION LAB
           </p>
-          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
+          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>
@@ -75,8 +105,8 @@ function Hero() {
         <div className="relative lg:col-span-5">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
-              src={heroClassroomImg}
-              alt="Cambridge classroom"
+              src={heroGlobalImg}
+              alt="Transformational global education"
               className="h-full w-full object-cover"
             />
           </div>
@@ -220,10 +250,21 @@ function FounderStory() {
               <img
                 src={founderImg}
                 alt="Suyash Bhatt"
-                className="w-full h-[320px] object-cover"
+                className="w-full h-[340px] object-cover object-[65%_20%]"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white">Suyash Bhatt</h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-white">Suyash Bhatt</h3>
+                  <a
+                    href="https://www.linkedin.com/in/suyashbhatt?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0A66C2] text-white hover:bg-[#004182] transition-all hover:scale-105 shadow-md"
+                    title="View LinkedIn Profile"
+                  >
+                    <Linkedin className="h-4 w-4 fill-current text-white" />
+                  </a>
+                </div>
                 <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">Founder & Director</p>
                 <p className="text-[15px] italic text-cream/70 mt-1">Cambridge Alumnus & Fellow, CJBS</p>
               </div>

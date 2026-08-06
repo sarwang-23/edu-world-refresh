@@ -12,8 +12,13 @@ import {
   MapPin,
   Calendar,
 } from 'lucide-react'
-import teachersImg from '../assets/teachers.jpg'
-
+import teachersImg from '../assets/teacher-training-hero.png'
+import person6Img from '../assets/person6.jpg'
+import jaideepImg from '../assets/faculty-jaideep.jpg'
+import samTullyImg from '../assets/people/sam_tully.jpg'
+import cambridgeTestimonialImg from '../assets/cambridge_1.jpg'
+import finlandTestimonialImg from '../assets/finland_1.jpg'
+import londonTestimonialImg from '../assets/executive-education.jpg'
 export const Route = createFileRoute('/teachers')({
   component: Teachers,
 })
@@ -22,7 +27,6 @@ function Teachers() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground bg-cream">
       <Hero />
-      <CollaboratorsBar />
       <WhyTeachersChooseUs />
       <StatsBar />
       <OngoingProgrammes />
@@ -41,7 +45,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-12 md:pb-20 lg:grid-cols-12 lg:gap-8 items-start pt-6">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <BookOpen className="h-3.5 w-3.5 text-gold" /> For K-12 Teachers & Educators
           </span>
@@ -51,16 +55,16 @@ function Hero() {
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
             Global Education Lab, in collaboration with seasoned academics from the University of Cambridge, pioneers a new era in professional teacher training — blending academic expertise with real-world classroom application.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
             <a
               href="#programmes"
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep whitespace-nowrap shrink-0"
             >
               Explore Programmes <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="#school"
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5 whitespace-nowrap shrink-0"
             >
               School Cohort Support
             </a>
@@ -71,12 +75,12 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-5 lg:mt-14">
-          <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-2xl shadow-forest/15">
+        <div className="relative lg:col-span-6">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={teachersImg}
               alt="Teachers Training"
-              className="h-[480px] w-full object-cover"
+              className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
               <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">GLOBAL</p>
@@ -338,21 +342,27 @@ function Testimonials() {
   const reviews = [
     {
       quote:
-        '"The Cambridge-led sessions completely changed how I plan lessons. My classroom feels alive again — students lead, I facilitate."',
-      author: "Meera Iyer",
-      role: "MATHS TEACHER · TEACHER · CHENNAI",
+        '"Through my participation in both the Cambridge and Finland programmes, I gained exceptional exposure to the best global practices in education. This experience has truly inspired me to implement some of these changes, which will positively impact over 30,000 students across our institutions."',
+      author: "Lakshmi Samyuktha Kotha",
+      role: "Executive Dean, Narayana Group of Schools – India",
+      img: person6Img,
+      bannerImg: cambridgeTestimonialImg,
     },
     {
       quote:
-        '"Adaptive teaching stopped being a buzzword and became a real practice. The personalised report gave my head-of-department clarity too."',
-      author: "Samuel Okeke",
-      role: "SECONDARY SCIENCE TEACHER · LAGOS",
+        '"GEL\'s programmes offer a roadmap for frugal innovation across a broad segment of learners. Learners return with fresh ideas, deeper confidence, and a renewed sense of purpose, ready to lead change for businesses, teams or themselves."',
+      author: "Prof. Jaideep Prabhu FBA",
+      role: "Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge",
+      img: jaideepImg,
+      bannerImg: finlandTestimonialImg,
     },
     {
       quote:
-        '"We enrolled our whole primary team. Six months on, our lesson observation and student engagement scores have visibly improved."',
-      author: "Farah Al-Mansouri",
-      role: "ASSISTANT COORDINATOR · DUBAI",
+        '"I was privileged to attend the Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, in the confines of one of the world\'s finest Universities and one of its most beautiful cities. Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce experience."',
+      author: "Sam Tully",
+      role: "GEL Programme delegate, Trustee – Pratham UK",
+      img: samTullyImg,
+      bannerImg: londonTestimonialImg,
     },
   ]
 
@@ -374,17 +384,18 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <div className="absolute inset-0 flex items-center justify-center">
-                     <span className="text-foreground/50 text-sm font-medium">Video Frame Placeholder</span>
-                   </div>
+                   <img src={r.bannerImg} alt={r.author} className="w-full h-full object-cover" />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
-              <div className="mt-8 border-t border-cream/10 pt-4">
-                <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
+              <div className="mt-8 border-t border-cream/10 pt-4 flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0"><img src={r.img} alt={r.author} className="w-full h-full object-cover" /></div>
+                <div>
+                  <p className="text-[15px] font-bold text-gold">{r.author}</p>
+                  <p className="mt-0.5 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
+                </div>
               </div>
             </div>
           ))}

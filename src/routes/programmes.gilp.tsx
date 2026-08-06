@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Utensils, Landmark, Castle } from 'lucide-react'
 import { useState } from 'react'
+import { COUNTRY_CODES } from '@/data/countryCodes'
 import { Footer } from './index'
 import newCertificateImg from '../assets/new-certificate.png'
+import gilpBannerImg from '../assets/gilp-banner.png'
+import gilpHeroPremiumImg from '../assets/gilp_hero_premium.png'
+import gilpThinkingHorizonImg from '../assets/gilp_thinking_horizon.png'
 import speaker1Img from '../assets/speaker1.jpg'
 import speaker2Img from '../assets/speaker2.jpg'
 import speaker3Img from '../assets/speaker3.jpg'
@@ -13,6 +17,7 @@ import speaker7Img from '../assets/speaker7.jpg'
 import speaker8Img from '../assets/speaker8.jpg'
 import speaker9Img from '../assets/speaker9.jpg'
 import speaker10Img from '../assets/speaker10.jpg'
+import speakerLakshmiImg from '../assets/speaker-lakshmi.png'
 import alumni1Img from '../assets/alumni1.jpg'
 import alumni2Img from '../assets/alumni2.jpg'
 import alumni3Img from '../assets/alumni3.jpg'
@@ -26,7 +31,24 @@ import cohort5Img from '../assets/IMG_5138_2.jpg'
 import cohort6Img from '../assets/IMG_5277.jpg'
 import cohort7Img from '../assets/YusufH.jpg'
 import cohort8Img from '../assets/STEM1.jpg'
-import cohort9Img from '../assets/site visit.jpg'// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+import cohort9Img from '../assets/site visit.jpg'
+import gilpCohort1 from '../assets/gilp_cohort_1.jpg'
+import gilpCohort2 from '../assets/gilp_cohort_2.jpg'
+import gilpCohort3 from '../assets/gilp_cohort_3.jpg'
+import gilpCohort4 from '../assets/gilp_cohort_4.jpg'
+import gilpCohort5 from '../assets/gilp_cohort_5.jpg'
+import gilpCohort6 from '../assets/gilp_cohort_6.jpg'
+import gilpCohort7 from '../assets/gilp_cohort_7.jpg'
+import gilpCohort8 from '../assets/gilp_cohort_8.jpg'
+import gilpCohort9 from '../assets/gilp_cohort_9.jpg'
+import gilpCohort10 from '../assets/gilp_cohort_10.jpg'
+import gilpCohort11 from '../assets/gilp_cohort_11.jpg'
+import gilpCohort12 from '../assets/gilp_cohort_12.jpg'
+import gilpCohort13 from '../assets/gilp_cohort_13.jpg'
+import gilpCohort14 from '../assets/gilp_cohort_14.jpg'
+import gilpCohort15 from '../assets/gilp_cohort_15.jpg'
+import gilpCohort16 from '../assets/gilp_cohort_16.jpg'
+import gilpCohort17 from '../assets/gilp_cohort_17.jpg'// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec'
 
 // Fires a form submission to the GILP Apps Script backend.
@@ -65,7 +87,6 @@ function Page() {
       <Outcomes />
       <ProfessorQuote />
       <WhoShouldAttend />
-      <Faculty />
       <Packages />
       <AccommodationSection />
       <CertificateSection />
@@ -165,92 +186,64 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
   )
 }
 
-/* ─── 1. HERO — matches screenshot exactly ─── */
+/* ─── 1. HERO — matches other pages' aesthetic ─── */
 function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
   return (
-    <section className="relative bg-[#E8DCC8] pt-28 pb-20 border-b border-forest/10 overflow-hidden">
-      {/* subtle grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#0A301D_1px,transparent_1px),linear-gradient(90deg,#0A301D_1px,transparent_1px)] [background-size:48px_48px]" />
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-[1fr_1.35fr] gap-10 items-center">
-
-          {/* LEFT */}
-          <div>
-            {/* Title + India flag */}
-            <div className="flex items-start justify-between mb-5">
-              <div>
-                <h1 className="text-[2.3rem] md:text-[2.9rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
-                  Global India Leadership Programme
-                </h1>
-                <p className="text-[1.7rem] md:text-[2.1rem] font-bold text-forest-deep leading-tight mt-1">
-                  “Leadership grows where perspective widens.”
-                </p>
-              </div>
-              <img
-                src="https://static.wixstatic.com/media/bf78a9_2b40f76be34f43f5b8b02526672c5416~mv2.png"
-                alt="India Flag"
-                className="h-14 w-auto object-contain shrink-0 ml-4 mt-1"
-              />
-            </div>
-
-            <p className="text-[15px] text-forest/80 leading-relaxed max-w-[420px] mb-7">
-              Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
-              experience at Cambridge equips you with cutting-edge insights in AI, strategy,
-              and leadership to navigate complexity and lead with confidence in a rapidly evolving
-              global landscape.
-            </p>
-
-            <div className="flex items-center gap-2.5 mb-4">
-              <Quote className="h-[18px] w-[18px] text-forest-deep shrink-0" />
-              <span className="text-[15px] font-semibold text-forest-deep">“The next bold move begins with a conversation.”</span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-[15px] text-forest/80 font-medium">certified by</span>
-              <img
-                src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                alt="University of Cambridge — Judge Business School"
-                className="h-16 w-auto object-contain mix-blend-multiply"
-              />
-            </div>
-
-            <div className="flex gap-3 flex-wrap">
-              <button
-                type="button"
-                onClick={onDownloadBrochure}
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
-              >
-                Download Brochure
-              </button>
-              <button
-                onClick={() => document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 rounded-md bg-forest-deep px-6 py-3 text-[15px] font-bold text-white hover:bg-forest transition-colors duration-200 shadow-sm"
-              >
-                Apply Now <ArrowUpRight className="h-4 w-4" />
-              </button>
-            </div>
+    <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+      
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
+        <div className="lg:col-span-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
+            <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders & CXOs
+          </span>
+          <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
+            Global India Leadership Programme.
+          </h1>
+          <p className="mt-5 text-2xl md:text-[2rem] font-serif italic text-gold leading-tight">
+            “Leadership grows where perspective widens.”
+          </p>
+          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
+            Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
+            experience at Cambridge equips you with cutting-edge insights in AI, strategy,
+            and leadership to navigate complexity and lead with confidence in a rapidly evolving
+            global landscape.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <button
+              onClick={onDownloadBrochure}
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+            >
+              Download Brochure
+            </button>
+            <button
+              onClick={() => document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+            >
+              Apply Now <ArrowUpRight className="h-4 w-4" />
+            </button>
           </div>
+          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
+            <span className="h-px w-10 bg-forest/30" />
+            CAMBRIDGE JUDGE BUSINESS SCHOOL CERTIFIED
+          </div>
+        </div>
 
-          {/* RIGHT — floating card style like live site */}
-          <div className="relative flex justify-center">
-            {/* outer shadow card */}
-            <div className="relative bg-white rounded-3xl shadow-[0_8px_40px_rgba(10,48,29,0.12)] p-3 w-full max-w-[660px]">
-              <div className="rounded-2xl overflow-hidden aspect-[16/10]">
-                <video
-                  src="/Globalindialeadershipprogramme.mp4"
-                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-                  controls
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-              {/* floating badge */}
-              <div className="absolute -bottom-4 left-6 bg-forest-deep text-white rounded-xl px-4 py-2 shadow-lg flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-gold shrink-0" />
-                <span className="text-[15px] font-bold">Cambridge Judge Business School</span>
-              </div>
+        <div className="relative lg:col-span-6">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
+            <video
+              src="/Globalindialeadershipprogramme.mp4"
+              poster={gilpHeroPremiumImg}
+              className="h-full w-full object-cover"
+              controls
+              loop
+              muted
+              playsInline
+            />
+            {/* Top-left location badge */}
+            <div className="absolute top-5 left-5 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-white border border-white/20 pointer-events-none">
+               <MapPin className="h-4 w-4 text-gold shrink-0" />
+               <span className="text-sm font-semibold tracking-wide">Cambridge Judge Business School</span>
             </div>
           </div>
         </div>
@@ -320,26 +313,10 @@ function ProgrammeOverview() {
             <div className="relative bg-white rounded-2xl shadow-[0_8px_40px_rgba(10,48,29,0.08)] overflow-hidden ring-1 ring-forest/5">
               <div className="relative w-full aspect-video group">
                 <img
-                  src="https://static.wixstatic.com/media/bf78a9_a29139fafe4a4d3691b7d683e4fdfe0df002.jpg"
-                  alt="GILP testimonial — Bidisha Banerjee, Partner, Talent Element"
+                  src={gilpThinkingHorizonImg}
+                  alt="Business leaders expanding their horizons at Cambridge"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
                 />
-                {/* overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-forest-deep/20 to-transparent" />
-
-                {/* Bottom caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-1 h-10 bg-gold rounded-full shrink-0" />
-                    <div>
-                      <p className="text-[15px] font-bold text-white uppercase tracking-wider leading-tight">BIDISHA BANERJEE</p>
-                      <p className="text-[15px] text-white/80 mt-1">Partner, Talent Element</p>
-                    </div>
-                    <div className="ml-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2">
-                      <p className="text-[15px] italic text-white font-medium">"I'm loving it here"</p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* bottom label strip */}
@@ -349,7 +326,7 @@ function ProgrammeOverview() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
                   </div>
-                  <span className="text-[15px] font-bold text-forest/70 uppercase tracking-wider">Alumni Testimonial</span>
+                  <span className="text-[15px] font-bold text-forest/70 uppercase tracking-wider">Transformative Experience</span>
                 </div>
                 <img
                   src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
@@ -810,8 +787,8 @@ function Packages() {
     {
       name: 'Package 1',
       subtitle: 'Basic Programme',
-      price: 'Tailored Pricing',
-      priceNote: 'Contact us for pricing',
+      price: '£5100',
+      priceNote: '(inclusive of all taxes)',
       detail: '– Without accommodation',
       suitability: 'suitable for individuals',
       highlight: false,
@@ -819,8 +796,8 @@ function Packages() {
     {
       name: 'Package 2',
       subtitle: 'Programme + Accommodation',
-      price: 'Tailored Pricing',
-      priceNote: 'Contact us for pricing',
+      price: '£6300',
+      priceNote: '(inclusive of all taxes)',
       detail: '– With Single accommodation (4-star or equivalent)',
       suitability: 'suitable for individuals',
       highlight: true,
@@ -828,8 +805,8 @@ function Packages() {
     {
       name: 'Package 3',
       subtitle: 'Programme + Accommodation (double)',
-      price: 'Tailored Pricing',
-      priceNote: 'Contact us for pricing',
+      price: '£6500',
+      priceNote: '(inclusive of all taxes)',
       detail: '– With Double accommodation (4-star or equivalent)',
       suitability: 'suitable if bringing spouse',
       highlight: false,
@@ -1028,34 +1005,84 @@ function AccommodationSection() {
 /* ─── 10.5. COHORT GALLERY ─── */
 function CohortGallery() {
   const allImages = [
-    cohort1Img, cohort2Img, cohort3Img,
-    cohort4Img, cohort5Img, cohort6Img,
-    cohort7Img, cohort8Img, cohort9Img
+    gilpCohort1,
+    gilpCohort2,
+    gilpCohort3,
+    gilpCohort4,
+    gilpCohort5,
+    gilpCohort6,
+    gilpCohort7,
+    gilpCohort8,
+    gilpCohort9,
+    gilpCohort10,
+    gilpCohort11,
+    gilpCohort12,
+    gilpCohort13,
+    gilpCohort14,
+    gilpCohort15,
+    gilpCohort16,
+    gilpCohort17,
+    cohort1Img,
+    cohort2Img,
+    cohort3Img,
+    cohort4Img,
+    cohort5Img,
+    cohort6Img,
+    cohort7Img,
+    cohort8Img,
+    cohort9Img
   ]
-  const [visibleCount, setVisibleCount] = useState(3)
+  const [visibleCount, setVisibleCount] = useState(6)
 
   const handleLoadMore = () => {
-    setVisibleCount(prev => Math.min(prev + 3, allImages.length))
+    setVisibleCount(prev => Math.min(prev + 6, allImages.length))
   }
 
   return (
-    <section className="bg-white py-24 border-t border-forest/5">
-      <div className="mx-auto w-[96%] xl:max-w-[1400px]">
-        <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-10">Featured Cohort</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className="bg-white py-24 border-t border-forest/5 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.24em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-3">
+              Featured Cohort Highlights
+            </span>
+            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold text-forest-deep leading-tight">
+              Moments from Cambridge Judge Business School
+            </h2>
+          </div>
+          <p className="text-[15px] text-forest/75 max-w-md">
+            Capturing our delegates, board members and distinguished guests during the Global India Leadership Programme.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allImages.slice(0, visibleCount).map((img, idx) => (
-            <div key={idx} className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <img src={img} alt={`Cohort ${idx + 1}`} className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-500" />
+            <div 
+              key={idx} 
+              className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
+            >
+              <img 
+                src={img} 
+                alt={`GILP Cohort ${idx + 1}`} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">
+                  Cambridge Judge
+                </span>
+              </div>
             </div>
           ))}
         </div>
+
         {visibleCount < allImages.length && (
           <div className="mt-12 text-center">
             <button
               onClick={handleLoadMore}
-              className="bg-forest-deep text-white px-8 py-3 rounded-full font-bold hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md"
+              className="inline-flex items-center gap-2 bg-forest-deep text-white px-8 py-3.5 rounded-full text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md hover:shadow-xl"
             >
-              Load More Images
+              Load More Photos <ArrowUpRight className="h-4 w-4" />
             </button>
           </div>
         )}
@@ -1208,15 +1235,15 @@ function CertificateSection() {
               </div>
             </div>
           </div>
-          {/* RIGHT — Certificate mock + 2 images */}
-          <div className="flex flex-col gap-5">
+          {/* RIGHT — Certificate mock */}
+          <div className="flex flex-col items-center justify-start mt-8 lg:mt-12">
             {/* Certificate image */}
-            <div className="relative flex justify-center w-full">
+            <div className="relative flex justify-center w-full max-w-sm lg:max-w-md">
               <div className="absolute -inset-6 bg-[#C9913D]/15 rounded-3xl blur-2xl" />
               <img
                 src={newCertificateImg}
                 alt="Cambridge Judge Business School Certificate"
-                className="relative w-full h-auto rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-[#C9913D]/30 object-contain bg-white"
+                className="relative w-full max-h-[500px] rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-[#C9913D]/30 object-contain bg-white"
               />
             </div>
           </div>
@@ -1300,6 +1327,13 @@ function FacultyGrid() {
       bio: 'Guy Doza is a renowned author and TEDx speaker who advises top politicians and global CEOs on leadership, persuasion, and negotiation. A leading expert in rhetoric, he blends ancient wisdom with modern science to help leaders communicate with clarity, inspire audiences, and negotiate with impact.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
+    {
+      img: speakerLakshmiImg,
+      name: 'Lakshmi Samyuktha Kotha',
+      role: 'Executive Dean, Narayana Group of Schools – India',
+      bio: 'Through my participation in both the Cambridge and Finland programmes, I gained exceptional exposure to the best global practices in education. This experience has truly inspired me to implement some of these changes, which will positively impact over 30,000 students across our institutions.',
+      accent: 'from-gold/70 via-gold to-gold/50',
+    },
   ]
 
   return (
@@ -1320,9 +1354,9 @@ function FacultyGrid() {
           </h2>
           <p className="text-[15px] text-forest/80 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
           {faculty.map((f, i) => (
-            <div key={i} className="group bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-2 transition-all duration-700 flex flex-col relative">
+            <div key={i} className="group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.5rem)] bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-2 transition-all duration-700 flex flex-col relative">
 
               <div className="relative aspect-[4/5] overflow-hidden m-2 mb-0 rounded-[1.5rem]">
                 <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out" />
@@ -1517,7 +1551,7 @@ function ApplyNow() {
     email: '',
     designation: '',
     organisation: '',
-    phoneCode: '+91',
+    phoneCode: '🇮🇳 +91',
     phone: '',
     linkedin: '',
     funding: '',
@@ -1640,11 +1674,12 @@ function ApplyNow() {
                   Your contact number <span className="text-red-400">*</span>
                 </label>
                 <div className="flex gap-2">
-                  <select value={form.phoneCode} onChange={update('phoneCode')} className="border border-forest/15 rounded-xl px-3 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 w-24">
-                    <option value="+91">🇮🇳 +91</option>
-                    <option value="+44">🇬🇧 +44</option>
-                    <option value="+1">🇺🇸 +1</option>
-                    <option value="+971">🇦🇪 +971</option>
+                  <select value={form.phoneCode} onChange={update('phoneCode')} className="border border-forest/15 rounded-xl px-3 py-3 text-[15px] font-medium text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 min-w-[125px] cursor-pointer">
+                    {COUNTRY_CODES.map((c) => (
+                      <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
+                        {c.flag} {c.country} ({c.code})
+                      </option>
+                    ))}
                   </select>
                   <input type="tel" required value={form.phone} onChange={update('phone')} className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200" />
                 </div>

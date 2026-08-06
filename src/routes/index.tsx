@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail } from "lucide-react";
+import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Footer } from "@/components/Footer";
+export { Footer };
 import heroImg from "@/assets/hero-image.jpg";
 import cambridgeImg from '@/assets/cambridge_4.jpg'
 import schoolLeadersImg from "@/assets/partner.png";
@@ -7,7 +9,13 @@ import businessLeadersImg from "@/assets/executive-education.jpg";
 import teachersImg from "@/assets/teachers.jpg";
 import studentsImg from "@/assets/young-leaders.png";
 import startupImg from "@/assets/startup.jpg";
-import logoImg from "@/assets/Logo png.png";
+import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
+import samTully from '@/assets/people/sam_tully.jpg';
+import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
+import alumni1Img from '@/assets/alumni1.jpg';
+import alumni2Img from '@/assets/alumni2.jpg';
+import lakshmiKothaImg from '@/assets/lakshmi_kotha.jpg';
+import jaideepPrabhuImg from '@/assets/jaideep_prabhu.jpg';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -348,7 +356,7 @@ function CambridgeOrigin() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5]">
-              <img src={cambridgeImg} alt="Cambridge courtyard" className="w-full h-full object-cover" />
+              <img src={startupImg} alt="Innovation and Purpose" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             </div>
           </div>
@@ -361,48 +369,34 @@ function CambridgeOrigin() {
 function Voices() {
   const testimonials = [
     {
-      q: "The GEL was a game changer. The Cambridge ecosystem, combined with high-quality peer learning, was truly invaluable. A transformational experience unlike anything else.",
-      a: "Neha Aran",
-      r: "MD, Consumer Goods Company",
-      tag: "Executive Education",
-      img: teachersImg,
-      featured: true,
+      q: "There were times during the weekend when I knew that what I was learning would stick with me throughout my career journey... There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence.",
+      a: "Rosalind Howell",
+      r: "Zero-to-One Participant",
+      tag: "Startup Bootcamp",
+      img: rosalindHowell,
     },
     {
-      q: "Zero to One gave me the clarity, tools and network to turn an idea into a viable startup. The mentors were incredible!",
-      a: "Arjun Mehta",
-      r: "Co-founder, MedVise AI",
-      tag: "Zero to One",
-      img: studentsImg,
-      featured: false,
+      q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
+      a: "Sam Tully",
+      r: "Trustee, Pratham UK",
+      tag: "GILP Delegate",
+      img: samTully,
     },
     {
-      q: "This student programme opened my eyes to the power of innovation and leadership. I left with confidence and lasting friendships.",
-      a: "Emily Chen",
-      r: "GSP Participant",
-      tag: "Student Programme",
-      img: schoolLeadersImg,
-      featured: false,
+      q: "I was humbled and exhilarated for the recognition of the potential of EquiGen... This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
+      a: "Dr. Yvonne Walburga",
+      r: "Post-doctoral Research Affiliate",
+      tag: "University of Cambridge",
+      img: yvonneWalburga,
     },
     {
-      q: "The programme gave me Sharper thinking, real confidence, a global network.",
-      a: "Priya Shah",
-      r: "School Leader",
-      tag: "Leadership",
-      img: schoolLeadersImg,
-      featured: false,
-    },
-    {
-      q: "The sessions were practical, energising, and deeply relevant to the real challenges we face in education.",
-      a: "Daniel Ross",
-      r: "Teacher",
-      tag: "Teacher Training",
-      img: teachersImg,
-      featured: false,
+      q: "This programme helped articulate something critical: leadership is also about language. It equips founders to translate their journey into frameworks that resonate with investors and stakeholders. That shift, from building to being understood, unlocks the next level of growth and influence.",
+      a: "Snigdha Manchanda",
+      r: "Founder, TeaTrunk (India)",
+      tag: "GILP Alumni",
+      img: alumni1Img,
     },
   ];
-
-  const [featured, ...rest] = testimonials;
 
   return (
     <section className="bg-cream py-28 relative overflow-hidden">
@@ -427,90 +421,98 @@ function Voices() {
           </p>
         </div>
 
-        {/* Asymmetric Layout */}
-        <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[5fr_4fr] gap-6">
+        {/* Layout: Left 2 Featured Testimonials, Right Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
-          {/* Featured Card — image with dark green overlay */}
-          <div className="group relative rounded-3xl overflow-hidden min-h-[520px] flex flex-col justify-end shadow-2xl">
-            {/* Background — Cambridge looks much better */}
-            <img src={cambridgeImg} alt="Cambridge" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            {/* Gradient: transparent top, dark green bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/60 to-forest-deep/20" />
+          {/* Left Side: Lakshmi Samyuktha Kotha & Prof. Jaideep Prabhu FBA */}
+          <div className="lg:col-span-6 flex flex-col gap-6">
 
-            {/* Content pinned to bottom */}
-            <div className="relative z-10 p-10 pb-10">
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-gold text-base">★</span>
-                ))}
-              </div>
-
-              {/* Big quote mark */}
-              <span className="block text-[5rem] text-gold/80 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
-
-              <p className="text-[16px] text-white/95 leading-[1.75] font-normal mb-8 max-w-md">
-                {featured.q}
-              </p>
-
-              {/* Divider */}
-              <div className="h-px bg-white/20 mb-6 w-16" />
-
-              {/* Author Row */}
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="relative shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-forest border-2 border-gold/50 flex items-center justify-center text-white font-bold text-lg overflow-hidden">
-                      {featured.img ? (
-                        <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" />
-                      ) : (
-                        featured.a[0]
-                      )}
-                    </div>
-                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-gold border-2 border-forest-deep" />
-                  </div>
-                  <div>
-                    <p className="text-[15px] font-bold text-white">{featured.a}</p>
-                    <p className="text-[15px] text-white/80 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
-                  </div>
-                </div>
-                <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
-                  {featured.tag}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Four compact cards on right */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {rest.map((t, i) => (
-              <div
-                key={i}
-                className="group flex flex-col bg-white rounded-2xl p-5 border border-forest/8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 min-h-[220px]"
-              >
+            {/* Testimonial 1: Lakshmi Samyuktha Kotha */}
+            <div className="group relative rounded-3xl bg-forest-deep p-8 text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1 overflow-hidden hover:border-gold/40 transition-colors duration-300">
+              <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gold/10 blur-[80px]" />
+              <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, si) => (
-                      <span key={si} className="text-gold text-[13px]">★</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-gold text-sm">★</span>
                     ))}
                   </div>
-                  <span className="bg-forest-deep text-white text-[11px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full">
-                    {t.tag}
+                  <span className="bg-gold/15 border border-gold/30 text-gold text-[12px] font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full">
+                    Cambridge & Finland Alumni
                   </span>
                 </div>
-
-                <span className="text-[3rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
-
-                <p
-                  className="text-[14px] text-forest-deep/85 leading-[1.7] -mt-4 mb-4 flex-1"
-                  style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
-                >
-                  {t.q}
+                <p className="text-[15px] md:text-[15.5px] text-cream/95 leading-[1.7] font-normal mb-6">
+                  "Through my participation in both the Cambridge and Finland programmes, I gained exceptional exposure to the best global practices in education. This experience has truly inspired me to implement some of these changes, which will positively impact over 30,000 students across our institutions."
                 </p>
+              </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
+              <div className="flex items-center gap-4 pt-4 border-t border-white/15">
+                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <div>
+                  <h4 className="text-[16px] font-bold text-white leading-tight">Lakshmi Samyuktha Kotha</h4>
+                  <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Executive Dean, Narayana Group of Schools – India</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2: Prof. Jaideep Prabhu FBA */}
+            <div className="group relative rounded-3xl bg-forest-deep p-8 text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1 overflow-hidden hover:border-gold/40 transition-colors duration-300">
+              <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[80px]" />
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-gold text-sm">★</span>
+                    ))}
+                  </div>
+                  <span className="bg-gold/15 border border-gold/30 text-gold text-[12px] font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full">
+                    Cambridge Judge Business School
+                  </span>
+                </div>
+                <p className="text-[15px] md:text-[15.5px] text-cream/95 leading-[1.7] font-normal mb-6">
+                  "GEL's programmes offer a roadmap for frugal innovation across a broad segment of learners. Learners return with fresh ideas, deeper confidence, and a renewed sense of purpose, ready to lead change for businesses, teams or themselves."
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4 border-t border-white/15">
+                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <div>
+                  <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
+                  <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Side: Other Community Testimonials Grid */}
+          <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="group flex flex-col justify-between bg-white rounded-2xl p-6 border border-forest/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, si) => (
+                        <span key={si} className="text-gold text-[13px]">★</span>
+                      ))}
+                    </div>
+                    <span className="bg-forest-deep text-white text-[10.5px] font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full shrink-0">
+                      {t.tag}
+                    </span>
+                  </div>
+
+                  <span className="block text-[2.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none">"</span>
+
+                  <p className="text-[14px] text-forest-deep/95 leading-[1.65] -mt-3 mb-5 font-normal">
+                    {t.q}
+                  </p>
+                </div>
+
+                <div className="pt-3.5 border-t border-forest/8 flex items-center gap-3 mt-auto">
+                  <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[14px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                     {t.img ? (
                       <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
                     ) : (
@@ -518,15 +520,15 @@ function Voices() {
                     )}
                   </div>
                   <div>
-                    <p className="text-[13px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[12px] text-forest/70 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <h5 className="text-[14px] font-bold text-forest-deep leading-tight">{t.a}</h5>
+                    <p className="text-[13px] text-forest/75 mt-0.5">{t.r}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
+
       </div>
     </section>
   );
@@ -564,85 +566,4 @@ function CTA() {
     </section>
   );
 }
-
-export function Footer() {
-  return (
-    <footer className="bg-[#f6f5f3]">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4 lg:pr-8">
-            <Link to="/" className="inline-block mb-6">
-              <img src={logoImg} alt="Global Education Lab" className="h-20 w-auto object-contain mix-blend-multiply" />
-            </Link>
-            <p className="text-[14.5px] leading-[1.6] text-[#333] font-medium">
-              Transformational educational experiences<br className="hidden lg:block" /> for a lifetime of a learner's life.
-            </p>
-          </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
-            <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Quick Links</p>
-            <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
-              {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
-            <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Partner</p>
-            <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
-              {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
-            <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Resources</p>
-            <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
-              {[["News & Insights", "/insights"], ["Events", "/gallery"], ["Brochures", "/contact"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
-            <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Connect</p>
-            <div className="space-y-4 text-[14.5px] font-medium text-[#333]">
-              <div className="flex items-center gap-3">
-                <Mail className="h-[18px] w-[18px] text-[#777]" strokeWidth={1.5} />
-                <a href="mailto:info@globaledulab.com" className="hover:text-forest transition-colors">
-                  info@globaledulab.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Globe2 className="h-[18px] w-[18px] text-[#777]" strokeWidth={1.5} />
-                <a href="https://www.globaledulab.com" target="_blank" rel="noreferrer" className="hover:text-forest transition-colors">
-                  www.globaledulab.com
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-16 relative border-t border-[#c5ccc7] pt-6">
-          <div className="absolute right-0 -top-3.5 bg-[#f6f5f3] pl-4 hidden md:block">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="white"/>
-            </svg>
-          </div>
-          
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 text-[14px] text-[#333] font-medium">
-            <p className="text-center md:text-left">
-              © Global Education Lab Ltd. All rights reserved.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              <Link to="/privacy-policy" className="hover:text-forest transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="hover:text-forest transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
+// Footer removed from here, now imported from components

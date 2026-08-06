@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials'
 import {
   ArrowUpRight,
   Globe2,
@@ -23,9 +24,12 @@ import {
   Download,
   Quote,
 } from 'lucide-react'
-import heroImg from '../assets/IMG_5277.jpg'
+import heroImg from '../assets/partner-hero-new.jpg'
 import cambridgeImg from '../assets/cambridge_3.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
+import dhruvGalgotia from '@/assets/people/dhruv_galgotia.jpg';
+import samTully from '@/assets/people/sam_tully.jpg';
+import lucyJung from '@/assets/people/lucy_jung.jpg';
 
 export const Route = createFileRoute('/partner-with-gel')({
   head: () => ({
@@ -37,6 +41,33 @@ export const Route = createFileRoute('/partner-with-gel')({
   component: PartnerWithGelPage,
 })
 
+const partnerTestimonials = [
+  {
+    q: "An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances... Looking forward to announcing several new engagements and partnerships very soon.",
+    a: "Dr. Dhruv Galgotia",
+    r: "CEO, Galgotias Education Group",
+    tag: "Global Partnerships",
+    img: dhruvGalgotia,
+    featured: true,
+  },
+  {
+    q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
+    a: "Sam Tully",
+    r: "Trustee, Pratham UK",
+    tag: "Institutional Growth",
+    img: samTully,
+    featured: false,
+  },
+  {
+    q: "I was impressed by how far ventures (on GEL programme) got in such a short time, considering stakeholders and business models and how to make the sustainable growth of their ideas possible. Thank you for the opportunity to mentor.",
+    a: "Lucy Jung",
+    r: "Founder & CEO, LYEONS",
+    tag: "GEL Mentor",
+    img: lucyJung,
+    featured: false,
+  }
+];
+
 function PartnerWithGelPage() {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
@@ -46,7 +77,7 @@ function PartnerWithGelPage() {
       <WhyPartner />
       <PartnershipJourney />
       <TrustedByMarquee />
-      <TestimonialSection />
+      <SharedTestimonials customTestimonials={partnerTestimonials} featuredBgImage={cambridgeImg} />
       <CTA />
       <Footer />
     </div>
@@ -64,19 +95,19 @@ function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-24 md: pt-6">
-        <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-          <div className="lg:col-span-7">
+        <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+          <div className="lg:col-span-6">
             {/* Badge */}
             <span className="inline-flex items-center gap-2 bg-gold/10 text-gold text-[15px] font-bold uppercase tracking-[0.22em] px-4 py-2 rounded-full border border-gold/25 mb-7">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               Global Partnerships
             </span>
 
-            <h1 className="text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
+            <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-5xl lg:text-[3.25rem] xl:text-[4rem]">
               Partner with<br />
               <span className="text-gold">GEL</span>
             </h1>
-            <p className="mt-5 text-xl md:text-2xl font-serif italic text-forest/70 leading-tight max-w-lg">
+            <p className="mt-6 max-w-xl text-[17px] leading-[1.65] text-muted-foreground">
               Let's create transformative learning experiences and lasting impact—together.
             </p>
             <p className="mt-5 text-[16px] text-forest/70 leading-[1.7] max-w-xl">
@@ -89,12 +120,6 @@ function Hero() {
                 className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
               >
                 Start a Conversation <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/contact" search={{ source: "Partner with GEL" }}
-                className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
-              >
-                Explore Opportunities <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
 
@@ -115,19 +140,14 @@ function Hero() {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
+          <div className="relative lg:col-span-6 lg:mt-10">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
               <img
-                src={cambridgeImg}
+                src={heroImg}
                 alt="Cambridge Partnership"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-right"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent" />
-            </div>
-            {/* Stat badge */}
-            <div className="absolute -bottom-6 -left-6 bg-forest-deep border border-gold/20 p-6 rounded-2xl shadow-2xl flex flex-col justify-center min-w-[160px]">
-              <span className="text-3xl font-bold font-serif text-gold italic">15+</span>
-              <span className="text-[15px] font-bold uppercase tracking-[0.15em] text-cream/70 mt-1">Countries Engaged</span>
             </div>
           </div>
         </div>
@@ -180,12 +200,6 @@ function Opportunities() {
       link: '/students'
     },
     {
-      icon: <BookOpen className="w-6 h-6" />,
-      title: 'Further Education & Skills',
-      desc: 'Internationalisation, applied learning, employability and skills development.',
-      link: '/teachers'
-    },
-    {
       icon: <Building2 className="w-6 h-6" />,
       title: 'Corporates & Associations',
       desc: 'Leadership programmes, innovation workshops and global market engagement.',
@@ -196,6 +210,12 @@ function Opportunities() {
       title: 'Governments & Ecosystems',
       desc: 'Delegations, innovation missions, policy dialogues and ecosystem development.',
       link: '/global-ventures'
+    },
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: 'Teachers',
+      desc: 'Internationalisation, applied learning, employability and skills development.',
+      link: '/teachers'
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -362,93 +382,161 @@ function PartnershipJourney() {
 function TrustedByMarquee() {
   const logos = [
     // University of Cambridge
-    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 90 70" className="h-16 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10,4 H80 V50 Q45,70 45,70 Q45,70 10,50 Z" fill="#c8151b"/>
-        <rect x="10" y="26" width="70" height="6" fill="#f5c842"/>
-        <rect x="41" y="4" width="8" height="66" fill="#f5c842"/>
-        <text x="27" y="24" fontSize="14" textAnchor="middle" fill="#f5c842">♞</text>
-        <text x="63" y="24" fontSize="14" textAnchor="middle" fill="#f5c842">♞</text>
-        <text x="27" y="48" fontSize="9" textAnchor="middle" fill="#f5c842">✦✦✦</text>
-        <text x="63" y="48" fontSize="14" textAnchor="middle" fill="#f5c842">♞</text>
-        <path d="M10,4 H80 V50 Q45,70 45,70 Q45,70 10,50 Z" fill="none" stroke="#c8a030" strokeWidth="1.5"/>
+    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
+      <svg viewBox="0 0 240 140" className="h-[5rem] w-auto" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(95, 0) scale(0.55)">
+          <path d="M 0 0 L 100 0 L 100 65 C 100 105 50 125 50 125 C 50 125 0 105 0 65 Z" fill="#d30731" stroke="#111" strokeWidth="2.5" />
+          <path d="M 38 0 L 62 0 L 62 42 L 100 42 L 100 66 L 62 66 L 62 120 C 55 122 50 123 50 123 C 45 122 38 120 38 120 L 38 66 L 0 66 L 0 42 L 38 42 Z" fill="#fff" stroke="#111" strokeWidth="2.5" />
+          
+          <g fill="#111">
+            <polygon points="50,12 47,18 53,18" /> <circle cx="50" cy="11" r="1.5" />
+            <polygon points="50,28 47,34 53,34" /> <circle cx="50" cy="27" r="1.5" />
+            <polygon points="50,80 47,86 53,86" /> <circle cx="50" cy="79" r="1.5" />
+            <polygon points="50,96 47,102 53,102" /> <circle cx="50" cy="95" r="1.5" />
+            <polygon points="20,54 17,60 23,60" /> <circle cx="20" cy="53" r="1.5" />
+            <polygon points="80,54 77,60 83,60" /> <circle cx="80" cy="53" r="1.5" />
+          </g>
+          
+          <rect x="34" y="44" width="32" height="20" rx="1" fill="#d30731" stroke="#111" strokeWidth="2.5" />
+          <circle cx="50" cy="54" r="3" fill="#f5c842" />
+          <rect x="34" y="47" width="5" height="14" fill="#f5c842" />
+          <rect x="61" y="47" width="5" height="14" fill="#f5c842" />
+
+          <g fill="#f5c842" stroke="#111" strokeWidth="1.5">
+            <path d="M 12 15 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
+            <path d="M 14 22 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
+            <path d="M 72 15 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
+            <path d="M 74 22 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
+            <path d="M 12 75 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
+            <path d="M 14 82 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
+            <path d="M 72 75 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
+            <path d="M 74 82 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
+          </g>
+        </g>
+        
+        <text x="120" y="90" fontSize="16" fill="#111" textAnchor="middle" fontFamily="Georgia, serif" letterSpacing="0.5">UNIVERSITY OF</text>
+        <text x="120" y="112" fontSize="21" fill="#111" textAnchor="middle" fontFamily="Georgia, serif" letterSpacing="1">CAMBRIDGE</text>
+        <text x="120" y="132" fontSize="15" fill="#111" textAnchor="middle" fontFamily="Georgia, serif">Judge Business School</text>
       </svg>
-      <span className="text-[15px] font-black text-[#003b5c] text-center leading-tight tracking-wider uppercase mt-2">University of<br/>Cambridge</span>
     </div>,
     // Girton
-    <div className="flex flex-col items-center justify-center gap-1 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 60 50" className="h-14 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6,2 H54 V34 Q30,50 30,50 Q30,50 6,34 Z" fill="#1a6b2a"/>
-        <rect x="6" y="20" width="48" height="5" fill="white"/>
-        <rect x="27" y="2" width="6" height="48" fill="white"/>
-        <circle cx="18" cy="13" r="7" fill="white"/>
-        <text x="18" y="16" fontSize="7" textAnchor="middle" fill="#222">⁘</text>
-        <circle cx="42" cy="13" r="7" fill="white"/>
-        <text x="42" y="16" fontSize="9" textAnchor="middle" fill="#e8294b">☽</text>
-        <circle cx="18" cy="32" r="5" fill="white"/>
-        <text x="18" y="35" fontSize="8" textAnchor="middle" fill="#e8294b">☽</text>
-        <circle cx="42" cy="32" r="5" fill="white"/>
-        <text x="42" y="35" fontSize="6" textAnchor="middle" fill="#222">⁘</text>
-        <path d="M6,2 H54 V34 Q30,50 30,50 Q30,50 6,34 Z" fill="none" stroke="#1a6b2a" strokeWidth="1"/>
+    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
+      <svg viewBox="0 0 600 100" className="w-[95%] h-auto" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(5, 5) scale(1.8)">
+          <path d="M6,2 H54 V34 Q30,50 30,50 Q30,50 6,34 Z" fill="#ffffff" stroke="#222" strokeWidth="1.5"/>
+          <path d="M 27 2 L 33 2 L 33 18 L 54 18 L 54 24 L 33 24 L 33 47 L 27 47 L 27 24 L 6 24 L 6 18 L 27 18 Z" fill="#115740" stroke="#222" strokeWidth="0.8"/>
+          <circle cx="16" cy="10" r="4.5" fill="none" stroke="#222" strokeWidth="1"/>
+          <path d="M 16,6.5 L 16,13.5 M 12.5,10 L 19.5,10" stroke="#222" strokeWidth="1" />
+          <circle cx="16" cy="10" r="1.5" fill="#222" />
+          <path d="M 45,6 C 40,6 40,14 45,14 C 41,13 41,7 45,6 Z" fill="#d30731" />
+          <path d="M 18,26 C 13,26 13,34 18,34 C 14,33 14,27 18,26 Z" fill="#d30731" />
+          <circle cx="44" cy="30" r="4.5" fill="none" stroke="#222" strokeWidth="1"/>
+          <path d="M 44,26.5 L 44,33.5 M 40.5,30 L 47.5,30" stroke="#222" strokeWidth="1" />
+          <circle cx="44" cy="30" r="1.5" fill="#222" />
+        </g>
+        <line x1="125" y1="10" x2="125" y2="90" stroke="#d30731" strokeWidth="3" />
+        <text x="140" y="48" fontSize="48" fill="#115740" fontWeight="700" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="0.5">GIRTON COLLEGE</text>
+        <text x="140" y="90" fontSize="42" fill="#115740" fontWeight="300" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="1">CAMBRIDGE</text>
       </svg>
-      <div className="text-center leading-none mt-2">
-        <div className="text-[15px] font-black text-[#1a6b2a] tracking-wide">GIRTON</div>
-        <div className="text-[15px] font-black text-[#111] tracking-widest">COLLEGE</div>
-      </div>
     </div>,
     // King's E-Lab
-    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 80 40" className="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <rect width="80" height="40" fill="white"/>
-        <rect x="2" y="8" width="22" height="24" rx="3" fill="#1a1a2e"/>
-        <text x="13" y="19" fontSize="7.5" fill="white" fontWeight="900" textAnchor="middle" fontFamily="serif">K</text>
-        <text x="13" y="28" fontSize="5" fill="#c8a951" fontWeight="bold" textAnchor="middle">E-LAB</text>
-        <text x="54" y="17" fontSize="7.5" fill="#1a1a2e" fontWeight="900" textAnchor="middle">KING'S</text>
-        <text x="54" y="27" fontSize="7" fill="#c8a951" fontWeight="900" textAnchor="middle">E-LAB</text>
+    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
+      <svg viewBox="0 0 200 100" className="h-[4.5rem] w-auto" xmlns="http://www.w3.org/2000/svg">
+        <text x="100" y="45" fontSize="56" fill="#5B2468" textAnchor="middle" fontFamily="Georgia, serif">E-LAB</text>
+        <line x1="5" y1="58" x2="195" y2="58" stroke="#5B2468" strokeWidth="1.5" />
+        <text x="80" y="78" fontSize="15" fill="#5B2468" textAnchor="middle" fontFamily="ui-sans-serif, system-ui, sans-serif" letterSpacing="1.5">KING'S COLLEGE</text>
+        <text x="80" y="96" fontSize="15" fill="#5B2468" textAnchor="middle" fontFamily="ui-sans-serif, system-ui, sans-serif" letterSpacing="1.5">CAMBRIDGE</text>
+        <path d="M 160 65 L 190 65 L 190 82 C 190 95 175 100 175 100 C 175 100 160 95 160 82 Z" fill="#5B2468" />
+        <path d="M 175 65 L 175 100" stroke="white" strokeWidth="0.8" />
+        <path d="M 160 76 L 190 76" stroke="white" strokeWidth="0.8" />
+        <circle cx="175" cy="88" r="3" fill="none" stroke="white" strokeWidth="1" />
+        <circle cx="167" cy="70" r="1.5" fill="none" stroke="white" strokeWidth="1" />
+        <circle cx="183" cy="70" r="1.5" fill="none" stroke="white" strokeWidth="1" />
       </svg>
-      <span className="text-[15px] font-bold text-forest-deep text-center leading-tight mt-1">King's E-Lab</span>
     </div>,
-    // CISL
-    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 80 40" className="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <rect width="80" height="40" fill="white"/>
-        <circle cx="16" cy="20" r="13" fill="none" stroke="#e8e8e8" strokeWidth="1"/>
-        <path d="M16,7 A13,13 0 0,1 29,20" fill="#2e7d32" opacity="0.9"/>
-        <path d="M29,20 A13,13 0 0,1 16,33" fill="#1565c0" opacity="0.9"/>
-        <path d="M16,33 A13,13 0 0,1 3,20" fill="#f57c00" opacity="0.9"/>
-        <path d="M3,20 A13,13 0 0,1 16,7" fill="#c62828" opacity="0.9"/>
-        <circle cx="16" cy="20" r="6" fill="white"/>
-        <text x="16" y="23.5" fontSize="5.5" fill="#1a1a1a" fontWeight="900" textAnchor="middle">CISL</text>
-        <text x="54" y="16" fontSize="6.5" fill="#1a1a1a" fontWeight="900" textAnchor="middle">CISL</text>
-        <text x="54" y="25" fontSize="4" fill="#555" textAnchor="middle">Cambridge</text>
-        <text x="54" y="32" fontSize="3.8" fill="#555" textAnchor="middle">Sustainability</text>
-      </svg>
-      <span className="text-[15px] font-bold text-forest-deep text-center leading-tight mt-1">Cambridge Inst.<br/>Sustainability</span>
-    </div>,
+
     // AUS
-    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 80 40" className="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <rect width="80" height="40" fill="white"/>
-        <rect x="2" y="6" width="26" height="28" rx="2" fill="#1a3a6b"/>
-        <text x="15" y="21" fontSize="10" fill="white" fontWeight="900" textAnchor="middle" fontFamily="sans-serif">AUS</text>
-        <text x="15" y="30" fontSize="3.5" fill="#c8a951" textAnchor="middle">EST. 1997</text>
-        <text x="56" y="17" fontSize="6" fill="#1a3a6b" fontWeight="800" textAnchor="middle">American</text>
-        <text x="56" y="25" fontSize="6" fill="#1a3a6b" fontWeight="800" textAnchor="middle">University</text>
-        <text x="56" y="33" fontSize="5.5" fill="#888" textAnchor="middle">of Sharjah</text>
+    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
+      <svg viewBox="0 0 200 200" className="h-[5.5rem] w-auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="ausTopCurve" d="M 28 100 A 72 72 0 0 1 172 100" />
+          <path id="ausBotCurve" d="M 16 100 A 84 84 0 0 0 184 100" />
+        </defs>
+        
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#902c28" strokeWidth="1.5" />
+        <circle cx="100" cy="100" r="92" fill="none" stroke="#902c28" strokeWidth="1" />
+        <circle cx="100" cy="100" r="54" fill="none" stroke="#902c28" strokeWidth="1" />
+        
+        <text fill="#902c28" fontSize="13.5" fontWeight="700" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="0.2">
+          <textPath href="#ausTopCurve" startOffset="50%" textAnchor="middle">American University of Sharjah</textPath>
+        </text>
+        <text fill="#902c28" fontSize="16" fontWeight="700" fontFamily="Arial, Helvetica, sans-serif">
+          <textPath href="#ausBotCurve" startOffset="50%" textAnchor="middle">الجامعة الأميركية في الشارقة</textPath>
+        </text>
+        
+        <circle cx="18" cy="100" r="2.5" fill="#902c28" />
+        <circle cx="182" cy="100" r="2.5" fill="#902c28" />
+        
+        <text x="100" y="142" fill="#902c28" fontSize="14" fontWeight="600" fontFamily="Arial, Helvetica, sans-serif" textAnchor="middle">1997</text>
+        
+        <g stroke="#902c28" fill="none" strokeWidth="0.8">
+          <rect x="53" y="82" width="94" height="2" fill="#902c28" />
+          <rect x="55" y="84" width="90" height="30" />
+          <path d="M 76 82 C 76 40 124 40 124 82 Z" />
+          <path d="M 100 48 L 100 82" />
+          <path d="M 91 50 C 91 65 91 82 91 82" />
+          <path d="M 109 50 C 109 65 109 82 109 82" />
+          <path d="M 83 57 C 83 70 83 82 83 82" />
+          <path d="M 117 57 C 117 70 117 82 117 82" />
+          <path d="M 89 114 L 89 95 A 11 11 0 0 1 111 95 L 111 114" />
+          <rect x="94" y="100" width="12" height="14" />
+          <path d="M 60 114 L 60 95 A 4.5 4.5 0 0 1 69 95 L 69 114" />
+          <path d="M 74 114 L 74 95 A 4.5 4.5 0 0 1 83 95 L 83 114" />
+          <path d="M 117 114 L 117 95 A 4.5 4.5 0 0 1 126 95 L 126 114" />
+          <path d="M 131 114 L 131 95 A 4.5 4.5 0 0 1 140 95 L 140 114" />
+          <line x1="64.5" y1="102" x2="64.5" y2="114" />
+          <line x1="78.5" y1="102" x2="78.5" y2="114" />
+          <line x1="121.5" y1="102" x2="121.5" y2="114" />
+          <line x1="135.5" y1="102" x2="135.5" y2="114" />
+          <line x1="50" y1="114" x2="150" y2="114" />
+        </g>
+        
+        <g stroke="#902c28" fill="none" strokeWidth="1.2">
+          <path d="M 45 114 Q 47 100 47 93 Q 40 100 40 102 M 47 93 Q 44 89 40 93 M 47 93 Q 47 85 45 85 M 47 93 Q 52 88 55 89 M 47 93 Q 53 95 54 100" />
+          <path d="M 155 114 Q 153 100 153 93 Q 160 100 160 102 M 153 93 Q 156 89 160 93 M 153 93 Q 153 85 155 85 M 153 93 Q 148 88 145 89 M 153 93 Q 147 95 146 100" />
+        </g>
       </svg>
-      <span className="text-[15px] font-bold text-forest-deep text-center leading-tight mt-1">American University<br/>of Sharjah</span>
+      <span className="text-[13px] font-bold text-forest-deep text-center leading-tight">American University<br/>of Sharjah</span>
     </div>,
     // KREA
-    <div className="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border border-forest/10 bg-white w-56 shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 80 40" className="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <rect width="80" height="40" fill="white"/>
-        <rect x="2" y="6" width="26" height="28" rx="3" fill="#d44000"/>
-        <text x="15" y="22" fontSize="9" fill="white" fontWeight="900" textAnchor="middle">KREA</text>
-        <text x="15" y="30" fontSize="4" fill="rgba(255,255,255,0.7)" textAnchor="middle">university</text>
-        <text x="56" y="19" fontSize="10" fill="#d44000" fontWeight="900" textAnchor="middle" fontFamily="serif">KREA</text>
-        <text x="56" y="30" fontSize="6" fill="#888" textAnchor="middle">University</text>
+    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
+      <svg viewBox="0 0 280 100" className="h-[4rem] w-auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="kreaClip">
+            <circle cx="45" cy="50" r="40" />
+          </clipPath>
+        </defs>
+        
+        <g clipPath="url(#kreaClip)">
+          {/* Top-Left to Bottom-Right */}
+          <path d="M -15,-15 L 105,105" stroke="#007DC5" strokeWidth="12" />
+          <path d="M 12,-15 L 132,105" stroke="#004F9F" strokeWidth="12" />
+          <path d="M -42,-15 L 78,105" stroke="#3AB4E6" strokeWidth="12" />
+          
+          {/* Bottom-Left to Top-Right */}
+          <path d="M -15,115 L 105,-5" stroke="#3AB4E6" strokeWidth="12" />
+          <path d="M -42,115 L 78,-5" stroke="#007DC5" strokeWidth="12" />
+          <path d="M 12,115 L 132,-5" stroke="#004F9F" strokeWidth="12" />
+
+          {/* Minimal layering to fake the weave effect */}
+          <path d="M -15,-15 L 45,45" stroke="#007DC5" strokeWidth="12" />
+          <path d="M -42,-15 L 18,45" stroke="#3AB4E6" strokeWidth="12" />
+          <path d="M 12,45 L 72,105" stroke="#004F9F" strokeWidth="12" />
+        </g>
+        
+        <text x="100" y="58" fontSize="48" fill="#58595b" fontWeight="800" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="1">KREA</text>
+        <text x="103" y="80" fontSize="22" fill="#000" fontFamily="Georgia, serif">university</text>
       </svg>
-      <span className="text-[15px] font-bold text-forest-deep text-center leading-tight mt-1">KREA University</span>
     </div>,
     // Galgotias
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -484,70 +572,7 @@ function TrustedByMarquee() {
   )
 }
 
-/* ── Testimonial Section ── */
-function TestimonialSection() {
-  return (
-    <section className="bg-[#F4F1E8] py-24 md:py-32 px-6">
-      <div className="mx-auto max-w-[1000px]">
-        
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="h-px w-6 bg-[#C19842]" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-[#C19842]">Partner Success</span>
-          </div>
-          <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-forest-deep leading-[1.1] mb-8 tracking-tight">
-            Partnering for <span className="font-serif italic text-[#C19842]">excellence.</span>
-          </h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
-              </div>
-            </div>
-          ))}
-        </div>
 
-          <div className="mx-auto h-px w-20 bg-[#C19842]/40" />
-        </div>
-
-        {/* 1 Frame (Single Card) */}
-        <div className="relative bg-white rounded-[2.5rem] p-10 md:p-16 lg:p-20 shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-forest/5 flex flex-col items-center text-center overflow-hidden">
-          
-          {/* Watermark Quote Icon */}
-          <div className="absolute top-4 left-6 md:left-12 text-[12rem] md:text-[16rem] font-serif text-forest-deep/[0.02] leading-none pointer-events-none select-none">
-            "
-          </div>
-          
-          <div className="relative z-10 w-full max-w-3xl mx-auto mb-10 md:mb-12">
-            <p className="text-[1.5rem] md:text-[2rem] lg:text-[2.4rem] font-serif italic text-forest-deep leading-[1.5] tracking-tight">
-              "Our partnership with GEL has opened new doors for our students and faculty. The Cambridge experience, combined with practical learning, created exceptional outcomes."
-            </p>
-          </div>
-          
-          <div className="flex flex-col items-center shrink-0 w-full relative z-10">
-            <img
-              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=150&q=80"
-              alt="Dr. Ted Laursen"
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border border-forest/5 mb-5"
-            />
-            <h4 className="text-[17px] md:text-[19px] font-bold text-forest-deep mb-1">Dr. Ted Laursen</h4>
-            <p className="text-[15px] md:text-[15px] text-forest/70 uppercase tracking-[0.2em] font-extrabold leading-[1.6]">
-              Chancellor, American University of Sharjah
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  )
-}
 
 /* ── CTA ── */
 function CTA() {

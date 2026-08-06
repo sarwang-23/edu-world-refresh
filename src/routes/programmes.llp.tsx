@@ -5,7 +5,8 @@ import { useState } from 'react'
 import person11Img from '../assets/person11.jpg'
 import person12Img from '../assets/person12.jpg'
 import londonHeroImg from '../assets/executive-education.jpg'
-import londonDetailsImg from '../assets/business-leaders.jpg'
+import londonDetailsImg from '../assets/cambridge_7.jpg'
+import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/llp')({
   head: () => ({
@@ -20,13 +21,31 @@ export const Route = createFileRoute('/programmes/llp')({
 })
 
 function Page() {
+  const llpTestimonials = [
+    {
+      q: "Walking through the Houses of Parliament and discussing education policy with British parliamentarians was an experience I'll carry for life. GEL delivered an impeccably curated week that elevated my entire perspective on school leadership.",
+      a: "Dr. Meena Subramaniam",
+      r: "Principal, Delhi Public School, Hyderabad",
+      tag: "London Programme",
+      img: person11Img,
+      featured: true,
+    },
+    {
+      q: "The London programme gave me access to institutions and conversations that I simply couldn't have arranged on my own. The independent school visits and Westminster policy dialogue were extraordinary. Highly recommended for any serious school leader.",
+      a: "Arjun Mehta",
+      r: "School Director, Mehta Foundation Schools, Mumbai",
+      tag: "London Programme",
+      img: person12Img,
+      featured: false,
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Hero />
       <ExperienceSection />
       <WhoShouldEnroll />
       <Schedule />
-      <Testimonials />
       <ProgrammeDetails />
       <CTA />
       <Footer />
@@ -38,8 +57,8 @@ function Hero() {
   return (
     <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
       <div className="mx-auto max-w-7xl px-6 pt-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-6">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
               <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
@@ -61,33 +80,31 @@ function Hero() {
                 <MapPin className="h-4 w-4 text-gold" /> London, United Kingdom
               </span>
             </div>
-            <div className="mt-10 flex gap-4 flex-wrap">
+            <div className="mt-10 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
               <Link
                 to="/apply-now" search={{ source: "London School Leadership Programme" }}
-                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20"
+                className="inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-lg shadow-forest/20 whitespace-nowrap shrink-0"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
                 href="#schedule"
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-7 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/20 px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:border-forest-deep transition-all duration-300 whitespace-nowrap shrink-0"
               >
                 View Schedule
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest/15 aspect-[4/3]">
-              <img src={londonHeroImg} alt="London School Leadership Programme" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/10 to-transparent" />
-            </div>
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
-              <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
-                <GraduationCap className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">GEL Certified</p>
-                <p className="text-[15px] text-forest/80 mt-0.5">Certificate of Participation</p>
+          
+          <div className="relative lg:col-span-6">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
+              <img src={londonHeroImg} alt="London School Leadership Programme" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
+                <div>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">UK Policy & Governance</p>
+                  <p className="text-[16px] font-bold">London, United Kingdom</p>
+                </div>
               </div>
             </div>
           </div>
@@ -220,58 +237,6 @@ function Schedule() {
   )
 }
 
-function Testimonials() {
-  const testimonials = [
-    { name: 'Dr. Meena Subramaniam', school: 'Principal, Delhi Public School, Hyderabad', quote: "Walking through the Houses of Parliament and discussing education policy with British parliamentarians was an experience I'll carry for life. GEL delivered an impeccably curated week that elevated my entire perspective on school leadership.", img: person11Img },
-    { name: 'Arjun Mehta', school: 'School Director, Mehta Foundation Schools, Mumbai', quote: "The London programme gave me access to institutions and conversations that I simply couldn't have arranged on my own. The independent school visits and Westminster policy dialogue were extraordinary. Highly recommended for any serious school leader.", img: person12Img },
-  ]
-  const [current, setCurrent] = useState(0)
-  const t = testimonials[current]
-  return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <div className="h-px w-8 bg-gold" />
-          <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-          <div className="h-px w-8 bg-gold" />
-        </div>
-        <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep mb-16">What participants say about our programme?</h2>
-        {/* 3 Frames Placeholders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 mt-12 w-full">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="aspect-video w-full rounded-xl bg-black/5 overflow-hidden relative border border-black/10 shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-black/10 flex items-center justify-center">
-                  <div className="h-0 w-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-black/40 border-b-[6px] border-b-transparent ml-1" />
-                </div>
-                <span className="text-black/40 text-[13px] font-bold uppercase tracking-widest">Video Frame</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
-        <div className="flex items-center justify-center gap-1 mb-6">
-          {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
-        </div>
-        <blockquote className="text-[15px] leading-relaxed text-forest/70 max-w-2xl mx-auto italic mb-6">"{t.quote}"</blockquote>
-        <p className="font-bold text-forest-deep">{t.name}</p>
-        <p className="text-[15px] text-forest/70 mt-1">{t.school}</p>
-        <div className="flex items-center justify-center gap-4 mt-10">
-          <button onClick={() => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={"h-1.5 rounded-full transition-all duration-300 " + (i === current ? 'w-6 bg-gold' : 'w-1.5 bg-forest/20')} />)}
-          </div>
-          <button onClick={() => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))} className="h-10 w-10 rounded-full border border-forest/15 flex items-center justify-center text-forest/70 hover:border-forest-deep hover:text-forest-deep transition-all">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function ProgrammeDetails() {
   const details = [
