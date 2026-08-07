@@ -1,4 +1,4 @@
-import cambridgeImg from "@/assets/hero-image.jpg";
+import cambridgeImg from "@/assets/hero-classroom.jpg";
 import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
 import samTully from '@/assets/people/sam_tully.jpg';
 import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';

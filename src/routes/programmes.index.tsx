@@ -313,7 +313,7 @@ function ProgrammesHero() {
   const activeItem = items[activeIndex];
 
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-28 md:pt-4 md:pb-36 border-b border-forest/5">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-10 pb-28 md:pt-16 lg:pt-20 md:pb-36 border-b border-forest/5">
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/5 blur-[100px]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
@@ -355,7 +355,7 @@ function ProgrammesHero() {
           </div>
           
           {/* Right Column: Large Premium Interactive Showcase + 6-Photo Selector */}
-          <div className="lg:col-span-6 relative z-10">
+          <div className="lg:col-span-6 relative z-10 lg:mt-8">
             <div className="relative rounded-[2.5rem] bg-gradient-to-br from-forest-deep via-[#0d2a20] to-forest p-4 md:p-5 shadow-2xl shadow-forest/30 border border-gold/25 backdrop-blur-xl">
               {/* Ambient lighting glow */}
               <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gold/15 blur-[80px]" />

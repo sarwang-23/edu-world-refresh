@@ -71,7 +71,7 @@ const VENTURES: Record<string, Venture> = {
     intro: 'KavachAI transforms passive CCTV into proactive security intelligence with real-time threat detection, behavior analysis, and crowd management.',
     sector: 'Enterprise AI & Security',
     stage: 'Growth · Funded',
-    origin: 'Noida, Uttar Pradesh',
+    origin: 'India',
     markets: 'Pharma Vaults, High-Value Logistics, Critical Infrastructure, Retail',
     logo: <Bot className="h-12 w-12 text-white" />,
     heroImg: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2060&auto=format&fit=crop',
@@ -172,13 +172,73 @@ const VENTURES: Record<string, Venture> = {
     ],
   },
 
+  'carbonsynq': {
+    slug: 'carbonsynq', name: 'CARBONSYNQ EARTH', track: 'Venture Track',
+    tagline: 'Intelligence for a Greener Future',
+    intro: 'AI-driven sustainability analytics and carbon accounting platform for the modern enterprise. Transforming ESG compliance into strategic value creation with unparalleled precision.',
+    sector: 'Climate Tech & Enterprise SaaS',
+    stage: 'Growth · Funded',
+    origin: 'India',
+    markets: 'Global',
+    logo: <img src="https://www.carbonsynqearth.com/unnamed.webp" alt="CarbonSynq" className="w-12 h-12 object-contain drop-shadow-md" />,
+    heroImg: 'https://www.carbonsynqearth.com/hero_forest.webp',
+    color: 'from-[#021816] via-[#042A27] to-[#0A4742]',
+    accentColor: 'teal',
+    problem: 'Organizations face growing pressure to measure and report their carbon footprint accurately, but existing processes are manual, fragmented, and hard to verify. This makes carbon accounting slow, error-prone, and difficult to trust — creating barriers to credible climate action and regulatory compliance.',
+    solution: 'CarbonSynq lets organizations automate emissions measurement, verify data with greater confidence, and connect directly to a transparent carbon marketplace. We convert raw operational data into certified Scope 1, 2, and 3 emissions using AI-powered analytics and satellite-backed MRV.',
+    matters: 'Accurate, verifiable carbon accounting is foundational to credible climate action and trust in carbon markets. By streamlining compliance with global mandates like CSRD and ISSB, we help organizations reduce risk and turn sustainability into a measurable competitive advantage.',
+    impact: 'Driving credible climate action through data. CarbonSynq empowers businesses to transition from mere measurement to meaningful action, deploying targeted carbon reduction initiatives to reach net-zero goals faster.',
+    highlights: [
+      'Automated Scope 1, 2, and 3 emissions tracking',
+      'AI-powered data validation and satellite-backed MRV',
+      'Seamless compliance with CSRD, ISSB, and other global frameworks',
+      'Direct access to a transparent, verified carbon marketplace',
+      'Strategic insights for accelerated net-zero journeys',
+    ],
+    progress: [
+      'Developed core AI analytics and carbon accounting platform',
+      'Established strategic partnerships with leading ESG frameworks',
+      'Initiated pilot programs with early enterprise adopters',
+      'Secured growth funding to expand operations and market reach',
+    ],
+    metrics: [
+      { l: 'Team Size', v: '10', subtitle: 'Internal team records' },
+      { l: 'Funding Raised', v: 'Rs. 20 lakh', subtitle: 'Since June 2026' },
+      { l: 'Valuation', v: 'Rs. 5 crore', subtitle: 'As of funding round' },
+    ],
+    team: [
+      { 
+        name: 'Pushkar Singh', 
+        role: 'Founder and CEO', 
+        bio: 'Pushkar Singh is the Founder and CEO of CarbonSynq, a climate-tech venture combining AI-powered carbon accounting, carbon markets, and MRV technology. He is a B.Tech Electrical Engineering student at Galgotias University, leading the venture through the Galgotias accelerator programme.', 
+        img: '/team/pushkar.jpeg' 
+      },
+      { 
+        name: 'Mr. Rachit Mathur', 
+        role: 'Mentor', 
+        bio: 'Our team combines technical depth in AI and climate data with hands-on experience building and scaling CarbonSynq through a competitive accelerator programme.', 
+        img: '' 
+      },
+    ],
+    seeking: [
+      { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Enterprises seeking to automate their carbon accounting and streamline ESG compliance.' },
+      { icon: <Handshake className="h-5 w-5" />, t: 'Strategic Partners', d: 'Organizations in the climate tech and sustainability space for joint initiatives.' },
+      { icon: <Globe2 className="h-5 w-5" />, t: 'Ecosystem Collaboration', d: 'Working with regulatory bodies to standardize carbon measurement.' },
+    ],
+    roadmap: [
+      { period: 'Phase 1', icon: <Rocket className="h-5 w-5" />, items: ['Platform launch and early enterprise pilots'] },
+      { period: 'Phase 2', icon: <TrendingUp className="h-5 w-5" />, items: ['Scale automation and integrate satellite MRV'] },
+      { period: 'Phase 3', icon: <Globe className="h-5 w-5" />, items: ['Global expansion and marketplace integration'] },
+    ],
+  },
+
   'saivyy': {
     slug: 'saivyy', name: 'SAIVYY TECHNOLOGIES', track: 'Venture Track',
     tagline: 'Empowering businesses with AI-driven automation, analytics and intelligent digital transformation.',
     intro: 'Saivyy Technologies Pvt. Ltd. develops enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and automate critical business processes — improving efficiency, accelerating decisions and driving sustainable digital transformation.',
     sector: 'Artificial Intelligence, Generative AI, Big Data Analytics & Intelligent Automation',
     stage: 'Bootstrapped, Profitable & Growing (Recently Founded)',
-    origin: 'Noida, India',
+    origin: 'India',
     markets: 'India, UK, North America, Europe, Middle East',
     logo: <Cpu className="h-12 w-12 text-white" />, color: 'from-slate-900 via-blue-950 to-slate-900', heroImg: '/saivyy/saivvyMain.jpeg',
     problem: 'Organisations generate vast amounts of data but struggle to convert it into actionable business intelligence. Legacy systems, manual processes and fragmented digital infrastructure lead to inefficiency, delayed decisions, higher costs and limited scalability — while technical complexity, integration barriers and scarce expertise slow AI adoption.',
@@ -196,7 +256,7 @@ const VENTURES: Record<string, Venture> = {
       'Incorporated as an AI, Big Data and Digital Transformation company (CIN U62010UP2025PTC233625, Recently)',
       'Commercialised AI, Data Analytics, Cloud and Intelligent Automation service offerings for enterprise clients',
       'Built a team of 12+ professionals delivering solutions to 50+ clients',
-      'Established office at Urbtech Trade Centre, Sector 132, Noida',
+      'Established office at Urbtech Trade Centre, Sector 132',
       '20+ AI and digital transformation solutions in the current portfolio',
     ],
     metrics: [
@@ -227,15 +287,15 @@ const VENTURES: Record<string, Venture> = {
 
 export const Route = createFileRoute('/ventures/$slug')({
   loader: ({ params }) => {
-    const v = VENTURES[params.slug]
-    if (!v) throw notFound()
-    return v
+    if (!VENTURES[params.slug]) throw notFound()
+    return { slug: params.slug }
   },
   component: VenturePage,
 })
 
 function VenturePage() {
-  const v = Route.useLoaderData()
+  const { slug } = Route.useLoaderData()
+  const v = VENTURES[slug]
   const [activeTab, setActiveTab] = useState("Overview")
   const hasFullData = v.intro !== ''
 
@@ -291,14 +351,47 @@ function VenturePage() {
       <MainContent v={v} />
       <GelsRole v={v} />
       <BottomCTA v={v} />
-      <SharedTestimonials />
+      {v.slug !== 'carbonsynq' && <SharedTestimonials />}
       <Footer />
     </div>
   )
 }
 
+
+function getThemeStyles(slug: string) {
+  if (slug === 'project-tacto') {
+    return {
+      text: 'text-violet-600', bg: 'bg-violet-50', border: 'border-violet-100/60', textAccent: 'text-violet-400',
+      gradient: 'from-violet-600 via-indigo-500 to-teal-400', bgHover: 'hover:bg-violet-500', bgSolid: 'bg-violet-600',
+      shadow: 'hover:shadow-violet-100/60', ring: 'ring-violet-100', iconBorder: 'border-violet-500/20',
+      iconBg: 'bg-violet-500/15', badgeBg: 'bg-violet-500/10', badgeBorder: 'border-violet-500/20', badgeText: 'text-violet-300',
+      darkBg: 'bg-[#100820]', orb1: 'bg-violet-600/12', orb2: 'bg-teal-500/10', metricsIcon: 'text-violet-400/60',
+      avatar: 'from-violet-500 to-indigo-600',
+    }
+  } else if (slug === 'carbonsynq') {
+    return {
+      text: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-100/60', textAccent: 'text-teal-500',
+      gradient: 'from-emerald-400 via-teal-400 to-cyan-400', bgHover: 'hover:bg-teal-500', bgSolid: 'bg-teal-600',
+      shadow: 'hover:shadow-teal-100/60', ring: 'ring-teal-100', iconBorder: 'border-teal-500/20',
+      iconBg: 'bg-teal-500/15', badgeBg: 'bg-teal-500/10', badgeBorder: 'border-teal-500/20', badgeText: 'text-teal-600',
+      darkBg: 'bg-[#021816]', orb1: 'bg-emerald-500/12', orb2: 'bg-cyan-500/15', metricsIcon: 'text-teal-500/80',
+      avatar: 'from-teal-500 to-cyan-600',
+    }
+  } else {
+    return {
+      text: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-100/60', textAccent: 'text-blue-400',
+      gradient: 'from-blue-600 via-sky-500 to-cyan-400', bgHover: 'hover:bg-slate-800', bgSolid: 'bg-slate-900',
+      shadow: 'hover:shadow-blue-100/60', ring: 'ring-slate-200', iconBorder: 'border-blue-500/20',
+      iconBg: 'bg-blue-500/15', badgeBg: 'bg-blue-500/10', badgeBorder: 'border-blue-500/20', badgeText: 'text-blue-300',
+      darkBg: 'bg-[#080E1C]', orb1: 'bg-blue-600/10', orb2: 'bg-indigo-500/10', metricsIcon: 'text-blue-400/60',
+      avatar: 'from-slate-600 to-slate-800',
+    }
+  }
+}
+
 function Hero({ v }: { v: Venture }) {
   const brandColor = v.color || 'from-slate-900 via-blue-950 to-slate-900'
+  const theme = getThemeStyles(v.slug)
   const isTacto = v.slug === 'project-tacto'
   return (
     <section className={`text-white relative overflow-hidden bg-gradient-to-br ${brandColor} min-h-[580px] md:min-h-[660px] flex items-center`}>
@@ -306,7 +399,7 @@ function Hero({ v }: { v: Venture }) {
       {v.heroImg && (
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${v.heroImg})`, opacity: isTacto ? 0.18 : 0.22 }}
+          style={{ backgroundImage: `url(${v.heroImg})`, opacity: isTacto ? 0.18 : v.slug === 'carbonsynq' ? 0.15 : 0.22 }}
         />
       )}
       {/* Grid overlay */}
@@ -315,27 +408,20 @@ function Hero({ v }: { v: Venture }) {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20" />
       {/* Glow orbs - themed for Tacto */}
-      {isTacto ? (
-        <>
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/20 blur-[160px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-teal-500/15 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />
-        </>
-      ) : (
-        <>
-          <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-600/15 blur-[150px] rounded-full pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
-        </>
-      )}
+      <>
+        <div className={`absolute top-0 left-1/4 sm:left-1/3 w-[500px] sm:w-[600px] h-[500px] sm:h-[600px] blur-[150px] rounded-full pointer-events-none ${isTacto ? 'bg-violet-600/20' : v.slug === 'carbonsynq' ? 'bg-teal-600/20' : 'bg-blue-600/15'}`} />
+        <div className={`absolute bottom-0 right-0 sm:right-1/4 w-[350px] sm:w-[400px] h-[350px] sm:h-[400px] blur-[120px] rounded-full pointer-events-none ${isTacto ? 'bg-teal-500/15' : v.slug === 'carbonsynq' ? 'bg-cyan-500/15' : 'bg-indigo-500/10'}`} />
+        {isTacto && <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />}
+      </>
 
       <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 pt-14 pb-32 z-10">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-14">
-          <Link to="/global-ventures" className="hover:text-white/65 transition-colors flex items-center gap-1.5">
+        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-14">
+          <Link to="/global-ventures" className="hover:text-white/90 transition-colors flex items-center gap-1.5">
             <ArrowLeft className="h-3 w-3" /> Global Ventures
           </Link>
-          <ChevronRight className="h-3 w-3 text-white/20" />
-          <span className="text-white/65">{v.name}</span>
+          <ChevronRight className="h-3 w-3 text-white/30" />
+          <span className="text-white/90">{v.name}</span>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
@@ -344,9 +430,7 @@ function Hero({ v }: { v: Venture }) {
             {/* Track badge */}
             <div className="flex items-center gap-3 mb-7">
               <span className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10.5px] font-black uppercase tracking-[0.2em] border ${
-                isTacto
-                  ? 'bg-violet-500/15 border-violet-400/25 text-violet-300'
-                  : 'bg-blue-500/15 border-blue-400/25 text-blue-300'
+                isTacto ? 'bg-violet-500/15 border-violet-400/25 text-violet-300' : v.slug === 'carbonsynq' ? 'bg-teal-500/15 border-teal-400/25 text-teal-300' : 'bg-blue-500/15 border-blue-400/25 text-blue-300'
               }`}>
                 {v.track}
               </span>
@@ -365,12 +449,12 @@ function Hero({ v }: { v: Venture }) {
             </h1>
 
             {/* Tagline */}
-            <p className="text-xl sm:text-2xl font-light text-white/70 leading-[1.4] max-w-2xl mb-5">
+            <p className="text-xl sm:text-2xl font-light text-white/90 leading-[1.4] max-w-2xl mb-5">
               {v.tagline}
             </p>
 
             {/* Intro */}
-            <p className="text-[14.5px] text-white/50 leading-[1.9] max-w-xl mb-10">
+            <p className="text-[14.5px] text-white/75 leading-[1.9] max-w-xl mb-10">
               {v.intro}
             </p>
 
@@ -378,7 +462,7 @@ function Hero({ v }: { v: Venture }) {
             {v.awards && v.awards.length > 0 && (
               <div className="flex flex-col sm:flex-row gap-2.5 mb-10">
                 {v.awards.map((award, i) => (
-                  <span key={i} className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] border border-white/10 rounded-xl text-[12.5px] text-white/60 backdrop-blur-sm font-medium">
+                  <span key={i} className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.08] border border-white/20 rounded-xl text-[12.5px] text-white/80 backdrop-blur-sm font-medium">
                     {award}
                   </span>
                 ))}
@@ -405,19 +489,17 @@ function Hero({ v }: { v: Venture }) {
           {/* Right: Logo card */}
           <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 justify-end items-end">
             <div className="relative">
-              <div className={`absolute inset-0 rounded-[2.5rem] blur-[60px] scale-110 pointer-events-none ${isTacto ? 'bg-violet-500/20' : 'bg-blue-500/15'}`} />
+              <div className={`absolute inset-0 rounded-[2.5rem] blur-[60px] scale-110 pointer-events-none ${isTacto ? 'bg-violet-500/20' : v.slug === 'carbonsynq' ? 'bg-teal-500/20' : 'bg-blue-500/15'}`} />
               <div className="relative bg-white/[0.06] backdrop-blur-2xl border border-white/[0.1] rounded-[2.5rem] p-10 flex flex-col items-center gap-5 shadow-2xl min-w-[230px]">
                 {/* Logo icon container */}
                 <div className={`w-24 h-24 rounded-3xl border flex items-center justify-center shadow-inner shrink-0 ${
-                  isTacto
-                    ? 'bg-gradient-to-br from-violet-500/20 to-indigo-500/10 border-violet-400/20'
-                    : 'bg-gradient-to-br from-white/20 to-white/5 border-white/20'
+                  isTacto ? 'bg-gradient-to-br from-violet-500/20 to-indigo-500/10 border-violet-400/20' : v.slug === 'carbonsynq' ? 'bg-gradient-to-br from-teal-500/20 to-cyan-500/10 border-teal-400/20' : 'bg-gradient-to-br from-white/20 to-white/5 border-white/20'
                 }`}>
                   <div className="scale-[1.1]">{v.logo}</div>
                 </div>
                 {/* Name & origin */}
                 <div className="text-center">
-                  <p className="text-[9.5px] font-black uppercase tracking-[0.28em] text-white/30 mb-1.5">Venture</p>
+                  <p className="text-[9.5px] font-black uppercase tracking-[0.28em] text-white/50 mb-1.5">Venture</p>
                   <p className="text-[16px] font-bold text-white leading-snug">{v.name}</p>
                 </div>
                 <div className="w-full h-px bg-white/[0.08]" />
@@ -426,7 +508,7 @@ function Hero({ v }: { v: Venture }) {
                     <Globe className="h-3.5 w-3.5 shrink-0" />
                     <span>{v.origin}</span>
                   </div>
-                  {isTacto && (
+                  {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && (
                     <div className="flex items-center gap-2 mt-1">
                       <span className="px-3 py-1 bg-violet-500/15 border border-violet-400/20 rounded-full text-[10.5px] font-bold text-violet-300">
                         Open Source Hardware
@@ -444,6 +526,7 @@ function Hero({ v }: { v: Venture }) {
 }
 
 function MetadataBar({ v }: { v: Venture }) {
+  const theme = getThemeStyles(v.slug)
   const isTacto = v.slug === 'project-tacto'
   const items = [
     { icon: <Cpu className="h-4 w-4" />, label: "Sector", value: v.sector },
@@ -456,11 +539,9 @@ function MetadataBar({ v }: { v: Venture }) {
       <div className="bg-white rounded-2xl border border-slate-200/80 shadow-[0_8px_40px_rgba(0,0,0,0.09)] overflow-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
           {items.map((item, i) => (
-            <div key={i} className="flex items-start gap-3.5 px-5 py-5 lg:px-6 lg:py-6">
+            <div key={i} className="flex items-start gap-4 px-6 py-6 lg:px-8 lg:py-7">
               <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${
-                isTacto
-                  ? 'text-violet-600 bg-violet-50 border-violet-100/60'
-                  : 'text-blue-600 bg-blue-50 border-blue-100/60'
+                `${theme.text} ${theme.bg} ${theme.border}`
               }`}>
                 {item.icon}
               </div>
@@ -478,14 +559,15 @@ function MetadataBar({ v }: { v: Venture }) {
 
 function SectionHeader({ label, id, accent }: { label: string; id?: string; accent?: boolean }) {
   return (
-    <div className="flex items-center gap-3 mb-6" id={id}>
-      <span className="text-[10px] font-black uppercase tracking-[0.24em] text-slate-400 shrink-0">{label}</span>
+    <div className="flex items-center gap-4 mb-8" id={id}>
+      <span className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500 shrink-0">{label}</span>
       <div className={`flex-1 h-px ${accent ? 'bg-gradient-to-r from-violet-200 to-transparent' : 'bg-slate-200'}`} />
     </div>
   )
 }
 
 function MainContent({ v }: { v: Venture }) {
+  const theme = getThemeStyles(v.slug)
   const isTacto = v.slug === 'project-tacto'
   const opportunityCards = [
     {
@@ -497,10 +579,10 @@ function MainContent({ v }: { v: Venture }) {
     },
     {
       icon: <Brain className="h-5 w-5" />,
-      bg: isTacto ? "bg-violet-50" : "bg-blue-50",
-      border: isTacto ? "border-violet-100/80" : "border-blue-100/80",
-      iconColor: isTacto ? "text-violet-600" : "text-blue-600",
-      hoverShadow: isTacto ? "hover:shadow-violet-100/60" : "hover:shadow-blue-100/60",
+      bg: theme.bg,
+      border: theme.border,
+      iconColor: theme.text,
+      hoverShadow: theme.shadow,
       title: "Our Solution",
       desc: v.solution
     },
@@ -521,26 +603,26 @@ function MainContent({ v }: { v: Venture }) {
   ]
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-12 w-full">
-      <div className="grid lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_348px] gap-8 items-start">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-14 pb-16 w-full">
+      <div className="grid lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_348px] gap-10 xl:gap-12 items-start">
 
         {/* ─── LEFT COLUMN ─── */}
-        <div className="space-y-12 min-w-0">
+        <div className="space-y-16 min-w-0">
 
           {/* ── Overview / The Opportunity ── */}
           <div id="overview" className="scroll-mt-52">
-            <SectionHeader label="The Opportunity" id="the-opportunity" accent={isTacto} />
+            <SectionHeader label="The Opportunity" id="the-opportunity" accent={v.slug === 'project-tacto' || v.slug === 'carbonsynq'} />
             <div className="grid sm:grid-cols-2 gap-4">
               {opportunityCards.map((c, i) => (
                 <div
                   key={i}
-                  className={`group bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-lg ${c.hoverShadow} hover:-translate-y-0.5 transition-all duration-300 p-6 flex flex-col`}
+                  className={`group bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl ${c.hoverShadow} hover:-translate-y-1 transition-all duration-300 p-7 lg:p-8 flex flex-col`}
                 >
-                  <div className={`w-10 h-10 rounded-xl ${c.bg} border ${c.border} ${c.iconColor} flex items-center justify-center mb-5 shrink-0 group-hover:scale-105 transition-transform duration-300`}>
+                  <div className={`w-11 h-11 rounded-xl ${c.bg} border ${c.border} ${c.iconColor} flex items-center justify-center mb-6 shrink-0 group-hover:scale-105 transition-transform duration-300`}>
                     {c.icon}
                   </div>
-                  <h4 className="text-[14.5px] font-bold text-slate-900 mb-2.5 leading-tight">{c.title}</h4>
-                  <p className="text-[13.5px] text-slate-500 leading-[1.82] flex-1">{c.desc}</p>
+                  <h4 className="text-[15px] font-bold text-slate-900 mb-3 leading-snug tracking-tight">{c.title}</h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed flex-1">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -548,31 +630,22 @@ function MainContent({ v }: { v: Venture }) {
 
           {/* ── Progress to Date ── */}
           <div id="progress" className="scroll-mt-52">
-            <SectionHeader label="Progress to Date" accent={isTacto} />
-            <div className={`rounded-2xl overflow-hidden relative shadow-xl ${isTacto ? 'bg-[#100820]' : 'bg-[#080E1C]'}`}>
+            <SectionHeader label="Progress to Date" accent={v.slug === 'project-tacto' || v.slug === 'carbonsynq'} />
+            <div className={`rounded-2xl overflow-hidden relative shadow-xl ${theme.darkBg}`}>
               {/* Glow orbs */}
-              {isTacto ? (
-                <>
-                  <div className="absolute top-0 right-0 w-72 h-72 bg-violet-600/12 blur-[100px] rounded-full pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 w-56 h-56 bg-teal-500/10 blur-[80px] rounded-full pointer-events-none" />
+              <>
+                  <div className={`absolute top-0 right-0 w-72 h-72 blur-[100px] rounded-full pointer-events-none ${theme.orb1}`} />
+                  <div className={`absolute bottom-0 left-0 w-56 h-56 blur-[80px] rounded-full pointer-events-none ${theme.orb2}`} />
                 </>
-              ) : (
-                <>
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 w-56 h-56 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none" />
-                </>
-              )}
-              <div className="relative z-10 p-7 sm:p-9">
+              <div className="relative z-10 p-8 sm:p-10 lg:p-12">
                 {/* Progress items */}
-                <div className="space-y-4 mb-9">
+                <div className="space-y-5 mb-10">
                   {v.progress.map((p, i) => (
                     <div key={i} className="flex items-start gap-4">
                       <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 border ${
-                        isTacto
-                          ? 'bg-violet-500/20 border-violet-400/30'
-                          : 'bg-blue-500/20 border-blue-400/30'
+                        `${theme.badgeBg} ${theme.badgeBorder}`
                       }`}>
-                        <CheckCircle2 className={`h-3 w-3 ${isTacto ? 'text-violet-400' : 'text-blue-400'}`} />
+                        <CheckCircle2 className={`h-3 w-3 ${theme.textAccent}`} />
                       </div>
                       <span className="text-[14px] text-slate-300/85 leading-[1.8]">{p}</span>
                     </div>
@@ -581,23 +654,23 @@ function MainContent({ v }: { v: Venture }) {
 
                 {/* Metrics grid */}
                 <div className="border-t border-white/[0.06] pt-7">
-                  <p className="text-[9.5px] font-black uppercase tracking-[0.25em] text-slate-600 mb-5">Key Metrics</p>
+                  <p className="text-[9.5px] font-black uppercase tracking-[0.25em] text-slate-400 mb-5">Key Metrics</p>
                   <div className={`grid gap-4 ${v.metrics.length === 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'}`}>
                     {v.metrics.map((m, i) => (
                       <div
                         key={i}
-                        className="bg-white/[0.04] border border-white/[0.07] rounded-xl px-3 py-5 text-center hover:bg-white/[0.065] transition-colors group cursor-default"
+                        className="bg-white/[0.04] border border-white/[0.07] rounded-2xl px-4 py-6 flex flex-col items-center justify-center text-center hover:bg-white/[0.065] transition-colors group cursor-default"
                       >
                         {m.icon && (
-                          <div className={`flex justify-center mb-3 ${isTacto ? 'text-violet-400/60' : 'text-blue-400/60'} group-hover:scale-110 transition-transform`}>
+                          <div className={`flex justify-center mb-3 ${theme.metricsIcon} group-hover:scale-110 transition-transform`}>
                             {m.icon}
                           </div>
                         )}
                         <div className={`font-black text-white tracking-tight leading-none mb-2 ${m.v.length > 6 ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'}`}>
                           {m.v}
                         </div>
-                        <div className="text-[11px] text-slate-500 leading-snug">{m.l}</div>
-                        {m.subtitle && <div className="text-[10px] text-slate-600 mt-1">{m.subtitle}</div>}
+                        <div className="text-[11px] text-slate-400 leading-snug">{m.l}</div>
+                        {m.subtitle && <div className="text-[10px] text-slate-500 mt-1">{m.subtitle}</div>}
                       </div>
                     ))}
                   </div>
@@ -608,8 +681,8 @@ function MainContent({ v }: { v: Venture }) {
 
           {/* ── Founding Team ── */}
           <div id="team" className="scroll-mt-52">
-            <SectionHeader label="Founding Team" accent={isTacto} />
-            <div className={`grid gap-5 ${v.team.length === 3 ? 'sm:grid-cols-3' : v.team.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 xl:grid-cols-3'}`}>
+            <SectionHeader label="Founding Team" accent={v.slug === 'project-tacto' || v.slug === 'carbonsynq'} />
+            <div className={`grid gap-6 ${v.team.length === 3 ? 'sm:grid-cols-3' : v.team.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 xl:grid-cols-3'}`}>
               {v.team.map((member, i) => (
                 <div
                   key={i}
@@ -617,55 +690,51 @@ function MainContent({ v }: { v: Venture }) {
                 >
                   {/* Card header with portrait */}
                   <div className="relative bg-gradient-to-b from-slate-50 to-slate-100/80 px-6 pt-7 pb-6 flex flex-col items-center text-center border-b border-slate-100">
-                    <div className={`w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-lg ring-1 mb-4 ${isTacto ? 'ring-violet-100' : 'ring-slate-200'}`}>
+                    <div className={`w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-lg ring-1 mb-4 ${theme.ring}`}>
                       {member.img ? (
                         <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                       ) : (
-                        <div className={`w-full h-full flex items-center justify-center text-white text-2xl font-black ${isTacto ? 'bg-gradient-to-br from-violet-500 to-indigo-600' : 'bg-gradient-to-br from-slate-600 to-slate-800'}`}>
+                        <div className={`w-full h-full flex items-center justify-center text-white text-2xl font-black ${`bg-gradient-to-br ${theme.avatar}`}`}>
                           {member.name.charAt(0)}
                         </div>
                       )}
                     </div>
                     <h4 className="text-[15px] font-bold text-slate-900 leading-snug">{member.name}</h4>
-                    <p className={`text-[11px] font-black mt-1 uppercase tracking-[0.15em] ${isTacto ? 'text-violet-600' : 'text-blue-600'}`}>{member.role}</p>
+                    <p className={`text-[11px] font-black mt-1 uppercase tracking-[0.15em] ${theme.text}`}>{member.role}</p>
                   </div>
                   {/* Bio */}
-                  <div className="px-6 py-5">
-                    <p className="text-[13px] text-slate-500 leading-[1.8] text-center">{member.bio}</p>
+                  <div className="px-7 py-6">
+                    <p className="text-[13.5px] text-slate-600 leading-relaxed text-center">{member.bio}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-[12.5px] text-slate-400 italic mt-5 text-center leading-relaxed">
-              {isTacto
-                ? 'Student innovators from Galgotias University, India — building technology that breaks down barriers in STEM education.'
-                : 'Supported by advisors and domain experts across AI, enterprise technology and international markets.'}
+            <p className="text-[12.5px] text-slate-500 italic mt-5 text-center leading-relaxed">
+              {v.slug === 'project-tacto' ? 'Student innovators from Galgotias University, India — building technology that breaks down barriers in STEM education.' : v.slug === 'carbonsynq' ? 'Driving climate tech innovation and AI sustainability analytics.' : 'Supported by advisors and domain experts across AI, enterprise technology and international markets.'}
             </p>
           </div>
 
           {/* ── Roadmap ── */}
           <div id="roadmap" className="scroll-mt-52">
-            <SectionHeader label="Roadmap" accent={isTacto} />
+            <SectionHeader label="Roadmap" accent={v.slug === 'project-tacto' || v.slug === 'carbonsynq'} />
             <div className={`bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm`}>
               {/* Top accent bar for Tacto */}
-              {isTacto && (
+              {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && (
                 <div className="h-1 w-full bg-gradient-to-r from-violet-500 via-indigo-500 to-teal-400" />
               )}
-              <div className="p-7 sm:p-9">
+              <div className="p-8 sm:p-10 lg:p-12">
                 <div className="relative">
                   {/* Connector line - only on wider screens for 4-column layout */}
                   {v.roadmap.length === 4 && (
                     <div className="hidden md:block absolute top-[21px] left-[21px] right-[21px] h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 pointer-events-none" />
                   )}
-                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-7 ${v.roadmap.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
+                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 ${v.roadmap.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
                     {v.roadmap.map((stage, i) => (
                       <div key={i} className="flex flex-col items-start">
                         {/* Icon + step number */}
                         <div className="relative z-10 flex items-center gap-3 mb-4">
                           <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-md shrink-0 border-2 border-white ${
-                            isTacto
-                              ? i === 0 ? 'bg-violet-600' : i === 1 ? 'bg-indigo-600' : i === 2 ? 'bg-blue-600' : 'bg-teal-600'
-                              : 'bg-slate-900'
+                            v.slug === 'project-tacto' ? (i === 0 ? 'bg-violet-600' : i === 1 ? 'bg-indigo-600' : i === 2 ? 'bg-blue-600' : 'bg-teal-600') : v.slug === 'carbonsynq' ? (i === 0 ? 'bg-emerald-600' : i === 1 ? 'bg-teal-600' : i === 2 ? 'bg-cyan-600' : 'bg-teal-700') : 'bg-slate-900'
                           }`}>
                             {stage.icon}
                           </div>
@@ -673,7 +742,7 @@ function MainContent({ v }: { v: Venture }) {
                             <span className={`text-[9px] font-black uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border hidden md:block ${
                               i === 0
                                 ? 'bg-violet-50 border-violet-100 text-violet-600'
-                                : 'bg-slate-50 border-slate-200 text-slate-400'
+                                : 'bg-slate-50 border-slate-200 text-slate-500'
                             }`}>
                               {stage.phase}
                             </span>
@@ -684,8 +753,8 @@ function MainContent({ v }: { v: Venture }) {
                         {/* Items */}
                         <ul className="space-y-2">
                           {stage.items.map((item, j) => (
-                            <li key={j} className="flex items-start gap-2.5 text-[13px] text-slate-500 leading-[1.7]">
-                              <span className={`mt-[8px] w-1.5 h-1.5 rounded-full shrink-0 ${isTacto && i === 0 ? 'bg-violet-400' : 'bg-slate-300'}`} />
+                            <li key={j} className="flex items-start gap-2.5 text-[13px] text-slate-600 leading-[1.7]">
+                              <span className={`mt-[8px] w-1.5 h-1.5 rounded-full shrink-0 ${(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && i === 0 ? (v.slug === 'project-tacto' ? 'bg-violet-400' : 'bg-teal-400') : 'bg-slate-300'}`} />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -700,36 +769,38 @@ function MainContent({ v }: { v: Venture }) {
         </div>
 
         {/* ─── RIGHT SIDEBAR ─── */}
-        <div className="w-full mt-2 lg:mt-0 lg:sticky lg:top-[172px] flex flex-col gap-5">
+        <div className="w-full mt-2 lg:mt-0 lg:sticky lg:top-[172px] flex flex-col gap-6 lg:gap-8">
 
           {/* Quick Actions CTA */}
-          <div className={`rounded-2xl p-7 text-white relative overflow-hidden shadow-xl ${isTacto ? 'bg-[#18082E]' : 'bg-slate-900'}`}>
-            {isTacto ? (
+          <div className={`rounded-2xl p-8 lg:p-9 text-white relative overflow-hidden shadow-2xl ${v.slug === 'project-tacto' ? 'bg-[#18082E]' : v.slug === 'carbonsynq' ? 'bg-[#042A27]' : 'bg-slate-900'}`}>
+            {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') ? (
               <>
-                <div className="absolute top-0 right-0 w-48 h-48 bg-violet-500/15 blur-[80px] rounded-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-36 h-36 bg-teal-500/10 blur-[60px] rounded-full pointer-events-none" />
+                <div className={`absolute top-0 right-0 w-48 h-48 blur-[80px] rounded-full pointer-events-none ${v.slug === 'project-tacto' ? 'bg-violet-500/15' : 'bg-teal-500/15'}`} />
+                <div className={`absolute bottom-0 left-0 w-36 h-36 blur-[60px] rounded-full pointer-events-none ${v.slug === 'project-tacto' ? 'bg-teal-500/10' : 'bg-cyan-500/15'}`} />
               </>
             ) : (
               <>
-                <div className="absolute top-0 right-0 w-52 h-52 bg-blue-500/10 blur-[70px] rounded-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-36 h-36 bg-indigo-500/[0.08] blur-[60px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-52 h-52 bg-blue-500/15 blur-[70px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-indigo-500/[0.12] blur-[60px] rounded-full pointer-events-none" />
               </>
             )}
             {/* Top accent line */}
-            {isTacto && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500 via-indigo-400 to-teal-400" />}
+            {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${theme.gradient}`} />}
             <div className="relative z-10">
-              <h3 className="text-[17px] font-bold mb-2 leading-snug" id="collaborate">
+              <h3 className="text-[18px] font-bold mb-3 leading-tight tracking-tight text-white" id="collaborate">
                 Collaborate with {v.name.split(' ')[0]}
               </h3>
-              <p className="text-[13px] text-white/45 mb-6 leading-relaxed">
+              <p className="text-[13.5px] text-white/80 mb-7 leading-[1.8]">
                 Connect with the founding team to explore pilots, partnerships, and investment opportunities.
               </p>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3.5">
                 <Link
                   to="/contact" search={{ source: v.name }}
                   className={`w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-[13.5px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 ${
-                    isTacto
+                    v.slug === 'project-tacto'
                       ? 'bg-violet-500 hover:bg-violet-400 text-white'
+                      : v.slug === 'carbonsynq'
+                      ? 'bg-teal-500 hover:bg-teal-400 text-white'
                       : 'bg-white text-slate-900 hover:bg-slate-50'
                   }`}
                 >
@@ -742,9 +813,9 @@ function MainContent({ v }: { v: Venture }) {
                   <Download className="h-4 w-4" /> Venture Brief
                 </Link>
               </div>
-              <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.07]">
-                <Lock className="h-4 w-4 text-white/25 shrink-0 mt-0.5" />
-                <p className="text-[11.5px] text-white/25 leading-relaxed">
+              <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.1]">
+                <Lock className="h-4 w-4 text-white/50 shrink-0 mt-0.5" />
+                <p className="text-[11.5px] text-white/50 leading-relaxed">
                   Introductions are subject to relevance and founder approval.
                 </p>
               </div>
@@ -752,10 +823,10 @@ function MainContent({ v }: { v: Venture }) {
           </div>
 
           {/* Venture Highlights */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="px-6 pt-6 pb-5">
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${isTacto ? 'bg-violet-50 border-violet-100 text-violet-500' : 'bg-amber-50 border-amber-100 text-amber-500'}`}>
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/40 overflow-hidden">
+            <div className="p-7 lg:p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${v.slug === 'project-tacto' ? 'bg-violet-50 border-violet-100 text-violet-500' : v.slug === 'carbonsynq' ? 'bg-teal-50 border-teal-100 text-teal-600' : 'bg-amber-50 border-amber-100 text-amber-500'}`}>
                   <Zap className="h-4 w-4" />
                 </div>
                 <h3 className="text-[14.5px] font-bold text-slate-900">Venture Highlights</h3>
@@ -765,8 +836,8 @@ function MainContent({ v }: { v: Venture }) {
                   const [bold, rest] = h.split(' — ')
                   return (
                     <div key={i} className="flex items-start gap-3">
-                      <div className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 ${isTacto ? 'bg-violet-50 border-violet-100' : 'bg-amber-50 border-amber-100'}`}>
-                        <CheckCircle2 className={`h-2.5 w-2.5 ${isTacto ? 'text-violet-500' : 'text-amber-500'}`} />
+                      <div className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 ${v.slug === 'project-tacto' ? 'bg-violet-50 border-violet-100' : v.slug === 'carbonsynq' ? 'bg-teal-50 border-teal-100' : 'bg-amber-50 border-amber-100'}`}>
+                        <CheckCircle2 className={`h-2.5 w-2.5 ${v.slug === 'project-tacto' ? 'text-violet-500' : v.slug === 'carbonsynq' ? 'text-teal-600' : 'text-amber-500'}`} />
                       </div>
                       <span className="text-[13px] text-slate-600 leading-[1.65]">
                         {rest ? <><strong className="font-semibold text-slate-800">{bold}</strong> — {rest}</> : h}
@@ -779,10 +850,10 @@ function MainContent({ v }: { v: Venture }) {
           </div>
 
           {/* Collaboration Areas */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" id="collaboration">
-            <div className="px-6 pt-6 pb-5">
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${isTacto ? 'bg-violet-50 border-violet-100 text-violet-500' : 'bg-blue-50 border-blue-100 text-blue-500'}`}>
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/40 overflow-hidden" id="collaboration">
+            <div className="p-7 lg:p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shadow-sm ${v.slug === 'project-tacto' ? 'bg-violet-50 border-violet-100 text-violet-500' : v.slug === 'carbonsynq' ? 'bg-teal-50 border-teal-100 text-teal-600' : 'bg-blue-50 border-blue-100 text-blue-500'}`}>
                   <Handshake className="h-4 w-4" />
                 </div>
                 <h3 className="text-[14.5px] font-bold text-slate-900">Seeking</h3>
@@ -790,7 +861,7 @@ function MainContent({ v }: { v: Venture }) {
               <div className="space-y-4">
                 {v.seeking.map((s, i) => (
                   <div key={i} className="flex items-start gap-3.5">
-                    <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 shadow-sm ${isTacto ? 'bg-violet-50/80 border-violet-100 text-violet-600' : 'bg-slate-50 border-slate-100 text-slate-600'}`}>
+                    <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 shadow-sm ${v.slug === 'project-tacto' ? 'bg-violet-50/80 border-violet-100 text-violet-600' : v.slug === 'carbonsynq' ? 'bg-teal-50/80 border-teal-100 text-teal-600' : 'bg-slate-50 border-slate-100 text-slate-600'}`}>
                       {s.icon}
                     </div>
                     <div className="min-w-0">
@@ -802,9 +873,11 @@ function MainContent({ v }: { v: Venture }) {
               </div>
               <Link
                 to="/contact" search={{ source: v.name }}
-                className={`w-full mt-5 border rounded-xl py-3 text-[13px] font-bold transition-colors inline-flex items-center justify-center gap-2 ${
-                  isTacto
+                className={`w-full mt-6 border rounded-xl py-3.5 text-[13.5px] font-bold transition-colors inline-flex items-center justify-center gap-2 ${
+                  v.slug === 'project-tacto'
                     ? 'bg-violet-50 border-violet-100 text-violet-700 hover:bg-violet-100'
+                    : v.slug === 'carbonsynq'
+                    ? 'bg-teal-50 border-teal-100 text-teal-700 hover:bg-teal-100'
                     : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
                 }`}
               >
@@ -820,6 +893,7 @@ function MainContent({ v }: { v: Venture }) {
 }
 
 function GelsRole({ v }: { v: Venture }) {
+  const theme = getThemeStyles(v.slug)
   const isTacto = v.slug === 'project-tacto'
   const supports = [
     { icon: <TrendingUp className="h-4 w-4" />, title: "Venture Strategy", desc: "Growth planning and international positioning for scale." },
@@ -832,14 +906,14 @@ function GelsRole({ v }: { v: Venture }) {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-10 w-full">
       <div
         id="gel-s-role"
-        className="rounded-3xl overflow-hidden relative shadow-2xl border border-white/[0.06] scroll-mt-52 bg-[#07091A]"
+        className={`rounded-3xl overflow-hidden relative shadow-2xl border border-white/[0.06] scroll-mt-52 ${theme.darkBg}`}
       >
         {/* Background gradients */}
-        {isTacto ? (
+        {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') ? (
           <>
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(109,40,217,0.15),transparent_60%)]" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-700/[0.08] blur-[130px] rounded-full pointer-events-none" />
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-teal-500/[0.05] blur-[80px] rounded-full pointer-events-none" />
+            <div className={`absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] ${v.slug === 'project-tacto' ? 'from-violet-700/15' : 'from-teal-700/15'} via-transparent to-transparent`} />
+            <div className={`absolute bottom-0 left-0 w-[500px] h-[500px] blur-[130px] rounded-full pointer-events-none ${v.slug === 'project-tacto' ? 'bg-violet-700/[0.08]' : 'bg-teal-700/[0.08]'}`} />
+            <div className={`absolute top-0 right-0 w-[300px] h-[300px] blur-[80px] rounded-full pointer-events-none ${v.slug === 'project-tacto' ? 'bg-teal-500/[0.05]' : 'bg-cyan-500/[0.05]'}`} />
           </>
         ) : (
           <>
@@ -849,34 +923,39 @@ function GelsRole({ v }: { v: Venture }) {
           </>
         )}
         {/* Top accent */}
-        {isTacto && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-600 via-indigo-500 to-teal-400" />}
+        {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${theme.gradient}`} />}
 
         <div className="relative z-10 p-8 sm:p-10 lg:p-14">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Left: Text */}
             <div>
-              <span className={`text-[9.5px] font-black uppercase tracking-[0.28em] mb-5 block ${isTacto ? 'text-violet-400' : 'text-blue-400'}`}>
+              <span className={`text-[9.5px] font-black uppercase tracking-[0.28em] mb-5 block ${theme.textAccent}`}>
                 Strategic Support
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-5">
                 GEL's Role in{' '}
-                <span className={isTacto ? 'text-violet-400' : 'text-blue-400'}>
+                <span className={theme.textAccent}>
                   {v.name.split(' ')[0]}'s
                 </span>{' '}
                 Journey
               </h2>
-              <p className="text-[15px] text-slate-400 leading-[1.88] mb-6">
+              <p className="text-[15px] text-slate-300 leading-[1.88] mb-6">
                 Through the Global Ventures Programme, GEL supports{' '}
-                <strong className="text-slate-300 font-semibold">{v.name}</strong>{' '}
+                <strong className="text-white font-semibold">{v.name}</strong>{' '}
                 with venture strategy, international positioning, expert mentoring and access to investors, researchers and strategic partners.
-                {isTacto
+                {v.slug === 'project-tacto'
                   ? ' Our mission is to help TACTO reach every visually impaired learner across the globe.'
+                  : v.slug === 'carbonsynq'
+                  ? ' Our objective is to help CarbonSynq scale globally through the UK and beyond.'
                   : ' Our objective is to help the venture scale globally through the UK and beyond.'}
               </p>
-              {isTacto && (
+              {(v.slug === 'project-tacto' || v.slug === 'carbonsynq') && (
                 <div className="flex flex-wrap gap-2">
-                  {['SDG 4 Aligned', 'Open Source', 'Inclusive EdTech', 'Student Innovation'].map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-[11px] font-bold text-violet-300">
+                  {(v.slug === 'project-tacto' 
+                    ? ['SDG 4 Aligned', 'Open Source', 'Inclusive EdTech', 'Student Innovation']
+                    : ['Scope 1, 2, 3', 'Net Zero', 'Climate Tech', 'ESG Compliance']
+                  ).map((tag) => (
+                    <span key={tag} className={`px-3 py-1 rounded-full text-[11px] font-bold ${theme.badgeBg} ${theme.badgeBorder} ${theme.badgeText}`}>
                       {tag}
                     </span>
                   ))}
@@ -888,17 +967,13 @@ function GelsRole({ v }: { v: Venture }) {
               {supports.map((s, i) => (
                 <div
                   key={i}
-                  className={`bg-white/[0.04] border border-white/[0.07] rounded-2xl p-5 hover:bg-white/[0.065] transition-colors ${i === 4 ? 'sm:col-span-2' : ''}`}
+                  className={`bg-white/[0.04] border border-white/[0.07] rounded-2xl p-5 hover:bg-white/[0.08] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ${i === 4 ? 'sm:col-span-2' : ''}`}
                 >
-                  <div className={`w-8 h-8 rounded-xl border flex items-center justify-center mb-3 ${
-                    isTacto
-                      ? 'bg-violet-500/15 border-violet-500/20 text-violet-400'
-                      : 'bg-blue-500/15 border-blue-500/20 text-blue-400'
-                  }`}>
+                  <div className={`w-8 h-8 rounded-xl border flex items-center justify-center mb-3 ${theme.iconBg} ${theme.iconBorder} ${theme.textAccent}`}>
                     {s.icon}
                   </div>
                   <h4 className="text-[13.5px] font-bold text-white mb-1.5">{s.title}</h4>
-                  <p className="text-[12px] text-slate-500 leading-[1.72]">{s.desc}</p>
+                  <p className="text-[12px] text-slate-400 leading-[1.72]">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -910,6 +985,7 @@ function GelsRole({ v }: { v: Venture }) {
 }
 
 function BottomCTA({ v }: { v: Venture }) {
+  const theme = getThemeStyles(v.slug)
   const isTacto = v.slug === 'project-tacto'
   return (
     <section className="border-t border-slate-200 bg-white py-16 sm:py-20">
@@ -918,7 +994,7 @@ function BottomCTA({ v }: { v: Venture }) {
           {/* Left: Text */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left max-w-2xl">
             <div className={`w-16 h-16 rounded-2xl border flex items-center justify-center shrink-0 shadow-sm ${
-              isTacto ? 'bg-violet-50 border-violet-100 text-violet-600' : 'bg-slate-50 border-slate-200 text-slate-700'
+              v.slug === 'saivyy' ? 'bg-slate-50 border-slate-200 text-slate-700' : `${theme.bg} ${theme.border} ${theme.text}`
             }`}>
               <Handshake className="h-8 w-8" />
             </div>
@@ -926,10 +1002,8 @@ function BottomCTA({ v }: { v: Venture }) {
               <h2 className="text-2xl sm:text-[1.75rem] font-bold text-slate-900 leading-tight mb-2.5">
                 Interested in collaborating with {v.name}?
               </h2>
-              <p className="text-[15px] text-slate-500 leading-relaxed">
-                {isTacto
-                  ? 'If you are an investor, NGO, educational institution, or domain expert in accessible technology, we would love to connect and facilitate a meaningful introduction.'
-                  : 'If you are an investor, corporate partner, university or domain expert, we would love to connect and facilitate a meaningful introduction.'}
+              <p className="text-[15px] text-slate-600 leading-relaxed">
+                {v.slug === 'project-tacto' ? 'If you are an investor, NGO, educational institution, or domain expert in accessible technology, we would love to connect and facilitate a meaningful introduction.' : v.slug === 'carbonsynq' ? 'If you are a corporate pilot partner, ESG expert, or climate investor, we would love to connect and facilitate a meaningful introduction.' : 'If you are an investor, corporate partner, university or domain expert, we would love to connect and facilitate a meaningful introduction.'}
               </p>
             </div>
           </div>
@@ -938,9 +1012,7 @@ function BottomCTA({ v }: { v: Venture }) {
             <Link
               to="/contact" search={{ source: v.name }}
               className={`w-full sm:w-auto text-white px-8 py-4 rounded-xl text-[14px] font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200 inline-flex items-center justify-center gap-2 ${
-                isTacto
-                  ? 'bg-violet-600 hover:bg-violet-500'
-                  : 'bg-slate-900 hover:bg-slate-800'
+                `${theme.bgSolid} ${theme.bgHover}`
               }`}
             >
               Request Introduction <ArrowUpRight className="h-4 w-4" />

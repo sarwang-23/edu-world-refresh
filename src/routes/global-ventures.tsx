@@ -260,8 +260,8 @@ function WhatIs() {
 
 /* ─────────────────── VENTURES ─────────────────── */
 const VENTURES = [
-  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "kavach-ai", name: "KAVACH AI", tagline: "AI-Powered Predictive Surveillance", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
   { icon: <Leaf className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "carbonsynq", name: "CARBONSYNQ", tagline: "From Carbon Accounting to Offsetting — All at One Platform", desc: "A sustainability intelligence platform that helps organisations measure, manage and reduce carbon impact with precision and transparency.", bgClass: "from-[#163B21] via-[#0E2715] to-[#0A1F11]" },
+  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "kavach-ai", name: "KAVACH AI", tagline: "AI-Powered Predictive Surveillance", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
   { icon: <Network className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "project-tacto", name: "PROJECT TACTO", tagline: "The first programming language you don't need eyes to learn", desc: "Building advanced tactile sensing solutions that enhance human-machine interaction across robotics, healthcare and assistive technologies.", bgClass: "from-[#2A163B] via-[#170E24] to-[#0A1F11]" },
   { icon: <Cpu className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "saivyy", name: "SAIVYY TECHNOLOGIES", tagline: "Transforms petabytes into profits with cutting-edge AI and Big Data Analytics", desc: "Enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and drive sustainable digital transformation.", bgClass: "from-[#16213B] via-[#0D1526] to-[#0A1F11]" },
 ];
@@ -307,9 +307,8 @@ function OurVentures() {
           {filtered.map((v, i) => (
             <Link
               key={i}
-              // @ts-expect-error - conditionally rendering explicit vs dynamic route
-              to={v.slug === 'carbonsynq' ? '/ventures/carbonsynq' : '/ventures/$slug'}
-              params={v.slug === 'carbonsynq' ? {} : { slug: v.slug }}
+              to="/ventures/$slug"
+              params={{ slug: v.slug }}
               className={`group relative rounded-[2.5rem] border border-white/10 p-1 lg:p-1 flex flex-col transition-all duration-700 hover:-translate-y-2 hover:border-gold/40 shadow-2xl hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)] overflow-hidden isolate bg-gradient-to-br ${v.bgClass}`}
             >
               {/* Inner glass wrapper for extra premium look */}

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap, Linkedin } from "lucide-react";
-import heroGlobalImg from "@/assets/students.jpg";
+import heroGlobalImg from "@/assets/transformational-global-education.png";
 import founderImg from "@/assets/founder_hd.png";
 import { Footer } from "./index";
 import person1 from "@/assets/person1.jpg";
@@ -326,18 +326,18 @@ function Journey() {
 
 function OurPeople() {
   const people = [
-    { name: "Guy Doza", title: "Advisor", img: person1, quote: "Empowering the next generation of global leaders through transformative education." },
-    { name: "Gurmeet Kaur", title: "Social Media & Marketing", img: person2, quote: "Building vibrant communities and amplifying our mission to audiences worldwide." },
+    { name: "Guy Doza", title: "Leadership & Communications Coach", img: person1, quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking." },
+    { name: "Gurmeet Kaur", title: "Social Media & Marketing", img: person2, quote: "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth." },
     { name: "Dan Stert", title: "Programme Director", img: person3, quote: "Designing immersive experiences that challenge perspectives and inspire growth." },
-    { name: "Andrew Hatcher", title: "Head of Entrepreneurship", img: person4, quote: "Fostering innovation and guiding founders from raw ideas to real-world ventures." },
-    { name: "Akshay Kumar", title: "Sales and Marketing", img: person5, quote: "Connecting passionate learners with opportunities that shape their futures." },
-    { name: "Yves Gaspar", title: "STEM Lead", img: person6, quote: "Inspiring analytical minds to solve the most pressing challenges of tomorrow." },
-    { name: "Wichienkuer Thanuyna", title: "Gamified L&D", img: person7, quote: "Creating engaging, play-driven learning frameworks that maximize retention." },
+    { name: "Andrew Hatcher", title: "Advisor – Entrepreneurship", img: person4, quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures." },
+    { name: "Akshay Kumar", title: "Business Development – APAC", img: person5, quote: "Strategic partnerships specialist focused on higher education, institutional collaboration and APAC market development." },
+    { name: "Dr Yves Gaspar", title: "Advisor – STEM", img: person6, quote: "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation." },
+    { name: "Nim Wichienkuer", title: "Partner – Gamified Learning", img: person7, quote: "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning." },
     { name: "Charles Roddie", title: "Advisor", img: person8, quote: "Providing strategic insights to scale educational impact across international borders." },
-    { name: "Margaret Sema CBE", title: "Advisor", img: person9, quote: "Championing excellence in education and shaping policies for lasting institutional change." },
-    { name: "Khushboo", title: "Operations", img: person10, quote: "Ensuring seamless delivery of programmes and unparalleled experiences for our delegates." },
-    { name: "Jaideep Prabhu", title: "Programme Director", img: person11, quote: "Bridging emerging markets and global ecosystems to drive sustainable innovation." },
-    { name: "Tim Vinopal", title: "Operations Americas", img: person12, quote: "Expanding our footprint and building strong partnerships across the Americas." },
+    { name: "Margaret Serna CBE", title: "Advisor – UK Education", img: person9, quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education." },
+    { name: "Khushboo Kundra", title: "L&D Manager – APAC", img: person10, quote: "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region." },
+    { name: "Professor Jaideep Prabhu", title: "Programme Director – GILP", img: person11, quote: "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme." },
+    { name: "Tim Vinopal", title: "Partner – Americas", img: person12, quote: "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL’s engagement across the Americas." },
   ];
 
   return (

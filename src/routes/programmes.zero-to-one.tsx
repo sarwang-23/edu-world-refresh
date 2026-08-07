@@ -1,14 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
+import { SharedTestimonials } from '@/components/SharedTestimonials'
 import cambridgeImg from '../assets/cambridge_7.jpg'
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import zeroToOneImg from '../assets/zero-to-one.png'
 import foodAgriImg from '../assets/food-agri-theme.jpg'
 import alumniImpactImg from '../assets/alumni-impact.jpg'
-import fatinImg from '../assets/alumni2.jpg'
-import samwerImg from '../assets/alumni3.jpg'
-import marioImg from '../assets/alumni5.jpg'
 import z21Gallery1 from '../assets/z21_gallery_1.jpg'
 import z21Gallery2 from '../assets/z21_gallery_2.jpg'
 import z21Gallery3 from '../assets/z21_gallery_3.jpg'
@@ -49,7 +47,7 @@ function ZeroToOne() {
       <ProgrammeFormat />
       <WhoShouldApply />
       <CohortGallery />
-      <Testimonials />
+      <SharedTestimonials />
       <BottomCTA />
       <Footer />
     </div>
@@ -92,7 +90,6 @@ function Hero() {
             {/* Trust badges */}
             <div className="mt-8 flex flex-wrap gap-4">
               {[
-                { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
                 { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -119,11 +116,11 @@ function Hero() {
 
           {/* Image column */}
           <div className="relative lg:col-span-6">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-forest-deep">
+            <div className="relative aspect-video overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-forest-deep">
               <video 
                 src="/zerotoone.mp4" 
                 poster={zeroToOneImg} 
-                className="w-full h-full object-cover scale-[1.35] contrast-[1.05] saturate-[1.1]" 
+                className="w-full h-full object-cover contrast-[1.05] saturate-[1.1]" 
                 autoPlay 
                 loop 
                 muted 
@@ -458,95 +455,6 @@ function WhoShouldApply() {
 }
 
 /* ─── TESTIMONIALS ───────────────────────────────────────────────────────────── */
-function Testimonials() {
-  const testimonials = [
-    {
-      name: 'Shreya Patel',
-      role: 'PhD Researcher, University of Cambridge',
-      initials: 'SP',
-      quote: 'I came in with a vague idea about food systems and left with a real team, a validated direction, and an invitation to pitch to the Spark Incubator. Zero-to-One changed the trajectory of my research.',
-    },
-    {
-      name: 'James Okafor',
-      role: 'MBA Student, Cambridge Judge Business School',
-      initials: 'JO',
-      quote: 'The AI prototyping workshop alone was worth it. We went from idea to working concept in three hours. The mentors were genuine and the format was relentlessly practical.',
-    },
-    {
-      name: 'Mia Chen',
-      role: 'Co-founder, AgriTech Startup (Spark Incubator)',
-      initials: 'MC',
-      quote: 'We formed as a team at Zero-to-One, pitched on day three, and six months later we\'re in the Cambridge Spark Incubator. I would not have believed it was possible without this programme.',
-    },
-  ]
-  const [current, setCurrent] = useState(0)
-  const t = testimonials[current]
-  return (
-    <section className="bg-[#F4EFE6] py-32 border-t border-forest/5 relative overflow-hidden">
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-gold/8 blur-[100px]" />
-      <div className="mx-auto max-w-7xl px-6 relative z-10 text-center">
-        <div className="flex flex-col items-center justify-center gap-6 mb-16">
-          <div>
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="h-px w-8 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Participant Stories</span>
-              <div className="h-px w-8 bg-gold" />
-            </div>
-            <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
-              Voices from Our{" "}
-              <span className="italic font-serif text-forest">Community</span>
-            </h2>
-          </div>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-x-12 gap-y-16 max-w-7xl mx-auto">
-          
-          {/* Dr. Fatin Al Zadjali */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
-              <img src={fatinImg} alt="Dr. Fatin Al Zadjali" className="w-full h-full object-cover" />
-            </div>
-            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
-            <h3 className="text-lg font-bold text-forest-deep">Dr. Fatin Al Zadjali</h3>
-            <p className="text-[14px] text-forest/70 mb-6 font-medium">L&D Head - Bank Dhofar (Oman)</p>
-            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
-              An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.
-            </p>
-          </div>
-
-          {/* Johannes Samwer */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
-              <img src={samwerImg} alt="Johannes Samwer" className="w-full h-full object-cover" />
-            </div>
-            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
-            <h3 className="text-lg font-bold text-forest-deep">Johannes Samwer</h3>
-            <p className="text-[14px] text-forest/70 mb-6 font-medium">MD, Rhenus Lub (Germany)</p>
-            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
-              The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.
-            </p>
-          </div>
-
-          {/* Dr. Johannes Mario Schmidt */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-[140px] h-[140px] rounded-full overflow-hidden mb-6 shadow-md border-[6px] border-white/50">
-              <img src={marioImg} alt="Dr. Johannes Mario Schmidt" className="w-full h-full object-cover" />
-            </div>
-            <span className="text-[2rem] text-forest-deep/90 font-serif leading-none select-none block mb-3">“</span>
-            <h3 className="text-lg font-bold text-forest-deep">Dr. Johannes Mario Schmidt</h3>
-            <p className="text-[14px] text-forest/70 mb-6 font-medium">MD, Lingel Windows and Doors Technologies (India)</p>
-            <p className="text-[16px] text-forest-deep/80 leading-[1.85]">
-              A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* ─── COHORT GALLERY ─── */
 function CohortGallery() {
   const images = [

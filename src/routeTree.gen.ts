@@ -19,6 +19,8 @@ import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GilpDelegateRouteImport } from './routes/gilp-delegate'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
+import { Route as GspRouteImport } from './routes/gsp'
+import { Route as IndialeadershipRouteImport } from './routes/indialeadership'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as OurImpactRouteImport } from './routes/our-impact'
 import { Route as PartnerWithGelRouteImport } from './routes/partner-with-gel'
@@ -51,7 +53,6 @@ import { Route as StudentsArchitectureRouteImport } from './routes/students_.arc
 import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students_.entrepreneurship'
 import { Route as StudentsStemResearchRouteImport } from './routes/students_.stem-research'
 import { Route as VenturesSlugRouteImport } from './routes/ventures.$slug'
-import { Route as VenturesCarbonsynqRouteImport } from './routes/ventures.carbonsynq'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -101,6 +102,16 @@ const GilpDelegateRoute = GilpDelegateRouteImport.update({
 const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
   id: '/global-ventures',
   path: '/global-ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GspRoute = GspRouteImport.update({
+  id: '/gsp',
+  path: '/gsp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndialeadershipRoute = IndialeadershipRouteImport.update({
+  id: '/indialeadership',
+  path: '/indialeadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsRoute = InsightsRouteImport.update({
@@ -269,11 +280,6 @@ const VenturesSlugRoute = VenturesSlugRouteImport.update({
   path: '/ventures/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VenturesCarbonsynqRoute = VenturesCarbonsynqRouteImport.update({
-  id: '/ventures/carbonsynq',
-  path: '/ventures/carbonsynq',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -286,6 +292,8 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/gsp': typeof GspRoute
+  '/indialeadership': typeof IndialeadershipRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
@@ -317,7 +325,6 @@ export interface FileRoutesByFullPath {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
-  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -331,6 +338,8 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/gsp': typeof GspRoute
+  '/indialeadership': typeof IndialeadershipRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
@@ -361,7 +370,6 @@ export interface FileRoutesByTo {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
-  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesById {
@@ -376,6 +384,8 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
   '/global-ventures': typeof GlobalVenturesRoute
+  '/gsp': typeof GspRoute
+  '/indialeadership': typeof IndialeadershipRoute
   '/insights': typeof InsightsRoute
   '/our-impact': typeof OurImpactRoute
   '/partner-with-gel': typeof PartnerWithGelRoute
@@ -407,7 +417,6 @@ export interface FileRoutesById {
   '/students_/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students_/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
-  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRouteTypes {
@@ -423,6 +432,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gilp-delegate'
     | '/global-ventures'
+    | '/gsp'
+    | '/indialeadership'
     | '/insights'
     | '/our-impact'
     | '/partner-with-gel'
@@ -454,7 +465,6 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
-    | '/ventures/carbonsynq'
     | '/programmes/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -468,6 +478,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gilp-delegate'
     | '/global-ventures'
+    | '/gsp'
+    | '/indialeadership'
     | '/insights'
     | '/our-impact'
     | '/partner-with-gel'
@@ -498,7 +510,6 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
-    | '/ventures/carbonsynq'
     | '/programmes'
   id:
     | '__root__'
@@ -512,6 +523,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/gilp-delegate'
     | '/global-ventures'
+    | '/gsp'
+    | '/indialeadership'
     | '/insights'
     | '/our-impact'
     | '/partner-with-gel'
@@ -543,7 +556,6 @@ export interface FileRouteTypes {
     | '/students_/entrepreneurship'
     | '/students_/stem-research'
     | '/ventures/$slug'
-    | '/ventures/carbonsynq'
     | '/programmes/'
   fileRoutesById: FileRoutesById
 }
@@ -558,6 +570,8 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   GilpDelegateRoute: typeof GilpDelegateRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
+  GspRoute: typeof GspRoute
+  IndialeadershipRoute: typeof IndialeadershipRoute
   InsightsRoute: typeof InsightsRoute
   OurImpactRoute: typeof OurImpactRoute
   PartnerWithGelRoute: typeof PartnerWithGelRoute
@@ -578,7 +592,6 @@ export interface RootRouteChildren {
   StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
   StudentsStemResearchRoute: typeof StudentsStemResearchRoute
   VenturesSlugRoute: typeof VenturesSlugRoute
-  VenturesCarbonsynqRoute: typeof VenturesCarbonsynqRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -651,6 +664,20 @@ declare module '@tanstack/react-router' {
       path: '/global-ventures'
       fullPath: '/global-ventures'
       preLoaderRoute: typeof GlobalVenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gsp': {
+      id: '/gsp'
+      path: '/gsp'
+      fullPath: '/gsp'
+      preLoaderRoute: typeof GspRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/indialeadership': {
+      id: '/indialeadership'
+      path: '/indialeadership'
+      fullPath: '/indialeadership'
+      preLoaderRoute: typeof IndialeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights': {
@@ -877,13 +904,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VenturesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/ventures/carbonsynq': {
-      id: '/ventures/carbonsynq'
-      path: '/ventures/carbonsynq'
-      fullPath: '/ventures/carbonsynq'
-      preLoaderRoute: typeof VenturesCarbonsynqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -932,6 +952,8 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   GilpDelegateRoute: GilpDelegateRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
+  GspRoute: GspRoute,
+  IndialeadershipRoute: IndialeadershipRoute,
   InsightsRoute: InsightsRoute,
   OurImpactRoute: OurImpactRoute,
   PartnerWithGelRoute: PartnerWithGelRoute,
@@ -952,7 +974,6 @@ const rootRouteChildren: RootRouteChildren = {
   StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
   StudentsStemResearchRoute: StudentsStemResearchRoute,
   VenturesSlugRoute: VenturesSlugRoute,
-  VenturesCarbonsynqRoute: VenturesCarbonsynqRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

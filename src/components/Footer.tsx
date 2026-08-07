@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Globe2 } from "lucide-react";
+import { Mail, Globe2, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import logoImg from "@/assets/Logo png.png";
 
 export function Footer() {
@@ -41,7 +41,7 @@ export function Footer() {
           </div>
           <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Connect</p>
-            <div className="space-y-4 text-[14.5px] font-medium text-[#333]">
+            <div className="space-y-4 text-[14.5px] font-medium text-[#333] mb-8">
               <div className="flex items-center gap-3">
                 <Mail className="h-[18px] w-[18px] text-[#777]" strokeWidth={1.5} />
                 <a href="mailto:info@globaledulab.com" className="hover:text-forest transition-colors">
@@ -54,6 +54,22 @@ export function Footer() {
                   www.globaledulab.com
                 </a>
               </div>
+            </div>
+
+            <p className="text-[13px] font-bold uppercase tracking-wider text-black mb-5">Follow us on</p>
+            <div className="flex gap-4">
+              <a href="https://www.facebook.com/globaleducationlab/" target="_blank" rel="noreferrer" className="text-[#555] hover:text-forest transition-colors">
+                <Facebook className="h-5 w-5" strokeWidth={1.5} />
+              </a>
+              <a href="https://www.linkedin.com/company/globaleducationlab/" target="_blank" rel="noreferrer" className="text-[#555] hover:text-forest transition-colors">
+                <Linkedin className="h-5 w-5" strokeWidth={1.5} />
+              </a>
+              <a href="https://www.instagram.com/globaleducationlab" target="_blank" rel="noreferrer" className="text-[#555] hover:text-forest transition-colors">
+                <Instagram className="h-5 w-5" strokeWidth={1.5} />
+              </a>
+              <a href="https://www.youtube.com/@GlobalEduLab" target="_blank" rel="noreferrer" className="text-[#555] hover:text-forest transition-colors">
+                <Youtube className="h-6 w-6 -mt-0.5" strokeWidth={1.5} />
+              </a>
             </div>
           </div>
         </div>

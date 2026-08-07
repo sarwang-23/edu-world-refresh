@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Footer } from "@/components/Footer";
 export { Footer };
-import heroImg from "@/assets/hero-image.jpg";
+import heroImg from "@/assets/glip_final_classroom.jpg";
 import cambridgeImg from '@/assets/cambridge_4.jpg'
 import schoolLeadersImg from "@/assets/partner.png";
 import businessLeadersImg from "@/assets/executive-education.jpg";

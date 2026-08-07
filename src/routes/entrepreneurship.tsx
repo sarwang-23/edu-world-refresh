@@ -79,7 +79,6 @@ function Hero() {
             {/* Trust badges */}
             <div className="mt-8 flex flex-wrap gap-2.5">
               {[
-                { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge Judge' },
                 { icon: <Zap className="h-4 w-4" />, label: 'Ventures & AI' },
                 { icon: <Globe2 className="h-4 w-4" />, label: 'Global Ecosystem' },
               ].map((b, i) => (

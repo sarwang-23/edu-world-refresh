@@ -15,7 +15,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="Global Education Lab" className="h-12 md:h-14 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
+          <img src={logoImg} alt="Global Education Lab" className="h-16 md:h-20 w-auto object-contain mix-blend-multiply drop-shadow-sm" />
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
 

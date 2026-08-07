@@ -26,10 +26,10 @@ import {
 } from 'lucide-react'
 import heroImg from '../assets/partner-hero-new.jpg'
 import cambridgeImg from '../assets/cambridge_3.jpg'
+import aniruddhGupta from '@/assets/people/aniruddh_gupta.jpg';
 import businessLeadersImg from '../assets/business-leaders.jpg'
 import dhruvGalgotia from '@/assets/people/dhruv_galgotia.jpg';
 import samTully from '@/assets/people/sam_tully.jpg';
-import lucyJung from '@/assets/people/lucy_jung.jpg';
 
 export const Route = createFileRoute('/partner-with-gel')({
   head: () => ({
@@ -59,11 +59,11 @@ const partnerTestimonials = [
     featured: false,
   },
   {
-    q: "I was impressed by how far ventures (on GEL programme) got in such a short time, considering stakeholders and business models and how to make the sustainable growth of their ideas possible. Thank you for the opportunity to mentor.",
-    a: "Lucy Jung",
-    r: "Founder & CEO, LYEONS",
-    tag: "GEL Mentor",
-    img: lucyJung,
+    q: "The Global Education Lab leadership programme at Cambridge was an exceptionally well-curated experience. As the leader of an organisation serving more than 20,000 K-12 students, I found immense value in gaining direct access to Cambridge's world-class research, innovation, and leadership thinking. More importantly, the programme equipped me with practical frameworks and tools that I could immediately share with our educators, school leaders, and teaching teams. Learning within the inspiring Cambridge environment made the experience even more transformational.",
+    a: "Dr. Aniruddh Gupta",
+    r: "CEO - DCM Group of Schools, India",
+    tag: "School Partnerships",
+    img: aniruddhGupta,
     featured: false,
   }
 ];

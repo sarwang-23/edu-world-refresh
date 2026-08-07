@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2
 import { Footer } from "./index";
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { source?: string } => ({
     source: (search.source as string) || "Direct",
   }),
   component: ContactPage,

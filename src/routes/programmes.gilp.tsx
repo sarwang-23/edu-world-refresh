@@ -7,6 +7,7 @@ import newCertificateImg from '../assets/new-certificate.png'
 import gilpBannerImg from '../assets/gilp-banner.png'
 import gilpHeroPremiumImg from '../assets/gilp_hero_premium.png'
 import gilpThinkingHorizonImg from '../assets/gilp_thinking_horizon.png'
+import gilpClassroomFinalImg from '../assets/glip_final_classroom.jpg'
 import speaker1Img from '../assets/speaker1.jpg'
 import speaker2Img from '../assets/speaker2.jpg'
 import speaker3Img from '../assets/speaker3.jpg'
@@ -17,6 +18,7 @@ import speaker7Img from '../assets/speaker7.jpg'
 import speaker8Img from '../assets/speaker8.jpg'
 import speaker9Img from '../assets/speaker9.jpg'
 import speaker10Img from '../assets/speaker10.jpg'
+import speakerNickImg from '../assets/nick_ford_young.png'
 import speakerLakshmiImg from '../assets/speaker-lakshmi.png'
 import alumni1Img from '../assets/alumni1.jpg'
 import alumni2Img from '../assets/alumni2.jpg'
@@ -48,7 +50,9 @@ import gilpCohort13 from '../assets/gilp_cohort_13.jpg'
 import gilpCohort14 from '../assets/gilp_cohort_14.jpg'
 import gilpCohort15 from '../assets/gilp_cohort_15.jpg'
 import gilpCohort16 from '../assets/gilp_cohort_16.jpg'
-import gilpCohort17 from '../assets/gilp_cohort_17.jpg'// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+import gilpCohort17 from '../assets/gilp_cohort_17.jpg'
+
+// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec'
 
 // Fires a form submission to the GILP Apps Script backend.
@@ -230,7 +234,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
         </div>
 
         <div className="relative lg:col-span-6">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
             <video
               src="/Globalindialeadershipprogramme.mp4"
               poster={gilpHeroPremiumImg}
@@ -311,9 +315,9 @@ function ProgrammeOverview() {
             <div className="absolute -inset-4 bg-gold/10 rounded-3xl blur-2xl pointer-events-none" />
 
             <div className="relative bg-white rounded-2xl shadow-[0_8px_40px_rgba(10,48,29,0.08)] overflow-hidden ring-1 ring-forest/5">
-              <div className="relative w-full aspect-video group">
+              <div className="relative w-full aspect-[5/4] group">
                 <img
-                  src={gilpThinkingHorizonImg}
+                  src={gilpClassroomFinalImg}
                   alt="Business leaders expanding their horizons at Cambridge"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
                 />
@@ -897,7 +901,7 @@ function Packages() {
 function AccommodationSection() {
   const hotels = [
     {
-      src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800',
+      src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=800',
       alt: 'Graduate by Hilton',
       name: 'Graduate by Hilton',
       walk: '6 mins walk',
@@ -905,7 +909,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stngagu-graduate-cambridge/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800',
+      src: 'https://images.unsplash.com/photo-1551882547-ff40eb0d8d73?auto=format&fit=crop&q=80&w=800',
       alt: 'Hilton Cambridge City Centre',
       name: 'Hilton Cambridge City Centre',
       walk: '7 mins walk',
@@ -913,7 +917,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stnhchi-hilton-cambridge-city-centre/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800',
+      src: 'https://images.unsplash.com/photo-1582719478250-c89af14eb366?auto=format&fit=crop&q=80&w=800',
       alt: 'Hotel du Vin',
       name: 'Hotel du Vin',
       walk: '2 mins walk',
@@ -921,7 +925,7 @@ function AccommodationSection() {
       link: 'https://www.hotelduvin.com/locations/cambridge/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=800',
+      src: 'https://images.unsplash.com/photo-1542314831-c53cd3816002?auto=format&fit=crop&q=80&w=800',
       alt: 'University Arms Hotel',
       name: 'University Arms Hotel',
       walk: '11 mins walk',
@@ -964,19 +968,18 @@ function AccommodationSection() {
                   className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Walk badge */}
-                <div className="absolute bottom-3 left-3 bg-forest-deep/80 backdrop-blur-sm text-white text-[13px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <div className="absolute bottom-3 left-3 right-3 bg-forest-deep/90 backdrop-blur-md text-white text-[13px] font-medium px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
                   </svg>
-                  {hotel.walk}
+                  <span className="truncate">{hotel.walk} from Judge Business School</span>
                 </div>
               </div>
 
               {/* Card body */}
               <div className="p-5 flex flex-col flex-1">
                 <p className="text-[13px] text-gold tracking-widest mb-1">{hotel.stars}</p>
-                <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-1">{hotel.name}</h3>
-                <p className="text-[15px] text-forest/70 mb-4">from Judge Business School</p>
+                <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-4">{hotel.name}</h3>
                 <a
                   href={hotel.link}
                   target="_blank"
@@ -1221,8 +1224,6 @@ function CertificateSection() {
                 {[
                   { icon: '🏛️', label: 'Cambridge Verified', sub: 'Issued by CJBS' },
                   { icon: '🌍', label: 'Globally Recognised', sub: 'Top-tier credential' },
-                  { icon: '🎓', label: 'Alumni Network', sub: 'Lifelong access' },
-                  { icon: '📋', label: 'Digital Badge', sub: 'Share on LinkedIn' },
                 ].map((feat, i) => (
                   <div key={i} className="bg-[#3D2C14]/80 rounded-xl p-4 border border-[#C9913D]/15 hover:border-[#C9913D]/35 hover:bg-[#3D2C14] transition-all duration-300 flex items-start gap-3">
                     <span className="text-[1.4rem]">{feat.icon}</span>
@@ -1326,6 +1327,13 @@ function FacultyGrid() {
       role: 'Facilitator – Public Speaking & Art of Negotiation',
       bio: 'Guy Doza is a renowned author and TEDx speaker who advises top politicians and global CEOs on leadership, persuasion, and negotiation. A leading expert in rhetoric, he blends ancient wisdom with modern science to help leaders communicate with clarity, inspire audiences, and negotiate with impact.',
       accent: 'from-forest/70 via-forest to-forest/50',
+    },
+    {
+      img: speakerNickImg,
+      name: 'Nick Ford-Young',
+      role: 'CEO of Boldstream',
+      bio: 'Nick is the CEO of Boldstream within the Boldspace Group, and is now at the forefront of redesigning the marketing operating model through the practical application of AI, with clients including Virgin Atlantic, British Heart Foundation and Rathbones. A respected voice in marketing and brand strategy, Nick has been a guest lecturer on the Cambridge Judge Business School MBA programme, as well as at NYU in New York.',
+      accent: 'from-gold/70 via-gold to-gold/50',
     },
     {
       img: speakerLakshmiImg,
