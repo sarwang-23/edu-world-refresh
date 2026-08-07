@@ -23,7 +23,7 @@ const placeholderImg2 = "https://images.unsplash.com/photo-1552664730-d307ca8849
 const placeholderImg3 = "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80"
 const placeholderImg4 = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
 
-import bgImage from '@/assets/hero-image.jpg';
+import bgImage from '@/assets/startup.jpg';
 import startupImg from '@/assets/startup.jpg'
 import pitchImg from '@/assets/zero-to-one-past-1.jpg'
 import sydneyConner from '@/assets/people/sydney_conner.jpg';
