@@ -1,0 +1,80 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Author {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  email     String?
+  avatarUrl String?
+  bio       String?
+  posts     Post[]
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  posts       Post[]
+  createdAt   DateTime @default(now())
+}
+
+model Tag {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String    @unique
+  posts     PostTag[]
+  createdAt DateTime  @default(now())
+}
+
+model Post {
+  id              Int         @id @default(autoincrement())
+  slug            String      @unique
+  title           String
+  excerpt         String?
+  rawHtml         String
+  coverImage      String?
+  authorId        Int?
+  author          Author?     @relation(fields: [authorId], references: [id])
+  categoryId      Int?
+  category        Category?   @relation(fields: [categoryId], references: [id])
+  featured        Boolean     @default(false)
+  publishedDate   DateTime    @default(now())
+  updatedDate     DateTime    @updatedDate
+  readTime        String?
+  metaTitle       String?
+  metaDescription String?
+  canonicalUrl    String?
+  ogImage         String?
+  structuredData  Json?
+  tags            PostTag[]
+  images          PostImage[]
+  createdAt       DateTime    @default(now())
+}
+
+model PostTag {
+  postId Int
+  tagId  Int
+  post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model PostImage {
+  id          Int      @id @default(autoincrement())
+  postId      Int
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  originalUrl String
+  localPath   String
+  altText     String?
+  caption     String?
+  createdAt   DateTime @default(now())
+}

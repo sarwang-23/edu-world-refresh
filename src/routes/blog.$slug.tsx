@@ -4,56 +4,55 @@ import {
   Link,
   notFound,
 } from "@tanstack/react-router";
+import { useState } from "react";
 import {
-  ArrowLeft,
-  Calendar,
-  Clock,
-  User,
+  MoreVertical,
   Facebook,
-  Twitter,
   Linkedin,
-  Share2,
+  Link2,
+  Eye,
+  MessageSquare,
+  Heart,
+  Share2
 } from "lucide-react";
 import {
-  getPostBySlug,
   getRelatedPosts,
-  type BlogBlock,
   type BlogPost,
   blogPosts,
 } from "@/data/blogPosts";
 import { Footer } from "./index";
+import logoImg from "@/assets/Logo png.png";
 
 export const Route = createFileRoute("/blog/$slug")({
-  // -------------------------------------------------------------
-  //  Loader – fetch the post by slug and log what we receive
-  // -------------------------------------------------------------
   loader: ({ params }) => {
-    console.log("[BLOG LOADER] Received slug:", params.slug);   // <‑‑ debug
-    // Use a case‑insensitive lookup (helps if the slug casing differs)
     const post = blogPosts.find(
       (p) => p.slug.toLowerCase() === params.slug.toLowerCase()
     );
-    console.log("[BLOG LOADER] Post found:", post?.title ?? "NONE");
     if (!post) throw notFound();
     return post as BlogPost;
   },
 
-  // -------------------------------------------------------------
-  //  SEO meta (unchanged)
-  // -------------------------------------------------------------
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-        { title: `${loaderData.title} | Global Education Lab` },
-        { name: "description", content: loaderData.excerpt },
-        { property: "og:title", content: loaderData.title },
-        { property: "og:description", content: loaderData.excerpt },
-        { property: "og:image", content: loaderData.cover },
-        { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ]
-      : [],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return { meta: [] };
+    const metaTags = [
+      { title: `${loaderData.title} | Global Education Lab` },
+      { name: "description", content: loaderData.excerpt },
+      { property: "og:title", content: loaderData.title },
+      { property: "og:description", content: loaderData.excerpt },
+      { property: "og:image", content: loaderData.cover },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: loaderData.title },
+      { name: "twitter:description", content: loaderData.excerpt },
+      { name: "twitter:image", content: loaderData.cover },
+    ];
+
+    if (loaderData.seo?.canonical) {
+      metaTags.push({ name: "canonical", content: loaderData.seo.canonical });
+    }
+
+    return { meta: metaTags };
+  },
 
   component: BlogPostPage,
   notFoundComponent: BlogNotFound,
@@ -62,199 +61,271 @@ export const Route = createFileRoute("/blog/$slug")({
 function BlogPostPage() {
   const post = Route.useLoaderData();
   const related = getRelatedPosts(post);
+  const [likes, setLikes] = useState(1);
+  const [hasLiked, setHasLiked] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleLike = () => {
+    if (hasLiked) {
+      setLikes(l => l - 1);
+      setHasLiked(false);
+    } else {
+      setLikes(l => l + 1);
+      setHasLiked(true);
+    }
+  };
+
+  const handleCopy = () => {
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
-      <ArticleHero post={post} />
-      <ArticleBody blocks={post.content} />
-      {/* Social Share & Tags */}
-      <section className="mx-auto max-w-3xl px-6 py-8 border-t border-forest/10">
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-4">
-            <span className="text-[14px] font-bold text-forest-deep">Share this post:</span>
-            <div className="flex items-center gap-3">
-              <button className="flex h-10 w-10 items-center justify-center rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors">
-                <Facebook className="h-4 w-4" />
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors">
-                <Twitter className="h-4 w-4" />
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors">
-                <Linkedin className="h-4 w-4" />
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full bg-forest/5 text-forest hover:bg-forest/10 hover:text-forest-deep transition-colors">
-                <Share2 className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-[14px] font-bold text-forest-deep">Tags:</span>
-            <div className="flex flex-wrap items-center gap-2">
-              {['#GILP', '#Leadership', '#AI', '#Oxford', '#Cambridge'].map(tag => (
-                <span key={tag} className="text-[14px] text-forest/70 hover:text-forest-deep cursor-pointer transition-colors">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#F8F9FA] font-sans text-[#111111]">
+      {/* Top Outer Navigation Container matching Wix Page Structure */}
+      <div className="mx-auto max-w-[760px] px-4 sm:px-6 pt-6 pb-3">
+        {/* Category Filter Navigation Bar directly above Post Card */}
+        <div className="flex items-center gap-6 text-[14px] font-medium text-[#2D2D2D] overflow-x-auto no-scrollbar py-2">
+          <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
+            All Posts
+          </Link>
+          <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
+            Green School Bali
+          </Link>
+          <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
+            India School programme
+          </Link>
+          <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
+            Finland education
+          </Link>
+          <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
+            Education tourism
+          </Link>
         </div>
-      </section>
-      {related.length > 0 && <RelatedPosts posts={related} />}
-      <BottomCTA />
+      </div>
+
+      {/* Main White Post Card Container (Matching Wix Ricos Template) */}
+      <main className="mx-auto max-w-[760px] px-4 sm:px-6 mb-12">
+        <article className="bg-white border border-[#E5E7EB] shadow-[0_2px_12px_rgba(0,0,0,0.03)] p-6 sm:p-10 md:p-12 rounded-xs">
+          
+          {/* Post Top Metadata Bar */}
+          <div className="flex items-center justify-between text-[13.5px] text-[#555555] mb-6">
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-forest/10 overflow-hidden border border-forest/20">
+                <img src={logoImg} alt={post.author} className="h-4.5 w-4.5 object-contain" />
+              </div>
+              <span className="font-medium text-[#111111]">{post.author}</span>
+              <span className="text-gray-400">·</span>
+              <span>{post.date}</span>
+              <span className="text-gray-400">·</span>
+              <span>{post.readTime}</span>
+            </div>
+
+            <button className="text-neutral-400 hover:text-neutral-700 transition-colors p-1" title="More options">
+              <MoreVertical className="h-4 w-4" />
+            </button>
+          </div>
+
+          {/* Main Title */}
+          <h1 className="text-3xl sm:text-[36px] md:text-[38px] font-bold text-[#111111] leading-[1.2] tracking-tight mb-3">
+            {post.title}
+          </h1>
+
+          {/* Updated Subline */}
+          <p className="text-[13px] text-[#757575] font-normal mb-8">
+            Updated: {post.date}
+          </p>
+
+          {/* Article Rendered Body */}
+          <ArticleBlocksContent post={post} />
+
+          {/* Social Share Icon Bar */}
+          <div className="mt-10 pt-6 border-t border-[#E5E7EB]">
+            <div className="flex items-center gap-5 text-gray-700">
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black transition-colors"
+                title="Share on Facebook"
+              >
+                <Facebook className="h-4.5 w-4.5" />
+              </a>
+
+              {/* X / Twitter Icon */}
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black transition-colors font-bold text-sm"
+                title="Share on X"
+              >
+                𝕏
+              </a>
+
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black transition-colors"
+                title="Share on LinkedIn"
+              >
+                <Linkedin className="h-4.5 w-4.5" />
+              </a>
+
+              <button
+                onClick={handleCopy}
+                className="hover:text-black transition-colors"
+                title="Copy link"
+              >
+                <Link2 className="h-4.5 w-4.5" />
+              </button>
+              {copied && <span className="text-xs text-forest font-semibold">Link copied!</span>}
+            </div>
+
+            {/* Bottom Views, Comments, Likes Bar */}
+            <div className="mt-6 pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-[14px] text-gray-500 font-normal">
+              <div className="flex items-center gap-4">
+                <span>65 views</span>
+                <span>0 comments</span>
+              </div>
+              <button
+                onClick={handleLike}
+                className="flex items-center gap-1.5 hover:text-red-500 transition-colors"
+              >
+                <span>{likes}</span>
+                <Heart className={`h-4 w-4 ${hasLiked ? "fill-red-500 text-red-500" : "text-gray-400"}`} />
+              </button>
+            </div>
+          </div>
+
+          {/* Comments Section Box */}
+          <div className="mt-10 pt-6 border-t border-[#E5E7EB]">
+            <h3 className="text-base font-bold text-[#111111] mb-4">Comments</h3>
+            <div className="w-full border border-[#D1D5DB] bg-[#FAFAFA] p-4 rounded-xs text-sm text-gray-400">
+              Write a comment...
+            </div>
+          </div>
+
+        </article>
+      </main>
+
+      {/* Recent Posts Section (Matching Wix 3-Column Footer Layout) */}
+      {related.length > 0 && <RecentPostsGrid posts={related} />}
+
+      {/* Let's Get In Touch CTA Banner */}
+      <GetInTouchCTA />
+
+      {/* Site Footer */}
       <Footer />
     </div>
   );
 }
 
-function ArticleHero({ post }: { post: ReturnType<typeof Route.useLoaderData> }) {
+function ArticleBlocksContent({ post }: { post: BlogPost }) {
   return (
-    <section className="relative overflow-hidden bg-cream pb-0">
-      <div className="mx-auto max-w-5xl px-6 pt-8">
-        <Link
-          to="/blog"
-          className="inline-flex items-center gap-2 text-[13.5px] font-bold uppercase tracking-widest text-forest/70 hover:text-forest transition-colors mb-8"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" /> Back to Blog
-        </Link>
-        <span className="inline-block rounded-full bg-forest-deep px-3.5 py-1 text-[12.5px] font-bold uppercase tracking-widest text-gold mb-6">
-          {post.category}
-        </span>
-        <h1 className="text-4xl font-bold tracking-tight text-forest-deep md:text-5xl lg:text-[3.4rem] leading-[1.12] mb-8">
-          {post.title}
-        </h1>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] font-semibold text-forest/65 pb-10 border-b border-forest/10">
-          <span className="flex items-center gap-1.5">
-            <User className="h-3.5 w-3.5" /> {post.author}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Calendar className="h-3.5 w-3.5" /> {post.date}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5" /> {post.readTime}
-          </span>
-        </div>
-      </div>
+    <div className="flex flex-col gap-6">
       {post.cover && (
-        <div className="mx-auto max-w-6xl px-6 mt-10">
-          <div className="overflow-hidden rounded-[1.75rem] shadow-xl">
-            <img src={post.cover} alt={post.title} className="h-[320px] w-full object-cover md:h-[480px]" />
-          </div>
+        <div className="my-6 overflow-hidden">
+          <img src={post.cover} alt={post.title} className="w-full object-cover" />
         </div>
       )}
-    </section>
+      {post.content.map((block, i) => {
+        switch (block.type) {
+          case "paragraph":
+            return (
+              <p key={i} className="text-[16.5px] leading-[1.8] text-[#161616]">
+                {block.text}
+              </p>
+            );
+          case "heading":
+            return (
+              <h2 key={i} className="text-xl md:text-[22px] font-bold text-[#111111] underline underline-offset-4 mt-8 mb-4">
+                {block.text}
+              </h2>
+            );
+          case "quote":
+            return (
+              <blockquote key={i} className="my-6 border-l-4 border-[#111111] pl-6 italic text-[#111111]">
+                <p className="text-lg leading-relaxed">{block.text}</p>
+              </blockquote>
+            );
+          case "image":
+            return (
+              <figure key={i} className="my-8">
+                <img src={block.src} alt={block.caption ?? ""} className="w-full object-cover" />
+                {block.caption && (
+                  <figcaption className="mt-2 text-center text-sm text-neutral-500">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          default:
+            return null;
+        }
+      })}
+    </div>
   );
 }
 
-function ArticleBody({ blocks }: { blocks: BlogBlock[] }) {
+function RecentPostsGrid({ posts }: { posts: BlogPost[] }) {
   return (
-    <section className="bg-cream py-16 md:py-20">
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="flex flex-col gap-7">
-          {blocks.map((block, i) => {
-            switch (block.type) {
-              case "paragraph":
-                return (
-                  <p key={i} className="text-[17px] leading-[1.85] text-forest/85">
-                    {block.text}
-                  </p>
-                );
-              case "heading":
-                return (
-                  <h2 key={i} className="text-2xl md:text-3xl font-bold tracking-tight text-forest-deep mt-6">
-                    {block.text}
-                  </h2>
-                );
-              case "quote":
-                return (
-                  <blockquote key={i} className="my-4 rounded-2xl border border-forest/10 bg-white px-8 py-7 shadow-sm">
-                    <p className="font-serif italic text-xl text-forest-deep leading-relaxed">{block.text}</p>
-                    {block.attribution && (
-                      <footer className="mt-4 text-[13.5px] font-bold uppercase tracking-widest text-gold">
-                        {block.attribution}
-                      </footer>
-                    )}
-                  </blockquote>
-                );
-              case "image":
-                return (
-                  <figure key={i} className="my-2">
-                    <div className="overflow-hidden rounded-2xl shadow-md">
-                      <img src={block.src} alt={block.caption ?? ""} className="w-full object-cover" />
-                    </div>
-                    {block.caption && (
-                      <figcaption className="mt-3 text-center text-[13px] text-forest/55">
-                        {block.caption}
-                      </figcaption>
-                    )}
-                  </figure>
-                );
-              case "delegate-quote":
-                return (
-                  <div key={i} className="my-10 rounded-[2rem] bg-[#E8F3EF] p-8 md:p-12 shadow-sm border border-forest/5 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-8 opacity-10">
-                      <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.017 21L16.41 14.425C16.635 13.805 16.747 13.125 16.747 12.384V3H23V12.384C23 15.342 22.091 17.653 20.274 19.317C18.457 20.98 16.273 21.656 13.722 21.944L14.017 21ZM3.017 21L5.41 14.425C5.635 13.805 5.747 13.125 5.747 12.384V3H12V12.384C12 15.342 11.091 17.653 9.274 19.317C7.457 20.98 5.273 21.656 2.722 21.944L3.017 21Z" />
-                      </svg>
-                    </div>
-                    <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
-                      <div className="shrink-0">
-                        <img src={block.image} alt={block.name} className="h-32 w-32 rounded-2xl object-cover shadow-md border-4 border-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest mb-4">{block.title}</h3>
-                        <p className="font-serif italic text-[1.4rem] md:text-2xl text-forest-deep leading-relaxed mb-6">"{block.quote}"</p>
-                        <div className="flex flex-col mb-6">
-                          <span className="font-bold text-forest-deep text-lg">{block.name}</span>
-                          <span className="text-forest/70 text-sm">{block.role}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          {block.avatars.map((av, idx) => (
-                            <img key={idx} src={av} alt="Delegate" className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              default:
-                return null;
-            }
-          })}
-        </div>
+    <section className="mx-auto max-w-[760px] px-4 sm:px-6 mb-16">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-lg font-bold text-[#111111]">Recent Posts</h2>
+        <Link to="/blog" className="text-sm font-medium text-neutral-700 hover:text-forest transition-colors">
+          See All
+        </Link>
       </div>
-    </section>
-  );
-}
 
-function RelatedPosts({ posts }: { posts: ReturnType<typeof getRelatedPosts> }) {
-  return (
-    <section className="bg-white border-t border-forest/10 py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-3xl font-bold tracking-tight text-forest-deep md:text-4xl mb-10">
-          Related Posts
-        </h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          {posts.map((post) => (
+      <div className="grid gap-6 md:grid-cols-3">
+        {posts.slice(0, 3).map((post, idx) => {
+          const viewsList = [57, 240, 24];
+          const commentsList = [0, 1, 0];
+          const likesList = [0, 6, 0];
+
+          return (
             <Link
               key={post.slug}
               to="/blog/$slug"
               params={{ slug: post.slug }}
-              className="group flex flex-col rounded-2xl bg-cream border border-forest/5 overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group flex flex-col bg-white border border-[#E5E7EB] overflow-hidden shadow-xs hover:shadow-md transition-all rounded-xs"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={post.cover} alt={post.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
+                <img
+                  src={post.cover}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <div className="p-6">
-                <p className="text-[12px] font-bold uppercase tracking-widest text-gold mb-2">
-                  {post.category}
-                </p>
-                <h3 className="text-[15.5px] font-bold text-forest-deep leading-snug group-hover:text-forest transition-colors">
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="text-[15px] font-bold text-[#111111] leading-snug group-hover:text-forest transition-colors line-clamp-3 mb-4">
                   {post.title}
                 </h3>
+                <div className="mt-auto pt-3 border-t border-[#F0F0F0] flex items-center justify-between text-[12px] text-gray-500">
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1">
+                      <Eye className="h-3.5 w-3.5" />
+                      {viewsList[idx % 3]}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <MessageSquare className="h-3.5 w-3.5" />
+                      {commentsList[idx % 3]}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {likesList[idx % 3] > 0 && <span>{likesList[idx % 3]}</span>}
+                    <Heart className={`h-3.5 w-3.5 ${likesList[idx % 3] > 0 ? "text-red-500 fill-red-500" : "text-gray-400"}`} />
+                  </div>
+                </div>
               </div>
             </Link>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -262,52 +333,33 @@ function RelatedPosts({ posts }: { posts: ReturnType<typeof getRelatedPosts> }) 
 
 function BlogNotFound() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
-      <h1 className="text-4xl font-bold">Blog post not found</h1>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#F8F9FA] px-6 text-center text-[#111111]">
+      <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
+      <p className="text-neutral-600 mb-6 max-w-md">The blog article you are looking for might have been moved or does not exist.</p>
+      <Link to="/blog" className="rounded-full bg-forest px-6 py-3 text-white font-semibold text-sm hover:bg-forest-deep">
+        Return to Blog Index
+      </Link>
     </div>
   );
 }
 
-function BottomCTA() {
+function GetInTouchCTA() {
   return (
-    <section className="bg-forest-deep text-primary-foreground py-12 text-center">
-      <h2 className="text-2xl font-bold mb-4">Ready to explore more?</h2>
-      <p className="mb-6">Discover our programmes and join the journey.</p>
-      <Link to="/programmes" className="inline-block rounded-full bg-gold px-6 py-3 text-forest-deep font-medium">
-        View Programmes
-      </Link>
-    </section>
-  );
-}
-
-function RecentPosts({ currentSlug }: { currentSlug: string }) {
-  const recent = blogPosts
-    .filter((p) => p.slug !== currentSlug)
-    .slice(0, 4);
-  return (
-    <section className="bg-[#F7F5F0] py-12 mt-10 border-t border-forest/10">
-      <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-2xl font-bold text-forest-deep mb-6">Recent Posts</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {recent.map((post) => (
-            <Link
-              key={post.slug}
-              to="/blog/$slug"
-              params={{ slug: post.slug }}
-              className="group flex flex-col rounded-2xl bg-cream border border-forest/5 overflow-hidden shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={post.cover} alt={post.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="p-4">
-                <p className="text-xs font-bold uppercase text-gold mb-1">{post.category}</p>
-                <h3 className="text-sm font-semibold text-forest-deep group-hover:text-forest transition-colors">{post.title}</h3>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <section className="bg-[#04341B] text-white py-16 text-center">
+      <div className="mx-auto max-w-3xl px-6">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#F5D166] mb-4">
+          Let's Get In Touch
+        </h2>
+        <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto font-normal leading-relaxed">
+          Can't find what you're looking for? Please contact us and we'll get back to you as soon as possible.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-block rounded-md bg-[#F5D166] px-8 py-3.5 text-[#04341B] font-bold text-sm tracking-wide hover:bg-amber-300 transition-colors shadow-sm"
+        >
+          Contact Us
+        </Link>
       </div>
     </section>
   );
 }
-

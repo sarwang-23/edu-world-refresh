@@ -40,6 +40,7 @@ import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrep
 import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
 import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
 import { Route as EntrepreneurshipZeroToOneRouteImport } from './routes/entrepreneurship_.zero-to-one'
+import { Route as PostSlugRouteImport } from './routes/post.$slug'
 import { Route as ProgrammesIndexRouteImport } from './routes/programmes.index'
 import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
 import { Route as ProgrammesCorporateLearningRouteImport } from './routes/programmes.corporate-learning'
@@ -216,6 +217,11 @@ const EntrepreneurshipZeroToOneRoute =
     path: '/entrepreneurship/zero-to-one',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PostSlugRoute = PostSlugRouteImport.update({
+  id: '/post/$slug',
+  path: '/post/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -336,6 +342,7 @@ export interface FileRoutesByFullPath {
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
+  '/post/$slug': typeof PostSlugRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -384,6 +391,7 @@ export interface FileRoutesByTo {
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
+  '/post/$slug': typeof PostSlugRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -435,6 +443,7 @@ export interface FileRoutesById {
   '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship_/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
+  '/post/$slug': typeof PostSlugRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -487,6 +496,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
     | '/entrepreneurship/zero-to-one'
+    | '/post/$slug'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -535,6 +545,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
     | '/entrepreneurship/zero-to-one'
+    | '/post/$slug'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -585,6 +596,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship_/demo-day'
     | '/entrepreneurship_/mentorship'
     | '/entrepreneurship_/zero-to-one'
+    | '/post/$slug'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -635,6 +647,7 @@ export interface RootRouteChildren {
   EntrepreneurshipDemoDayRoute: typeof EntrepreneurshipDemoDayRoute
   EntrepreneurshipMentorshipRoute: typeof EntrepreneurshipMentorshipRoute
   EntrepreneurshipZeroToOneRoute: typeof EntrepreneurshipZeroToOneRoute
+  PostSlugRoute: typeof PostSlugRoute
   StudentsArchitectureRoute: typeof StudentsArchitectureRoute
   StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
   StudentsStemResearchRoute: typeof StudentsStemResearchRoute
@@ -861,6 +874,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntrepreneurshipZeroToOneRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/post/$slug': {
+      id: '/post/$slug'
+      path: '/post/$slug'
+      fullPath: '/post/$slug'
+      preLoaderRoute: typeof PostSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programmes/': {
       id: '/programmes/'
       path: '/'
@@ -1059,6 +1079,7 @@ const rootRouteChildren: RootRouteChildren = {
   EntrepreneurshipDemoDayRoute: EntrepreneurshipDemoDayRoute,
   EntrepreneurshipMentorshipRoute: EntrepreneurshipMentorshipRoute,
   EntrepreneurshipZeroToOneRoute: EntrepreneurshipZeroToOneRoute,
+  PostSlugRoute: PostSlugRoute,
   StudentsArchitectureRoute: StudentsArchitectureRoute,
   StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
   StudentsStemResearchRoute: StudentsStemResearchRoute,
