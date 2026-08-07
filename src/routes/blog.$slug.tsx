@@ -4,7 +4,7 @@ import {
   Link,
   notFound,
 } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   MoreVertical,
   Facebook,
@@ -13,8 +13,12 @@ import {
   Eye,
   MessageSquare,
   Heart,
-  Share2
+  Share2,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2
 } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import {
   getRelatedPosts,
   type BlogPost,
@@ -130,7 +134,7 @@ function BlogPostPage() {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-[36px] md:text-[38px] font-bold text-[#111111] leading-[1.2] tracking-tight mb-3">
+          <h1 className="text-3xl sm:text-[36px] md:text-[40px] font-extrabold text-[#111111] leading-[1.2] tracking-tight mb-4">
             {post.title}
           </h1>
 
@@ -243,7 +247,7 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
             );
           case "heading":
             return (
-              <h2 key={i} className="text-xl md:text-[22px] font-bold text-[#111111] underline underline-offset-4 mt-8 mb-4">
+              <h2 key={i} className="text-xl md:text-[22px] font-bold text-[#D89B27] mt-8 mb-4">
                 {block.text}
               </h2>
             );
@@ -264,10 +268,74 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
                 )}
               </figure>
             );
+          case "gallery":
+            return <ArticleGallery key={i} images={(block as any).images} />;
+          case "html":
+            return (
+              <div
+                key={i}
+                className="my-6 w-full"
+                dangerouslySetInnerHTML={{ __html: (block as any).content }}
+              />
+            );
           default:
             return null;
         }
       })}
+    </div>
+  );
+}
+
+function ArticleGallery({ images }: { images: string[] }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  return (
+    <div className="my-8 w-full flex flex-col gap-2">
+      <Carousel setApi={setApi} className="w-full relative group">
+        <CarouselContent>
+          {images.map((src, index) => (
+            <CarouselItem key={index}>
+              <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden bg-black/5 rounded-md">
+                <img src={src} alt="Gallery" className="w-full h-full object-cover" />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button onClick={() => api?.scrollPrev()} className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors">
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button onClick={() => api?.scrollNext()} className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors">
+            <ChevronRight className="h-6 w-6" />
+          </button>
+        </div>
+        <button className="absolute top-4 right-4 p-2 bg-white/70 hover:bg-white rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+          <Maximize2 className="h-4 w-4 text-black" />
+        </button>
+      </Carousel>
+
+      <div className="grid grid-cols-5 md:grid-cols-8 gap-2">
+        {images.map((src, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={`relative aspect-[4/3] overflow-hidden rounded-sm transition-all ${
+              current === index ? "ring-2 ring-forest opacity-100" : "opacity-60 hover:opacity-100"
+            }`}
+          >
+            <img src={src} alt="Thumbnail" className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

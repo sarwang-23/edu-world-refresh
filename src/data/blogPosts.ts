@@ -9,7 +9,8 @@ export type BlogBlock =
   | { type: "quote"; text: string; attribution?: string }
   | { type: "image"; src: string; caption?: string }
   | { type: "delegate-quote"; title: string; name: string; role: string; quote: string; image: string; avatars: string[] }
-  | { type: "html"; content: string };
+  | { type: "html"; content: string }
+  | { type: "gallery"; images: string[] };
 
 export interface SeoMetadata {
   title: string;
@@ -86,9 +87,17 @@ export const blogPosts: BlogPost[] = [
         "text": "The business case is further reinforced by retention data. A LinkedIn survey found that 94% of employees would remain longer at companies that invest in their professional development, a finding with direct implications for talent retention strategy at the senior executive level. Employees who strongly agree that their organisation encourages upskilling are 47% less likely to be actively searching for alternative roles, underscoring the dual ROI of learning investment: capability building and workforce stability."
       },
       {
-        "type": "image",
-        "src": "true",
-        "caption": ""
+        "type": "gallery",
+        "images": [
+          "/blog-images/finland2023_inline_1_bf78a9_70a70b1a2e594d099dca6809265365cd_mv2.jpg",
+          "/blog-images/finland2023_inline_3_bf78a9_4acbffe485cb4d16832f7defe2bdeb5b_mv2.jpg",
+          "/blog-images/finland2023_inline_5_bf78a9_8c51708d36a843718cc0940d336719a7_mv2.jpg",
+          "/blog-images/finland2023_inline_7_bf78a9_1c3bf5dbb03946f981ae1421958259cc_mv2.jpg",
+          "/blog-images/finland2023_inline_9_bf78a9_e79edfce892049a8a9cd2905f9967273_mv2.jpg",
+          "/blog-images/finland2023_inline_11_bf78a9_cedccba3f14747de9add32ec9b24e384_mv2.jpg",
+          "/blog-images/finland2023_inline_13_bf78a9_67a94ded88014a24af7240dae44db09f_mv2.jpg",
+          "/blog-images/finland2023_inline_15_bf78a9_86afdb368b024fe7b1010843875dae33_mv2.jpg"
+        ]
       },
       {
         "type": "paragraph",
@@ -2206,6 +2215,43 @@ export const blogPosts: BlogPost[] = [
         "text": "Finland has, indisputably, the best education system in the world and here are the top reasons why they do:"
       },
       {
+        "type": "heading",
+        "text": "1. Customised trips"
+      },
+      {
+        "type": "paragraph",
+        "text": "Finland is no one-size-fits-all destination. We curate itineraries tailored to specific needs. Whether it is early childhood education, vocational training or higher education, Finland has a rich history of pedagogical innovations and we align those to the interests of the delegations."
+      },
+      {
+        "type": "heading",
+        "text": "2. Immersive Site Visits"
+      },
+      {
+        "type": "paragraph",
+        "text": "We don't just visit schools; we experience them. Our delegation interacted with the staff of various schools across the country getting an authentic feel of the Finnish education system. We observed classes in session, explored learning spaces, and engaged in insightful discussions with educators."
+      },
+      {
+        "type": "heading",
+        "text": "3. Interaction with Finnish Education Stakeholders"
+      },
+      {
+        "type": "paragraph",
+        "text": "We had the privilege to meet with researchers, policymakers, and administrators in the education sector. They shared their insights on the unique features of the Finnish system, such as trust-based accountability, collaborative learning, and student well-being."
+      },
+      {
+        "type": "heading",
+        "text": "4. Cultural immersion & pedagogical exploration"
+      },
+      {
+        "type": "paragraph",
+        "text": "Beyond schools, we experienced Finland's rich cultural heritage. We visited museums, explored the city and witnessed the integration of arts and nature in education. These experiences highlighted the holistic approach that Finland takes in nurturing well-rounded individuals."
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/finlandeducation_inline_2_bf78a9_40a82d05499d4f38bdbc64e696e80dd0_mv2.jpg",
+        "caption": ""
+      },
+      {
         "type": "image",
         "src": "true",
         "caption": ""
@@ -2289,9 +2335,17 @@ export const blogPosts: BlogPost[] = [
         "text": "Cambridge Education Lab participated in India School Leadership Summit organised by NISA (National Independent School Alliance) between 30th November to 2nd December, 2023. Over 500 School leaders participated in this summit and CEL's Founder Suyash Bhatt, addressed the audience on Global learnings for India. He spoke about the challenges in adopting international education models and why it is important for Indian educators to observe other models in order to develop a better education system within the country. Further, Suyash spoke about the challenges in teacher training programmes and how Cambridge Education Lab is pioneering a unique experiential learning programme for teacher, that would allow them to apply the learnings in real time in their classes and learn not only from the trainers but also from their peer group."
       },
       {
-        "type": "image",
-        "src": "/blog-images/school-leadership-summit-2023_inline_1_bf78a9_9bf66a2bef6149c4bf55e42e292e8d0f_mv2.jpeg",
-        "caption": ""
+        "type": "gallery",
+        "images": [
+          "/blog-images/school-leadership-summit-2023_inline_1_bf78a9_9bf66a2bef6149c4bf55e42e292e8d0f_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_3_bf78a9_e9ad740110e94cf38f050f2f7d610e90_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_5_bf78a9_5f23055463a14285b8fb200b7c396da1_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_7_bf78a9_9597b371c67c49e3800c5e841f13b976_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_9_bf78a9_7fad1e0bda27498ebccc8a44f12b4189_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_11_bf78a9_1424ca9654bd491db47181c6f3b134c1_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_13_bf78a9_622310b622fe4d9d90920827ae420890_mv2.jpeg",
+          "/blog-images/school-leadership-summit-2023_inline_15_bf78a9_aea7158021a143cf93cc50dc66d5a39f_mv2.jpeg"
+        ]
       },
       {
         "type": "paragraph",
@@ -2401,11 +2455,11 @@ export const blogPosts: BlogPost[] = [
         "text": "It concludes with recommendations, that aim to transform India's education system, making it more learner-centric, globally competitive, and aligned with the principles that have contributed to the success of the Finnish education model. These recommendations seek to foster inclusivity, nurture creativity, and instil a lifelong love for learning, ultimately making India's education landscape more adaptable, globally competitive, and attuned to the diverse needs of its students, teachers and every other stakeholder."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Finland programme highlights"
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Day 1 (Helsinki)"
       },
       {
@@ -2418,7 +2472,7 @@ export const blogPosts: BlogPost[] = [
         "caption": ""
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Day 2 (Kerava)"
       },
       {
@@ -2431,7 +2485,7 @@ export const blogPosts: BlogPost[] = [
         "caption": ""
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Day 3 (Helsinki)"
       },
       {
@@ -2448,7 +2502,7 @@ export const blogPosts: BlogPost[] = [
         "caption": ""
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Day 4 (Turku)"
       },
       {
@@ -2465,7 +2519,7 @@ export const blogPosts: BlogPost[] = [
         "caption": ""
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Day 5 (Turku)"
       },
       {

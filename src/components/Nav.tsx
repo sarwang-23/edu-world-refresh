@@ -116,7 +116,7 @@ export function Nav() {
 
           {/* Explore Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-3 -my-3">
-            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' ? "text-forest" : "text-forest/75"
+            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' || location.pathname.startsWith('/blog') ? "text-forest" : "text-forest/75"
               }`}>
               Explore
             </span>
@@ -124,21 +124,18 @@ export function Nav() {
             <div className="absolute top-[100%] left-0 hidden w-64 flex-col group-hover:flex">
               <div className="h-2 w-full"></div>
               <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg mt-0">
-                <Link to="/our-impact" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Impact</Link>
-                <Link to="/insights" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Knowledge & Insights</Link>
-                <Link to="/partner-with-gel" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Partner with GEL</Link>
                 <Link to="/ai-learning-games" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest flex items-center gap-2">
                   AI Learning Games
                 </Link>
+                <Link to="/blog" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">
+                  Blogs
+                </Link>
+                <Link to="/our-impact" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Impact</Link>
+                <Link to="/insights" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Knowledge & Insights</Link>
+                <Link to="/partner-with-gel" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Partner with GEL</Link>
               </div>
             </div>
           </div>
-                <Link
-                  to="/blog"
-                  className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/blog' ? "text-forest" : "text-forest/75"}`}
-                >
-                  Blogs
-                </Link>
 
           <Link
             to="/gallery"
@@ -213,17 +210,17 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/past-programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Past Programmes</Link>
 
             <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Explore</div>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global Ventures</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/about" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">About Us</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/blog" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Blogs</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global Ventures</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Insights & Knowledge</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/universities" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Universities</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
           </div>
-                <Link onClick={() => setIsMobileMenuOpen(false)} to="/blog" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Blogs</Link>
         </div>
       )}
     </header>
