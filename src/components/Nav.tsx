@@ -133,6 +133,12 @@ export function Nav() {
               </div>
             </div>
           </div>
+                <Link
+                  to="/blog"
+                  className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${location.pathname === '/blog' ? "text-forest" : "text-forest/75"}`}
+                >
+                  Blogs
+                </Link>
 
           <Link
             to="/gallery"
@@ -217,6 +223,7 @@ export function Nav() {
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
           </div>
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/blog" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Blogs</Link>
         </div>
       )}
     </header>

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiLearningGamesRouteImport } from './routes/ai-learning-games'
 import { Route as ApplyNowRouteImport } from './routes/apply-now'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
@@ -33,6 +34,8 @@ import { Route as TeachersRouteImport } from './routes/teachers'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as UniversitiesRouteImport } from './routes/universities'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EntrepreneurshipAcceleratorRouteImport } from './routes/entrepreneurship_.accelerator'
 import { Route as EntrepreneurshipDemoDayRouteImport } from './routes/entrepreneurship_.demo-day'
 import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepreneurship_.mentorship'
@@ -53,6 +56,7 @@ import { Route as StudentsArchitectureRouteImport } from './routes/students_.arc
 import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students_.entrepreneurship'
 import { Route as StudentsStemResearchRouteImport } from './routes/students_.stem-research'
 import { Route as VenturesSlugRouteImport } from './routes/ventures.$slug'
+import { Route as VenturesCarbonsynqRouteImport } from './routes/ventures.carbonsynq'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -72,6 +76,11 @@ const AiLearningGamesRoute = AiLearningGamesRouteImport.update({
 const ApplyNowRoute = ApplyNowRouteImport.update({
   id: '/apply-now',
   path: '/apply-now',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessLeadersRoute = BusinessLeadersRouteImport.update({
@@ -173,6 +182,16 @@ const UniversitiesRoute = UniversitiesRouteImport.update({
   id: '/universities',
   path: '/universities',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const EntrepreneurshipAcceleratorRoute =
   EntrepreneurshipAcceleratorRouteImport.update({
@@ -280,12 +299,18 @@ const VenturesSlugRoute = VenturesSlugRouteImport.update({
   path: '/ventures/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VenturesCarbonsynqRoute = VenturesCarbonsynqRouteImport.update({
+  id: '/ventures/carbonsynq',
+  path: '/ventures/carbonsynq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-learning-games': typeof AiLearningGamesRoute
   '/apply-now': typeof ApplyNowRoute
+  '/blog': typeof BlogRouteWithChildren
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
@@ -306,6 +331,7 @@ export interface FileRoutesByFullPath {
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/universities': typeof UniversitiesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -325,6 +351,8 @@ export interface FileRoutesByFullPath {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
+  '/blog/': typeof BlogIndexRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -351,6 +379,7 @@ export interface FileRoutesByTo {
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/universities': typeof UniversitiesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/entrepreneurship/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -370,6 +399,8 @@ export interface FileRoutesByTo {
   '/students/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
+  '/blog': typeof BlogIndexRoute
   '/programmes': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesById {
@@ -378,6 +409,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai-learning-games': typeof AiLearningGamesRoute
   '/apply-now': typeof ApplyNowRoute
+  '/blog': typeof BlogRouteWithChildren
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
   '/entrepreneurship': typeof EntrepreneurshipRoute
@@ -398,6 +430,7 @@ export interface FileRoutesById {
   '/team': typeof TeamRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/universities': typeof UniversitiesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/entrepreneurship_/accelerator': typeof EntrepreneurshipAcceleratorRoute
   '/entrepreneurship_/demo-day': typeof EntrepreneurshipDemoDayRoute
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
@@ -417,6 +450,8 @@ export interface FileRoutesById {
   '/students_/entrepreneurship': typeof StudentsEntrepreneurshipRoute
   '/students_/stem-research': typeof StudentsStemResearchRoute
   '/ventures/$slug': typeof VenturesSlugRoute
+  '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
+  '/blog/': typeof BlogIndexRoute
   '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRouteTypes {
@@ -426,6 +461,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-learning-games'
     | '/apply-now'
+    | '/blog'
     | '/business-leaders'
     | '/contact'
     | '/entrepreneurship'
@@ -446,6 +482,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/terms-of-service'
     | '/universities'
+    | '/blog/$slug'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -465,6 +502,8 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
+    | '/blog/'
     | '/programmes/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -491,6 +530,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/terms-of-service'
     | '/universities'
+    | '/blog/$slug'
     | '/entrepreneurship/accelerator'
     | '/entrepreneurship/demo-day'
     | '/entrepreneurship/mentorship'
@@ -510,6 +550,8 @@ export interface FileRouteTypes {
     | '/students/entrepreneurship'
     | '/students/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
+    | '/blog'
     | '/programmes'
   id:
     | '__root__'
@@ -517,6 +559,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-learning-games'
     | '/apply-now'
+    | '/blog'
     | '/business-leaders'
     | '/contact'
     | '/entrepreneurship'
@@ -537,6 +580,7 @@ export interface FileRouteTypes {
     | '/team'
     | '/terms-of-service'
     | '/universities'
+    | '/blog/$slug'
     | '/entrepreneurship_/accelerator'
     | '/entrepreneurship_/demo-day'
     | '/entrepreneurship_/mentorship'
@@ -556,6 +600,8 @@ export interface FileRouteTypes {
     | '/students_/entrepreneurship'
     | '/students_/stem-research'
     | '/ventures/$slug'
+    | '/ventures/carbonsynq'
+    | '/blog/'
     | '/programmes/'
   fileRoutesById: FileRoutesById
 }
@@ -564,6 +610,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiLearningGamesRoute: typeof AiLearningGamesRoute
   ApplyNowRoute: typeof ApplyNowRoute
+  BlogRoute: typeof BlogRouteWithChildren
   BusinessLeadersRoute: typeof BusinessLeadersRoute
   ContactRoute: typeof ContactRoute
   EntrepreneurshipRoute: typeof EntrepreneurshipRoute
@@ -592,6 +639,7 @@ export interface RootRouteChildren {
   StudentsEntrepreneurshipRoute: typeof StudentsEntrepreneurshipRoute
   StudentsStemResearchRoute: typeof StudentsStemResearchRoute
   VenturesSlugRoute: typeof VenturesSlugRoute
+  VenturesCarbonsynqRoute: typeof VenturesCarbonsynqRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -622,6 +670,13 @@ declare module '@tanstack/react-router' {
       path: '/apply-now'
       fullPath: '/apply-now'
       preLoaderRoute: typeof ApplyNowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/business-leaders': {
@@ -764,6 +819,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UniversitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/entrepreneurship_/accelerator': {
       id: '/entrepreneurship_/accelerator'
       path: '/entrepreneurship/accelerator'
@@ -904,8 +973,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VenturesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ventures/carbonsynq': {
+      id: '/ventures/carbonsynq'
+      path: '/ventures/carbonsynq'
+      fullPath: '/ventures/carbonsynq'
+      preLoaderRoute: typeof VenturesCarbonsynqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ProgrammesRouteChildren {
   ProgrammesBaliRoute: typeof ProgrammesBaliRoute
@@ -946,6 +1034,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AiLearningGamesRoute: AiLearningGamesRoute,
   ApplyNowRoute: ApplyNowRoute,
+  BlogRoute: BlogRouteWithChildren,
   BusinessLeadersRoute: BusinessLeadersRoute,
   ContactRoute: ContactRoute,
   EntrepreneurshipRoute: EntrepreneurshipRoute,
@@ -974,6 +1063,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudentsEntrepreneurshipRoute: StudentsEntrepreneurshipRoute,
   StudentsStemResearchRoute: StudentsStemResearchRoute,
   VenturesSlugRoute: VenturesSlugRoute,
+  VenturesCarbonsynqRoute: VenturesCarbonsynqRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
