@@ -103,14 +103,10 @@ function Photo({
   src: string; alt: string; label?: string; location?: string; className?: string;
 }) {
   return (
-    <div className={`group relative overflow-hidden rounded-[2rem] border border-white/5 bg-[#080d07] ${className}`}>
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-      />
-      {/* Subtle vignette instead of harsh overlay */}
+    <div className={`group relative overflow-hidden rounded-2xl bg-white/5 ${className || ''}`}>
+      <img src={src} alt={alt} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+      
+      {/* subtle gradient overlay for better text contrast if label/location exist */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.4)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
       
       {(label || location) && (
@@ -148,7 +144,7 @@ function SectionHeader({ eyebrow, title, accent, desc }: { eyebrow: string; titl
 
 function GalleryPage() {
   const [active, setActive] = useState("All");
-  const filters = ["All", "Cambridge", "India", "Students"];
+  const filters = ["All", "Cambridge", "UK", "Students"];
 
   return (
     <div className="min-h-screen bg-[#080d07] font-sans text-white">
@@ -194,7 +190,7 @@ function GalleryPage() {
 
           {/* stats row */}
           <div className="mt-16 flex items-center gap-12 border-t border-white/10 pt-8">
-            {[["05", "Countries"], ["12+", "Programmes"], ["150+", "Leaders Trained"], ["5,000+", "Students"]].map(([n, l]) => (
+            {[["05", "Countries"], ["20+", "Programmes"], ["150+", "Leaders Trained"], ["5000+", "Learners Engaged"]].map(([n, l]) => (
               <div key={l}>
                 <p className="text-2xl font-bold text-white">{n}</p>
                 <p className="text-[11px] font-bold tracking-[0.25em] text-white/50 uppercase mt-0.5">{l}</p>
@@ -252,27 +248,27 @@ function GalleryPage() {
       </div>
 
       {/* ══════════════════════════════
-          CH 02 — GILP / INDIA
+          CH 02 — GILP / UK
       ══════════════════════════════ */}
       <section id="india" className="py-24 md:py-32 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto">
         <SectionHeader
           eyebrow="Chapter 02"
-          title="India Leadership"
+          title="UK Leadership"
           accent="Summit."
-          desc="Business leaders across India engaging with global faculty at landmark venues and campuses."
+          desc="Business leaders across the UK engaging with global faculty at landmark venues and campuses."
         />
 
         {/* Premium Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
-          <Photo src={gilpMarch6} alt="GILP" label="Summit Plenary" location="New Delhi" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
-          <Photo src={gilpMarch2} alt="GILP India" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={gilpMarch5} alt="GILP India" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch6} alt="GILP" label="Summit Plenary" location="UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
+          <Photo src={gilpMarch2} alt="GILP India" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch5} alt="GILP India" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
           
-          <Photo src={gilpMarch4} alt="GILP India" location="India" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
-          <Photo src={gilpMarch7} alt="GILP" location="India" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-1" />
+          <Photo src={gilpMarch4} alt="GILP India" location="UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
+          <Photo src={gilpMarch7} alt="GILP" location="UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-1" />
           
-          <Photo src={gilpMarch8} alt="GILP" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={gilpMarch9} alt="GILP" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch8} alt="GILP" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={gilpMarch9} alt="GILP" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
         </div>
       </section>
 
@@ -308,12 +304,12 @@ function GalleryPage() {
         {/* Premium Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
           <Photo src={siteVisitImg} alt="STEM Field Trip" label="Site Visit" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
-          <Photo src={yusufHImg} alt="Student" label="Young Leaders" location="India" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={yusufHImg} alt="Student" label="Young Leaders" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
           <Photo src={stemYvesImg} alt="STEM Yves" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
           
-          <Photo src={stem1Img} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={img0719} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
-          <Photo src={stemAstroImg} alt="Student programme" location="India / UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={stem1Img} alt="Student programme" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo src={img0719} alt="Student programme" location="UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
+          <Photo src={stemAstroImg} alt="Student programme" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
           
           <Photo src={img4929} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
           <Photo src={img5105} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
@@ -324,8 +320,6 @@ function GalleryPage() {
           <Photo src={img5277} alt="Student programme" label="GEL Summer Programme" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-12 row-span-1" />
         </div>
       </section>
-
-      <SharedTestimonials customTestimonials={galleryTestimonials} featuredBgImage={cambridgeImg} />
 
       {/* ══════════════════════════════
           PREMIUM CTA

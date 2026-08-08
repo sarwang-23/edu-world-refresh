@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, Handshake } from 'lucide-react'
-import cambridgeImg from '../assets/cambridge_1.jpg'
+import cambridgeImg from '../assets/cambridge_cslp_new.jpg'
 import cambridge2Img from '../assets/cambridge_2.jpg'
 import cambridge3Img from '../assets/cambridge_3.jpg'
 import cambridge4Img from '../assets/cambridge_4.jpg'

@@ -6,7 +6,7 @@ import {
   Network, ChevronRight, Bot, Wind, HeartPulse, Pill, Leaf, Sparkles, Cpu
 } from "lucide-react";
 import { useState } from "react";
-import cambridgeImg from "@/assets/cambridge_6.jpg";
+import globalVenturesHeroImg from "@/assets/global_ventures_hero.jpg";
 import zeroToOneImg from "@/assets/zero-to-one.png";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import heroClassroomImg from "@/assets/hero-classroom.jpg";
@@ -136,18 +136,7 @@ function Hero() {
             <div className="relative">
               {/* Main image */}
               <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-                <img src={cambridgeImg} alt="Global Ventures" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/30 to-transparent" />
-                {/* Overlay content */}
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="h-px flex-1 bg-gold/30" />
-                    <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold/80">Featured Venture</span>
-                    <div className="h-px flex-1 bg-gold/30" />
-                  </div>
-                  <p className="text-white font-bold text-xl mb-1">CARBONSYNQ</p>
-                  <p className="text-white/80 text-[15px]">Sustainability intelligence platform</p>
-                </div>
+                <img src={globalVenturesHeroImg} alt="Global Ventures" className="w-full h-full object-cover" />
               </div>
 
               {/* Banners removed */}
@@ -260,8 +249,8 @@ function WhatIs() {
 
 /* ─────────────────── VENTURES ─────────────────── */
 const VENTURES = [
-  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "kavach-ai", name: "KAVACH AI", tagline: "AI-Powered Predictive Surveillance", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
   { icon: <Leaf className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "carbonsynq", name: "CARBONSYNQ", tagline: "From Carbon Accounting to Offsetting — All at One Platform", desc: "A sustainability intelligence platform that helps organisations measure, manage and reduce carbon impact with precision and transparency.", bgClass: "from-[#163B21] via-[#0E2715] to-[#0A1F11]" },
+  { icon: <Bot className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "kavach-ai", name: "KAVACH AI", tagline: "AI-Powered Predictive Surveillance", desc: "AI-powered solutions for security and risk management across critical infrastructure, enterprises and public systems.", bgClass: "from-[#0A2733] via-[#0A1C24] to-[#0A1F11]" },
   { icon: <Network className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "project-tacto", name: "PROJECT TACTO", tagline: "The first programming language you don't need eyes to learn", desc: "Building advanced tactile sensing solutions that enhance human-machine interaction across robotics, healthcare and assistive technologies.", bgClass: "from-[#2A163B] via-[#170E24] to-[#0A1F11]" },
   { icon: <Cpu className="h-5 w-5" />, track: "Venture Track", isVenture: true, slug: "saivyy", name: "SAIVYY TECHNOLOGIES", tagline: "Transforms petabytes into profits with cutting-edge AI and Big Data Analytics", desc: "Enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and drive sustainable digital transformation.", bgClass: "from-[#16213B] via-[#0D1526] to-[#0A1F11]" },
 ];
@@ -493,6 +482,14 @@ function WhoShouldApply() {
             <p className="text-[15px] text-[#0A1F11]/60 leading-[1.8]">
               We seek ambitious founders and researchers creating solutions with the potential for meaningful global impact.
             </p>
+            <div className="mt-8">
+              <Link
+                to="/contact" search={{ source: "Global Ventures - Who Should Apply" }}
+                className="inline-flex items-center gap-2 rounded-full bg-[#0A1F11] px-7 py-3.5 text-[15px] font-bold tracking-wide text-white hover:bg-gold transition-colors duration-300 group"
+              >
+                Apply Now <ArrowUpRight className="h-4 w-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-200" />
+              </Link>
+            </div>
           </div>
           <div className="flex flex-wrap gap-6">
             {items.map((item, i) => (

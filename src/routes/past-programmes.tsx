@@ -5,10 +5,10 @@ import { Footer } from './index'
 import heroImg from '@/assets/executive-education.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
 import finlandImg from '@/assets/finland_1.jpg'
-import businessLeadersImg from '@/assets/business-leaders.jpg'
+import gilpClassroomFinalImg from '@/assets/glip_final_classroom.jpg'
 import studentsImg from '@/assets/students.jpg'
 import teachersImg from '@/assets/teachers.jpg'
-import cambridgeImg from '@/assets/cambridge_1.jpg'
+import cambridgeImg from '@/assets/cambridge_cslp_new.jpg'
 import baliImg from '@/assets/bali_new_4.jpg'
 import samvritha from '@/assets/people/samvritha.png';
 import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
@@ -26,32 +26,7 @@ export const Route = createFileRoute('/past-programmes')({
 })
 
 function PastProgrammes() {
-  const pastTestimonials = [
-    {
-      q: "These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow.",
-      a: "Pushkar Singh",
-      r: "Founder, CarbonSynq Earth",
-      tag: "Summer Immersion",
-      img: pushkarSingh,
-      featured: true,
-    },
-    {
-      q: "What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think and question about how to pitch. We didn't begin with a finished product. We began with a problem worth solving.",
-      a: "Tendai Nzonzo",
-      r: "Founder, Sana AI",
-      tag: "Zero-to-One",
-      img: tendaiNzonzo,
-      featured: false,
-    },
-    {
-      q: "My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day.",
-      a: "Samvritha",
-      r: "Student",
-      tag: "Young Leaders Programme",
-      img: samvritha,
-      featured: false,
-    }
-  ];
+
 
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
@@ -59,7 +34,7 @@ function PastProgrammes() {
       <StatsMarquee />
       <OurProgrammes />
       <ImpactBanner />
-      <SharedTestimonials customTestimonials={pastTestimonials} />
+
       <BottomCTA />
       <Footer />
     </div>
@@ -183,7 +158,7 @@ function OurProgrammes() {
       tag: "Executive Leadership",
       title: "Global India Leadership Programme",
       desc: "An executive education initiative for senior leaders and entrepreneurs focused on leadership, innovation and growth across the India-UK corridor through world-class faculty, practical sessions and high-quality networking.",
-      img: businessLeadersImg,
+      img: gilpClassroomFinalImg,
       icon: <Users className="h-5 w-5" />,
       bullets: ["Leadership & strategy", "Innovation & AI", "Business growth & governance", "Networking with global leaders"],
       link: "/programmes/gilp"

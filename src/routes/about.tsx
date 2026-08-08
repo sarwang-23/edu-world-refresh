@@ -2,23 +2,29 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap, Linkedin } from "lucide-react";
 import heroGlobalImg from "@/assets/transformational-global-education.png";
 import founderImg from "@/assets/founder_hd.png";
+import collage1 from "@/assets/about_collage/collage1.jpg";
+import collage2 from "@/assets/about_collage/collage2.jpg";
+import collage3 from "@/assets/about_collage/collage3.jpg";
+import collage4 from "@/assets/about_collage/collage4.jpg";
+import collage5 from "@/assets/about_collage/collage5.jpg";
+import collage6 from "@/assets/about_collage/collage6.jpg";
+import collage7 from "@/assets/about_collage/collage7.jpg";
+import collage8 from "@/assets/about_collage/collage8.jpg";
+import collage9 from "@/assets/about_collage/collage9.jpg";
 import { Footer } from "./index";
 import person1 from "@/assets/person1.jpg";
 import person2 from "@/assets/person2.jpg";
-import person3 from "@/assets/person3.jpg";
 import person4 from "@/assets/person4.jpg";
 import person5 from "@/assets/person5.jpg";
 import person6 from "@/assets/person6.jpg";
 import person7 from "@/assets/person7.jpg";
-import person8 from "@/assets/person8.jpg";
 import person9 from "@/assets/person9.jpg";
 import person10 from "@/assets/person10.jpg";
 import person11 from "@/assets/person11.jpg";
 import person12 from "@/assets/person12.jpg";
-import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
-import amarjitSingh from '@/assets/people/amarjit_singh.jpg';
-import lindaTang from '@/assets/people/linda_tang.jpg';
-import { SharedTestimonials } from '@/components/SharedTestimonials';
+import personSerish from "@/assets/faculty-serish.jpg";
+import personSantosh from "@/assets/santosh_huralikoppi.jpg";
+import { Voices } from '@/components/Voices';
 
 
 export const Route = createFileRoute("/about")({
@@ -35,33 +41,6 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  const aboutTestimonials = [
-    {
-      q: "Sometimes life changes on a random Monday afternoon. Mine did - at THE UNIVERSITY OF CAMBRIDGE !!!!! What started as a quiet summer turned into a turning point I didn’t even know I needed. A place, a community, a classroom, conversations and souls that shifted my mind and my path, forever.",
-      a: "Jivika Vikamshi",
-      r: "Co-Founder, Manashakti",
-      tag: "GEL Summer Immersion",
-      img: jivikaVikamshi,
-      featured: true,
-    },
-    {
-      q: "Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!",
-      a: "Amarjit Singh",
-      r: "CEO, India Business Forum",
-      tag: "GILP Delegate",
-      img: amarjitSingh,
-      featured: false,
-    },
-    {
-      q: "Good team vibe, good organisation, like the short content inserts. There aren't many experiences where you can feel yourself changing and growing in real time, but I felt myself growing in confidence and expertise.",
-      a: "Linda Tang",
-      r: "Medicine Student",
-      tag: "University of Cambridge",
-      img: lindaTang,
-      featured: false,
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Hero />
@@ -70,7 +49,7 @@ function AboutPage() {
       <Journey />
       <Impact />
       <OurPeople />
-      <SharedTestimonials customTestimonials={aboutTestimonials} />
+      <Voices />
       <Cta />
       <Footer />
     </div>
@@ -79,36 +58,141 @@ function AboutPage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream">
+    <section className="relative overflow-hidden bg-cream py-12 lg:py-16">
       {/* Subtle grid — same as home page hero */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6">
-        {/* Left: Text */}
-        <div className="lg:col-span-7">
-          <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70 mb-4">
-            ABOUT GLOBAL EDUCATION LAB
-          </p>
-          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-12">
+        {/* Left: Text Content */}
+        <div className="lg:col-span-5 flex flex-col justify-center">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-forest/70">
+              ABOUT GLOBAL EDUCATION LAB
+            </span>
+          </div>
+          
+          <h1 className="text-[2.5rem] sm:text-[2.85rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.08] text-forest">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-[17px] leading-[1.65] text-muted-foreground">
+          
+          <p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-[1.65] text-muted-foreground">
             We design immersive learning experiences that empower individuals, build capability, and drive innovation for a more inclusive and sustainable tomorrow.
           </p>
-          <p className="mt-8 text-[15px] font-bold uppercase tracking-[0.2em] text-forest/70">
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              to="/programmes"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold tracking-wide text-primary-foreground transition-all hover:bg-forest-deep shadow-md"
+            >
+              Explore Programmes <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/partner-with-gel"
+              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+            >
+              Partner with GEL
+            </Link>
+          </div>
+
+          <p className="mt-8 text-[14px] font-bold uppercase tracking-[0.2em] text-forest/70">
             Rooted in Cambridge. Impacting the world.
           </p>
         </div>
 
-        {/* Right: Cambridge image — same rounded card as home */}
-        <div className="relative lg:col-span-5">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img
-              src={heroGlobalImg}
-              alt="Transformational global education"
-              className="h-full w-full object-cover"
-            />
+        {/* Right: Perfectly Aligned 3-Column Bento Collage */}
+        <div className="relative lg:col-span-7">
+          <div className="p-3 bg-white/70 backdrop-blur-md rounded-[2.5rem] border border-forest/10 shadow-2xl shadow-forest/10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 h-auto sm:h-[480px]">
+              
+              {/* Column 1 (2 Images) */}
+              <div className="flex flex-col gap-3 h-full">
+                <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage1}
+                    alt="Cambridge Lecture Session"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-[11px] font-medium text-white">Cambridge Lecture Session</span>
+                  </div>
+                </div>
+
+                <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage8}
+                    alt="STEM Exploration"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-[11px] font-medium text-white">STEM & Astrophysics</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Column 2 (3 Images) */}
+              <div className="flex flex-col gap-3 h-full">
+                <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage2}
+                    alt="Cohort Discussion"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
+                    <span className="text-[11px] font-medium text-white">Cohort Discussion</span>
+                  </div>
+                </div>
+
+                <div className="h-[150px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage7}
+                    alt="GEL Fireside Panel with CJBS"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
+                    <span className="text-[11px] font-medium text-white">Fireside Panel</span>
+                  </div>
+                </div>
+
+                <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage4}
+                    alt="Experiential Workshop"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
+                    <span className="text-[11px] font-medium text-white">Experiential Workshop</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Column 3 (2 Images) */}
+              <div className="flex flex-col gap-3 h-full">
+                <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage9}
+                    alt="Cambridge Interactive Lab"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-[11px] font-medium text-white">Cambridge Interactive Lab</span>
+                  </div>
+                </div>
+
+                <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                  <img
+                    src={collage5}
+                    alt="Historic Cambridge Formal Dinners"
+                    className="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-[11px] font-medium text-white">Cambridge Formal Dinners</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -222,7 +306,7 @@ function FounderStory() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                 <GraduationCap className="h-5 w-5" />
               </div>
-              <p className="text-[15px] font-medium text-cream leading-tight">Cambridge Alumnus<br />& Fellow, CJBS</p>
+              <p className="text-[15px] font-medium text-cream leading-tight">Cambridge Judge Business School,<br />University of Cambridge</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
@@ -250,7 +334,7 @@ function FounderStory() {
               <img
                 src={founderImg}
                 alt="Suyash Bhatt"
-                className="w-full h-[340px] object-cover object-[65%_20%]"
+                className="w-full h-[360px] object-cover object-top"
               />
               <div className="p-6">
                 <div className="flex items-center justify-between">
@@ -266,7 +350,7 @@ function FounderStory() {
                   </a>
                 </div>
                 <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">Founder & Director</p>
-                <p className="text-[15px] italic text-cream/70 mt-1">Cambridge Alumnus & Fellow, CJBS</p>
+                <p className="text-[15px] italic text-cream/70 mt-1">Cambridge Judge Business School, University of Cambridge</p>
               </div>
             </div>
           </div>
@@ -326,22 +410,82 @@ function Journey() {
 
 function OurPeople() {
   const people = [
-    { name: "Guy Doza", title: "Leadership & Communications Coach", img: person1, quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking." },
-    { name: "Gurmeet Kaur", title: "Social Media & Marketing", img: person2, quote: "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth." },
-    { name: "Dan Stert", title: "Programme Director", img: person3, quote: "Designing immersive experiences that challenge perspectives and inspire growth." },
-    { name: "Andrew Hatcher", title: "Advisor – Entrepreneurship", img: person4, quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures." },
-    { name: "Akshay Kumar", title: "Business Development – APAC", img: person5, quote: "Strategic partnerships specialist focused on higher education, institutional collaboration and APAC market development." },
-    { name: "Dr Yves Gaspar", title: "Advisor – STEM", img: person6, quote: "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation." },
-    { name: "Nim Wichienkuer", title: "Partner – Gamified Learning", img: person7, quote: "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning." },
-    { name: "Charles Roddie", title: "Advisor", img: person8, quote: "Providing strategic insights to scale educational impact across international borders." },
-    { name: "Margaret Serna CBE", title: "Advisor – UK Education", img: person9, quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education." },
-    { name: "Khushboo Kundra", title: "L&D Manager – APAC", img: person10, quote: "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region." },
-    { name: "Professor Jaideep Prabhu", title: "Programme Director – GILP", img: person11, quote: "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme." },
-    { name: "Tim Vinopal", title: "Partner – Americas", img: person12, quote: "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL’s engagement across the Americas." },
+    {
+      name: "Margaret Serna CBE",
+      title: "Advisor – UK Education",
+      img: person9,
+      quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
+    },
+    {
+      name: "Santosh Huralikoppi",
+      title: "Advisor – Startups & Investments",
+      img: personSantosh,
+      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
+    },
+    {
+      name: "Dr Yves Gaspar",
+      title: "Advisor – STEM",
+      img: person6,
+      quote: "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation.",
+    },
+    {
+      name: "Serish Gandikota",
+      title: "Advisor – Frugal AI",
+      img: personSerish,
+      quote: "Co founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
+    },
+    {
+      name: "Andrew Hatcher",
+      title: "Advisor – Entrepreneurship",
+      img: person4,
+      quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
+    },
+    {
+      name: "Guy Doza",
+      title: "Leadership & Communications Coach",
+      img: person1,
+      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
+    },
+    {
+      name: "Tim Vinopal",
+      title: "Partner – Americas",
+      img: person12,
+      quote: "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL’s engagement across the Americas.",
+    },
+    {
+      name: "Nim Wichienkuer",
+      title: "Partner – Gamified Learning",
+      img: person7,
+      quote: "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning.",
+    },
+    {
+      name: "Professor Jaideep Prabhu",
+      title: "Programme Director – GILP",
+      img: person11,
+      quote: "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme.",
+    },
+    {
+      name: "Khushboo Kundra",
+      title: "L&D Manager – APAC",
+      img: person10,
+      quote: "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region.",
+    },
+    {
+      name: "Akshay Kumar",
+      title: "Business Development – APAC",
+      img: person5,
+      quote: "Strategic partnerships specialist focused on higher education, institutional collaboration and APAC market development.",
+    },
+    {
+      name: "Gurmeet Kaur",
+      title: "Social Media & Marketing",
+      img: person2,
+      quote: "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth.",
+    },
   ];
 
   return (
-    <section className="bg-[#F7F5F0] py-24 border-t border-forest/5">
+    <section id="people" className="bg-[#F7F5F0] py-24 border-t border-forest/5">
       <div className="relative mx-auto max-w-7xl px-6 text-center">
         {/* Section Header */}
         <div className="mb-16">
@@ -363,12 +507,21 @@ function OurPeople() {
                 {/* Overlapping Avatar */}
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2">
                   <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <div className="relative h-28 w-28 overflow-hidden rounded-full border-[5px] border-white bg-[#F7F5F0] shadow-sm transition-transform duration-500 group-hover:scale-105">
-                    <img 
-                      src={person.img} 
-                      alt={person.name} 
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                    />
+                  <div className="relative h-28 w-28 overflow-hidden rounded-full border-[5px] border-white bg-[#F7F5F0] shadow-sm transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
+                    {person.img ? (
+                      <img 
+                        src={person.img} 
+                        alt={person.name} 
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-forest-deep to-forest text-white transition-transform duration-700 group-hover:scale-110">
+                        <Users className="h-7 w-7 text-gold mb-0.5" />
+                        <span className="text-[13px] font-bold tracking-wider text-cream/90 uppercase">
+                          {person.name.split(' ').map((n) => n[0]).filter(Boolean).slice(0, 2).join('')}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -394,10 +547,10 @@ function OurPeople() {
 function Impact() {
   const stats = [
     { num: "5,000+", label: "Learners Empowered", icon: Users },
-    { num: "120+", label: "Startups Supported", icon: Rocket },
+    { num: "50+", label: "Startups Supported", icon: Rocket },
     { num: "25+", label: "Countries Represented", icon: Globe2 },
-    { num: "150+", label: "Organisations Served", icon: HandHeart },
-    { num: "50+", label: "Programmes Delivered", icon: BookOpen },
+    { num: "100+", label: "Organisations Served", icon: HandHeart },
+    { num: "20+", label: "Programmes Delivered", icon: BookOpen },
   ];
 
   return (

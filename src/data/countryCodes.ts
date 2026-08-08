@@ -6,8 +6,8 @@ export interface CountryCode {
 }
 
 export const COUNTRY_CODES: CountryCode[] = [
-  { code: "+91", country: "India", iso: "IN", flag: "🇮🇳" },
   { code: "+44", country: "United Kingdom", iso: "GB", flag: "🇬🇧" },
+  { code: "+91", country: "India", iso: "IN", flag: "🇮🇳" },
   { code: "+1", country: "United States", iso: "US", flag: "🇺🇸" },
   { code: "+971", country: "United Arab Emirates", iso: "AE", flag: "🇦🇪" },
   { code: "+65", country: "Singapore", iso: "SG", flag: "🇸🇬" },

@@ -87,17 +87,9 @@ export const blogPosts: BlogPost[] = [
         "text": "The business case is further reinforced by retention data. A LinkedIn survey found that 94% of employees would remain longer at companies that invest in their professional development, a finding with direct implications for talent retention strategy at the senior executive level. Employees who strongly agree that their organisation encourages upskilling are 47% less likely to be actively searching for alternative roles, underscoring the dual ROI of learning investment: capability building and workforce stability."
       },
       {
-        "type": "gallery",
-        "images": [
-          "/blog-images/finland2023_inline_1_bf78a9_70a70b1a2e594d099dca6809265365cd_mv2.jpg",
-          "/blog-images/finland2023_inline_3_bf78a9_4acbffe485cb4d16832f7defe2bdeb5b_mv2.jpg",
-          "/blog-images/finland2023_inline_5_bf78a9_8c51708d36a843718cc0940d336719a7_mv2.jpg",
-          "/blog-images/finland2023_inline_7_bf78a9_1c3bf5dbb03946f981ae1421958259cc_mv2.jpg",
-          "/blog-images/finland2023_inline_9_bf78a9_e79edfce892049a8a9cd2905f9967273_mv2.jpg",
-          "/blog-images/finland2023_inline_11_bf78a9_cedccba3f14747de9add32ec9b24e384_mv2.jpg",
-          "/blog-images/finland2023_inline_13_bf78a9_67a94ded88014a24af7240dae44db09f_mv2.jpg",
-          "/blog-images/finland2023_inline_15_bf78a9_86afdb368b024fe7b1010843875dae33_mv2.jpg"
-        ]
+        "type": "image",
+        "src": "/blog-images/gilp_welcome_pack_table.jpg",
+        "caption": "Welcome packs and programme materials at Cambridge Judge Business School"
       },
       {
         "type": "paragraph",
@@ -112,7 +104,7 @@ export const blogPosts: BlogPost[] = [
         "text": "From 9-13 March 2026, senior executives and entrepreneurs from around the world convened alongside the world-class faculty of the Judge Business School, to work through the practical challenges of leading in an AI-driven, globally connected economy. Across five intensive days, participants built actionable frameworks across Strategy, Artificial Intelligence, Frugal Innovation, Corporate Governance, Negotiation and Cross-Cultural Leadership, leaving Cambridge with tools they could deploy immediately, in the organisations they returned to."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Cohort Representation:"
       },
       {
@@ -125,11 +117,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "image",
-        "src": "true",
-        "caption": ""
+        "src": "/blog-images/gilp_march_cohort_group.jpg",
+        "caption": "The March 2026 cohort of the Global India Leadership Programme at Cambridge Judge Business School"
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Course Modules and Faculty:"
       },
       {
@@ -137,7 +129,66 @@ export const blogPosts: BlogPost[] = [
         "text": "A distinctive feature of the programme was that all sessions were delivered by instructors affiliated with the University of Cambridge, bringing world-class academic expertise together with practical insights relevant to leadership in global and emerging markets. Through lectures, case discussions, and interactive sessions, participants examined critical themes such as AI-driven transformation, corporate governance, innovation systems, customer-centric strategy, negotiation frameworks, and the evolving responsibilities of global leaders."
       },
       {
-        "type": "paragraph",
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">1. Doing Better With Less: Frugal Innovation for Global India Leaders</span> <span class=\"italic font-semibold\">by Professor Jaideep Prabhu:</span><br/>In most organisations, resource constraints are treated as obstacles. This module was designed to challenge that assumption directly. Drawing on global case studies and India's proven track record of doing more with less, leaders examined how scarcity, when approached strategically, becomes a driver of creativity, competitive differentiation and sustainable growth.</p>"
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/gilp_jaideep_prabhu_lecture.jpg",
+        "caption": "Professor Jaideep Prabhu leading the Frugal Innovation module at Cambridge Judge Business School"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">2. The Thinking Edge: How Leaders Win With AI</span> <span class=\"italic font-semibold\">by Dr. Mark Bloomfield:</span><br/>Every organisation is racing to adopt AI. Few are pausing to ask what gets lost in the process. This module cut to the heart of that tension, not as a technology debate, but as a leadership one. Where does the algorithm end and human judgement begin? Through simulation, red teaming and hard conversations about accountability, participants confronted the decisions that cannot and should not be delegated to a machine. In the AI era, knowing what to automate matters as leaders take on turbulent management challenges.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">3. Branding Strategies in the Post-Digital Era</span> <span class=\"italic font-semibold\">by Professor Eden Yin:</span><br/>Algorithms now decide what customers see, when they see it and how they feel about it. In this environment, brand loyalty is harder to earn and easier to lose than at any point in marketing history. This module confronted that reality head-on. Leaders examined how the fundamentals of brand building – trust, narrative, emotional resonance, must be reimagined for markets where platform technologies and AI shape perception at scale.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">4. Do We Understand the Risks: Macro Threats with Micro Implications</span> <span class=\"italic font-semibold\">by Professor Kamiar Mohaddes:</span><br/>The global economy is under pressure from multiple directions simultaneously – geopolitical fragmentation, climate shocks, persistent inflation and the uneven disruption of AI. The risks are real and accelerating. But how well do leaders actually understand them? This module was designed to move beyond headlines and provoke Leaders to stress-test their assumptions, interrogate live data and examine what organisations can practically do when conditions deteriorate.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">5. Communication and the Art of Leadership</span> <span class=\"italic font-semibold\">by Guy Doza:</span><br/>The most technically brilliant strategy fails without the ability to bring people with you. This module was designed to focus on the mechanics of persuasion and how structure, language and delivery shape whether a message lands or falls flat. Leaders analysed the rhetorical tools used by the world's most effective communicators and applied them directly to the high-stakes business contexts they navigate every day. Because leadership, at its core, is an act of communication.</p>"
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/gilp_guy_doza_session.jpg",
+        "caption": "Guy Doza presenting the Communication and the Art of Leadership workshop session"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">6. Managing in the AI Era</span> <span class=\"italic font-semibold\">by Elizabeth Osta:</span><br/>Pilot projects are easy. Scale is hard. This module confronted the messy reality that sits between an organisation's AI ambitions and its actual results – fragmented implementation, governance blind spots and the persistent tension between commercial pressure and societal responsibility. Leaders examined what it takes to move from isolated experimentation to a coherent, portfolio-level AI strategy that performs, governs and endures.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">7. Corporate Governance in Practice: Shareholders, Stakeholders, and Incentives</span> <span class=\"italic font-semibold\">by Professor Raghavendra Rau:</span><br/>What is a company actually for? That question, deceptively simple, endlessly contested, sat at the heart of this module. Using Hershey as a live case, leaders interrogated the governance structures that emerge when a firm carries both commercial obligations and a deeper institutional mission. What happens when fiduciary duty and legacy pull in opposite directions? Who does the board ultimately answer to when multiple principals are in play?</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">8. Customer-Centric Innovation in the AI Era</span> <span class=\"italic font-semibold\">by Professor Shasha Lu:</span><br/>AI is only as valuable as the customer problem it solves. This module started there, with the customer, and worked backwards. Leaders mapped the trajectory of key AI technologies, not as a technical exercise, but as a strategic one: where do these tools genuinely create advantage and where do they simply create noise? Moving through the discovery, design and delivery stages of value creation, this module built a practical lens for embedding AI into innovation strategies that are customer-driven, commercially grounded and built to last.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">9. Brand-Led Innovation Clinic</span> <span class=\"italic font-semibold\">by Marvin Fernandes:</span><br/>Branding is not a marketing problem, it is a business strategy. In this hands-on clinic, leaders worked through live branding challenges from within the cohort, applying strategic brand positioning and design thinking to diagnose bottlenecks, unlock differentiation and craft scalable brand narratives for domestic and international markets.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">10. Foundational and Scaling Business Strategy</span> <span class=\"italic font-semibold\">by Professor Lionel Paolella:</span><br/>Strategy without scale is theory. This module was about the moment both collide. Leaders tested their core principles – cost leadership, differentiation, competitive advantage against the hard realities of SME growth. Where does AI accelerate and where does it distract? Should you build the capability, buy it, or partner for it? This module prompted leaders to ask the right questions before the wrong decisions become expensive.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">11. Corporate Governance &amp; Boardroom Dynamics</span> <span class=\"italic font-semibold\">by Professor Oğuzhan Karakaş:</span><br/>Boards set the conditions under which everything else either works or fails. This module examined corporate governance where it has the most consequence – capital allocation, risk management, performance accountability and long-term value creation. Leaders used diagnostic frameworks to assess what actually makes a board effective: not just its structure on paper, but its composition, its dynamics and the quality of decisions it produces under pressure.</p>"
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/gilp_karakas_boardroom_session.jpg",
+        "caption": "Professor Oğuzhan Karakaş leading the Corporate Governance & Boardroom Dynamics session at Cambridge Judge Business School"
+      },
+      {
+        "type": "heading",
         "text": "Critical Takeaways from the 5-day Executive Leadership Programme:"
       },
       {
@@ -145,16 +196,72 @@ export const blogPosts: BlogPost[] = [
         "text": "Across five days and ten sessions, the Global India Leadership Programme 2026 covered substantial ground - from AI Strategy and Frugal Innovation to Corporate Governance, Brand, Negotiation and Macroeconomic Risk. This segment offers a distillation of the critical insights, recurring themes and actionable conclusions that emerged when world-class faculty met a cohort of experienced, opinionated and intellectually engaged leaders."
       },
       {
-        "type": "paragraph",
+        "type": "html",
+        "content": "<ol class='list-decimal pl-6 space-y-4 text-[16.5px] leading-[1.8] text-[#161616]'><li><span class='font-bold'>Digital Transformation and Technology:</span> The organisations that will win are not the ones that adopt AI fastest, they are the ones that integrate it most thoughtfully. With the WEF projecting that 39% of core workforce skills will be transformed or obsolete by 2030, the pressure to act is real. But speed without strategy is dangerous. True digital transformation means embedding AI into how decisions actually get made, governed by human judgement, grounded in user needs and designed with diverse perspectives built in. The institutions that will endure are those that build the capacity, infrastructure and skills to handle what machine intelligence is about to demand of them. Across a cohort spanning banking, healthcare, manufacturing, logistics and social services, that was not an abstract argument but a shared reality.</li><li><span class='font-bold'>Strategic Growth and Internationalisation:</span> The era of growth-at-all-costs is giving way to resilience, local intelligence and the ability to operate in a world that is fragmenting faster than most strategic plans anticipated. Organisations that thrive internationally will be the ones that build multi-regional supply chains, diversify their sourcing before they have to and invest in the governance and talent infrastructure that sustainable expansion actually requires. AI and emerging technologies accelerate the journey but only where organisational capability and leadership development keeps pace. The leaders who get this right will not just be globally ambitious but will also be locally trusted.</li><li><span class='font-bold'>Sustainability and Ethics:</span> For too long, organisations have confused disclosure with action and that gap is closing fast, on regulators' terms, not theirs. The real work is embedding sustainability into financial planning, capital allocation and operational decision-making. The agenda is broader than carbon: water scarcity, AI governance, biodiversity and supply chain resilience all demand attention. Greenwashing is no longer just a reputational risk. It is a regulatory one. Organisations that act with genuine transparency and measurable commitment will set standards instead of merely meeting them.</li><li><span class='font-bold'>Leadership, Culture and Human Capital:</span> The most undervalued asset on any balance sheet is still human capital. With 85% of employers globally prioritising upskilling by 2030 and 94% of employees more likely to stay where development is invested in, the case is no longer debatable. But investment alone is not enough. Organisations need cultures built on transparency and ethical decision-making. Leadership models must adapt to diverse cultural realities, not default to uniform global frameworks. Middle management needs urgent attention as they are the layer where strategy either lands or dies. Leaders themselves must stay in learning mode. Long-term effectiveness belongs to those who align vision, culture and human capital.</li><li><span class='font-bold'>Corporate Governance and Institutional Frameworks:</span> Good governance is the foundation on which everything else is built. Yet with only 23% of board seats globally held by women and AI regulation still catching up to AI deployment, the gaps are significant and the stakes are rising. Boards must be composed for diversity of thought, not just compliance. AI governance frameworks must evolve in real time; human oversight, bias mitigation and transparency are non-negotiable. Regulatory and environmental accountability is tightening across every market. Organisations that treat governance as a strategic priority rather than a reporting obligation will be the ones that retain investor confidence, institutional trust and the licence to innovate.</li><li><span class='font-bold'>Financial Stability and Economic Policy:</span> The macroeconomic environment is not getting simpler. Global debt is at record highs, geopolitical fragmentation is accelerating and the IMF projects global growth at just 3.3% through 2029. In that environment, financial resilience is a leadership responsibility, not a finance function. Organisations that survive volatility are the ones that are built for it. Diversification, disciplined resource allocation and scenario-ready planning become baselines in a framework that keeps shifting and testing organisation policy.</li></ol>"
+      },
+      {
+        "type": "heading",
         "text": "Testimonials from Leaders who participated in the Global India Leadership Programme:"
       },
       {
-        "type": "image",
-        "src": "/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_inline_6_7e2606_7a4942d6c35549ceab277b93f911cd96_mv2.jpg",
-        "caption": ""
+        "type": "testimonials_carousel",
+        "items": [
+          {
+            "name": "Dr h.c Mario Schmidt",
+            "role": "Managing Director, Lingel Windows and Doors Technologies Private Limited, India",
+            "photo": "/blog-images/gilp_testimonial_mario_schmidt.png",
+            "quote": "\"Attending the Global India Leadership Programme in Cambridge marks my first ever trip to the UK. This programme brought together so many like-minded participants, and the opportunity to connect with so many leaders has been great, both professionally and personally. There is so much to learn with this Programme, right from the questions each session poses, all the way till the group discussions! I highly recommend this course and if you ever have an opportunity to sign up, don't hesitate.\""
+          },
+          {
+            "name": "Sam Tully",
+            "role": "Director, International Business Development, Quantum Advisors, UK",
+            "photo": "/blog-images/gilp_testimonial_sam_tully_portrait.png",
+            "quote": "\"Well, it was a week of incredible learning for sure. It started with a warm welcome from CJBS Dean Gishan Dissanaike. Jaideep then began on Frugal Innovation. Dr Mark Bloomfield was expectedly authoritative on AI. Eden Yin engagingly opened the batting on Branding. Kamiar Mohaddes revealed powerful perspectives on the massive global challenges. Day 2 started with a masterclass in rhetoric from Guy Doza, followed by another deep dive into AI, the resource challenge it presents to the global south and its use as a management tool by Serish Venkata Gandikota and Elizabeth Olsta. On Day 3, Raghavedra R. demonstrated two great examples how Corporate Governance crises can unfold. Shasha Lu then segued further into Branding in this digital era. On Day 4, Jaideep delved further into Innovation and the 'Garden of Paradoxes', followed by a thought-provoking workshop on Brands by Marvin Fernandes. On the final day, Lionel Paolella comprehensively covered Strategy, while last, but by no means least, Oğuzhan Karakaş provided another powerful take on Boards and Corporate Governance.\""
+          },
+          {
+            "name": "Snigdha Manchanda",
+            "role": "Founder, Tea Trunk, India",
+            "photo": "/blog-images/gilp_testimonial_snigdha_manchanda_portrait.png",
+            "quote": "\"I attended the Global India Leadership Programme at Cambridge Judge Business School and I realised something I had never fully articulated before: as a first generation entrepreneur, I wasn't lacking skill or resilience. I needed language. The language that lets you walk into a room of investors, partners or policymakers and translate your lived experience into their expected frameworks. The language that bridges what you've built with how it needs to be understood. Executive education for first generation founders isn't about learning how or what to build. It's about learning how to translate what we've built into the structures and conversations that unlock the next level. It's the difference between building in isolation and building with influence. Between building and being heard. That shift? It's worth everything.\""
+          },
+          {
+            "name": "Johannes Samwer",
+            "role": "Managing Director, Rhenus Lub, Germany",
+            "photo": "/blog-images/gilp_testimonial_johannes_samwer_portrait.png",
+            "quote": "\"The session on Rhetoric and Communication techniques was very exciting. The group discussion on using language in the best way to influence others was intriguing with participants offering many takeaways as well. We also examined how great world leaders use these communication tools! It's been really fascinating and insightful. I highly recommend joining this programme.\""
+          },
+          {
+            "name": "Dr Aashish Chaudhry",
+            "role": "Orthopaedic Surgeon & Managing Director, Aakash Healthcare, India",
+            "photo": "/blog-images/gilp_testimonial_aashish_chaudhry.jpg",
+            "cardImage": true,
+            "quote": "\"Frugal innovation is not an abstract concept, it is a necessity. India's healthcare sector is underserved and price-sensitive. Unless innovation reaches the last mile affordably, it isn't sustainable. The fact that jugaad entered the conversation at Cambridge tells you everything. Frugal innovation isn't just for developing economies - it belongs on the global stage. The Global India Leadership Programme started with exactly the right message.\""
+          },
+          {
+            "name": "Anand Rao",
+            "role": "Partner, Tiger Analytics, UK",
+            "photo": "/blog-images/gilp_testimonial_anand_rao.jpg",
+            "cardImage": true,
+            "quote": "\"A week among Cambridge's ancient courts, restless ideas, case clinics during the Global India Leadership Programme offered a timely vantage on leadership in an era where AI, Quantum Technology, Sustainability, Capital Stewardship, Supply Chain and Geopolitics increasingly shape economic outcomes. In conversations with CEOs, Entrepreneurs, Distinguished Fellows and Professors, including Lord Karan Bilimoria, a simple conclusion surfaced: the leaders who will prevail will combine technological literacy with disciplined capital allocation and responsible stewardship of institutions and the planet. Working across emerging technologies and sustainability, I found myself both sharing perspectives and learning in equal measure. One truth quietly resurfaced: experience is often the dividend of difficult judgement. Cambridge leaves one slightly less certain and rather more curious about the work ahead.\""
+          },
+          {
+            "name": "Dr Fatin Al Zadjali",
+            "role": "Head of Learning & Development, BankDhofar, Oman",
+            "photo": "/blog-images/gilp_testimonial_fatin_al_zadjali.jpg",
+            "cardImage": true,
+            "quote": "\"The Global India Leadership Programme at Cambridge Judge Business School was an enriching experience. This programme brought together a diverse group of leaders from various sectors, united by a common goal: to drive positive change and foster innovation in India and beyond. Key topics discussed included Frugal Innovation, Agentic AI, Governance and Board Dynamics, Speech Writing and Storytelling, and Brand Creation. The programme also gave us actionable strategies and networking opportunities. The diversity within the cohort further enriched the experience, bringing in a wide range of insights.\""
+          },
+          {
+            "name": "Bidisha Banerjee",
+            "role": "Co-Founder and Partner, Talent Element, India",
+            "photo": "/blog-images/gilp_testimonial_bidisha_banerjee.jpg",
+            "cardImage": true,
+            "quote": "\"Over the week at the Global India Leadership Programme, an extraordinary faculty challenged the way we think about leadership, strategy and the future of business in an AI-shaped world. But the most powerful learning did not happen only in the sessions. It happened between the conversations. Between curiosity and disagreement. Between unlearning and re-learning. I realised something profound: The most powerful classrooms are not defined by the curriculum - but by the curiosity in the room. Strangers became companions in thought. Ideas travelled across cultures, experiences and perspectives. And somewhere in those exchanges, a quiet possibility returned. I left Cambridge not just with notes and insights, but with something far more.\""
+          }
+        ]
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Conclusion:"
       },
       {
@@ -166,16 +273,11 @@ export const blogPosts: BlogPost[] = [
         "text": "To our participants, faculty and everyone who made this week possible: thank you. You made it what it was. We are already looking ahead, not just to the next programme, but to the community of learners we are building together: curious, capable and clear-eyed about the work still to be done."
       },
       {
-        "type": "image",
-        "src": "true",
-        "caption": ""
-      },
-      {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Apply for the Next Cohort of the Global India Leadership Programme"
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "References:"
       }
     ],

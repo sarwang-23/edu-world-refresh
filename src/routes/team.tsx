@@ -96,7 +96,7 @@ function Leadership() {
             <img 
               src={founderImg} 
               alt="Suyash Bhatt" 
-              className="relative w-full aspect-[4/5] object-cover object-[65%_20%] rounded-[2.5rem] shadow-2xl z-10" 
+              className="relative w-full aspect-[4/5] object-cover object-top rounded-[2.5rem] shadow-2xl z-10" 
             />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
               <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bhatt</span>

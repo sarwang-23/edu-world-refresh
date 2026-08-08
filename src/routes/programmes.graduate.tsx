@@ -10,18 +10,23 @@ import teachersImg from '@/assets/teachers.jpg'
 import businessLeadersImg from '@/assets/business-leaders.jpg'
 import schoolLeadersImg from '@/assets/school-leaders.jpg'
 
-import academicImg from '@/assets/executive-education.jpg'
-import cambridgeEcosystemImg from '@/assets/cambridge_3.jpg'
-import handsOnImg from '@/assets/zero-to-one-past-1.jpg'
-import siteVisitImg from '@/assets/site visit.jpg'
-import globalNetworkImg from '@/assets/gilp-march-15.jpg'
-import socialCulturalImg from '@/assets/IMG_5138_2.jpg'
+import academicImg from '@/assets/Academic excellence.jpeg'
+import cambridgeEcosystemImg from '@/assets/Cambridge ecosystem.pNG'
+import handsOnImg from '@/assets/Hands on learning.jpeg'
+import siteVisitImg from '@/assets/Site visit.png'
+import globalNetworkImg from '@/assets/Global network.png'
+import socialCulturalImg from '@/assets/Social & Cultural.png'
 
 import campusLife1 from '@/assets/campus-life-1.jpg'
 import campusLife2 from '@/assets/campus-life-2.jpg'
 import campusLife3 from '@/assets/campus-life-3.jpg'
 import campusLifeWorkshop from '@/assets/campus_life_workshop.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
+
+import pushkarSingh from '@/assets/people/pushkar_singh.jpg';
+import abhishekKumar from '@/assets/people/abhishek_kumar.jpg';
+import samvritha from '@/assets/people/samvritha.png';
+import aashishImg from '@/assets/alumni4.jpg';
 
 
 export const Route = createFileRoute('/programmes/graduate')({
@@ -35,6 +40,31 @@ export const Route = createFileRoute('/programmes/graduate')({
 })
 
 function GraduateProgramme() {
+  const graduateTestimonials = [
+    {
+      q: "These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow — not only as the founder of CARBONSYNQ EARTH, but also as an individual.",
+      a: "Pushkar Singh",
+      r: "Founder, CarbonSynq Earth",
+      tag: "Summer Programme",
+      img: pushkarSingh,
+      featured: true,
+    },
+    {
+      q: "My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring.",
+      a: "Samvritha",
+      r: "GEL Young Leaders Summer Programme",
+      tag: "Summer Programme",
+      img: samvritha,
+    },
+    {
+      q: "More importantly, KavachAI has been selected for the GEL Global Ventures Programme, unlocking support for global expansion and UK market exploration. Building for the UK means meeting some of the world's highest expectations around privacy and accountability. Those standards don't just prepare us for a new market—they make our product stronger everywhere!!",
+      a: "Abhishek Kumar",
+      r: "Founder, Kavach AI",
+      tag: "Global Ventures",
+      img: abhishekKumar,
+    }
+  ]
+
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Hero />
@@ -44,7 +74,7 @@ function GraduateProgramme() {
       <CampusLife />
       <Tracks />
       <Impact />
-      <SharedTestimonials />
+      <SharedTestimonials customTestimonials={graduateTestimonials} />
       <BottomCTA />
       <Footer />
     </div>
@@ -53,7 +83,7 @@ function GraduateProgramme() {
 
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 function Hero() {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -141,10 +171,10 @@ function Hero() {
                 ref={videoRef}
                 src="/graduatesummerprogramme.mp4"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                autoPlay
                 loop
                 muted={isMuted}
                 playsInline
+                poster={campusLife2}
               />
 
               {/* Ambient bottom shadow gradient */}
@@ -202,9 +232,9 @@ function StatsMarquee() {
   const stats = [
     { val: '2 Weeks', label: 'Immersive Duration', sub: '30+ hours of learning' },
     { val: '3', label: 'Programme Tracks', sub: 'Entrepreneurship, Research & Architecture' },
-    { val: '500+', label: 'Alumni Network', sub: 'Across 20+ countries' },
+    { val: '500+', label: 'Global Network', sub: 'Across multiple countries' },
     { val: 'London', label: 'City Visit', sub: 'Beyond the campus' },
-    { val: '50+', label: 'Expert Sessions', sub: 'World-class faculty & founders' },
+    { val: '30+', label: 'Academic Hrs Session', sub: 'World-class faculty & founders' },
     { val: 'Girton', label: 'Cambridge College', sub: 'Cambridge college life' },
   ]
   const repeated = [...stats, ...stats, ...stats]
@@ -374,7 +404,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={heroImgOld} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={academicImg} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/entrepreneurship" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-gold px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
@@ -411,7 +441,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={studentsImg} alt="Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={globalNetworkImg} alt="Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/stem-research" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
@@ -448,7 +478,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={cambridgeImg} alt="Architecture" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={cambridgeEcosystemImg} alt="Architecture" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950/90 via-[#966526]/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/architecture" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#B47C35] px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-orange-500/30 hover:bg-[#966526] transition-all duration-300 group/btn">
@@ -525,7 +555,7 @@ function CampusLife() {
 /* ─── IMPACT ─────────────────────────────────────────────────────────────── */
 function Impact() {
   const stats = [
-    { icon: <Users className="h-6 w-6" />, v: "500+", l: "Participants from 20+ countries" },
+    { icon: <Users className="h-6 w-6" />, v: "500+", l: "Participants from multiple countries" },
     { icon: <Building2 className="h-6 w-6" />, v: "50+", l: "Institutions, labs & innovation hubs visited" },
     { icon: <GraduationCap className="h-6 w-6" />, v: "100+", l: "Experts, academics & entrepreneurs engaged" },
     { icon: <Globe2 className="h-6 w-6" />, v: "Lasting", l: "Networks, friendships & professional growth" },

@@ -2,13 +2,13 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footer } from "@/components/Footer";
 import { ArrowUpRight, GraduationCap, Users, BookOpen, Lightbulb, Zap, Globe2, Building2, MapPin, Target, Handshake, CheckCircle2, FlaskConical, Briefcase, Network, ShieldCheck, Rocket } from "lucide-react";
-import heroImg from "@/assets/cambridge_4.jpg";
+import heroImg from "@/assets/universities_lecture_hall.jpg";
 import studentImg from "@/assets/young_leaders_2.jpg";
 import execImg from "@/assets/executive-education.jpg";
-import facultyImg from "@/assets/faculty-jaideep.jpg";
+import facultyImg from "@/assets/universities_visiting_faculty.jpg";
 import researchImg from "@/assets/STEM astrophysics.jpg";
 import startupImg from "@/assets/startup.jpg";
-import mobilityImg from "@/assets/cambridge.jpg";
+import mobilityImg from "@/assets/universities_researcher_partnership.jpg";
 
 export const Route = createFileRoute("/universities")({
   head: () => ({

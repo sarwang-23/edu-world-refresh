@@ -23,6 +23,9 @@ import z21Gallery13 from '../assets/z21_gallery_13.jpg'
 import z21Gallery14 from '../assets/z21_gallery_14.jpg'
 import z21Gallery15 from '../assets/z21_gallery_15.jpg'
 import { useState } from 'react'
+import logoJBS from '@/assets/cambridge_jbs_official.png'
+import foundersImg from '../assets/young_leaders_1.jpg'
+import tendaiImg from '../assets/tendai.jpg'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
@@ -47,7 +50,7 @@ function ZeroToOne() {
       <ProgrammeFormat />
       <WhoShouldApply />
       <CohortGallery />
-      <SharedTestimonials />
+      <ZeroToOneTestimonials />
       <BottomCTA />
       <Footer />
     </div>
@@ -80,23 +83,51 @@ function Hero() {
               <span className="font-serif italic text-gold">Idea to venture.</span>
             </h1>
 
-            <p className="mt-6 text-[17px] font-semibold text-forest/80 leading-snug">
-              From raw ideas to incubator-ready ventures in 48 hours.
-            </p>
-            <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
-              A practical, high-energy venture-building format hosted at Cambridge Judge Business School, in partnership with King's E-Lab. Challenge your thinking, form a team, and leave with a validated direction.
+            <p className="mt-3 text-[17px] font-bold text-forest-deep">
+              In collaboration with King's E-Lab, University of Cambridge
             </p>
 
-            {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap gap-4">
-              {[
-                { icon: <Zap className="h-4 w-4" />, label: '48 Hours' },
-              ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
-                  <span className="text-gold">{b.icon}</span>
-                  {b.label}
+            <p className="mt-4 text-[15px] font-medium text-forest/90 leading-snug">
+              From raw ideas to incubator-ready ventures in 48 hours.
+            </p>
+            <p className="mt-3 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
+              A practical, high-energy venture-building format hosted at Cambridge Judge Business School, in collaboration with King's E-Lab. Challenge your thinking, form a team, and leave with a validated direction.
+            </p>
+
+            {/* Institutional Co-Branding Badges */}
+            <div className="mt-6 pt-5 border-t border-forest/10">
+              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-forest/70 mb-3">
+                Delivered in Collaboration With
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                {/* Cambridge Judge Business School */}
+                <div className="flex items-center justify-center rounded-2xl bg-white border border-forest/15 px-4 py-2 shadow-sm hover:shadow-md transition-all h-[76px] w-[230px] overflow-hidden">
+                  <img
+                    src={logoJBS}
+                    alt="University of Cambridge Judge Business School"
+                    className="w-full h-full object-contain scale-[1.45] hover:scale-[1.5] transition-transform duration-300"
+                  />
                 </div>
-              ))}
+
+                {/* King's E-Lab */}
+                <div className="flex items-center gap-3.5 rounded-2xl bg-white border border-forest/15 px-6 py-3 shadow-sm hover:shadow-md transition-all h-[76px]">
+                  <div className="flex flex-col items-start pr-3.5 border-r border-[#5B2468]/20">
+                    <span className="text-[22px] font-bold text-[#5B2468] font-serif leading-none tracking-tight">E-LAB</span>
+                    <div className="h-[1.5px] w-full bg-[#5B2468] my-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">KING'S COLLEGE</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">CAMBRIDGE</span>
+                  </div>
+                  {/* King's College Crest Shield SVG */}
+                  <svg viewBox="0 0 40 48" className="h-9 w-auto shrink-0" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 4 4 L 36 4 L 36 28 C 36 40 20 46 20 46 C 20 46 4 40 4 28 Z" fill="#5B2468" />
+                    <path d="M 20 4 L 20 46" stroke="white" strokeWidth="1" />
+                    <path d="M 4 18 L 36 18" stroke="white" strokeWidth="1" />
+                    <circle cx="20" cy="32" r="3.5" fill="none" stroke="white" strokeWidth="1.2" />
+                    <circle cx="12" cy="11" r="2" fill="white" />
+                    <circle cx="28" cy="11" r="2" fill="white" />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
@@ -121,7 +152,7 @@ function Hero() {
                 src="/zerotoone.mp4" 
                 poster={zeroToOneImg} 
                 className="w-full h-full object-cover contrast-[1.05] saturate-[1.1]" 
-                autoPlay 
+                controls 
                 loop 
                 muted 
                 playsInline 
@@ -146,7 +177,6 @@ function StatsMarquee() {
     { val: 'Spark', label: 'Cambridge Incubator', sub: 'Placement pipeline' },
     { val: 'Food & Agri', label: 'October Theme', sub: 'Planetary Health Focus' },
     { val: '100%', label: 'Form Real Teams', sub: 'Across disciplines' },
-    { val: 'Rolling', label: 'Next Cohort', sub: 'Flexible scheduling' },
   ]
   const repeated = [...stats, ...stats, ...stats]
   return (
@@ -557,6 +587,82 @@ function BottomCTA() {
           <Link to="/contact" search={{ source: "Zero-to-One Ideation Weekend (Bottom CTA)" }} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Ask a Question
           </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── TESTIMONIALS ─────────────────────────────────────────────────────────── */
+function ZeroToOneTestimonials() {
+  const testimonials = [
+    {
+      q: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle, as a market structure failure, not just a research gap. That reframe was th...",
+      a: "Sydney Conner",
+      r: "PhD in Biomedical...",
+      tag: "ZERO-TO-ONE",
+      img: sydneyImg
+    },
+    {
+      q: "What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me thin...",
+      a: "Tendai Nzonzo",
+      r: "Winning Team, Sana AI",
+      tag: "ZERO-TO-ONE",
+      img: tendaiImg
+    }
+  ]
+
+  return (
+    <section className="bg-[#F4EFE6] py-24 md:py-32 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="flex flex-col mb-16 items-center md:items-start text-center md:text-left">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+            <div className="h-px w-8 bg-gold md:hidden" />
+          </div>
+          <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
+            Voices from Our <span className="italic font-serif text-forest">Community</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((t, i) => (
+            <div key={i} className="group relative rounded-3xl bg-white p-10 border border-forest/8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 min-h-[420px]">
+              <div>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-gold text-xl">★</span>
+                    ))}
+                  </div>
+                  <span className="bg-forest-deep text-white text-[12px] font-bold uppercase tracking-[0.18em] px-4 py-2 rounded-full shadow-sm">
+                    {t.tag}
+                  </span>
+                </div>
+                <span className="block text-[5rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">"</span>
+                <p className="text-[18px] md:text-[19px] text-forest-deep/90 leading-[1.65] font-medium -mt-4 mb-8">
+                  {t.q}
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px flex-1 bg-forest/8 group-hover:bg-gold/30 transition-colors duration-500" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-forest-deep/10 border border-forest/15 overflow-hidden shrink-0">
+                    <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-bold text-forest-deep">{t.a}</p>
+                    <p className="text-[12px] text-forest/70 uppercase tracking-[0.15em] mt-0.5">{t.r}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

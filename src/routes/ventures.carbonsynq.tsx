@@ -24,7 +24,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from '@/components/Footer'
-import { SharedTestimonials } from '@/components/SharedTestimonials'
+
 
 type Venture = {
   slug: string
@@ -61,7 +61,7 @@ const VENTURE: Venture = {
   intro: 'CarbonSynq lets organisations automate emissions measurement, verify data with satellite + blockchain-based MRV, and connect directly to a transparent carbon marketplace — all on one platform.',
   sector: 'Climate Tech • SaaS',
   stage: 'Seed',
-  origin: 'Noida, India • Founded 2026',
+  origin: 'India',
   markets: 'Global',
   logo: <Leaf className="h-12 w-12 text-emerald-400" strokeWidth={1.5} />,
   color: 'from-[#071A10] via-[#0A2118] to-[#071A10]',
@@ -99,20 +99,21 @@ const VENTURE: Venture = {
     "Completed first version of AI emissions accounting engine",
   ],
   metrics: [
-    { l: 'Valuation', v: '₹5 Cr', icon: <TrendingUp className="h-5 w-5" /> },
-    { l: 'Funding Raised', v: '₹20 L', icon: <Zap className="h-5 w-5" /> },
+    { l: 'Valuation', v: '£475k', icon: <TrendingUp className="h-5 w-5" /> },
+    { l: 'Funding Raised', v: '£19k', icon: <Zap className="h-5 w-5" /> },
     { l: 'Team Size', v: '10', icon: <Users className="h-5 w-5" /> },
   ],
   team: [
     {
       name: 'Pushkar Singh',
       role: 'Founder & CEO',
+      img: '/team/pushkar.jpeg',
       bio: 'B.Tech Electrical Engineering student at Galgotias University, leading the venture through the Galgotias accelerator programme.',
     },
     {
-      name: 'Sarwang Agarwal',
-      role: 'Co‑Founder',
-      bio: "Driving product innovation and strategic development to scale CarbonSynq's MRV technology.",
+      name: 'Mr. Rachit Mathur',
+      role: 'Mentor',
+      bio: "Advisors and domain experts.",
     },
   ],
   seeking: [
@@ -175,7 +176,6 @@ function VenturePage() {
       <MainContent v={v} />
       <GelsRole v={v} />
       <BottomCTA v={v} />
-      <SharedTestimonials />
       <Footer />
     </div>
   )
@@ -488,7 +488,7 @@ function MainContent({ v }: { v: Venture }) {
               ))}
             </div>
             <p className="text-[12.5px] text-slate-400 italic mt-5 text-center leading-relaxed">
-              Student innovators from Galgotias University, India — building technology that drives the net-zero transition.
+              Our team combines technical depth in AI and climate data with hands-on experience building and scaling CarbonSynq through a competitive accelerator programme.
             </p>
           </div>
 

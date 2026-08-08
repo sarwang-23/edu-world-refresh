@@ -103,13 +103,13 @@ function Hero() {
 
 function CollaboratorsBar() {
   const partners = [
-    "UK-India Business Corridor",
+    "Global Innovation Corridor",
     "Global India Leadership",
     "Cambridge Judge Business School",
     "University of Cambridge",
     "House of Lords",
     "Entrepreneurs Lab UK",
-    "UK-India Business Corridor",
+    "Global Innovation Corridor",
     "Global India Leadership",
   ]
 
@@ -147,7 +147,7 @@ function WhyLeadersTravel() {
     },
     {
       icon: <BookOpen className="h-5 w-5 text-gold" />,
-      title: "Faculty from Cambridge Judge",
+      title: "Faculty from Top Tier Universities",
       desc: "Sessions led by Cambridge Judge Business School faculty and practitioners working on AI, innovation and corporate governance.",
     },
     {
@@ -158,7 +158,7 @@ function WhyLeadersTravel() {
     {
       icon: <Award className="h-5 w-5 text-gold" />,
       title: "Recognition & networks",
-      desc: "Co-branded certification with our host institutions and continued access to the UK-India business corridor.",
+      desc: "Co-branded certification with our host institutions and continued access to global executive networks.",
     },
   ]
 
@@ -171,7 +171,7 @@ function WhyLeadersTravel() {
             Built for leaders preparing to <span className="italic text-gold font-serif">lead global growth.</span>
           </h2>
           <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-3xl">
-            Our flagship — the Global India Leadership Programme (GILP) — brings Indian CXOs to Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks, and to network with the UK-India business corridor. Our wider calendar convenes executives at Cambridge, the House of Lords and Judge Business School.
+            Our flagship — the Global India Leadership Programme (GILP) — brings CXOs and founders to Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks, and to network with global business leaders. Our wider calendar convenes executives at Cambridge, the House of Lords and Judge Business School.
           </p>
         </div>
 
@@ -194,8 +194,8 @@ function WhyLeadersTravel() {
 function StatsBar() {
   const stats = [
     { label: "CXOs", sub: "AT EVERY COHORT" },
-    { label: "UK · IN", sub: "BUSINESS CORRIDOR" },
-    { label: "Global", sub: "DELIVERING SINCE" },
+    { label: "Global", sub: "EXECUTIVE NETWORK" },
+    { label: "Cambridge", sub: "FACULTY & SESSIONS" },
     { label: "4+", sub: "CORE THEMES" },
   ]
 
@@ -227,7 +227,7 @@ function OngoingProgrammes() {
       title: "Global India Leadership Programme",
       location: "UNIVERSITY OF CAMBRIDGE",
       quote: "The best leaders make space to reframe what is possible.",
-      desc: "A week at Cambridge for Indian CXOs — cutting-edge leadership strategies, AI and innovation frameworks, and access to the UK-India business corridor, in partnership with Cambridge Judge Business School.",
+      desc: "A week at Cambridge for CXOs — cutting-edge leadership strategies, AI and innovation frameworks, and access to global leadership networks, in partnership with Cambridge Judge Business School.",
       link: "/programmes/gilp",
     },
     {
@@ -236,7 +236,7 @@ function OngoingProgrammes() {
       title: "Global Impact of Cambridge Startups",
       location: "HOUSE OF LORDS, LONDON",
       quote: "When founders meet policymakers, ideas become action.",
-      desc: "An exclusive, invite-only convening at the House of Lords spotlighting the global impact of Cambridge startups — with founders, investors and policymakers from the UK-India corridor.",
+      desc: "An exclusive, invite-only convening at the House of Lords spotlighting the global impact of Cambridge startups — with founders, investors and policymakers from global innovation ecosystems.",
       link: "/programmes/house-of-lords",
     },
     {
@@ -254,13 +254,9 @@ function OngoingProgrammes() {
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
-            One flagship. Three ways to join.
+          <h2 className="text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
+            Ongoing Programmes
           </h2>
-          <p className="mt-4 text-[15px] text-forest/80 max-w-2xl mx-auto">
-            Attend our flagship at Cambridge, join an invite-only convening, or bring your leadership team into a bespoke corporate workshop.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">

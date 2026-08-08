@@ -15,6 +15,7 @@ import pushkarSingh from '@/assets/people/pushkar_singh.jpg';
 import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
 import abhishekKumar from '@/assets/people/abhishek_kumar.jpg';
 import samvritha from '@/assets/people/samvritha.png';
+import aniruddhGupta from '@/assets/people/aniruddh_gupta.jpg';
 import heroImg from '@/assets/zero-to-one-past-12.jpg'
 import s1 from '@/assets/students.jpg'
 import s2 from '@/assets/school-leaders.jpg'
@@ -168,7 +169,7 @@ function Stats() {
           
           <div 
             className="flex w-max hover:[animation-play-state:paused]"
-            style={{ animation: 'marquee-rtl 35s linear infinite' }}
+            style={{ animation: 'marquee-ltr 30s linear infinite' }}
           >
             {[...Array(3)].map((_, arrayIndex) => (
               <div key={arrayIndex} className="flex items-center gap-x-10 md:gap-x-16 px-5 md:px-8">
@@ -281,16 +282,16 @@ function Stories() {
       content: 'These 12 days at Girton College, University of Cambridge, through the Global Education Lab, have transformed the way I think about entrepreneurship, leadership, and innovation. Every lecture, every discussion, every pitch, and every interaction has helped me grow — not only as the founder of CARBONSYNQ EARTH, but also as an individual. A heartfelt thank you to the entire Global Education Lab team for creating such a remarkable experience. — Pushkar Singh, Founder, CarbonSynq Earth'
     },
     {
-      img: samvritha,
-      imgPos: 'object-[30%_12%] object-cover',
-      name: 'Samvritha',
-      role: 'Young Leader Delegate',
-      tag: 'YOUNG LEADERS',
-      t: 'A Summer That Changed Everything',
-      d: '"My two weeks at Cambridge felt like a dream — I left feeling excited about my future."',
-      link: "Read Samvritha's Story",
-      linkedin: 'https://www.globaledulab.com/post/just-two-weeks-my-summer-at-cambridge-with-global-education-lab',
-      content: 'My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring, especially entrepreneurship, pitching, and public speaking. I left feeling excited about my future. — Samvritha, GEL Young Leaders Summer Programme'
+      img: aniruddhGupta,
+      imgPos: 'object-cover object-center',
+      name: 'Dr. Aniruddh Gupta',
+      role: 'CEO - DCM Group of Schools, India',
+      tag: 'LEADERSHIP PROGRAMME',
+      t: 'Driving Transformational Educational Impact',
+      d: '"As the leader of an organisation serving more than 20,000 K–12 students, I found immense value in gaining direct access to Cambridge\'s world-class research, innovation, and leadership thinking."',
+      link: "Read Aniruddh's Story",
+      linkedin: '',
+      content: "The Global Education Lab leadership programme at Cambridge was an exceptionally well-curated experience. As the leader of an organisation serving more than 20,000 K–12 students, I found immense value in gaining direct access to Cambridge's world-class research, innovation, and leadership thinking. More importantly, the programme equipped me with practical frameworks and tools that I could immediately share with our educators, school leaders, and teaching teams. Learning within the inspiring Cambridge environment made the experience even more meaningful, reinforcing a strong sense of purpose and a renewed commitment to driving educational impact. — Dr. Aniruddh Gupta, CEO - DCM Group of Schools, India"
     },
     {
       img: bidishaBanerjee,
@@ -764,13 +765,6 @@ function Testimonials() {
 
   const testimonials = [
     {
-      q: "An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances. This journey has been a true milestone and a benchmark for many exciting initiatives ahead. Grateful for the connections, collaborations, and shared vision that emerged throughout the week. Looking forward to announcing several new engagements and partnerships very soon. The journey has just begun.",
-      a: "Dr. Dhruv Galgotia",
-      r: "CEO, Galgotias Education Group — GILP Delegate",
-      img: dhruvGalgotia,
-      link: "https://lnkd.in/p/d7vJ9pPF"
-    },
-    {
       q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, covering AI, geopolitics, marketing, branding, strategy, rhetoric, entrepreneurship and so much more. All taught by energetic and engaging leaders in their respective fields. I also learnt so much from my fellow participants, not least coming away feeling hugely positive about the enduring potential and dynamism of Indian entrepreneurialism. That too, in the confines of one of the world's finest Universities and one of its most beautiful cities. Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
       a: "Sam Tully",
       r: "Trustee, Pratham UK — GILP Delegate",
@@ -846,6 +840,13 @@ function Testimonials() {
       r: "Founder, CarbonSynq Earth — GEL Graduate Summer Programme",
       img: pushkarSingh,
       link: "https://lnkd.in/p/gePkxj4N"
+    },
+    {
+      q: "My two weeks at Cambridge felt like a dream. I made real friendships, met amazing people from different countries, and felt myself growing in confidence every day. The classes in pitching, entrepreneurship, and public speaking were truly inspiring.",
+      a: "Samvritha",
+      r: "Young Leader Delegate — Young Leaders",
+      img: samvritha,
+      link: "https://www.globaledulab.com/post/just-two-weeks-my-summer-at-cambridge-with-global-education-lab"
     }
   ]
   

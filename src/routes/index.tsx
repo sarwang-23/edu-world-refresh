@@ -262,11 +262,11 @@ function OurProgrammes() {
 function ImpactSoFar() {
   const stats = [
     { icon: <Users className="h-6 w-6" />, value: "5,000+", label: "Learners Empowered", desc: "Across programmes globally" },
-    { icon: <Rocket className="h-6 w-6" />, value: "120+", label: "Startups Supported", desc: "From ideation to scale" },
+    { icon: <Rocket className="h-6 w-6" />, value: "50+", label: "Startups Supported", desc: "From ideation to scale" },
     { icon: <Globe2 className="h-6 w-6" />, value: "25+", label: "Countries", desc: "Represented in our community" },
     { icon: <Leaf className="h-6 w-6" />, value: "10,000+", label: "Lives Impacted", desc: "Estimated direct reach" },
-    { icon: <Handshake className="h-6 w-6" />, value: "15+", label: "University Partners", desc: "World-class institutions" },
-    { icon: <GraduationCap className="h-6 w-6" />, value: "35+", label: "Startups Pitched", desc: "At Cambridge Demo Days" },
+    { icon: <Handshake className="h-6 w-6" />, value: "100+", label: "Organisations Served", desc: "World class organizations" },
+    { icon: <BookOpen className="h-6 w-6" />, value: "20+", label: "Programmes Delivered", desc: "Global executive cohorts" },
   ];
 
   return (
@@ -427,6 +427,34 @@ function Voices() {
           {/* Left Side: Lakshmi Samyuktha Kotha & Prof. Jaideep Prabhu FBA */}
           <div className="lg:col-span-6 flex flex-col gap-6">
 
+            {/* Testimonial 2: Prof. Jaideep Prabhu FBA */}
+            <div className="group relative rounded-3xl bg-forest-deep p-8 text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1 overflow-hidden hover:border-gold/40 transition-colors duration-300">
+              <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[80px]" />
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-gold text-sm">★</span>
+                    ))}
+                  </div>
+                  <span className="bg-gold/15 border border-gold/30 text-gold text-[12px] font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full">
+                    Cambridge Judge Business School
+                  </span>
+                </div>
+                <p className="text-[15px] md:text-[15.5px] text-cream/95 leading-[1.7] font-normal mb-6">
+                  "GEL's programmes offer a roadmap for frugal innovation across a broad segment of learners. Learners return with fresh ideas, deeper confidence, and a renewed sense of purpose, ready to lead change for businesses, teams or themselves."
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4 border-t border-white/15">
+                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <div>
+                  <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
+                  <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
+                </div>
+              </div>
+            </div>
+
             {/* Testimonial 1: Lakshmi Samyuktha Kotha */}
             <div className="group relative rounded-3xl bg-forest-deep p-8 text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1 overflow-hidden hover:border-gold/40 transition-colors duration-300">
               <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gold/10 blur-[80px]" />
@@ -455,33 +483,7 @@ function Voices() {
               </div>
             </div>
 
-            {/* Testimonial 2: Prof. Jaideep Prabhu FBA */}
-            <div className="group relative rounded-3xl bg-forest-deep p-8 text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1 overflow-hidden hover:border-gold/40 transition-colors duration-300">
-              <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[80px]" />
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-gold text-sm">★</span>
-                    ))}
-                  </div>
-                  <span className="bg-gold/15 border border-gold/30 text-gold text-[12px] font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full">
-                    Cambridge Judge Business School
-                  </span>
-                </div>
-                <p className="text-[15px] md:text-[15.5px] text-cream/95 leading-[1.7] font-normal mb-6">
-                  "GEL's programmes offer a roadmap for frugal innovation across a broad segment of learners. Learners return with fresh ideas, deeper confidence, and a renewed sense of purpose, ready to lead change for businesses, teams or themselves."
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
-                <div>
-                  <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
-                  <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
-                </div>
-              </div>
-            </div>
+          
 
           </div>
 

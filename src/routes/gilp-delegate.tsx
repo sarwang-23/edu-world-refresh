@@ -294,7 +294,7 @@ function GilpDelegatePage() {
                       </select>
                       <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                     </div>
-                    <input type="tel" required placeholder="98765 43210" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
+                    <input type="tel" required placeholder="7911 123456" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
                   </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Utensils, Landmark, Castle } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { COUNTRY_CODES } from '@/data/countryCodes'
 import { Footer } from './index'
 import newCertificateImg from '../assets/new-certificate.png'
@@ -8,6 +8,11 @@ import gilpBannerImg from '../assets/gilp-banner.png'
 import gilpHeroPremiumImg from '../assets/gilp_hero_premium.png'
 import gilpThinkingHorizonImg from '../assets/gilp_thinking_horizon.png'
 import gilpClassroomFinalImg from '../assets/glip_final_classroom.jpg'
+import logoJBS from '../assets/logo-cambridge-jbs.png'
+import graduateImg from '../assets/graduate_cambridge.jpg'
+import hiltonImg from '../assets/hilton_cambridge.jpg'
+import hotelDuVinImg from '../assets/hotel_du_vin.jpg'
+import universityArmsImg from '../assets/university_arms.jpg'
 import speaker1Img from '../assets/speaker1.jpg'
 import speaker2Img from '../assets/speaker2.jpg'
 import speaker3Img from '../assets/speaker3.jpg'
@@ -19,6 +24,12 @@ import speaker8Img from '../assets/speaker8.jpg'
 import speaker9Img from '../assets/speaker9.jpg'
 import speaker10Img from '../assets/speaker10.jpg'
 import speakerNickImg from '../assets/nick_ford_young.png'
+
+import alumniBidishaImg from '../assets/alumni-bidisha.jpg'
+import alumniSamImg from '../assets/alumni-sam.jpg'
+import alumniRamaImg from '../assets/alumni-ramashankar.jpg'
+import alumniAnandImg from '../assets/alumni-anand.jpg'
+import alumniParagImg from '../assets/alumni-parag.jpg'
 import speakerLakshmiImg from '../assets/speaker-lakshmi.png'
 import alumni1Img from '../assets/alumni1.jpg'
 import alumni2Img from '../assets/alumni2.jpg'
@@ -84,8 +95,8 @@ function Page() {
       <Hero onDownloadBrochure={() => setBrochureOpen(true)} />
       <BrochureModal open={brochureOpen} onClose={() => setBrochureOpen(false)} />
       <ProgrammeOverview />
-      <LordsMarquee />
       <LordsCricket />
+      <LordsMarquee />
       <Curriculum />
       <ProgrammeStructure />
       <Outcomes />
@@ -196,7 +207,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
             <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders & CXOs
@@ -227,14 +238,22 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
               Apply Now <ArrowUpRight className="h-4 w-4" />
             </button>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
-            <span className="h-px w-10 bg-forest/30" />
-            CAMBRIDGE JUDGE BUSINESS SCHOOL CERTIFIED
+          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-forest/30" />
+              <span>CERTIFIED BY</span>
+            </div>
+            <img 
+              src={logoJBS} 
+              alt="University of Cambridge Judge Business School" 
+              className="w-56 md:w-72 mix-blend-multiply opacity-90 object-contain"
+            />
           </div>
         </div>
 
-        <div className="relative lg:col-span-6">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
+        <div className="relative lg:col-span-6 lg:mt-40">
+          <div className="relative aspect-video overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
+            <style>{`video::-webkit-media-text-track-display { display: none !important; } video::cue { visibility: hidden; }`}</style>
             <video
               src="/Globalindialeadershipprogramme.mp4"
               poster={gilpHeroPremiumImg}
@@ -243,12 +262,14 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
               loop
               muted
               playsInline
+              onLoadedMetadata={(e) => {
+                const video = e.currentTarget;
+                for (let i = 0; i < video.textTracks.length; i++) {
+                  video.textTracks[i].mode = 'hidden';
+                }
+              }}
             />
-            {/* Top-left location badge */}
-            <div className="absolute top-5 left-5 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-white border border-white/20 pointer-events-none">
-               <MapPin className="h-4 w-4 text-gold shrink-0" />
-               <span className="text-sm font-semibold tracking-wide">Cambridge Judge Business School</span>
-            </div>
+
           </div>
         </div>
       </div>
@@ -299,7 +320,6 @@ function ProgrammeOverview() {
               {[
                 { val: '5', label: 'Days Residential' },
                 { val: '6', label: 'Core Modules' },
-                { val: 'Rolling', label: 'Next Cohort' },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-[22px] font-bold text-forest-deep">{s.val}</span>
@@ -731,11 +751,11 @@ function WhoShouldAttend() {
             <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">Next Steps</h3>
             <ul className="space-y-4">
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
-                <span className="text-[14.5px] font-bold text-forest-deep">Round 1</span>
+                <span className="text-[14.5px] font-bold text-forest-deep">Step 1</span>
                 <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">Connect with our team</span>
               </li>
               <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
-                <span className="text-[14.5px] font-bold text-forest-deep">Round 2</span>
+                <span className="text-[14.5px] font-bold text-forest-deep">Step 2</span>
                 <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">Receive tailored guidance</span>
               </li>
             </ul>
@@ -901,7 +921,7 @@ function Packages() {
 function AccommodationSection() {
   const hotels = [
     {
-      src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=800',
+      src: graduateImg,
       alt: 'Graduate by Hilton',
       name: 'Graduate by Hilton',
       walk: '6 mins walk',
@@ -909,7 +929,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stngagu-graduate-cambridge/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1551882547-ff40eb0d8d73?auto=format&fit=crop&q=80&w=800',
+      src: hiltonImg,
       alt: 'Hilton Cambridge City Centre',
       name: 'Hilton Cambridge City Centre',
       walk: '7 mins walk',
@@ -917,7 +937,7 @@ function AccommodationSection() {
       link: 'https://www.hilton.com/en/hotels/stnhchi-hilton-cambridge-city-centre/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1582719478250-c89af14eb366?auto=format&fit=crop&q=80&w=800',
+      src: hotelDuVinImg,
       alt: 'Hotel du Vin',
       name: 'Hotel du Vin',
       walk: '2 mins walk',
@@ -925,7 +945,7 @@ function AccommodationSection() {
       link: 'https://www.hotelduvin.com/locations/cambridge/',
     },
     {
-      src: 'https://images.unsplash.com/photo-1542314831-c53cd3816002?auto=format&fit=crop&q=80&w=800',
+      src: universityArmsImg,
       alt: 'University Arms Hotel',
       name: 'University Arms Hotel',
       walk: '11 mins walk',
@@ -967,19 +987,21 @@ function AccommodationSection() {
                   alt={hotel.alt}
                   className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Walk badge */}
-                <div className="absolute bottom-3 left-3 right-3 bg-forest-deep/90 backdrop-blur-md text-white text-[13px] font-medium px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
-                  </svg>
-                  <span className="truncate">{hotel.walk} from Judge Business School</span>
-                </div>
               </div>
 
               {/* Card body */}
               <div className="p-5 flex flex-col flex-1">
                 <p className="text-[13px] text-gold tracking-widest mb-1">{hotel.stars}</p>
                 <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-4">{hotel.name}</h3>
+                
+                {/* Walk badge */}
+                <div className="bg-forest-deep text-white text-[13px] font-medium px-3.5 py-2.5 rounded-xl flex items-center justify-center gap-2 mb-4 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+                  </svg>
+                  <span className="truncate">{hotel.walk} from Judge Business School</span>
+                </div>
+
                 <a
                   href={hotel.link}
                   target="_blank"
@@ -1127,7 +1149,56 @@ function AlumniTestimonials() {
       quote: "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.",
       img: alumni5Img
     },
+    {
+      name: 'Bidisha Bannerjee',
+      role: 'Partner, TalentElement (India)',
+      quote: "Beyond classroom learning, the programme transformed how I see leadership. The real impact came through conversations, diverse perspectives, and shared curiosity. It reinforced that meaningful learning happens in exchange and reflection, where ideas evolve and new possibilities quietly take shape.",
+      img: alumniBidishaImg
+    },
+    {
+      name: 'Sam Tully',
+      role: 'Trustee, Pratham (UK)',
+      quote: "A week of intensive, high-quality learning across innovation, AI, governance, and strategy. The programme's structure, faculty expertise, and diverse perspectives made it deeply impactful. It provided both big-picture insights and practical takeaways for navigating global business. It felt like a Rolls Royce.",
+      img: alumniSamImg
+    },
+    {
+      name: 'Rama Shankar Pandey',
+      role: 'MD, Work With Dignity (India)',
+      quote: "Walking through Cambridge's historic corridors is a humbling reminder of the power of ideas and lifelong learning. The programme reinforced that true leadership comes from curiosity, diverse perspectives, and purpose-driven collaboration. It's an experience that inspires you to keep questioning, learning, and growing.",
+      img: alumniRamaImg
+    },
+    {
+      name: 'Anand Rao',
+      role: 'Partner, Tiger Analytics (UK)',
+      quote: "The programme offered a powerful lens on leadership shaped by AI, sustainability, and geopolitics. Engaging with global peers and faculty, one insight stood out: future leaders must blend technological fluency with disciplined capital stewardship. Cambridge leaves you more curious, reflective, and prepared for complex decisions ahead.",
+      img: alumniAnandImg
+    },
+    {
+      name: 'Parag Bawdekar',
+      role: 'MD, Pacific Blue Cargo Pvt Ltd',
+      quote: "The programme strengthened the leadership and AI capabilities needed to succeed in a fast-changing global business environment. It offered valuable perspectives on strategic decision-making, communication, innovation, and responsible technology adoption, equipping me with the skills to guide teams, and lead with greater confidence.",
+      img: alumniParagImg
+    }
   ]
+
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0))
+    setScrollLeft(scrollRef.current?.scrollLeft || 0)
+  }
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - (scrollRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 1.5
+    if (scrollRef.current) scrollRef.current.scrollLeft = scrollLeft - walk
+  }
+  const onMouseUp = () => setIsDragging(false)
 
   return (
     <section className="bg-white py-24 border-t border-forest/5">
@@ -1135,14 +1206,25 @@ function AlumniTestimonials() {
         <div className="text-center mb-16">
           <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-2">What Our Alumni Say</h2>
           <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-normal">"Leadership Learning That Feels Like a Rolls Royce"</p>
+          <p className="text-[13px] text-forest/50 mt-3 flex items-center justify-center gap-1.5">
+            <span>←</span> Drag to explore <span>→</span>
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8">
+        <div
+          ref={scrollRef}
+          className={`flex gap-6 overflow-x-auto pb-4 select-none scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseUp}
+        >
           {alumni.map((a, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
+            <div key={i} className="flex flex-col items-center text-center flex-shrink-0 w-[220px] md:w-[240px]">
               <div className="h-[90px] w-[90px] rounded-full overflow-hidden mb-5 shadow-sm border border-forest/10">
-                <img src={a.img} alt={a.name} className="w-full h-full object-cover" />
+                <img src={a.img} alt={a.name} className="w-full h-full object-cover" draggable={false} />
               </div>
-              <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">“</span>
+              <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">"</span>
               <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">{a.name}</h3>
               <p className="text-[11.5px] text-forest/80 mb-5">{a.role}</p>
               <p className="text-[12.5px] text-forest-deep/80 leading-[1.7] hyphens-auto">{a.quote}</p>
@@ -1335,13 +1417,7 @@ function FacultyGrid() {
       bio: 'Nick is the CEO of Boldstream within the Boldspace Group, and is now at the forefront of redesigning the marketing operating model through the practical application of AI, with clients including Virgin Atlantic, British Heart Foundation and Rathbones. A respected voice in marketing and brand strategy, Nick has been a guest lecturer on the Cambridge Judge Business School MBA programme, as well as at NYU in New York.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
-    {
-      img: speakerLakshmiImg,
-      name: 'Lakshmi Samyuktha Kotha',
-      role: 'Executive Dean, Narayana Group of Schools – India',
-      bio: 'Through my participation in both the Cambridge and Finland programmes, I gained exceptional exposure to the best global practices in education. This experience has truly inspired me to implement some of these changes, which will positively impact over 30,000 students across our institutions.',
-      accent: 'from-gold/70 via-gold to-gold/50',
-    },
+
   ]
 
   return (

@@ -3,6 +3,10 @@ import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
 import samTully from '@/assets/people/sam_tully.jpg';
 import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
 
+import danImg from '@/assets/Dan.jpeg';
+import charlieImg from '@/assets/Roddie_Charles.jpg';
+import samvrithaImg from '@/assets/people/samvritha.png';
+
 type TestimonialProps = {
   q: string;
   a: string;
@@ -21,27 +25,27 @@ export function SharedTestimonials({
 }) {
   const testimonials = customTestimonials || [
     {
-      q: "There were times during the weekend when I knew that what I was learning would stick with me throughout my career journey... There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence.",
-      a: "Rosalind Howell",
-      r: "Zero-to-One Participant",
-      tag: "Startup Bootcamp",
-      img: rosalindHowell,
+      q: "My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring.",
+      a: "Samvritha",
+      r: "Young Leader Delegate",
+      tag: "Young Leaders",
+      img: samvrithaImg,
       featured: true,
     },
     {
       q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
-      a: "Sam Tully",
-      r: "Trustee, Pratham UK",
+      a: "Dan Stert",
+      r: "Programme Director",
       tag: "GILP Delegate",
-      img: samTully,
+      img: danImg,
       featured: false,
     },
     {
       q: "I was humbled and exhilarated for the recognition of the potential of EquiGen... This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
-      a: "Dr. Yvonne Walburga",
-      r: "Post-doctoral Research Affiliate",
+      a: "Charles Roddie",
+      r: "Advisor",
       tag: "University of Cambridge",
-      img: yvonneWalburga,
+      img: charlieImg,
       featured: false,
     }
   ];

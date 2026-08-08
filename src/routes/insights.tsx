@@ -4,7 +4,7 @@ import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Ma
 import { Link } from "@tanstack/react-router";
 import insightsHeroImg from "@/assets/insights-hero-new.jpg";
 import cambridgeImg from "@/assets/cambridge_5.jpg";
-import featuredRealImg from "@/assets/insights-hero-new.jpg";
+import featuredRealImg from "@/assets/gilp_hero_premium.png";
 import studentsImg from "@/assets/students.jpg";
 import teachersImg from "@/assets/teachers.jpg";
 import frugalAiCover from "@/assets/frugal-ai-cover.jpg";

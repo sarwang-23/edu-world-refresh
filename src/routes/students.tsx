@@ -10,10 +10,10 @@ import studentsImg from '../assets/students.jpg'
 import cambridgeImg from '../assets/cambridge_6.jpg'
 import heroImg from '../assets/young-leaders.png'
 import teachersImg from '../assets/teachers.jpg'
-import stemImg from '../assets/STEM1.jpg'
-import publicSpeakingImg from '../assets/IMG_4915.jpg'
-import siteVisitImg from '../assets/site visit.jpg'
-import socialCulturalImg from '../assets/IMG_5138_2.jpg'
+import stemImg from '../assets/STEM exploration.png'
+import publicSpeakingImg from '../assets/Public speaking.png'
+import siteVisitImg from '../assets/Site visit (4).png'
+import socialCulturalImg from '../assets/Social & Cultural (4).png'
 import mentor1 from '../assets/YusufH.jpg'
 import mentor2 from '../assets/IMG_4915.jpg'
 import mentor3 from '../assets/IMG_5138_2.jpg'
@@ -88,7 +88,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-2.5">
               {[
                 { icon: <GraduationCap className="h-4 w-4" />, label: 'Cambridge, UK' },
-                { icon: <Users className="h-4 w-4" />, label: 'Ages 13–18' },
+                { icon: <Users className="h-4 w-4" />, label: 'Ages 13–17' },
                 { icon: <Star className="h-4 w-4" />, label: 'Summer Experience' },
               ].map((b, i) => (
                 <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-forest/10 px-4 py-2 text-[13.5px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
@@ -149,10 +149,10 @@ function Hero() {
 function StatsMarquee() {
   const stats = [
     { val: '2 Tracks', label: 'Academic Pathways', sub: 'Entrepreneurship & STEM' },
-    { val: 'Ages 13–18', label: 'Target Cohort', sub: 'Young leaders & innovators' },
-    { val: 'Cambridge', label: 'Base', sub: 'Girton College, Cambridge' },
+    { val: 'Ages 13–17', label: 'Target Cohort', sub: 'Young leaders & innovators' },
+    { val: 'Cambridge', label: 'Location', sub: 'Cambridge College' },
     { val: 'Summer', label: 'Next Cohort', sub: 'Applications Open' },
-    { val: '30+', label: 'Expert Sessions', sub: 'Academics & industry leaders' },
+    { val: '30+', label: 'Academic hour Sessions', sub: 'Academics & industry leaders' },
     { val: '100%', label: 'Supervised', sub: 'Safe residential environment' },
   ]
   const repeated = [...stats, ...stats, ...stats]
@@ -252,18 +252,21 @@ function CoreElements() {
                   className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 {/* deeper gradient so text is readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/10 to-transparent" />
 
-                {/* top-left number badge */}
-                <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[15px] font-bold text-white/80">
-                  {e.num}
-                </div>
+                {/* top row container */}
+                <div className="absolute top-4 left-4 right-4 flex items-start justify-between gap-2">
+                  {/* number badge */}
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[15px] font-bold text-white shadow-sm">
+                    {e.num}
+                  </div>
 
-                {/* top-right tag pill */}
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[15px] font-bold uppercase tracking-[0.18em] text-gold backdrop-blur-sm">
-                    {e.tag}
-                  </span>
+                  {/* tag pill */}
+                  <div className="flex-1 flex justify-end">
+                    <span className="inline-flex text-center items-center gap-1.5 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-gold backdrop-blur-sm">
+                      {e.tag}
+                    </span>
+                  </div>
                 </div>
 
                 {/* bottom: icon + title + desc */}
@@ -394,6 +397,7 @@ function PartnersAndMentors() {
 
               <Link
                 to="/about"
+                hash="people"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
               >
                 Meet the Facilitators
@@ -510,7 +514,7 @@ function ChooseYourTrack() {
 
             {/* full-width cinematic image footer */}
             <div className="relative h-52 mt-auto overflow-hidden">
-              <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover object-[center_30%] group-hover:scale-108 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
                 <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">

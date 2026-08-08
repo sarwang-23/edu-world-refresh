@@ -34,7 +34,6 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from './index'
-import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 type Venture = {
@@ -123,7 +122,7 @@ const VENTURES: Record<string, Venture> = {
     intro: 'Project TACTO replaces screens with physical, highly tactile blocks. It is an open-source hardware system designed to make computational thinking and coding education accessible to visually impaired learners by utilizing hands-on, tactile interaction and real-time audio feedback.',
     sector: 'EdTech · Accessible Education · Open-Source Hardware',
     stage: 'Seed · Award Winning',
-    origin: 'Galgotias University, India',
+    origin: 'India',
     markets: 'Global',
     logo: <img src="/tacto/logo.png" alt="Project TACTO Logo" className="w-12 h-12 object-contain drop-shadow-md" />,
     heroImg: '/tacto/hero.png',
@@ -154,9 +153,9 @@ const VENTURES: Record<string, Venture> = {
       { l: 'UN SDG Goal', v: 'SDG 4', icon: <Globe2 className="h-5 w-5" /> },
     ],
     team: [
-      { name: 'Gaurang Pant', role: 'Co-Founder', img: '/tacto/gaurang.png', bio: 'Innovator and developer focused on accessible education technologies and open-source hardware systems.' },
-      { name: 'Shristi Mandoliya', role: 'Co-Founder', img: '/tacto/shristi.png', bio: 'Passionate about creating inclusive learning experiences and breaking down barriers in STEM for every learner.' },
-      { name: 'Kavya Singh', role: 'Co-Founder', img: '/tacto/kavya.png', bio: 'Dedicated to leveraging technology for social impact and equitable quality education across the globe.' },
+      { name: 'Gaurang Pant', role: 'Co-Founder', bio: 'Innovator and developer focused on accessible education technologies and open-source hardware systems.' },
+      { name: 'Shristi Mandoliya', role: 'Co-Founder', bio: 'Passionate about creating inclusive learning experiences and breaking down barriers in STEM for every learner.' },
+      { name: 'Kavya Singh', role: 'Co-Founder', bio: 'Dedicated to leveraging technology for social impact and equitable quality education across the globe.' },
     ],
     seeking: [
       { icon: <Users className="h-5 w-5" />, t: 'Pilot Partners', d: 'Schools, educational institutions, and NGOs working with visually impaired students to pilot and refine the tactile learning system.' },
@@ -351,7 +350,6 @@ function VenturePage() {
       <MainContent v={v} />
       <GelsRole v={v} />
       <BottomCTA v={v} />
-      {v.slug !== 'carbonsynq' && <SharedTestimonials />}
       <Footer />
     </div>
   )

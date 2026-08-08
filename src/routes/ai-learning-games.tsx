@@ -143,7 +143,7 @@ const whyItWorks = [
 ];
 
 const stats = [
-  { value: "10,000+", label: "Learners Engaged" },
+  { value: "5,000+", label: "Learners Engaged" },
   { value: "75+", label: "Institutions" },
   { value: "30+", label: "Countries" },
   { value: "95%", label: "Learners Recommend" },

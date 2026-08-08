@@ -29,7 +29,7 @@ function ContactPage() {
     firstName: "",
     lastName: "",
     email: "",
-    phoneCode: "🇮🇳 +91",
+    phoneCode: "🇬🇧 +44",
     phone: "",
     organisation: "",
     message: "",
@@ -194,7 +194,7 @@ function ContactPage() {
                     <input
                       type="text"
                       required
-                      placeholder="Karan"
+                      placeholder="Johannes"
                       value={formData.firstName}
                       onChange={handleChange("firstName")}
                       className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
@@ -207,7 +207,7 @@ function ContactPage() {
                     <input
                       type="text"
                       required
-                      placeholder="Sharma"
+                      placeholder="Kaneil"
                       value={formData.lastName}
                       onChange={handleChange("lastName")}
                       className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
@@ -249,7 +249,7 @@ function ContactPage() {
                     </select>
                     <input
                       type="tel"
-                      placeholder="98765 43210"
+                      placeholder="7911 123456"
                       value={formData.phone}
                       onChange={handleChange("phone")}
                       className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
@@ -265,9 +265,9 @@ function ContactPage() {
                   <div className="grid grid-cols-2 gap-2">
                     {[
                       "General Enquiry",
-                      "School Leaders",
-                      "Business Leaders",
-                      "Students & Teachers",
+                      "Partnerships",
+                      "Executive Programmes",
+                      "Student Programmes",
                       "Global Ventures",
                       "Media & Press",
                     ].map((tag, i) => (
@@ -298,7 +298,7 @@ function ContactPage() {
                   </div>
                   <input
                     type="text"
-                    placeholder="Your school or company name"
+                    placeholder="Your organisation name"
                     value={formData.organisation}
                     onChange={handleChange("organisation")}
                     className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/70 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"

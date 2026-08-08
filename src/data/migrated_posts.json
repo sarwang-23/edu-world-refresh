@@ -41,8 +41,8 @@
       },
       {
         "type": "image",
-        "src": "true",
-        "caption": ""
+        "src": "/blog-images/gilp_welcome_pack_table.jpg",
+        "caption": "Welcome packs and programme materials at Cambridge Judge Business School"
       },
       {
         "type": "paragraph",
@@ -57,7 +57,7 @@
         "text": "From 9-13 March 2026, senior executives and entrepreneurs from around the world convened alongside the world-class faculty of the Judge Business School, to work through the practical challenges of leading in an AI-driven, globally connected economy. Across five intensive days, participants built actionable frameworks across Strategy, Artificial Intelligence, Frugal Innovation, Corporate Governance, Negotiation and Cross-Cultural Leadership, leaving Cambridge with tools they could deploy immediately, in the organisations they returned to."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Cohort Representation:"
       },
       {
@@ -70,11 +70,11 @@
       },
       {
         "type": "image",
-        "src": "true",
-        "caption": ""
+        "src": "/blog-images/gilp_march_cohort_group.jpg",
+        "caption": "The March 2026 cohort of the Global India Leadership Programme at Cambridge Judge Business School"
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Course Modules and Faculty:"
       },
       {
@@ -82,7 +82,53 @@
         "text": "A distinctive feature of the programme was that all sessions were delivered by instructors affiliated with the University of Cambridge, bringing world-class academic expertise together with practical insights relevant to leadership in global and emerging markets. Through lectures, case discussions, and interactive sessions, participants examined critical themes such as AI-driven transformation, corporate governance, innovation systems, customer-centric strategy, negotiation frameworks, and the evolving responsibilities of global leaders."
       },
       {
-        "type": "paragraph",
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">1. Doing Better With Less: Frugal Innovation for Global India Leaders</span> <span class=\"italic font-semibold\">by Professor Jaideep Prabhu:</span><br/>In most organisations, resource constraints are treated as obstacles. This module was designed to challenge that assumption directly. Drawing on global case studies and India's proven track record of doing more with less, leaders examined how scarcity, when approached strategically, becomes a driver of creativity, competitive differentiation and sustainable growth.</p>"
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/gilp_jaideep_prabhu_lecture.jpg",
+        "caption": "Professor Jaideep Prabhu leading the Frugal Innovation module at Cambridge Judge Business School"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">2. The Thinking Edge: How Leaders Win With AI</span> <span class=\"italic font-semibold\">by Dr. Mark Bloomfield:</span><br/>Every organisation is racing to adopt AI. Few are pausing to ask what gets lost in the process. This module cut to the heart of that tension, not as a technology debate, but as a leadership one. Where does the algorithm end and human judgement begin? Through simulation, red teaming and hard conversations about accountability, participants confronted the decisions that cannot and should not be delegated to a machine. In the AI era, knowing what to automate matters as leaders take on turbulent management challenges.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">3. Branding Strategies in the Post-Digital Era</span> <span class=\"italic font-semibold\">by Professor Eden Yin:</span><br/>Algorithms now decide what customers see, when they see it and how they feel about it. In this environment, brand loyalty is harder to earn and easier to lose than at any point in marketing history. This module confronted that reality head-on. Leaders examined how the fundamentals of brand building – trust, narrative, emotional resonance, must be reimagined for markets where platform technologies and AI shape perception at scale.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">4. Do We Understand the Risks: Macro Threats with Micro Implications</span> <span class=\"italic font-semibold\">by Professor Kamiar Mohaddes:</span><br/>The global economy is under pressure from multiple directions simultaneously – geopolitical fragmentation, climate shocks, persistent inflation and the uneven disruption of AI. The risks are real and accelerating. But how well do leaders actually understand them? This module was designed to move beyond headlines and provoke Leaders to stress-test their assumptions, interrogate live data and examine what organisations can practically do when conditions deteriorate.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">5. Communication and the Art of Leadership</span> <span class=\"italic font-semibold\">by Guy Doza:</span><br/>The most technically brilliant strategy fails without the ability to bring people with you. This module was designed to focus on the mechanics of persuasion and how structure, language and delivery shape whether a message lands or falls flat. Leaders analysed the rhetorical tools used by the world's most effective communicators and applied them directly to the high-stakes business contexts they navigate every day. Because leadership, at its core, is an act of communication.</p>"
+      },
+      {
+        "type": "image",
+        "src": "/blog-images/gilp_guy_doza_session.jpg",
+        "caption": "Guy Doza presenting the Communication and the Art of Leadership workshop session"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">6. Managing in the AI Era</span> <span class=\"italic font-semibold\">by Elizabeth Osta:</span><br/>Pilot projects are easy. Scale is hard. This module confronted the messy reality that sits between an organisation's AI ambitions and its actual results – fragmented implementation, governance blind spots and the persistent tension between commercial pressure and societal responsibility. Leaders examined what it takes to move from isolated experimentation to a coherent, portfolio-level AI strategy that performs, governs and endures.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">7. Corporate Governance in Practice: Shareholders, Stakeholders, and Incentives</span> <span class=\"italic font-semibold\">by Professor Raghavendra Rau:</span><br/>What is a company actually for? That question, deceptively simple, endlessly contested, sat at the heart of this module. Using Hershey as a live case, leaders interrogated the governance structures that emerge when a firm carries both commercial obligations and a deeper institutional mission. What happens when fiduciary duty and legacy pull in opposite directions? Who does the board ultimately answer to when multiple principals are in play?</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">8. Customer-Centric Innovation in the AI Era</span> <span class=\"italic font-semibold\">by Professor Shasha Lu:</span><br/>AI is only as valuable as the customer problem it solves. This module started there, with the customer, and worked backwards. Leaders mapped the trajectory of key AI technologies, not as a technical exercise, but as a strategic one: where do these tools genuinely create advantage and where do they simply create noise? Moving through the discovery, design and delivery stages of value creation, this module built a practical lens for embedding AI into innovation strategies that are customer-driven, commercially grounded and built to last.</p>"
+      },
+      {
+        "type": "html",
+        "content": "<p class=\"text-[16.5px] leading-[1.8] text-[#161616]\"><span class=\"font-bold\">9. Brand-Led Innovation Clinic</span> <span class=\"italic font-semibold\">by Marvin Fernandes:</span><br/>Branding is not a marketing problem, it is a business strategy. In this hands-on clinic, leaders worked through live branding challenges from within the cohort, applying strategic brand positioning and design thinking to diagnose bottlenecks, unlock differentiation and craft scalable brand narratives for domestic and international markets.</p>"
+      },
+      {
+        "type": "heading",
         "text": "Critical Takeaways from the 5-day Executive Leadership Programme:"
       },
       {
@@ -90,7 +136,7 @@
         "text": "Across five days and ten sessions, the Global India Leadership Programme 2026 covered substantial ground - from AI Strategy and Frugal Innovation to Corporate Governance, Brand, Negotiation and Macroeconomic Risk. This segment offers a distillation of the critical insights, recurring themes and actionable conclusions that emerged when world-class faculty met a cohort of experienced, opinionated and intellectually engaged leaders."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Testimonials from Leaders who participated in the Global India Leadership Programme:"
       },
       {
@@ -99,7 +145,7 @@
         "caption": ""
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Conclusion:"
       },
       {
@@ -111,16 +157,11 @@
         "text": "To our participants, faculty and everyone who made this week possible: thank you. You made it what it was. We are already looking ahead, not just to the next programme, but to the community of learners we are building together: curious, capable and clear-eyed about the work still to be done."
       },
       {
-        "type": "image",
-        "src": "true",
-        "caption": ""
-      },
-      {
-        "type": "paragraph",
+        "type": "heading",
         "text": "Apply for the Next Cohort of the Global India Leadership Programme"
       },
       {
-        "type": "paragraph",
+        "type": "heading",
         "text": "References:"
       }
     ],

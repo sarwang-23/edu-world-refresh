@@ -19,7 +19,7 @@ import {
   Utensils,
   Quote,
 } from 'lucide-react'
-import schoolLeadersImg from '../assets/gilp-march-10.jpg'
+import schoolLeadersImg from '../assets/school_leaders_classroom.jpg'
 import person6Img from '../assets/person6.jpg'
 import jaideepImg from '../assets/faculty-jaideep.jpg'
 import samTullyImg from '../assets/people/sam_tully.jpg'
@@ -54,7 +54,7 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
-            <GraduationCap className="h-3.5 w-3.5 text-gold" /> For International School Leaders — Cohorts from 20+ Countries
+            <GraduationCap className="h-3.5 w-3.5 text-gold" /> Built for Principals — Cohorts from 20+ Countries
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
             The world's finest classrooms, <span className="italic text-gold">opened to you.</span>
@@ -86,13 +86,13 @@ function Hero() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
             <img
               src={schoolLeadersImg}
-              alt="School Leaders & Educators"
+              alt="Principals & School Leaders"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
               <p className="text-[15px] uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
               <p className="mt-1 text-xl font-semibold text-cream">
-                Empowering leaders across world-class ecosystems.
+                Empowering principals and educators across world-class ecosystems.
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ function WhyLeadersTravel() {
     },
     {
       icon: <GraduationCap className="h-6 w-6 text-gold" />,
-      title: "Faculty from world-leading systems",
+      title: "Faculty from Top Tier Universities",
       desc: "Sessions led by Cambridge academics, Finnish system architects, and headteachers of internationally-ranked schools.",
     },
     {
@@ -229,7 +229,7 @@ function StatsBar() {
         <div
           className="flex min-w-full shrink-0 items-center gap-x-20"
           style={{
-            animation: 'marquee-rtl 18s linear infinite',
+            animation: 'marquee-ltr 22s linear infinite',
             willChange: 'transform',
           }}
         >

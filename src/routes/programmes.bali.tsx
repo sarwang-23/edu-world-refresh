@@ -66,7 +66,7 @@ function Hero() {
     <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-16 md:pt-4 md:pb-20">
       <div className="mx-auto max-w-7xl px-6 pt-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="order-2 md:order-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
               <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
@@ -103,11 +103,11 @@ function Hero() {
               </a>
             </div>
           </div>
-          <div className="relative lg:col-span-6">
+          <div className="relative order-1 md:order-2">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
               <img src={bali4Img} alt="Green School Bali" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
+            <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
               <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
                 <Leaf className="h-5 w-5 text-gold" />
               </div>

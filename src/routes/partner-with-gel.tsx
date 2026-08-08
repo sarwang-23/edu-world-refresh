@@ -381,43 +381,13 @@ function PartnershipJourney() {
 /* ── Trusted By Marquee ── */
 function TrustedByMarquee() {
   const logos = [
-    // University of Cambridge
-    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 240 140" className="h-[5rem] w-auto" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(95, 0) scale(0.55)">
-          <path d="M 0 0 L 100 0 L 100 65 C 100 105 50 125 50 125 C 50 125 0 105 0 65 Z" fill="#d30731" stroke="#111" strokeWidth="2.5" />
-          <path d="M 38 0 L 62 0 L 62 42 L 100 42 L 100 66 L 62 66 L 62 120 C 55 122 50 123 50 123 C 45 122 38 120 38 120 L 38 66 L 0 66 L 0 42 L 38 42 Z" fill="#fff" stroke="#111" strokeWidth="2.5" />
-          
-          <g fill="#111">
-            <polygon points="50,12 47,18 53,18" /> <circle cx="50" cy="11" r="1.5" />
-            <polygon points="50,28 47,34 53,34" /> <circle cx="50" cy="27" r="1.5" />
-            <polygon points="50,80 47,86 53,86" /> <circle cx="50" cy="79" r="1.5" />
-            <polygon points="50,96 47,102 53,102" /> <circle cx="50" cy="95" r="1.5" />
-            <polygon points="20,54 17,60 23,60" /> <circle cx="20" cy="53" r="1.5" />
-            <polygon points="80,54 77,60 83,60" /> <circle cx="80" cy="53" r="1.5" />
-          </g>
-          
-          <rect x="34" y="44" width="32" height="20" rx="1" fill="#d30731" stroke="#111" strokeWidth="2.5" />
-          <circle cx="50" cy="54" r="3" fill="#f5c842" />
-          <rect x="34" y="47" width="5" height="14" fill="#f5c842" />
-          <rect x="61" y="47" width="5" height="14" fill="#f5c842" />
-
-          <g fill="#f5c842" stroke="#111" strokeWidth="1.5">
-            <path d="M 12 15 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
-            <path d="M 14 22 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
-            <path d="M 72 15 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
-            <path d="M 74 22 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
-            <path d="M 12 75 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
-            <path d="M 14 82 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
-            <path d="M 72 75 c 5 -5 15 -2 15 5 c -2 2 -8 5 -15 -5" />
-            <path d="M 74 82 c 2 -5 10 -5 12 0 c 0 5 -5 8 -12 0" />
-          </g>
-        </g>
-        
-        <text x="120" y="90" fontSize="16" fill="#111" textAnchor="middle" fontFamily="Georgia, serif" letterSpacing="0.5">UNIVERSITY OF</text>
-        <text x="120" y="112" fontSize="21" fill="#111" textAnchor="middle" fontFamily="Georgia, serif" letterSpacing="1">CAMBRIDGE</text>
-        <text x="120" y="132" fontSize="15" fill="#111" textAnchor="middle" fontFamily="Georgia, serif">Judge Business School</text>
-      </svg>
+    // University of Cambridge Judge Business School (Official)
+    <div className="flex items-center justify-center p-2 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all overflow-hidden">
+      <img
+        src="/cambridge-jbs-official.png"
+        alt="University of Cambridge Judge Business School"
+        className="w-[95%] h-[95%] object-contain scale-[1.4] hover:scale-[1.45] transition-transform duration-300"
+      />
     </div>,
     // Girton
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -508,35 +478,13 @@ function TrustedByMarquee() {
       </svg>
       <span className="text-[13px] font-bold text-forest-deep text-center leading-tight">American University<br/>of Sharjah</span>
     </div>,
-    // KREA
-    <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <svg viewBox="0 0 280 100" className="h-[4rem] w-auto" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="kreaClip">
-            <circle cx="45" cy="50" r="40" />
-          </clipPath>
-        </defs>
-        
-        <g clipPath="url(#kreaClip)">
-          {/* Top-Left to Bottom-Right */}
-          <path d="M -15,-15 L 105,105" stroke="#007DC5" strokeWidth="12" />
-          <path d="M 12,-15 L 132,105" stroke="#004F9F" strokeWidth="12" />
-          <path d="M -42,-15 L 78,105" stroke="#3AB4E6" strokeWidth="12" />
-          
-          {/* Bottom-Left to Top-Right */}
-          <path d="M -15,115 L 105,-5" stroke="#3AB4E6" strokeWidth="12" />
-          <path d="M -42,115 L 78,-5" stroke="#007DC5" strokeWidth="12" />
-          <path d="M 12,115 L 132,-5" stroke="#004F9F" strokeWidth="12" />
-
-          {/* Minimal layering to fake the weave effect */}
-          <path d="M -15,-15 L 45,45" stroke="#007DC5" strokeWidth="12" />
-          <path d="M -42,-15 L 18,45" stroke="#3AB4E6" strokeWidth="12" />
-          <path d="M 12,45 L 72,105" stroke="#004F9F" strokeWidth="12" />
-        </g>
-        
-        <text x="100" y="58" fontSize="48" fill="#58595b" fontWeight="800" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="1">KREA</text>
-        <text x="103" y="80" fontSize="22" fill="#000" fontFamily="Georgia, serif">university</text>
-      </svg>
+    // Cambridge Judge Business School (Official)
+    <div className="flex items-center justify-center p-2 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all overflow-hidden">
+      <img
+        src="/cambridge-jbs-official.png"
+        alt="University of Cambridge Judge Business School"
+        className="w-[95%] h-[95%] object-contain scale-[1.4] hover:scale-[1.45] transition-transform duration-300"
+      />
     </div>,
     // Galgotias
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
