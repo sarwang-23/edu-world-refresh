@@ -35,7 +35,12 @@ export interface BlogPost {
   content: BlogBlock[];
   rawHtml?: string;
   seo?: SeoMetadata;
+  images?: {
+    original: string;
+    local: string;
+  }[];
 }
+
 
 export const CATEGORIES = [
   "All Posts",
