@@ -432,7 +432,7 @@ function OurPeople() {
       name: "Serish Gandikota",
       title: "Advisor – Frugal AI",
       img: personSerish,
-      quote: "Co founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
+      quote: "Co-founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
     },
     {
       name: "Andrew Hatcher",
@@ -465,9 +465,14 @@ function OurPeople() {
       quote: "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme.",
     },
     {
+      name: "Sayara Thompson",
+      title: "Programme Manager",
+      quote: "Experienced programme manager with over three decades of experience leading and managing experiential learning programmes in Cambridge.",
+    },
+    {
       name: "Khushboo Kundra",
       title: "L&D Manager – APAC",
-      img: person10,
+      img: person2,
       quote: "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region.",
     },
     {
@@ -479,7 +484,7 @@ function OurPeople() {
     {
       name: "Gurmeet Kaur",
       title: "Social Media & Marketing",
-      img: person2,
+      img: person10,
       quote: "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth.",
     },
   ];
@@ -499,9 +504,9 @@ function OurPeople() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-y-12">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-y-12">
           {people.map((person) => (
-            <div key={person.name} className="group relative pt-14 h-full">
+            <div key={person.name} className="group relative pt-14 h-full w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]">
               <div className="relative flex h-full flex-col items-center justify-start rounded-[2rem] bg-white p-6 pb-8 text-center shadow-lg shadow-forest-deep/5 ring-1 ring-forest-deep/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-forest-deep/10 hover:ring-gold/30">
                 
                 {/* Overlapping Avatar */}
@@ -532,7 +537,7 @@ function OurPeople() {
                     <div className="mx-auto mt-2 mb-2 h-[2px] w-8 rounded-full bg-gold/30 transition-all duration-500 group-hover:w-16 group-hover:bg-gold" />
                   </div>
                   <p className="text-[13px] font-bold text-forest-deep/90 leading-relaxed">{person.title}</p>
-                  <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2 line-clamp-2">"{person.quote}"</p>
+                  <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2">"{person.quote}"</p>
                 </div>
                 
               </div>
