@@ -26,6 +26,7 @@ import { useState } from 'react'
 import logoJBS from '@/assets/cambridge_jbs_official.png'
 import foundersImg from '../assets/young_leaders_1.jpg'
 import tendaiImg from '../assets/tendai.jpg'
+import sydneyImg from '../assets/sydney.jpg'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({

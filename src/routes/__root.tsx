@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/Nav";
+import { ArrowUpRight } from "lucide-react";
 
 function NotFoundComponent() {
   return (
@@ -129,6 +130,14 @@ function RootComponent() {
       <Nav />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      
+      {/* Global Floating Apply Button */}
+      <Link
+        to="/apply-now"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-forest-deep px-6 py-3.5 text-[15px] font-bold tracking-wide text-gold transition-all hover:-translate-y-1 hover:bg-forest hover:shadow-2xl shadow-xl md:bottom-8 md:right-8"
+      >
+        Apply Now <ArrowUpRight className="h-4 w-4" />
+      </Link>
     </QueryClientProvider>
   );
 }

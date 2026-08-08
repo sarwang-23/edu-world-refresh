@@ -173,22 +173,7 @@ export function Nav() {
           )}
 
         </nav>
-        <Link
-          to="/apply-now"
-          search={{ source: getSourceLabel(location.pathname) }}
-          className="hidden items-center gap-2 rounded-full bg-forest-deep px-5 py-2.5 text-[15px] font-bold tracking-wide text-gold transition-all hover:bg-forest md:inline-flex"
-        >
-          Apply Now <ArrowUpRight className="h-4 w-4" />
-        </Link>
         <div className="flex items-center gap-3 md:hidden">
-          <Link
-            to="/apply-now"
-            search={{ source: getSourceLabel(location.pathname) }}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="inline-flex items-center gap-1 rounded-full bg-forest-deep px-4 py-2 text-[13px] font-bold tracking-wide text-gold transition-all hover:bg-forest"
-          >
-            Apply <ArrowUpRight className="h-3 w-3" />
-          </Link>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1 text-forest">
             {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </button>

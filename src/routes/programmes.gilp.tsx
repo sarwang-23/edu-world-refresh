@@ -246,7 +246,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             <img 
               src={logoJBS} 
               alt="University of Cambridge Judge Business School" 
-              className="w-56 md:w-72 mix-blend-multiply opacity-90 object-contain"
+              className="w-56 md:w-72 mix-blend-multiply opacity-90 object-contain -ml-4 sm:ml-0"
             />
           </div>
         </div>

@@ -34,18 +34,18 @@ export function SharedTestimonials({
     },
     {
       q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce.",
-      a: "Dan Stert",
-      r: "Programme Director",
+      a: "Sam Tully",
+      r: "Trustee, Pratham UK",
       tag: "GILP Delegate",
-      img: danImg,
+      img: samTully,
       featured: false,
     },
     {
       q: "I was humbled and exhilarated for the recognition of the potential of EquiGen... This weekend emphasized the power of an amazing team, driven by a single vision and a clear purpose. Building an entrepreneurial mindset as a researcher is a powerful toolkit.",
-      a: "Charles Roddie",
-      r: "Advisor",
+      a: "Dr. Yvonne Walburga",
+      r: "Post-doctoral Research Affiliate",
       tag: "University of Cambridge",
-      img: charlieImg,
+      img: yvonneWalburga,
       featured: false,
     }
   ];
