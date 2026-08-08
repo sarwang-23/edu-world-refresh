@@ -91,10 +91,10 @@ export function SharedTestimonials({
               </div>
 
               {/* Big quote mark */}
-              <span className="block text-[6rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">"</span>
+              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">"</span>
 
-              {/* Quote text - Made larger to fill space */}
-              <p className="text-[20px] md:text-[24px] text-forest-deep/90 leading-[1.65] font-medium -mt-6 mb-8 max-w-xl">
+              {/* Quote text - Adjusted size for better balance */}
+              <p className="text-[18px] md:text-[20px] text-forest-deep/90 leading-[1.65] font-medium -mt-4 mb-8 max-w-xl">
                 {featured.q}
               </p>
             </div>
@@ -148,7 +148,7 @@ export function SharedTestimonials({
                   <span className="block text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
 
                   {/* Quote text */}
-                  <p className="text-[15px] text-forest-deep/95 leading-[1.75] -mt-5 mb-6 font-normal">
+                  <p className="text-[16px] text-forest-deep/95 leading-[1.75] -mt-5 mb-6 font-normal">
                     {t.q}
                   </p>
                 </div>
