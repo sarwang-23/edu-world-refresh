@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useRef } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar, Play, Pause, Volume2, VolumeX } from 'lucide-react'
@@ -29,7 +28,6 @@ import abhishekKumar from '@/assets/people/abhishek_kumar.jpg';
 import samvritha from '@/assets/people/samvritha.png';
 import aashishImg from '@/assets/alumni4.jpg';
 
-
 export const Route = createFileRoute('/gsp')({
   head: () => ({
     meta: [
@@ -38,18 +36,6 @@ export const Route = createFileRoute('/gsp')({
     ],
   }),
   component: GraduateProgramme,
-=======
-import { createFileRoute, redirect } from '@tanstack/react-router'
-import { buildMeta } from "@/lib/seo";
-
-export const Route = createFileRoute('/gsp')({
-  head: () => buildMeta("/gsp"),
-  beforeLoad: () => {
-    throw redirect({
-      to: '/programmes/graduate',
-    })
-  },
->>>>>>> 281626545bc7e385a855b5bd1624826df21a95f0
 })
 
 function GraduateProgramme() {
