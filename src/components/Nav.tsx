@@ -185,26 +185,72 @@ export function Nav() {
         <div className="absolute top-[100%] left-0 w-full bg-white border-b border-forest/10 shadow-2xl md:hidden overflow-y-auto max-h-[80vh]">
           <div className="flex flex-col p-4 gap-1">
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Home</Link>
-            <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Programmes</div>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">All Programmes</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/gilp" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global India Leadership Programme</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/zero-to-one" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Zero-to-One</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/students" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">For Students (13-17 yrs)</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Graduate Summer Programme</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/entrepreneurship" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Mentorship & Support</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/past-programmes" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Past Programmes</Link>
+            
+            <details className="group">
+              <summary className="p-3 flex justify-between items-center text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                Programmes
+                <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="pl-4 flex flex-col gap-1 mt-1">
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">All Programmes</Link>
+                
+                <details className="group/students">
+                  <summary className="p-3 flex justify-between items-center text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    For Students
+                    <ChevronDown className="h-4 w-4 transition-transform group-open/students:rotate-180" />
+                  </summary>
+                  <div className="pl-4 flex flex-col gap-1 mt-1">
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/students" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Young leaders summer programme (13-17 yrs)</Link>
+                  </div>
+                </details>
 
-            <div className="p-3 text-[13px] font-bold text-forest/50 uppercase tracking-wider mt-2">Explore</div>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Impact</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Our Knowledge & Insights</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Partner with GEL</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">AI Learning Games</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/blog" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Blogs</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/about" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">About Us</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Contact Us</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Gallery</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Global Ventures</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/universities" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg pl-6">Universities</Link>
+                <details className="group/execs">
+                  <summary className="p-3 flex justify-between items-center text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    For Executives
+                    <ChevronDown className="h-4 w-4 transition-transform group-open/execs:rotate-180" />
+                  </summary>
+                  <div className="pl-4 flex flex-col gap-1 mt-1">
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/gilp" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Global India Leadership Programme</Link>
+                  </div>
+                </details>
+
+                <details className="group/ents">
+                  <summary className="p-3 flex justify-between items-center text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    For Entrepreneurs
+                    <ChevronDown className="h-4 w-4 transition-transform group-open/ents:rotate-180" />
+                  </summary>
+                  <div className="pl-4 flex flex-col gap-1 mt-1">
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/zero-to-one" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Zero-to-One</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Global Ventures</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/entrepreneurship" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Mentorship & Support</Link>
+                  </div>
+                </details>
+
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/past-programmes" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">Past Programmes</Link>
+              </div>
+            </details>
+
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/about" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">About Us</Link>
+
+            <details className="group/explore">
+              <summary className="p-3 flex justify-between items-center text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                Explore
+                <ChevronDown className="h-4 w-4 transition-transform group-open/explore:rotate-180" />
+              </summary>
+              <div className="pl-4 flex flex-col gap-1 mt-1">
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/our-impact" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">Our Impact</Link>
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/insights" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">Our Knowledge & Insights</Link>
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/partner-with-gel" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">Partner with GEL</Link>
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/ai-learning-games" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">AI Learning Games</Link>
+                <Link onClick={() => setIsMobileMenuOpen(false)} to="/blog" className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg">Blogs</Link>
+              </div>
+            </details>
+
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Gallery</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Contact Us</Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/universities" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Universities</Link>
           </div>
         </div>
       )}
