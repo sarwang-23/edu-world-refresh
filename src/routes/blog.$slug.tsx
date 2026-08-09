@@ -4,6 +4,7 @@ import {
   Link,
   notFound,
 } from "@tanstack/react-router";
+import { buildMeta } from "@/lib/seo";
 import { useState, useEffect, useCallback } from "react";
 import {
   MoreVertical,
@@ -37,25 +38,25 @@ export const Route = createFileRoute("/blog/$slug")({
   },
 
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [] };
-    const metaTags = [
-      { title: `${loaderData.title} | Global Education Lab` },
-      { name: "description", content: loaderData.excerpt },
-      { property: "og:title", content: loaderData.title },
-      { property: "og:description", content: loaderData.excerpt },
-      { property: "og:image", content: loaderData.cover },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: loaderData.title },
-      { name: "twitter:description", content: loaderData.excerpt },
-      { name: "twitter:image", content: loaderData.cover },
-    ];
+    if (!loaderData) return { meta: [], links: [] };
 
-    if (loaderData.seo?.canonical) {
-      metaTags.push({ name: "canonical", content: loaderData.seo.canonical });
+    let description = loaderData.excerpt || "";
+    if (!description && loaderData.content) {
+      const firstPara = loaderData.content.find((b: any) => b.type === "paragraph") as any;
+      if (firstPara && firstPara.text) {
+        description = firstPara.text.substring(0, 152) + "...";
+      }
     }
 
-    return { meta: metaTags };
+    return buildMeta(
+      {
+        title: loaderData.title,
+        description: description,
+        image: loaderData.cover,
+      },
+      { ogType: "article" },
+      `blog/${loaderData.slug}`
+    );
   },
 
   component: BlogPostPage,

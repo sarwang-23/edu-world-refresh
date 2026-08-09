@@ -19,7 +19,9 @@ import samTullyImg from '../assets/people/sam_tully.jpg'
 import cambridgeTestimonialImg from '../assets/cambridge_1.jpg'
 import finlandTestimonialImg from '../assets/finland_1.jpg'
 import londonTestimonialImg from '../assets/executive-education.jpg'
+import { buildMeta } from "@/lib/seo";
 export const Route = createFileRoute('/teachers')({
+  head: () => buildMeta("/teachers"),
   component: Teachers,
 })
 

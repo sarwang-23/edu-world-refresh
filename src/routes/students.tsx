@@ -31,7 +31,7 @@ export const Route = createFileRoute('/students')({
   head: () => ({
     meta: [
       { title: 'Young Leaders Summer Programme | Global Education Lab' },
-      { name: 'description', content: 'An immersive summer experience in Cambridge for ambitious young learners.' },
+      { name: 'description', content: 'Explore world-class programmes for students aged 14–17 and undergraduates, including summer camps, short-term residential experiences, and online courses. Build global connections and skills.' },
     ],
   }),
   component: YoungLeaders,

@@ -9,8 +9,8 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 export const Route = createFileRoute('/entrepreneurship_/mentorship')({
   head: () => ({
     meta: [
-      { title: 'Mentorship & Founder Network | Global Education Lab' },
-      { name: 'description', content: 'Private introductions and access to our global community of founders, alumni and industry experts.' },
+      { title: 'Mentorship & Support | Cambridge Young Entrepreneur Pro | Global Education Lab' },
+      { name: 'description', content: 'Join the London School Leadership Programme, delivered in partnership with Britannica Education. Gain cutting-edge insights, explore innovative school leadership practices, and collaborate with experts to drive meaningful...' },
     ],
   }),
   component: MentorshipPage,

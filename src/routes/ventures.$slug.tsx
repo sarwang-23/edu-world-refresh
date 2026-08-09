@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
+import { buildMeta } from "@/lib/seo";
 import {
   ArrowUpRight,
   ArrowLeft,
@@ -63,7 +64,7 @@ type Venture = {
   awards?: string[]
 }
 
-const VENTURES: Record<string, Venture> = {
+export const VENTURES: Record<string, Venture> = {
   'kavach-ai': {
     slug: 'kavach-ai', name: 'KAVACH AI', track: 'Venture Track',
     tagline: 'AI-Powered Predictive Surveillance.',
@@ -288,6 +289,20 @@ export const Route = createFileRoute('/ventures/$slug')({
   loader: ({ params }) => {
     if (!VENTURES[params.slug]) throw notFound()
     return { slug: params.slug }
+  },
+  head: ({ loaderData }) => {
+    if (!loaderData) return { meta: [], links: [] };
+    const v = VENTURES[loaderData.slug];
+    if (!v) return { meta: [], links: [] };
+    return buildMeta(
+      {
+        title: `${v.name} | Global Education Lab`,
+        description: v.intro || v.problem || "Explore our venture.",
+        image: v.heroImg,
+      },
+      undefined,
+      `ventures/${loaderData.slug}`
+    );
   },
   component: VenturePage,
 })
