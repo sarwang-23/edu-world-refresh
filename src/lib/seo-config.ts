@@ -103,7 +103,7 @@ export const seoConfig: Record<string, SeoEntry> = {
     title: "Global India Leadership Programme at Cambridge | Sept 2026",
     socialTitle: "Global India Leadership Programme at Cambridge",
     description: "A 5-day Cambridge leadership experience for Board members, CXOs, and Founders on AI, strategy, and global growth.",
-    image: "/images/gilp-social.png",
+    image: "/gilp-banner.png",
     indexable: true,
   },
   "/programmes/graduate": {
