@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle2, Star, Quote, Globe2, Cpu, Briefcase, Award, BarChart3, Users, Utensils, Landmark, Castle } from 'lucide-react'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { COUNTRY_CODES } from '@/data/countryCodes'
 import { Footer } from './index'
 import newCertificateImg from '../assets/new-certificate.png'
@@ -114,7 +114,46 @@ function Page() {
       <CohortGallery />
       <CTA />
       <Footer />
+      <FloatingApplyButton />
     </div>
+  )
+}
+
+function FloatingApplyButton() {
+  const [isVisible, setIsVisible] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const applyNowSection = document.getElementById('apply-now')
+      if (applyNowSection) {
+        const rect = applyNowSection.getBoundingClientRect()
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setIsVisible(false)
+          return
+        }
+      }
+      setIsVisible(true)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  if (!isVisible) return null
+
+  return (
+    <button
+      onClick={() => document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' })}
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-forest px-6 py-3.5 text-sm font-semibold text-white shadow-2xl shadow-forest/40 ring-2 ring-gold/40 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-forest-deep hover:shadow-gold/20 animate-float group cursor-pointer"
+      aria-label="Apply Now"
+    >
+      <span className="relative flex h-2.5 w-2.5">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+      </span>
+      <span>Apply Now</span>
+      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+    </button>
   )
 }
 
@@ -233,7 +272,7 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             </button>
             <button
               onClick={() => document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 rounded-full border border-forest/25 px-6 py-3.5 text-[15px] font-medium tracking-wide text-forest transition-all hover:bg-forest/5"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[15px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold-deep shadow-md shadow-gold/20 hover:shadow-xl hover:-translate-y-1 animate-float cursor-pointer"
             >
               Apply Now <ArrowUpRight className="h-4 w-4" />
             </button>

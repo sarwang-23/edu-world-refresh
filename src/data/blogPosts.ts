@@ -10,7 +10,8 @@ export type BlogBlock =
   | { type: "image"; src: string; caption?: string }
   | { type: "delegate-quote"; title: string; name: string; role: string; quote: string; image: string; avatars: string[] }
   | { type: "html"; content: string }
-  | { type: "gallery"; images: string[] };
+  | { type: "gallery"; images: string[] }
+  | { type: "testimonials_carousel"; items: { name: string; role: string; photo: string; quote: string; cardImage?: string }[] };
 
 export interface SeoMetadata {
   title: string;
