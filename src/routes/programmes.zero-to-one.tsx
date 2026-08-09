@@ -31,10 +31,16 @@ import sydneyImg from '../assets/sydney.jpg'
 export const Route = createFileRoute('/programmes/zero-to-one')({
   head: () => ({
     meta: [
-      { title: 'Zero-To-One Ideation Weekend | Cambridge Judge Business School — Global Edu Lab' },
-      { name: 'description', content: 'A 48-hour venture-building format that takes you from idea to incubator-ready in Cambridge. June 19–21 2026 at Judge Business School.' },
-      { property: 'og:title', content: 'Zero-To-One Ideation Weekend' },
-      { property: 'og:description', content: 'From raw ideas to incubator-ready ventures in 48 hours at Cambridge.' },
+      { title: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
+      { name: 'description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours, with its inaugural theme focused on digital health. Participants also have a unique opportunity to attend a fireside chat with a Nobel Laureate." },
+      { property: 'og:title', content: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
+      { property: 'og:description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours, with its inaugural theme focused on digital health." },
+      { property: 'og:url', content: 'https://www.globaledulab.com/programmes/zero-to-one' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
+      { name: 'twitter:description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours." },
+      { name: 'twitter:image', content: 'https://www.globaledulab.com/images/default-social.jpg' },
+      { name: 'robots', content: 'index,follow' },
     ],
   }),
   component: ZeroToOne,

@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Footer } from '@/components/Footer'
+import { buildMeta } from "@/lib/seo";
 
 
 type Venture = {
@@ -132,6 +133,7 @@ const VENTURE: Venture = {
 }
 
 export const Route = createFileRoute('/ventures/carbonsynq')({
+  head: () => buildMeta("/ventures/carbonsynq"),
   component: VenturePage,
 })
 

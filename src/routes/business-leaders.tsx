@@ -24,8 +24,10 @@ import businessLeadersImg from '../assets/executive-education.jpg'
 import aashishImg from '../assets/alumni4.jpg'
 import snigdhaImg from '../assets/alumni1.jpg'
 import samTullyImg from '../assets/people/sam_tully.jpg'
+import { buildMeta } from "@/lib/seo";
 
 export const Route = createFileRoute('/business-leaders')({
+  head: () => buildMeta("/business-leaders"),
   component: BusinessLeaders,
 })
 

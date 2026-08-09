@@ -58,6 +58,7 @@ import { Route as StudentsEntrepreneurshipRouteImport } from './routes/students_
 import { Route as StudentsStemResearchRouteImport } from './routes/students_.stem-research'
 import { Route as VenturesSlugRouteImport } from './routes/ventures.$slug'
 import { Route as VenturesCarbonsynqRouteImport } from './routes/ventures.carbonsynq'
+import { Route as ApiSitemapXmlRouteImport } from './routes/api/sitemap.xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -310,6 +311,11 @@ const VenturesCarbonsynqRoute = VenturesCarbonsynqRouteImport.update({
   path: '/ventures/carbonsynq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSitemapXmlRoute = ApiSitemapXmlRouteImport.update({
+  id: '/api/sitemap/xml',
+  path: '/api/sitemap/xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -361,6 +367,7 @@ export interface FileRoutesByFullPath {
   '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/blog/': typeof BlogIndexRoute
   '/programmes/': typeof ProgrammesIndexRoute
+  '/api/sitemap/xml': typeof ApiSitemapXmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -410,6 +417,7 @@ export interface FileRoutesByTo {
   '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/blog': typeof BlogIndexRoute
   '/programmes': typeof ProgrammesIndexRoute
+  '/api/sitemap/xml': typeof ApiSitemapXmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -462,6 +470,7 @@ export interface FileRoutesById {
   '/ventures/carbonsynq': typeof VenturesCarbonsynqRoute
   '/blog/': typeof BlogIndexRoute
   '/programmes/': typeof ProgrammesIndexRoute
+  '/api/sitemap/xml': typeof ApiSitemapXmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -515,6 +524,7 @@ export interface FileRouteTypes {
     | '/ventures/carbonsynq'
     | '/blog/'
     | '/programmes/'
+    | '/api/sitemap/xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -564,6 +574,7 @@ export interface FileRouteTypes {
     | '/ventures/carbonsynq'
     | '/blog'
     | '/programmes'
+    | '/api/sitemap/xml'
   id:
     | '__root__'
     | '/'
@@ -615,6 +626,7 @@ export interface FileRouteTypes {
     | '/ventures/carbonsynq'
     | '/blog/'
     | '/programmes/'
+    | '/api/sitemap/xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -653,6 +665,7 @@ export interface RootRouteChildren {
   StudentsStemResearchRoute: typeof StudentsStemResearchRoute
   VenturesSlugRoute: typeof VenturesSlugRoute
   VenturesCarbonsynqRoute: typeof VenturesCarbonsynqRoute
+  ApiSitemapXmlRoute: typeof ApiSitemapXmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1000,6 +1013,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VenturesCarbonsynqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/sitemap/xml': {
+      id: '/api/sitemap/xml'
+      path: '/api/sitemap/xml'
+      fullPath: '/api/sitemap/xml'
+      preLoaderRoute: typeof ApiSitemapXmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1085,6 +1105,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudentsStemResearchRoute: StudentsStemResearchRoute,
   VenturesSlugRoute: VenturesSlugRoute,
   VenturesCarbonsynqRoute: VenturesCarbonsynqRoute,
+  ApiSitemapXmlRoute: ApiSitemapXmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

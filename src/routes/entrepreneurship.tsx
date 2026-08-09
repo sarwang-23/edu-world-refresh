@@ -38,8 +38,10 @@ import pitchImg from '@/assets/zero-to-one-past-1.jpg'
 import sydneyConner from '@/assets/people/sydney_conner.jpg';
 import tendaiNzonzo from '@/assets/people/tendai_nzonzo.jpg';
 import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
+import { buildMeta } from "@/lib/seo";
 
 export const Route = createFileRoute('/entrepreneurship')({
+  head: () => buildMeta("/entrepreneurship"),
   component: EntrepreneurshipPage,
 })
 
