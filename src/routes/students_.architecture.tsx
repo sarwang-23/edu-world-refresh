@@ -43,7 +43,7 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-6">
         {/* Back */}
         <Link
-          to="/programmes/graduate"
+          to="/gsp"
           className="inline-flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.18em] text-orange-600 mb-10 hover:text-orange-500 transition-colors"
         >
           <ArrowLeft className="h-3.5 w-3.5" />

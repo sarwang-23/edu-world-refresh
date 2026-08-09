@@ -383,7 +383,7 @@ function Journey() {
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
             {[
-              { label: "Mentoring", icon: Users, desc: "Launched with small scale informal student mentoring support" },
+              { label: "Mentoring", icon: Users, desc: "Launched with small scale informal startup mentoring support" },
               { label: "K12 Learning", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
               { label: "Global Reach", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
               { label: "Graduate Pathways", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
@@ -411,16 +411,16 @@ function Journey() {
 function OurPeople() {
   const people = [
     {
-      name: "Margaret Serna CBE",
-      title: "Advisor – UK Education",
-      img: person9,
-      quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
+      name: "Andrew Hatcher",
+      title: "Advisor – Entrepreneurship",
+      img: person4,
+      quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
     },
     {
-      name: "Santosh Huralikoppi",
-      title: "Advisor – Startups & Investments",
-      img: personSantosh,
-      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
+      name: "Guy Doza",
+      title: "Leadership & Communications Coach",
+      img: person1,
+      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
     },
     {
       name: "Dr Yves Gaspar",
@@ -435,16 +435,10 @@ function OurPeople() {
       quote: "Co-founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
     },
     {
-      name: "Andrew Hatcher",
-      title: "Advisor – Entrepreneurship",
-      img: person4,
-      quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
-    },
-    {
-      name: "Guy Doza",
-      title: "Leadership & Communications Coach",
-      img: person1,
-      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
+      name: "Santosh Huralikoppi",
+      title: "Advisor – Startups & Investments",
+      img: personSantosh,
+      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
     },
     {
       name: "Tim Vinopal",

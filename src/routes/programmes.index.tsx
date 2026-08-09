@@ -48,7 +48,7 @@ const upcomingProgrammes = [
     desc: "A 5-day executive programme for senior leaders exploring strategy, innovation and partnerships in the India–UK corridor.",
     quote: "Leadership is not a date. It is a decision to grow.",
     location: "Cambridge, UK",
-    link: "/programmes/gilp",
+    link: "/indialeadership",
     category: "For Executives",
   },
   {
@@ -58,7 +58,7 @@ const upcomingProgrammes = [
     desc: "A 2-week immersive experience in Entrepreneurship & AI with 30+ hours of learning, startup exposure, London visit and Cambridge college life.",
     quote: "When ambition meets mentorship, momentum becomes possible.",
     location: "Girton College, Cambridge",
-    link: "/programmes/graduate",
+    link: "/gsp",
 
     category: "For Graduates",
   },

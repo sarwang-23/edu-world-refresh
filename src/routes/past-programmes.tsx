@@ -161,7 +161,7 @@ function OurProgrammes() {
       img: gilpClassroomFinalImg,
       icon: <Users className="h-5 w-5" />,
       bullets: ["Leadership & strategy", "Innovation & AI", "Business growth & governance", "Networking with global leaders"],
-      link: "/programmes/gilp"
+      link: "/indialeadership"
     },
   ]
 

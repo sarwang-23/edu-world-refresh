@@ -22,7 +22,7 @@ import {
 import schoolLeadersImg from '../assets/school_leaders_classroom.jpg'
 import person6Img from '../assets/person6.jpg'
 import jaideepImg from '../assets/faculty-jaideep.jpg'
-import samTullyImg from '../assets/people/sam_tully.jpg'
+import aniruddhGupta from '../assets/people/aniruddh_gupta.jpg'
 import cambridgeTestimonialImg from '../assets/cambridge_1.jpg'
 import finlandTestimonialImg from '../assets/finland_1.jpg'
 import londonTestimonialImg from '../assets/executive-education.jpg'
@@ -54,7 +54,7 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
-            <GraduationCap className="h-3.5 w-3.5 text-gold" /> Built for Principals — Cohorts from 20+ Countries
+            <GraduationCap className="h-3.5 w-3.5 text-gold" /> Built for School Leaders — Cohorts from 20+ Countries
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
             The world's finest classrooms, <span className="italic text-gold">opened to you.</span>
@@ -426,10 +426,10 @@ function Testimonials() {
     },
     {
       quote:
-        '"I was privileged to attend the Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, in the confines of one of the world\'s finest Universities and one of its most beautiful cities. Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce experience."',
-      author: "Sam Tully",
-      role: "GEL Programme delegate, Trustee – Pratham UK",
-      img: samTullyImg,
+        '"The Global Education Lab leadership programme at Cambridge was an exceptionally well-curated experience. As the leader of an organisation serving more than 20,000 K–12 students, I found immense value in gaining direct access to Cambridge\'s world-class research, innovation, and leadership thinking. More importantly, the programme equipped me with practical frameworks and tools that I could immediately share with our educators, school leaders, and teaching teams. Learning within the inspiring Cambridge environment made the experience even more meaningful, reinforcing a strong sense of purpose and a renewed commitment to driving educational impact."',
+      author: "Dr. Aniruddh Gupta",
+      role: "CEO - DCM Group of Schools, India",
+      img: aniruddhGupta,
       bannerImg: londonTestimonialImg,
     },
   ]

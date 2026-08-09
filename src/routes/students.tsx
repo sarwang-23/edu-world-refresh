@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import {
   ArrowUpRight, ArrowDownToLine, GraduationCap, Users, Globe2, Lightbulb,
   Compass, MonitorPlay, Code, Target, MessageSquare, Microscope,
@@ -24,7 +24,24 @@ import ylGallery2 from '../assets/young_leaders_2.jpg'
 import ylGallery3 from '../assets/young_leaders_3.jpg'
 import ylGallery4 from '../assets/young_leaders_4.jpg'
 import ylGallery5 from '../assets/young_leaders_5.jpg'
+import guyDozaImg from '../assets/faculty-guy.jpg'
+import suyashImg from '../assets/founder_hd.png'
+import yvesImg from '../assets/yves_gaspar.jpg'
+import shvetaImg from '../assets/person9.jpg'
+import charlesImg from '../assets/Roddie_Charles.jpg'
+import danielImg from '../assets/Dan.jpeg'
+import timImg from '../assets/person12.jpg'
+import nimImg from '../assets/person7.jpg'
+import santoshImg from '../assets/santosh_huralikoppi.jpg'
+import serishImg from '../assets/faculty-serish.jpg'
+import andrewImg from '../assets/person4.jpg'
+import jaideepImg from '../assets/person11.jpg'
+import khushbooImg from '../assets/person2.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
+import rosalindImg from '../assets/people/rosalind_howell.jpg';
+import bidishaImg from '../assets/people/bidisha_banerjee.jpg';
+import samvrithaImg from '../assets/people/samvritha.png';
+
 
 
 export const Route = createFileRoute('/students')({
@@ -44,12 +61,48 @@ function YoungLeaders() {
       <StatsMarquee />
       <CoreElements />
       <PartnersAndMentors />
+      <KeyFacilitators />
       <ChooseYourTrack />
       <ValueProps />
       <CohortGallery />
-      <SharedTestimonials />
+      <SharedTestimonials customTestimonials={[
+        {
+          q: "My two weeks at the summer programme in Cambridge felt like a dream. At first, I was nervous about being so far from home, but very quickly it became one of the best experiences of my life. I met amazing people from different countries, made real friendships, and felt like I grew more confident every day. The classes were fun and inspiring.",
+          a: "Samvritha",
+          r: "Young Leader Delegate",
+          tag: "Young Leaders",
+          img: samvrithaImg,
+          featured: true,
+        },
+        {
+          q: "There were times during the weekend when I knew that what I was learning would stick with me throughout my career journey... There aren't many experiences where you can feel yourself changing and growing in real time, but at every second of this weekend I felt myself growing in confidence.",
+          a: "Rosalind Howell",
+          r: "Zero-to-One Participant",
+          tag: "Startup Bootcamp",
+          img: rosalindImg,
+          featured: false,
+        },
+        {
+          q: "My experience at the Global India Leadership Programme was truly exceptional. Engaging with such a diverse and dynamic cohort while learning from world-class faculty at Cambridge has been incredibly enriching. The insights gained here will undoubtedly shape our future strategies at Talent Element.",
+          a: "Bidisha Banerjee",
+          r: "Partner, Talent Element",
+          tag: "GILP Delegate",
+          img: bidishaImg,
+          featured: false,
+        }
+      ]} />
       <BottomCTA />
       <Footer />
+
+      {/* Floating Apply Now Button */}
+      <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 animate-float">
+        <Link 
+          to="/apply-now" search={{ source: "Young Leaders Summer Programme" }}
+          className="flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-4 md:px-8 md:py-4 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep shadow-2xl hover:bg-amber-400 transition-all duration-300 shadow-gold/40 hover:-translate-y-1"
+        >
+          Apply Now <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
     </div>
   )
 }
@@ -108,7 +161,7 @@ function Hero() {
               </a>
               <Link
                 to="/apply-now" search={{ source: "Young Leaders Summer Programme" }}
-                className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 sm:px-7 py-3.5 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 sm:px-7 py-3.5 text-[14px] sm:text-[15px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold-deep shadow-md shadow-gold/20 hover:shadow-xl hover:-translate-y-1 animate-float uppercase tracking-[0.15em] shrink-0 whitespace-nowrap"
               >
                 Apply Now <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -395,14 +448,15 @@ function PartnersAndMentors() {
                 Our facilitators include Cambridge educators, researchers, entrepreneurs, industry experts and communication specialists with a passion for guiding young learners.
               </p>
 
-              <Link
-                to="/about"
-                hash="people"
-                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn"
+              <button
+                onClick={() => {
+                  document.getElementById('key-facilitators')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2.5 rounded-full bg-white/8 border border-white/15 px-6 py-3.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-gold hover:text-forest-deep hover:border-gold transition-all duration-300 group/btn cursor-pointer"
               >
                 Meet the Facilitators
                 <ArrowUpRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -410,6 +464,118 @@ function PartnersAndMentors() {
       </div>
     </section>
   )
+}
+
+/* ─── KEY FACILITATORS ──────────────────────────────────────────────────────── */
+const allFacilitators = [
+  {
+    name: "Guy Doza",
+    title: "Author, TEDx Speaker & Alumni, University of Cambridge",
+    img: guyDozaImg,
+    desc: "Having started his career in the British House of Parliament, Guy went on to become a top Corporate Communications and Public Affairs consultant. He has worked with a range of CEOs and business leaders across Europe, America and Asia. In 2019 he gave a TEDx Talk at the University of Cambridge and in 2022 he published his book which focuses on rhetoric and the art of persuasion. He leads the Soft Skills and Public speaking module on the programme."
+  },
+  {
+    name: "Suyash Bhatt",
+    title: "Alumni & Fellow – Cambridge Judge Business School",
+    img: suyashImg,
+    desc: "As a Cambridge MBA alumnus and Fellow at Cambridge Judge Business School, Suyash has worked across diverse industries in India, Taiwan, the USA, and the UK. As the founder of two successful startups, Suyash combines academic expertise with hands-on entrepreneurial experience. He is the Founder of Foodbud, a food tech startup based out of Cambridge, and is also the Director of Global Education Lab. He leads the Entrepreneurship and Innovation Module of the programme."
+  },
+  {
+    name: "Dr. Yves Gaspar",
+    title: "Visiting Scholar, University of Cambridge",
+    img: yvesImg,
+    desc: "Dr. Yves Gaspar, a graduate of Theoretical Physics at the University of Liège and PhD holder from the University of Cambridge, specialises in mathematical cosmology. His expertise lies in exploring Einstein's field equations and their implications. With years of academic and research experience, Dr. Gaspar brings theoretical depth and practical insights to his sessions. He leads the STEM Module of the programme."
+  },
+  {
+    name: "Dr. Charles Roddie",
+    title: "Fellow, Sidney Sussex College\nFounder & CEO, Summatic",
+    img: charlesImg,
+    desc: "Dr Charles Roddie, Director of Studies and Governing Body Fellow at the University of Cambridge, is an economist, mathematician, and education innovator. He has lectured at both Cambridge and Oxford. He is also the founder of education technology platform Summatic, which explores new approaches to mathematics learning. In this programme, he will provide academic mentorship and guide participants through analytical and strategic thinking frameworks."
+  },
+  {
+    name: "Daniel Appleby, CFA",
+    title: "Chartered Financial Analyst\nCOO, Summatic",
+    img: danielImg,
+    desc: "Daniel Appleby is a CFA-qualified finance and technology professional with experience at Monzo and Lloyds Banking Group. His work focuses on the intersection of finance and AI, exploring how emerging technologies are reshaping financial systems and innovation. In this programme, he will guide participants on fintech, AI-driven innovation, and building scalable ventures. He is currently also the COO of Summatic and is responsible of scaling the venture to new geographies beyond the UK."
+  },
+  {
+    name: "Tim Vinopal",
+    title: "Partner – Americas",
+    img: timImg,
+    desc: "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL's engagement across the Americas."
+  },
+  {
+    name: "Nim Wichienkuer",
+    title: "Partner – Gamified Learning",
+    img: nimImg,
+    desc: "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning."
+  }
+];
+
+function KeyFacilitators() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX - (trackRef.current?.offsetLeft ?? 0);
+    scrollLeft.current = trackRef.current?.scrollLeft ?? 0;
+    if (trackRef.current) trackRef.current.style.cursor = 'grabbing';
+  };
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - (trackRef.current?.offsetLeft ?? 0);
+    const walk = (x - startX.current) * 1.2;
+    if (trackRef.current) trackRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+  const stopDrag = () => {
+    isDragging.current = false;
+    if (trackRef.current) trackRef.current.style.cursor = 'grab';
+  };
+
+  return (
+    <section id="key-facilitators" className="py-24 bg-white relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-end justify-between mb-12">
+          <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
+            Key Facilitators
+          </h2>
+          <p className="hidden md:flex items-center gap-2 text-sm text-gray-400 italic">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+            Drag to explore
+          </p>
+        </div>
+      </div>
+
+      {/* Drag-scrollable carousel — full bleed */}
+      <div
+        ref={trackRef}
+        className="flex gap-8 overflow-x-auto scroll-smooth px-6 md:px-[calc((100vw-80rem)/2+1.5rem)] pb-6"
+        style={{ cursor: 'grab', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={stopDrag}
+        onMouseLeave={stopDrag}
+      >
+        {allFacilitators.map((f, i) => (
+          <div
+            key={i}
+            className="flex-none w-[260px] sm:w-[280px] bg-white border border-gray-100 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300 p-7 flex flex-col items-center text-center select-none"
+          >
+            <div className="w-36 h-36 mb-5 overflow-hidden rounded-full border-4 border-forest/8 shadow-lg flex-none">
+              <img src={f.img} alt={f.name} className="w-full h-full object-cover" draggable={false} />
+            </div>
+            <h3 className="text-base font-bold text-gray-900 mb-1">{f.name}</h3>
+            <p className="text-xs font-semibold text-forest-deep whitespace-pre-line mb-3 leading-snug">{f.title}</p>
+            <p className="text-xs text-gray-500 leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 /* ─── 5. TRACKS · cream bg ──────────────────────────────────────────────── */
@@ -676,11 +842,11 @@ function BottomCTA() {
         <p className="mt-5 text-[15px] text-cream/80 leading-[1.75] max-w-xl mx-auto">Discover new ideas. Build your voice. Explore the future — at one of the world's greatest universities.</p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <Link to="/contact" search={{ source: "Young Leaders Summer Programme" }} className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25">
+          <Link to="/contact" search={{ source: "Young Leaders Summer Programme" }} className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
             Register Interest
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </Link>
-          <Link to="/apply-now" search={{ source: "Young Leaders Summer Programme" }} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:border-white/35 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <Link to="/apply-now" search={{ source: "Young Leaders Summer Programme" }} className="inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25 hover:-translate-y-1 animate-float">
             Apply Now <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

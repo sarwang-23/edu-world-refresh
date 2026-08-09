@@ -228,7 +228,7 @@ function OngoingProgrammes() {
       location: "UNIVERSITY OF CAMBRIDGE",
       quote: "The best leaders make space to reframe what is possible.",
       desc: "A week at Cambridge for CXOs — cutting-edge leadership strategies, AI and innovation frameworks, and access to global leadership networks, in partnership with Cambridge Judge Business School.",
-      link: "/programmes/gilp",
+      link: "/indialeadership",
     },
     {
       type: "INVITE ONLY",

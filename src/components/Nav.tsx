@@ -58,7 +58,7 @@ export function Nav() {
                   {/* Level 2 Dropdown */}
                   <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/students:flex pl-2">
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
-                      <Link to="/programmes/graduate" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
+                      <Link to="/gsp" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
                       <Link to="/students" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Young leaders summer programme (13-17 yrs)</Link>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ export function Nav() {
                   {/* Level 2 Dropdown */}
                   <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/executives:flex pl-2">
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
-                      <Link to="/programmes/gilp" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global India Leadership Programme</Link>
+                      <Link to="/indialeadership" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global India Leadership Programme</Link>
                     </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export function Nav() {
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
                       <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
                       <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
-                      <Link to="/programmes/graduate" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
+                      <Link to="/gsp" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
                       <Link to="/entrepreneurship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</Link>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export function Nav() {
                     <ChevronDown className="h-4 w-4 transition-transform group-open/students:rotate-180" />
                   </summary>
                   <div className="pl-4 flex flex-col gap-1 mt-1">
-                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/gsp" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/students" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Young leaders summer programme (13-17 yrs)</Link>
                   </div>
                 </details>
@@ -211,7 +211,7 @@ export function Nav() {
                     <ChevronDown className="h-4 w-4 transition-transform group-open/execs:rotate-180" />
                   </summary>
                   <div className="pl-4 flex flex-col gap-1 mt-1">
-                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/gilp" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Global India Leadership Programme</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/indialeadership" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Global India Leadership Programme</Link>
                   </div>
                 </details>
 
@@ -223,7 +223,7 @@ export function Nav() {
                   <div className="pl-4 flex flex-col gap-1 mt-1">
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/zero-to-one" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Zero-to-One</Link>
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/global-ventures" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Global Ventures</Link>
-                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/graduate" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/gsp" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/entrepreneurship" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Mentorship & Support</Link>
                   </div>
                 </details>
