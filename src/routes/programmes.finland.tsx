@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, BookOpen, Handshake } from 'lucide-react'
 import { Footer } from './index'
@@ -15,14 +16,7 @@ import helsinkiBoardImg from '@/assets/IMG_0719.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/finland')({
-  head: () => ({
-    meta: [
-      { title: 'Finland Education Study Visit — Global Edu Lab' },
-      { name: 'description', content: 'An immersive 5-day study visit to Finland — learn from the world\'s top-performing education system through school visits, policy sessions, and expert faculty interactions.' },
-      { property: 'og:title', content: 'Finland Education Study Visit' },
-      { property: 'og:description', content: 'Experience the Finnish education miracle first-hand. School visits, policy dialogues, and leadership workshops in Helsinki and Espoo.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/finland"),
   component: Page,
 })
 
@@ -106,7 +100,7 @@ function Hero() {
           
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={helsinkiBoardImg} alt="Finland Education Visit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={helsinkiBoardImg} alt="Finland Education Visit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
                 <div>
@@ -327,7 +321,7 @@ function ProgrammeDetails() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px]">
-            <img src={finland1} alt="Finland Programme Details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <img src={finland1} alt="Finland Programme Details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
 
@@ -377,7 +371,7 @@ function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, i) => (
             <div key={i} className="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group">
-              <img src={img} alt={`Finland Visit ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={img} alt={`Finland Visit ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             </div>
           ))}
         </div>

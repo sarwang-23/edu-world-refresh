@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Sparkles, Compass, ClipboardCheck, BookOpen, Users } from 'lucide-react'
 import heroImg from '../assets/teachers.jpg'
@@ -6,14 +7,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/programmes/teacher-training')({
-  head: () => ({
-    meta: [
-      { title: 'Teacher Training Programmes — Global Edu Lab' },
-      { name: 'description', content: 'Cambridge-informed teacher training that blends academic expertise with real-world classroom application for K-12 educators.' },
-      { property: 'og:title', content: 'Teacher Training Programmes' },
-      { property: 'og:description', content: 'Cambridge-informed professional development for K-12 teachers.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/teacher-training"),
   component: Page,
 })
 
@@ -34,7 +28,7 @@ function Page() {
     <div className="flex min-h-screen flex-col pt-4">
       <section className="relative overflow-hidden bg-forest text-cream">
         <div className="absolute inset-0 z-0">
-          <img src={heroImg} alt="Teachers" className="h-full w-full object-cover opacity-30" />
+          <img src={heroImg} alt="Teachers" className="h-full w-full object-cover opacity-30" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 pt-2 pb-32 md:pt-4 md:pb-24">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Camera, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -88,12 +89,7 @@ const galleryTestimonials = [
 
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
-  head: () => ({
-    meta: [
-      { title: "The Visual Archive — Global Education Lab" },
-      { name: "description", content: "A cinematic archive of leaders, educators and learners across our global programmes." },
-    ],
-  }),
+  head: () => buildMeta("/gallery"),
 });
 
 /* ─── Reusable photo card ─── */
@@ -155,7 +151,7 @@ function GalleryPage() {
       <section className="relative h-screen min-h-[680px] overflow-hidden">
         {/* background: single image */}
         <div className="absolute inset-0">
-          <img src={cambridge4} alt="Gallery Hero" className="h-full w-full object-cover scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]" />
+          <img src={cambridge4} alt="Gallery Hero" className="h-full w-full object-cover scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]" loading="lazy" />
         </div>
 
         {/* unified overlay */}
@@ -231,7 +227,7 @@ function GalleryPage() {
           CINEMATIC DIVIDER — GILP
       ══════════════════════════════ */}
       <div className="relative h-[75vh] min-h-[520px] overflow-hidden">
-        <img src={gilpMarch1} alt="GILP" className="h-full w-full object-cover" />
+        <img src={gilpMarch1} alt="GILP" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080d07]/90 via-[#080d07]/40 to-transparent" />
         <div className="absolute inset-0 flex items-center px-6 md:px-24 max-w-[1500px] mx-auto">
           <div>
@@ -276,7 +272,7 @@ function GalleryPage() {
           CINEMATIC DIVIDER — STUDENTS
       ══════════════════════════════ */}
       <div className="relative h-[70vh] min-h-[500px] overflow-hidden">
-        <img src={img4915} alt="Students" className="h-full w-full object-cover" />
+        <img src={img4915} alt="Students" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080d07] via-[#080d07]/40 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full px-6 md:px-24 pb-16 max-w-[1500px] mx-auto">
           <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-4">Chapter 04 — Student Programmes</p>

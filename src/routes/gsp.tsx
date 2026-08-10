@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, ArrowDownToLine, GraduationCap, Globe2, Lightbulb, Compass, Building2, MapPin, Users, Heart, Sparkles, BookOpen, Presentation, CalendarCheck, CheckCircle2, User, Zap, Calendar, Play, Pause, Volume2, VolumeX } from 'lucide-react'
 import { Footer } from './index'
@@ -29,12 +30,7 @@ import samvritha from '@/assets/people/samvritha.png';
 import aashishImg from '@/assets/alumni4.jpg';
 
 export const Route = createFileRoute('/gsp')({
-  head: () => ({
-    meta: [
-      { title: 'Graduate Summer Programme | Global Education Lab' },
-      { name: 'description', content: 'Experience Cambridge. Expand your thinking. Shape what comes next.' },
-    ],
-  }),
+  head: () => buildMeta("/gsp"),
   component: GraduateProgramme,
 })
 
@@ -294,7 +290,7 @@ function WhyDifferent() {
             <div key={i} className="group relative flex flex-col rounded-[1.75rem] overflow-hidden border border-forest/8 bg-white shadow-[0_4px_24px_rgba(26,53,35,0.07)] hover:shadow-[0_20px_60px_rgba(26,53,35,0.18)] hover:-translate-y-2 transition-all duration-500 cursor-pointer">
               {/* ── Image frame ── */}
               <div className="relative aspect-[4/5] w-full overflow-hidden">
-                <img src={e.img} alt={e.title} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out" />
+                <img src={e.img} alt={e.title} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-transparent" />
                 <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[15px] font-bold text-white/80">{e.num}</div>
                 <div className="absolute top-4 right-4">
@@ -342,7 +338,7 @@ function EcosystemExperience() {
           {elements.map((e, i) => (
             <div key={i} className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-400 hover:-translate-y-1">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-t-[1.75rem]">
-                <img src={e.img} alt={e.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" />
+                <img src={e.img} alt={e.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" loading="lazy" />
               </div>
               <div className="p-5 text-center">
                 <h3 className="text-[15px] font-bold text-white mb-2">{e.title}</h3>
@@ -403,7 +399,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={academicImg} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={academicImg} alt="Entrepreneurship & AI" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/entrepreneurship" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-gold px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
@@ -440,7 +436,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={globalNetworkImg} alt="Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={globalNetworkImg} alt="Research" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/stem-research" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
@@ -477,7 +473,7 @@ function Tracks() {
               </div>
             </div>
             <div className="relative h-48 mt-auto overflow-hidden">
-              <img src={cambridgeEcosystemImg} alt="Architecture" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={cambridgeEcosystemImg} alt="Architecture" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950/90 via-[#966526]/30 to-transparent" />
               <div className="absolute bottom-5 left-7 right-7">
                 <Link to="/students/architecture" className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#B47C35] px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-orange-500/30 hover:bg-[#966526] transition-all duration-300 group/btn">
@@ -518,7 +514,7 @@ function CampusLife() {
           {/* Main big image */}
           <div className="lg:col-span-2 group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md">
             <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-            <img src={campusLifeWorkshop} alt="Classroom and Workshops" className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={campusLifeWorkshop} alt="Classroom and Workshops" className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
               <h3 className="text-2xl font-bold text-white mb-2">Interactive Workshops</h3>
               <p className="text-cream/80 text-[15px]">Engage deeply with peers and facilitators in modern, dynamic learning spaces.</p>
@@ -529,7 +525,7 @@ function CampusLife() {
           <div className="flex flex-col gap-6">
             <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
               <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img src={campusLife1} alt="Historic Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={campusLife1} alt="Historic Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
                 <h3 className="text-lg font-bold text-white mb-1">Historic Grounds</h3>
                 <p className="text-cream/80 text-[15px]">Explore the beautiful college gardens.</p>
@@ -538,7 +534,7 @@ function CampusLife() {
 
             <div className="group relative overflow-hidden rounded-[2rem] border border-forest/10 shadow-md h-[200px] md:h-[238px]">
               <div className="absolute inset-0 bg-forest-deep/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img src={campusLife3} alt="Dorm Room" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={campusLife3} alt="Dorm Room" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20">
                 <h3 className="text-lg font-bold text-white mb-1">Comfortable Living</h3>
                 <p className="text-cream/80 text-[15px]">Modern, single en-suite rooms for delegates.</p>

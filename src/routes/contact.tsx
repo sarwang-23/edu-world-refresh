@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
 import { Footer } from "./index";
@@ -8,12 +9,7 @@ export const Route = createFileRoute("/contact")({
     source: (search.source as string) || "Direct",
   }),
   component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact Us — Global Education Lab" },
-      { name: "description", content: "Get in touch with Global Education Lab. Cambridge desk for executive programmes, school partnerships, and global ventures." },
-    ],
-  }),
+  head: () => buildMeta("/contact"),
 });
 
 // Apps Script Web App URL — deployed from Code.gs
@@ -92,11 +88,10 @@ function ContactPage() {
         {/* LEFT PANEL — Immersive dark image panel */}
         <div className="relative lg:w-[42%] min-h-[420px] lg:min-h-screen flex flex-col justify-between overflow-hidden">
           {/* Background image */}
-          <img
-            src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
+          <img src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
             alt="Cambridge programme"
             className="absolute inset-0 w-full h-full object-cover object-center"
-          />
+          loading="lazy" />
           {/* Multi-layer overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/85 to-forest-deep/70" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />

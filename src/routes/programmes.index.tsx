@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe2, GraduationCap, Users, Briefcase, Building2, Landmark, ChevronRight, MapPin, Calendar, Sparkles, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
@@ -24,16 +25,7 @@ import jaideepPrabhuImg from '@/assets/jaideep_prabhu.jpg';
 
 
 export const Route = createFileRoute("/programmes/")({
-  head: () => ({
-    meta: [
-      { title: "Programmes — Global Education Lab" },
-      {
-        name: "description",
-        content:
-          "Explore our upcoming programmes designed for students, founders, educators and leaders. Learn in Cambridge. Connect globally. Create impact.",
-      },
-    ],
-  }),
+  head: () => buildMeta("/programmes"),
   component: ProgrammesPage,
 });
 
@@ -167,7 +159,7 @@ function ProgrammesPage() {
             {filtered.map((p, i) => (
               <Link key={i} to={p.link} className="group flex flex-col md:flex-row bg-white rounded-3xl overflow-hidden border border-forest/10 hover:shadow-2xl hover:shadow-forest/5 hover:-translate-y-1 transition-all duration-500">
                 <div className="relative aspect-[4/3] md:w-2/5 overflow-hidden shrink-0">
-                  <img src={p.img} alt={p.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={p.img} alt={p.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent opacity-60" />
                   <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep shadow-sm">
                     {p.tag}
@@ -253,7 +245,7 @@ function ProgrammesPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
             {pastImpactImgs.map((src, i) => (
               <div key={i} className={`rounded-[2rem] overflow-hidden shadow-xl shadow-forest/5 group ${i === 0 || i === 3 ? 'aspect-[4/5]' : 'aspect-square mt-0 md:mt-12'}`}>
-                <img src={src} alt="Impact" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src={src} alt="Impact" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
               </div>
             ))}
           </div>
@@ -367,12 +359,11 @@ function ProgrammesHero() {
               
               {/* Main Feature Display (Large, Bold, High Resolution) */}
               <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-forest-deep/60">
-                <img 
-                  key={activeIndex}
+                <img key={activeIndex}
                   src={activeItem.img} 
                   alt={activeItem.label} 
                   className="w-full h-full object-cover transition-opacity duration-500" 
-                />
+                loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/30 to-transparent" />
                 
                 {/* Overlay Text Details */}
@@ -399,7 +390,7 @@ function ProgrammesHero() {
                         : "border-white/20 opacity-60 hover:opacity-100 hover:scale-105 hover:border-gold/50"
                     }`}
                   >
-                    <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
                     {activeIndex === idx && (
                       <div className="absolute inset-0 bg-gold/15" />
                     )}
@@ -496,7 +487,7 @@ function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
@@ -524,7 +515,7 @@ function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Lakshmi Samyuktha Kotha</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Executive Dean, Narayana Group of Schools – India</p>
@@ -565,7 +556,7 @@ function Voices() {
                 <div className="pt-3.5 border-t border-forest/8 flex items-center gap-3 mt-auto">
                   <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[14px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                     {t.img ? (
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                     ) : (
                       t.a[0]
                     )}

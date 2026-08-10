@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Clock, MapPin, Lightbulb, Users, Zap, Star, CheckCircle2, Rocket, Brain, Target, Globe2 } from 'lucide-react'
 import { Footer } from './index'
@@ -5,12 +6,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/entrepreneurship_/zero-to-one')({
-  head: () => ({
-    meta: [
-      { title: 'Zero-to-One Ideation Weekend — Global Edu Lab Entrepreneurship' },
-      { name: 'description', content: 'A 48-hour immersive ideation sprint at Cambridge. Students, professionals and workers come together to solve real-world challenges and build venture-ready ideas.' },
-    ],
-  }),
+  head: () => buildMeta("/entrepreneurship/zero-to-one"),
   component: Page,
 })
 

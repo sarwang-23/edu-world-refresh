@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   ArrowUpRight, ArrowLeft, CheckCircle2, Lightbulb, TrendingUp,
@@ -10,12 +11,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/students_/entrepreneurship')({
-  head: () => ({
-    meta: [
-      { title: 'Entrepreneurship Track | Young Leaders Summer Programme' },
-      { name: 'description', content: 'Build ideas, solve problems and create real-world impact on the Entrepreneurship track at Cambridge.' },
-    ],
-  }),
+  head: () => buildMeta("/students/entrepreneurship"),
   component: EntrepreneurshipTrack,
 })
 
@@ -85,7 +81,7 @@ function Hero() {
           {/* Image */}
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-              <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover" />
+              <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/50 to-transparent" />
               <div className="absolute bottom-6 left-6 flex gap-3">
                 {[
@@ -217,7 +213,7 @@ function Outcomes() {
             ))}
           </div>
           <div className="relative rounded-[2rem] overflow-hidden h-72 md:h-[400px]">
-            <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover" />
+            <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
           </div>
         </div>

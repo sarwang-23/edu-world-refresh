@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, Landmark, Handshake } from 'lucide-react'
 import { Footer } from './index'
@@ -9,14 +10,7 @@ import londonDetailsImg from '../assets/cambridge_7.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/llp')({
-  head: () => ({
-    meta: [
-      { title: 'London School Leadership Programme — Global Edu Lab' },
-      { name: 'description', content: 'A premium 5-day leadership programme in London — from the House of Lords to leading independent school visits, policy dialogues and Westminster networking.' },
-      { property: 'og:title', content: 'London School Leadership Programme' },
-      { property: 'og:description', content: 'Experience the best of British education leadership. House of Lords visits, independent school tours, and policy dialogues in London.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/llp"),
   component: Page,
 })
 
@@ -98,7 +92,7 @@ function Hero() {
           
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={londonHeroImg} alt="London School Leadership Programme" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={londonHeroImg} alt="London School Leadership Programme" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
                 <div>
@@ -319,7 +313,7 @@ function ProgrammeDetails() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px]">
-            <img src={londonDetailsImg} alt="London Programme details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <img src={londonDetailsImg} alt="London Programme details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
 

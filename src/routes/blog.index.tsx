@@ -1,29 +1,13 @@
 // src/routes/blog.index.tsx
 import { useState, useMemo } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen, Calendar, Clock, Search, Tag as TagIcon, X } from "lucide-react";
 import { blogPosts, CATEGORIES } from "@/data/blogPosts";
 import { Footer } from "./index";
 
 export const Route = createFileRoute("/blog/")({
-  head: () => ({
-    meta: [
-      { title: "Blog | Global Education Lab" },
-      {
-        name: "description",
-        content:
-          "Stories, school visits, programme recaps and reflections from Global Education Lab's work across India, Cambridge, Oxford, Finland and beyond.",
-      },
-      { property: "og:title", content: "Blog | Global Education Lab" },
-      {
-        property: "og:description",
-        content:
-          "Stories, school visits, programme recaps and reflections from Global Education Lab.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildMeta("/blog"),
   component: BlogPage,
 });
 
@@ -264,11 +248,10 @@ function Hero({ featured }: { featured: (typeof blogPosts)[number] }) {
             className="group relative block overflow-hidden rounded-[2rem] shadow-2xl"
           >
             <div className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply z-10" />
-            <img
-              src={featured.cover || "/src/assets/gilp-brochure-cover.jpg"}
+            <img src={featured.cover || "/src/assets/gilp-brochure-cover.jpg"}
               alt={featured.title}
               className="h-[440px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            loading="lazy" />
             <div className="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-forest-deep/95 via-forest-deep/50 to-transparent">
               <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-2">
                 FEATURED STORY
@@ -295,11 +278,10 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
         <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[12px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow-xs">
           {post.category}
         </div>
-        <img
-          src={post.cover || "/src/assets/gilp-brochure-cover.jpg"}
+        <img src={post.cover || "/src/assets/gilp-brochure-cover.jpg"}
           alt={post.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        loading="lazy" />
       </div>
       <div className="flex flex-col flex-1 p-7">
         <div className="flex items-center gap-4 text-[12.5px] font-bold uppercase tracking-widest text-forest/55 mb-3">

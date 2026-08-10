@@ -5,7 +5,7 @@ export const Route = createFileRoute('/indialeadership')({
   head: () => buildMeta("/indialeadership"),
   beforeLoad: () => {
     throw redirect({
-      to: '/indialeadership',
+      to: '/programmes/gilp',
     })
   },
 })

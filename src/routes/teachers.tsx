@@ -79,11 +79,10 @@ function Hero() {
 
         <div className="relative lg:col-span-6">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img
-              src={teachersImg}
+            <img src={teachersImg}
               alt="Teachers Training"
               className="h-full w-full object-cover"
-            />
+            loading="lazy" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
               <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">GLOBAL</p>
               <p className="mt-1 text-xl font-bold text-cream">
@@ -386,14 +385,14 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <img src={r.bannerImg} alt={r.author} className="w-full h-full object-cover" />
+                   <img src={r.bannerImg} alt={r.author} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
               <div className="mt-8 border-t border-cream/10 pt-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0"><img src={r.img} alt={r.author} className="w-full h-full object-cover" /></div>
+                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0"><img src={r.img} alt={r.author} className="w-full h-full object-cover" loading="lazy" /></div>
                 <div>
                   <p className="text-[15px] font-bold text-gold">{r.author}</p>
                   <p className="mt-0.5 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>

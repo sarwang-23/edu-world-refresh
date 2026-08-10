@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Globe2, Users, Lightbulb, TrendingUp, BookOpen, Building2, CheckCircle2, ChevronRight, GraduationCap, Leaf, User, Calendar, MapPin, Sparkles } from 'lucide-react'
 import { Footer } from './index'
@@ -16,12 +17,7 @@ import pushkarSingh from '@/assets/people/pushkar_singh.jpg';
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/past-programmes')({
-  head: () => ({
-    meta: [
-      { title: 'Past Programmes | Global Education Lab' },
-      { name: 'description', content: 'Explore our portfolio of past programmes — global learning experiences with lasting institutional impact.' },
-    ],
-  }),
+  head: () => buildMeta("/past-programmes"),
   component: PastProgrammes,
 })
 
@@ -87,7 +83,7 @@ function Hero() {
           {/* Image column */}
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-              <img src={heroImg} alt="Past Programmes" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={heroImg} alt="Past Programmes" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
             </div>
           </div>
         </div>
@@ -192,7 +188,7 @@ function OurProgrammes() {
           {past.map((p, i) => (
             <div key={i} className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden border border-forest/8 hover:border-gold/40 hover:shadow-[0_16px_48px_rgba(26,53,35,0.10)] hover:-translate-y-2 transition-all duration-400">
               <div className="relative h-44 overflow-hidden">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
                 <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[15px] font-bold uppercase tracking-[0.1em] text-forest-deep">{p.tag}</span>
                 <div className="absolute -bottom-5 left-5 w-10 h-10 bg-white rounded-xl flex items-center justify-center border border-forest/10 text-gold shadow-md group-hover:bg-gold group-hover:text-white transition-colors duration-300 z-10">

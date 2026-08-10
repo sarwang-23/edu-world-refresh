@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import { ArrowUpRight, Users, GraduationCap, Leaf, Globe, Rocket, Award, Heart, BookOpen, Quote, Sparkles, X } from 'lucide-react'
@@ -33,12 +34,7 @@ import sdg13Img from '@/assets/sdg-13.jpg';
 import sdg17Img from '@/assets/sdg-17.jpg';
 
 export const Route = createFileRoute('/our-impact')({
-  head: () => ({
-    meta: [
-      { title: 'Our Impact | Global Education Lab' },
-      { name: 'description', content: 'Measurable impact. Lasting change.' },
-    ],
-  }),
+  head: () => buildMeta("/our-impact"),
   component: Page,
 })
 
@@ -132,7 +128,7 @@ function Hero() {
         {/* Right Image */}
         <div className="relative md:col-span-6 lg:col-span-6 md:mt-10">
            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-             <img src={heroImg} alt="Impact" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+             <img src={heroImg} alt="Impact" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/50 to-transparent p-10">
                 <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold mb-3">Impact Since 2019</p>
                 <p className="text-3xl md:text-4xl font-serif italic text-cream leading-tight pb-1">
@@ -338,11 +334,10 @@ function Stories() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
               <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
                 <div className="relative h-40 w-40 md:h-48 md:w-48 rounded-[2rem] overflow-hidden border-2 border-gold/40 shadow-2xl group-hover:border-gold group-hover:scale-105 transition-all duration-500 bg-black/40 shrink-0">
-                  <img
-                    src={mainStory.img}
+                  <img src={mainStory.img}
                     alt={mainStory.t}
                     className={`h-full w-full ${mainStory.imgPos || 'object-cover object-top'}`}
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
                 <span className="mt-5 inline-block rounded-full bg-gold/20 border border-gold/40 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold">
@@ -391,11 +386,10 @@ function Stories() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative h-16 w-16 rounded-2xl overflow-hidden border border-gold/40 shadow-md shrink-0 group-hover:border-gold transition-all duration-300 bg-black/40">
-                    <img
-                      src={story.img}
+                    <img src={story.img}
                       alt={story.tag}
                       className={`h-full w-full ${story.imgPos || 'object-cover object-top'}`}
-                    />
+                    loading="lazy" />
                   </div>
                   <div>
                     <span className="inline-block rounded-full bg-gold/15 border border-gold/30 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold mb-2">
@@ -452,11 +446,10 @@ function Stories() {
               >
                 <div>
                   <div className="h-60 w-full shrink-0 overflow-hidden rounded-2xl border border-white/15 mb-6 relative bg-black/40 group/img">
-                    <img
-                      src={s.img}
+                    <img src={s.img}
                       alt={s.t}
                       className={`h-full w-full ${s.imgPos} transition-transform duration-700 group-hover/img:scale-105`}
-                    />
+                    loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                     <span className="absolute bottom-3 left-3 bg-black/85 backdrop-blur-md border border-gold/40 px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-lg z-10">
                       {s.tag}
@@ -500,11 +493,10 @@ function Stories() {
           <div className="relative w-full max-w-4xl bg-[#091D1A] rounded-[2.5rem] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.8)] flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300 max-h-[90vh] border border-gold/40 text-white">
             {/* Modal Image Sidebar */}
             <div className="w-full md:w-2/5 h-64 md:h-auto relative shrink-0 bg-black/40">
-              <img
-                src={activeStory.img}
+              <img src={activeStory.img}
                 alt={activeStory.t}
                 className={`absolute inset-0 w-full h-full ${activeStory.imgPos || 'object-cover object-top'}`}
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#091D1A] via-transparent to-transparent md:hidden" />
             </div>
 
@@ -607,11 +599,10 @@ function SDGs() {
               className="relative overflow-hidden rounded-xl shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group aspect-square"
               title={`SDG ${sdg.num}: ${sdg.label}`}
             >
-              <img
-                src={sdg.img}
+              <img src={sdg.img}
                 alt={`SDG ${sdg.num}: ${sdg.label}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+              loading="lazy" />
             </div>
           ))}
         </div>
@@ -918,7 +909,7 @@ function Testimonials() {
                 <div className="flex items-center gap-3">
                   <div className="relative shrink-0">
                     <div className="h-12 w-12 rounded-full overflow-hidden ring-2 ring-gold/40 group-hover:ring-gold/80 transition-all duration-300">
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-gold border-2 border-cream" />
                   </div>
@@ -971,7 +962,7 @@ function Testimonials() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div className="flex items-center gap-5">
                   <div className="h-16 w-16 rounded-full overflow-hidden ring-2 ring-gold/50 shrink-0">
-                    <img src={selectedTestimonial.img} alt={selectedTestimonial.a} className="w-full h-full object-cover" />
+                    <img src={selectedTestimonial.img} alt={selectedTestimonial.a} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
                     <p className="text-[17px] font-bold text-forest-deep mb-1">{selectedTestimonial.a}</p>

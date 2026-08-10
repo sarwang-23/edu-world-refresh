@@ -1,17 +1,10 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Globe2, ShieldCheck } from "lucide-react";
 import { Footer } from "./index";
 
 export const Route = createFileRoute("/privacy-policy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy | Global Education Lab" },
-      {
-        name: "description",
-        content: "Read the privacy policy for Global Education Lab." ,
-      },
-    ],
-  }),
+  head: () => buildMeta("/privacy-policy"),
   component: PrivacyPolicyPage,
 });
 

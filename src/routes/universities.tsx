@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footer } from "@/components/Footer";
 import { ArrowUpRight, GraduationCap, Users, BookOpen, Lightbulb, Zap, Globe2, Building2, MapPin, Target, Handshake, CheckCircle2, FlaskConical, Briefcase, Network, ShieldCheck, Rocket } from "lucide-react";
@@ -11,12 +12,7 @@ import startupImg from "@/assets/startup.jpg";
 import mobilityImg from "@/assets/universities_researcher_partnership.jpg";
 
 export const Route = createFileRoute("/universities")({
-  head: () => ({
-    meta: [
-      { title: "Universities | Global Education Lab" },
-      { name: "description", content: "Build Your University's Global Presence in the UK." },
-    ],
-  }),
+  head: () => buildMeta("/universities"),
   component: UniversitiesPage,
 });
 
@@ -63,11 +59,10 @@ function UniversitiesPage() {
             {/* Right Image */}
             <div className="relative lg:col-span-6 mt-8 lg:mt-0">
               <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-                <img 
-                  src={heroImg} 
+                <img src={heroImg} 
                   alt="Cambridge" 
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
+                loading="lazy" />
               </div>
             </div>
             
@@ -269,7 +264,7 @@ function UniversitiesPage() {
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-[2rem] overflow-hidden border border-forest/10 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                   <div className="h-40 w-full relative">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-gold border-4 border-white flex items-center justify-center text-forest-deep shadow-md">
                       <item.icon className="w-6 h-6" />
                     </div>
@@ -332,7 +327,7 @@ function UniversitiesPage() {
           <div className="absolute inset-0 bg-forest-deep/80 backdrop-blur-sm" onClick={() => setSelectedOffering(null)} />
           <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
             <div className="h-48 md:h-64 w-full relative">
-              <img src={selectedOffering.img} alt={selectedOffering.title} className="w-full h-full object-cover" />
+              <img src={selectedOffering.img} alt={selectedOffering.title} className="w-full h-full object-cover" loading="lazy" />
               <button 
                 onClick={() => setSelectedOffering(null)}
                 className="absolute top-4 right-4 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"

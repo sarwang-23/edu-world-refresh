@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Award, Users, Landmark, Globe2, Star, Rocket, Building2, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react'
 import houseOfLordsImg from '../assets/house_of_lords_group.jpg'
@@ -9,14 +10,7 @@ import alumni3Img from '../assets/alumni3.jpg'
 import alumni4Img from '../assets/alumni4.jpg'
 
 export const Route = createFileRoute('/programmes/house-of-lords')({
-  head: () => ({
-    meta: [
-      { title: 'Global Impact of Cambridge Startups · House of Lords — Global Edu Lab' },
-      { name: 'description', content: 'An exclusive invite-only evening at the House of Lords celebrating the global impact of Cambridge-born startups. October 2026.' },
-      { property: 'og:title', content: 'Global Impact of Cambridge Startups · House of Lords' },
-      { property: 'og:description', content: 'Invite-only evening celebrating Cambridge startups at the House of Lords, Westminster.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/house-of-lords"),
   component: Page,
 })
 
@@ -74,7 +68,7 @@ function Hero() {
           
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={houseOfLordsImg} alt="UK Parliament House of Lords Delegation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={houseOfLordsImg} alt="UK Parliament House of Lords Delegation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/20 via-transparent to-forest-deep/60" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
                 <div>
@@ -270,7 +264,7 @@ function PastEditions() {
           {testimonials.map((t, i) => (
             <div key={i} className="flex flex-col items-center text-center">
               <div className="h-[90px] w-[90px] rounded-full overflow-hidden mb-5 shadow-sm border border-forest/10">
-                <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                <img src={t.img} alt={t.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">“</span>
               <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">{t.name}</h3>

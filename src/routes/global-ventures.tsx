@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUpRight, Globe2, Building2, TrendingUp, Handshake, Rocket,
@@ -15,12 +16,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute("/global-ventures")({
-  head: () => ({
-    meta: [
-      { title: "Global Ventures — Launch, Expand & Scale Globally | Global Education Lab" },
-      { name: "description", content: "Global Ventures helps promising startups and research-led innovations launch and scale globally from emerging economies." },
-    ],
-  }),
+  head: () => buildMeta("/global-ventures"),
   component: GlobalVenturesPage,
 });
 
@@ -160,7 +156,7 @@ function Hero() {
             <div className="relative">
               {/* Main image */}
               <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-                <img src={globalVenturesHeroImg} alt="Global Ventures" className="w-full h-full object-cover" />
+                <img src={globalVenturesHeroImg} alt="Global Ventures" className="w-full h-full object-cover" loading="lazy" />
               </div>
 
               {/* Banners removed */}
@@ -424,7 +420,7 @@ function TrackComparison() {
           {/* Venture Track */}
           <div className="relative group overflow-hidden rounded-[2.5rem] min-h-[640px] flex flex-col justify-end shadow-2xl transition-all duration-500 hover:-translate-y-2">
             {/* Image & Overlay */}
-            <img src={businessLeadersImg} alt="Venture Track" className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out" />
+            <img src={businessLeadersImg} alt="Venture Track" className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/10 group-hover:via-black/80 transition-colors duration-500" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2.5rem] z-20 pointer-events-none" />
             
@@ -453,7 +449,7 @@ function TrackComparison() {
           {/* Research Track */}
           <div className="relative group overflow-hidden rounded-[2.5rem] min-h-[640px] flex flex-col justify-end shadow-2xl transition-all duration-500 hover:-translate-y-2">
             {/* Image & Overlay */}
-            <img src={heroClassroomImg} alt="Research Track" className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out" />
+            <img src={heroClassroomImg} alt="Research Track" className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/10 group-hover:via-black/80 transition-colors duration-500" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2.5rem] z-20 pointer-events-none" />
             

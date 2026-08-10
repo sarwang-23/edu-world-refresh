@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://www.globaledulab.com/sitemap.xml
 Sitemap: https://www.globaledulab.com/api/sitemap.xml

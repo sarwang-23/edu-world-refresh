@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Sparkles, CheckCircle2, Loader2 } from "lucide-react";
 
@@ -7,12 +8,7 @@ export const Route = createFileRoute("/apply-now")({
     source: (search.source as string) || "Direct",
   }),
   component: ApplyNowPage,
-  head: () => ({
-    meta: [
-      { title: "Apply Now — Global Education Lab" },
-      { name: "description", content: "Apply for our global education programmes for business leaders, educators, and young students." },
-    ],
-  }),
+  head: () => buildMeta("/apply-now"),
 });
 
 // Apps Script Web App URL — deployed from Code.gs
@@ -103,11 +99,10 @@ function ApplyNowPage() {
 
         {/* LEFT PANEL — Bespoke Immersive Experience */}
         <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] flex flex-col justify-between overflow-hidden bg-forest-deep">
-          <img
-            src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
+          <img src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
             alt="Cambridge architecture"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-30 mix-blend-luminosity scale-105"
-          />
+          loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-forest-deep/95" />
 
           {/* Subtle noise texture */}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen, BrainCircuit, Download, GraduationCap, Leaf, Mail, Newspaper, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -20,24 +21,7 @@ import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
 
 
 export const Route = createFileRoute("/insights")({
-  head: () => ({
-    meta: [
-      { title: "Insights & Research | Global Education Lab" },
-      {
-        name: "description",
-        content:
-          "White papers, executive briefings and research reports from Global Education Lab — capturing perspectives on leadership, artificial intelligence, sustainability and the future of global business.",
-      },
-      { property: "og:title", content: "Insights & Research | Global Education Lab" },
-      {
-        property: "og:description",
-        content:
-          "White papers, executive briefings and research reports from Global Education Lab.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildMeta("/insights"),
   component: InsightsPage,
 });
 
@@ -140,11 +124,10 @@ function Hero() {
         <div className="relative lg:col-span-5 lg:mt-14">
           <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
             <div className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply z-10" />
-            <img
-              src={insightsHeroImg}
+            <img src={insightsHeroImg}
               alt="Ideas that shape global leaders"
               className="h-[480px] w-full object-cover"
-            />
+            loading="lazy" />
             
             {/* Image Text Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent">
@@ -237,11 +220,10 @@ function FeaturedPaper({ onDownload }: { onDownload: (url: string, title?: strin
           
           <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
-              <img 
-                src={featuredRealImg} 
+              <img src={featuredRealImg} 
                 alt="Cambridge courtyard" 
                 className="h-full w-full object-cover"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 w-full">
                 <span className="inline-block px-2 py-1 bg-gold/20 text-gold text-[15px] font-bold uppercase tracking-widest rounded mb-3 border border-gold/30">PRIMARY PAPER</span>
@@ -301,11 +283,10 @@ function PublicationsArchive({ onDownload }: { onDownload: (url: string, title?:
                 <div className="absolute top-4 right-4 z-10 bg-gold text-forest-deep text-[15px] font-bold uppercase tracking-widest px-2 py-1 rounded flex items-center gap-1">
                   <BookOpen className="h-3 w-3" /> PDF
                 </div>
-                <img 
-                  src={r.image} 
+                <img src={r.image} 
                   alt={r.title} 
                   className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${r.imageClass || 'object-cover'}`} 
-                />
+                loading="lazy" />
               </div>
               <div className="flex flex-col flex-1 p-8">
                 <p className="text-[15px] font-bold uppercase tracking-widest text-gold mb-3">{r.category}</p>

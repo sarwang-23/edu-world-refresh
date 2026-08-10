@@ -123,7 +123,7 @@ function Hero() {
           {/* Image column */}
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={startupImg} alt="Entrepreneurship at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={startupImg} alt="Entrepreneurship at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/75 via-forest-deep/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
@@ -240,7 +240,7 @@ function Programmes() {
               <div key={p.title} className="w-[85vw] sm:w-[380px] lg:w-[320px] shrink-0 snap-center group rounded-[2rem] border border-forest/10 bg-white flex flex-col hover:shadow-[0_20px_40px_-15px_rgba(20,40,30,0.1)] hover:border-gold/30 hover:-translate-y-2 transition-all duration-500 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-forest/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="h-48 overflow-hidden relative">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-transform duration-700" />
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                     <div className="w-10 h-10 rounded-full bg-gold border-2 border-white flex items-center justify-center text-forest-deep shadow-lg group-hover:rotate-12 transition-transform">
@@ -507,7 +507,7 @@ function Community() {
                 <div className="flex items-center gap-3">
                   <div className="relative shrink-0">
                     <div className="h-12 w-12 rounded-full overflow-hidden ring-2 ring-gold/40 group-hover:ring-gold/80 transition-all duration-300">
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-gold border-2 border-cream" />
                   </div>
@@ -541,7 +541,7 @@ function Community() {
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mt-4">
                 <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
                   <div className="relative mb-6">
-                    <img src={selectedTestimonial.img} alt={selectedTestimonial.a} className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-2xl border-4 border-white" />
+                    <img src={selectedTestimonial.img} alt={selectedTestimonial.a} className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-2xl border-4 border-white" loading="lazy" />
                     <div className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-gold border-4 border-cream flex items-center justify-center">
                       <Quote className="h-3 w-3 text-forest-deep" />
                     </div>

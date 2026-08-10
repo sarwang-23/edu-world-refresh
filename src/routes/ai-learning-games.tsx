@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Footer } from "@/components/Footer";
@@ -43,16 +44,7 @@ const actionGalleryImages = [
 ];
 
 export const Route = createFileRoute("/ai-learning-games")({
-  head: () => ({
-    meta: [
-      { title: "AI-Powered Learning Games — Global Education Lab" },
-      {
-        name: "description",
-        content:
-          "AI-powered simulations that place learners inside real business scenarios. Make decisions. See the impact. Build the skills that matter in today's world.",
-      },
-    ],
-  }),
+  head: () => buildMeta("/ai-learning-games"),
   component: AILearningGames,
 });
 
@@ -208,11 +200,10 @@ function AILearningGames() {
           {/* Right: Image card */}
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-              <img
-                src={heroImg}
+              <img src={heroImg}
                 alt="AI Learning Games in action"
                 className="h-full w-full object-cover"
-              />
+              loading="lazy" />
               {/* floating stat badge removed */}
             </div>
             {/* decorative dot grid */}
@@ -297,7 +288,7 @@ function AILearningGames() {
                 ))}
               </ul>
               <div className="overflow-hidden rounded-xl">
-                <img src={formatImg1} alt="Micro-Simulations in action" className="w-full h-48 object-cover" />
+                <img src={formatImg1} alt="Micro-Simulations in action" className="w-full h-48 object-cover" loading="lazy" />
               </div>
             </div>
 
@@ -319,7 +310,7 @@ function AILearningGames() {
                 ))}
               </ul>
               <div className="overflow-hidden rounded-xl">
-                <img src={formatImg2} alt="Interactive Case Simulations" className="w-full h-48 object-cover" />
+                <img src={formatImg2} alt="Interactive Case Simulations" className="w-full h-48 object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -403,7 +394,7 @@ function AILearningGames() {
             {actionGalleryImages.slice(0, visibleGalleryCount).map((img, i) => {
               return (
                 <div key={i} className="overflow-hidden rounded-2xl">
-                  <img src={img} alt={`Gallery image ${i + 1}`} className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" />
+                  <img src={img} alt={`Gallery image ${i + 1}`} className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
               );
             })}
@@ -586,13 +577,12 @@ function ClientsSection() {
               className="flex-shrink-0 flex items-center justify-center bg-white rounded-2xl border border-stone-100 shadow-sm"
               style={{ width: '260px', height: '140px', padding: '16px 24px' }}
             >
-              <img
-                src={logo.src}
+              <img src={logo.src}
                 alt={logo.alt}
                 draggable={false}
                 className="object-contain"
                 style={{ width: '200px', height: '100px' }}
-              />
+              loading="lazy" />
             </div>
           ))}
         </div>

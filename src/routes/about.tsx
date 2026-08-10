@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap, Linkedin } from "lucide-react";
 import heroGlobalImg from "@/assets/transformational-global-education.png";
@@ -28,15 +29,7 @@ import { Voices } from '@/components/Voices';
 
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us | Global Education Lab" },
-      {
-        name: "description",
-        content: "Transformational education. Global impact.",
-      },
-    ],
-  }),
+  head: () => buildMeta("/about"),
   component: AboutPage,
 });
 
@@ -109,22 +102,20 @@ function Hero() {
               {/* Column 1 (2 Images) */}
               <div className="flex flex-col gap-3 h-full">
                 <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage1}
+                  <img src={collage1}
                     alt="Cambridge Lecture Session"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <span className="text-[11px] font-medium text-white">Cambridge Lecture Session</span>
                   </div>
                 </div>
 
                 <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage8}
+                  <img src={collage8}
                     alt="STEM Exploration"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <span className="text-[11px] font-medium text-white">STEM & Astrophysics</span>
                   </div>
@@ -134,33 +125,30 @@ function Hero() {
               {/* Column 2 (3 Images) */}
               <div className="flex flex-col gap-3 h-full">
                 <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage2}
+                  <img src={collage2}
                     alt="Cohort Discussion"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span className="text-[11px] font-medium text-white">Cohort Discussion</span>
                   </div>
                 </div>
 
                 <div className="h-[150px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage7}
+                  <img src={collage7}
                     alt="GEL Fireside Panel with CJBS"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span className="text-[11px] font-medium text-white">Fireside Panel</span>
                   </div>
                 </div>
 
                 <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage4}
+                  <img src={collage4}
                     alt="Experiential Workshop"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span className="text-[11px] font-medium text-white">Experiential Workshop</span>
                   </div>
@@ -170,22 +158,20 @@ function Hero() {
               {/* Column 3 (2 Images) */}
               <div className="flex flex-col gap-3 h-full">
                 <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage9}
+                  <img src={collage9}
                     alt="Cambridge Interactive Lab"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <span className="text-[11px] font-medium text-white">Cambridge Interactive Lab</span>
                   </div>
                 </div>
 
                 <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img
-                    src={collage5}
+                  <img src={collage5}
                     alt="Historic Cambridge Formal Dinners"
                     className="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700"
-                  />
+                  loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <span className="text-[11px] font-medium text-white">Cambridge Formal Dinners</span>
                   </div>
@@ -331,11 +317,10 @@ function FounderStory() {
           {/* Right: Image */}
           <div className="md:col-span-4">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
-              <img
-                src={founderImg}
+              <img src={founderImg}
                 alt="Suyash Bhatt"
                 className="w-full h-[360px] object-cover object-top"
-              />
+              loading="lazy" />
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-bold text-white">Suyash Bhatt</h3>
@@ -508,11 +493,10 @@ function OurPeople() {
                   <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative h-28 w-28 overflow-hidden rounded-full border-[5px] border-white bg-[#F7F5F0] shadow-sm transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
                     {person.img ? (
-                      <img 
-                        src={person.img} 
+                      <img src={person.img} 
                         alt={person.name} 
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                      />
+                      loading="lazy" />
                     ) : (
                       <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-forest-deep to-forest text-white transition-transform duration-700 group-hover:scale-110">
                         <Users className="h-7 w-7 text-gold mb-0.5" />

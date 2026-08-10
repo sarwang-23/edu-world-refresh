@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useRef } from 'react'
 import {
@@ -45,12 +46,7 @@ import samvrithaImg from '../assets/people/samvritha.png';
 
 
 export const Route = createFileRoute('/students')({
-  head: () => ({
-    meta: [
-      { title: 'Young Leaders Summer Programme | Global Education Lab' },
-      { name: 'description', content: 'Explore world-class programmes for students aged 14–17 and undergraduates, including summer camps, short-term residential experiences, and online courses. Build global connections and skills.' },
-    ],
-  }),
+  head: () => buildMeta("/students"),
   component: YoungLeaders,
 })
 
@@ -172,7 +168,7 @@ function Hero() {
           <div className="relative lg:col-span-6">
             {/* Main image */}
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={heroImg} alt="Students at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={heroImg} alt="Students at Cambridge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/75 via-forest-deep/20 to-transparent" />
               {/* Bottom overlay label */}
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
@@ -299,11 +295,10 @@ function CoreElements() {
 
               {/* ── Image frame ── */}
               <div className="relative aspect-[3/4] w-full overflow-hidden">
-                <img
-                  src={e.img}
+                <img src={e.img}
                   alt={e.title}
                   className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
+                loading="lazy" />
                 {/* deeper gradient so text is readable */}
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/10 to-transparent" />
 
@@ -420,13 +415,12 @@ function PartnersAndMentors() {
               <div className="flex items-center gap-4 mb-8 pb-8 border-b border-white/8">
                 <div className="flex -space-x-3">
                   {[mentor1, mentor2, mentor3, mentor4, mentor5].map((imgSrc, i) => (
-                    <img
-                      key={i}
+                    <img key={i}
                       src={imgSrc}
                       alt="Mentor"
                       className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 object-cover hover:scale-110 transition-transform duration-300"
                       style={{ zIndex: 6 - i }}
-                    />
+                    loading="lazy" />
                   ))}
                   <div className="w-12 h-12 rounded-full border-2 border-forest-deep ring-1 ring-white/15 bg-gold/15 flex items-center justify-center text-[15px] font-bold text-gold" style={{ zIndex: 0 }}>
                     +12
@@ -566,7 +560,7 @@ function KeyFacilitators() {
             className="flex-none w-[260px] sm:w-[280px] bg-white border border-gray-100 rounded-3xl shadow-md hover:shadow-xl transition-shadow duration-300 p-7 flex flex-col items-center text-center select-none"
           >
             <div className="w-36 h-36 mb-5 overflow-hidden rounded-full border-4 border-forest/8 shadow-lg flex-none">
-              <img src={f.img} alt={f.name} className="w-full h-full object-cover" draggable={false} />
+              <img src={f.img} alt={f.name} className="w-full h-full object-cover" draggable={false} loading="lazy" />
             </div>
             <h3 className="text-base font-bold text-gray-900 mb-1">{f.name}</h3>
             <p className="text-xs font-semibold text-forest-deep whitespace-pre-line mb-3 leading-snug">{f.title}</p>
@@ -634,7 +628,7 @@ function ChooseYourTrack() {
 
             {/* full-width cinematic image footer */}
             <div className="relative h-52 mt-auto overflow-hidden">
-              <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={studentsImg} alt="Entrepreneurship" className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
                 <Link to="/students/entrepreneurship" className="inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-forest-deep shadow-xl shadow-gold/30 hover:bg-amber-400 transition-all duration-300 group/btn">
@@ -680,7 +674,7 @@ function ChooseYourTrack() {
 
             {/* full-width cinematic image footer */}
             <div className="relative h-52 mt-auto overflow-hidden">
-              <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover object-[center_30%] group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <img src={heroImg} alt="STEM Research" className="w-full h-full object-cover object-[center_30%] group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent" />
               <div className="absolute bottom-5 left-7">
                 <Link to="/students/stem-research" className="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-[15px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-blue-500/30 hover:bg-blue-400 transition-all duration-300 group/btn">
@@ -787,11 +781,10 @@ function CohortGallery() {
               key={idx} 
               className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
             >
-              <img 
-                src={img} 
+              <img src={img} 
                 alt={`Young Leaders Gallery ${idx + 1}`} 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">

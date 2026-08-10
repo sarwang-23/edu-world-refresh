@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4 lg:pr-8">
             <Link to="/" className="inline-block mb-6">
-              <img src={logoImg} alt="Global Education Lab" className="h-20 w-auto object-contain mix-blend-multiply" />
+              <img src={logoImg} alt="Global Education Lab" className="h-20 w-auto object-contain mix-blend-multiply" loading="lazy" />
             </Link>
             <p className="text-[14.5px] leading-[1.6] text-[#333] font-medium">
               Transformational educational experiences<br className="hidden lg:block" /> for a lifetime of a learner's life.

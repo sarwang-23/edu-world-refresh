@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Camera, FileText, ChevronDown } from "lucide-react";
 import { useState, useRef } from "react";
@@ -20,12 +21,7 @@ async function submitToGILP(formType: string, data: Record<string, string>) {
 
 export const Route = createFileRoute("/gilp-delegate")({
   component: GilpDelegatePage,
-  head: () => ({
-    meta: [
-      { title: "GILP – Delegate Registration Page" },
-      { name: "description", content: "Register for the Global India Leadership Programme." },
-    ],
-  }),
+  head: () => buildMeta("/gilp-delegate"),
 });
 
 function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: string; hint?: string; accept?: string; multiple?: boolean; icon: React.ElementType }) {
@@ -142,12 +138,11 @@ function GilpDelegatePage() {
         <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] bg-forest-deep overflow-y-auto">
 
           {/* BG image */}
-          <img
-            src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
+          <img src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
             alt=""
             aria-hidden
             className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105 pointer-events-none"
-          />
+          loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/98 via-forest-deep/85 to-forest-deep/95 pointer-events-none" />
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent pointer-events-none" />
 
@@ -370,11 +365,10 @@ function GilpDelegatePage() {
 
                 {/* ── GILP Banner Image at bottom ── */}
                 <div className="mt-10 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
-                  <img
-                    src="/gilp-banner.png"
+                  <img src="/gilp-banner.png"
                     alt="Global India Leadership Programme – 14-18, Cambridge Judge Business School"
                     className="w-full h-auto block"
-                  />
+                  loading="lazy" />
                 </div>
 
               </form>

@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   ArrowUpRight, ArrowLeft, CheckCircle2, Compass, MapPin,
@@ -10,12 +11,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/students_/architecture')({
-  head: () => ({
-    meta: [
-      { title: 'Architecture Track | Young Leaders Summer Programme' },
-      { name: 'description', content: 'Design spaces, explore heritage and shape human-centred experiences on the Architecture track at Cambridge.' },
-    ],
-  }),
+  head: () => buildMeta("/students/architecture"),
   component: ArchitectureTrack,
 })
 
@@ -85,7 +81,7 @@ function Hero() {
           {/* Image */}
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-              <img src={cambridgeImg} alt="Architecture" className="w-full h-full object-cover" />
+              <img src={cambridgeImg} alt="Architecture" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-950/60 to-transparent" />
               <div className="absolute bottom-6 left-6 flex gap-3">
                 {[
@@ -217,7 +213,7 @@ function Outcomes() {
             ))}
           </div>
           <div className="relative rounded-[2rem] overflow-hidden h-72 md:h-[400px]">
-            <img src={cambridgeImg} alt="Cambridge Architecture" className="w-full h-full object-cover" />
+            <img src={cambridgeImg} alt="Cambridge Architecture" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#B47C35]/60 to-transparent" />
           </div>
         </div>

@@ -87,7 +87,7 @@ export function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
@@ -115,7 +115,7 @@ export function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Lakshmi Samyuktha Kotha</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Executive Dean, Narayana Group of Schools – India</p>
@@ -154,7 +154,7 @@ export function Voices() {
                 <div className="pt-3.5 border-t border-forest/8 flex items-center gap-3 mt-auto">
                   <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[14px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                     {t.img ? (
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                     ) : (
                       t.a[0]
                     )}

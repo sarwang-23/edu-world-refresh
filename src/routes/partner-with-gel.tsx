@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
 import { SharedTestimonials } from '@/components/SharedTestimonials'
@@ -32,12 +33,7 @@ import dhruvGalgotia from '@/assets/people/dhruv_galgotia.jpg';
 import samTully from '@/assets/people/sam_tully.jpg';
 
 export const Route = createFileRoute('/partner-with-gel')({
-  head: () => ({
-    meta: [
-      { title: 'Partner with GEL | Global Education Lab' },
-      { name: 'description', content: 'Partner with Global Education Lab to create transformative learning experiences and lasting impact across the globe.' },
-    ],
-  }),
+  head: () => buildMeta("/partner-with-gel"),
   component: PartnerWithGelPage,
 })
 
@@ -142,11 +138,10 @@ function Hero() {
           {/* Right Image */}
           <div className="relative lg:col-span-6 lg:mt-10">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-              <img
-                src={heroImg}
+              <img src={heroImg}
                 alt="Cambridge Partnership"
                 className="h-full w-full object-cover object-right"
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent" />
             </div>
           </div>
@@ -383,11 +378,10 @@ function TrustedByMarquee() {
   const logos = [
     // University of Cambridge Judge Business School (Official)
     <div className="flex items-center justify-center p-2 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all overflow-hidden">
-      <img
-        src="/cambridge-jbs-official.png"
+      <img src="/cambridge-jbs-official.png"
         alt="University of Cambridge Judge Business School"
         className="w-[95%] h-[95%] object-contain scale-[1.4] hover:scale-[1.45] transition-transform duration-300"
-      />
+      loading="lazy" />
     </div>,
     // Girton
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
@@ -480,15 +474,14 @@ function TrustedByMarquee() {
     </div>,
     // Cambridge Judge Business School (Official)
     <div className="flex items-center justify-center p-2 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all overflow-hidden">
-      <img
-        src="/cambridge-jbs-official.png"
+      <img src="/cambridge-jbs-official.png"
         alt="University of Cambridge Judge Business School"
         className="w-[95%] h-[95%] object-contain scale-[1.4] hover:scale-[1.45] transition-transform duration-300"
-      />
+      loading="lazy" />
     </div>,
     // Galgotias
     <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-forest/10 bg-white w-56 h-[132px] shrink-0 shadow-sm hover:border-gold/30 hover:shadow-md transition-all">
-      <img src="/galgotias-logo.jpg" alt="Galgotias University" className="h-16 w-auto object-contain mix-blend-multiply" />
+      <img src="/galgotias-logo.jpg" alt="Galgotias University" className="h-16 w-auto object-contain mix-blend-multiply" loading="lazy" />
     </div>
   ]
 

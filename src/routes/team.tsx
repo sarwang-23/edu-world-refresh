@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
 import { ArrowUpRight, Linkedin } from 'lucide-react'
@@ -6,12 +7,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/team')({
-  head: () => ({
-    meta: [
-      { title: 'Our Team | Global Education Lab' },
-      { name: 'description', content: 'Meet the team behind Global Education Lab.' },
-    ],
-  }),
+  head: () => buildMeta("/team"),
   component: TeamPage,
 })
 
@@ -93,11 +89,10 @@ function Leadership() {
 
           <div className="relative group">
             <div className="absolute -inset-4 bg-gold/5 rounded-[3rem] transform rotate-3 transition-transform group-hover:rotate-0 duration-500" />
-            <img 
-              src={founderImg} 
+            <img src={founderImg} 
               alt="Suyash Bhatt" 
               className="relative w-full aspect-[4/5] object-cover object-top rounded-[2.5rem] shadow-2xl z-10" 
-            />
+            loading="lazy" />
             <div className="absolute bottom-10 -left-8 z-20 bg-forest-deep text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden lg:block">
               <span className="block font-serif italic text-gold text-2xl mb-1">Suyash Bhatt</span>
               <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-white/80">Founder & Director</span>

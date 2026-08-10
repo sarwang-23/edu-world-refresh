@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, Leaf, TreePine } from 'lucide-react'
 import { Footer } from './index'
@@ -16,14 +17,7 @@ import bali9Img from '../assets/bali_new_9.jpg'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/bali')({
-  head: () => ({
-    meta: [
-      { title: 'Bali Green School Immersive Programme — Global Edu Lab' },
-      { name: 'description', content: 'An immersive study visit to the iconic Green School Bali — discover how sustainability, nature-based learning and creative curriculum design can transform your school.' },
-      { property: 'og:title', content: 'Bali Green School Immersive Programme' },
-      { property: 'og:description', content: 'Experience the world\'s most iconic green school and bring sustainable education principles back to your institution.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/bali"),
   component: Page,
 })
 
@@ -105,7 +99,7 @@ function Hero() {
           </div>
           <div className="relative order-1 md:order-2">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={bali4Img} alt="Green School Bali" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={bali4Img} alt="Green School Bali" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             </div>
             <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-forest/8">
               <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center">
@@ -328,7 +322,7 @@ function ProgrammeDetails() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px]">
-            <img src={bali3Img} alt="Bali Programme Details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <img src={bali3Img} alt="Bali Programme Details" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
 
@@ -378,7 +372,7 @@ function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, i) => (
             <div key={i} className={`relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group ${i === 4 ? 'md:col-span-2 md:row-span-2' : ''}`}>
-              <img src={img} alt={`Bali Visit ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={img} alt={`Bali Visit ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             </div>
           ))}
         </div>

@@ -473,7 +473,7 @@ function MainContent({ v }: { v: Venture }) {
                   <div className="relative bg-gradient-to-b from-slate-50 to-slate-100/80 px-6 pt-7 pb-6 flex flex-col items-center text-center border-b border-slate-100">
                     <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-lg ring-1 mb-4 ring-emerald-100">
                       {member.img ? (
-                        <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                        <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-white text-2xl font-black bg-gradient-to-br from-emerald-500 to-teal-600">
                           {member.name.charAt(0)}

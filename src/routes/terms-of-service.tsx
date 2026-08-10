@@ -1,17 +1,10 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Globe2, FileText } from "lucide-react";
 import { Footer } from "./index";
 
 export const Route = createFileRoute("/terms-of-service")({
-  head: () => ({
-    meta: [
-      { title: "Terms of Service | Global Education Lab" },
-      {
-        name: "description",
-        content: "Read the terms of service for Global Education Lab.",
-      },
-    ],
-  }),
+  head: () => buildMeta("/terms-of-service"),
   component: TermsOfServicePage,
 });
 

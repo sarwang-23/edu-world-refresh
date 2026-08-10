@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Lightbulb, Users, Globe2, ChevronLeft, ChevronRight, Star, GraduationCap, Building2, Handshake } from 'lucide-react'
 import cambridgeImg from '../assets/cambridge_cslp_new.jpg'
@@ -16,14 +17,7 @@ import { useState } from 'react'
 import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 export const Route = createFileRoute('/programmes/cslp')({
-  head: () => ({
-    meta: [
-      { title: 'Cambridge School Leadership Programme — Global Edu Lab' },
-      { name: 'description', content: 'Shape the future of your school with the Cambridge–India executive leadership bridge, accessible, affordable and globally relevant.' },
-      { property: 'og:title', content: 'Cambridge School Leadership Programme' },
-      { property: 'og:description', content: 'High-quality Cambridge leadership training for Indian school leaders.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/cslp"),
   component: Page,
 })
 
@@ -106,7 +100,7 @@ function Hero() {
           
           <div className="relative lg:col-span-6">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 group">
-              <img src={cambridgeImg} alt="Cambridge School Leadership Programme" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={cambridgeImg} alt="Cambridge School Leadership Programme" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/30 via-transparent to-forest-deep/60" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
                 <div>
@@ -328,7 +322,7 @@ function ProgrammeDetails() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px]">
-            <img src={cambridgeImg} alt="Cambridge Workshop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <img src={cambridgeImg} alt="Cambridge Workshop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
 
@@ -378,7 +372,7 @@ function GallerySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, i) => (
             <div key={i} className={`relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group ${i === 4 ? 'md:col-span-2 md:row-span-2' : ''}`}>
-              <img src={img} alt={`Cambridge CSLP ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={img} alt={`Cambridge CSLP ${i + 1}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             </div>
           ))}
         </div>

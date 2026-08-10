@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin, Mail, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -18,23 +19,7 @@ import lakshmiKothaImg from '@/assets/lakshmi_kotha.jpg';
 import jaideepPrabhuImg from '@/assets/jaideep_prabhu.jpg';
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Global Education Lab — Transformational Education. Global Impact." },
-      {
-        name: "description",
-        content:
-          "GEL designs and delivers world-class learning experiences that empower individuals, build capability and drive innovation for a better, more inclusive tomorrow.",
-      },
-      { property: "og:title", content: "Global Education Lab" },
-      {
-        property: "og:description",
-        content: "Transformational education. Global impact. Rooted in Cambridge, impacting the world.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildMeta("/"),
   component: Index,
 });
 
@@ -88,11 +73,13 @@ function Hero() {
 
         <div className="relative lg:col-span-6">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img
-              src={heroImg}
+            <img src={heroImg}
               alt="Students in a Cambridge learning session"
               width={1920}
               height={1200}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
@@ -208,11 +195,10 @@ function OurProgrammes() {
               style={{ minHeight: 420 }}
             >
               {/* Full-bleed image */}
-              <img
-                src={p.img}
+              <img src={p.img}
                 alt={p.tag}
                 className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+              loading="lazy" />
               {/* Dark gradient overlay — always visible at bottom */}
               <div className={`absolute inset-0 bg-gradient-to-t ${p.accent}`} />
               {/* Extra darkening on hover */}
@@ -356,7 +342,7 @@ function CambridgeOrigin() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5]">
-              <img src={startupImg} alt="Innovation and Purpose" className="w-full h-full object-cover" />
+              <img src={startupImg} alt="Innovation and Purpose" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             </div>
           </div>
@@ -447,7 +433,7 @@ function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={jaideepPrabhuImg} alt="Prof. Jaideep Prabhu FBA" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Prof. Jaideep Prabhu FBA</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Professor of Marketing & Vice Dean, Cambridge Judge Business School, University of Cambridge</p>
@@ -475,7 +461,7 @@ function Voices() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-white/15">
-                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" />
+                <img src={lakshmiKothaImg} alt="Lakshmi Samyuktha Kotha" className="w-14 h-14 rounded-full object-cover border-2 border-gold shrink-0 shadow-md" loading="lazy" />
                 <div>
                   <h4 className="text-[16px] font-bold text-white leading-tight">Lakshmi Samyuktha Kotha</h4>
                   <p className="text-[13px] text-cream/75 leading-tight mt-0.5">Executive Dean, Narayana Group of Schools – India</p>
@@ -516,7 +502,7 @@ function Voices() {
                 <div className="pt-3.5 border-t border-forest/8 flex items-center gap-3 mt-auto">
                   <div className="w-10 h-10 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[14px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                     {t.img ? (
-                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                      <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                     ) : (
                       t.a[0]
                     )}

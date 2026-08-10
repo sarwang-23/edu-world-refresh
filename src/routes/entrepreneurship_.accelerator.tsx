@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Rocket, Calendar, Globe2, Sparkles, Building2, BookOpen, Users, TrendingUp } from 'lucide-react'
 import { Footer } from './index'
@@ -7,12 +8,7 @@ import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute('/entrepreneurship_/accelerator')({
-  head: () => ({
-    meta: [
-      { title: 'Startup Accelerator (12 Months) | Global Education Lab' },
-      { name: 'description', content: 'Structured cohorts for early-stage startups with mentorship, workshops and investor connections.' },
-    ],
-  }),
+  head: () => buildMeta("/entrepreneurship/accelerator"),
   component: AcceleratorPage,
 })
 
@@ -81,7 +77,7 @@ function Hero() {
 
           <div className="relative">
             <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={heroImg} alt="Startup Accelerator" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={heroImg} alt="Startup Accelerator" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
             </div>
 
@@ -153,7 +149,7 @@ function DetailsSection() {
           </ul>
         </div>
         <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-xl border border-forest/5">
-          <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover" />
+          <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </section>

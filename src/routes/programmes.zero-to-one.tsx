@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Users, Trophy, Rocket, Compass, Calendar, Globe2, Lightbulb, Zap, ChevronLeft, ChevronRight, Star, Target, FlaskConical, Sprout, Sparkles, Award, GraduationCap, User } from 'lucide-react'
 import { Footer } from './index'
@@ -29,20 +30,7 @@ import tendaiImg from '../assets/tendai.jpg'
 import sydneyImg from '../assets/sydney.jpg'
 
 export const Route = createFileRoute('/programmes/zero-to-one')({
-  head: () => ({
-    meta: [
-      { title: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
-      { name: 'description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours, with its inaugural theme focused on digital health. Participants also have a unique opportunity to attend a fireside chat with a Nobel Laureate." },
-      { property: 'og:title', content: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
-      { property: 'og:description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours, with its inaugural theme focused on digital health." },
-      { property: 'og:url', content: 'https://www.globaledulab.com/programmes/zero-to-one' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Zero to One | Zero-To-One Weekend | Global Education Lab' },
-      { name: 'twitter:description', content: "Organised collaboratively by Cambridge Judge Business School, King's E-Lab and Global Education Lab, the Zero-To-One Weekend is a 2.5-day immersive, hands-on experience designed to transform early-stage ideas into credible, testable ventures within 48 hours." },
-      { name: 'twitter:image', content: 'https://www.globaledulab.com/images/default-social.jpg' },
-      { name: 'robots', content: 'index,follow' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/zero-to-one"),
   component: ZeroToOne,
 })
 
@@ -109,11 +97,10 @@ function Hero() {
               <div className="flex flex-wrap items-center gap-4">
                 {/* Cambridge Judge Business School */}
                 <div className="flex items-center justify-center rounded-2xl bg-white border border-forest/15 px-4 py-2 shadow-sm hover:shadow-md transition-all h-[76px] w-[230px] overflow-hidden">
-                  <img
-                    src={logoJBS}
+                  <img src={logoJBS}
                     alt="University of Cambridge Judge Business School"
                     className="w-full h-full object-contain scale-[1.45] hover:scale-[1.5] transition-transform duration-300"
-                  />
+                  loading="lazy" />
                 </div>
 
                 {/* King's E-Lab */}
@@ -290,7 +277,7 @@ function ThemeSection() {
           </div>
           <div className="relative h-full min-h-[480px]">
             <div className="h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/40 border border-white/10 relative group">
-              <img src={foodAgriImg} alt="Theme" className="w-full h-full object-cover object-[80%_center] block opacity-80 group-hover:scale-105 transition-transform duration-700" />
+              <img src={foodAgriImg} alt="Theme" className="w-full h-full object-cover object-[80%_center] block opacity-80 group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-10">
                 <div className="inline-flex items-center gap-2 mb-4 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3.5 py-1.5 rounded-full">
@@ -350,7 +337,7 @@ function SuccessStory() {
 
             {/* Image frame — dimensions unchanged (aspect-[16/10]) */}
             <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] shadow-xl border border-forest/8">
-              <img src={alumniImpactImg} alt="Zero to One outcome" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={alumniImpactImg} alt="Zero to One outcome" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-forest-deep/30" />
               <div className="absolute bottom-6 left-6">
                 <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">The Experience</p>
@@ -530,11 +517,10 @@ function CohortGallery() {
               key={idx} 
               className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
             >
-              <img 
-                src={img} 
+              <img src={img} 
                 alt={`Zero to One Gallery ${idx + 1}`} 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-              />
+              loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">
@@ -660,7 +646,7 @@ function ZeroToOneTestimonials() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-forest-deep/10 border border-forest/15 overflow-hidden shrink-0">
-                    <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                    <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
                     <p className="text-[16px] font-bold text-forest-deep">{t.a}</p>

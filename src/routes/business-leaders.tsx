@@ -85,11 +85,10 @@ function Hero() {
 
         <div className="relative lg:col-span-6 lg:pt-12 md:pt-8">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img
-              src={businessLeadersImg}
+            <img src={businessLeadersImg}
               alt="Business Leaders"
               className="h-full w-full object-cover"
-            />
+            loading="lazy" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
               <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">CXOs & ENTREPRENEURS</p>
               <p className="mt-1 text-xl font-bold text-cream">
@@ -405,7 +404,7 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <img src={r.img} alt={r.author} className="w-full h-full object-cover object-[center_30%]" />
+                   <img src={r.img} alt={r.author} className="w-full h-full object-cover object-[center_30%]" loading="lazy" />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>

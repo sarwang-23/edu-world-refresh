@@ -120,7 +120,7 @@ function BlogPostPage() {
           <div className="flex items-center justify-between text-[13.5px] text-[#555555] mb-6">
             <div className="flex items-center gap-2 flex-wrap">
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-forest/10 overflow-hidden border border-forest/20">
-                <img src={logoImg} alt={post.author} className="h-4.5 w-4.5 object-contain" />
+                <img src={logoImg} alt={post.author} className="h-4.5 w-4.5 object-contain" loading="lazy" />
               </div>
               <span className="font-medium text-[#111111]">{post.author}</span>
               <span className="text-gray-400">·</span>
@@ -235,7 +235,7 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
     <div className="flex flex-col gap-6">
       {post.cover && (
         <div className="my-6 overflow-hidden">
-          <img src={post.cover} alt={post.title} className="w-full object-cover" />
+          <img src={post.cover} alt={post.title} className="w-full object-cover" loading="lazy" />
         </div>
       )}
       {post.content.map((block, i) => {
@@ -261,7 +261,7 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
           case "image":
             return (
               <figure key={i} className="my-8">
-                <img src={block.src} alt={block.caption ?? ""} className="w-full object-cover" />
+                <img src={block.src} alt={block.caption ?? ""} className="w-full object-cover" loading="lazy" />
                 {block.caption && (
                   <figcaption className="mt-2 text-center text-sm text-neutral-500">
                     {block.caption}
@@ -308,7 +308,7 @@ function ArticleGallery({ images }: { images: string[] }) {
           {images.map((src, index) => (
             <CarouselItem key={index}>
               <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden bg-black/5 rounded-md">
-                <img src={src} alt="Gallery" className="w-full h-full object-cover" />
+                <img src={src} alt="Gallery" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </CarouselItem>
           ))}
@@ -335,7 +335,7 @@ function ArticleGallery({ images }: { images: string[] }) {
               current === index ? "ring-2 ring-forest opacity-100" : "opacity-60 hover:opacity-100"
             }`}
           >
-            <img src={src} alt="Thumbnail" className="w-full h-full object-cover" />
+            <img src={src} alt="Thumbnail" className="w-full h-full object-cover" loading="lazy" />
           </button>
         ))}
       </div>
@@ -405,11 +405,10 @@ function TestimonialsCarousel({ items }: { items: Array<{ name: string; role: st
                         className="flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg"
                         style={{ width: "140px", height: "140px" }}
                       >
-                        <img
-                          src={item.photo}
+                        <img src={item.photo}
                           alt={item.name}
                           className="w-full h-full object-cover object-top"
-                        />
+                        loading="lazy" />
                       </div>
                     )}
                   </div>
@@ -479,11 +478,10 @@ function RecentPostsGrid({ posts }: { posts: BlogPost[] }) {
               className="group flex flex-col bg-white border border-[#E5E7EB] overflow-hidden shadow-xs hover:shadow-md transition-all rounded-xs"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
-                <img
-                  src={post.cover}
+                <img src={post.cover}
                   alt={post.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                loading="lazy" />
               </div>
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="text-[15px] font-bold text-[#111111] leading-snug group-hover:text-forest transition-colors line-clamp-3 mb-4">

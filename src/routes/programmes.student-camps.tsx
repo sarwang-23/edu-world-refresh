@@ -1,3 +1,4 @@
+import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, Calendar, MapPin, Rocket, GraduationCap, Star, CheckCircle2, Users, Globe2, Lightbulb, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Footer } from './index'
@@ -6,14 +7,7 @@ import person11Img from '../assets/person11.jpg'
 import person12Img from '../assets/person12.jpg'
 
 export const Route = createFileRoute('/programmes/student-camps')({
-  head: () => ({
-    meta: [
-      { title: 'Cambridge Student Summer Camps — Global Edu Lab' },
-      { name: 'description', content: 'Residential summer camps at Hughes Hall and Girton College, University of Cambridge — covering STEM, Entrepreneurship, AI and more.' },
-      { property: 'og:title', content: 'Cambridge Student Summer Camps' },
-      { property: 'og:description', content: 'Residential summer programmes at the University of Cambridge for students.' },
-    ],
-  }),
+  head: () => buildMeta("/programmes/student-camps"),
   component: Page,
 })
 
@@ -345,7 +339,7 @@ function Testimonials() {
           ))}
         </div>
 
-        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" /></div>
+        <div className="mx-auto h-20 w-20 rounded-full overflow-hidden shadow-xl mb-6 border-2 border-gold/30"><img src={t.img} alt={t.name} className="w-full h-full object-cover" loading="lazy" /></div>
         <div className="flex items-center justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
         </div>

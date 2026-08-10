@@ -110,7 +110,7 @@ export function SharedTestimonials({
               <div className="relative shrink-0">
                 <div className="w-14 h-14 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-xl overflow-hidden group-hover:border-gold/40 transition-colors duration-300">
                   {featured.img ? (
-                    <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" />
+                    <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" loading="lazy" />
                   ) : (
                     featured.a[0]
                   )}
@@ -164,7 +164,7 @@ export function SharedTestimonials({
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                       {t.img ? (
-                        <img src={t.img} alt={t.a} className="w-full h-full object-cover" />
+                        <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
                       ) : (
                         t.a[0]
                       )}
