@@ -3,7 +3,7 @@ import type { MetaDescriptor, HtmlLinkDescriptor } from '@tanstack/react-router'
 
 export const SITE_URL = 'https://www.globaledulab.com';
 export const SITE_NAME = 'Global Education Lab';
-export const DEFAULT_SOCIAL_IMAGE = '/images/default-social.jpg';
+export const DEFAULT_SOCIAL_IMAGE = '/images/programmersimage_social_share.jpeg';
 
 export type SeoOverrides = Partial<SeoEntry> & {
   ogType?: 'website' | 'article';

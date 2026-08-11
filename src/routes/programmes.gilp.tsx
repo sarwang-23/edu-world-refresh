@@ -162,7 +162,7 @@ function FloatingApplyButton() {
 
 /* ─── BROCHURE MODAL — captures name+email, then downloads the PDF ─── */
 // TODO: replace with the real hosted brochure PDF URL
-const BROCHURE_PDF_URL = '/gilp-brochure.pdf'
+const BROCHURE_PDF_URL = '/gilp-brochure_final.pdf';
 
 function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [fullName, setFullName] = useState('')
