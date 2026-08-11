@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 import { COUNTRY_CODES } from "@/data/countryCodes";
 
 // TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOvfz0SOEgLYNf26E2Sz8B4DPvxyNEU0LQwZbvmLl2gmIcDHE46LnA6nZMv2PQ8qxV/exec";
 
 // Fires a form submission to the GILP Apps Script backend.
 // Uses no-cors + urlencoded body so it works without any CORS setup on the Apps Script side.
@@ -82,6 +82,7 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
 }
 
 function GilpDelegatePage() {
+  const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     title: "Mr",
     firstName: "",
@@ -92,6 +93,11 @@ function GilpDelegatePage() {
     phone: "",
     email: "",
     funding: "",
+    invoiceName: "",
+    invoiceAddress: "",
+    feeOption: "",
+    partnerName: "",
+    brochureRead: false,
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -100,6 +106,12 @@ function GilpDelegatePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (step === 1) {
+      setStep(2);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     setStatus("submitting");
     try {
       await submitToGILP("delegate", {
@@ -112,6 +124,11 @@ function GilpDelegatePage() {
         phone: `${form.phoneCode} ${form.phone}`,
         email: form.email,
         funding: form.funding,
+        invoiceName: form.invoiceName,
+        invoiceAddress: form.invoiceAddress,
+        feeOption: form.feeOption,
+        partnerName: form.partnerName,
+        brochureRead: form.brochureRead ? "Yes" : "No",
       });
       setStatus("success");
     } catch (err) {
@@ -142,7 +159,7 @@ function GilpDelegatePage() {
             alt=""
             aria-hidden
             className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105 pointer-events-none"
-          loading="lazy" />
+            loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/98 via-forest-deep/85 to-forest-deep/95 pointer-events-none" />
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent pointer-events-none" />
 
@@ -226,141 +243,227 @@ function GilpDelegatePage() {
 
               <form className="space-y-5" onSubmit={handleSubmit}>
 
-                {/* Row: Title + First + Last */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div>
-                    <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Title *</label>
-                    <div className={selectWrapCls}>
-                      <select required value={form.title} onChange={update("title")} className={selectCls}>
-                        <option value="">—</option>
-                        <option>Mr</option>
-                        <option>Mrs</option>
-                        <option>Ms</option>
-                        <option>Dr</option>
-                        <option>Prof</option>
-                      </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                {step === 1 ? (
+                  <>
+                    {/* Row: Title + First + Last */}
+                    <div className="grid grid-cols-3 gap-3">
+                      <div>
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Title *</label>
+                        <div className={selectWrapCls}>
+                          <select required value={form.title} onChange={update("title")} className={selectCls}>
+                            <option value="">—</option>
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                            <option>Ms</option>
+                            <option>Dr</option>
+                            <option>Prof</option>
+                          </select>
+                          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">First Name *</label>
+                        <input type="text" required value={form.firstName} onChange={update("firstName")} className={inputCls} />
+                      </div>
+                      <div>
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Last Name</label>
+                        <input type="text" value={form.lastName} onChange={update("lastName")} className={inputCls} />
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">First Name *</label>
-                    <input type="text" required value={form.firstName} onChange={update("firstName")} className={inputCls} />
-                  </div>
-                  <div>
-                    <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Last Name</label>
-                    <input type="text" value={form.lastName} onChange={update("lastName")} className={inputCls} />
-                  </div>
-                </div>
 
-                {/* Dietary Preference */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Dietary Preference *</label>
-                  <div className={selectWrapCls}>
-                    <select required value={form.dietary} onChange={update("dietary")} className={selectCls}>
-                      <option value="">Select...</option>
-                      <option>Vegetarian</option>
-                      <option>Vegan</option>
-                      <option>Non-Vegetarian</option>
-                      <option>Halal</option>
-                      <option>Gluten-Free</option>
-                      <option>Other</option>
-                    </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
-                  </div>
-                </div>
-
-                {/* Organisation */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Organisation *</label>
-                  <input type="text" required placeholder="School / Company" value={form.organisation} onChange={update("organisation")} className={inputCls} />
-                </div>
-
-                {/* Contact */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
-                  <div className="flex gap-2">
-                    <div className={`${selectWrapCls} min-w-[125px] flex-shrink-0`}>
-                      <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
-                        {COUNTRY_CODES.map((c) => (
-                          <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
-                            {c.flag} {c.country} ({c.code})
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                    {/* Dietary Preference */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Dietary Preference *</label>
+                      <div className={selectWrapCls}>
+                        <select required value={form.dietary} onChange={update("dietary")} className={selectCls}>
+                          <option value="">Select...</option>
+                          <option>Vegetarian</option>
+                          <option>Vegan</option>
+                          <option>Non-Vegetarian</option>
+                          <option>Halal</option>
+                          <option>Gluten-Free</option>
+                          <option>Other</option>
+                        </select>
+                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                      </div>
                     </div>
-                    <input type="tel" required placeholder="7911 123456" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
-                  </div>
-                </div>
 
-                {/* Email */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Email Address *</label>
-                  <input type="email" required placeholder="you@organisation.com" value={form.email} onChange={update("email")} className={inputCls} />
-                </div>
+                    {/* Organisation */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Organisation *</label>
+                      <input type="text" required placeholder="School / Company" value={form.organisation} onChange={update("organisation")} className={inputCls} />
+                    </div>
 
-                {/* Divider */}
-                <div className="h-px bg-forest/5 my-2" />
+                    {/* Contact */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
+                      <div className="flex gap-2">
+                        <div className={`${selectWrapCls} min-w-[125px] flex-shrink-0`}>
+                          <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
+                            {COUNTRY_CODES.map((c) => (
+                              <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
+                                {c.flag} {c.country} ({c.code})
+                              </option>
+                            ))}
+                          </select>
+                          <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                        </div>
+                        <input type="tel" required placeholder="7911 123456" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
+                      </div>
+                    </div>
 
-                {/* Professional Headshot */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Professional Headshot *</label>
-                  <UploadField
-                    label="Upload your photo"
-                    hint="This photograph will be included in the profile book"
-                    accept="image/*"
-                    icon={Camera}
-                  />
-                </div>
+                    {/* Email */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Email Address *</label>
+                      <input type="email" required placeholder="you@organisation.com" value={form.email} onChange={update("email")} className={inputCls} />
+                    </div>
 
-                {/* Passport */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport (front + back) *</label>
-                  <UploadField
-                    label="Upload passport scan"
-                    hint="Ensure at least 6 months' validity from UK entry date. Upload one PDF or two images."
-                    accept=".pdf,image/*"
-                    multiple
-                    icon={FileText}
-                  />
-                </div>
+                    {/* Divider */}
+                    <div className="h-px bg-forest/5 my-2" />
 
-                {/* Programme Funding */}
-                <div>
-                  <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme Funding</label>
-                  <div className={selectWrapCls}>
-                    <select value={form.funding} onChange={update("funding")} className={selectCls}>
-                      <option value="">Choose who is funding your programme participation</option>
-                      <option>Self Funded</option>
-                      <option>Organisation Funded</option>
-                      <option>Sponsorship</option>
-                      <option>Other</option>
-                    </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
-                  </div>
-                </div>
+                    {/* Professional Headshot */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Professional Headshot *</label>
+                      <UploadField
+                        label="Upload your photo"
+                        hint="This photograph will be included in the profile book"
+                        accept="image/*"
+                        icon={Camera}
+                      />
+                    </div>
 
-                {/* CTA */}
-                <div className="pt-6 border-t border-forest/5 flex items-center justify-between gap-5">
-                  <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[180px]">
-                    By submitting, you consent to be contacted by the GEL team.
-                  </p>
-                  <button
-                    type="submit"
-                    disabled={status === "submitting"}
-                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0 disabled:opacity-60"
-                  >
-                    {status === "submitting" ? "Submitting…" : "Next"}
-                    <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors">
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  </button>
-                </div>
+                    {/* Passport */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport (front + back) *</label>
+                      <UploadField
+                        label="Upload passport scan"
+                        hint="Ensure at least 6 months' validity from UK entry date. Upload one PDF or two images."
+                        accept=".pdf,image/*"
+                        multiple
+                        icon={FileText}
+                      />
+                    </div>
+
+                    {/* Programme Funding */}
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme Funding</label>
+                      <div className={selectWrapCls}>
+                        <select value={form.funding} onChange={update("funding")} className={selectCls}>
+                          <option value="">Choose who is funding your programme participation</option>
+                          <option>Self Funded</option>
+                          <option>Organisation Funded</option>
+                          <option>Sponsorship</option>
+                          <option>Other</option>
+                        </select>
+                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="pt-6 border-t border-forest/5 flex items-center justify-between gap-5">
+                      <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[180px]">
+                        By submitting, you consent to be contacted by the GEL team.
+                      </p>
+                      <button
+                        type="submit"
+                        className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0"
+                      >
+                        Next
+                        <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors">
+                          <ArrowUpRight className="h-4 w-4" />
+                        </span>
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Name on the invoice *</label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Name of individual/company paying the programme fee</p>
+                      <input type="text" required value={form.invoiceName} onChange={update("invoiceName")} className={inputCls} />
+                    </div>
+
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Address on the invoice *</label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Address of the above individual/company paying the programme fee</p>
+                      <input type="text" required value={form.invoiceAddress} onChange={update("invoiceAddress")} className={inputCls} />
+                    </div>
+
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme fee option *</label>
+                      <div className={selectWrapCls}>
+                        <select required value={form.feeOption} onChange={update("feeOption")} className={selectCls}>
+                          <option value="">Select...</option>
+                          <option>Round 1 - Package 1 - £5100</option>
+                          <option>Round 1 - Package 2 - £6300</option>
+                          <option>Round 1 - Package 3 - £6500</option>
+                        </select>
+                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Full Name of the partner if you selected double accommodation option</label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Leave blank for individual registrations</p>
+                      <input type="text" value={form.partnerName} onChange={update("partnerName")} className={inputCls} />
+                    </div>
+
+                    <div>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport of partner (front+back) (if applicable)</label>
+                      <UploadField
+                        label="Upload Passport"
+                        hint="Please ensure that your partner's passport has at least six months' validity from your date of entry into the UK. Upload one PDF or two images (front + back)"
+                        accept=".pdf,image/*"
+                        multiple
+                        icon={FileText}
+                      />
+                    </div>
+
+                    <div className="flex items-start gap-3 mt-4 pt-2">
+                      <input
+                        type="checkbox"
+                        id="brochureRead"
+                        required
+                        checked={form.brochureRead}
+                        onChange={(e) => setForm(f => ({ ...f, brochureRead: e.target.checked }))}
+                        className="mt-0.5 w-5 h-5 rounded text-forest-deep border-forest/20 focus:ring-forest-deep focus:ring-offset-0 cursor-pointer"
+                      />
+                      <label htmlFor="brochureRead" className="text-[14px] font-medium text-forest-deep cursor-pointer select-none">
+                        I have read the entire programme brochure *
+                      </label>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="pt-6 border-t border-forest/5 flex items-center justify-between gap-5">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setStep(1);
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="group inline-flex items-center justify-center gap-2 bg-transparent text-forest-deep border border-forest/20 px-6 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.16em] hover:bg-forest/5 transition-all duration-300"
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={status === "submitting"}
+                        className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[15px] font-bold uppercase tracking-[0.16em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 flex-shrink-0 disabled:opacity-60"
+                      >
+                        {status === "submitting" ? "Submitting…" : "Submit"}
+                        <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors">
+                          <ArrowUpRight className="h-4 w-4" />
+                        </span>
+                      </button>
+                    </div>
+                  </>
+                )}
+
                 {status === "success" && (
-                  <p className="text-center text-[15px] font-semibold text-forest-deep">✓ Registration received — check your email for confirmation.</p>
+                  <p className="text-center text-[15px] font-semibold text-forest-deep mt-4">✓ Registration received — check your email for confirmation.</p>
                 )}
                 {status === "error" && (
-                  <p className="text-center text-[15px] font-semibold text-red-500">Something went wrong. Please try again.</p>
+                  <p className="text-center text-[15px] font-semibold text-red-500 mt-4">Something went wrong. Please try again.</p>
                 )}
 
                 {/* ── GILP Banner Image at bottom ── */}
@@ -368,7 +471,7 @@ function GilpDelegatePage() {
                   <img src="/gilp-banner.png"
                     alt="Global India Leadership Programme – 14-18, Cambridge Judge Business School"
                     className="w-full h-auto block"
-                  loading="lazy" />
+                    loading="lazy" />
                 </div>
 
               </form>
