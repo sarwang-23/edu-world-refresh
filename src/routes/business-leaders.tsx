@@ -77,10 +77,7 @@ function Hero() {
               Corporate Delegations
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
-            <span className="h-px w-10 bg-forest/30" />
-            CAMBRIDGE · HOUSE OF LORDS · JUDGE BUSINESS SCHOOL
-          </div>
+
         </div>
 
         <div className="relative lg:col-span-6 lg:pt-12 md:pt-8">
@@ -143,13 +140,13 @@ function WhyLeadersTravel() {
   const reasons = [
     {
       icon: <Globe2 className="h-5 w-5 text-gold" />,
-      title: "A global peer cohort",
-      desc: "Sit alongside CXOs, founders and senior executives from India, the UK, the Gulf and Southeast Asia. The room is the network.",
+      title: "A Global Peer cohort",
+      desc: "Learn alongside accomplished global leaders, exchanging perspectives, experience and ideas that challenge and elevate your thinking.",
     },
     {
       icon: <BookOpen className="h-5 w-5 text-gold" />,
       title: "Faculty from Top Tier Universities",
-      desc: "Sessions led by Cambridge Judge Business School faculty and practitioners working on AI, innovation and corporate governance.",
+      desc: "Learn from distinguished faculty and researchers at world-leading universities, bringing cutting-edge research and global expertise into practice.",
     },
     {
       icon: <Rocket className="h-5 w-5 text-gold" />,
@@ -172,7 +169,7 @@ function WhyLeadersTravel() {
             Built for leaders preparing to <span className="italic text-gold font-serif">lead global growth.</span>
           </h2>
           <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-3xl">
-            Our flagship — the Global India Leadership Programme (GILP) — brings CXOs and founders to Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks, and to network with global business leaders. Our wider calendar convenes executives at Cambridge, the House of Lords and Judge Business School.
+            We partner with corporations and industry associations to design bespoke leadership workshops and executive learning experiences tailored to their strategic priorities. Beyond capability building, we create platforms that connect leaders, businesses and markets, enabling cross-border collaboration, commercial partnerships and the development of new corridors of trade and opportunity
           </p>
         </div>
 

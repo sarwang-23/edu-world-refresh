@@ -26,6 +26,7 @@ import speaker8Img from '../assets/speaker8.jpg'
 import speaker9Img from '../assets/speaker9.jpg'
 import speaker10Img from '../assets/speaker10.jpg'
 import speakerNickImg from '../assets/nick_ford_young.png'
+import speakerThomasImg from '../assets/faculty-thomas-roulet.jpg'
 
 import alumniBidishaImg from '../assets/alumni-bidisha.jpg'
 import alumniSamImg from '../assets/alumni-sam.jpg'
@@ -99,6 +100,7 @@ function Page() {
       <ProgrammeOverview />
       <LordsCricket />
       <LordsMarquee />
+      <CertificateSection />
       <Curriculum />
       <ProgrammeStructure />
       <Outcomes />
@@ -106,7 +108,6 @@ function Page() {
       <WhoShouldAttend />
       <Packages />
       <AccommodationSection />
-      <CertificateSection />
       <FacultyGrid />
       <AlumniTestimonials />
       <CancellationPolicy />
@@ -248,16 +249,26 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 pb-8 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
-            <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders & CXOs
+            <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders &amp; CXOs
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
             Global India Leadership Programme.
           </h1>
-          <p className="mt-5 text-2xl md:text-[2rem] font-serif italic text-gold leading-tight">
-            “Leadership grows where perspective widens.”
+          <div className="mt-3 flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.22em] text-forest/70">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-forest/30" />
+              <span>CERTIFIED BY</span>
+            </div>
+            <img src={logoJBS} 
+              alt="University of Cambridge Judge Business School" 
+              className="h-32 w-auto mix-blend-multiply opacity-90 object-contain"
+            loading="lazy" />
+          </div>
+          <p className="mt-4 text-2xl md:text-[2rem] font-serif italic text-gold leading-tight">
+            "Leadership grows where perspective widens."
           </p>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
             Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
@@ -278,16 +289,6 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
             >
               Apply Now <ArrowUpRight className="h-4 w-4" />
             </button>
-          </div>
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 text-[15px] font-bold uppercase tracking-[0.22em] text-forest/70">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-forest/30" />
-              <span>CERTIFIED BY</span>
-            </div>
-            <img src={logoJBS} 
-              alt="University of Cambridge Judge Business School" 
-              className="w-56 md:w-72 mix-blend-multiply opacity-90 object-contain -ml-4 sm:ml-0"
-            loading="lazy" />
           </div>
         </div>
 
@@ -731,7 +732,7 @@ function ProgrammeStructure() {
 /* ─── 8. FACULTY ─── */
 function Faculty() {
   const faculty = [
-    { img: 'https://static.wixstatic.com/media/bf78a9_356aa9f0ffc943199a9db3d6b68c9b64~mv2.jpg', name: 'Prof. Jaideep Prabhu', role: 'Programme Director & Facilitator – Frugal Innovation' },
+    { img: 'https://static.wixstatic.com/media/bf78a9_356aa9f0ffc943199a9db3d6b68c9b64~mv2.jpg', name: 'Prof. Jaideep Prabhu', role: 'Programme Director & Faculty – Frugal Innovation' },
     { img: 'https://static.wixstatic.com/media/ff608f_0b9dd7af10ee485baf6441b9fef2416e~mv2.jpg', name: 'Cambridge Faculty', role: 'Facilitator – Customer-Centric Innovation in the AI Era' },
     { img: 'https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg', name: 'Cambridge Faculty', role: 'Facilitator – Leadership & Strategy' },
     { img: 'https://static.wixstatic.com/media/bf78a9_23c128d7b28c45d2970bedb4a85b2927~mv2.jpeg', name: 'Cambridge Faculty', role: 'Facilitator – Corporate Governance' },
@@ -1374,7 +1375,7 @@ function FacultyGrid() {
     {
       img: speaker1Img,
       name: 'Prof. Jaideep Prabhu',
-      role: 'Programme Director & Facilitator – Frugal Innovation',
+      role: 'Programme Director & Faculty – Frugal Innovation',
       bio: 'Jaideep Prabhu, Jawaharlal Nehru Professor of Business & Enterprise at Cambridge Judge Business School, is a global authority on frugal innovation. His work demonstrates how organisations can create impactful, resource-efficient solutions under constraints — a mindset he brings to help delegates turn constraints into strategy.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
@@ -1448,7 +1449,13 @@ function FacultyGrid() {
       bio: 'Nick is the CEO of Boldstream within the Boldspace Group, and is now at the forefront of redesigning the marketing operating model through the practical application of AI, with clients including Virgin Atlantic, British Heart Foundation and Rathbones. A respected voice in marketing and brand strategy, Nick has been a guest lecturer on the Cambridge Judge Business School MBA programme, as well as at NYU in New York.',
       accent: 'from-gold/70 via-gold to-gold/50',
     },
-
+    {
+      img: speakerThomasImg,
+      name: 'Prof. Thomas Roulet',
+      role: 'Faculty – Organisational Behaviour',
+      bio: 'Professor of Organisational Sociology and Leadership at Cambridge Judge Business School and Fellow and Director of Studies in Psychology & Behavioural Science at King\'s College, Thomas Roulet specialises in leadership, organisational change and workplace dynamics. His research helps leaders understand how organisations can adapt to uncertainty, lead social change and build healthier, more resilient workplaces in a rapidly evolving world.',
+      accent: 'from-forest/70 via-forest to-forest/50',
+    },
   ]
 
   return (
@@ -1712,10 +1719,10 @@ function ApplyNow() {
               <span className="text-[14px] text-forest/60">A Cambridge-led, executive leadership journey</span>
             </div>
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-[15px] text-forest/70">In Partnership with</span>
-              <img src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
+              <span className="text-[15px] text-forest/70 font-medium">In Partnership with</span>
+              <img src={logoJBS}
                 alt="Cambridge Judge Business School"
-                className="h-8 w-auto object-contain mix-blend-multiply"
+                className="h-28 w-auto object-contain mix-blend-multiply"
               loading="lazy" />
             </div>
             <div className="bg-white rounded-[2rem] p-8 shadow-[0_12px_40px_rgba(10,48,29,0.06)] border border-forest/5 mb-8 relative overflow-hidden">

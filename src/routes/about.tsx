@@ -25,6 +25,7 @@ import person11 from "@/assets/person11.jpg";
 import person12 from "@/assets/person12.jpg";
 import personSerish from "@/assets/faculty-serish.jpg";
 import personSantosh from "@/assets/santosh_huralikoppi.jpg";
+import personSayara from "@/assets/sayara.jpg";
 import { Voices } from '@/components/Voices';
 
 
@@ -97,11 +98,11 @@ function Hero() {
         {/* Right: Perfectly Aligned 3-Column Bento Collage */}
         <div className="relative lg:col-span-7">
           <div className="p-3 bg-white/70 backdrop-blur-md rounded-[2.5rem] border border-forest/10 shadow-2xl shadow-forest/10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 h-auto sm:h-[480px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 h-auto sm:h-[480px] overflow-hidden">
               
               {/* Column 1 (2 Images) */}
               <div className="flex flex-col gap-3 h-full">
-                <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[210px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage1}
                     alt="Cambridge Lecture Session"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -111,7 +112,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[210px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage8}
                     alt="STEM Exploration"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -124,7 +125,7 @@ function Hero() {
 
               {/* Column 2 (3 Images) */}
               <div className="flex flex-col gap-3 h-full">
-                <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[140px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage2}
                     alt="Cohort Discussion"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -134,7 +135,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[150px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[150px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage7}
                     alt="GEL Fireside Panel with CJBS"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -144,7 +145,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[140px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[140px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage4}
                     alt="Experiential Workshop"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -157,7 +158,7 @@ function Hero() {
 
               {/* Column 3 (2 Images) */}
               <div className="flex flex-col gap-3 h-full">
-                <div className="h-[210px] sm:h-auto sm:flex-1 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[210px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage9}
                     alt="Cambridge Interactive Lab"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -167,7 +168,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[210px] sm:h-auto sm:flex-[1.2] overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[210px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage5}
                     alt="Historic Cambridge Formal Dinners"
                     className="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700"
@@ -334,8 +335,8 @@ function FounderStory() {
                     <Linkedin className="h-4 w-4 fill-current text-white" />
                   </a>
                 </div>
-                <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">Founder & Director</p>
-                <p className="text-[15px] italic text-cream/70 mt-1">Cambridge Judge Business School, University of Cambridge</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">Founder & Director, GEL</p>
+                <p className="text-[15px] italic text-cream/70 mt-1">Alumnus & Honorary Fellow, Cambridge Judge Business School, University of Cambridge</p>
               </div>
             </div>
           </div>
@@ -368,11 +369,11 @@ function Journey() {
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
             {[
-              { label: "Mentoring", icon: Users, desc: "Launched with small scale informal startup mentoring support" },
-              { label: "K12 Learning", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
-              { label: "Global Reach", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
-              { label: "Graduate Pathways", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
-              { label: "Innovation Growth", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
+              { year: "2022", label: "Mentoring", icon: Users, desc: "Launched with small scale informal startup mentoring support" },
+              { year: "2023", label: "K12 Learning", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
+              { year: "2024", label: "Global Reach", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
+              { year: "2025", label: "Graduate Pathways", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
+              { year: "2026", label: "Innovation Growth", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
             ].map((item, idx) => (
               <div key={item.label} className="flex flex-col items-center text-center px-2">
                 <div className="relative mb-6">
@@ -382,6 +383,7 @@ function Journey() {
                   {/* Small gold dot indicator */}
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-gold"></div>
                 </div>
+                <div className="text-gold font-bold text-sm tracking-widest uppercase mb-1">{item.year}</div>
                 <h3 className="text-xl font-bold text-forest-deep">{item.label}</h3>
                 <p className="mt-3 text-[15px] text-forest-deep/80 leading-relaxed max-w-[150px] mx-auto">{item.desc}</p>
               </div>
@@ -446,6 +448,7 @@ function OurPeople() {
     {
       name: "Sayara Thompson",
       title: "Programme Manager",
+      img: personSayara,
       quote: "Experienced programme manager with over three decades of experience leading and managing experiential learning programmes in Cambridge.",
     },
     {

@@ -178,7 +178,7 @@ function WhyLeadersTravel() {
             WHY LEADERS TRAVEL WITH US
           </p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-forest-deep md:text-5xl">
-            Built for principals with an <span className="font-serif italic text-gold">international ambition.</span>
+            Built for school leaders with an <span className="font-serif italic text-gold">international ambition.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-forest/75 md:text-lg">
             Our programmes are designed for schools that intend to compete on the world stage — whether you run a K-12 in Lagos, an international school in Ho Chi Minh City, or a growing group of academies in the Gulf. What you take home is not a workshop deck; it is a redesigned operating model.

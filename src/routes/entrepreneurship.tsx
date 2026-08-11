@@ -7,6 +7,8 @@ import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
 import lucyJung from '@/assets/people/lucy_jung.jpg';
 import abhishekKumar from '@/assets/people/abhishek_kumar.jpg';
 import lindaTang from '@/assets/people/linda_tang.jpg';
+import tendaiImg from '@/assets/tendai.jpg';
+import sydneyImg from '@/assets/sydney.jpg';
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Footer } from './index'
 import {
@@ -427,32 +429,18 @@ function Community() {
   
   const testimonials = [
     {
-      q: "An incredible week at the University of Cambridge filled with unforgettable memories, meaningful conversations, and the beginning of exciting new synergies and alliances. This journey has been a true milestone and a benchmark for many exciting initiatives ahead. Grateful for the connections, collaborations, and shared vision that emerged throughout the week. Looking forward to announcing several new engagements and partnerships very soon. The journey has just begun.",
-      a: "Dr. Dhruv Galgotia",
-      r: "CEO, Galgotias Education Group — GILP Delegate",
-      img: dhruvGalgotia,
-      link: "https://lnkd.in/p/d7vJ9pPF"
-    },
-    {
-      q: "I was privileged to attend the Global Education Lab's Global India Leadership Programme at the Cambridge Judge Business School with a great cohort from India and a few other places. What a week it was, covering AI, geopolitics, marketing, branding, strategy, rhetoric, entrepreneurship and so much more... That is why I called it a Rolls Royce.",
-      a: "Sam Tully",
-      r: "Trustee, Pratham UK — GILP Delegate",
-      img: samTully,
-      link: "https://www.linkedin.com/posts/sam-tully_its-like-a-rolls-royce-thats-how-sam-activity-7480318064505462784-Fnbc"
-    },
-    {
       q: "The 48 hours pushed me to think about a problem I knew scientifically from a completely different angle, as a market structure failure, not just a research gap. That reframe was the most valuable part.",
       a: "Sydney Conner",
       r: "PhD in Biomedical Engineering, University of Cambridge — Zero-to-One",
-      img: sydneyConner,
+      img: sydneyImg,
       link: "https://www.linkedin.com/posts/sydney-j-conner_cjbs-z21-zerotoone-activity-7474838677874065409-qcfI"
     },
     {
-      q: "Grateful for the practical insights, peer-to-peer learning, and collaborative spirit. Kudos to the Global Education Lab and team for delivering such an impactful programme!",
-      a: "Amarjit Singh",
-      r: "CEO, India Business Forum — GILP Delegate",
-      img: amarjitSingh,
-      link: "https://www.linkedin.com/posts/amarjit-singh-13860aa_great-leaders-know-that-learning-never-stops-activity-7485621706183688192-W-d7"
+      q: "What I liked most about GEL Zero-to-One was the ability to work with mentors as they really helped transform and learn new skills and ways of thinking. It helped me refine my idea by making me think about who would actually buy it, not just whether it works.",
+      a: "Tendai Nzonzo",
+      r: "Winning Team, Sana AI — Zero-to-One",
+      img: tendaiImg,
+      link: "https://www.linkedin.com/"
     }
   ];
 
@@ -470,8 +458,8 @@ function Community() {
           </h2>
         </div>
         
-        {/* 4-column strict grid (Perfectly aligned, professional look) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-16">
+        {/* 2-column centered grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mb-16 max-w-3xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={i}
