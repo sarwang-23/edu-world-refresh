@@ -510,7 +510,7 @@ function Hero({ v }: { v: Venture }) {
                 >
                   <Globe2 className="h-4 w-4" /> Visit Site
                 </Link>
-              )}>
+              )}
             </div>
           </div>
 
@@ -850,7 +850,7 @@ function MainContent({ v }: { v: Venture }) {
                   >
                     <Globe2 className="h-4 w-4" /> Visit Site
                   </Link>
-                )}>
+                )}
               </div>
               <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.1]">
                 <Lock className="h-4 w-4 text-white/50 shrink-0 mt-0.5" />
