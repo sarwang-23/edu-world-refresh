@@ -62,12 +62,14 @@ type Venture = {
   roadmap: { period: string; icon: React.ReactNode; items: string[]; phase?: string }[]
   heroImg?: string
   awards?: string[]
+  website?: string
 }
 
 export const VENTURES: Record<string, Venture> = {
   'kavach-ai': {
     slug: 'kavach-ai', name: 'KAVACH AI', track: 'Venture Track',
     tagline: 'AI-Powered Predictive Surveillance.',
+    website: 'https://home.kavachai.in/',
     intro: 'KavachAI transforms passive CCTV into proactive security intelligence with real-time threat detection, behavior analysis, and crowd management.',
     sector: 'Enterprise AI & Security',
     stage: 'Growth · Funded',
@@ -119,6 +121,7 @@ export const VENTURES: Record<string, Venture> = {
     slug: 'project-tacto',
     name: 'PROJECT TACTO',
     track: 'Venture Track',
+    website: 'https://www.projecttacto.org/',
     tagline: 'Code you can feel — making computational thinking accessible for every learner.',
     intro: 'Project TACTO replaces screens with physical, highly tactile blocks. It is an open-source hardware system designed to make computational thinking and coding education accessible to visually impaired learners by utilizing hands-on, tactile interaction and real-time audio feedback.',
     sector: 'EdTech · Accessible Education · Open-Source Hardware',
@@ -234,7 +237,8 @@ export const VENTURES: Record<string, Venture> = {
 
   'saivyy': {
     slug: 'saivyy', name: 'SAIVYY TECHNOLOGIES', track: 'Venture Track',
-    tagline: 'Empowering businesses with AI-driven automation, analytics and intelligent digital transformation.',
+    website: 'https://www.saivyytechnologies.com/',
+    tagline: 'Transforms petabytes into profits with cutting-edge AI and Big Data Analytics.',
     intro: 'Saivyy Technologies Pvt. Ltd. develops enterprise AI, machine learning, big data analytics and intelligent automation solutions that help organisations turn complex data into actionable insight and automate critical business processes — improving efficiency, accelerating decisions and driving sustainable digital transformation.',
     sector: 'Artificial Intelligence, Generative AI, Big Data Analytics & Intelligent Automation',
     stage: 'Bootstrapped, Profitable & Growing (Recently Founded)',
@@ -490,12 +494,23 @@ function Hero({ v }: { v: Venture }) {
               >
                 Request Introduction <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/contact" search={{ source: v.name }}
-                className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
-              >
-                <Download className="h-4 w-4" /> Venture Brief
-              </Link>
+              {v.website ? (
+                <a
+                  href={v.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
+                >
+                  <Globe2 className="h-4 w-4" /> Visit Site
+                </a>
+              ) : (
+                <Link
+                  to="/contact" search={{ source: v.name }}
+                  className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
+                >
+                  <Globe2 className="h-4 w-4" /> Visit Site
+                </Link>
+              )}
             </div>
           </div>
 
@@ -819,12 +834,23 @@ function MainContent({ v }: { v: Venture }) {
                 >
                   Request Introduction <ArrowUpRight className="h-4 w-4" />
                 </Link>
-                <Link
-                  to="/contact" search={{ source: v.name }}
-                  className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
-                >
-                  <Download className="h-4 w-4" /> Venture Brief
-                </Link>
+                {v.website ? (
+                  <a
+                    href={v.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
+                  >
+                    <Globe2 className="h-4 w-4" /> Visit Site
+                  </a>
+                ) : (
+                  <Link
+                    to="/contact" search={{ source: v.name }}
+                    className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
+                  >
+                    <Globe2 className="h-4 w-4" /> Visit Site
+                  </Link>
+                )}
               </div>
               <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.1]">
                 <Lock className="h-4 w-4 text-white/50 shrink-0 mt-0.5" />
@@ -1030,12 +1056,23 @@ function BottomCTA({ v }: { v: Venture }) {
             >
               Request Introduction <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link
-              to="/contact" search={{ source: v.name }}
-              className="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-xl text-[14px] font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all inline-flex items-center justify-center gap-2"
-            >
-              <Download className="h-4 w-4" /> Venture Brief
-            </Link>
+            {v.website ? (
+              <a
+                href={v.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-xl text-[14px] font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all inline-flex items-center justify-center gap-2"
+              >
+                <Globe2 className="h-4 w-4" /> Visit Site
+              </a>
+            ) : (
+              <Link
+                to="/contact" search={{ source: v.name }}
+                className="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 px-8 py-4 rounded-xl text-[14px] font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all inline-flex items-center justify-center gap-2"
+              >
+                <Globe2 className="h-4 w-4" /> Visit Site
+              </Link>
+            )}
           </div>
         </div>
       </div>

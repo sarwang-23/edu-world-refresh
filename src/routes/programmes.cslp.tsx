@@ -66,7 +66,7 @@ function Hero() {
               <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">School Leaders Programme</span>
             </div>
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-forest-deep leading-[1.08] tracking-tight">
-              Cambridge School Leadership Programme
+              Global Cambridge School Leadership Programme
             </h1>
             <p className="mt-5 text-lg font-semibold text-forest/80 leading-snug">
               Shape the Future of Your School with Cambridge Education Lab

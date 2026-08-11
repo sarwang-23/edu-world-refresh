@@ -154,7 +154,7 @@ function OurProgrammes() {
       number: "04",
       headline: "Bespoke Institutional Partnerships",
       desc: "Customised programmes, capacity building and strategic partnerships for organisations and universities.",
-      link: "/school-leaders",
+      link: "/partner-with-gel",
       accent: "from-forest-deep/90 via-forest-deep/50 to-transparent",
     },
   ];

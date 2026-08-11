@@ -100,8 +100,6 @@ const VENTURE: Venture = {
     "Completed first version of AI emissions accounting engine",
   ],
   metrics: [
-    { l: 'Valuation', v: '£475k', icon: <TrendingUp className="h-5 w-5" /> },
-    { l: 'Funding Raised', v: '£19k', icon: <Zap className="h-5 w-5" /> },
     { l: 'Team Size', v: '10', icon: <Users className="h-5 w-5" /> },
   ],
   team: [
@@ -266,13 +264,14 @@ function Hero({ v }: { v: Venture }) {
               >
                 Request Introduction <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/contact"
-                search={{ source: v.name }}
+              <a
+                href="https://www.carbonsynqearth.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/[0.07] text-white border border-white/15 px-7 py-3.5 rounded-xl text-[14px] font-semibold hover:bg-white/[0.12] transition-all backdrop-blur-sm"
               >
-                <Download className="h-4 w-4" /> Venture Brief
-              </Link>
+                <Globe2 className="h-4 w-4" /> Visit Site
+              </a>
             </div>
           </div>
 
@@ -561,12 +560,14 @@ function MainContent({ v }: { v: Venture }) {
                 >
                   Request Introduction <ArrowUpRight className="h-4 w-4" />
                 </Link>
-                <Link
-                  to="/contact" search={{ source: v.name }}
+                <a
+                  href="https://www.carbonsynqearth.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-white/[0.07] text-white border border-white/[0.12] rounded-xl py-3.5 text-[13.5px] font-semibold hover:bg-white/[0.12] transition-all"
                 >
-                  <Download className="h-4 w-4" /> Venture Brief
-                </Link>
+                  <Globe2 className="h-4 w-4" /> Visit Site
+                </a>
               </div>
               <div className="flex items-start gap-2.5 mt-6 pt-5 border-t border-white/[0.07]">
                 <Lock className="h-4 w-4 text-white/25 shrink-0 mt-0.5" />

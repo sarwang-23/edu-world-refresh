@@ -25,6 +25,7 @@ import z21Gallery14 from '../assets/z21_gallery_14.jpg'
 import z21Gallery15 from '../assets/z21_gallery_15.jpg'
 import { useState } from 'react'
 import logoJBS from '@/assets/cambridge_jbs_official.png'
+import kingsCollegeCrest from '@/assets/kings-college-crest-transparent.png'
 import foundersImg from '../assets/young_leaders_1.jpg'
 import tendaiImg from '../assets/tendai.jpg'
 import sydneyImg from '../assets/sydney.jpg'
@@ -96,10 +97,10 @@ function Hero() {
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 {/* Cambridge Judge Business School */}
-                <div className="flex items-center justify-center rounded-2xl bg-white border border-forest/15 px-4 py-2 shadow-sm hover:shadow-md transition-all h-[76px] w-[230px] overflow-hidden">
+                <div className="flex items-center justify-center rounded-2xl bg-white border border-forest/15 px-3 py-2 shadow-sm hover:shadow-md transition-all h-[76px] w-[230px] overflow-hidden">
                   <img src={logoJBS}
                     alt="University of Cambridge Judge Business School"
-                    className="w-full h-full object-contain scale-[1.45] hover:scale-[1.5] transition-transform duration-300"
+                    className="w-full h-full object-contain scale-[1.5] hover:scale-[1.55] transition-transform duration-300"
                   loading="lazy" />
                 </div>
 
@@ -111,15 +112,7 @@ function Hero() {
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">KING'S COLLEGE</span>
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">CAMBRIDGE</span>
                   </div>
-                  {/* King's College Crest Shield SVG */}
-                  <svg viewBox="0 0 40 48" className="h-9 w-auto shrink-0" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 4 4 L 36 4 L 36 28 C 36 40 20 46 20 46 C 20 46 4 40 4 28 Z" fill="#5B2468" />
-                    <path d="M 20 4 L 20 46" stroke="white" strokeWidth="1" />
-                    <path d="M 4 18 L 36 18" stroke="white" strokeWidth="1" />
-                    <circle cx="20" cy="32" r="3.5" fill="none" stroke="white" strokeWidth="1.2" />
-                    <circle cx="12" cy="11" r="2" fill="white" />
-                    <circle cx="28" cy="11" r="2" fill="white" />
-                  </svg>
+                  <img src={kingsCollegeCrest} alt="King's College Cambridge Crest" className="h-16 w-auto shrink-0 object-contain" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -258,7 +251,10 @@ function ThemeSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Featured Theme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">October Theme</span>
+            </div>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-cream/60 border border-white/15 bg-white/5 px-3 py-1 rounded-full">📅 23–25 October, 2026</span>
             </div>
             <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
               Food, Agriculture &<br />Planetary Health

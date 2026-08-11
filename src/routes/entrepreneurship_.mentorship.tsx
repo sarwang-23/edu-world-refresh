@@ -2,9 +2,9 @@ import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Handshake, Users, Globe2, Sparkles, Building2, Quote, Lightbulb } from 'lucide-react'
 import { Footer } from './index'
-import heroImg from '../assets/gilp-march-10.jpg'
-import cambridgeImg from '../assets/cambridge_2.jpg'
-import { SharedTestimonials } from '@/components/SharedTestimonials';
+import heroImg from '../assets/z21_gallery_5.jpg'
+import detailImg from '../assets/business-leaders.jpg'
+import { FounderTestimonials } from '@/components/FounderTestimonials';
 
 
 export const Route = createFileRoute('/entrepreneurship_/mentorship')({
@@ -18,7 +18,7 @@ function MentorshipPage() {
       <Hero />
       <FeaturesStrip />
       <DetailsSection />
-      <SharedTestimonials />
+      <FounderTestimonials />
       <BottomCTA />
       <Footer />
     </div>
@@ -149,7 +149,7 @@ function DetailsSection() {
           </ul>
         </div>
         <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-xl border border-forest/5">
-          <img src={cambridgeImg} alt="Network" className="w-full h-full object-cover" loading="lazy" />
+          <img src={detailImg} alt="Network" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </section>

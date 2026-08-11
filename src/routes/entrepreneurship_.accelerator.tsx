@@ -3,8 +3,8 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowUpRight, CheckCircle2, Rocket, Calendar, Globe2, Sparkles, Building2, BookOpen, Users, TrendingUp } from 'lucide-react'
 import { Footer } from './index'
 import heroImg from '../assets/startup.jpg'
-import cambridgeImg from '../assets/cambridge_1.jpg'
-import { SharedTestimonials } from '@/components/SharedTestimonials';
+import detailImg from '../assets/business_simulation_session.jpg'
+import { FounderTestimonials } from '@/components/FounderTestimonials';
 
 
 export const Route = createFileRoute('/entrepreneurship_/accelerator')({
@@ -18,7 +18,7 @@ function AcceleratorPage() {
       <Hero />
       <FeaturesStrip />
       <DetailsSection />
-      <SharedTestimonials />
+      <FounderTestimonials />
       <BottomCTA />
       <Footer />
     </div>
@@ -149,7 +149,7 @@ function DetailsSection() {
           </ul>
         </div>
         <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-xl border border-forest/5">
-          <img src={cambridgeImg} alt="Cambridge" className="w-full h-full object-cover" loading="lazy" />
+          <img src={detailImg} alt="Accelerator" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </section>
