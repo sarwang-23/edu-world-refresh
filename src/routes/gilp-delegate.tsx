@@ -19,20 +19,66 @@ async function submitToGILP(formType: string, data: Record<string, string>) {
   });
 }
 
+// Converts a File into a plain base64 string (no "data:...;base64," prefix)
+// plus its mime type, ready to send to Apps Script.
+function fileToBase64(file: File): Promise<{ base64: string; mimeType: string }> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string; // "data:<mime>;base64,<data>"
+      const commaIndex = result.indexOf("base64,");
+      const base64 = commaIndex !== -1 ? result.slice(commaIndex + "base64,".length) : result;
+      resolve({ base64, mimeType: file.type || "application/octet-stream" });
+    };
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+type UploadedFile = { name: string; base64: string; mimeType: string };
+
 export const Route = createFileRoute("/gilp-delegate")({
   component: GilpDelegatePage,
   head: () => buildMeta("/gilp-delegate"),
 });
 
-function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: string; hint?: string; accept?: string; multiple?: boolean; icon: React.ElementType }) {
+function UploadField({
+  label,
+  hint,
+  accept,
+  multiple,
+  icon: Icon,
+  onFilesReady,
+}: {
+  label: string;
+  hint?: string;
+  accept?: string;
+  multiple?: boolean;
+  icon: React.ElementType;
+  onFilesReady: (files: UploadedFile[]) => void;
+}) {
   const [fileName, setFileName] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
-    if (files && files.length > 0) {
-      if (files.length === 1) setFileName(files[0].name);
-      else setFileName(`${files.length} files selected`);
+    if (!files || files.length === 0) return;
+
+    if (files.length === 1) setFileName(files[0].name);
+    else setFileName(`${files.length} files selected`);
+
+    setLoading(true);
+    try {
+      const results = await Promise.all(
+        Array.from(files).map(async (file) => {
+          const { base64, mimeType } = await fileToBase64(file);
+          return { name: file.name, base64, mimeType };
+        })
+      );
+      onFilesReady(results);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -53,7 +99,7 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
           {fileName ? (
             <>
               <p className="text-[15px] font-semibold text-forest-deep truncate">{fileName}</p>
-              <p className="text-[15px] text-forest/70 mt-0.5">Click to change file</p>
+              <p className="text-[15px] text-forest/70 mt-0.5">{loading ? "Processing…" : "Click to change file"}</p>
             </>
           ) : (
             <>
@@ -62,7 +108,7 @@ function UploadField({ label, hint, accept, multiple, icon: Icon }: { label: str
             </>
           )}
         </div>
-        {fileName && (
+        {fileName && !loading && (
           <span className="flex-shrink-0 h-6 w-6 rounded-full bg-forest-deep flex items-center justify-center">
             <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
           </span>
@@ -99,6 +145,17 @@ function GilpDelegatePage() {
     partnerName: "",
     brochureRead: false,
   });
+
+  // Holds converted base64 file data, keyed by the field name the
+  // Apps Script backend expects (it looks for keys ending in "Base64").
+  const [files, setFiles] = useState<{
+    headshot?: UploadedFile;
+    passportFront?: UploadedFile;
+    passportBack?: UploadedFile;
+    partnerPassportFront?: UploadedFile;
+    partnerPassportBack?: UploadedFile;
+  }>({});
+
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
@@ -114,6 +171,14 @@ function GilpDelegatePage() {
 
     setStatus("submitting");
     try {
+      const filePayload: Record<string, string> = {};
+      (Object.entries(files) as [string, UploadedFile | undefined][]).forEach(([key, f]) => {
+        if (!f) return;
+        filePayload[`${key}Base64`] = f.base64;
+        filePayload[`${key}FileName`] = f.name;
+        filePayload[`${key}MimeType`] = f.mimeType;
+      });
+
       await submitToGILP("delegate", {
         fullName: `${form.title} ${form.firstName} ${form.lastName}`.trim(),
         firstName: form.firstName,
@@ -129,6 +194,7 @@ function GilpDelegatePage() {
         feeOption: form.feeOption,
         partnerName: form.partnerName,
         brochureRead: form.brochureRead ? "Yes" : "No",
+        ...filePayload,
       });
       setStatus("success");
     } catch (err) {
@@ -329,6 +395,7 @@ function GilpDelegatePage() {
                         hint="This photograph will be included in the profile book"
                         accept="image/*"
                         icon={Camera}
+                        onFilesReady={(f) => setFiles((prev) => ({ ...prev, headshot: f[0] }))}
                       />
                     </div>
 
@@ -337,10 +404,13 @@ function GilpDelegatePage() {
                       <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport (front + back) *</label>
                       <UploadField
                         label="Upload passport scan"
-                        hint="Ensure at least 6 months' validity from UK entry date. Upload one PDF or two images."
+                        hint="Ensure at least 6 months' validity from UK entry date. Upload one PDF, or two images (front then back)."
                         accept=".pdf,image/*"
                         multiple
                         icon={FileText}
+                        onFilesReady={(f) =>
+                          setFiles((prev) => ({ ...prev, passportFront: f[0], passportBack: f[1] }))
+                        }
                       />
                     </div>
 
@@ -412,10 +482,13 @@ function GilpDelegatePage() {
                       <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport of partner (front+back) (if applicable)</label>
                       <UploadField
                         label="Upload Passport"
-                        hint="Please ensure that your partner's passport has at least six months' validity from your date of entry into the UK. Upload one PDF or two images (front + back)"
+                        hint="Please ensure that your partner's passport has at least six months' validity from your date of entry into the UK. Upload one PDF, or two images (front then back)."
                         accept=".pdf,image/*"
                         multiple
                         icon={FileText}
+                        onFilesReady={(f) =>
+                          setFiles((prev) => ({ ...prev, partnerPassportFront: f[0], partnerPassportBack: f[1] }))
+                        }
                       />
                     </div>
 
