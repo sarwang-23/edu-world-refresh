@@ -244,51 +244,56 @@ function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 pb-8 lg:grid-cols-12 lg:gap-12 pt-6 mt-16 md:mt-0">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 md:px-6 pb-8 lg:grid-cols-12 lg:gap-12 pt-0 mt-0">
         <div className="lg:col-span-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-6 md:mt-0">
+          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-[13px] md:text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-3 md:mt-2">
             <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders &amp; CXOs
           </span>
-          <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
-            Global India Leadership Programme.
+          <h1 className="mt-4 md:mt-6 text-[25px] min-[390px]:text-[28px] sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight text-forest lg:text-[2.75rem] xl:text-[3.25rem]">
+            <span className="whitespace-nowrap">Global India Leadership</span><br />
+            <span>Programme.</span>
           </h1>
-          <div className="mt-3 flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.22em] text-forest/70">
+          <div className="mt-2 md:mt-3 flex items-center gap-3 text-[11px] md:text-[13px] font-bold uppercase tracking-[0.22em] text-forest/70">
             <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-forest/30" />
+              <span className="h-px w-8 md:w-10 bg-forest/30" />
               <span>CERTIFIED BY</span>
             </div>
             <img src={logoJBS} 
               alt="University of Cambridge Judge Business School" 
-              className="h-32 w-auto mix-blend-multiply opacity-90 object-contain"
+              className="h-24 md:h-32 w-auto mix-blend-multiply opacity-90 object-contain -my-4 md:-my-8"
             loading="lazy" />
           </div>
-          <p className="mt-4 text-2xl md:text-[2rem] font-serif italic text-gold leading-tight">
+          <div className="mt-1 md:mt-2 flex items-center gap-3 relative z-10">
+            <Calendar className="h-6 w-6 text-forest-deep opacity-90" />
+            <span className="text-[17px] md:text-[21px] font-bold text-forest-deep tracking-tight">14-18 September, 2026</span>
+          </div>
+          <p className="mt-3 md:mt-4 text-xl md:text-2xl lg:text-[2rem] font-serif italic text-gold leading-tight">
             "Leadership grows where perspective widens."
           </p>
-          <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
+          <p className="mt-4 md:mt-8 max-w-xl text-[15px] md:text-[17px] leading-[1.65] text-forest/80 md:text-lg">
             Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
             experience at Cambridge equips you with cutting-edge insights in AI, strategy,
             and leadership to navigate complexity and lead with confidence in a rapidly evolving
             global landscape.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
             <button
               onClick={onDownloadBrochure}
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-5 md:px-7 py-3 md:py-3.5 text-[14px] md:text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
             >
               Download Brochure
             </button>
             <button
               onClick={() => document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[15px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold-deep shadow-md shadow-gold/20 hover:shadow-xl hover:-translate-y-1 animate-float cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 md:px-7 py-3 md:py-3.5 text-[14px] md:text-[15px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold-deep shadow-md shadow-gold/20 hover:shadow-xl hover:-translate-y-1 animate-float cursor-pointer"
             >
               Apply Now <ArrowUpRight className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        <div className="relative lg:col-span-6 lg:mt-40">
-          <div className="relative aspect-video overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
+        <div className="relative lg:col-span-6 mt-8 lg:mt-0">
+          <div className="relative aspect-video overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
             <style>{`video::-webkit-media-text-track-display { display: none !important; } video::cue { visibility: hidden; }`}</style>
             <video
               src="/Globalindialeadershipprogramme.mp4"
@@ -1471,23 +1476,23 @@ function FacultyGrid() {
           </h2>
           <p className="text-[15px] text-forest/80 max-w-2xl mx-auto">Learn from Cambridge Judge Business School's finest academics and global practitioners.</p>
         </div>
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {faculty.map((f, i) => (
-            <div key={i} className="group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.5rem)] bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-2 transition-all duration-700 flex flex-col relative">
+            <div key={i} className="group bg-white rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-700 flex flex-col relative">
 
-              <div className="relative aspect-[4/5] overflow-hidden m-2 mb-0 rounded-[1.5rem]">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden m-2 mb-0 rounded-[1rem] sm:rounded-[1.5rem]">
                 <img src={f.img} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out" loading="lazy" />
                 <div className="absolute inset-0 bg-forest-deep/0 group-hover:bg-forest-deep/10 transition-colors duration-700 mix-blend-overlay" />
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
 
-              <div className="p-6 sm:p-7 flex flex-col flex-1 relative z-10 bg-white">
-                <div className="mb-4">
-                  <h3 className="text-[19px] font-bold text-forest-deep tracking-tight mb-1 group-hover:text-gold-deep transition-colors duration-500">{f.name}</h3>
-                  <p className="text-[12.5px] font-bold text-gold/90 tracking-wide uppercase">{f.role}</p>
+              <div className="p-3 sm:p-5 lg:p-6 flex flex-col flex-1 relative z-10 bg-white">
+                <div className="mb-2 sm:mb-4">
+                  <h3 className="text-[13px] sm:text-[16px] lg:text-[19px] font-bold text-forest-deep tracking-tight mb-1 group-hover:text-gold-deep transition-colors duration-500 leading-snug">{f.name}</h3>
+                  <p className="text-[10px] sm:text-[12px] font-bold text-gold/90 tracking-wide uppercase leading-snug">{f.role}</p>
                 </div>
-                <div className="h-px w-full bg-gradient-to-r from-forest/10 to-transparent mb-4 transition-all duration-500 group-hover:from-gold/40" />
-                <p className="text-[13.5px] text-forest/70 leading-[1.65]">{f.bio}</p>
+                <div className="h-px w-full bg-gradient-to-r from-forest/10 to-transparent mb-2 sm:mb-4 transition-all duration-500 group-hover:from-gold/40" />
+                <p className="hidden sm:block text-[12.5px] sm:text-[13.5px] text-forest/70 leading-[1.65]">{f.bio}</p>
               </div>
             </div>
           ))}

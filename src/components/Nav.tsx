@@ -254,7 +254,6 @@ export function Nav() {
 
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/gallery" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Gallery</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/contact" search={{ source: getSourceLabel(location.pathname) }} className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Contact Us</Link>
-            <Link onClick={() => setIsMobileMenuOpen(false)} to="/universities" className="p-3 text-[16px] font-medium text-forest hover:bg-forest/5 rounded-lg">Universities</Link>
           </div>
         </div>
       )}
