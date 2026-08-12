@@ -400,7 +400,7 @@ function OurPeople() {
   const people = [
     {
       name: "Margaret Serna CBE",
-      title: "Advisor – UK Education",
+      title: "Chief Advisor – UK Education",
       img: personMargaret,
       quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
     },
