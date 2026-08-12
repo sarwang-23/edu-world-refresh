@@ -49,6 +49,18 @@ function ZeroToOne() {
       <ZeroToOneTestimonials />
       <BottomCTA />
       <Footer />
+
+      {/* Floating Sign Up Button */}
+      <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500 fill-mode-both">
+        <Link
+          to="/apply-now"
+          search={{ source: "Zero-to-One Ideation Weekend (Floating)" }}
+          className="group flex items-center justify-center gap-2 rounded-full bg-forest-deep px-6 md:px-8 py-4 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-2xl shadow-forest/40 whitespace-nowrap hover:-translate-y-1"
+        >
+          Sign Up Now
+          <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+        </Link>
+      </div>
     </div>
   )
 }
@@ -56,14 +68,14 @@ function ZeroToOne() {
 /* ─── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative bg-[#F4EFE6] overflow-hidden pt-4 pb-24 md:pt-4 md:pb-32">
+    <section className="relative bg-[#F4EFE6] overflow-hidden pt-0 pb-24 md:pt-0 md:pb-32">
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 h-[700px] w-[700px] translate-x-1/3 rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[500px] rounded-full bg-forest/6 blur-[100px]" />
       {/* grid texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-4 md:pt-6">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-2 md:pt-2">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* Text column */}
@@ -105,7 +117,7 @@ function Hero() {
                 </div>
 
                 {/* King's E-Lab */}
-                <div className="flex items-center justify-start h-20 md:h-24 mt-2 md:mt-4 mix-blend-multiply opacity-90">
+                <div className="flex items-center justify-start h-10 md:h-12 mb-2 md:mb-3 mix-blend-multiply opacity-90">
                   <img src={logoElab}
                     alt="King's College E-Lab"
                     className="w-auto h-full object-contain"
@@ -142,6 +154,23 @@ function Hero() {
                 playsInline 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+            
+            <div className="mt-4 flex justify-end">
+              {/* Next Cohort Theme Banner */}
+              <a href="#theme" className="inline-flex items-center gap-3 rounded-xl border border-forest/10 bg-white/50 backdrop-blur-sm px-4 py-3 hover:bg-white hover:border-gold/40 hover:shadow-md transition-all duration-300 group shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(255,215,0,0.6)] shrink-0" />
+                <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-3">
+                  <div className="flex items-center gap-1.5 xl:border-r xl:border-forest/15 xl:pr-3 shrink-0">
+                    <Calendar className="h-3.5 w-3.5 text-forest/70 shrink-0" />
+                    <span className="text-[12px] font-bold tracking-[0.15em] text-forest/80 uppercase whitespace-nowrap">23-25 Oct, 2026</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[13px] sm:text-[14px] font-bold text-forest-deep group-hover:text-gold transition-colors whitespace-nowrap">Next Cohort Theme:</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium text-forest/80">Food, Agriculture & Planetary Health &rarr;</span>
+                  </div>
+                </div>
+              </a>
             </div>
 
             {/* Dot pattern */}
@@ -239,7 +268,7 @@ function ThemeSection() {
     'Sustainable packaging & distribution',
   ]
   return (
-    <section className="py-32 bg-forest-deep relative overflow-hidden">
+    <section id="theme" className="py-32 bg-forest-deep relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-[600px] w-[600px] rounded-full bg-gold/10 blur-[120px]" />
 
@@ -314,7 +343,7 @@ function SuccessStory() {
               <p className="text-[15px] text-forest/75 leading-[1.8] mb-10">
                 The programme doesn't just end with an idea — it creates a pathway. Participants walk away with a team, a validated direction, and a warm introduction to Cambridge's innovation ecosystem.
               </p>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
                 {[
                   { val: '4', label: 'Ideas on Spark Incubator' },
                   { val: '2', label: 'Teams in active pilot support' },

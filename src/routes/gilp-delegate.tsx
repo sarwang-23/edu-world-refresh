@@ -178,7 +178,8 @@ function GilpDelegatePage() {
         filePayload[`${key}MimeType`] = f.mimeType;
       });
 
-      await submitToGILP("delegate", {
+      // Run in background because Apps Script takes minutes to generate PDFs and send emails
+      submitToGILP("delegate", {
         fullName: `${form.title} ${form.firstName} ${form.lastName}`.trim(),
         firstName: form.firstName,
         lastName: form.lastName,
@@ -194,7 +195,10 @@ function GilpDelegatePage() {
         partnerName: form.partnerName,
         brochureRead: form.brochureRead ? "Yes" : "No",
         ...filePayload,
-      });
+      }).catch(console.error);
+
+      // Short delay for UX feedback
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -290,7 +294,7 @@ function GilpDelegatePage() {
             <div className="w-full max-w-[560px]">
 
               {/* ── GILP Banner Image at top ── */}
-              <div className="mb-6 w-full md:w-[75%] mx-auto rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
+              <div className="mb-6 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
                 <img src={gilpBannerImg}
                   alt="Global India Leadership Programme"
                   className="w-full h-auto block"
@@ -356,9 +360,9 @@ function GilpDelegatePage() {
                     </div>
 
                     {/* Organisation */}
-                    <div>
+                    <div className="group">
                       <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Organisation *</label>
-                      <input type="text" required placeholder="School / Company" value={form.organisation} onChange={update("organisation")} className={inputCls} />
+                      <input type="text" required placeholder="Your Organisation Name" value={form.organisation} onChange={update("organisation")} className={inputCls} />
                     </div>
 
                     {/* Contact */}

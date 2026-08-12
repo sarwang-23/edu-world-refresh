@@ -45,7 +45,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-32 md:pb-40 lg:grid-cols-12 lg:gap-12 pt-4 md:pt-20">
         <div className="lg:col-span-6">
-          <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-5xl lg:text-[3.25rem] xl:text-[4rem]">
+          <h1 className="mt-4 text-4xl sm:text-[2.75rem] font-bold leading-[1.05] text-forest md:text-5xl lg:text-[3.25rem] xl:text-[4rem] break-words">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>

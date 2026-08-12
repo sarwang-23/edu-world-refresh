@@ -67,7 +67,7 @@ function Hero() {
             </span>
           </div>
           
-          <h1 className="text-[2.5rem] sm:text-[2.85rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.08] text-forest">
+          <h1 className="text-4xl sm:text-[2.85rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.08] text-forest break-words">
             Transformational education.<br />
             <span className="text-gold">Global impact.</span>
           </h1>
@@ -98,12 +98,12 @@ function Hero() {
 
         {/* Right: Perfectly Aligned 3-Column Bento Collage */}
         <div className="relative lg:col-span-7">
-          <div className="p-3 bg-white/70 backdrop-blur-md rounded-[2.5rem] border border-forest/10 shadow-2xl shadow-forest/10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 h-auto sm:h-[480px] overflow-hidden">
+          <div className="p-2 sm:p-3 bg-white/70 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] border border-forest/10 shadow-2xl shadow-forest/10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 h-[450px] sm:h-[480px] overflow-hidden">
               
               {/* Column 1 (2 Images) */}
-              <div className="flex flex-col gap-3 h-full">
-                <div className="h-[210px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
+              <div className="flex flex-col gap-2 sm:gap-3 h-full">
+                <div className="h-[220px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
                   <img src={collage1}
                     alt="Cambridge Lecture Session"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -113,7 +113,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[210px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[220px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
                   <img src={collage8}
                     alt="STEM Exploration"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -125,8 +125,8 @@ function Hero() {
               </div>
 
               {/* Column 2 (3 Images) */}
-              <div className="flex flex-col gap-3 h-full">
-                <div className="h-[140px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
+              <div className="flex flex-col gap-2 sm:gap-3 h-full">
+                <div className="h-[145px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
                   <img src={collage2}
                     alt="Cohort Discussion"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -136,7 +136,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[150px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[144px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
                   <img src={collage7}
                     alt="GEL Fireside Panel with CJBS"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -146,7 +146,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="h-[140px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
+                <div className="h-[145px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
                   <img src={collage4}
                     alt="Experiential Workshop"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -158,7 +158,7 @@ function Hero() {
               </div>
 
               {/* Column 3 (2 Images) */}
-              <div className="flex flex-col gap-3 h-full">
+              <div className="hidden sm:flex flex-col gap-3 h-full">
                 <div className="h-[210px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
                   <img src={collage9}
                     alt="Cambridge Interactive Lab"
