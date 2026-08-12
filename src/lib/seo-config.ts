@@ -91,6 +91,13 @@ export const seoConfig: Record<string, SeoEntry> = {
     image: "/gilp-banner.png",
     indexable: true,
   },
+  "/programmes/gilp": {
+    title: "Global India Leadership Programme at Cambridge | Sept 2026",
+    socialTitle: "Global India Leadership Programme at Cambridge | Sept 2026",
+    description: "Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day experience at Cambridge equips you with cutting-edge insights in AI, strategy, and leadership to navigate complexity",
+    image: "/social-gilp.png",
+    indexable: true,
+  },
   "/gilp-delegate": {
     title: "GILP Delegate Portal | Global Education Lab",
     socialTitle: "Global India Leadership Programme Delegate Portal",
