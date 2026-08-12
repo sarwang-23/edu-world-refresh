@@ -26,6 +26,7 @@ import person12 from "@/assets/person12.jpg";
 import personSerish from "@/assets/faculty-serish.jpg";
 import personSantosh from "@/assets/santosh_huralikoppi.jpg";
 import personSayara from "@/assets/sayara.jpg";
+import personMargaret from "@/assets/margaret_serna.jpeg";
 import { Voices } from '@/components/Voices';
 
 
@@ -398,16 +399,22 @@ function Journey() {
 function OurPeople() {
   const people = [
     {
+      name: "Margaret Serna CBE",
+      title: "Advisor – UK Education",
+      img: personMargaret,
+      quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
+    },
+    {
+      name: "Santosh Huralikoppi",
+      title: "Advisor – Startups & Investments",
+      img: personSantosh,
+      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
+    },
+    {
       name: "Andrew Hatcher",
       title: "Advisor – Entrepreneurship",
       img: person4,
       quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
-    },
-    {
-      name: "Guy Doza",
-      title: "Leadership & Communications Coach",
-      img: person1,
-      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
     },
     {
       name: "Dr Yves Gaspar",
@@ -416,16 +423,16 @@ function OurPeople() {
       quote: "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation.",
     },
     {
+      name: "Guy Doza",
+      title: "Leadership & Communications Coach",
+      img: person1,
+      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
+    },
+    {
       name: "Serish Gandikota",
       title: "Advisor – Frugal AI",
       img: personSerish,
       quote: "Co-founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
-    },
-    {
-      name: "Santosh Huralikoppi",
-      title: "Advisor – Startups & Investments",
-      img: personSantosh,
-      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
     },
     {
       name: "Tim Vinopal",

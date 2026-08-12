@@ -82,11 +82,10 @@ async function submitToGILP(formType: string, data: Record<string, string>) {
 }
 
 export const Route = createFileRoute('/programmes/gilp')({
-  head: () => ({
-    meta: [
-      { title: 'Global India Leadership Programme at Cambridge — Global Edu Lab' },
-      { name: 'description', content: 'A transformative leadership programme at Cambridge Judge Business School for Indian board members, CEOs and senior leaders.' },
-    ],
+  head: () => buildMeta("/programmes/gilp", {
+    title: "Global India Leadership Programme at Cambridge | Sept 2026",
+    description: "Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day experience at Cambridge equips you with cutting-edge insights in AI, strategy, and leadership to navigate complexity",
+    image: "/social-gilp.png"
   }),
   component: Page,
 })
