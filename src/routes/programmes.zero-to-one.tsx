@@ -25,7 +25,7 @@ import z21Gallery14 from '../assets/z21_gallery_14.jpg'
 import z21Gallery15 from '../assets/z21_gallery_15.jpg'
 import { useState } from 'react'
 import logoJBS from '@/assets/cambridge_jbs_official.png'
-import kingsCollegeCrest from '@/assets/kings-college-crest-transparent.png'
+import logoElab from '@/assets/logo-elab.png'
 import foundersImg from '../assets/young_leaders_1.jpg'
 import tendaiImg from '../assets/tendai.jpg'
 import sydneyImg from '../assets/sydney.jpg'
@@ -95,24 +95,21 @@ function Hero() {
               <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-forest/70 mb-3">
                 Delivered in Collaboration With
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-6 md:gap-8">
                 {/* Cambridge Judge Business School */}
-                <div className="flex items-center justify-center rounded-2xl bg-white border border-forest/15 px-3 py-2 shadow-sm hover:shadow-md transition-all h-[76px] w-[230px] overflow-hidden">
+                <div className="flex items-center justify-start h-28 md:h-40 -my-6 md:-my-12 -ml-3 md:-ml-6 mix-blend-multiply opacity-90">
                   <img src={logoJBS}
                     alt="University of Cambridge Judge Business School"
-                    className="w-full h-full object-contain scale-[1.5] hover:scale-[1.55] transition-transform duration-300"
+                    className="w-auto h-full object-contain"
                   loading="lazy" />
                 </div>
 
                 {/* King's E-Lab */}
-                <div className="flex items-center gap-3.5 rounded-2xl bg-white border border-forest/15 px-6 py-3 shadow-sm hover:shadow-md transition-all h-[76px]">
-                  <div className="flex flex-col items-start pr-3.5 border-r border-[#5B2468]/20">
-                    <span className="text-[22px] font-bold text-[#5B2468] font-serif leading-none tracking-tight">E-LAB</span>
-                    <div className="h-[1.5px] w-full bg-[#5B2468] my-1" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">KING'S COLLEGE</span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5B2468] leading-tight">CAMBRIDGE</span>
-                  </div>
-                  <img src={kingsCollegeCrest} alt="King's College Cambridge Crest" className="h-16 w-auto shrink-0 object-contain" loading="lazy" />
+                <div className="flex items-center justify-start h-20 md:h-24 mt-2 md:mt-4 mix-blend-multiply opacity-90">
+                  <img src={logoElab}
+                    alt="King's College E-Lab"
+                    className="w-auto h-full object-contain"
+                  loading="lazy" />
                 </div>
               </div>
             </div>
