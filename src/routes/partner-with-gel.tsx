@@ -204,7 +204,7 @@ function Opportunities() {
       icon: <Briefcase className="w-6 h-6" />,
       title: 'Governments & Ecosystems',
       desc: 'Delegations, innovation missions, policy dialogues and ecosystem development.',
-      link: '/global-ventures'
+      link: '/contact'
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
