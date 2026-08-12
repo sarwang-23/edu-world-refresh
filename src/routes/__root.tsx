@@ -84,11 +84,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Global Education Lab" },
       { property: "og:title", content: "Global Education Lab" },
       { property: "og:description", content: "Global Education Lab — Transformative international education, leadership programmes, and university research partnerships." },
-      { property: "og:image", content: "/gel-logo.png" },
+      { property: "og:image", content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@GlobalEduLab" },
-      { name: "twitter:image", content: "/gel-logo.png" },
+      { name: "twitter:image", content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg" },
     ],
     links: [
       {
