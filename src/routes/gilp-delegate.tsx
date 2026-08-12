@@ -3,8 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Camera, FileText, ChevronDown } from "lucide-react";
 import { useState, useRef } from "react";
 import { COUNTRY_CODES } from "@/data/countryCodes";
-
-// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+import gilpBannerImg from "@/assets/gilp-delegate-banner.jpg";// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOvfz0SOEgLYNf26E2Sz8B4DPvxyNEU0LQwZbvmLl2gmIcDHE46LnA6nZMv2PQ8qxV/exec";
 
 // Fires a form submission to the GILP Apps Script backend.
@@ -205,8 +204,8 @@ function GilpDelegatePage() {
   const steps = [
     { num: "02", title: "FEE PAYMENT", desc: "Within 2 weeks of submitting this form" },
     { num: "03", title: "VISA INVITATION LETTER", desc: "Issued within 5 working days of receiving your fee" },
-    { num: "04", title: "PRE READING & ORIENTATION", desc: "All material will be shared with you by 31st" },
-    { num: "05", title: "CAMBRIDGE ARRIVAL", desc: "You arrive at Cambridge on 13th" },
+    { num: "04", title: "PRE READING & ORIENTATION", desc: <>All material will be shared with you by 31<sup>st</sup> August 2026</> },
+    { num: "05", title: "CAMBRIDGE ARRIVAL", desc: <>You arrive at Cambridge on 13<sup>th</sup> September 2026</> },
   ];
 
   const inputCls = "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/80 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
@@ -218,7 +217,7 @@ function GilpDelegatePage() {
       <section className="min-h-screen flex flex-col lg:flex-row">
 
         {/* ─── LEFT PANEL ─── */}
-        <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] bg-forest-deep overflow-y-auto">
+        <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] bg-forest-deep overflow-hidden">
 
           {/* BG image */}
           <img src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
@@ -231,13 +230,7 @@ function GilpDelegatePage() {
 
           <div className="relative z-10 px-10 md:px-12 pt-10 pb-12 flex flex-col min-h-full">
 
-            {/* ── Registration badge ── */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-8 w-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
-                <Sparkles className="w-3.5 h-3.5 text-gold" />
-              </div>
-              <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Registration</span>
-            </div>
+
 
             {/* ── Heading ── */}
             <h1 className="text-[2.4rem] font-bold text-white leading-[1.1] tracking-tight mb-6">
@@ -293,12 +286,20 @@ function GilpDelegatePage() {
 
         {/* ─── RIGHT PANEL — Form ─── */}
         <div className="lg:w-[55%] bg-white overflow-y-auto">
-          <div className="flex min-h-full items-start justify-center px-8 md:px-14 lg:px-20 py-20">
+          <div className="flex min-h-full items-start justify-center px-8 md:px-14 lg:px-20 pt-6 pb-16">
             <div className="w-full max-w-[560px]">
 
+              {/* ── GILP Banner Image at top ── */}
+              <div className="mb-6 w-full md:w-[75%] mx-auto rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
+                <img src={gilpBannerImg}
+                  alt="Global India Leadership Programme"
+                  className="w-full h-auto block"
+                  loading="lazy" />
+              </div>
+
               {/* ── Form heading ── */}
-              <div className="mb-10">
-                <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-5">
+              <div className="mb-8">
+                <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                   <span className="h-px w-6 bg-gold" /> Application Form
                 </span>
                 <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
@@ -312,7 +313,7 @@ function GilpDelegatePage() {
                 {step === 1 ? (
                   <>
                     {/* Row: Title + First + Last */}
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div>
                         <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Title *</label>
                         <div className={selectWrapCls}>
@@ -363,8 +364,8 @@ function GilpDelegatePage() {
                     {/* Contact */}
                     <div>
                       <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
-                      <div className="flex gap-2">
-                        <div className={`${selectWrapCls} min-w-[125px] flex-shrink-0`}>
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <div className={`${selectWrapCls} sm:min-w-[125px] flex-shrink-0`}>
                           <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
                             {COUNTRY_CODES.map((c) => (
                               <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
@@ -430,8 +431,8 @@ function GilpDelegatePage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="pt-6 border-t border-forest/5 flex items-center justify-between gap-5">
-                      <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[180px]">
+                    <div className="pt-6 border-t border-forest/5 flex flex-col sm:flex-row items-center sm:justify-between gap-5">
+                      <p className="text-[11.5px] text-forest/80 leading-relaxed max-w-[180px] text-center sm:text-left">
                         By submitting, you consent to be contacted by the GEL team.
                       </p>
                       <button
@@ -539,13 +540,6 @@ function GilpDelegatePage() {
                   <p className="text-center text-[15px] font-semibold text-red-500 mt-4">Something went wrong. Please try again.</p>
                 )}
 
-                {/* ── GILP Banner Image at bottom ── */}
-                <div className="mt-10 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
-                  <img src="/gilp-banner.png"
-                    alt="Global India Leadership Programme – 14-18, Cambridge Judge Business School"
-                    className="w-full h-auto block"
-                    loading="lazy" />
-                </div>
 
               </form>
             </div>
