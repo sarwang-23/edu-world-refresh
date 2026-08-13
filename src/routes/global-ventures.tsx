@@ -20,30 +20,6 @@ export const Route = createFileRoute("/global-ventures")({
   component: GlobalVenturesPage,
 });
 
-const globalVenturesTestimonials = [
-  {
-    q: "The Global Ventures programme completely transformed our startup's trajectory. The mentorship and access to the UK market helped us secure our seed round and scale internationally within months.",
-    a: "Jane Doe",
-    r: "Founder & CEO",
-    tag: "TechInnovate",
-    featured: true,
-  },
-  {
-    q: "As a researcher, I struggled to see the commercial path for my innovation. The Research Track provided the exact framework and industry connections I needed to spin out successfully.",
-    a: "Dr. John Smith",
-    r: "Lead Researcher",
-    tag: "University Spinout",
-    featured: false,
-  },
-  {
-    q: "The level of strategic guidance we received was unparalleled. We refined our business model and connected with global partners who are now our biggest clients.",
-    a: "Alex Johnson",
-    r: "Co-founder",
-    tag: "EcoSolutions",
-    featured: false,
-  }
-];
-
 function GlobalVenturesPage() {
   return (
     <div className="min-h-screen font-sans text-foreground">
@@ -75,7 +51,6 @@ function GlobalVenturesPage() {
       <Journey />
       <TrackComparison />
       <WhoShouldApply />
-      <SharedTestimonials customTestimonials={globalVenturesTestimonials} />
       <BottomCTA />
       <Footer />
     </div>
