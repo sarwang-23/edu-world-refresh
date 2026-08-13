@@ -12,7 +12,6 @@ import zeroToOneImg from "@/assets/zero-to-one.png";
 import businessLeadersImg from "@/assets/business-leaders.jpg";
 import heroClassroomImg from "@/assets/hero-classroom.jpg";
 import { Footer } from "./index";
-import { SharedTestimonials } from '@/components/SharedTestimonials';
 
 
 export const Route = createFileRoute("/global-ventures")({
