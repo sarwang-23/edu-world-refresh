@@ -6,16 +6,16 @@ export function Footer() {
   return (
     <footer className="bg-[#f6f5f3]">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4 lg:pr-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-6 xl:gap-12">
+          <div className="lg:col-span-3 lg:pr-4 xl:pr-8">
             <Link to="/" className="inline-block mb-6">
               <img src={logoImg} alt="Global Education Lab" className="h-20 w-auto object-contain mix-blend-multiply" loading="lazy" />
             </Link>
             <p className="text-[14.5px] leading-[1.6] text-[#333] font-medium">
-              Transformational educational experiences<br className="hidden lg:block" /> for a lifetime of a learner's life.
+              Transformational educational experiences<br className="hidden xl:block" /> for a lifetime of a learner's life.
             </p>
           </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
+          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-4 xl:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Quick Links</p>
             <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
               {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"], ["Blogs", "/blog"]].map(([label, href]) => (
@@ -23,7 +23,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
+          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-4 xl:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Partner</p>
             <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
               {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
@@ -31,7 +31,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
+          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-4 xl:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Resources</p>
             <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
               {[["News & Insights", "/insights"], ["Events", "/gallery"], ["Brochures", "/contact"]].map(([label, href]) => (
@@ -39,7 +39,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-8">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#c5ccc7] lg:pl-4 xl:pl-8">
             <p className="text-[15px] font-bold uppercase tracking-wider text-black mb-6">Connect</p>
             <div className="space-y-4 text-[14.5px] font-medium text-[#333] mb-8">
               <div className="flex items-center gap-3">
