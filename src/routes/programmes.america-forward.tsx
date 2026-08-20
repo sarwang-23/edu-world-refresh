@@ -433,7 +433,7 @@ function AudienceAndFormatSection() {
   return (
     <section className="border-b border-forest/10 bg-[#FAF8F5] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 items-start">
           {/* Left Column: Who is it for */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
