@@ -91,6 +91,20 @@ export const seoConfig: Record<string, SeoEntry> = {
     image: "/gilp-banner.png",
     indexable: true,
   },
+  "/programmes/america-forward": {
+    title: "America Forward Programme | Global Education Lab",
+    socialTitle: "America Forward Programme at Cambridge | Global Education Lab",
+    description: "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
+    image: "/gilp-banner.png",
+    indexable: true,
+  },
+  "/america-forward": {
+    title: "America Forward Programme | Global Education Lab",
+    socialTitle: "America Forward Programme at Cambridge | Global Education Lab",
+    description: "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
+    image: "/gilp-banner.png",
+    indexable: true,
+  },
   "/programmes/gilp": {
     title: "Global India Leadership Programme at Cambridge | Sept 2026",
     socialTitle: "Global India Leadership Programme at Cambridge | Sept 2026",

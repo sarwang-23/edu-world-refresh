@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiLearningGamesRouteImport } from './routes/ai-learning-games'
+import { Route as AmericaForwardRouteImport } from './routes/america-forward'
 import { Route as ApplyNowRouteImport } from './routes/apply-now'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BusinessLeadersRouteImport } from './routes/business-leaders'
@@ -42,6 +43,7 @@ import { Route as EntrepreneurshipMentorshipRouteImport } from './routes/entrepr
 import { Route as EntrepreneurshipZeroToOneRouteImport } from './routes/entrepreneurship_.zero-to-one'
 import { Route as PostSlugRouteImport } from './routes/post.$slug'
 import { Route as ProgrammesIndexRouteImport } from './routes/programmes.index'
+import { Route as ProgrammesAmericaForwardRouteImport } from './routes/programmes.america-forward'
 import { Route as ProgrammesBaliRouteImport } from './routes/programmes.bali'
 import { Route as ProgrammesCorporateLearningRouteImport } from './routes/programmes.corporate-learning'
 import { Route as ProgrammesCslpRouteImport } from './routes/programmes.cslp'
@@ -72,6 +74,11 @@ const AboutRoute = AboutRouteImport.update({
 const AiLearningGamesRoute = AiLearningGamesRouteImport.update({
   id: '/ai-learning-games',
   path: '/ai-learning-games',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmericaForwardRoute = AmericaForwardRouteImport.update({
+  id: '/america-forward',
+  path: '/america-forward',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApplyNowRoute = ApplyNowRouteImport.update({
@@ -227,6 +234,12 @@ const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ProgrammesRoute,
 } as any)
+const ProgrammesAmericaForwardRoute =
+  ProgrammesAmericaForwardRouteImport.update({
+    id: '/america-forward',
+    path: '/america-forward',
+    getParentRoute: () => ProgrammesRoute,
+  } as any)
 const ProgrammesBaliRoute = ProgrammesBaliRouteImport.update({
   id: '/bali',
   path: '/bali',
@@ -315,6 +328,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-learning-games': typeof AiLearningGamesRoute
+  '/america-forward': typeof AmericaForwardRoute
   '/apply-now': typeof ApplyNowRoute
   '/blog': typeof BlogRouteWithChildren
   '/business-leaders': typeof BusinessLeadersRoute
@@ -343,6 +357,7 @@ export interface FileRoutesByFullPath {
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
   '/post/$slug': typeof PostSlugRoute
+  '/programmes/america-forward': typeof ProgrammesAmericaForwardRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -366,6 +381,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-learning-games': typeof AiLearningGamesRoute
+  '/america-forward': typeof AmericaForwardRoute
   '/apply-now': typeof ApplyNowRoute
   '/business-leaders': typeof BusinessLeadersRoute
   '/contact': typeof ContactRoute
@@ -392,6 +408,7 @@ export interface FileRoutesByTo {
   '/entrepreneurship/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
   '/post/$slug': typeof PostSlugRoute
+  '/programmes/america-forward': typeof ProgrammesAmericaForwardRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -416,6 +433,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-learning-games': typeof AiLearningGamesRoute
+  '/america-forward': typeof AmericaForwardRoute
   '/apply-now': typeof ApplyNowRoute
   '/blog': typeof BlogRouteWithChildren
   '/business-leaders': typeof BusinessLeadersRoute
@@ -444,6 +462,7 @@ export interface FileRoutesById {
   '/entrepreneurship_/mentorship': typeof EntrepreneurshipMentorshipRoute
   '/entrepreneurship_/zero-to-one': typeof EntrepreneurshipZeroToOneRoute
   '/post/$slug': typeof PostSlugRoute
+  '/programmes/america-forward': typeof ProgrammesAmericaForwardRoute
   '/programmes/bali': typeof ProgrammesBaliRoute
   '/programmes/corporate-learning': typeof ProgrammesCorporateLearningRoute
   '/programmes/cslp': typeof ProgrammesCslpRoute
@@ -469,6 +488,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-learning-games'
+    | '/america-forward'
     | '/apply-now'
     | '/blog'
     | '/business-leaders'
@@ -497,6 +517,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship/mentorship'
     | '/entrepreneurship/zero-to-one'
     | '/post/$slug'
+    | '/programmes/america-forward'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -520,6 +541,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-learning-games'
+    | '/america-forward'
     | '/apply-now'
     | '/business-leaders'
     | '/contact'
@@ -546,6 +568,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship/mentorship'
     | '/entrepreneurship/zero-to-one'
     | '/post/$slug'
+    | '/programmes/america-forward'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -569,6 +592,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ai-learning-games'
+    | '/america-forward'
     | '/apply-now'
     | '/blog'
     | '/business-leaders'
@@ -597,6 +621,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship_/mentorship'
     | '/entrepreneurship_/zero-to-one'
     | '/post/$slug'
+    | '/programmes/america-forward'
     | '/programmes/bali'
     | '/programmes/corporate-learning'
     | '/programmes/cslp'
@@ -621,6 +646,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiLearningGamesRoute: typeof AiLearningGamesRoute
+  AmericaForwardRoute: typeof AmericaForwardRoute
   ApplyNowRoute: typeof ApplyNowRoute
   BlogRoute: typeof BlogRouteWithChildren
   BusinessLeadersRoute: typeof BusinessLeadersRoute
@@ -676,6 +702,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-learning-games'
       fullPath: '/ai-learning-games'
       preLoaderRoute: typeof AiLearningGamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/america-forward': {
+      id: '/america-forward'
+      path: '/america-forward'
+      fullPath: '/america-forward'
+      preLoaderRoute: typeof AmericaForwardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apply-now': {
@@ -888,6 +921,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesIndexRouteImport
       parentRoute: typeof ProgrammesRoute
     }
+    '/programmes/america-forward': {
+      id: '/programmes/america-forward'
+      path: '/america-forward'
+      fullPath: '/programmes/america-forward'
+      preLoaderRoute: typeof ProgrammesAmericaForwardRouteImport
+      parentRoute: typeof ProgrammesRoute
+    }
     '/programmes/bali': {
       id: '/programmes/bali'
       path: '/bali'
@@ -1016,6 +1056,7 @@ const BlogRouteChildren: BlogRouteChildren = {
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ProgrammesRouteChildren {
+  ProgrammesAmericaForwardRoute: typeof ProgrammesAmericaForwardRoute
   ProgrammesBaliRoute: typeof ProgrammesBaliRoute
   ProgrammesCorporateLearningRoute: typeof ProgrammesCorporateLearningRoute
   ProgrammesCslpRoute: typeof ProgrammesCslpRoute
@@ -1031,6 +1072,7 @@ interface ProgrammesRouteChildren {
 }
 
 const ProgrammesRouteChildren: ProgrammesRouteChildren = {
+  ProgrammesAmericaForwardRoute: ProgrammesAmericaForwardRoute,
   ProgrammesBaliRoute: ProgrammesBaliRoute,
   ProgrammesCorporateLearningRoute: ProgrammesCorporateLearningRoute,
   ProgrammesCslpRoute: ProgrammesCslpRoute,
@@ -1053,6 +1095,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiLearningGamesRoute: AiLearningGamesRoute,
+  AmericaForwardRoute: AmericaForwardRoute,
   ApplyNowRoute: ApplyNowRoute,
   BlogRoute: BlogRouteWithChildren,
   BusinessLeadersRoute: BusinessLeadersRoute,

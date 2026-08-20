@@ -1395,9 +1395,9 @@ function FacultyGrid() {
     },
     {
       img: speaker4Img,
-      name: 'Prof. Raghavendra Rao',
+      name: 'Prof. Raghavendra Rau',
       role: 'Facilitator – Corporate Governance',
-      bio: 'Sir Brahmana Ratcheloval Professor of Finance at Cambridge Judge, Raghavendra Rao leads research in corporate governance, scenario finance, and market transparency. He brings a rigorous lens to governance, treating it as a mechanism for managing information flows and accountability within firms.',
+      bio: 'Sir Brahmana Ratcheloval Professor of Finance at Cambridge Judge, Raghavendra Rau leads research in corporate governance, scenario finance, and market transparency. He brings a rigorous lens to governance, treating it as a mechanism for managing information flows and accountability within firms.',
       accent: 'from-forest/70 via-forest to-forest/50',
     },
     {

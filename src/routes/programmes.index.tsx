@@ -29,10 +29,20 @@ export const Route = createFileRoute("/programmes/")({
   component: ProgrammesPage,
 });
 
-const FILTERS = ["All Programmes", "For Students", "For Graduates", "For Founders", "For Executives", "For Educators"] as const;
+const FILTERS = ["All Programmes", "For Business Professionals", "For Students", "For Graduates", "For Founders", "For Executives", "For Educators"] as const;
 type Filter = typeof FILTERS[number];
 
 const upcomingProgrammes = [
+  {
+    img: cambridgeRealImg,
+    tag: "FOR BUSINESS PROFESSIONALS",
+    title: "America Forward Programme",
+    desc: "An experiential programme connecting business leaders, founders and innovators to the UK and European innovation ecosystem.",
+    quote: "Cambridge connects you to ideas, people and opportunities that can shape the future of your business.",
+    location: "Cambridge, UK & London",
+    link: "/programmes/america-forward",
+    category: "For Business Professionals",
+  },
   {
     img: gilpImg,
     tag: "FOR EXECUTIVES & LEADERS",
@@ -51,7 +61,6 @@ const upcomingProgrammes = [
     quote: "When ambition meets mentorship, momentum becomes possible.",
     location: "Girton College, Cambridge",
     link: "/gsp",
-
     category: "For Graduates",
   },
   {

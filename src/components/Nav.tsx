@@ -49,7 +49,7 @@ export function Nav() {
                   All Programmes
                 </Link>
 
-                {/* For students */}
+                {/* For Students */}
                 <div className="group/students relative">
                   <div className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest cursor-default">
                     For Students
@@ -60,6 +60,20 @@ export function Nav() {
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
                       <Link to="/gsp" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
                       <Link to="/students" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Young leaders summer programme (13-17 yrs)</Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* For Business Professionals */}
+                <div className="group/professionals relative">
+                  <div className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest cursor-default">
+                    For Business Professionals
+                    <ChevronRight className="h-4 w-4" />
+                  </div>
+                  {/* Level 2 Dropdown */}
+                  <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/professionals:flex pl-2 z-50">
+                    <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
+                      <Link to="/programmes/america-forward" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">America Forward</Link>
                     </div>
                   </div>
                 </div>
@@ -206,6 +220,16 @@ export function Nav() {
                   <div className="pl-4 flex flex-col gap-1 mt-1">
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/gsp" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Graduate Summer Programme</Link>
                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/students" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">Young leaders summer programme (13-17 yrs)</Link>
+                  </div>
+                </details>
+
+                <details className="group/business">
+                  <summary className="p-3 flex justify-between items-center text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    For Business Professionals
+                    <ChevronDown className="h-4 w-4 transition-transform group-open/business:rotate-180" />
+                  </summary>
+                  <div className="pl-4 flex flex-col gap-1 mt-1">
+                    <Link onClick={() => setIsMobileMenuOpen(false)} to="/programmes/america-forward" className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg">America Forward</Link>
                   </div>
                 </details>
 
