@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Footer } from './index'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Footer } from "./index";
 import {
   ArrowUpRight,
   Building2,
@@ -14,13 +14,13 @@ import {
   Users,
   Quote,
   MapPin,
-  Calendar
-} from 'lucide-react'
-import businessLeadersImg from '../assets/business-leaders.jpg'
+  Calendar,
+} from "lucide-react";
+import businessLeadersImg from "../assets/business-leaders.jpg";
 
-export const Route = createFileRoute('/business-leaders')({
+export const Route = createFileRoute("/business-leaders")({
   component: BusinessLeaders,
-})
+});
 
 function BusinessLeaders() {
   return (
@@ -36,24 +36,27 @@ function BusinessLeaders() {
       <FinalCTA />
       <Footer />
     </div>
-  )
+  );
 }
 
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      
+
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pb-12 md:pb-20 pt-28">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <Building2 className="h-3.5 w-3.5 text-gold" /> For Business Leaders & Entrepreneurs
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
-            Leadership sharpened at the world's <span className="italic text-gold font-serif">great institutions.</span>
+            Leadership sharpened at the world's{" "}
+            <span className="italic text-gold font-serif">great institutions.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
-            Since 2022 we have delivered leadership workshops and corporate learning events on ESG, organisational behaviour, entrepreneurship and corporate governance — helping CXOs and senior executives sharpen strategic thinking and strengthen leadership capability.
+            Since 2022 we have delivered leadership workshops and corporate learning events on ESG,
+            organisational behaviour, entrepreneurship and corporate governance — helping CXOs and
+            senior executives sharpen strategic thinking and strengthen leadership capability.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -83,7 +86,9 @@ function Hero() {
               className="h-[480px] w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">CXOs & ENTREPRENEURS</p>
+              <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">
+                CXOs & ENTREPRENEURS
+              </p>
               <p className="mt-1 text-xl font-bold text-cream">
                 Where global business leaders come to learn, think and connect.
               </p>
@@ -92,7 +97,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CollaboratorsBar() {
@@ -105,7 +110,7 @@ function CollaboratorsBar() {
     "Entrepreneurs Lab UK",
     "UK-India Business Corridor",
     "Global India Leadership",
-  ]
+  ];
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
@@ -115,13 +120,19 @@ function CollaboratorsBar() {
       <div className="relative flex w-full">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={i}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={`dup-${i}`}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
@@ -129,7 +140,7 @@ function CollaboratorsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function WhyLeadersTravel() {
@@ -154,18 +165,24 @@ function WhyLeadersTravel() {
       title: "Recognition & networks",
       desc: "Co-branded certification with our host institutions and continued access to the UK-India business corridor.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">WHY EXECUTIVES TRAVEL WITH US</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            WHY EXECUTIVES TRAVEL WITH US
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl leading-tight">
-            Built for leaders preparing to <span className="italic text-gold font-serif">lead global growth.</span>
+            Built for leaders preparing to{" "}
+            <span className="italic text-gold font-serif">lead global growth.</span>
           </h2>
           <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-3xl">
-            Our flagship — the Global India Leadership Programme (GILP) — brings Indian CXOs to Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks, and to network with the UK-India business corridor. Our wider calendar convenes executives at Cambridge, the House of Lords and Judge Business School.
+            Our flagship — the Global India Leadership Programme (GILP) — brings Indian CXOs to
+            Cambridge to explore cutting-edge leadership strategies, AI and innovation frameworks,
+            and to network with the UK-India business corridor. Our wider calendar convenes
+            executives at Cambridge, the House of Lords and Judge Business School.
           </p>
         </div>
 
@@ -182,7 +199,7 @@ function WhyLeadersTravel() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function StatsBar() {
@@ -191,7 +208,7 @@ function StatsBar() {
     { label: "UK · IN", sub: "BUSINESS CORRIDOR" },
     { label: "2022", sub: "DELIVERING SINCE" },
     { label: "4+", sub: "CORE THEMES" },
-  ]
+  ];
 
   return (
     <div className="bg-forest py-6 overflow-hidden">
@@ -200,9 +217,14 @@ function StatsBar() {
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
               {stats.map((stat, idx) => (
-                <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
+                <div
+                  key={idx}
+                  className="mx-12 flex flex-col items-center justify-center text-center"
+                >
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">
+                    {stat.sub}
+                  </span>
                 </div>
               ))}
             </div>
@@ -210,7 +232,7 @@ function StatsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function OngoingProgrammes() {
@@ -250,44 +272,56 @@ function OngoingProgrammes() {
       date: "ROLLING CALENDAR",
       desc: "Custom workshops for boards and leadership teams on ESG leadership, organisational behaviour, entrepreneurship and corporate governance — the core themes we have delivered since 2022.",
       link: "/programmes/corporate-learning",
-    }
-  ]
+    },
+  ];
 
   return (
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">ONGOING PROGRAMMES - 2026</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            ONGOING PROGRAMMES - 2026
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             One flagship. Three ways to join.
           </h2>
           <p className="mt-4 text-[15px] text-forest/80 max-w-2xl mx-auto">
-            Attend our flagship at Cambridge, join an invite-only convening, or bring your leadership team into a bespoke corporate workshop.
+            Attend our flagship at Cambridge, join an invite-only convening, or bring your
+            leadership team into a bespoke corporate workshop.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {programmes.map((p, idx) => {
             return (
-              <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
+              <div
+                key={idx}
+                className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm"
+              >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                    <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
+                    <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">
+                      ✦ {p.type}
+                    </span>
+                    <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">
+                      {p.audience}
+                    </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
                   <div className="mt-3 flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest text-forest/60">
-                    <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" /> {p.location}
+                    </span>
                     <span>|</span>
-                    <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" /> {p.date}
+                    </span>
                   </div>
-                  
-                  <p className="mt-4 text-[15px] leading-relaxed text-forest/80">
-                    {p.desc}
-                  </p>
+
+                  <p className="mt-4 text-[15px] leading-relaxed text-forest/80">{p.desc}</p>
                 </div>
-                
+
                 <div className="mt-8">
                   <Link
                     to={p.link}
@@ -297,12 +331,12 @@ function OngoingProgrammes() {
                   </Link>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function EndToEndJourney() {
@@ -327,13 +361,15 @@ function EndToEndJourney() {
       title: "Arrive & engage",
       desc: "Airport pickup, curated stays, and a dedicated relationship manager on the ground for the full engagement.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO CAMBRIDGE</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM ENQUIRY TO CAMBRIDGE
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             An executive journey we handle end-to-end.
           </h2>
@@ -353,7 +389,7 @@ function EndToEndJourney() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function Testimonials() {
@@ -376,13 +412,15 @@ function Testimonials() {
       author: "Startup Founder",
       role: "ZERO-TO-ONE IDEATION WEEKEND",
     },
-  ]
+  ];
 
   return (
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM OUR DELEGATES
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by CXOs, founders and boards.
           </h2>
@@ -401,14 +439,16 @@ function Testimonials() {
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">
+                  {r.role}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function DelegationConcierge() {
@@ -443,19 +483,23 @@ function DelegationConcierge() {
       title: "Dietary & faith needs",
       desc: "Halal, vegetarian, Kosher and Jain menus at every meal. Prayer rooms arranged near each venue.",
     },
-  ]
+  ];
 
   return (
     <section id="delegations" className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR CORPORATE DELEGATIONS</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              FOR CORPORATE DELEGATIONS
+            </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Everything your leadership team needs — before you board.
             </h2>
             <p className="mt-6 text-[15px] text-forest/80 leading-relaxed">
-              Bringing a C-suite across borders is a serious undertaking. Our concierge desk manages the details so your team arrives ready to think, learn and build — not exhausted from logistics.
+              Bringing a C-suite across borders is a serious undertaking. Our concierge desk manages
+              the details so your team arrives ready to think, learn and build — not exhausted from
+              logistics.
             </p>
           </div>
 
@@ -473,19 +517,22 @@ function DelegationConcierge() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+          BRING YOUR LEADERSHIP TEAM
+        </p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Reserve your seats for the 2026 season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Cohorts are capped and typically fill six to nine months in advance. Register today and our admissions team will be in touch within two working days.
+          Cohorts are capped and typically fill six to nine months in advance. Register today and
+          our admissions team will be in touch within two working days.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
@@ -504,5 +551,5 @@ function FinalCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

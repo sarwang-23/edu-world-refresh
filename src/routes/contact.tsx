@@ -1,19 +1,33 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ArrowUpRight,
+  Clock,
+  Globe2,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
       { title: "Contact Us — Global Education Lab" },
-      { name: "description", content: "Get in touch with Global Education Lab. Cambridge desk for executive programmes, school partnerships, and global ventures." },
+      {
+        name: "description",
+        content:
+          "Get in touch with Global Education Lab. Cambridge desk for executive programmes, school partnerships, and global ventures.",
+      },
     ],
   }),
 });
 
 // Apps Script Web App URL — deployed from Code.gs
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
 function ContactPage() {
   const [selectedInterest, setSelectedInterest] = useState("");
@@ -30,11 +44,11 @@ function ContactPage() {
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleChange = (field: keyof typeof formData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-  };
+  const handleChange =
+    (field: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,12 +89,10 @@ function ContactPage() {
 
   return (
     <div className="min-h-screen font-sans">
-
       {/* ═══════════════════════════════════════════
           HERO — Full-viewport split layout
       ═══════════════════════════════════════════ */}
       <section className="min-h-screen flex flex-col lg:flex-row">
-
         {/* LEFT PANEL — Immersive dark image panel */}
         <div className="relative lg:w-[42%] min-h-[420px] lg:min-h-screen flex flex-col justify-between overflow-hidden">
           {/* Background image */}
@@ -100,7 +112,9 @@ function ContactPage() {
           <div className="relative z-10 px-10 md:px-14 pt-28">
             <div className="flex items-center gap-3 mb-10">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[11px] font-bold tracking-[0.28em] text-gold uppercase">Global Education Lab</span>
+              <span className="text-[11px] font-bold tracking-[0.28em] text-gold uppercase">
+                Global Education Lab
+              </span>
             </div>
 
             <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
@@ -114,17 +128,38 @@ function ContactPage() {
             {/* Contact rows */}
             <div className="space-y-4">
               {[
-                { icon: <Phone className="h-3.5 w-3.5 text-gold" />, val: "+44 (01223) 362994", href: "tel:+441223362994" },
-                { icon: <Mail className="h-3.5 w-3.5 text-gold" />, val: "info@globaledulab.com", href: "mailto:info@globaledulab.com" },
-                { icon: <MapPin className="h-3.5 w-3.5 text-gold" />, val: "Stirling House, Waterbeach, Cambridge CB25 9PB", href: null },
-                { icon: <Clock className="h-3.5 w-3.5 text-gold" />, val: "Mon–Fri · 09:00–18:00 GMT", href: null },
+                {
+                  icon: <Phone className="h-3.5 w-3.5 text-gold" />,
+                  val: "+44 (01223) 362994",
+                  href: "tel:+441223362994",
+                },
+                {
+                  icon: <Mail className="h-3.5 w-3.5 text-gold" />,
+                  val: "info@globaledulab.com",
+                  href: "mailto:info@globaledulab.com",
+                },
+                {
+                  icon: <MapPin className="h-3.5 w-3.5 text-gold" />,
+                  val: "Stirling House, Waterbeach, Cambridge CB25 9PB",
+                  href: null,
+                },
+                {
+                  icon: <Clock className="h-3.5 w-3.5 text-gold" />,
+                  val: "Mon–Fri · 09:00–18:00 GMT",
+                  href: null,
+                },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3.5 group">
                   <div className="h-7 w-7 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold/20 group-hover:border-gold/30 transition-all duration-300">
                     {item.icon}
                   </div>
                   {item.href ? (
-                    <a href={item.href} className="text-[13px] text-white/70 group-hover:text-white transition-colors duration-200 leading-relaxed">{item.val}</a>
+                    <a
+                      href={item.href}
+                      className="text-[13px] text-white/70 group-hover:text-white transition-colors duration-200 leading-relaxed"
+                    >
+                      {item.val}
+                    </a>
                   ) : (
                     <p className="text-[13px] text-white/70 leading-relaxed">{item.val}</p>
                   )}
@@ -137,7 +172,9 @@ function ContactPage() {
           <div className="relative z-10 px-10 md:px-14 pb-10 mt-10">
             <div className="border-t border-white/10 pt-6 flex items-end justify-between">
               <div>
-                <p className="text-[9px] uppercase tracking-[0.25em] text-white/25 mb-1">Reply within</p>
+                <p className="text-[9px] uppercase tracking-[0.25em] text-white/25 mb-1">
+                  Reply within
+                </p>
                 <p className="text-[2.2rem] font-bold text-white leading-none">24h</p>
               </div>
               <img
@@ -152,14 +189,14 @@ function ContactPage() {
         {/* RIGHT PANEL — Premium form */}
         <div className="lg:w-[58%] bg-white flex items-start lg:items-center justify-center px-8 md:px-14 lg:px-20 py-28 lg:py-0 overflow-y-auto">
           <div className="w-full max-w-[560px]">
-
             {/* Form heading */}
             <div className="mb-10">
               <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Send a Message
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
-                How can we<br />
+                How can we
+                <br />
                 <span className="font-serif italic font-normal text-forest/50">help you?</span>
               </h2>
             </div>
@@ -180,169 +217,172 @@ function ContactPage() {
                 </button>
               </div>
             ) : (
-            <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* Name */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[13px] font-semibold text-forest/80">First Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Karan"
+                      value={formData.firstName}
+                      onChange={handleChange("firstName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                  <div className="group">
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <label className="text-[13px] font-semibold text-forest/80">Last Name</label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Sharma"
+                      value={formData.lastName}
+                      onChange={handleChange("lastName")}
+                      className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
 
-              {/* Name */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="group">
+                {/* Email */}
+                <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">First Name</label>
+                    <label className="text-[13px] font-semibold text-forest/80">
+                      Email Address
+                    </label>
                   </div>
                   <input
-                    type="text"
+                    type="email"
                     required
-                    placeholder="Karan"
-                    value={formData.firstName}
-                    onChange={handleChange("firstName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    placeholder="you@organisation.com"
+                    value={formData.email}
+                    onChange={handleChange("email")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
                   />
                 </div>
-                <div className="group">
+
+                {/* Phone */}
+                <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[13px] font-semibold text-forest/80">Last Name</label>
+                    <label className="text-[13px] font-semibold text-forest/80">Phone Number</label>
                   </div>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Sharma"
-                    value={formData.lastName}
-                    onChange={handleChange("lastName")}
-                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Email Address</label>
-                </div>
-                <input
-                  type="email"
-                  required
-                  placeholder="you@organisation.com"
-                  value={formData.email}
-                  onChange={handleChange("email")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Phone Number</label>
-                </div>
-                <div className="flex gap-2">
-                  <select
-                    value={formData.phoneCode}
-                    onChange={handleChange("phoneCode")}
-                    className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
-                  >
-                    <option>+91 IN</option>
-                    <option>+44 UK</option>
-                    <option>+1 US</option>
-                    <option>+971 AE</option>
-                  </select>
-                  <input
-                    type="tel"
-                    placeholder="98765 43210"
-                    value={formData.phone}
-                    onChange={handleChange("phone")}
-                    className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                  />
-                </div>
-              </div>
-
-              {/* Interest */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-3">
-                  <label className="text-[13px] font-semibold text-forest/80">I am Interested In</label>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    "General Enquiry",
-                    "School Leaders",
-                    "Business Leaders",
-                    "Students & Teachers",
-                    "Global Ventures",
-                    "Media & Press",
-                  ].map((tag, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setSelectedInterest(tag)}
-                      className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
-                        selectedInterest === tag
-                          ? "bg-forest-deep border-forest-deep text-white shadow-md"
-                          : "bg-[#F7F5F1] border-transparent text-forest/60 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
-                      }`}
+                  <div className="flex gap-2">
+                    <select
+                      value={formData.phoneCode}
+                      onChange={handleChange("phoneCode")}
+                      className="bg-[#F7F5F1] border border-transparent rounded-xl px-3 py-3.5 text-[13px] text-forest-deep focus:outline-none focus:bg-white focus:border-gold/40 transition-all duration-200 w-[96px]"
                     >
-                      {selectedInterest === tag ? (
-                        <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                      <option>+91 IN</option>
+                      <option>+44 UK</option>
+                      <option>+1 US</option>
+                      <option>+971 AE</option>
+                    </select>
+                    <input
+                      type="tel"
+                      placeholder="98765 43210"
+                      value={formData.phone}
+                      onChange={handleChange("phone")}
+                      className="flex-1 bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                    />
+                  </div>
+                </div>
+
+                {/* Interest */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-3">
+                    <label className="text-[13px] font-semibold text-forest/80">
+                      I am Interested In
+                    </label>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      "General Enquiry",
+                      "School Leaders",
+                      "Business Leaders",
+                      "Students & Teachers",
+                      "Global Ventures",
+                      "Media & Press",
+                    ].map((tag, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSelectedInterest(tag)}
+                        className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
+                          selectedInterest === tag
+                            ? "bg-forest-deep border-forest-deep text-white shadow-md"
+                            : "bg-[#F7F5F1] border-transparent text-forest/60 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
+                        }`}
+                      >
+                        {selectedInterest === tag ? (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
+                        ) : (
+                          <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                        )}
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Organisation */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[13px] font-semibold text-forest/80">Organisation</label>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Your school or company name"
+                    value={formData.organisation}
+                    onChange={handleChange("organisation")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <label className="text-[13px] font-semibold text-forest/80">Your Message</label>
+                  </div>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us a little about what you are planning..."
+                    value={formData.message}
+                    onChange={handleChange("message")}
+                    className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p className="text-[12.5px] text-red-600 font-medium">
+                    Something went wrong sending your message. Please try again.
+                  </p>
+                )}
+
+                {/* CTA */}
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                  <p className="text-[11.5px] text-forest/35 leading-relaxed max-w-[200px]">
+                    By submitting, you consent to be contacted by the Global Education Lab team.
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Sending..." : "Send Message"}
+                    <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
+                      {status === "submitting" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
                       ) : (
-                        <span className="h-3.5 w-3.5 rounded-full border border-forest/20 shrink-0" />
+                        <ArrowUpRight className="h-4 w-4" />
                       )}
-                      {tag}
-                    </button>
-                  ))}
+                    </span>
+                  </button>
                 </div>
-              </div>
-
-              {/* Organisation */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Organisation</label>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Your school or company name"
-                  value={formData.organisation}
-                  onChange={handleChange("organisation")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <div className="flex items-baseline gap-1.5 mb-2">
-                  <label className="text-[13px] font-semibold text-forest/80">Your Message</label>
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us a little about what you are planning..."
-                  value={formData.message}
-                  onChange={handleChange("message")}
-                  className="w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[14px] text-forest-deep placeholder:text-forest/40 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200 resize-none"
-                />
-              </div>
-
-              {status === "error" && (
-                <p className="text-[12.5px] text-red-600 font-medium">
-                  Something went wrong sending your message. Please try again.
-                </p>
-              )}
-
-              {/* CTA */}
-              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                <p className="text-[11.5px] text-forest/35 leading-relaxed max-w-[200px]">
-                  By submitting, you consent to be contacted by the Global Education Lab team.
-                </p>
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="group inline-flex items-center gap-3 bg-forest-deep text-white pl-7 pr-5 py-4 rounded-xl text-[13px] font-bold uppercase tracking-[0.18em] hover:bg-[#0f3d24] transition-all duration-300 shadow-[0_8px_24px_rgba(10,48,29,0.25)] hover:shadow-[0_16px_40px_rgba(10,48,29,0.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
-                >
-                  {status === "submitting" ? "Sending..." : "Send Message"}
-                  <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 group-hover:bg-gold/20 transition-colors duration-300">
-                    {status === "submitting" ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <ArrowUpRight className="h-4 w-4" />
-                    )}
-                  </span>
-                </button>
-              </div>
-            </form>
+              </form>
             )}
           </div>
         </div>
@@ -358,10 +398,20 @@ function ContactPage() {
               <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Find Us
               </span>
-              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">Our Location</h2>
+              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">
+                Our Location
+              </h2>
               <div className="space-y-3 text-[13.5px] text-forest/65 leading-relaxed">
                 <p className="font-semibold text-forest-deep">Global Education Lab Ltd</p>
-                <p>Stirling House<br />Denny End Road<br />Waterbeach, CB25 9PB<br />Cambridge, United Kingdom</p>
+                <p>
+                  Stirling House
+                  <br />
+                  Denny End Road
+                  <br />
+                  Waterbeach, CB25 9PB
+                  <br />
+                  Cambridge, United Kingdom
+                </p>
               </div>
               <a
                 href="https://www.google.com/maps/search/Stirling+House+Denny+End+Road+Waterbeach+Cambridge+CB25+9PB"
@@ -399,7 +449,8 @@ function ContactPage() {
                 <span className="h-px w-6 bg-gold inline-block" /> Our Presence
               </span>
               <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep">
-                Across <em className="font-serif italic font-normal text-forest/50">three continents</em>
+                Across{" "}
+                <em className="font-serif italic font-normal text-forest/50">three continents</em>
               </h2>
             </div>
             <div className="flex items-center gap-2 text-[12px] text-forest/35 font-medium">
@@ -408,24 +459,47 @@ function ContactPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-forest/8">
             {[
-              { region: "United Kingdom", city: "Cambridge", role: "Headquarters", desc: "Where our research, leadership and global education programmes are shaped.", num: "01" },
-              { region: "India", city: "Delhi — Mumbai", role: "Regional Office", desc: "Programme delivery and school partnerships across the subcontinent.", num: "02" },
-              { region: "International", city: "Finland — Bali", role: "Residencies", desc: "Immersive leadership residencies and cross-cultural learning experiences.", num: "03" },
+              {
+                region: "United Kingdom",
+                city: "Cambridge",
+                role: "Headquarters",
+                desc: "Where our research, leadership and global education programmes are shaped.",
+                num: "01",
+              },
+              {
+                region: "India",
+                city: "Delhi — Mumbai",
+                role: "Regional Office",
+                desc: "Programme delivery and school partnerships across the subcontinent.",
+                num: "02",
+              },
+              {
+                region: "International",
+                city: "Finland — Bali",
+                role: "Residencies",
+                desc: "Immersive leadership residencies and cross-cultural learning experiences.",
+                num: "03",
+              },
             ].map((loc, i) => (
               <div key={i} className="group px-0 md:px-10 first:pl-0 last:pr-0 py-8 md:py-0">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">{loc.region}</span>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+                    {loc.region}
+                  </span>
                   <span className="text-[1.8rem] font-serif italic text-forest/8">{loc.num}</span>
                 </div>
-                <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">{loc.city}</h3>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest/35 mb-4">{loc.role}</p>
+                <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">
+                  {loc.city}
+                </h3>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest/35 mb-4">
+                  {loc.role}
+                </p>
                 <p className="text-[13.5px] text-forest/60 leading-relaxed">{loc.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
     </div>
   );
 }

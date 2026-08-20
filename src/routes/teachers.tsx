@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Footer } from './index'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Footer } from "./index";
 import {
   ArrowUpRight,
   BookOpen,
@@ -11,12 +11,12 @@ import {
   Quote,
   MapPin,
   Calendar,
-} from 'lucide-react'
-import teachersImg from '../assets/teachers.jpg'
+} from "lucide-react";
+import teachersImg from "../assets/teachers.jpg";
 
-export const Route = createFileRoute('/teachers')({
+export const Route = createFileRoute("/teachers")({
   component: Teachers,
-})
+});
 
 function Teachers() {
   return (
@@ -32,7 +32,7 @@ function Teachers() {
       <FinalCTA />
       <Footer />
     </div>
-  )
+  );
 }
 
 function Hero() {
@@ -46,10 +46,13 @@ function Hero() {
             <BookOpen className="h-3.5 w-3.5 text-gold" /> For K-12 Teachers & Educators
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
-            Transform your teaching with <span className="italic text-gold font-serif">global education experts.</span>
+            Transform your teaching with{" "}
+            <span className="italic text-gold font-serif">global education experts.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
-            Global Education Lab, in collaboration with seasoned academics from the University of Cambridge, pioneers a new era in professional teacher training — blending academic expertise with real-world classroom application.
+            Global Education Lab, in collaboration with seasoned academics from the University of
+            Cambridge, pioneers a new era in professional teacher training — blending academic
+            expertise with real-world classroom application.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -88,7 +91,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CollaboratorsBar() {
@@ -103,7 +106,7 @@ function CollaboratorsBar() {
     "Global School Networks",
     "Ministry Partners",
     "University of Cambridge",
-  ]
+  ];
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
@@ -113,13 +116,19 @@ function CollaboratorsBar() {
       <div className="relative flex w-full">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={i}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={`dup-${i}`}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/30">✦</span>
             </span>
@@ -127,7 +136,7 @@ function CollaboratorsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function WhyTeachersChooseUs() {
@@ -152,18 +161,23 @@ function WhyTeachersChooseUs() {
       title: "Real-world application",
       desc: "Move beyond theory. Hands-on training you can immediately apply in your classroom.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">WHY CHOOSE OUR TEACHER TRAINING</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            WHY CHOOSE OUR TEACHER TRAINING
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl mx-auto leading-tight">
-            Built for educators with a <span className="italic text-gold font-serif">global mindset.</span>
+            Built for educators with a{" "}
+            <span className="italic text-gold font-serif">global mindset.</span>
           </h2>
           <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-2xl mx-auto">
-            Unlike conventional courses, our programmes blend academic rigour with real-world application — enriching every teacher's journey and equipping them to lead learning in modern classrooms.
+            Unlike conventional courses, our programmes blend academic rigour with real-world
+            application — enriching every teacher's journey and equipping them to lead learning in
+            modern classrooms.
           </p>
         </div>
 
@@ -180,7 +194,7 @@ function WhyTeachersChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function StatsBar() {
@@ -189,7 +203,7 @@ function StatsBar() {
     { label: "20+", sub: "COUNTRIES REPRESENTED" },
     { label: "96%", sub: "WOULD RECOMMEND" },
     { label: "1000+", sub: "EDUCATORS TRAINED" },
-  ]
+  ];
 
   return (
     <div className="bg-forest py-6 overflow-hidden">
@@ -198,9 +212,14 @@ function StatsBar() {
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
               {stats.map((stat, idx) => (
-                <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
+                <div
+                  key={idx}
+                  className="mx-12 flex flex-col items-center justify-center text-center"
+                >
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">
+                    {stat.sub}
+                  </span>
                 </div>
               ))}
             </div>
@@ -208,7 +227,7 @@ function StatsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function OngoingProgrammes() {
@@ -231,40 +250,52 @@ function OngoingProgrammes() {
       desc: "Learn how to design differentiated instruction that meets learners where they are. Practical strategies for mixed-ability classrooms, formative assessment, and responsive teaching.",
       link: "/programmes/teacher-training",
     },
-  ]
+  ];
 
   return (
     <section id="programmes" className="py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">OUR PROGRAMMES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            OUR PROGRAMMES
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl">
             Two programmes. One transformation.
           </h2>
           <p className="mt-4 text-[15px] text-forest/80 max-w-2xl">
-            Enrol solo or as a school cohort. Every teacher receives a personalised progress report at the end of the programme.
+            Enrol solo or as a school cohort. Every teacher receives a personalised progress report
+            at the end of the programme.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {programmes.map((p, idx) => (
-            <div key={idx} className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm">
+            <div
+              key={idx}
+              className="flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm"
+            >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">✦ {p.type}</span>
-                  <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">{p.audience}</span>
+                  <span className="text-[14px] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">
+                    ✦ {p.type}
+                  </span>
+                  <span className="text-[14px] font-bold uppercase tracking-widest text-forest/40">
+                    {p.audience}
+                  </span>
                 </div>
 
                 <h3 className="text-xl font-bold text-forest-deep">{p.title}</h3>
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-[14px] font-bold uppercase tracking-widest text-forest/60">
-                  <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {p.location}</span>
+                  <span className="flex items-center gap-1">
+                    <MapPin className="h-3 w-3" /> {p.location}
+                  </span>
                   <span>|</span>
-                  <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {p.date}</span>
+                  <span className="flex items-center gap-1">
+                    <Calendar className="h-3 w-3" /> {p.date}
+                  </span>
                 </div>
 
-                <p className="mt-4 text-[15px] leading-relaxed text-forest/80">
-                  {p.desc}
-                </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-forest/80">{p.desc}</p>
               </div>
 
               <div className="mt-8">
@@ -280,7 +311,7 @@ function OngoingProgrammes() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function EndToEndJourney() {
@@ -305,13 +336,15 @@ function EndToEndJourney() {
       title: "Personalised report",
       desc: "Every teacher receives a tailored progress report — shareable with school leadership to support growth.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENROLMENT TO CERTIFICATE</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM ENROLMENT TO CERTIFICATE
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             A guided professional-development journey.
           </h2>
@@ -331,7 +364,7 @@ function EndToEndJourney() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function Testimonials() {
@@ -354,13 +387,15 @@ function Testimonials() {
       author: "Farah Al-Mansouri",
       role: "ASSISTANT COORDINATOR · DUBAI",
     },
-  ]
+  ];
 
   return (
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR EDUCATORS</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM OUR EDUCATORS
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by teachers and schools worldwide.
           </h2>
@@ -379,14 +414,16 @@ function Testimonials() {
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">{r.role}</p>
+                <p className="mt-1 text-[14px] font-bold uppercase tracking-widest text-cream/60">
+                  {r.role}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function SchoolLeadershipSection() {
@@ -411,19 +448,23 @@ function SchoolLeadershipSection() {
       title: "Certificate of completion",
       desc: "A co-branded certificate from Global Education Lab, recognised across international school boards.",
     },
-  ]
+  ];
 
   return (
     <section id="school" className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR SCHOOL LEADERSHIP</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              FOR SCHOOL LEADERSHIP
+            </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Bring the whole staffroom on board.
             </h2>
             <p className="mt-6 text-[15px] text-forest/80 leading-relaxed">
-              Upskilling a full teaching team is the fastest way to change student outcomes. Our school cohort desk handles onboarding, reporting and academic mentoring for your team — end to end.
+              Upskilling a full teaching team is the fastest way to change student outcomes. Our
+              school cohort desk handles onboarding, reporting and academic mentoring for your team
+              — end to end.
             </p>
           </div>
 
@@ -441,19 +482,22 @@ function SchoolLeadershipSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">JOIN THE 2026 INTAKE</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+          JOIN THE 2026 INTAKE
+        </p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Elevate your teaching — starting this season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Applications for the 2026 teacher training intake are open. Individual teachers and full school cohorts are welcome.
+          Applications for the 2026 teacher training intake are open. Individual teachers and full
+          school cohorts are welcome.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
@@ -472,5 +516,5 @@ function FinalCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

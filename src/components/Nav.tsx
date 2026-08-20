@@ -1,19 +1,20 @@
-import { Link, useLocation } from '@tanstack/react-router'
-import { ArrowUpRight, ChevronDown, ChevronRight } from 'lucide-react'
+import { Link, useLocation } from "@tanstack/react-router";
+import { ArrowUpRight, ChevronDown, ChevronRight } from "lucide-react";
 
 export function Nav() {
-  const location = useLocation()
-  
+  const location = useLocation();
+
   // Extra items not in the provided image are placed here
-  const addons = [
-    { label: "Entrepreneurship", href: "/entrepreneurship" },
-  ]
+  const addons = [{ label: "Entrepreneurship", href: "/entrepreneurship" }];
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-forest/5 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2 py-1">
-          <div className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[22px] lowercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <div
+            className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[22px] lowercase"
+            style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+          >
             <div className="relative w-max">
               <span className="relative z-10">
                 <span className="relative inline-block">
@@ -28,27 +29,30 @@ export function Nav() {
           </div>
         </Link>
         <nav className="hidden items-center gap-7 lg:gap-9 md:flex">
-          
           <Link
             to="/"
             className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/' ? "text-forest" : "text-forest/75"
+              location.pathname === "/" ? "text-forest" : "text-forest/75"
             }`}
           >
             Home
           </Link>
-          
+
           {/* Programmes Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
-            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-                location.pathname.startsWith('/programmes') || 
-                location.pathname.startsWith('/students') || 
-                location.pathname.startsWith('/past-programmes') ? "text-forest" : "text-forest/75"
-              }`}>
+            <span
+              className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+                location.pathname.startsWith("/programmes") ||
+                location.pathname.startsWith("/students") ||
+                location.pathname.startsWith("/past-programmes")
+                  ? "text-forest"
+                  : "text-forest/75"
+              }`}
+            >
               Programmes
             </span>
             <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
-            
+
             {/* Level 1 Dropdown */}
             <div className="absolute top-[100%] left-0 hidden w-64 flex-col group-hover:flex">
               {/* Added a transparent bridge to prevent losing hover when moving mouse down */}
@@ -60,7 +64,7 @@ export function Nav() {
                 >
                   All Programmes
                 </Link>
-                
+
                 {/* For students */}
                 <div className="group/students relative">
                   <div className="flex items-center justify-between rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest cursor-default">
@@ -70,8 +74,18 @@ export function Nav() {
                   {/* Level 2 Dropdown */}
                   <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/students:flex pl-2">
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
-                      <Link to="/programmes/graduate" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
-                      <Link to="/students" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Young leaders summer programme (13-17 yrs)</Link>
+                      <Link
+                        to="/programmes/graduate"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Graduate Summer Programme
+                      </Link>
+                      <Link
+                        to="/students"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Young leaders summer programme (13-17 yrs)
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -85,7 +99,12 @@ export function Nav() {
                   {/* Level 2 Dropdown */}
                   <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/executives:flex pl-2">
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
-                      <Link to="/programmes/gilp" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global India Leadership Programme</Link>
+                      <Link
+                        to="/programmes/gilp"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Global India Leadership Programme
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -108,12 +127,32 @@ export function Nav() {
                   {/* Level 2 Dropdown */}
                   <div className="absolute top-0 left-[95%] hidden w-72 flex-col group-hover/entrepreneurs:flex pl-2">
                     <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg">
-                      <Link to="/programmes/zero-to-one" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Zero-to-One</Link>
-                      <Link to="/global-ventures" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Global Ventures</Link>
+                      <Link
+                        to="/programmes/zero-to-one"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Zero-to-One
+                      </Link>
+                      <Link
+                        to="/global-ventures"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Global Ventures
+                      </Link>
                       {/* @ts-expect-error - Route doesn't exist yet */}
-                      <Link to="/programmes/graduate-entrepreneurs" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Graduate Summer Programme</Link>
+                      <Link
+                        to="/programmes/graduate-entrepreneurs"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Graduate Summer Programme
+                      </Link>
                       {/* @ts-expect-error - Route doesn't exist yet */}
-                      <Link to="/programmes/mentorship" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Mentorship & Support</Link>
+                      <Link
+                        to="/programmes/mentorship"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                      >
+                        Mentorship & Support
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -131,7 +170,7 @@ export function Nav() {
           <Link
             to="/about"
             className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/about' ? "text-forest" : "text-forest/75"
+              location.pathname === "/about" ? "text-forest" : "text-forest/75"
             }`}
           >
             About
@@ -139,18 +178,39 @@ export function Nav() {
 
           {/* Explore Dropdown */}
           <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
-            <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-                location.pathname === '/insights' || location.pathname === '/our-impact' || location.pathname === '/partner-with-gel' ? "text-forest" : "text-forest/75"
-              }`}>
+            <span
+              className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
+                location.pathname === "/insights" ||
+                location.pathname === "/our-impact" ||
+                location.pathname === "/partner-with-gel"
+                  ? "text-forest"
+                  : "text-forest/75"
+              }`}
+            >
               Explore
             </span>
             <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
             <div className="absolute top-[100%] left-0 hidden w-64 flex-col group-hover:flex">
               <div className="h-2 w-full"></div>
               <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg mt-0">
-                <Link to="/our-impact" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Impact</Link>
-                <Link to="/insights" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Our Knowledge & Insights</Link>
-                <Link to="/partner-with-gel" className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">Partner with GEL</Link>
+                <Link
+                  to="/our-impact"
+                  className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                >
+                  Our Impact
+                </Link>
+                <Link
+                  to="/insights"
+                  className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                >
+                  Our Knowledge & Insights
+                </Link>
+                <Link
+                  to="/partner-with-gel"
+                  className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                >
+                  Partner with GEL
+                </Link>
               </div>
             </div>
           </div>
@@ -158,7 +218,7 @@ export function Nav() {
           <Link
             to="/gallery"
             className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/gallery' ? "text-forest" : "text-forest/75"
+              location.pathname === "/gallery" ? "text-forest" : "text-forest/75"
             }`}
           >
             Gallery
@@ -167,7 +227,7 @@ export function Nav() {
           <Link
             to="/contact"
             className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
-              location.pathname === '/contact' ? "text-forest" : "text-forest/75"
+              location.pathname === "/contact" ? "text-forest" : "text-forest/75"
             }`}
           >
             Contact us
@@ -176,21 +236,28 @@ export function Nav() {
           {/* Addons Menu */}
           {addons.length > 0 && (
             <div className="group relative flex items-center gap-1 cursor-pointer py-5 -my-5">
-              <span className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest text-forest/75`}>
+              <span
+                className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest text-forest/75`}
+              >
                 More
               </span>
               <ChevronDown className="h-4 w-4 text-forest/75 group-hover:text-forest transition-colors" />
               <div className="absolute top-[100%] left-0 hidden w-56 flex-col group-hover:flex">
                 <div className="h-2 w-full"></div>
                 <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg mt-0">
-                  {addons.map(addon => (
-                    <Link key={addon.label} to={addon.href} className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest">{addon.label}</Link>
+                  {addons.map((addon) => (
+                    <Link
+                      key={addon.label}
+                      to={addon.href}
+                      className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
+                    >
+                      {addon.label}
+                    </Link>
                   ))}
                 </div>
               </div>
             </div>
           )}
-
         </nav>
         <Link
           to="/apply-now"
@@ -200,5 +267,5 @@ export function Nav() {
         </Link>
       </div>
     </header>
-  )
+  );
 }

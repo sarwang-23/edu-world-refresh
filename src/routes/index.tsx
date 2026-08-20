@@ -1,5 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Globe2, GraduationCap, Users, Leaf, Handshake, Rocket, BookOpen, Building2, MapPin } from "lucide-react";
+import {
+  ArrowUpRight,
+  Globe2,
+  GraduationCap,
+  Users,
+  Leaf,
+  Handshake,
+  Rocket,
+  BookOpen,
+  Building2,
+  MapPin,
+} from "lucide-react";
 import heroImg from "@/assets/hero-classroom.jpg";
 import cambridgeImg from "@/assets/cambridge.jpg";
 import schoolLeadersImg from "@/assets/school-leaders.jpg";
@@ -19,7 +30,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Global Education Lab" },
       {
         property: "og:description",
-        content: "Transformational education. Global impact. Rooted in Cambridge, impacting the world.",
+        content:
+          "Transformational education. Global impact. Rooted in Cambridge, impacting the world.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -27,7 +39,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
 
 function Index() {
   return (
@@ -51,11 +62,13 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-20 lg:grid-cols-12 lg:gap-12 pt-28">
         <div className="lg:col-span-7">
           <h1 className="mt-4 text-[2.75rem] font-bold leading-[1.05] text-forest md:text-6xl lg:text-[4rem] xl:text-[4.75rem]">
-            Transformational education.<br />
+            Transformational education.
+            <br />
             <span className="text-gold">Global impact.</span>
           </h1>
           <p className="mt-6 max-w-xl text-[17px] leading-[1.65] text-muted-foreground">
-            We design and deliver world-class learning experiences that empower individuals, build capability and drive innovation for a better, more inclusive tomorrow.
+            We design and deliver world-class learning experiences that empower individuals, build
+            capability and drive innovation for a better, more inclusive tomorrow.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
@@ -94,11 +107,31 @@ function Hero() {
 
 function FeaturesStrip() {
   const features = [
-    { icon: <Globe2 className="h-7 w-7" />, title: "Global Perspective", desc: "Connecting Cambridge expertise with the world." },
-    { icon: <BookOpen className="h-7 w-7" />, title: "Experiential Learning", desc: "Immersive, practical and impactful experiences." },
-    { icon: <Users className="h-7 w-7" />, title: "Empowering People", desc: "Developing leaders, innovators and changemakers." },
-    { icon: <Leaf className="h-7 w-7" />, title: "Sustainable Impact", desc: "Creating value for communities, businesses and the planet." },
-    { icon: <Handshake className="h-7 w-7" />, title: "Meaningful Partnerships", desc: "Collaborating with institutions, industry and ecosystems." },
+    {
+      icon: <Globe2 className="h-7 w-7" />,
+      title: "Global Perspective",
+      desc: "Connecting Cambridge expertise with the world.",
+    },
+    {
+      icon: <BookOpen className="h-7 w-7" />,
+      title: "Experiential Learning",
+      desc: "Immersive, practical and impactful experiences.",
+    },
+    {
+      icon: <Users className="h-7 w-7" />,
+      title: "Empowering People",
+      desc: "Developing leaders, innovators and changemakers.",
+    },
+    {
+      icon: <Leaf className="h-7 w-7" />,
+      title: "Sustainable Impact",
+      desc: "Creating value for communities, businesses and the planet.",
+    },
+    {
+      icon: <Handshake className="h-7 w-7" />,
+      title: "Meaningful Partnerships",
+      desc: "Collaborating with institutions, industry and ecosystems.",
+    },
   ];
   return (
     <div className="border-y border-border/70 bg-white py-10 overflow-hidden">
@@ -107,8 +140,8 @@ function FeaturesStrip() {
         style={{
           animation: "marquee 22s linear infinite",
         }}
-        onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
-        onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
+        onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
+        onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
       >
         {[...features, ...features, ...features].map((f, i) => (
           <div key={i} className="flex flex-col items-start gap-3 mx-10 min-w-[220px]">
@@ -173,12 +206,16 @@ function OurProgrammes() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">What We Offer</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">
+                What We Offer
+              </span>
             </div>
             <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
               Our Programmes
             </h2>
-            <p className="mt-2 text-[15px] text-forest/60 font-medium">High-impact learning for every stage of your journey.</p>
+            <p className="mt-2 text-[15px] text-forest/60 font-medium">
+              High-impact learning for every stage of your journey.
+            </p>
           </div>
           <Link
             to="/programmes"
@@ -213,7 +250,9 @@ function OurProgrammes() {
                 <span className="bg-forest-deep/70 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full text-[8px] font-bold uppercase tracking-[0.18em] text-gold">
                   {p.tag}
                 </span>
-                <span className="text-[15px] font-bold text-white/30 font-mono mt-1">{p.number}</span>
+                <span className="text-[15px] font-bold text-white/30 font-mono mt-1">
+                  {p.number}
+                </span>
               </div>
 
               {/* Content — pinned to bottom */}
@@ -251,12 +290,42 @@ function OurProgrammes() {
 
 function ImpactSoFar() {
   const stats = [
-    { icon: <Users className="h-6 w-6" />, value: "5,000+", label: "Learners Empowered", desc: "Across programmes globally" },
-    { icon: <Rocket className="h-6 w-6" />, value: "120+", label: "Startups Supported", desc: "From ideation to scale" },
-    { icon: <Globe2 className="h-6 w-6" />, value: "25+", label: "Countries", desc: "Represented in our community" },
-    { icon: <Leaf className="h-6 w-6" />, value: "10,000+", label: "Lives Impacted", desc: "Estimated direct reach" },
-    { icon: <Handshake className="h-6 w-6" />, value: "15+", label: "University Partners", desc: "World-class institutions" },
-    { icon: <GraduationCap className="h-6 w-6" />, value: "35+", label: "Startups Pitched", desc: "At Cambridge Demo Days" },
+    {
+      icon: <Users className="h-6 w-6" />,
+      value: "5,000+",
+      label: "Learners Empowered",
+      desc: "Across programmes globally",
+    },
+    {
+      icon: <Rocket className="h-6 w-6" />,
+      value: "120+",
+      label: "Startups Supported",
+      desc: "From ideation to scale",
+    },
+    {
+      icon: <Globe2 className="h-6 w-6" />,
+      value: "25+",
+      label: "Countries",
+      desc: "Represented in our community",
+    },
+    {
+      icon: <Leaf className="h-6 w-6" />,
+      value: "10,000+",
+      label: "Lives Impacted",
+      desc: "Estimated direct reach",
+    },
+    {
+      icon: <Handshake className="h-6 w-6" />,
+      value: "15+",
+      label: "University Partners",
+      desc: "World-class institutions",
+    },
+    {
+      icon: <GraduationCap className="h-6 w-6" />,
+      value: "35+",
+      label: "Startups Pitched",
+      desc: "At Cambridge Demo Days",
+    },
   ];
 
   return (
@@ -266,7 +335,9 @@ function ImpactSoFar() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">Numbers That Matter</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">
+                Numbers That Matter
+              </span>
             </div>
             <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep leading-tight tracking-tight">
               Our Impact So Far
@@ -286,15 +357,17 @@ function ImpactSoFar() {
         <div
           className="flex w-max"
           style={{ animation: "marquee 26s linear infinite" }}
-          onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
-          onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
+          onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
+          onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
         >
           {[...stats, ...stats, ...stats].map((s, i) => (
             <div key={i} className="flex items-center">
               <div className="flex flex-col items-start gap-3 mx-10 min-w-[200px]">
                 <div className="text-forest/70">{s.icon}</div>
                 <div>
-                  <div className="text-[1.6rem] font-bold text-forest-deep leading-none tabular-nums">{s.value}</div>
+                  <div className="text-[1.6rem] font-bold text-forest-deep leading-none tabular-nums">
+                    {s.value}
+                  </div>
                   <div className="text-[15px] font-bold text-forest-deep mt-1.5">{s.label}</div>
                   <div className="text-[14px] text-forest/50 mt-0.5">{s.desc}</div>
                 </div>
@@ -309,10 +382,6 @@ function ImpactSoFar() {
   );
 }
 
-
-
-
-
 function CambridgeOrigin() {
   return (
     <section className="bg-forest-deep text-primary-foreground py-20">
@@ -326,19 +395,34 @@ function CambridgeOrigin() {
               Where knowledge meets <span className="text-gold">innovation and purpose.</span>
             </h2>
             <p className="text-base leading-relaxed text-primary-foreground/75 max-w-xl mb-10">
-              We bring together the best of academia, industry and entrepreneurship to solve real-world challenges and shape a better future.
+              We bring together the best of academia, industry and entrepreneurship to solve
+              real-world challenges and shape a better future.
             </p>
             <div className="flex flex-col gap-5 pt-8 border-t border-primary-foreground/15">
               {[
-                { icon: <Globe2 className="h-5 w-5 text-gold" />, title: "Cambridge Ecosystem Access", desc: "Unique access to world-class faculty, research and innovation hubs." },
-                { icon: <Users className="h-5 w-5 text-gold" />, title: "Global Network", desc: "A diverse community of partners, mentors, alumni and changemakers." },
-                { icon: <Rocket className="h-5 w-5 text-gold" />, title: "Future Focused", desc: "Preparing leaders and innovators to thrive in a rapidly changing world." },
+                {
+                  icon: <Globe2 className="h-5 w-5 text-gold" />,
+                  title: "Cambridge Ecosystem Access",
+                  desc: "Unique access to world-class faculty, research and innovation hubs.",
+                },
+                {
+                  icon: <Users className="h-5 w-5 text-gold" />,
+                  title: "Global Network",
+                  desc: "A diverse community of partners, mentors, alumni and changemakers.",
+                },
+                {
+                  icon: <Rocket className="h-5 w-5 text-gold" />,
+                  title: "Future Focused",
+                  desc: "Preparing leaders and innovators to thrive in a rapidly changing world.",
+                },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="shrink-0 mt-0.5">{item.icon}</div>
                   <div>
                     <h4 className="text-[15px] font-bold text-white mb-1">{item.title}</h4>
-                    <p className="text-[15px] text-primary-foreground/60 leading-relaxed">{item.desc}</p>
+                    <p className="text-[15px] text-primary-foreground/60 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -346,7 +430,11 @@ function CambridgeOrigin() {
           </div>
           <div className="lg:col-span-5">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5]">
-              <img src={schoolLeadersImg} alt="Innovation and Purpose" className="w-full h-full object-cover" />
+              <img
+                src={schoolLeadersImg}
+                alt="Innovation and Purpose"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
             </div>
           </div>
@@ -391,17 +479,17 @@ function Voices() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+              <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">
+                What They Say
+              </span>
             </div>
             <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
-              Voices from Our{" "}
-              <span className="italic font-serif text-forest">Community</span>
+              Voices from Our <span className="italic font-serif text-forest">Community</span>
             </h2>
           </div>
           <p className="text-[15px] text-forest/55 max-w-[260px] leading-relaxed md:text-right hidden">
@@ -411,26 +499,32 @@ function Voices() {
 
         {/* Asymmetric Layout */}
         <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[5fr_4fr] gap-6">
-
           {/* Featured Card — image with dark green overlay */}
           <div className="group relative rounded-3xl overflow-hidden min-h-[520px] flex flex-col justify-end shadow-2xl">
             {/* Background — Cambridge looks much better */}
-            <img src={cambridgeImg} alt="Cambridge" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img
+              src={cambridgeImg}
+              alt="Cambridge"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
             {/* Gradient: transparent top, dark green bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/60 to-forest-deep/20" />
 
             {/* Content pinned to bottom */}
             <div className="relative z-10 p-10 pb-10">
-
               {/* Stars */}
               <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-gold text-base">★</span>
+                  <span key={i} className="text-gold text-base">
+                    ★
+                  </span>
                 ))}
               </div>
 
               {/* Big quote mark */}
-              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mb-4 -ml-1 select-none">"</span>
+              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mb-4 -ml-1 select-none">
+                "
+              </span>
 
               <p className="text-[16px] text-white/95 leading-[1.75] font-light mb-8 max-w-md">
                 {featured.q}
@@ -450,7 +544,9 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-white">{featured.a}</p>
-                    <p className="text-[14px] text-white/50 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
+                    <p className="text-[14px] text-white/50 uppercase tracking-[0.15em] mt-0.5">
+                      {featured.r}
+                    </p>
                   </div>
                 </div>
                 <span className="bg-gold/20 border border-gold/30 backdrop-blur-sm text-gold text-[15px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
@@ -471,7 +567,9 @@ function Voices() {
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, si) => (
-                      <span key={si} className="text-gold text-[15px]">★</span>
+                      <span key={si} className="text-gold text-[15px]">
+                        ★
+                      </span>
                     ))}
                   </div>
                   <span className="bg-forest-deep text-white text-[8px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
@@ -480,7 +578,9 @@ function Voices() {
                 </div>
 
                 {/* Big gold quote */}
-                <span className="text-[3.5rem] text-gold/25 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/40 transition-colors duration-300">"</span>
+                <span className="text-[3.5rem] text-gold/25 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/40 transition-colors duration-300">
+                  "
+                </span>
 
                 {/* Quote text */}
                 <p className="text-[14px] text-forest-deep/85 leading-[1.8] -mt-5 mb-6 flex-1">
@@ -500,13 +600,14 @@ function Voices() {
                   </div>
                   <div>
                     <p className="text-[15px] font-bold text-forest-deep">{t.a}</p>
-                    <p className="text-[15px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">{t.r}</p>
+                    <p className="text-[15px] text-forest/50 uppercase tracking-[0.14em] mt-0.5">
+                      {t.r}
+                    </p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
@@ -523,7 +624,8 @@ function CTA() {
               Let's build a better future—together.
             </h2>
             <p className="mt-4 text-[15px] text-primary-foreground/70 leading-relaxed">
-              Whether you are a learner, leader, institution or innovator, there's a place for you at GEL.
+              Whether you are a learner, leader, institution or innovator, there's a place for you
+              at GEL.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 shrink-0">
@@ -552,7 +654,10 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[28px] lowercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <div
+              className="flex flex-col font-bold text-forest leading-[0.95] tracking-tight text-[28px] lowercase"
+              style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+            >
               <div className="relative w-max">
                 <span className="relative z-10">
                   <span className="relative inline-block">
@@ -570,32 +675,68 @@ export function Footer() {
             </p>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Quick Links</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">
+              Quick Links
+            </p>
             <ul className="space-y-3 text-[15px] text-forest/80">
-              {[["Programmes", "/programmes"], ["Entrepreneurship", "/entrepreneurship"], ["Our Impact", "/our-impact"], ["About Us", "/about"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
+              {[
+                ["Programmes", "/programmes"],
+                ["Entrepreneurship", "/entrepreneurship"],
+                ["Our Impact", "/our-impact"],
+                ["About Us", "/about"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link to={href} className="hover:text-forest transition-colors">
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Partner</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">
+              Partner
+            </p>
             <ul className="space-y-3 text-[15px] text-forest/80">
-              {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
+              {[
+                ["Partner with GEL", "/partner-with-gel"],
+                ["Institutional Solutions", "/school-leaders"],
+                ["Collaborate", "/contact"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link to={href} className="hover:text-forest transition-colors">
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Resources</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">
+              Resources
+            </p>
             <ul className="space-y-3 text-[15px] text-forest/80">
-              {[["News & Insights", "/insights"], ["Events", "/gallery"], ["Brochures", "/contact"]].map(([label, href]) => (
-                <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
+              {[
+                ["News & Insights", "/insights"],
+                ["Events", "/gallery"],
+                ["Brochures", "/contact"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link to={href} className="hover:text-forest transition-colors">
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">Connect</p>
-            <a href="mailto:hello@globaledulab.com" className="text-[15px] text-forest/80 hover:text-forest transition-colors">
+            <p className="text-[15px] font-bold uppercase tracking-[0.22em] text-forest/60 mb-4">
+              Connect
+            </p>
+            <a
+              href="mailto:hello@globaledulab.com"
+              className="text-[15px] text-forest/80 hover:text-forest transition-colors"
+            >
               hello@globaledulab.com
             </a>
           </div>
@@ -603,8 +744,12 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-forest/10 pt-8 text-[15px] text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Global Education Lab Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-forest transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-forest transition-colors">Terms & Conditions</a>
+            <a href="#" className="hover:text-forest transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-forest transition-colors">
+              Terms & Conditions
+            </a>
           </div>
         </div>
       </div>
