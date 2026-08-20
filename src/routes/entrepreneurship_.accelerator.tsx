@@ -1,16 +1,26 @@
 import { buildMeta } from "@/lib/seo";
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowUpRight, CheckCircle2, Rocket, Calendar, Globe2, Sparkles, Building2, BookOpen, Users, TrendingUp } from 'lucide-react'
-import { Footer } from './index'
-import heroImg from '../assets/startup.jpg'
-import detailImg from '../assets/business_simulation_session.jpg'
-import { FounderTestimonials } from '@/components/FounderTestimonials';
+import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  Rocket,
+  Calendar,
+  Globe2,
+  Sparkles,
+  Building2,
+  BookOpen,
+  Users,
+  TrendingUp,
+} from "lucide-react";
+import { Footer } from "./index";
+import heroImg from "../assets/startup.jpg";
+import detailImg from "../assets/business_simulation_session.jpg";
+import { FounderTestimonials } from "@/components/FounderTestimonials";
 
-
-export const Route = createFileRoute('/entrepreneurship_/accelerator')({
+export const Route = createFileRoute("/entrepreneurship_/accelerator")({
   head: () => buildMeta("/entrepreneurship/accelerator"),
   component: AcceleratorPage,
-})
+});
 
 function AcceleratorPage() {
   return (
@@ -22,7 +32,7 @@ function AcceleratorPage() {
       <BottomCTA />
       <Footer />
     </div>
-  )
+  );
 }
 
 function Hero() {
@@ -36,11 +46,14 @@ function Hero() {
           <div>
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/25 bg-gold/8 px-5 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">12-Month Hybrid Programme</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.28em] text-gold">
+                12-Month Hybrid Programme
+              </span>
             </div>
 
             <h1 className="text-[2.8rem] md:text-[4rem] font-bold text-forest-deep leading-[1.05] tracking-tight">
-              Startup Accelerator.<br />
+              Startup Accelerator.
+              <br />
               <span className="font-serif italic text-gold">Scale with purpose.</span>
             </h1>
 
@@ -48,16 +61,21 @@ function Hero() {
               Structured cohorts for early-stage startups.
             </p>
             <p className="mt-4 text-[15px] text-forest/80 leading-[1.75] max-w-lg">
-              A comprehensive 12-month accelerator designed to take early-stage ventures to scale. Benefit from deep mentorship, intensive workshops, and direct access to a global network of investors and industry experts.
+              A comprehensive 12-month accelerator designed to take early-stage ventures to scale.
+              Benefit from deep mentorship, intensive workshops, and direct access to a global
+              network of investors and industry experts.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               {[
-                { icon: <Calendar className="h-4 w-4" />, label: '12 Months' },
-                { icon: <Globe2 className="h-4 w-4" />, label: 'Hybrid Format' },
-                { icon: <Building2 className="h-4 w-4" />, label: 'Investor Access' },
+                { icon: <Calendar className="h-4 w-4" />, label: "12 Months" },
+                { icon: <Globe2 className="h-4 w-4" />, label: "Hybrid Format" },
+                { icon: <Building2 className="h-4 w-4" />, label: "Investor Access" },
               ].map((b, i) => (
-                <div key={i} className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm">
+                <div
+                  key={i}
+                  className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-forest/10 px-4 py-2 text-[15px] font-semibold text-forest-deep shadow-sm backdrop-blur-sm"
+                >
                   <span className="text-gold">{b.icon}</span>
                   {b.label}
                 </div>
@@ -66,7 +84,8 @@ function Hero() {
 
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
-                to="/contact" search={{ source: "Startup Accelerator (12 Months)" }}
+                to="/contact"
+                search={{ source: "Startup Accelerator (12 Months)" }}
                 className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-8 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25"
               >
                 Apply for Next Cohort
@@ -77,7 +96,12 @@ function Hero() {
 
           <div className="relative">
             <div className="rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-[0_32px_80px_-12px_rgba(26,53,35,0.25)] relative ring-1 ring-forest/10">
-              <img src={heroImg} alt="Startup Accelerator" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+              <img
+                src={heroImg}
+                alt="Startup Accelerator"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
             </div>
 
@@ -86,7 +110,9 @@ function Hero() {
                 <Rocket className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">Fast-Track Growth</p>
+                <p className="text-[15px] font-bold text-forest-deep uppercase tracking-wider">
+                  Fast-Track Growth
+                </p>
                 <p className="text-[15px] text-forest/80 mt-0.5">Scale your venture</p>
               </div>
             </div>
@@ -94,7 +120,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FeaturesStrip() {
@@ -103,20 +129,23 @@ function FeaturesStrip() {
     { icon: <Users className="h-6 w-6" />, title: "1:1 Mentorship" },
     { icon: <TrendingUp className="h-6 w-6" />, title: "Growth Marketing" },
     { icon: <Globe2 className="h-6 w-6" />, title: "Global Expansion" },
-  ]
-  const repeated = [...features, ...features, ...features]
+  ];
+  const repeated = [...features, ...features, ...features];
   return (
     <section className="bg-white border-y border-forest/8 py-10 relative z-20 overflow-hidden">
       <div className="flex gap-0 animate-marquee hover:[animation-play-state:paused]">
         {repeated.map((f, i) => (
-          <div key={i} className="flex flex-col items-center text-center gap-3 px-16 min-w-[250px] shrink-0 border-r border-forest/10 last:border-r-0">
+          <div
+            key={i}
+            className="flex flex-col items-center text-center gap-3 px-16 min-w-[250px] shrink-0 border-r border-forest/10 last:border-r-0"
+          >
             <div className="text-gold">{f.icon}</div>
             <h4 className="text-[15px] font-bold text-forest-deep">{f.title}</h4>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 function DetailsSection() {
@@ -125,19 +154,26 @@ function DetailsSection() {
     "Access to a vast network of seasoned founders and industry experts.",
     "Specialized workshops covering go-to-market strategy, product refinement, and fundraising.",
     "Direct introductions to seed and Series A investors.",
-    "Alumni network benefits and ongoing support post-programme."
-  ]
+    "Alumni network benefits and ongoing support post-programme.",
+  ];
   return (
     <section className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">Programme Overview</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
+              Programme Overview
+            </span>
           </div>
-          <h2 className="text-[2.2rem] font-bold text-forest-deep leading-tight mb-6">Designed for rapid, sustainable scale.</h2>
+          <h2 className="text-[2.2rem] font-bold text-forest-deep leading-tight mb-6">
+            Designed for rapid, sustainable scale.
+          </h2>
           <p className="text-[15px] text-forest/70 leading-relaxed mb-8">
-            Our 12-month hybrid accelerator provides the scaffolding your startup needs to transition from early traction to serious scale. We combine Cambridge's rigorous approach to problem-solving with the practical demands of building a high-growth company.
+            Our 12-month hybrid accelerator provides the scaffolding your startup needs to
+            transition from early traction to serious scale. We combine Cambridge's rigorous
+            approach to problem-solving with the practical demands of building a high-growth
+            company.
           </p>
           <ul className="space-y-4">
             {points.map((p, i) => (
@@ -149,11 +185,16 @@ function DetailsSection() {
           </ul>
         </div>
         <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-xl border border-forest/5">
-          <img src={detailImg} alt="Accelerator" className="w-full h-full object-cover" loading="lazy" />
+          <img
+            src={detailImg}
+            alt="Accelerator"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function BottomCTA() {
@@ -166,11 +207,17 @@ function BottomCTA() {
             <Sparkles key={i} className="h-4 w-4 fill-gold text-gold opacity-80" />
           ))}
         </div>
-        <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white leading-tight">Ready to scale?</h2>
-        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">Applications are reviewed on a rolling basis. Reach out to our team to start the conversation.</p>
+        <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white leading-tight">
+          Ready to scale?
+        </h2>
+        <p className="mt-5 text-[15px] text-cream/70 leading-relaxed max-w-xl mx-auto">
+          Applications are reviewed on a rolling basis. Reach out to our team to start the
+          conversation.
+        </p>
         <div className="mt-10 flex justify-center">
           <Link
-            to="/apply-now" search={{ source: "Startup Accelerator (12 Months)" }}
+            to="/apply-now"
+            search={{ source: "Startup Accelerator (12 Months)" }}
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl"
           >
             Apply Now
@@ -179,5 +226,5 @@ function BottomCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

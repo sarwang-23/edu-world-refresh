@@ -68,12 +68,12 @@ function AmericaForwardPage() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-forest/10 bg-[#FBF8F2] pt-8 pb-16 md:pt-12 md:pb-24">
+    <section className="relative overflow-hidden border-b border-forest/10 bg-[#FBF8F2] pt-8 pb-16 md:pt-12 md:pb-24 max-w-full">
       {/* Subtle Background Pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Copy & Actions */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-[13px] sm:text-[14px] font-bold uppercase tracking-[0.25em] text-[#C59B27]">
@@ -91,17 +91,21 @@ function HeroSection() {
             </h2>
 
             <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-forest/75">
-              Designed for business professionals, founders and senior leaders, this experiential programme connects you with the UK and EU innovation ecosystem—where research, enterprise and opportunity come together.
+              Designed for business professionals, founders and senior leaders, this experiential
+              programme connects you with the UK and EU innovation ecosystem—where research,
+              enterprise and opportunity come together.
             </p>
 
             {/* 4 Feature Badges */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-forest/10">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 pt-4 border-t border-forest/10">
               <div className="flex flex-col items-start">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest/5 text-forest">
                   <Compass className="h-5 w-5 text-forest" />
                 </div>
                 <h4 className="mt-2 text-[14px] font-bold text-forest">Experience</h4>
-                <p className="text-[12px] text-forest/70 leading-snug">the research and innovation ecosystem</p>
+                <p className="text-[12px] text-forest/70 leading-snug">
+                  the research and innovation ecosystem
+                </p>
               </div>
 
               <div className="flex flex-col items-start">
@@ -109,7 +113,9 @@ function HeroSection() {
                   <Microscope className="h-5 w-5 text-forest" />
                 </div>
                 <h4 className="mt-2 text-[14px] font-bold text-forest">Connect</h4>
-                <p className="text-[12px] text-forest/70 leading-snug">with researchers, entrepreneurs and AI innovators</p>
+                <p className="text-[12px] text-forest/70 leading-snug">
+                  with researchers, entrepreneurs and AI innovators
+                </p>
               </div>
 
               <div className="flex flex-col items-start">
@@ -117,7 +123,9 @@ function HeroSection() {
                   <Handshake className="h-5 w-5 text-forest" />
                 </div>
                 <h4 className="mt-2 text-[14px] font-bold text-forest">Find</h4>
-                <p className="text-[12px] text-forest/70 leading-snug">business partners and explore new opportunities</p>
+                <p className="text-[12px] text-forest/70 leading-snug">
+                  business partners and explore new opportunities
+                </p>
               </div>
 
               <div className="flex flex-col items-start">
@@ -125,23 +133,25 @@ function HeroSection() {
                   <Globe2 className="h-5 w-5 text-forest" />
                 </div>
                 <h4 className="mt-2 text-[14px] font-bold text-forest">Expand</h4>
-                <p className="text-[12px] text-forest/70 leading-snug">your impact across the UK and Europe</p>
+                <p className="text-[12px] text-forest/70 leading-snug">
+                  your impact across the UK and Europe
+                </p>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-row flex-nowrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 to="/apply-now"
                 search={{ source: "America Forward Programme" }}
-                className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-3.5 text-[13px] sm:text-[14px] font-semibold text-white transition-all hover:bg-forest-deep shadow-md hover:shadow-lg whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-3.5 text-[13px] sm:text-[14px] font-semibold text-white transition-all hover:bg-forest-deep shadow-md hover:shadow-lg"
               >
                 Explore Upcoming Cohorts <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/contact"
                 search={{ source: "America Forward Custom Programme" }}
-                className="inline-flex items-center gap-2 rounded-full border border-forest/30 bg-transparent px-5 py-3.5 text-[13px] sm:text-[14px] font-semibold text-forest transition-all hover:bg-forest/5 whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-2 rounded-full border border-forest/30 bg-transparent px-5 py-3.5 text-[13px] sm:text-[14px] font-semibold text-forest transition-all hover:bg-forest/5"
               >
                 Design a Custom Programme <ArrowRight className="h-4 w-4" />
               </Link>
@@ -164,8 +174,8 @@ function HeroSection() {
             <div className="mt-4 w-full rounded-2xl bg-forest-deep p-5 text-cream shadow-lg border border-forest/20 flex items-start gap-3">
               <Quote className="h-6 w-6 shrink-0 text-[#C59B27]" />
               <p className="text-[14px] sm:text-[15px] font-medium leading-relaxed">
-                “Cambridge connects you to ideas, people and opportunities that can shape the future of your business.”{" "}
-                <span className="text-[#C59B27] font-semibold">— GEL</span>
+                “Cambridge connects you to ideas, people and opportunities that can shape the future
+                of your business.” <span className="text-[#C59B27] font-semibold">— GEL</span>
               </p>
             </div>
           </div>
@@ -353,7 +363,10 @@ function ModulesSection() {
                 <h3 className="text-[18px] font-bold leading-snug text-forest">{mod.title}</h3>
                 <ul className="mt-4 flex-1 space-y-2.5">
                   {mod.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start gap-2.5 text-[13.5px] leading-relaxed text-forest/80">
+                    <li
+                      key={bIdx}
+                      className="flex items-start gap-2.5 text-[13.5px] leading-relaxed text-forest/80"
+                    >
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C59B27]" />
                       <span>{bullet}</span>
                     </li>
@@ -433,7 +446,7 @@ function AudienceAndFormatSection() {
   return (
     <section className="border-b border-forest/10 bg-[#FAF8F5] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 items-start">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-start">
           {/* Left Column: Who is it for */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
@@ -444,7 +457,10 @@ function AudienceAndFormatSection() {
 
               <ul className="mt-6 space-y-3.5">
                 {audienceItems.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[14.5px] font-medium text-forest">
+                  <li
+                    key={idx}
+                    className="flex items-center gap-3 text-[14.5px] font-medium text-forest"
+                  >
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-[#C59B27]" />
                     <span>{item}</span>
                   </li>
@@ -478,7 +494,8 @@ function AudienceAndFormatSection() {
             <div className="mt-4 w-full rounded-2xl bg-forest-deep p-4.5 text-cream shadow-md border border-forest/20 flex items-start gap-2.5">
               <Quote className="h-5 w-5 shrink-0 text-[#C59B27]" />
               <p className="text-[13.5px] font-medium leading-relaxed">
-                “Exposure to the right ecosystem can transform the future of your business and leadership.”
+                “Exposure to the right ecosystem can transform the future of your business and
+                leadership.”
               </p>
             </div>
           </div>
@@ -500,7 +517,8 @@ function AudienceAndFormatSection() {
                   <h3 className="text-[16px] font-bold text-forest">Rolling Cohorts</h3>
                 </div>
                 <p className="mt-3 text-[14px] leading-relaxed text-forest/75">
-                  Join upcoming cohorts throughout the year. Ideal for individual leaders and small groups.
+                  Join upcoming cohorts throughout the year. Ideal for individual leaders and small
+                  groups.
                 </p>
               </div>
 
@@ -513,7 +531,8 @@ function AudienceAndFormatSection() {
                   <h3 className="text-[16px] font-bold text-forest">Custom Programmes</h3>
                 </div>
                 <p className="mt-3 text-[14px] leading-relaxed text-forest/75">
-                  Bespoke experiences for organisations, associations and delegations—tailored to your goals, industry and priorities.
+                  Bespoke experiences for organisations, associations and delegations—tailored to
+                  your goals, industry and priorities.
                 </p>
               </div>
             </div>
@@ -535,7 +554,8 @@ function BottomCtaSection() {
           Move your organisation forward.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-[15px] sm:text-[16px] leading-relaxed text-white/80">
-          Experience Cambridge. Explore the UK and Europe. Connect with research, innovation and business communities that can help shape what comes next.
+          Experience Cambridge. Explore the UK and Europe. Connect with research, innovation and
+          business communities that can help shape what comes next.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-4xl mx-auto">

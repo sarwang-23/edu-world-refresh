@@ -12,7 +12,8 @@ export const Route = createFileRoute("/apply-now")({
 });
 
 // Apps Script Web App URL — deployed from Code.gs
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
 import { COUNTRY_CODES } from "@/data/countryCodes";
 
@@ -35,15 +36,15 @@ function ApplyNowPage() {
 
   const toggleProgramme = (prog: string) => {
     setSelectedProgrammes((prev) =>
-      prev.includes(prog) ? prev.filter((p) => p !== prog) : [...prev, prog]
+      prev.includes(prog) ? prev.filter((p) => p !== prog) : [...prev, prog],
     );
   };
 
-  const handleChange = (field: keyof typeof formData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-  };
+  const handleChange =
+    (field: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,17 +97,23 @@ function ApplyNowPage() {
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-gold/30">
       <section className="min-h-screen flex flex-col lg:flex-row">
-
         {/* LEFT PANEL — Bespoke Immersive Experience */}
         <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] flex flex-col justify-between overflow-hidden bg-forest-deep">
-          <img src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
+          <img
+            src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
             alt="Cambridge architecture"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-30 mix-blend-luminosity scale-105"
-          loading="lazy" />
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-forest-deep/95" />
 
           {/* Subtle noise texture */}
-          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
+          <div
+            className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+            style={{
+              backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")',
+            }}
+          ></div>
 
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
           <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-forest-deep/50 to-transparent" />
@@ -117,23 +124,28 @@ function ApplyNowPage() {
                 <div className="flex items-center justify-center h-8 w-8 rounded-full bg-gold/10 border border-gold/30">
                   <Sparkles className="w-3.5 h-3.5 text-gold" />
                 </div>
-                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">Admissions</span>
+                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">
+                  Admissions
+                </span>
               </div>
 
               <h1 className="text-[2.8rem] md:text-[3.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
                 Curating <br />
-                <em className="font-serif italic font-normal text-gold not-italic">global leaders.</em>
+                <em className="font-serif italic font-normal text-gold not-italic">
+                  global leaders.
+                </em>
               </h1>
 
               <div className="space-y-6 text-[15px] text-white/80 leading-[1.8] max-w-[380px] font-normal">
+                <p>Thank you for your interest in our premium educational experiences.</p>
                 <p>
-                  Thank you for your interest in our premium educational experiences.
-                </p>
-                <p>
-                  We develop and execute bespoke programmes for business leaders, educators, and outstanding students. We would be delighted to partner with you to deliver these transformative experiences.
+                  We develop and execute bespoke programmes for business leaders, educators, and
+                  outstanding students. We would be delighted to partner with you to deliver these
+                  transformative experiences.
                 </p>
                 <p className="text-white/80 font-medium pt-2 border-t border-white/10 mt-6">
-                  Please express your interest below, and our Cambridge desk will be in touch with the next steps.
+                  Please express your interest below, and our Cambridge desk will be in touch with
+                  the next steps.
                 </p>
               </div>
             </div>
@@ -145,8 +157,12 @@ function ApplyNowPage() {
                   <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                 </div>
                 <div>
-                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
-                  <p className="text-[15px] text-white/90 tracking-wide font-serif italic">Excellence in Global Education</p>
+                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">
+                    Established
+                  </p>
+                  <p className="text-[15px] text-white/90 tracking-wide font-serif italic">
+                    Excellence in Global Education
+                  </p>
                 </div>
               </div>
             </div>
@@ -156,13 +172,13 @@ function ApplyNowPage() {
         {/* RIGHT PANEL — Form matches contact page exactly */}
         <div className="lg:w-[55%] bg-white flex items-start lg:items-center justify-center px-8 md:px-14 lg:px-20 py-24 lg:py-16 overflow-y-auto">
           <div className="w-full max-w-[560px]">
-
             <div className="mb-10">
               <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Application Form
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
-                Submit your<br />
+                Submit your
+                <br />
                 <span className="font-serif italic font-normal text-forest/70">details</span>
               </h2>
             </div>
@@ -172,7 +188,8 @@ function ApplyNowPage() {
                 <CheckCircle2 className="h-10 w-10 text-gold" />
                 <h3 className="text-[1.3rem] font-bold text-forest-deep">Application received</h3>
                 <p className="text-[13.5px] text-forest/80 max-w-[320px]">
-                  Thank you — our Cambridge desk will review your application and be in touch shortly.
+                  Thank you — our Cambridge desk will review your application and be in touch
+                  shortly.
                 </p>
                 <button
                   type="button"
@@ -184,7 +201,6 @@ function ApplyNowPage() {
               </div>
             ) : (
               <form className="space-y-6" onSubmit={handleSubmit}>
-
                 {/* Name */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="group">
@@ -218,7 +234,9 @@ function ApplyNowPage() {
                 {/* Email */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
+                    <label className="text-[15px] font-semibold text-forest/80">
+                      Email Address
+                    </label>
                   </div>
                   <input
                     type="email"
@@ -261,7 +279,9 @@ function ApplyNowPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <div className="flex items-baseline gap-1.5 mb-2">
-                      <label className="text-[15px] font-semibold text-forest/80">Organisation</label>
+                      <label className="text-[15px] font-semibold text-forest/80">
+                        Organisation
+                      </label>
                     </div>
                     <input
                       type="text"
@@ -273,7 +293,9 @@ function ApplyNowPage() {
                   </div>
                   <div>
                     <div className="flex items-baseline gap-1.5 mb-2">
-                      <label className="text-[15px] font-semibold text-forest/80">Designation</label>
+                      <label className="text-[15px] font-semibold text-forest/80">
+                        Designation
+                      </label>
                     </div>
                     <input
                       type="text"
@@ -288,7 +310,9 @@ function ApplyNowPage() {
                 {/* Portfolio Selection */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-3">
-                    <label className="text-[15px] font-semibold text-forest/80">Upcoming Programmes</label>
+                    <label className="text-[15px] font-semibold text-forest/80">
+                      Upcoming Programmes
+                    </label>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {programmes.map((tag, i) => {
@@ -298,10 +322,11 @@ function ApplyNowPage() {
                           key={i}
                           type="button"
                           onClick={() => toggleProgramme(tag)}
-                          className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${isSelected
+                          className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
+                            isSelected
                               ? "bg-forest-deep border-forest-deep text-white shadow-md"
                               : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
-                            }`}
+                          }`}
                         >
                           {isSelected ? (
                             <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
@@ -310,7 +335,7 @@ function ApplyNowPage() {
                           )}
                           {tag}
                         </button>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -318,7 +343,9 @@ function ApplyNowPage() {
                 {/* Message */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Additional Details</label>
+                    <label className="text-[15px] font-semibold text-forest/80">
+                      Additional Details
+                    </label>
                   </div>
                   <textarea
                     rows={4}
@@ -355,7 +382,6 @@ function ApplyNowPage() {
                     </span>
                   </button>
                 </div>
-
               </form>
             )}
           </div>

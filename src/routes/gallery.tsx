@@ -53,11 +53,11 @@ import zeroToOneImg from "@/assets/zero-to-one.png";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 
 // ── People
-import jivikaVikamshi from '@/assets/people/jivika_vikamshi.jpg';
-import amarjitSingh from '@/assets/people/amarjit_singh.jpg';
-import lindaTang from '@/assets/people/linda_tang.jpg';
+import jivikaVikamshi from "@/assets/people/jivika_vikamshi.jpg";
+import amarjitSingh from "@/assets/people/amarjit_singh.jpg";
+import lindaTang from "@/assets/people/linda_tang.jpg";
 
-import { SharedTestimonials } from '@/components/SharedTestimonials';
+import { SharedTestimonials } from "@/components/SharedTestimonials";
 
 const galleryTestimonials = [
   {
@@ -86,7 +86,6 @@ const galleryTestimonials = [
   },
 ];
 
-
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
   head: () => buildMeta("/gallery"),
@@ -94,25 +93,44 @@ export const Route = createFileRoute("/gallery")({
 
 /* ─── Reusable photo card ─── */
 function Photo({
-  src, alt, label, location, className = "",
+  src,
+  alt,
+  label,
+  location,
+  className = "",
 }: {
-  src: string; alt: string; label?: string; location?: string; className?: string;
+  src: string;
+  alt: string;
+  label?: string;
+  location?: string;
+  className?: string;
 }) {
   return (
-    <div className={`group relative overflow-hidden rounded-2xl bg-white/5 ${className || ''}`}>
-      <img src={src} alt={alt} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-      
+    <div className={`group relative overflow-hidden rounded-2xl bg-white/5 ${className || ""}`}>
+      <img
+        src={src}
+        alt={alt}
+        className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        loading="lazy"
+      />
+
       {/* subtle gradient overlay for better text contrast if label/location exist */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.4)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-      
+
       {(label || location) && (
         <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-[80%] translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none">
           <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-4 shadow-2xl">
-            {label && <p className="text-white font-semibold text-[15px] leading-snug tracking-tight">{label}</p>}
+            {label && (
+              <p className="text-white font-semibold text-[15px] leading-snug tracking-tight">
+                {label}
+              </p>
+            )}
             {location && (
               <div className="flex items-center gap-1.5 mt-2">
                 <MapPin className="h-3.5 w-3.5 text-[#C19842]" />
-                <span className="text-[#C19842] text-[10px] font-bold tracking-[0.2em] uppercase">{location}</span>
+                <span className="text-[#C19842] text-[10px] font-bold tracking-[0.2em] uppercase">
+                  {location}
+                </span>
               </div>
             )}
           </div>
@@ -122,16 +140,32 @@ function Photo({
   );
 }
 
-function SectionHeader({ eyebrow, title, accent, desc }: { eyebrow: string; title: string; accent?: string; desc?: string }) {
+function SectionHeader({
+  eyebrow,
+  title,
+  accent,
+  desc,
+}: {
+  eyebrow: string;
+  title: string;
+  accent?: string;
+  desc?: string;
+}) {
   return (
     <div className="mb-14 max-w-2xl">
       <div className="flex items-center gap-4 mb-6">
         <span className="h-[2px] w-12 bg-gradient-to-r from-[#C19842] to-transparent block rounded-full" />
-        <span className="text-[11px] font-bold tracking-[0.3em] text-[#C19842] uppercase">{eyebrow}</span>
+        <span className="text-[11px] font-bold tracking-[0.3em] text-[#C19842] uppercase">
+          {eyebrow}
+        </span>
       </div>
       <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-white/95 leading-[1.1]">
         {title}{" "}
-        {accent && <span className="font-serif italic text-[#C19842] font-normal drop-shadow-[0_0_15px_rgba(193,152,66,0.25)]">{accent}</span>}
+        {accent && (
+          <span className="font-serif italic text-[#C19842] font-normal drop-shadow-[0_0_15px_rgba(193,152,66,0.25)]">
+            {accent}
+          </span>
+        )}
       </h2>
       {desc && <p className="mt-6 text-white/60 text-[16px] leading-relaxed font-light">{desc}</p>}
     </div>
@@ -144,14 +178,18 @@ function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-[#080d07] font-sans text-white">
-
       {/* ══════════════════════════════
           HERO
       ══════════════════════════════ */}
       <section className="relative h-screen min-h-[680px] overflow-hidden">
         {/* background: single image */}
         <div className="absolute inset-0">
-          <img src={cambridge4} alt="Gallery Hero" className="h-full w-full object-cover scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]" loading="lazy" />
+          <img
+            src={cambridge4}
+            alt="Gallery Hero"
+            className="h-full w-full object-cover scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]"
+            loading="lazy"
+          />
         </div>
 
         {/* unified overlay */}
@@ -162,45 +200,65 @@ function GalleryPage() {
         <div className="relative flex h-full flex-col justify-end pb-20 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto">
           <div className="mb-6 flex items-center gap-3">
             <Camera className="h-4 w-4 text-[#C19842]" />
-            <span className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase">The Visual Archive · Vol. 01</span>
+            <span className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase">
+              The Visual Archive · Vol. 01
+            </span>
           </div>
 
           <h1 className="text-[3.5rem] md:text-[5.5rem] lg:text-[7rem] font-bold leading-[0.95] tracking-tight">
-            Rooms where<br />
-            <span className="font-serif italic text-[#C19842] font-normal">futures</span><br />
+            Rooms where
+            <br />
+            <span className="font-serif italic text-[#C19842] font-normal">futures</span>
+            <br />
             are drafted.
           </h1>
 
           <p className="mt-7 max-w-lg text-[17px] leading-relaxed text-white/65">
-            A cinematic archive of leaders, educators and learners — delivered across Cambridge, Helsinki, Bali and India.
+            A cinematic archive of leaders, educators and learners — delivered across Cambridge,
+            Helsinki, Bali and India.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#cambridge" className="inline-flex items-center gap-2 rounded-full bg-[#C19842] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#080d07] transition-all hover:bg-white">
+            <a
+              href="#cambridge"
+              className="inline-flex items-center gap-2 rounded-full bg-[#C19842] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#080d07] transition-all hover:bg-white"
+            >
               View Archive <ArrowUpRight className="h-4 w-4" />
             </a>
-            <Link to="/programmes" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-medium text-white/80 transition-all hover:border-white/50 hover:text-white">
+            <Link
+              to="/programmes"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-medium text-white/80 transition-all hover:border-white/50 hover:text-white"
+            >
               Explore Programmes
             </Link>
           </div>
 
           {/* stats row */}
           <div className="mt-16 flex items-center gap-12 border-t border-white/10 pt-8">
-            {[["05", "Countries"], ["20+", "Programmes"], ["150+", "Leaders Trained"], ["5000+", "Learners Engaged"]].map(([n, l]) => (
+            {[
+              ["05", "Countries"],
+              ["20+", "Programmes"],
+              ["150+", "Leaders Trained"],
+              ["5000+", "Learners Engaged"],
+            ].map(([n, l]) => (
               <div key={l}>
                 <p className="text-2xl font-bold text-white">{n}</p>
-                <p className="text-[11px] font-bold tracking-[0.25em] text-white/50 uppercase mt-0.5">{l}</p>
+                <p className="text-[11px] font-bold tracking-[0.25em] text-white/50 uppercase mt-0.5">
+                  {l}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* ══════════════════════════════
           CH 01 — CAMBRIDGE
       ══════════════════════════════ */}
-      <section id="cambridge" className="py-24 md:py-32 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto">
+      <section
+        id="cambridge"
+        className="py-24 md:py-32 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto"
+      >
         <SectionHeader
           eyebrow="Chapter 01"
           title="Cambridge,"
@@ -210,16 +268,59 @@ function GalleryPage() {
 
         {/* Premium Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
-          <Photo src={cambridge3} alt="Executive Education" label="Executive Education" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
-          <Photo src={cambridge2} alt="Cambridge" label="Judge Business School" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={cambridge6} alt="Business Leaders" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={cambridge4} alt="Cambridge" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={campusLife1} alt="Campus Life" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
-          <Photo src={cambridge5} alt="Cambridge" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={cambridge7} alt="Cambridge" label="Michaelmas '24" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={cambridge1} alt="Leadership Forum" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo
+            src={cambridge3}
+            alt="Executive Education"
+            label="Executive Education"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2"
+          />
+          <Photo
+            src={cambridge2}
+            alt="Cambridge"
+            label="Judge Business School"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={cambridge6}
+            alt="Business Leaders"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={cambridge4}
+            alt="Cambridge"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={campusLife1}
+            alt="Campus Life"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2"
+          />
+          <Photo
+            src={cambridge5}
+            alt="Cambridge"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={cambridge7}
+            alt="Cambridge"
+            label="Michaelmas '24"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={cambridge1}
+            alt="Leadership Forum"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
         </div>
       </section>
 
@@ -231,9 +332,12 @@ function GalleryPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#080d07]/90 via-[#080d07]/40 to-transparent" />
         <div className="absolute inset-0 flex items-center px-6 md:px-24 max-w-[1500px] mx-auto">
           <div>
-            <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-5">Global India Leadership Programme</p>
+            <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-5">
+              Global India Leadership Programme
+            </p>
             <h2 className="text-5xl md:text-7xl font-bold leading-[1.0] tracking-tight text-white max-w-2xl">
-              One programme.<br />
+              One programme.
+              <br />
               <span className="font-serif italic text-[#C19842] font-normal">Two continents.</span>
             </h2>
             <p className="mt-6 text-white/60 text-[15px] max-w-sm leading-relaxed">
@@ -256,15 +360,51 @@ function GalleryPage() {
 
         {/* Premium Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
-          <Photo src={gilpMarch6} alt="GILP" label="Summit Plenary" location="UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
-          <Photo src={gilpMarch2} alt="GILP India" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={gilpMarch5} alt="GILP India" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={gilpMarch4} alt="GILP India" location="UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
-          <Photo src={gilpMarch7} alt="GILP" location="UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-1" />
-          
-          <Photo src={gilpMarch8} alt="GILP" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={gilpMarch9} alt="GILP" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
+          <Photo
+            src={gilpMarch6}
+            alt="GILP"
+            label="Summit Plenary"
+            location="UK"
+            className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2"
+          />
+          <Photo
+            src={gilpMarch2}
+            alt="GILP India"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={gilpMarch5}
+            alt="GILP India"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={gilpMarch4}
+            alt="GILP India"
+            location="UK"
+            className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2"
+          />
+          <Photo
+            src={gilpMarch7}
+            alt="GILP"
+            location="UK"
+            className="col-span-1 md:col-span-2 lg:col-span-8 row-span-1"
+          />
+
+          <Photo
+            src={gilpMarch8}
+            alt="GILP"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={gilpMarch9}
+            alt="GILP"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
         </div>
       </section>
 
@@ -275,9 +415,12 @@ function GalleryPage() {
         <img src={img4915} alt="Students" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080d07] via-[#080d07]/40 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full px-6 md:px-24 pb-16 max-w-[1500px] mx-auto">
-          <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-4">Chapter 04 — Student Programmes</p>
+          <p className="text-xs font-bold tracking-[0.4em] text-[#C19842] uppercase mb-4">
+            Chapter 04 — Student Programmes
+          </p>
           <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white max-w-2xl">
-            The next generation,<br />
+            The next generation,
+            <br />
             <span className="font-serif italic text-[#C19842] font-normal">at work.</span>
           </h2>
           <p className="mt-4 text-white/60 text-[15px] max-w-md">
@@ -289,7 +432,10 @@ function GalleryPage() {
       {/* ══════════════════════════════
           CH 04 — STUDENTS
       ══════════════════════════════ */}
-      <section id="students" className="py-24 md:py-32 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto">
+      <section
+        id="students"
+        className="py-24 md:py-32 px-6 md:px-16 lg:px-24 max-w-[1500px] mx-auto"
+      >
         <SectionHeader
           eyebrow="STEM & Entrepreneurship"
           title="Young minds,"
@@ -299,21 +445,75 @@ function GalleryPage() {
 
         {/* Premium Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[300px]">
-          <Photo src={siteVisitImg} alt="STEM Field Trip" label="Site Visit" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2" />
-          <Photo src={yusufHImg} alt="Student" label="Young Leaders" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={stemYvesImg} alt="STEM Yves" location="Cambridge, UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={stem1Img} alt="Student programme" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={img0719} alt="Student programme" location="UK" className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2" />
-          <Photo src={stemAstroImg} alt="Student programme" location="UK" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={img4929} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          <Photo src={img5105} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1" />
-          
-          <Photo src={img4915} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
-          <Photo src={img5138} alt="Student programme" className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1" />
-          
-          <Photo src={img5277} alt="Student programme" label="GEL Summer Programme" location="Cambridge, UK" className="col-span-1 md:col-span-2 lg:col-span-12 row-span-1" />
+          <Photo
+            src={siteVisitImg}
+            alt="STEM Field Trip"
+            label="Site Visit"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-2 lg:col-span-8 row-span-2"
+          />
+          <Photo
+            src={yusufHImg}
+            alt="Student"
+            label="Young Leaders"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={stemYvesImg}
+            alt="STEM Yves"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={stem1Img}
+            alt="Student programme"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={img0719}
+            alt="Student programme"
+            location="UK"
+            className="col-span-1 md:col-span-2 lg:col-span-4 row-span-2"
+          />
+          <Photo
+            src={stemAstroImg}
+            alt="Student programme"
+            location="UK"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={img4929}
+            alt="Student programme"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+          <Photo
+            src={img5105}
+            alt="Student programme"
+            className="col-span-1 md:col-span-1 lg:col-span-4 row-span-1"
+          />
+
+          <Photo
+            src={img4915}
+            alt="Student programme"
+            className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1"
+          />
+          <Photo
+            src={img5138}
+            alt="Student programme"
+            className="col-span-1 md:col-span-1 lg:col-span-6 row-span-1"
+          />
+
+          <Photo
+            src={img5277}
+            alt="Student programme"
+            label="GEL Summer Programme"
+            location="Cambridge, UK"
+            className="col-span-1 md:col-span-2 lg:col-span-12 row-span-1"
+          />
         </div>
       </section>
 
@@ -325,16 +525,20 @@ function GalleryPage() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               <span className="h-px w-6 bg-[#C19842] block" />
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C19842]">Be Part of the Story</span>
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C19842]">
+                Be Part of the Story
+              </span>
             </div>
             <h2 className="text-[2.75rem] md:text-[4rem] lg:text-[5rem] font-bold tracking-tight text-white leading-[1.0]">
-              Let's build something<br />
+              Let's build something
+              <br />
               <span className="font-serif italic text-[#C19842]">impactful together.</span>
             </h2>
           </div>
           <div className="shrink-0 flex flex-col gap-4">
             <Link
-              to="/contact" search={{ source: "Gallery" }}
+              to="/contact"
+              search={{ source: "Gallery" }}
               className="inline-flex items-center gap-3 rounded-full bg-[#C19842] px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-[#080d07] transition-all hover:bg-white"
             >
               Start a Conversation <ArrowUpRight className="h-4 w-4" />

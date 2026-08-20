@@ -1,8 +1,9 @@
-const fs = require('fs');
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const fs = require("fs");
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
-const targetText = '"text": "Finland has, indisputably, the best education system in the world and here are the top reasons why they do:"\n      },';
+const targetText =
+  '"text": "Finland has, indisputably, the best education system in the world and here are the top reasons why they do:"\n      },';
 
 const additionalContent = `
       {
@@ -29,7 +30,7 @@ const additionalContent = `
 
 if (c.includes(targetText)) {
   fs.writeFileSync(p, c.replace(targetText, targetText + additionalContent));
-  console.log('Success');
+  console.log("Success");
 } else {
-  console.log('Not found');
+  console.log("Not found");
 }

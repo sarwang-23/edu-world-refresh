@@ -1,6 +1,6 @@
-const fs = require('fs');
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const fs = require("fs");
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
 const galleryBlock = `      {
         "type": "gallery",
@@ -30,10 +30,10 @@ if (startIdx !== -1) {
     const toReplace = c.substring(startIdx, endIdx + endMarker.length);
     c = c.replace(toReplace, galleryBlock);
     fs.writeFileSync(p, c);
-    console.log('Successfully replaced');
+    console.log("Successfully replaced");
   } else {
-    console.log('End marker not found');
+    console.log("End marker not found");
   }
 } else {
-  console.log('Start marker not found');
+  console.log("Start marker not found");
 }

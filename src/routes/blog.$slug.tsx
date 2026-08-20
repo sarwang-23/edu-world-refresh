@@ -1,9 +1,5 @@
 // src/routes/blog.$slug.tsx
-import {
-  createFileRoute,
-  Link,
-  notFound,
-} from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
 import { useState, useEffect, useCallback } from "react";
 import {
@@ -17,22 +13,21 @@ import {
   Share2,
   ChevronLeft,
   ChevronRight,
-  Maximize2
+  Maximize2,
 } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import {
-  getRelatedPosts,
-  type BlogPost,
-  blogPosts,
-} from "@/data/blogPosts";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { getRelatedPosts, type BlogPost, blogPosts } from "@/data/blogPosts";
 import { Footer } from "./index";
 import logoImg from "@/assets/Logo png.png";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
-    const post = blogPosts.find(
-      (p) => p.slug.toLowerCase() === params.slug.toLowerCase()
-    );
+    const post = blogPosts.find((p) => p.slug.toLowerCase() === params.slug.toLowerCase());
     if (!post) throw notFound();
     return post as BlogPost;
   },
@@ -55,7 +50,7 @@ export const Route = createFileRoute("/blog/$slug")({
         image: loaderData.cover,
       },
       { ogType: "article" },
-      `blog/${loaderData.slug}`
+      `blog/${loaderData.slug}`,
     );
   },
 
@@ -72,10 +67,10 @@ function BlogPostPage() {
 
   const handleLike = () => {
     if (hasLiked) {
-      setLikes(l => l - 1);
+      setLikes((l) => l - 1);
       setHasLiked(false);
     } else {
-      setLikes(l => l + 1);
+      setLikes((l) => l + 1);
       setHasLiked(true);
     }
   };
@@ -115,12 +110,16 @@ function BlogPostPage() {
       {/* Main White Post Card Container (Matching Wix Ricos Template) */}
       <main className="mx-auto max-w-[760px] px-4 sm:px-6 mb-12">
         <article className="bg-white border border-[#E5E7EB] shadow-[0_2px_12px_rgba(0,0,0,0.03)] p-6 sm:p-10 md:p-12 rounded-xs">
-          
           {/* Post Top Metadata Bar */}
           <div className="flex items-center justify-between text-[13.5px] text-[#555555] mb-6">
             <div className="flex items-center gap-2 flex-wrap">
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-forest/10 overflow-hidden border border-forest/20">
-                <img src={logoImg} alt={post.author} className="h-4.5 w-4.5 object-contain" loading="lazy" />
+                <img
+                  src={logoImg}
+                  alt={post.author}
+                  className="h-4.5 w-4.5 object-contain"
+                  loading="lazy"
+                />
               </div>
               <span className="font-medium text-[#111111]">{post.author}</span>
               <span className="text-gray-400">·</span>
@@ -129,7 +128,10 @@ function BlogPostPage() {
               <span>{post.readTime}</span>
             </div>
 
-            <button className="text-neutral-400 hover:text-neutral-700 transition-colors p-1" title="More options">
+            <button
+              className="text-neutral-400 hover:text-neutral-700 transition-colors p-1"
+              title="More options"
+            >
               <MoreVertical className="h-4 w-4" />
             </button>
           </div>
@@ -140,9 +142,7 @@ function BlogPostPage() {
           </h1>
 
           {/* Updated Subline */}
-          <p className="text-[13px] text-[#757575] font-normal mb-8">
-            Updated: {post.date}
-          </p>
+          <p className="text-[13px] text-[#757575] font-normal mb-8">Updated: {post.date}</p>
 
           {/* Article Rendered Body */}
           <ArticleBlocksContent post={post} />
@@ -151,7 +151,7 @@ function BlogPostPage() {
           <div className="mt-10 pt-6 border-t border-[#E5E7EB]">
             <div className="flex items-center gap-5 text-gray-700">
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-black transition-colors"
@@ -162,7 +162,7 @@ function BlogPostPage() {
 
               {/* X / Twitter Icon */}
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-black transition-colors font-bold text-sm"
@@ -172,7 +172,7 @@ function BlogPostPage() {
               </a>
 
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-black transition-colors"
@@ -202,7 +202,9 @@ function BlogPostPage() {
                 className="flex items-center gap-1.5 hover:text-red-500 transition-colors"
               >
                 <span>{likes}</span>
-                <Heart className={`h-4 w-4 ${hasLiked ? "fill-red-500 text-red-500" : "text-gray-400"}`} />
+                <Heart
+                  className={`h-4 w-4 ${hasLiked ? "fill-red-500 text-red-500" : "text-gray-400"}`}
+                />
               </button>
             </div>
           </div>
@@ -214,7 +216,6 @@ function BlogPostPage() {
               Write a comment...
             </div>
           </div>
-
         </article>
       </main>
 
@@ -254,14 +255,22 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
             );
           case "quote":
             return (
-              <blockquote key={i} className="my-6 border-l-4 border-[#111111] pl-6 italic text-[#111111]">
+              <blockquote
+                key={i}
+                className="my-6 border-l-4 border-[#111111] pl-6 italic text-[#111111]"
+              >
                 <p className="text-lg leading-relaxed">{block.text}</p>
               </blockquote>
             );
           case "image":
             return (
               <figure key={i} className="my-8">
-                <img src={block.src} alt={block.caption ?? ""} className="w-full object-cover" loading="lazy" />
+                <img
+                  src={block.src}
+                  alt={block.caption ?? ""}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
                 {block.caption && (
                   <figcaption className="mt-2 text-center text-sm text-neutral-500">
                     {block.caption}
@@ -308,16 +317,27 @@ function ArticleGallery({ images }: { images: string[] }) {
           {images.map((src, index) => (
             <CarouselItem key={index}>
               <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden bg-black/5 rounded-md">
-                <img src={src} alt="Gallery" className="w-full h-full object-cover" loading="lazy" />
+                <img
+                  src={src}
+                  alt="Gallery"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <button onClick={() => api?.scrollPrev()} className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors">
+          <button
+            onClick={() => api?.scrollPrev()}
+            className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors"
+          >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <button onClick={() => api?.scrollNext()} className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors">
+          <button
+            onClick={() => api?.scrollNext()}
+            className="pointer-events-auto h-10 w-10 flex items-center justify-center bg-white/70 hover:bg-white text-black rounded-full shadow-sm transition-colors"
+          >
             <ChevronRight className="h-6 w-6" />
           </button>
         </div>
@@ -343,7 +363,11 @@ function ArticleGallery({ images }: { images: string[] }) {
   );
 }
 
-function TestimonialsCarousel({ items }: { items: Array<{ name: string; role: string; quote: string; photo?: string }> }) {
+function TestimonialsCarousel({
+  items,
+}: {
+  items: Array<{ name: string; role: string; quote: string; photo?: string }>;
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -367,7 +391,8 @@ function TestimonialsCarousel({ items }: { items: Array<{ name: string; role: st
               <div
                 className="relative w-full rounded-2xl overflow-hidden"
                 style={{
-                  backgroundImage: "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
+                  backgroundImage:
+                    "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center bottom",
                   minHeight: "420px",
@@ -405,15 +430,16 @@ function TestimonialsCarousel({ items }: { items: Array<{ name: string; role: st
                         className="flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg"
                         style={{ width: "140px", height: "140px" }}
                       >
-                        <img src={item.photo}
+                        <img
+                          src={item.photo}
                           alt={item.name}
                           className="w-full h-full object-cover object-top"
-                        loading="lazy" />
+                          loading="lazy"
+                        />
                       </div>
                     )}
                   </div>
                 </div>
-
               </div>
             </CarouselItem>
           ))}
@@ -459,7 +485,10 @@ function RecentPostsGrid({ posts }: { posts: BlogPost[] }) {
     <section className="mx-auto max-w-[760px] px-4 sm:px-6 mb-16">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-[#111111]">Recent Posts</h2>
-        <Link to="/blog" className="text-sm font-medium text-neutral-700 hover:text-forest transition-colors">
+        <Link
+          to="/blog"
+          className="text-sm font-medium text-neutral-700 hover:text-forest transition-colors"
+        >
           See All
         </Link>
       </div>
@@ -478,10 +507,12 @@ function RecentPostsGrid({ posts }: { posts: BlogPost[] }) {
               className="group flex flex-col bg-white border border-[#E5E7EB] overflow-hidden shadow-xs hover:shadow-md transition-all rounded-xs"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
-                <img src={post.cover}
+                <img
+                  src={post.cover}
                   alt={post.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy" />
+                  loading="lazy"
+                />
               </div>
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="text-[15px] font-bold text-[#111111] leading-snug group-hover:text-forest transition-colors line-clamp-3 mb-4">
@@ -500,7 +531,9 @@ function RecentPostsGrid({ posts }: { posts: BlogPost[] }) {
                   </div>
                   <div className="flex items-center gap-1">
                     {likesList[idx % 3] > 0 && <span>{likesList[idx % 3]}</span>}
-                    <Heart className={`h-3.5 w-3.5 ${likesList[idx % 3] > 0 ? "text-red-500 fill-red-500" : "text-gray-400"}`} />
+                    <Heart
+                      className={`h-3.5 w-3.5 ${likesList[idx % 3] > 0 ? "text-red-500 fill-red-500" : "text-gray-400"}`}
+                    />
                   </div>
                 </div>
               </div>
@@ -516,8 +549,13 @@ function BlogNotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#F8F9FA] px-6 text-center text-[#111111]">
       <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-      <p className="text-neutral-600 mb-6 max-w-md">The blog article you are looking for might have been moved or does not exist.</p>
-      <Link to="/blog" className="rounded-full bg-forest px-6 py-3 text-white font-semibold text-sm hover:bg-forest-deep">
+      <p className="text-neutral-600 mb-6 max-w-md">
+        The blog article you are looking for might have been moved or does not exist.
+      </p>
+      <Link
+        to="/blog"
+        className="rounded-full bg-forest px-6 py-3 text-white font-semibold text-sm hover:bg-forest-deep"
+      >
         Return to Blog Index
       </Link>
     </div>
@@ -532,7 +570,8 @@ function GetInTouchCTA() {
           Let's Get In Touch
         </h2>
         <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-          Can't find what you're looking for? Please contact us and we'll get back to you as soon as possible.
+          Can't find what you're looking for? Please contact us and we'll get back to you as soon as
+          possible.
         </p>
         <Link
           to="/contact"

@@ -10,342 +10,383 @@ export const seoConfig: Record<string, SeoEntry> = {
   "/": {
     title: "Global Education Lab | Leadership & University Immersion Programmes",
     socialTitle: "Global Education Lab – Empowering Global Leaders & Educators",
-    description: "Global Education Lab (GEL) connects world-class universities like Cambridge with emerging leaders, educators, and innovators through immersive executive and student programmes.",
+    description:
+      "Global Education Lab (GEL) connects world-class universities like Cambridge with emerging leaders, educators, and innovators through immersive executive and student programmes.",
     image: "/images/about.png",
     indexable: true,
   },
   "/about": {
     title: "About Us | Global Education Lab",
     socialTitle: "About Global Education Lab – Transformational Education & Impact",
-    description: "Discover Global Education Lab's mission to bridge top international academic institutions and global change-makers through transformational educational experiences.",
+    description:
+      "Discover Global Education Lab's mission to bridge top international academic institutions and global change-makers through transformational educational experiences.",
     image: "/images/about.png",
     indexable: true,
   },
   "/apply-now": {
     title: "Apply Now | Global Education Lab Programmes",
     socialTitle: "Apply for GEL Executive & Student Programmes at Cambridge",
-    description: "Apply now for Global Education Lab executive leadership, student camp, and teacher training programmes at Cambridge and top global academic hubs.",
+    description:
+      "Apply now for Global Education Lab executive leadership, student camp, and teacher training programmes at Cambridge and top global academic hubs.",
     image: "/gilp-banner.png",
     indexable: true,
   },
   "/ai-learning-games": {
     title: "AI Learning Games | Global Education Lab",
     socialTitle: "AI Learning Games by Global Education Lab",
-    description: "Explore interactive AI-powered learning games designed to cultivate strategic thinking, entrepreneurship, and problem-solving skills for future leaders.",
+    description:
+      "Explore interactive AI-powered learning games designed to cultivate strategic thinking, entrepreneurship, and problem-solving skills for future leaders.",
     image: "/images/frugal-ai.jpg",
     indexable: true,
   },
   "/business-leaders": {
     title: "Executive Programmes for Business Leaders | Global Education Lab",
     socialTitle: "Executive Education for Business Leaders & CXOs at Cambridge",
-    description: "Transformative executive education and leadership intensives for CXOs, Founders, and Senior Business Leaders at premier global institutions like Cambridge.",
+    description:
+      "Transformative executive education and leadership intensives for CXOs, Founders, and Senior Business Leaders at premier global institutions like Cambridge.",
     image: "/images/business-leaders.jpg",
     indexable: true,
   },
   "/contact": {
     title: "Contact Us | Global Education Lab",
     socialTitle: "Contact Global Education Lab",
-    description: "Get in touch with the Global Education Lab team for inquiries on executive leadership cohorts, university partnerships, and student camps.",
+    description:
+      "Get in touch with the Global Education Lab team for inquiries on executive leadership cohorts, university partnerships, and student camps.",
     image: "/images/about.png",
     indexable: true,
   },
   "/entrepreneurship": {
     title: "Entrepreneurship Hub | Global Education Lab",
     socialTitle: "GEL Entrepreneurship Hub – Zero to One & Venture Incubator",
-    description: "Empowering venture founders and innovators with zero-to-one product creation, mentor networks, startup incubators, and demo day showcases.",
+    description:
+      "Empowering venture founders and innovators with zero-to-one product creation, mentor networks, startup incubators, and demo day showcases.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/entrepreneurship/accelerator": {
     title: "Startup Accelerator | Global Education Lab",
     socialTitle: "Global Startup Accelerator by GEL",
-    description: "Accelerate your startup with GEL's world-class mentor network, pitch readiness coaching, global market access, and strategic investor connections.",
+    description:
+      "Accelerate your startup with GEL's world-class mentor network, pitch readiness coaching, global market access, and strategic investor connections.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/entrepreneurship/demo-day": {
     title: "Venture Demo Day | Global Education Lab",
     socialTitle: "GEL Venture Demo Day Showcase",
-    description: "Watch promising startup founders pitch disruptive innovations to global investors, academic mentors, and venture capitalists.",
+    description:
+      "Watch promising startup founders pitch disruptive innovations to global investors, academic mentors, and venture capitalists.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/entrepreneurship/mentorship": {
     title: "1-on-1 Entrepreneurship Mentorship | Global Education Lab",
     socialTitle: "Entrepreneurship Mentorship at Cambridge",
-    description: "Gain 1-on-1 mentorship from Cambridge scholars, industry veterans, and successful venture founders to scale your startup vision.",
+    description:
+      "Gain 1-on-1 mentorship from Cambridge scholars, industry veterans, and successful venture founders to scale your startup vision.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/entrepreneurship/zero-to-one": {
     title: "Zero to One Innovation | Global Education Lab",
     socialTitle: "Zero to One Venture Innovation",
-    description: "Transform breakthrough ideas into viable commercial products with GEL's structured Zero to One venture incubation framework.",
+    description:
+      "Transform breakthrough ideas into viable commercial products with GEL's structured Zero to One venture incubation framework.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/gallery": {
     title: "Programme Highlights & Campus Gallery | Global Education Lab",
     socialTitle: "GEL Cambridge Cohort Photo & Highlights Gallery",
-    description: "Browse photos, cohort memories, and campus highlights from GEL leadership cohorts at Cambridge, London, and international retreats.",
+    description:
+      "Browse photos, cohort memories, and campus highlights from GEL leadership cohorts at Cambridge, London, and international retreats.",
     image: "/gilp-banner.png",
     indexable: true,
   },
   "/programmes/america-forward": {
     title: "America Forward Programme | Global Education Lab",
     socialTitle: "America Forward Programme at Cambridge | Global Education Lab",
-    description: "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
-    image: "/gilp-banner.png",
+    description:
+      "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
+    image: "/images/america-forward-seo.jpg",
     indexable: true,
   },
   "/america-forward": {
     title: "America Forward Programme | Global Education Lab",
     socialTitle: "America Forward Programme at Cambridge | Global Education Lab",
-    description: "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
-    image: "/gilp-banner.png",
-    indexable: true,
-  },
-  "/programmes/gilp": {
-    title: "Global India Leadership Programme at Cambridge | Sept 2026",
-    socialTitle: "Global India Leadership Programme at Cambridge | Sept 2026",
-    description: "Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day experience at Cambridge equips you with cutting-edge insights in AI, strategy, and leadership to navigate complexity",
-    image: "/social-gilp.png",
+    description:
+      "Designed for business professionals, founders and senior leaders, connecting you with the UK and EU innovation ecosystem at Cambridge.",
+    image: "/images/america-forward-seo.jpg",
     indexable: true,
   },
   "/gilp-delegate": {
     title: "GILP Delegate Portal | Global Education Lab",
     socialTitle: "Global India Leadership Programme Delegate Portal",
-    description: "Exclusive schedules, lecture materials, speaker bios, and networking resources for Global India Leadership Programme delegates at Cambridge.",
+    description:
+      "Exclusive schedules, lecture materials, speaker bios, and networking resources for Global India Leadership Programme delegates at Cambridge.",
     image: "/gilp-banner.png",
     indexable: true,
   },
   "/global-ventures": {
     title: "Global Ventures & Incubated Startups | Global Education Lab",
     socialTitle: "Global Ventures & Research Innovations by GEL",
-    description: "Discover deep-tech ventures, AI innovations, and social impact startups born out of Global Education Lab programmes.",
+    description:
+      "Discover deep-tech ventures, AI innovations, and social impact startups born out of Global Education Lab programmes.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/insights": {
     title: "Insights & Thought Leadership | Global Education Lab",
     socialTitle: "GEL Insights & Executive Thought Leadership",
-    description: "Explore articles, research papers, and expert perspectives on AI in education, frugal innovation, executive strategy, and global leadership.",
+    description:
+      "Explore articles, research papers, and expert perspectives on AI in education, frugal innovation, executive strategy, and global leadership.",
     image: "/images/frugal-ai.jpg",
     indexable: true,
   },
   "/our-impact": {
     title: "Our Global Impact | Global Education Lab",
     socialTitle: "Our Impact – Thousands of Leaders & Educators Transformed",
-    description: "Discover how GEL programmes empower thousands of leaders, school principals, educators, and student innovators across the globe.",
+    description:
+      "Discover how GEL programmes empower thousands of leaders, school principals, educators, and student innovators across the globe.",
     image: "/images/our-impact.jpg",
     indexable: true,
   },
   "/partner-with-gel": {
     title: "Partner With GEL | Academic & Corporate Alliances",
     socialTitle: "Partner with Global Education Lab",
-    description: "Partner with Global Education Lab to co-create custom executive intensives, university exchanges, and innovation hubs worldwide.",
+    description:
+      "Partner with Global Education Lab to co-create custom executive intensives, university exchanges, and innovation hubs worldwide.",
     image: "/images/about.png",
     indexable: true,
   },
   "/past-programmes": {
     title: "Past Programmes Archive | Global Education Lab",
     socialTitle: "Past GEL Programmes & Delegate Achievements",
-    description: "View past GEL leadership cohorts, guest speaker highlights, and delegate achievements from Cambridge, London, Bali, and Finland.",
+    description:
+      "View past GEL leadership cohorts, guest speaker highlights, and delegate achievements from Cambridge, London, Bali, and Finland.",
     image: "/images/programmes.jpg",
     indexable: true,
   },
   "/privacy-policy": {
     title: "Privacy Policy | Global Education Lab",
-    description: "Privacy policy for Global Education Lab explaining data protection practices, cookies, and user rights.",
+    description:
+      "Privacy policy for Global Education Lab explaining data protection practices, cookies, and user rights.",
     image: "/images/default-social.jpg",
     indexable: true,
   },
   "/programmes": {
     title: "All Educational Programmes | Global Education Lab",
     socialTitle: "Educational Programmes & Leadership Intensives by GEL",
-    description: "Explore executive leadership intensives, school leader workshops, student summer camps, and teacher training hosted worldwide.",
+    description:
+      "Explore executive leadership intensives, school leader workshops, student summer camps, and teacher training hosted worldwide.",
     image: "/images/programmes.jpg",
     indexable: true,
   },
   "/programmes/bali": {
     title: "Bali Educational Retreat | Global Education Lab",
     socialTitle: "Bali Educational Retreat – Sustainable Innovation & Leadership",
-    description: "An immersive educational retreat in Bali focusing on sustainable innovation, eco-entrepreneurship, and cultural leadership.",
+    description:
+      "An immersive educational retreat in Bali focusing on sustainable innovation, eco-entrepreneurship, and cultural leadership.",
     image: "/images/bali.jpg",
     indexable: true,
   },
   "/programmes/cslp": {
     title: "Cambridge School Leadership Programme (CSLP) | GEL",
     socialTitle: "Cambridge School Leadership Programme (CSLP)",
-    description: "Empowering K-12 school principals and leaders with modern pedagogy, digital transformation, and school governance strategies at Cambridge.",
+    description:
+      "Empowering K-12 school principals and leaders with modern pedagogy, digital transformation, and school governance strategies at Cambridge.",
     image: "/images/cslp.jpg",
     indexable: true,
   },
   "/programmes/corporate-learning": {
     title: "Corporate Learning & Executive Training | Global Education Lab",
     socialTitle: "Corporate Learning & Executive Education",
-    description: "Customized corporate learning solutions and executive leadership intensives tailored for enterprise management teams.",
+    description:
+      "Customized corporate learning solutions and executive leadership intensives tailored for enterprise management teams.",
     image: "/images/business-leaders.jpg",
     indexable: true,
   },
   "/programmes/finland": {
     title: "Finland Education Immersion | Global Education Lab",
     socialTitle: "Finland Education Immersion Programme",
-    description: "Experience Finland's world-renowned education system firsthand with workshops on early childhood learning, curriculum design, and pedagogy.",
+    description:
+      "Experience Finland's world-renowned education system firsthand with workshops on early childhood learning, curriculum design, and pedagogy.",
     image: "/images/finland.jpg",
     indexable: true,
   },
   "/programmes/gilp": {
     title: "Global India Leadership Programme at Cambridge | 14-18 Sept 2026",
     socialTitle: "Global India Leadership Programme – Cambridge Judge Business School",
-    description: "The Global India Leadership Programme (GILP) is a premier 5-day executive leadership experience (14-18 September 2026) at Cambridge Judge Business School for Board Members, CXOs, and Founders focusing on AI, frugal innovation, strategy, and global growth.",
+    description:
+      "The Global India Leadership Programme (GILP) is a premier 5-day executive leadership experience (14-18 September 2026) at Cambridge Judge Business School for Board Members, CXOs, and Founders focusing on AI, frugal innovation, strategy, and global growth.",
     image: "/gilp-banner.png",
     indexable: true,
   },
   "/programmes/graduate": {
     title: "Graduate Programmes & Bootcamps | Global Education Lab",
     socialTitle: "Graduate Programmes & Research Bootcamps at Cambridge",
-    description: "Global opportunities, research fellowships, and leadership bootcamps tailored for university graduates and early-career professionals.",
+    description:
+      "Global opportunities, research fellowships, and leadership bootcamps tailored for university graduates and early-career professionals.",
     image: "/images/programmes.jpg",
     indexable: true,
   },
   "/programmes/house-of-lords": {
     title: "House of Lords Leadership Forum | Global Education Lab",
     socialTitle: "House of Lords Executive Leadership Forum",
-    description: "Exclusive policy, leadership, and governance sessions hosted at the historic UK House of Lords for global delegates.",
+    description:
+      "Exclusive policy, leadership, and governance sessions hosted at the historic UK House of Lords for global delegates.",
     image: "/images/house-of-lords.jpg",
     indexable: true,
   },
   "/programmes/llp": {
     title: "Leadership Development Programme (LLP) | Global Education Lab",
     socialTitle: "Leadership Development Programme (LLP)",
-    description: "High-impact leadership development designed to build strategic vision, ethical decision-making, and organizational resilience.",
+    description:
+      "High-impact leadership development designed to build strategic vision, ethical decision-making, and organizational resilience.",
     image: "/images/business-leaders.jpg",
     indexable: true,
   },
   "/programmes/student-camps": {
     title: "International Student Summer Camps | Global Education Lab",
     socialTitle: "International Student Summer Camps at Global Campuses",
-    description: "Experiential learning summer camps at top global university campuses for school and university students.",
+    description:
+      "Experiential learning summer camps at top global university campuses for school and university students.",
     image: "/images/students.jpg",
     indexable: true,
   },
   "/programmes/teacher-training": {
     title: "Global Teacher Training Programme | Global Education Lab",
     socialTitle: "Global Teacher Training & Pedagogy Workshops",
-    description: "Professional development for educators in modern teaching techniques, AI integration, and student engagement strategies.",
+    description:
+      "Professional development for educators in modern teaching techniques, AI integration, and student engagement strategies.",
     image: "/images/teachers.jpg",
     indexable: true,
   },
   "/programmes/zero-to-one": {
     title: "Zero to One Venture Programme | Global Education Lab",
     socialTitle: "Zero to One Venture Creation Programme",
-    description: "A hands-on startup creation programme guiding participants from initial ideation to prototype build and market launch.",
+    description:
+      "A hands-on startup creation programme guiding participants from initial ideation to prototype build and market launch.",
     image: "/images/global-ventures.jpg",
     indexable: true,
   },
   "/school-leaders": {
     title: "School Leaders Programme | Global Education Lab",
     socialTitle: "School Leaders Executive Development at Cambridge",
-    description: "Specialized leadership development for principals, headmasters, and educational administrators to future-proof their schools.",
+    description:
+      "Specialized leadership development for principals, headmasters, and educational administrators to future-proof their schools.",
     image: "/images/cslp.jpg",
     indexable: true,
   },
   "/students": {
     title: "Student Programmes & Experiential Learning | Global Education Lab",
     socialTitle: "Student Programmes & Experiential Learning Journeys",
-    description: "Transformative study trips, STEM research mentorship, and youth entrepreneurship bootcamps designed to inspire young minds.",
+    description:
+      "Transformative study trips, STEM research mentorship, and youth entrepreneurship bootcamps designed to inspire young minds.",
     image: "/images/students.jpg",
     indexable: true,
   },
   "/students/architecture": {
     title: "Architecture & Urban Design Programme | Global Education Lab",
     socialTitle: "Architecture & Sustainable Design Intensive",
-    description: "Hands-on design workshops, architectural heritage tours, and sustainable urban planning intensives for aspiring architects.",
+    description:
+      "Hands-on design workshops, architectural heritage tours, and sustainable urban planning intensives for aspiring architects.",
     image: "/images/students.jpg",
     indexable: true,
   },
   "/students/entrepreneurship": {
     title: "Youth Entrepreneurship Programme | Global Education Lab",
     socialTitle: "Youth Entrepreneurship Programme",
-    description: "Teaching young innovators how to build startups, validate ideas, work in teams, and pitch to real mentors.",
+    description:
+      "Teaching young innovators how to build startups, validate ideas, work in teams, and pitch to real mentors.",
     image: "/images/students.jpg",
     indexable: true,
   },
   "/students/stem-research": {
     title: "STEM Research Fellowship | Global Education Lab",
     socialTitle: "STEM Research Fellowship for Students",
-    description: "Undergraduate and high school STEM research opportunities mentored by leading researchers in AI, biotech, and engineering.",
+    description:
+      "Undergraduate and high school STEM research opportunities mentored by leading researchers in AI, biotech, and engineering.",
     image: "/images/students.jpg",
     indexable: true,
   },
   "/teachers": {
     title: "Teacher Empowerment & Pedagogy | Global Education Lab",
     socialTitle: "Teacher Empowerment & Global Pedagogy Workshops",
-    description: "Empowering educators with global teaching standards, blended learning strategies, and classroom leadership skills.",
+    description:
+      "Empowering educators with global teaching standards, blended learning strategies, and classroom leadership skills.",
     image: "/images/teachers.jpg",
     indexable: true,
   },
   "/team": {
     title: "Leadership & Advisory Team | Global Education Lab",
     socialTitle: "Leadership & Academic Advisory Team",
-    description: "Meet the distinguished academics, industry leaders, and advisors driving Global Education Lab's global mission.",
+    description:
+      "Meet the distinguished academics, industry leaders, and advisors driving Global Education Lab's global mission.",
     image: "/images/about.png",
     indexable: true,
   },
   "/terms-of-service": {
     title: "Terms of Service | Global Education Lab",
-    description: "Terms of service and legal conditions for Global Education Lab website, registrations, and programme attendance.",
+    description:
+      "Terms of service and legal conditions for Global Education Lab website, registrations, and programme attendance.",
     image: "/images/default-social.jpg",
     indexable: true,
   },
   "/universities": {
     title: "University Partnerships & Exchanges | Global Education Lab",
     socialTitle: "University Partnerships & Academic Alliances",
-    description: "Building academic bridges, student exchanges, joint research projects, and institutional collaborations with leading global universities.",
+    description:
+      "Building academic bridges, student exchanges, joint research projects, and institutional collaborations with leading global universities.",
     image: "/images/about.png",
     indexable: true,
   },
   "/indialeadership": {
     title: "Global India Leadership Programme at Cambridge | 14-18 Sept 2026",
     socialTitle: "Global India Leadership Programme – Cambridge Judge Business School",
-    description: "The Global India Leadership Programme (GILP) is a premier 5-day executive leadership experience (14-18 September 2026) at Cambridge Judge Business School for Board Members, CXOs, and Founders focusing on AI, frugal innovation, strategy, and global growth.",
+    description:
+      "The Global India Leadership Programme (GILP) is a premier 5-day executive leadership experience (14-18 September 2026) at Cambridge Judge Business School for Board Members, CXOs, and Founders focusing on AI, frugal innovation, strategy, and global growth.",
     image: "/gilp-banner.png",
     indexable: true,
   },
   "/gsp": {
     title: "Graduate Summer Programme at Cambridge | Global Education Lab",
     socialTitle: "Graduate Summer Programme at Cambridge",
-    description: "Immersive graduate summer programme offering lectures, workshops, and networking at top global institutions.",
+    description:
+      "Immersive graduate summer programme offering lectures, workshops, and networking at top global institutions.",
     image: "/images/programmes.jpg",
     indexable: true,
   },
   "/cslp": {
     title: "Cambridge School Leadership Programme (CSLP) | GEL",
     socialTitle: "Cambridge School Leadership Programme (CSLP)",
-    description: "Transformational school leadership executive programme hosted at Cambridge for school owners, principals, and directors.",
+    description:
+      "Transformational school leadership executive programme hosted at Cambridge for school owners, principals, and directors.",
     image: "/images/cslp.jpg",
     indexable: true,
   },
   "/frugal-ai": {
     title: "Frugal AI Forum & Research | Global Education Lab",
     socialTitle: "Frugal AI Hub & Research at Cambridge",
-    description: "Exploring cost-effective, scalable artificial intelligence solutions for global education and emerging enterprise markets.",
+    description:
+      "Exploring cost-effective, scalable artificial intelligence solutions for global education and emerging enterprise markets.",
     image: "/images/frugal-ai.jpg",
     indexable: true,
   },
   "/blog": {
     title: "Blog & Articles | Global Education Lab",
     socialTitle: "GEL Blog – News, Insights & Stories",
-    description: "Read the latest news, alumni stories, research features, and educational insights from Global Education Lab.",
+    description:
+      "Read the latest news, alumni stories, research features, and educational insights from Global Education Lab.",
     image: "/images/about.png",
     indexable: true,
   },
   "/ventures/carbonsynq": {
     title: "CarbonSynq | Global Ventures | GEL",
     socialTitle: "CarbonSynq – AI & Sustainability Intelligence",
-    description: "CarbonSynq - Pioneering AI and data solutions for sustainability and carbon intelligence.",
+    description:
+      "CarbonSynq - Pioneering AI and data solutions for sustainability and carbon intelligence.",
     image: "/images/global-ventures.jpg",
     indexable: true,
-  }
+  },
 };

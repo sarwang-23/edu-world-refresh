@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Footer } from './index'
+import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Footer } from "./index";
 import {
   ArrowUpRight,
   GraduationCap,
@@ -18,20 +18,20 @@ import {
   Languages,
   Utensils,
   Quote,
-} from 'lucide-react'
-import schoolLeadersImg from '../assets/school_leaders_classroom.jpg'
-import person6Img from '../assets/person6.jpg'
-import jaideepImg from '../assets/faculty-jaideep.jpg'
-import aniruddhGupta from '../assets/people/aniruddh_gupta.jpg'
-import cambridgeTestimonialImg from '../assets/cambridge_1.jpg'
-import finlandTestimonialImg from '../assets/finland_1.jpg'
-import londonTestimonialImg from '../assets/executive-education.jpg'
+} from "lucide-react";
+import schoolLeadersImg from "../assets/school_leaders_classroom.jpg";
+import person6Img from "../assets/person6.jpg";
+import jaideepImg from "../assets/faculty-jaideep.jpg";
+import aniruddhGupta from "../assets/people/aniruddh_gupta.jpg";
+import cambridgeTestimonialImg from "../assets/cambridge_1.jpg";
+import finlandTestimonialImg from "../assets/finland_1.jpg";
+import londonTestimonialImg from "../assets/executive-education.jpg";
 import { buildMeta } from "@/lib/seo";
 
-export const Route = createFileRoute('/school-leaders')({
+export const Route = createFileRoute("/school-leaders")({
   head: () => buildMeta("/school-leaders"),
   component: SchoolLeaders,
-})
+});
 
 function SchoolLeaders() {
   return (
@@ -46,7 +46,7 @@ function SchoolLeaders() {
       <FinalCTA />
       <Footer />
     </div>
-  )
+  );
 }
 
 function Hero() {
@@ -56,13 +56,16 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pt-6">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
-            <GraduationCap className="h-3.5 w-3.5 text-gold" /> Built for School Leaders — Cohorts from 20+ Countries
+            <GraduationCap className="h-3.5 w-3.5 text-gold" /> Built for School Leaders — Cohorts
+            from 20+ Countries
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
             The world's finest classrooms, <span className="italic text-gold">opened to you.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
-            Global Education Lab curates immersive leadership programmes for school owners, principals and trustees — connecting them with Cambridge academics, Finnish policymakers, and pioneering institutions across four continents.
+            Global Education Lab curates immersive leadership programmes for school owners,
+            principals and trustees — connecting them with Cambridge academics, Finnish
+            policymakers, and pioneering institutions across four continents.
           </p>
           <div className="mt-10 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
             <a
@@ -86,12 +89,16 @@ function Hero() {
 
         <div className="relative lg:col-span-6">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img src={schoolLeadersImg}
+            <img
+              src={schoolLeadersImg}
               alt="Principals & School Leaders"
               className="h-full w-full object-cover"
-            loading="lazy" />
+              loading="lazy"
+            />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-[15px] uppercase tracking-[0.2em] text-gold">Leadership & Governance</p>
+              <p className="text-[15px] uppercase tracking-[0.2em] text-gold">
+                Leadership & Governance
+              </p>
               <p className="mt-1 text-xl font-semibold text-cream">
                 Empowering principals and educators across world-class ecosystems.
               </p>
@@ -100,7 +107,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CollaboratorsBar() {
@@ -111,9 +118,9 @@ function CollaboratorsBar() {
     "Green School Bali",
     "British Council",
     "INSEAD Alumni",
-  ]
+  ];
   // Duplicate 4× for seamless loop
-  const items = [...partners, ...partners, ...partners, ...partners]
+  const items = [...partners, ...partners, ...partners, ...partners];
 
   return (
     <section className="border-b border-border/50 bg-white py-8 overflow-hidden">
@@ -124,8 +131,8 @@ function CollaboratorsBar() {
         <div
           className="flex min-w-full shrink-0 gap-x-14 items-center"
           style={{
-            animation: 'marquee-rtl 25s linear infinite',
-            willChange: 'transform',
+            animation: "marquee-rtl 25s linear infinite",
+            willChange: "transform",
           }}
         >
           {items.map((partner, idx) => (
@@ -140,11 +147,11 @@ function CollaboratorsBar() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function WhyLeadersTravel() {
-  const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
 
   const features = [
     {
@@ -167,10 +174,10 @@ function WhyLeadersTravel() {
       title: "Certificate of participation",
       desc: "A co-branded certificate from Global Education Lab and the host institution — recognised by international boards.",
     },
-  ]
+  ];
 
   return (
-    <section className="border-b border-border/60 py-24" style={{ backgroundColor: '#FBF8F0' }}>
+    <section className="border-b border-border/60 py-24" style={{ backgroundColor: "#FBF8F0" }}>
       <div className="mx-auto max-w-7xl px-6">
         {/* Header: stacked, left-aligned */}
         <div className="mb-14 max-w-2xl">
@@ -178,40 +185,46 @@ function WhyLeadersTravel() {
             WHY LEADERS TRAVEL WITH US
           </p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-forest-deep md:text-5xl">
-            Built for school leaders with an <span className="font-serif italic text-gold">international ambition.</span>
+            Built for school leaders with an{" "}
+            <span className="font-serif italic text-gold">international ambition.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-forest/75 md:text-lg">
-            Our programmes are designed for schools that intend to compete on the world stage — whether you run a K-12 in Lagos, an international school in Ho Chi Minh City, or a growing group of academies in the Gulf. What you take home is not a workshop deck; it is a redesigned operating model.
+            Our programmes are designed for schools that intend to compete on the world stage —
+            whether you run a K-12 in Lagos, an international school in Ho Chi Minh City, or a
+            growing group of academies in the Gulf. What you take home is not a workshop deck; it is
+            a redesigned operating model.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, idx) => {
-            const isSelected = selectedIdx === idx
+            const isSelected = selectedIdx === idx;
             return (
               <div
                 key={idx}
                 onClick={() => setSelectedIdx(isSelected ? null : idx)}
                 className={`cursor-pointer rounded-2xl border p-8 transition-all duration-200 select-none ${
                   isSelected
-                    ? 'border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.02]'
-                    : 'border-forest/10 bg-white hover:shadow-md hover:border-gold/30'
+                    ? "border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.02]"
+                    : "border-forest/10 bg-white hover:shadow-md hover:border-gold/30"
                 }`}
               >
-                <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
-                  isSelected ? 'bg-gold/15' : 'bg-forest/10'
-                }`}>
+                <div
+                  className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
+                    isSelected ? "bg-gold/15" : "bg-forest/10"
+                  }`}
+                >
                   {f.icon}
                 </div>
                 <h3 className="text-lg font-bold text-forest-deep">{f.title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-forest/75">{f.desc}</p>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function StatsBar() {
@@ -220,9 +233,9 @@ function StatsBar() {
     { k: "150+", v: "SCHOOLS & INSTITUTIONS" },
     { k: "4", v: "CONTINENTS VISITED" },
     { k: "96%", v: "WOULD RECOMMEND" },
-  ]
+  ];
   // Duplicate 4× for seamless loop
-  const items = [...stats, ...stats, ...stats, ...stats]
+  const items = [...stats, ...stats, ...stats, ...stats];
 
   return (
     <section className="border-y border-cream/10 bg-forest-deep py-14 text-cream overflow-hidden">
@@ -230,24 +243,28 @@ function StatsBar() {
         <div
           className="flex min-w-full shrink-0 items-center gap-x-20"
           style={{
-            animation: 'marquee-ltr 22s linear infinite',
-            willChange: 'transform',
+            animation: "marquee-ltr 22s linear infinite",
+            willChange: "transform",
           }}
         >
           {items.map((s, idx) => (
             <div key={idx} className="flex flex-col items-center shrink-0">
-              <p className="font-sans text-4xl font-bold tracking-tight text-gold md:text-5xl">{s.k}</p>
-              <p className="mt-2 text-[15px] font-bold uppercase tracking-[0.2em] text-cream/70 whitespace-nowrap">{s.v}</p>
+              <p className="font-sans text-4xl font-bold tracking-tight text-gold md:text-5xl">
+                {s.k}
+              </p>
+              <p className="mt-2 text-[15px] font-bold uppercase tracking-[0.2em] text-cream/70 whitespace-nowrap">
+                {s.v}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ProgrammesCohorts() {
-  const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
 
   const programmes = [
     {
@@ -286,7 +303,7 @@ function ProgrammesCohorts() {
       desc: "Learn how the Green School re-imagined the classroom. Sustainability, project-based learning and curriculum design — inside a living campus.",
       link: "/programmes/bali",
     },
-  ]
+  ];
 
   return (
     <section id="cohorts" className="border-b border-border/60 bg-cream py-24">
@@ -297,28 +314,31 @@ function ProgrammesCohorts() {
             Four programmes. One passport.
           </h2>
           <p className="mt-5 text-[15px] text-forest/75 leading-relaxed">
-            Attend one, or combine two in the same academic year. Delegations welcomed from schools, groups and ministries.
+            Attend one, or combine two in the same academic year. Delegations welcomed from schools,
+            groups and ministries.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
           {programmes.map((p, idx) => {
-            const isSelected = selectedIdx === idx
+            const isSelected = selectedIdx === idx;
             return (
               <div
                 key={idx}
                 onClick={() => setSelectedIdx(isSelected ? null : idx)}
                 className={`cursor-pointer flex flex-col justify-between rounded-3xl border p-8 transition-all duration-200 select-none ${
                   isSelected
-                    ? 'border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.01]'
-                    : 'border-forest/10 bg-white hover:shadow-md hover:border-gold/30'
+                    ? "border-gold bg-white shadow-xl ring-2 ring-gold/50 scale-[1.01]"
+                    : "border-forest/10 bg-white hover:shadow-md hover:border-gold/30"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between text-[15px] font-bold uppercase tracking-[0.2em] text-forest/80 mb-6">
-                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-gold transition-colors ${
-                      isSelected ? 'bg-gold/15' : 'bg-forest/5'
-                    }`}>
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-gold transition-colors ${
+                        isSelected ? "bg-gold/15" : "bg-forest/5"
+                      }`}
+                    >
                       <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {p.tag}
                     </span>
                     <span>{p.delegates}</span>
@@ -348,12 +368,12 @@ function ProgrammesCohorts() {
                   </Link>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function EndToEndJourney() {
@@ -378,13 +398,15 @@ function EndToEndJourney() {
       title: "Arrive & immerse",
       desc: "Airport pickup, curated hotels, English-language programming, and a dedicated relationship manager on the ground.",
     },
-  ]
+  ];
 
   return (
-    <section className="border-b border-border/60 py-24" style={{ backgroundColor: '#FBF8F0' }}>
+    <section className="border-b border-border/60 py-24" style={{ backgroundColor: "#FBF8F0" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO ARRIVAL</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM ENQUIRY TO ARRIVAL
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             An international journey we handle end-to-end.
           </h2>
@@ -404,7 +426,7 @@ function EndToEndJourney() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function Testimonials() {
@@ -433,13 +455,15 @@ function Testimonials() {
       img: aniruddhGupta,
       bannerImg: londonTestimonialImg,
     },
-  ]
+  ];
 
   return (
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM OUR DELEGATES
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by school leaders across four continents.
           </h2>
@@ -453,17 +477,31 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <img src={r.bannerImg} alt={r.author} className="w-full h-full object-cover" loading="lazy" />
+                  <img
+                    src={r.bannerImg}
+                    alt={r.author}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
               </div>
 
               <div className="mt-8 border-t border-cream/10 pt-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0"><img src={r.img} alt={r.author} className="w-full h-full object-cover" loading="lazy" /></div>
+                <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-gold/40 flex-shrink-0">
+                  <img
+                    src={r.img}
+                    alt={r.author}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <div>
                   <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                  <p className="mt-0.5 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
+                  <p className="mt-0.5 text-[15px] font-bold uppercase tracking-widest text-cream/80">
+                    {r.role}
+                  </p>
                 </div>
               </div>
             </div>
@@ -471,7 +509,7 @@ function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function DelegationConcierge() {
@@ -496,19 +534,22 @@ function DelegationConcierge() {
       title: "Dietary & faith needs",
       desc: "Halal, vegetarian, Kosher, and Jain menus at every meal. Prayer rooms arranged near the venue.",
     },
-  ]
+  ];
 
   return (
     <section id="delegations" className="border-b border-border/60 bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR INTERNATIONAL DELEGATIONS</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              FOR INTERNATIONAL DELEGATIONS
+            </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Everything you need — before you board.
             </h2>
             <p className="mt-6 text-[15px] text-forest/80 leading-relaxed">
-              Bringing a leadership team across borders is a serious undertaking. Our concierge desk manages the details so your team arrives ready to learn, not exhausted from logistics.
+              Bringing a leadership team across borders is a serious undertaking. Our concierge desk
+              manages the details so your team arrives ready to learn, not exhausted from logistics.
             </p>
           </div>
 
@@ -526,24 +567,28 @@ function DelegationConcierge() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+          BRING YOUR LEADERSHIP TEAM
+        </p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Reserve your delegation for the next season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Cohorts are capped and fill six to nine months in advance. Register your school today and our admissions team will be in touch within two working days.
+          Cohorts are capped and fill six to nine months in advance. Register your school today and
+          our admissions team will be in touch within two working days.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
-            to="/contact" search={{ source: "School Leaders" }}
+            to="/contact"
+            search={{ source: "School Leaders" }}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE NOW <ArrowUpRight className="h-4 w-4" />
@@ -557,5 +602,5 @@ function FinalCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

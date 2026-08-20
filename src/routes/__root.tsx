@@ -80,15 +80,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Global Education Lab" },
-      { name: "description", content: "Global Education Lab — Transformative international education, leadership programmes, and university research partnerships." },
+      {
+        name: "description",
+        content:
+          "Global Education Lab — Transformative international education, leadership programmes, and university research partnerships.",
+      },
       { name: "author", content: "Global Education Lab" },
       { property: "og:title", content: "Global Education Lab" },
-      { property: "og:description", content: "Global Education Lab — Transformative international education, leadership programmes, and university research partnerships." },
-      { property: "og:image", content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg" },
+      {
+        property: "og:description",
+        content:
+          "Global Education Lab — Transformative international education, leadership programmes, and university research partnerships.",
+      },
+      {
+        property: "og:image",
+        content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@GlobalEduLab" },
-      { name: "twitter:image", content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg" },
+      {
+        name: "twitter:image",
+        content: "https://www.globaledulab.com/images/programmersimage_social_share.jpeg",
+      },
     ],
     links: [
       {

@@ -1,6 +1,6 @@
-const fs = require('fs');
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const fs = require("fs");
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
 const targetStr = `      {
         "type": "html",
@@ -15,7 +15,7 @@ const newGalleryBlock = `      {
 if (c.includes(targetStr)) {
   c = c.replace(targetStr, newGalleryBlock);
   fs.writeFileSync(p, c);
-  console.log('Success');
+  console.log("Success");
 } else {
-  console.log('Target string not found');
+  console.log("Target string not found");
 }

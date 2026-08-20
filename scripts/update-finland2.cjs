@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
 // 1. Remove the gallery I added at the top (which replaced the broken image block)
 const topGallery = `      {
@@ -17,7 +17,7 @@ const topGallery = `      {
           "/blog-images/finland2023_inline_15_bf78a9_86afdb368b024fe7b1010843875dae33_mv2.jpg"
         ]
       },`;
-c = c.replace(topGallery + '\\n', ''); // remove it completely
+c = c.replace(topGallery + "\\n", ""); // remove it completely
 
 // 2. Replace Day 1 image with a 3-column html block
 const day1Img = `      {
@@ -50,4 +50,4 @@ const day2Gallery = `      {
 c = c.replace(day2Img, day2Gallery);
 
 fs.writeFileSync(p, c);
-console.log('Applied Day 1 and Day 2 layouts');
+console.log("Applied Day 1 and Day 2 layouts");

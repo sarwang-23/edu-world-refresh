@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
 // 1. Replace the invalid image block
 const badImgBlock = `      {
@@ -31,10 +31,10 @@ const headings = [
   "Day 2 (Kerava)",
   "Day 3 (Helsinki)",
   "Day 4 (Turku)",
-  "Day 5 (Turku)"
+  "Day 5 (Turku)",
 ];
 
-headings.forEach(h => {
+headings.forEach((h) => {
   const target = `      {
         "type": "paragraph",
         "text": "${h}"
@@ -48,4 +48,4 @@ headings.forEach(h => {
 });
 
 fs.writeFileSync(p, c);
-console.log('Updated Finland post');
+console.log("Updated Finland post");

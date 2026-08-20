@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Footer } from './index'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Footer } from "./index";
 import {
   ArrowUpRight,
   Building2,
@@ -18,18 +18,18 @@ import {
   Sparkles,
   CheckCircle2,
   ChevronRight,
-  Play
-} from 'lucide-react'
-import businessLeadersImg from '../assets/executive-education.jpg'
-import aashishImg from '../assets/alumni4.jpg'
-import snigdhaImg from '../assets/alumni1.jpg'
-import samTullyImg from '../assets/people/sam_tully.jpg'
+  Play,
+} from "lucide-react";
+import businessLeadersImg from "../assets/executive-education.jpg";
+import aashishImg from "../assets/alumni4.jpg";
+import snigdhaImg from "../assets/alumni1.jpg";
+import samTullyImg from "../assets/people/sam_tully.jpg";
 import { buildMeta } from "@/lib/seo";
 
-export const Route = createFileRoute('/business-leaders')({
+export const Route = createFileRoute("/business-leaders")({
   head: () => buildMeta("/business-leaders"),
   component: BusinessLeaders,
-})
+});
 
 function BusinessLeaders() {
   return (
@@ -44,24 +44,27 @@ function BusinessLeaders() {
       <FinalCTA />
       <Footer />
     </div>
-  )
+  );
 }
 
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
-      
+
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-12 lg:gap-8 items-start pb-12 md:pb-20 pt-6">
         <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3.5 py-1 text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70">
             <Building2 className="h-3.5 w-3.5 text-gold" /> For Business Leaders & Entrepreneurs
           </span>
           <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-forest md:text-5xl lg:text-[4.25rem]">
-            Leadership sharpened at the world's <span className="italic text-gold font-serif">great institutions.</span>
+            Leadership sharpened at the world's{" "}
+            <span className="italic text-gold font-serif">great institutions.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-forest/80 md:text-lg">
-            We deliver leadership workshops and corporate learning events on ESG, organisational behaviour, entrepreneurship and corporate governance — helping CXOs and senior executives sharpen strategic thinking and strengthen leadership capability.
+            We deliver leadership workshops and corporate learning events on ESG, organisational
+            behaviour, entrepreneurship and corporate governance — helping CXOs and senior
+            executives sharpen strategic thinking and strengthen leadership capability.
           </p>
           <div className="mt-10 flex items-center gap-3.5 flex-wrap sm:flex-nowrap">
             <a
@@ -77,17 +80,20 @@ function Hero() {
               Corporate Delegations
             </a>
           </div>
-
         </div>
 
         <div className="relative lg:col-span-6 lg:pt-12 md:pt-8">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20">
-            <img src={businessLeadersImg}
+            <img
+              src={businessLeadersImg}
               alt="Business Leaders"
               className="h-full w-full object-cover"
-            loading="lazy" />
+              loading="lazy"
+            />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/40 to-transparent p-6">
-              <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">CXOs & ENTREPRENEURS</p>
+              <p className="text-[15px] uppercase tracking-[0.2em] text-gold font-bold">
+                CXOs & ENTREPRENEURS
+              </p>
               <p className="mt-1 text-xl font-bold text-cream">
                 Where global business leaders come to learn, think and connect.
               </p>
@@ -96,7 +102,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CollaboratorsBar() {
@@ -109,7 +115,7 @@ function CollaboratorsBar() {
     "Entrepreneurs Lab UK",
     "Global Innovation Corridor",
     "Global India Leadership",
-  ]
+  ];
 
   return (
     <div className="border-b border-border/60 bg-white py-6 overflow-hidden flex flex-col items-center">
@@ -119,13 +125,19 @@ function CollaboratorsBar() {
       <div className="relative flex w-full">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {partners.map((partner, i) => (
-            <span key={i} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={i}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/80">✦</span>
             </span>
           ))}
           {partners.map((partner, i) => (
-            <span key={`dup-${i}`} className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest">
+            <span
+              key={`dup-${i}`}
+              className="mx-8 flex items-center text-[15px] font-bold text-forest/80 uppercase tracking-widest"
+            >
               {partner}
               <span className="ml-16 text-gold/80">✦</span>
             </span>
@@ -133,7 +145,7 @@ function CollaboratorsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function WhyLeadersTravel() {
@@ -158,18 +170,25 @@ function WhyLeadersTravel() {
       title: "Recognition & networks",
       desc: "Co-branded certification with our host institutions and continued access to global executive networks.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#F7F5F0]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">WHY EXECUTIVES TRAVEL WITH US</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            WHY EXECUTIVES TRAVEL WITH US
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-3xl leading-tight">
-            Built for leaders preparing to <span className="italic text-gold font-serif">lead global growth.</span>
+            Built for leaders preparing to{" "}
+            <span className="italic text-gold font-serif">lead global growth.</span>
           </h2>
           <p className="mt-6 text-[15px] text-forest/80 leading-relaxed max-w-3xl">
-            We partner with corporations and industry associations to design bespoke leadership workshops and executive learning experiences tailored to their strategic priorities. Beyond capability building, we create platforms that connect leaders, businesses and markets, enabling cross-border collaboration, commercial partnerships and the development of new corridors of trade and opportunity
+            We partner with corporations and industry associations to design bespoke leadership
+            workshops and executive learning experiences tailored to their strategic priorities.
+            Beyond capability building, we create platforms that connect leaders, businesses and
+            markets, enabling cross-border collaboration, commercial partnerships and the
+            development of new corridors of trade and opportunity
           </p>
         </div>
 
@@ -186,7 +205,7 @@ function WhyLeadersTravel() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function StatsBar() {
@@ -195,7 +214,7 @@ function StatsBar() {
     { label: "Global", sub: "EXECUTIVE NETWORK" },
     { label: "Cambridge", sub: "FACULTY & SESSIONS" },
     { label: "4+", sub: "CORE THEMES" },
-  ]
+  ];
 
   return (
     <div className="bg-forest py-6 overflow-hidden">
@@ -204,9 +223,14 @@ function StatsBar() {
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
               {stats.map((stat, idx) => (
-                <div key={idx} className="mx-12 flex flex-col items-center justify-center text-center">
+                <div
+                  key={idx}
+                  className="mx-12 flex flex-col items-center justify-center text-center"
+                >
                   <span className="text-2xl font-bold text-gold">{stat.label}</span>
-                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">{stat.sub}</span>
+                  <span className="mt-1 text-[15px] font-bold tracking-[0.2em] text-cream/70 uppercase">
+                    {stat.sub}
+                  </span>
                 </div>
               ))}
             </div>
@@ -214,7 +238,7 @@ function StatsBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function OngoingProgrammes() {
@@ -245,8 +269,8 @@ function OngoingProgrammes() {
       quote: "The next bold move is rarely a solo one.",
       desc: "Three days in-person at Judge Business School to move a venture from zero to one — validation sprints, mentor clinics and founder-to-founder dialogues.",
       link: "/programmes/zero-to-one",
-    }
-  ]
+    },
+  ];
 
   return (
     <section id="programmes" className="py-24 bg-cream">
@@ -260,7 +284,10 @@ function OngoingProgrammes() {
         <div className="grid gap-6 md:grid-cols-2">
           {programmes.map((p, idx) => {
             return (
-              <div key={idx} className={`flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm ${idx === programmes.length - 1 && programmes.length % 2 !== 0 ? 'md:col-span-2 md:mx-auto md:w-[calc(50%-12px)] w-full' : ''}`}>
+              <div
+                key={idx}
+                className={`flex flex-col justify-between rounded-2xl border border-forest/10 bg-white p-8 shadow-sm ${idx === programmes.length - 1 && programmes.length % 2 !== 0 ? "md:col-span-2 md:mx-auto md:w-[calc(50%-12px)] w-full" : ""}`}
+              >
                 <div>
                   <div className="flex items-center justify-between mb-5">
                     <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold bg-gold/10 px-3 py-1.5 rounded-full">
@@ -270,26 +297,24 @@ function OngoingProgrammes() {
                       {p.audience}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-forest-deep tracking-tight mb-4">
                     {p.title}
                   </h3>
-                  
+
                   <div className="flex flex-col gap-2.5 mb-5 border-l-2 border-gold/40 pl-4 py-1">
                     <div className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-forest/80">
-                      <MapPin className="h-4 w-4 text-gold shrink-0" /> 
+                      <MapPin className="h-4 w-4 text-gold shrink-0" />
                       <span className="leading-tight">{p.location}</span>
                     </div>
                     <div className="text-[16px] font-serif italic text-forest/70 leading-snug">
                       "{p.quote}"
                     </div>
                   </div>
-                  
-                  <p className="text-[15px] leading-relaxed text-forest/70">
-                    {p.desc}
-                  </p>
+
+                  <p className="text-[15px] leading-relaxed text-forest/70">{p.desc}</p>
                 </div>
-                
+
                 <div className="mt-8">
                   <Link
                     to={p.link}
@@ -299,12 +324,12 @@ function OngoingProgrammes() {
                   </Link>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function EndToEndJourney() {
@@ -329,13 +354,15 @@ function EndToEndJourney() {
       title: "Arrive & engage",
       desc: "Airport pickup, curated stays, and a dedicated relationship manager on the ground for the full engagement.",
     },
-  ]
+  ];
 
   return (
     <section className="py-24 bg-[#FAF8F4] border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM ENQUIRY TO CAMBRIDGE</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM ENQUIRY TO CAMBRIDGE
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl max-w-2xl">
             An executive journey we handle end-to-end.
           </h2>
@@ -355,39 +382,41 @@ function EndToEndJourney() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function Testimonials() {
   const reviews = [
     {
       quote:
-        '"Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing \'jugaad\' discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation."',
+        "\"Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing 'jugaad' discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.\"",
       author: "Dr. Aashish Chaudhry",
       role: "MD, AAKASH HEALTHCARE (INDIA)",
-      img: aashishImg
+      img: aashishImg,
     },
     {
       quote:
         '"This programme helped articulate something critical: leadership is also about language. It equips founders to translate their journey into frameworks that resonate with investors and stakeholders. That shift, from building to being understood, unlocks the next level of growth and influence."',
       author: "Snigdha Manchanda",
       role: "FOUNDER, TEATRUNK (INDIA)",
-      img: snigdhaImg
+      img: snigdhaImg,
     },
     {
       quote:
         '"I was privileged to attend the Global Education Lab\'s Global India Leadership Programme... Somewhere everyone should visit at least once, you will not be disappointed. That is why I called it a Rolls Royce."',
       author: "Sam Tully",
       role: "TRUSTEE, PRATHAM UK",
-      img: samTullyImg
+      img: samTullyImg,
     },
-  ]
+  ];
 
   return (
     <section className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
-          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FROM OUR DELEGATES</p>
+          <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            FROM OUR DELEGATES
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-cream md:text-5xl">
             Trusted by CXOs, founders and boards.
           </h2>
@@ -401,7 +430,12 @@ function Testimonials() {
             >
               <div>
                 <div className="aspect-video w-full rounded-xl bg-black/10 overflow-hidden relative mb-6 border border-white/10">
-                   <img src={r.img} alt={r.author} className="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+                  <img
+                    src={r.img}
+                    alt={r.author}
+                    className="w-full h-full object-cover object-[center_30%]"
+                    loading="lazy"
+                  />
                 </div>
                 <Quote className="h-8 w-8 text-gold/80 mb-4" />
                 <p className="text-[15px] leading-relaxed text-cream/90 italic">{r.quote}</p>
@@ -409,14 +443,16 @@ function Testimonials() {
 
               <div className="mt-8 border-t border-cream/10 pt-4">
                 <p className="text-[15px] font-bold text-gold">{r.author}</p>
-                <p className="mt-1 text-[15px] font-bold uppercase tracking-widest text-cream/80">{r.role}</p>
+                <p className="mt-1 text-[15px] font-bold uppercase tracking-widest text-cream/80">
+                  {r.role}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function DelegationConcierge() {
@@ -451,19 +487,23 @@ function DelegationConcierge() {
       title: "Dietary & faith needs",
       desc: "Halal, vegetarian, Kosher and Jain menus at every meal. Prayer rooms arranged near each venue.",
     },
-  ]
+  ];
 
   return (
     <section id="delegations" className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
-            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">FOR CORPORATE DELEGATIONS</p>
+            <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              FOR CORPORATE DELEGATIONS
+            </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-forest-deep md:text-5xl leading-tight">
               Everything your leadership team needs — before you board.
             </h2>
             <p className="mt-6 text-[15px] text-forest/80 leading-relaxed">
-              Bringing a C-suite across borders is a serious undertaking. Our concierge desk manages the details so your team arrives ready to think, learn and build — not exhausted from logistics.
+              Bringing a C-suite across borders is a serious undertaking. Our concierge desk manages
+              the details so your team arrives ready to think, learn and build — not exhausted from
+              logistics.
             </p>
           </div>
 
@@ -481,24 +521,28 @@ function DelegationConcierge() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FinalCTA() {
   return (
     <section className="bg-forest-deep py-24 text-center text-cream">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">BRING YOUR LEADERSHIP TEAM</p>
+        <p className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+          BRING YOUR LEADERSHIP TEAM
+        </p>
         <h2 className="mt-4 font-serif text-4xl text-cream md:text-5xl">
           Reserve your seats for the next season.
         </h2>
         <p className="mt-6 text-[15px] leading-relaxed text-cream/80 max-w-xl mx-auto">
-          Cohorts are capped and typically fill six to nine months in advance. Register today and our admissions team will be in touch within two working days.
+          Cohorts are capped and typically fill six to nine months in advance. Register today and
+          our admissions team will be in touch within two working days.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
           <Link
-            to="/contact" search={{ source: "Business Leaders" }}
+            to="/contact"
+            search={{ source: "Business Leaders" }}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-[15px] font-bold uppercase tracking-widest text-forest transition-all hover:bg-gold/90 hover:scale-105 shadow-xl shadow-gold/10"
           >
             ENQUIRE NOW <ArrowUpRight className="h-4 w-4" />
@@ -512,5 +556,5 @@ function FinalCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

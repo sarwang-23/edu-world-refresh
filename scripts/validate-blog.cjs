@@ -1,19 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const MIGRATED_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'migrated_posts.json');
-const PUBLIC_IMAGE_DIR = path.join(__dirname, '..', 'public', 'blog-images');
-const REPORT_OUTPUT_PATH = path.join(__dirname, '..', 'migration_report.md');
+const MIGRATED_JSON_PATH = path.join(__dirname, "..", "src", "data", "migrated_posts.json");
+const PUBLIC_IMAGE_DIR = path.join(__dirname, "..", "public", "blog-images");
+const REPORT_OUTPUT_PATH = path.join(__dirname, "..", "migration_report.md");
 
 function validateMigration() {
-  console.log('🔍 Starting Blog Migration Validation & Audit...\n');
+  console.log("🔍 Starting Blog Migration Validation & Audit...\n");
 
   if (!fs.existsSync(MIGRATED_JSON_PATH)) {
-    console.error('❌ Error: migrated_posts.json does not exist. Run scrape-blog.cjs first.');
+    console.error("❌ Error: migrated_posts.json does not exist. Run scrape-blog.cjs first.");
     process.exit(1);
   }
 
-  const posts = JSON.parse(fs.readFileSync(MIGRATED_JSON_PATH, 'utf-8'));
+  const posts = JSON.parse(fs.readFileSync(MIGRATED_JSON_PATH, "utf-8"));
   const totalPosts = posts.length;
 
   let missingImages = 0;
@@ -37,13 +37,13 @@ function validateMigration() {
     }
 
     if (post.category) categories.add(post.category);
-    if (post.tags) post.tags.forEach(t => tags.add(t));
+    if (post.tags) post.tags.forEach((t) => tags.add(t));
 
     // Cover Image Check
     if (post.cover) {
       totalImagesCount++;
-      if (post.cover.startsWith('/blog-images/')) {
-        const coverFilename = post.cover.replace('/blog-images/', '');
+      if (post.cover.startsWith("/blog-images/")) {
+        const coverFilename = post.cover.replace("/blog-images/", "");
         const coverPath = path.join(PUBLIC_IMAGE_DIR, coverFilename);
         if (!fs.existsSync(coverPath)) {
           missingImages++;
@@ -56,10 +56,10 @@ function validateMigration() {
 
     // Inline images check
     if (post.images && Array.isArray(post.images)) {
-      post.images.forEach(img => {
+      post.images.forEach((img) => {
         totalImagesCount++;
-        if (img.local && img.local.startsWith('/blog-images/')) {
-          const imgFilename = img.local.replace('/blog-images/', '');
+        if (img.local && img.local.startsWith("/blog-images/")) {
+          const imgFilename = img.local.replace("/blog-images/", "");
           const imgPath = path.join(PUBLIC_IMAGE_DIR, imgFilename);
           if (!fs.existsSync(imgPath)) {
             missingImages++;
@@ -72,7 +72,9 @@ function validateMigration() {
     // Metadata Check
     if (!post.title || !post.excerpt || !post.seo?.canonical) {
       missingMetadata++;
-      warnings.push(`Post "${post.slug}": Missing mandatory metadata (title, excerpt, or canonical)`);
+      warnings.push(
+        `Post "${post.slug}": Missing mandatory metadata (title, excerpt, or canonical)`,
+      );
     }
 
     // Link check in HTML
@@ -80,20 +82,23 @@ function validateMigration() {
       const oldDomainMatches = post.rawHtml.match(/https?:\/\/(www\.)?globaledulab\.com\/post\//g);
       if (oldDomainMatches) {
         brokenLinks += oldDomainMatches.length;
-        errors.push(`Post "${post.slug}": Contains ${oldDomainMatches.length} un-migrated internal URLs`);
+        errors.push(
+          `Post "${post.slug}": Contains ${oldDomainMatches.length} un-migrated internal URLs`,
+        );
       }
     }
   });
 
-  const successRate = totalPosts > 0 ? (((totalPosts - errors.length) / totalPosts) * 100).toFixed(1) : 0;
+  const successRate =
+    totalPosts > 0 ? (((totalPosts - errors.length) / totalPosts) * 100).toFixed(1) : 0;
 
-  console.log('--- Migration Audit Summary ---');
+  console.log("--- Migration Audit Summary ---");
   console.log(`Total Discovered Posts: ${totalPosts}`);
   console.log(`Successfully Processed: ${totalPosts - errors.length}`);
   console.log(`Total Images Managed:   ${totalImagesCount}`);
   console.log(`Missing Images:         ${missingImages}`);
   console.log(`Broken Internal Links:  ${brokenLinks}`);
-  console.log(`Unique Categories:     ${Array.from(categories).join(', ')}`);
+  console.log(`Unique Categories:     ${Array.from(categories).join(", ")}`);
   console.log(`Success Percentage:     ${successRate}%\n`);
 
   // Write Markdown Report
@@ -113,9 +118,13 @@ function validateMigration() {
 
 ## Content & Taxonomy Overview
 - **Unique Categories (${categories.size})**:
-${Array.from(categories).map(c => `  - ${c}`).join('\n')}
+${Array.from(categories)
+  .map((c) => `  - ${c}`)
+  .join("\n")}
 - **Unique Tags (${tags.size})**:
-${Array.from(tags).map(t => `  - ${t}`).join('\n')}
+${Array.from(tags)
+  .map((t) => `  - ${t}`)
+  .join("\n")}
 
 ---
 
@@ -123,17 +132,17 @@ ${Array.from(tags).map(t => `  - ${t}`).join('\n')}
 
 | # | Title | Slug | Category | Images | Read Time | Status |
 |---|---|---|---|---|---|---|
-${posts.map((p, i) => `| ${i + 1} | ${p.title.replace(/\|/g, '-')} | \`${p.slug}\` | ${p.category} | ${p.images ? p.images.length + 1 : 1} | ${p.readTime} | ✅ Valid |`).join('\n')}
+${posts.map((p, i) => `| ${i + 1} | ${p.title.replace(/\|/g, "-")} | \`${p.slug}\` | ${p.category} | ${p.images ? p.images.length + 1 : 1} | ${p.readTime} | ✅ Valid |`).join("\n")}
 
 ---
 
 ## Errors & Warnings
 
 ### Errors (${errors.length})
-${errors.length === 0 ? '_No critical errors encountered._' : errors.map(e => `- ❌ ${e}`).join('\n')}
+${errors.length === 0 ? "_No critical errors encountered._" : errors.map((e) => `- ❌ ${e}`).join("\n")}
 
 ### Warnings (${warnings.length})
-${warnings.length === 0 ? '_No warnings reported._' : warnings.map(w => `- ⚠️ ${w}`).join('\n')}
+${warnings.length === 0 ? "_No warnings reported._" : warnings.map((w) => `- ⚠️ ${w}`).join("\n")}
 
 ---
 

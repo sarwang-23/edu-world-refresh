@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { buildMeta } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, ArrowUpRight, Clock, Globe2, CheckCircle2, Loader2 } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ArrowUpRight,
+  Clock,
+  Globe2,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
 import { Footer } from "./index";
 
 export const Route = createFileRoute("/contact")({
@@ -13,7 +22,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 // Apps Script Web App URL — deployed from Code.gs
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbxDCEewBT8A4S7DDFk1BRq4ZKdU-6iv2TnWXqKBdNHsWbFsOqZCwiOg2ArCv3K3VudO/exec";
 
 import { COUNTRY_CODES } from "@/data/countryCodes";
 
@@ -33,11 +43,11 @@ function ContactPage() {
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleChange = (field: keyof typeof formData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-  };
+  const handleChange =
+    (field: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,19 +89,19 @@ function ContactPage() {
 
   return (
     <div className="min-h-screen font-sans">
-
       {/* ═══════════════════════════════════════════
           HERO — Full-viewport split layout
       ═══════════════════════════════════════════ */}
       <section className="min-h-screen flex flex-col lg:flex-row">
-
         {/* LEFT PANEL — Immersive dark image panel */}
         <div className="relative lg:w-[42%] min-h-[420px] lg:min-h-screen flex flex-col justify-between overflow-hidden">
           {/* Background image */}
-          <img src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
+          <img
+            src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
             alt="Cambridge programme"
             className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy" />
+            loading="lazy"
+          />
           {/* Multi-layer overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/85 to-forest-deep/70" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
@@ -100,13 +110,15 @@ function ContactPage() {
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
 
           {/* Top content */}
-          <div className="relative z-10 px-10 md:px-14 pt-16">
+          <div className="relative z-10 px-6 sm:px-10 md:px-14 pt-16">
             <div className="flex items-center gap-3 mb-10">
               <div className="h-px w-10 bg-gold" />
-              <span className="text-[15px] font-bold tracking-[0.28em] text-gold uppercase">Global Education Lab</span>
+              <span className="text-[15px] font-bold tracking-[0.28em] text-gold uppercase">
+                Global Education Lab
+              </span>
             </div>
 
-            <h1 className="text-[2.6rem] md:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
+            <h1 className="text-[2rem] sm:text-[2.6rem] md:text-[3.2rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
               Begin a<br />
               <em className="font-serif italic font-normal text-gold not-italic">conversation.</em>
             </h1>
@@ -117,17 +129,38 @@ function ContactPage() {
             {/* Contact rows */}
             <div className="space-y-4">
               {[
-                { icon: <Phone className="h-3.5 w-3.5 text-gold" />, val: "+44 (01223) 362994", href: "tel:+441223362994" },
-                { icon: <Mail className="h-3.5 w-3.5 text-gold" />, val: "info@globaledulab.com", href: "mailto:info@globaledulab.com" },
-                { icon: <MapPin className="h-3.5 w-3.5 text-gold" />, val: "Newnham Road, Cambridge, UK, CB3 9EY", href: null },
-                { icon: <Clock className="h-3.5 w-3.5 text-gold" />, val: "Mon–Fri · 09:00–18:00 GMT", href: null },
+                {
+                  icon: <Phone className="h-3.5 w-3.5 text-gold" />,
+                  val: "+44 (01223) 362994",
+                  href: "tel:+441223362994",
+                },
+                {
+                  icon: <Mail className="h-3.5 w-3.5 text-gold" />,
+                  val: "info@globaledulab.com",
+                  href: "mailto:info@globaledulab.com",
+                },
+                {
+                  icon: <MapPin className="h-3.5 w-3.5 text-gold" />,
+                  val: "Newnham Road, Cambridge, UK, CB3 9EY",
+                  href: null,
+                },
+                {
+                  icon: <Clock className="h-3.5 w-3.5 text-gold" />,
+                  val: "Mon–Fri · 09:00–18:00 GMT",
+                  href: null,
+                },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3.5 group">
                   <div className="h-7 w-7 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold/20 group-hover:border-gold/30 transition-all duration-300">
                     {item.icon}
                   </div>
                   {item.href ? (
-                    <a href={item.href} className="text-[15px] text-white/70 group-hover:text-white transition-colors duration-200 leading-relaxed">{item.val}</a>
+                    <a
+                      href={item.href}
+                      className="text-[15px] text-white/70 group-hover:text-white transition-colors duration-200 leading-relaxed"
+                    >
+                      {item.val}
+                    </a>
                   ) : (
                     <p className="text-[15px] text-white/70 leading-relaxed">{item.val}</p>
                   )}
@@ -140,7 +173,9 @@ function ContactPage() {
           <div className="relative z-10 px-10 md:px-14 pb-10 mt-10">
             <div className="border-t border-white/10 pt-6 flex items-end justify-between">
               <div>
-                <p className="text-[15px] uppercase tracking-[0.25em] text-white/80 mb-1">Reply within</p>
+                <p className="text-[15px] uppercase tracking-[0.25em] text-white/80 mb-1">
+                  Reply within
+                </p>
                 <p className="text-[2.2rem] font-bold text-white leading-none">24h</p>
               </div>
             </div>
@@ -150,14 +185,14 @@ function ContactPage() {
         {/* RIGHT PANEL — Premium form */}
         <div className="lg:w-[58%] bg-white flex items-start lg:items-center justify-center px-8 md:px-14 lg:px-20 py-28 lg:py-0 overflow-y-auto">
           <div className="w-full max-w-[560px]">
-
             {/* Form heading */}
             <div className="mb-10">
               <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Send a Message
               </span>
               <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
-                How can we<br />
+                How can we
+                <br />
                 <span className="font-serif italic font-normal text-forest/70">help you?</span>
               </h2>
             </div>
@@ -179,7 +214,6 @@ function ContactPage() {
               </div>
             ) : (
               <form className="space-y-6" onSubmit={handleSubmit}>
-
                 {/* Name */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="group">
@@ -213,7 +247,9 @@ function ContactPage() {
                 {/* Email */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-2">
-                    <label className="text-[15px] font-semibold text-forest/80">Email Address</label>
+                    <label className="text-[15px] font-semibold text-forest/80">
+                      Email Address
+                    </label>
                   </div>
                   <input
                     type="email"
@@ -255,7 +291,9 @@ function ContactPage() {
                 {/* Interest */}
                 <div>
                   <div className="flex items-baseline gap-1.5 mb-3">
-                    <label className="text-[15px] font-semibold text-forest/80">I am Interested In</label>
+                    <label className="text-[15px] font-semibold text-forest/80">
+                      I am Interested In
+                    </label>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {[
@@ -270,10 +308,11 @@ function ContactPage() {
                         key={i}
                         type="button"
                         onClick={() => setSelectedInterest(tag)}
-                        className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${selectedInterest === tag
+                        className={`flex items-center gap-2.5 rounded-xl px-4 py-3 text-[12.5px] font-semibold text-left transition-all duration-200 border ${
+                          selectedInterest === tag
                             ? "bg-forest-deep border-forest-deep text-white shadow-md"
                             : "bg-[#F7F5F1] border-transparent text-forest/80 hover:bg-[#EDE8DF] hover:text-forest hover:border-forest/10"
-                          }`}
+                        }`}
                       >
                         {selectedInterest === tag ? (
                           <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
@@ -356,10 +395,18 @@ function ContactPage() {
               <span className="inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.22em] text-gold uppercase mb-4">
                 <span className="h-px w-6 bg-gold inline-block" /> Find Us
               </span>
-              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">Our Location</h2>
+              <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep leading-tight mb-4">
+                Our Location
+              </h2>
               <div className="space-y-3 text-[13.5px] text-forest/80 leading-relaxed">
                 <p className="font-semibold text-forest-deep">Global Education Lab Ltd</p>
-                <p>Newnham Road<br />Cambridge, UK<br />CB3 9EY</p>
+                <p>
+                  Newnham Road
+                  <br />
+                  Cambridge, UK
+                  <br />
+                  CB3 9EY
+                </p>
               </div>
               <a
                 href="https://www.google.com/maps/search/Newnham+Road+Cambridge+UK+CB3+9EY"
@@ -397,7 +444,8 @@ function ContactPage() {
                 <span className="h-px w-6 bg-gold inline-block" /> Our Presence
               </span>
               <h2 className="text-[2rem] md:text-[2.3rem] font-bold text-forest-deep">
-                Across <em className="font-serif italic font-normal text-forest/70">three continents</em>
+                Across{" "}
+                <em className="font-serif italic font-normal text-forest/70">three continents</em>
               </h2>
             </div>
             <div className="flex items-center gap-2 text-[15px] text-forest/80 font-medium">
@@ -406,17 +454,41 @@ function ContactPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-forest/8">
             {[
-              { region: "United Kingdom", city: "Cambridge", role: "Headquarters", desc: "Where our research, leadership and global education programmes are shaped.", num: "01" },
-              { region: "India", city: "Delhi — Mumbai", role: "Regional Office", desc: "Programme delivery and school partnerships across the subcontinent.", num: "02" },
-              { region: "International", city: "Finland — Bali", role: "Residencies", desc: "Immersive leadership residencies and cross-cultural learning experiences.", num: "03" },
+              {
+                region: "United Kingdom",
+                city: "Cambridge",
+                role: "Headquarters",
+                desc: "Where our research, leadership and global education programmes are shaped.",
+                num: "01",
+              },
+              {
+                region: "India",
+                city: "Delhi — Mumbai",
+                role: "Regional Office",
+                desc: "Programme delivery and school partnerships across the subcontinent.",
+                num: "02",
+              },
+              {
+                region: "International",
+                city: "Finland — Bali",
+                role: "Residencies",
+                desc: "Immersive leadership residencies and cross-cultural learning experiences.",
+                num: "03",
+              },
             ].map((loc, i) => (
               <div key={i} className="group px-0 md:px-10 first:pl-0 last:pr-0 py-8 md:py-0">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">{loc.region}</span>
+                  <span className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">
+                    {loc.region}
+                  </span>
                   <span className="text-[1.8rem] font-serif italic text-forest/8">{loc.num}</span>
                 </div>
-                <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">{loc.city}</h3>
-                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-forest/80 mb-4">{loc.role}</p>
+                <h3 className="text-[1.4rem] font-bold text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">
+                  {loc.city}
+                </h3>
+                <p className="text-[15px] font-bold uppercase tracking-[0.18em] text-forest/80 mb-4">
+                  {loc.role}
+                </p>
                 <p className="text-[13.5px] text-forest/80 leading-relaxed">{loc.desc}</p>
               </div>
             ))}

@@ -3,8 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Camera, FileText, ChevronDown } from "lucide-react";
 import { useState, useRef } from "react";
 import { COUNTRY_CODES } from "@/data/countryCodes";
-import gilpBannerImg from "@/assets/gilp-delegate-banner.jpg";// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOvfz0SOEgLYNf26E2Sz8B4DPvxyNEU0LQwZbvmLl2gmIcDHE46LnA6nZMv2PQ8qxV/exec";
+import gilpBannerImg from "@/assets/gilp-delegate-banner.jpg"; // TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwOvfz0SOEgLYNf26E2Sz8B4DPvxyNEU0LQwZbvmLl2gmIcDHE46LnA6nZMv2PQ8qxV/exec";
 
 // Fires a form submission to the GILP Apps Script backend.
 // Uses no-cors + urlencoded body so it works without any CORS setup on the Apps Script side.
@@ -73,7 +74,7 @@ function UploadField({
         Array.from(files).map(async (file) => {
           const { base64, mimeType } = await fileToBase64(file);
           return { name: file.name, base64, mimeType };
-        })
+        }),
       );
       onFilesReady(results);
     } finally {
@@ -86,19 +87,26 @@ function UploadField({
       <div
         onClick={() => inputRef.current?.click()}
         className={`relative flex items-center gap-4 w-full px-5 py-4 rounded-xl border border-dashed cursor-pointer transition-all duration-200 group
-          ${fileName
-            ? "bg-forest-deep/5 border-forest-deep/30"
-            : "bg-[#F7F5F1] border-forest/15 hover:border-gold/40 hover:bg-[#F0EDE7]"
+          ${
+            fileName
+              ? "bg-forest-deep/5 border-forest-deep/30"
+              : "bg-[#F7F5F1] border-forest/15 hover:border-gold/40 hover:bg-[#F0EDE7]"
           }`}
       >
-        <div className={`flex-shrink-0 h-10 w-10 rounded-lg flex items-center justify-center transition-colors ${fileName ? "bg-forest-deep/10" : "bg-forest/8 group-hover:bg-gold/10"}`}>
-          <Icon className={`w-5 h-5 transition-colors ${fileName ? "text-forest-deep" : "text-forest/70 group-hover:text-gold"}`} />
+        <div
+          className={`flex-shrink-0 h-10 w-10 rounded-lg flex items-center justify-center transition-colors ${fileName ? "bg-forest-deep/10" : "bg-forest/8 group-hover:bg-gold/10"}`}
+        >
+          <Icon
+            className={`w-5 h-5 transition-colors ${fileName ? "text-forest-deep" : "text-forest/70 group-hover:text-gold"}`}
+          />
         </div>
         <div className="flex-1 min-w-0">
           {fileName ? (
             <>
               <p className="text-[15px] font-semibold text-forest-deep truncate">{fileName}</p>
-              <p className="text-[15px] text-forest/70 mt-0.5">{loading ? "Processing…" : "Click to change file"}</p>
+              <p className="text-[15px] text-forest/70 mt-0.5">
+                {loading ? "Processing…" : "Click to change file"}
+              </p>
             </>
           ) : (
             <>
@@ -109,7 +117,15 @@ function UploadField({
         </div>
         {fileName && !loading && (
           <span className="flex-shrink-0 h-6 w-6 rounded-full bg-forest-deep flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+            <svg
+              className="w-3 h-3 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
           </span>
         )}
         <input
@@ -198,7 +214,7 @@ function GilpDelegatePage() {
       }).catch(console.error);
 
       // Short delay for UX feedback
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -207,35 +223,53 @@ function GilpDelegatePage() {
 
   const steps = [
     { num: "02", title: "FEE PAYMENT", desc: "Within 2 weeks of submitting this form" },
-    { num: "03", title: "VISA INVITATION LETTER", desc: "Issued within 5 working days of receiving your fee" },
-    { num: "04", title: "PRE READING & ORIENTATION", desc: <>All material will be shared with you by 31<sup>st</sup> August 2026</> },
-    { num: "05", title: "CAMBRIDGE ARRIVAL", desc: <>You arrive at Cambridge on 13<sup>th</sup> September 2026</> },
+    {
+      num: "03",
+      title: "VISA INVITATION LETTER",
+      desc: "Issued within 5 working days of receiving your fee",
+    },
+    {
+      num: "04",
+      title: "PRE READING & ORIENTATION",
+      desc: (
+        <>
+          All material will be shared with you by 31<sup>st</sup> August 2026
+        </>
+      ),
+    },
+    {
+      num: "05",
+      title: "CAMBRIDGE ARRIVAL",
+      desc: (
+        <>
+          You arrive at Cambridge on 13<sup>th</sup> September 2026
+        </>
+      ),
+    },
   ];
 
-  const inputCls = "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/80 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
+  const inputCls =
+    "w-full bg-[#F7F5F1] border border-transparent rounded-xl px-4 py-3.5 text-[15px] text-forest-deep placeholder:text-forest/80 font-medium focus:outline-none focus:bg-white focus:border-gold/40 focus:ring-0 focus:shadow-[0_0_0_3px_rgba(196,148,50,0.08)] transition-all duration-200";
   const selectWrapCls = "relative";
   const selectCls = `${inputCls} appearance-none cursor-pointer pr-10`;
 
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-gold/30">
       <section className="min-h-screen flex flex-col lg:flex-row">
-
         {/* ─── LEFT PANEL ─── */}
         <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] bg-forest-deep overflow-hidden">
-
           {/* BG image */}
-          <img src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
+          <img
+            src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
             alt=""
             aria-hidden
             className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105 pointer-events-none"
-            loading="lazy" />
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/98 via-forest-deep/85 to-forest-deep/95 pointer-events-none" />
           <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent pointer-events-none" />
 
           <div className="relative z-10 px-10 md:px-12 pt-10 pb-12 flex flex-col min-h-full">
-
-
-
             {/* ── Heading ── */}
             <h1 className="text-[2.4rem] font-bold text-white leading-[1.1] tracking-tight mb-6">
               GILP –<br />
@@ -244,9 +278,15 @@ function GilpDelegatePage() {
 
             {/* ── Info bullets ── */}
             <div className="text-[15px] text-white/80 leading-[1.75] mb-10">
-              <p className="mb-3">Please have the following ready before completing your registration:</p>
+              <p className="mb-3">
+                Please have the following ready before completing your registration:
+              </p>
               <ul className="space-y-2 text-white/85">
-                {["Digital copy of your passport", "Digital copy of your partner's passport (if registering for a double option)", "Professional headshot for the profile book"].map((item, i) => (
+                {[
+                  "Digital copy of your passport",
+                  "Digital copy of your partner's passport (if registering for a double option)",
+                  "Professional headshot for the profile book",
+                ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold flex-shrink-0" />
                     {item}
@@ -266,7 +306,9 @@ function GilpDelegatePage() {
                     <div className="absolute -left-[14px] top-0 h-7 w-7 rounded-full bg-forest-deep border border-gold/40 flex items-center justify-center">
                       <span className="text-[15px] font-bold text-gold">{step.num}</span>
                     </div>
-                    <h4 className="text-[15px] font-bold text-white uppercase tracking-wide leading-tight">{step.title}</h4>
+                    <h4 className="text-[15px] font-bold text-white uppercase tracking-wide leading-tight">
+                      {step.title}
+                    </h4>
                     <p className="text-[12.5px] text-white/80 mt-1 leading-snug">{step.desc}</p>
                   </div>
                 ))}
@@ -280,8 +322,12 @@ function GilpDelegatePage() {
                   <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
                 </div>
                 <div>
-                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">Established</p>
-                  <p className="text-[15px] text-white/85 font-serif italic">Excellence in Global Education</p>
+                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">
+                    Established
+                  </p>
+                  <p className="text-[15px] text-white/85 font-serif italic">
+                    Excellence in Global Education
+                  </p>
                 </div>
               </div>
             </div>
@@ -292,13 +338,14 @@ function GilpDelegatePage() {
         <div className="lg:w-[55%] bg-white overflow-y-auto">
           <div className="flex min-h-full items-start justify-center px-8 md:px-14 lg:px-20 pt-6 pb-16">
             <div className="w-full max-w-[560px]">
-
               {/* ── GILP Banner Image at top ── */}
               <div className="mb-6 w-full rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,48,29,0.12)] border border-forest/8 ring-1 ring-forest/5">
-                <img src={gilpBannerImg}
+                <img
+                  src={gilpBannerImg}
                   alt="Global India Leadership Programme"
                   className="w-full h-auto block"
-                  loading="lazy" />
+                  loading="lazy"
+                />
               </div>
 
               {/* ── Form heading ── */}
@@ -307,21 +354,28 @@ function GilpDelegatePage() {
                   <span className="h-px w-6 bg-gold" /> Application Form
                 </span>
                 <h2 className="text-[2rem] md:text-[2.4rem] font-bold text-forest-deep leading-tight">
-                  Submit your<br />
+                  Submit your
+                  <br />
                   <span className="font-serif italic font-normal text-forest/80">details</span>
                 </h2>
               </div>
 
               <form className="space-y-5" onSubmit={handleSubmit}>
-
                 {step === 1 ? (
                   <>
                     {/* Row: Title + First + Last */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Title *</label>
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                          Title *
+                        </label>
                         <div className={selectWrapCls}>
-                          <select required value={form.title} onChange={update("title")} className={selectCls}>
+                          <select
+                            required
+                            value={form.title}
+                            onChange={update("title")}
+                            className={selectCls}
+                          >
                             <option value="">—</option>
                             <option>Mr</option>
                             <option>Mrs</option>
@@ -333,20 +387,42 @@ function GilpDelegatePage() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">First Name *</label>
-                        <input type="text" required value={form.firstName} onChange={update("firstName")} className={inputCls} />
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                          First Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={form.firstName}
+                          onChange={update("firstName")}
+                          className={inputCls}
+                        />
                       </div>
                       <div>
-                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Last Name</label>
-                        <input type="text" value={form.lastName} onChange={update("lastName")} className={inputCls} />
+                        <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                          Last Name
+                        </label>
+                        <input
+                          type="text"
+                          value={form.lastName}
+                          onChange={update("lastName")}
+                          className={inputCls}
+                        />
                       </div>
                     </div>
 
                     {/* Dietary Preference */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Dietary Preference *</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Dietary Preference *
+                      </label>
                       <div className={selectWrapCls}>
-                        <select required value={form.dietary} onChange={update("dietary")} className={selectCls}>
+                        <select
+                          required
+                          value={form.dietary}
+                          onChange={update("dietary")}
+                          className={selectCls}
+                        >
                           <option value="">Select...</option>
                           <option>Vegetarian</option>
                           <option>Vegan</option>
@@ -361,16 +437,31 @@ function GilpDelegatePage() {
 
                     {/* Organisation */}
                     <div className="group">
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Organisation *</label>
-                      <input type="text" required placeholder="Your Organisation Name" value={form.organisation} onChange={update("organisation")} className={inputCls} />
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Organisation *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Your Organisation Name"
+                        value={form.organisation}
+                        onChange={update("organisation")}
+                        className={inputCls}
+                      />
                     </div>
 
                     {/* Contact */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Contact Number *</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Contact Number *
+                      </label>
                       <div className="flex flex-col sm:flex-row gap-2">
                         <div className={`${selectWrapCls} sm:min-w-[125px] flex-shrink-0`}>
-                          <select value={form.phoneCode} onChange={update("phoneCode")} className={`${selectCls} w-full`}>
+                          <select
+                            value={form.phoneCode}
+                            onChange={update("phoneCode")}
+                            className={`${selectCls} w-full`}
+                          >
                             {COUNTRY_CODES.map((c) => (
                               <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
                                 {c.flag} {c.country} ({c.code})
@@ -379,14 +470,30 @@ function GilpDelegatePage() {
                           </select>
                           <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-forest/70 pointer-events-none" />
                         </div>
-                        <input type="tel" required placeholder="7911 123456" value={form.phone} onChange={update("phone")} className={`${inputCls} flex-1`} />
+                        <input
+                          type="tel"
+                          required
+                          placeholder="7911 123456"
+                          value={form.phone}
+                          onChange={update("phone")}
+                          className={`${inputCls} flex-1`}
+                        />
                       </div>
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Email Address *</label>
-                      <input type="email" required placeholder="you@organisation.com" value={form.email} onChange={update("email")} className={inputCls} />
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="you@organisation.com"
+                        value={form.email}
+                        onChange={update("email")}
+                        className={inputCls}
+                      />
                     </div>
 
                     {/* Divider */}
@@ -394,7 +501,9 @@ function GilpDelegatePage() {
 
                     {/* Professional Headshot */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Professional Headshot *</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Professional Headshot *
+                      </label>
                       <UploadField
                         label="Upload your photo"
                         hint="This photograph will be included in the profile book"
@@ -406,7 +515,9 @@ function GilpDelegatePage() {
 
                     {/* Passport */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport (front + back) *</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Passport (front + back) *
+                      </label>
                       <UploadField
                         label="Upload passport scan"
                         hint="Ensure at least 6 months' validity from UK entry date. Upload one PDF, or two images (front then back)."
@@ -421,10 +532,18 @@ function GilpDelegatePage() {
 
                     {/* Programme Funding */}
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme Funding</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Programme Funding
+                      </label>
                       <div className={selectWrapCls}>
-                        <select value={form.funding} onChange={update("funding")} className={selectCls}>
-                          <option value="">Choose who is funding your programme participation</option>
+                        <select
+                          value={form.funding}
+                          onChange={update("funding")}
+                          className={selectCls}
+                        >
+                          <option value="">
+                            Choose who is funding your programme participation
+                          </option>
                           <option>Self Funded</option>
                           <option>Organisation Funded</option>
                           <option>Sponsorship</option>
@@ -453,21 +572,48 @@ function GilpDelegatePage() {
                 ) : (
                   <>
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Name on the invoice *</label>
-                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Name of individual/company paying the programme fee</p>
-                      <input type="text" required value={form.invoiceName} onChange={update("invoiceName")} className={inputCls} />
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Name on the invoice *
+                      </label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">
+                        Name of individual/company paying the programme fee
+                      </p>
+                      <input
+                        type="text"
+                        required
+                        value={form.invoiceName}
+                        onChange={update("invoiceName")}
+                        className={inputCls}
+                      />
                     </div>
 
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Address on the invoice *</label>
-                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Address of the above individual/company paying the programme fee</p>
-                      <input type="text" required value={form.invoiceAddress} onChange={update("invoiceAddress")} className={inputCls} />
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Address on the invoice *
+                      </label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">
+                        Address of the above individual/company paying the programme fee
+                      </p>
+                      <input
+                        type="text"
+                        required
+                        value={form.invoiceAddress}
+                        onChange={update("invoiceAddress")}
+                        className={inputCls}
+                      />
                     </div>
 
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Programme fee option *</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Programme fee option *
+                      </label>
                       <div className={selectWrapCls}>
-                        <select required value={form.feeOption} onChange={update("feeOption")} className={selectCls}>
+                        <select
+                          required
+                          value={form.feeOption}
+                          onChange={update("feeOption")}
+                          className={selectCls}
+                        >
                           <option value="">Select...</option>
                           <option>Round 1 - Package 1 - £5100</option>
                           <option>Round 1 - Package 2 - £6300</option>
@@ -478,13 +624,24 @@ function GilpDelegatePage() {
                     </div>
 
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Full Name of the partner if you selected double accommodation option</label>
-                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">Leave blank for individual registrations</p>
-                      <input type="text" value={form.partnerName} onChange={update("partnerName")} className={inputCls} />
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Full Name of the partner if you selected double accommodation option
+                      </label>
+                      <p className="text-[11.5px] text-forest/60 mb-2 leading-tight">
+                        Leave blank for individual registrations
+                      </p>
+                      <input
+                        type="text"
+                        value={form.partnerName}
+                        onChange={update("partnerName")}
+                        className={inputCls}
+                      />
                     </div>
 
                     <div>
-                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">Passport of partner (front+back) (if applicable)</label>
+                      <label className="block text-[12.5px] font-semibold text-forest/70 mb-1.5">
+                        Passport of partner (front+back) (if applicable)
+                      </label>
                       <UploadField
                         label="Upload Passport"
                         hint="Please ensure that your partner's passport has at least six months' validity from your date of entry into the UK. Upload one PDF, or two images (front then back)."
@@ -492,7 +649,11 @@ function GilpDelegatePage() {
                         multiple
                         icon={FileText}
                         onFilesReady={(f) =>
-                          setFiles((prev) => ({ ...prev, partnerPassportFront: f[0], partnerPassportBack: f[1] }))
+                          setFiles((prev) => ({
+                            ...prev,
+                            partnerPassportFront: f[0],
+                            partnerPassportBack: f[1],
+                          }))
                         }
                       />
                     </div>
@@ -503,10 +664,13 @@ function GilpDelegatePage() {
                         id="brochureRead"
                         required
                         checked={form.brochureRead}
-                        onChange={(e) => setForm(f => ({ ...f, brochureRead: e.target.checked }))}
+                        onChange={(e) => setForm((f) => ({ ...f, brochureRead: e.target.checked }))}
                         className="mt-0.5 w-5 h-5 rounded text-forest-deep border-forest/20 focus:ring-forest-deep focus:ring-offset-0 cursor-pointer"
                       />
-                      <label htmlFor="brochureRead" className="text-[14px] font-medium text-forest-deep cursor-pointer select-none">
+                      <label
+                        htmlFor="brochureRead"
+                        className="text-[14px] font-medium text-forest-deep cursor-pointer select-none"
+                      >
                         I have read the entire programme brochure *
                       </label>
                     </div>
@@ -538,13 +702,15 @@ function GilpDelegatePage() {
                 )}
 
                 {status === "success" && (
-                  <p className="text-center text-[15px] font-semibold text-forest-deep mt-4">✓ Registration received — check your email for confirmation.</p>
+                  <p className="text-center text-[15px] font-semibold text-forest-deep mt-4">
+                    ✓ Registration received — check your email for confirmation.
+                  </p>
                 )}
                 {status === "error" && (
-                  <p className="text-center text-[15px] font-semibold text-red-500 mt-4">Something went wrong. Please try again.</p>
+                  <p className="text-center text-[15px] font-semibold text-red-500 mt-4">
+                    Something went wrong. Please try again.
+                  </p>
                 )}
-
-
               </form>
             </div>
           </div>

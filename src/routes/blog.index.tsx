@@ -22,17 +22,15 @@ function BlogPage() {
   // Extract all unique tags
   const allTags = useMemo(() => {
     const set = new Set<string>();
-    blogPosts.forEach(p => p.tags?.forEach(t => set.add(t)));
+    blogPosts.forEach((p) => p.tags?.forEach((t) => set.add(t)));
     return Array.from(set);
   }, []);
 
   const filtered = useMemo(() => {
     return blogPosts.filter((p) => {
-      const matchesCategory =
-        activeCategory === "All Posts" || p.category === activeCategory;
+      const matchesCategory = activeCategory === "All Posts" || p.category === activeCategory;
 
-      const matchesTag =
-        !selectedTag || p.tags?.includes(selectedTag);
+      const matchesTag = !selectedTag || p.tags?.includes(selectedTag);
 
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
@@ -211,15 +209,17 @@ function Hero({ featured }: { featured: (typeof blogPosts)[number] }) {
             THE GEL BLOG
           </div>
           <h1 className="text-5xl font-bold tracking-tight text-forest-deep md:text-7xl lg:text-[5.5rem] leading-[1.05]">
-            Stories from<br />
+            Stories from
+            <br />
             <span className="font-serif italic text-gold relative inline-block">
               the field.
               <span className="absolute bottom-2 left-0 h-[3px] w-full bg-gold/30" />
             </span>
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-muted-foreground md:text-lg">
-            School visits, programme recaps and reflections from <strong>Global Education Lab's</strong> work across India,
-            Cambridge, Oxford, Finland and beyond.
+            School visits, programme recaps and reflections from{" "}
+            <strong>Global Education Lab's</strong> work across India, Cambridge, Oxford, Finland
+            and beyond.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -248,10 +248,12 @@ function Hero({ featured }: { featured: (typeof blogPosts)[number] }) {
             className="group relative block overflow-hidden rounded-[2rem] shadow-2xl"
           >
             <div className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply z-10" />
-            <img src={featured.cover || "/src/assets/gilp-brochure-cover.jpg"}
+            <img
+              src={featured.cover || "/src/assets/gilp-brochure-cover.jpg"}
               alt={featured.title}
               className="h-[440px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy" />
+              loading="lazy"
+            />
             <div className="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-forest-deep/95 via-forest-deep/50 to-transparent">
               <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-2">
                 FEATURED STORY
@@ -278,10 +280,12 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
         <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-forest-deep text-[12px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow-xs">
           {post.category}
         </div>
-        <img src={post.cover || "/src/assets/gilp-brochure-cover.jpg"}
+        <img
+          src={post.cover || "/src/assets/gilp-brochure-cover.jpg"}
           alt={post.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading="lazy" />
+          loading="lazy"
+        />
       </div>
       <div className="flex flex-col flex-1 p-7">
         <div className="flex items-center gap-4 text-[12.5px] font-bold uppercase tracking-widest text-forest/55 mb-3">
@@ -299,9 +303,7 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
           {post.excerpt}
         </p>
         <div className="flex items-center justify-between border-t border-forest/10 pt-4 mt-auto">
-          <span className="text-[13px] font-semibold text-forest/60">
-            {post.author}
-          </span>
+          <span className="text-[13px] font-semibold text-forest/60">{post.author}</span>
           <span className="text-[13px] font-bold uppercase tracking-widest text-forest-deep flex items-center gap-1 group-hover:text-gold transition-colors">
             READ <ArrowUpRight className="h-3 w-3" />
           </span>

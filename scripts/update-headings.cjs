@@ -1,6 +1,6 @@
-const fs = require('fs');
-const p = 'src/data/blogPosts.ts';
-let c = fs.readFileSync(p, 'utf8');
+const fs = require("fs");
+const p = "src/data/blogPosts.ts";
+let c = fs.readFileSync(p, "utf8");
 
 const old1 = `"text": "1. Customised trips: Finland is no one-size-fits-all destination. We curate itineraries tailored to specific needs. Whether it is early childhood education, vocational training or higher education, Finland has a rich history of pedagogical innovations and we align those to the interests of the delegations."`;
 const new1 = `"text": "1. Customised trips"\n      },\n      {\n        "type": "paragraph",\n        "text": "Finland is no one-size-fits-all destination. We curate itineraries tailored to specific needs. Whether it is early childhood education, vocational training or higher education, Finland has a rich history of pedagogical innovations and we align those to the interests of the delegations."`;
@@ -19,10 +19,22 @@ c = c.replace(old1, new1).replace(old2, new2).replace(old3, new3).replace(old4, 
 // Also need to change "type": "paragraph" to "type": "heading" for the headings.
 // But since I only replaced the text string, the type above it is still "paragraph".
 // Let's just do a regex replace to fix the type for these specific headings.
-c = c.replace(/"type": "paragraph",\n\s+"text": "1\. Customised trips"/, '"type": "heading",\n        "text": "1. Customised trips"');
-c = c.replace(/"type": "paragraph",\n\s+"text": "2\. Immersive Site Visits"/, '"type": "heading",\n        "text": "2. Immersive Site Visits"');
-c = c.replace(/"type": "paragraph",\n\s+"text": "3\. Interaction with Finnish Education Stakeholders"/, '"type": "heading",\n        "text": "3. Interaction with Finnish Education Stakeholders"');
-c = c.replace(/"type": "paragraph",\n\s+"text": "4\. Cultural immersion & pedagogical exploration"/, '"type": "heading",\n        "text": "4. Cultural immersion & pedagogical exploration"');
+c = c.replace(
+  /"type": "paragraph",\n\s+"text": "1\. Customised trips"/,
+  '"type": "heading",\n        "text": "1. Customised trips"',
+);
+c = c.replace(
+  /"type": "paragraph",\n\s+"text": "2\. Immersive Site Visits"/,
+  '"type": "heading",\n        "text": "2. Immersive Site Visits"',
+);
+c = c.replace(
+  /"type": "paragraph",\n\s+"text": "3\. Interaction with Finnish Education Stakeholders"/,
+  '"type": "heading",\n        "text": "3. Interaction with Finnish Education Stakeholders"',
+);
+c = c.replace(
+  /"type": "paragraph",\n\s+"text": "4\. Cultural immersion & pedagogical exploration"/,
+  '"type": "heading",\n        "text": "4. Cultural immersion & pedagogical exploration"',
+);
 
 fs.writeFileSync(p, c);
 console.log("Updated to headings");

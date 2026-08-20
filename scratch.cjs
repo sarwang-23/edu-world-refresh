@@ -1,15 +1,21 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const impactCode = fs.readFileSync('src/routes/our-impact.tsx', 'utf-8');
-const entrepreneurshipCode = fs.readFileSync('src/routes/entrepreneurship.tsx', 'utf-8');
+const impactCode = fs.readFileSync("src/routes/our-impact.tsx", "utf-8");
+const entrepreneurshipCode = fs.readFileSync("src/routes/entrepreneurship.tsx", "utf-8");
 
 // Extract Testimonials from our-impact.tsx
-const testimonialsStart = impactCode.indexOf('function Testimonials() {');
-const testimonialsEnd = impactCode.indexOf('export const Route', testimonialsStart) === -1 ? impactCode.length : impactCode.indexOf('export const Route', testimonialsStart); // wait, it's at the end of the file.
+const testimonialsStart = impactCode.indexOf("function Testimonials() {");
+const testimonialsEnd =
+  impactCode.indexOf("export const Route", testimonialsStart) === -1
+    ? impactCode.length
+    : impactCode.indexOf("export const Route", testimonialsStart); // wait, it's at the end of the file.
 const testimonialsCode = impactCode.slice(testimonialsStart);
 
 // We need to extract just the array and the JSX for the grid and modal.
-const testimonialsArrayStr = impactCode.slice(impactCode.indexOf('const testimonials = ['), impactCode.indexOf('return (', impactCode.indexOf('const testimonials = [')));
+const testimonialsArrayStr = impactCode.slice(
+  impactCode.indexOf("const testimonials = ["),
+  impactCode.indexOf("return (", impactCode.indexOf("const testimonials = [")),
+);
 
 // Let's just write the new Community component text and replace it.
 const newCommunity = `function Community() {
@@ -217,7 +223,7 @@ const newCommunity = `function Community() {
 }
 `;
 
-const communityStart = entrepreneurshipCode.indexOf('function Community() {');
+const communityStart = entrepreneurshipCode.indexOf("function Community() {");
 const communityEnd = entrepreneurshipCode.length;
 const oldCommunity = entrepreneurshipCode.slice(communityStart, communityEnd);
 
@@ -237,5 +243,5 @@ import lindaTang from '@/assets/people/linda_tang.jpg';
 newCode = importsToAdd + "\\n" + newCode;
 newCode = newCode.replace("User,", "User, X,");
 
-fs.writeFileSync('src/routes/entrepreneurship.tsx', newCode);
-console.log('done');
+fs.writeFileSync("src/routes/entrepreneurship.tsx", newCode);
+console.log("done");

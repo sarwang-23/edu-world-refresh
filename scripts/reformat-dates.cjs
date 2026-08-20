@@ -1,21 +1,21 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'migrated_posts.json');
-const BLOG_POSTS_TS_PATH = path.join(__dirname, '..', 'src', 'data', 'blogPosts.ts');
-const SQL_INSERT_PATH = path.join(__dirname, '..', 'scripts', 'seed-data.sql');
+const JSON_PATH = path.join(__dirname, "..", "src", "data", "migrated_posts.json");
+const BLOG_POSTS_TS_PATH = path.join(__dirname, "..", "src", "data", "blogPosts.ts");
+const SQL_INSERT_PATH = path.join(__dirname, "..", "scripts", "seed-data.sql");
 
 function formatDateShort(isoStr) {
-  if (!isoStr) return 'Mar 15, 2024';
+  if (!isoStr) return "Mar 15, 2024";
   const d = new Date(isoStr);
   if (isNaN(d.getTime())) return isoStr;
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 function main() {
-  const posts = JSON.parse(fs.readFileSync(JSON_PATH, 'utf-8'));
+  const posts = JSON.parse(fs.readFileSync(JSON_PATH, "utf-8"));
 
-  posts.forEach(p => {
+  posts.forEach((p) => {
     p.date = formatDateShort(p.rawDateIso);
   });
 
@@ -94,7 +94,9 @@ export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
 `;
 
   fs.writeFileSync(BLOG_POSTS_TS_PATH, tsContent);
-  console.log('✅ Formatted dates to short month format (e.g. Mar 31, 2026) and updated blogPosts.ts!');
+  console.log(
+    "✅ Formatted dates to short month format (e.g. Mar 31, 2026) and updated blogPosts.ts!",
+  );
 }
 
 main();

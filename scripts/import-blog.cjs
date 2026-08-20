@@ -1,9 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const MIGRATED_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'migrated_posts.json');
-const BLOG_POSTS_TS_PATH = path.join(__dirname, '..', 'src', 'data', 'blogPosts.ts');
-const SQL_INSERT_PATH = path.join(__dirname, '..', 'scripts', 'seed-data.sql');
+const MIGRATED_JSON_PATH = path.join(__dirname, "..", "src", "data", "migrated_posts.json");
+const BLOG_POSTS_TS_PATH = path.join(__dirname, "..", "src", "data", "blogPosts.ts");
+const SQL_INSERT_PATH = path.join(__dirname, "..", "scripts", "seed-data.sql");
 
 function generateTypeScriptFile(posts) {
   const tsContent = `/* src/data/blogPosts.ts */
@@ -79,19 +79,22 @@ function generateSqlInserts(posts) {
 
   sql += `INSERT INTO authors (name, email) VALUES ('GEL Editorial Team', 'editorial@globaledulab.com') ON CONFLICT (name) DO NOTHING;\n\n`;
 
-  const categories = new Set(posts.map(p => p.category).filter(Boolean));
-  categories.forEach(cat => {
-    const slug = cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const categories = new Set(posts.map((p) => p.category).filter(Boolean));
+  categories.forEach((cat) => {
+    const slug = cat
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
     sql += `INSERT INTO categories (name, slug) VALUES ('${cat.replace(/'/g, "''")}', '${slug}') ON CONFLICT (slug) DO NOTHING;\n`;
   });
   sql += `\n`;
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     const titleEscaped = post.title.replace(/'/g, "''");
-    const excerptEscaped = (post.excerpt || '').replace(/'/g, "''");
-    const htmlEscaped = (post.rawHtml || '').replace(/'/g, "''");
-    const coverEscaped = (post.cover || '').replace(/'/g, "''");
-    const readTimeEscaped = (post.readTime || '').replace(/'/g, "''");
+    const excerptEscaped = (post.excerpt || "").replace(/'/g, "''");
+    const htmlEscaped = (post.rawHtml || "").replace(/'/g, "''");
+    const coverEscaped = (post.cover || "").replace(/'/g, "''");
+    const readTimeEscaped = (post.readTime || "").replace(/'/g, "''");
 
     sql += `INSERT INTO posts (slug, title, excerpt, raw_html, cover_image, read_time, featured) VALUES (\n`;
     sql += `  '${post.slug}',\n`;
@@ -100,7 +103,7 @@ function generateSqlInserts(posts) {
     sql += `  '${htmlEscaped}',\n`;
     sql += `  '${coverEscaped}',\n`;
     sql += `  '${readTimeEscaped}',\n`;
-    sql += `  ${post.featured ? 'TRUE' : 'FALSE'}\n`;
+    sql += `  ${post.featured ? "TRUE" : "FALSE"}\n`;
     sql += `) ON CONFLICT (slug) DO UPDATE SET title = EXCLUDED.title, raw_html = EXCLUDED.raw_html, cover_image = EXCLUDED.cover_image;\n\n`;
   });
 
@@ -110,14 +113,14 @@ function generateSqlInserts(posts) {
 
 function main() {
   if (!fs.existsSync(MIGRATED_JSON_PATH)) {
-    console.error('❌ Error: migrated_posts.json not found. Run scrape-blog.cjs first.');
+    console.error("❌ Error: migrated_posts.json not found. Run scrape-blog.cjs first.");
     process.exit(1);
   }
 
-  const posts = JSON.parse(fs.readFileSync(MIGRATED_JSON_PATH, 'utf-8'));
+  const posts = JSON.parse(fs.readFileSync(MIGRATED_JSON_PATH, "utf-8"));
   generateTypeScriptFile(posts);
   generateSqlInserts(posts);
-  console.log('🎉 Data Import & Sync completed successfully!');
+  console.log("🎉 Data Import & Sync completed successfully!");
 }
 
 main();

@@ -42,7 +42,7 @@ export function getSourceLabel(pathname: string): string {
   // Fallback: generate label from path segments
   const parts = cleaned.split("/");
   const capitalized = parts.map((segment) =>
-    segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
   );
   return capitalized.join(" > ");
 }

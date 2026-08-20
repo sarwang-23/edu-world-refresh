@@ -1,6 +1,24 @@
 import { buildMeta } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Target, Eye, HandHeart, Sparkles, Flag, Rocket, Briefcase, Globe2, BookOpen, Mail, ArrowRight, Lightbulb, Users, CheckCircle2, GraduationCap, Linkedin } from "lucide-react";
+import {
+  ArrowUpRight,
+  Target,
+  Eye,
+  HandHeart,
+  Sparkles,
+  Flag,
+  Rocket,
+  Briefcase,
+  Globe2,
+  BookOpen,
+  Mail,
+  ArrowRight,
+  Lightbulb,
+  Users,
+  CheckCircle2,
+  GraduationCap,
+  Linkedin,
+} from "lucide-react";
 import heroGlobalImg from "@/assets/transformational-global-education.png";
 import founderImg from "@/assets/founder_hd.png";
 import collage1 from "@/assets/about_collage/collage1.jpg";
@@ -27,8 +45,7 @@ import personSerish from "@/assets/faculty-serish.jpg";
 import personSantosh from "@/assets/santosh_huralikoppi.jpg";
 import personSayara from "@/assets/sayara.jpg";
 import personMargaret from "@/assets/margaret_serna.jpeg";
-import { Voices } from '@/components/Voices';
-
+import { Voices } from "@/components/Voices";
 
 export const Route = createFileRoute("/about")({
   head: () => buildMeta("/about"),
@@ -57,7 +74,7 @@ function Hero() {
       {/* Subtle grid — same as home page hero */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-12">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
         {/* Left: Text Content */}
         <div className="lg:col-span-5 flex flex-col justify-center">
           <div className="flex items-center gap-3 mb-4">
@@ -66,14 +83,16 @@ function Hero() {
               ABOUT GLOBAL EDUCATION LAB
             </span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-[2.85rem] lg:text-[3.25rem] xl:text-[3.75rem] font-bold leading-[1.08] text-forest break-words">
-            Transformational education.<br />
+            Transformational education.
+            <br />
             <span className="text-gold">Global impact.</span>
           </h1>
-          
+
           <p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-[1.65] text-muted-foreground">
-            We design immersive learning experiences that empower individuals, build capability, and drive innovation for a more inclusive and sustainable tomorrow.
+            We design immersive learning experiences that empower individuals, build capability, and
+            drive innovation for a more inclusive and sustainable tomorrow.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -100,24 +119,29 @@ function Hero() {
         <div className="relative lg:col-span-7">
           <div className="p-2 sm:p-3 bg-white/70 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] border border-forest/10 shadow-2xl shadow-forest/10">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 h-[450px] sm:h-[480px] overflow-hidden">
-              
               {/* Column 1 (2 Images) */}
               <div className="flex flex-col gap-2 sm:gap-3 h-full">
                 <div className="h-[220px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
-                  <img src={collage1}
+                  <img
+                    src={collage1}
                     alt="Cambridge Lecture Session"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                    <span className="text-[11px] font-medium text-white">Cambridge Lecture Session</span>
+                    <span className="text-[11px] font-medium text-white">
+                      Cambridge Lecture Session
+                    </span>
                   </div>
                 </div>
 
                 <div className="h-[220px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
-                  <img src={collage8}
+                  <img
+                    src={collage8}
                     alt="STEM Exploration"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <span className="text-[11px] font-medium text-white">STEM & Astrophysics</span>
                   </div>
@@ -127,32 +151,40 @@ function Hero() {
               {/* Column 2 (3 Images) */}
               <div className="flex flex-col gap-2 sm:gap-3 h-full">
                 <div className="h-[145px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
-                  <img src={collage2}
+                  <img
+                    src={collage2}
                     alt="Cohort Discussion"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span className="text-[11px] font-medium text-white">Cohort Discussion</span>
                   </div>
                 </div>
 
                 <div className="h-[144px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
-                  <img src={collage7}
+                  <img
+                    src={collage7}
                     alt="GEL Fireside Panel with CJBS"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span className="text-[11px] font-medium text-white">Fireside Panel</span>
                   </div>
                 </div>
 
                 <div className="h-[145px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-xl sm:rounded-2xl shadow-sm relative group">
-                  <img src={collage4}
+                  <img
+                    src={collage4}
                     alt="Experiential Workshop"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
-                    <span className="text-[11px] font-medium text-white">Experiential Workshop</span>
+                    <span className="text-[11px] font-medium text-white">
+                      Experiential Workshop
+                    </span>
                   </div>
                 </div>
               </div>
@@ -160,26 +192,33 @@ function Hero() {
               {/* Column 3 (2 Images) */}
               <div className="hidden sm:flex flex-col gap-3 h-full">
                 <div className="h-[210px] sm:h-auto sm:flex-1 min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img src={collage9}
+                  <img
+                    src={collage9}
                     alt="Cambridge Interactive Lab"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                    <span className="text-[11px] font-medium text-white">Cambridge Interactive Lab</span>
+                    <span className="text-[11px] font-medium text-white">
+                      Cambridge Interactive Lab
+                    </span>
                   </div>
                 </div>
 
                 <div className="h-[210px] sm:h-auto sm:flex-[1.2] min-h-0 overflow-hidden rounded-2xl shadow-sm relative group">
-                  <img src={collage5}
+                  <img
+                    src={collage5}
                     alt="Historic Cambridge Formal Dinners"
                     className="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                    <span className="text-[11px] font-medium text-white">Cambridge Formal Dinners</span>
+                    <span className="text-[11px] font-medium text-white">
+                      Cambridge Formal Dinners
+                    </span>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -195,7 +234,9 @@ function Foundations() {
         {/* Section Header */}
         <div className="mb-16 flex items-center gap-3">
           <div className="h-px w-10 bg-gold" />
-          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">Our Foundation</span>
+          <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+            Our Foundation
+          </span>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {/* Mission */}
@@ -204,9 +245,12 @@ function Foundations() {
               <Target className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">OUR MISSION</h3>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">
+                OUR MISSION
+              </h3>
               <p className="text-[15px] leading-relaxed text-forest/80">
-                To deliver transformative educational experiences across every stage of a learner's life — empowering people to lead, innovate and create impact.
+                To deliver transformative educational experiences across every stage of a learner's
+                life — empowering people to lead, innovate and create impact.
               </p>
             </div>
           </div>
@@ -217,9 +261,12 @@ function Foundations() {
               <Eye className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">OUR VISION</h3>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">
+                OUR VISION
+              </h3>
               <p className="text-[15px] leading-relaxed text-forest/80">
-                A world where education is experiential, inclusive and borderless — unlocking potential and creating a better future for all.
+                A world where education is experiential, inclusive and borderless — unlocking
+                potential and creating a better future for all.
               </p>
             </div>
           </div>
@@ -230,7 +277,9 @@ function Foundations() {
               <HandHeart className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">OUR VALUES</h3>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mb-3">
+                OUR VALUES
+              </h3>
               <ul className="space-y-3 text-[15px] leading-snug text-forest/80">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
@@ -266,7 +315,6 @@ function FounderStory() {
     <section className="bg-forest-deep py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 md:grid-cols-12 md:items-center">
-          
           {/* Left: Content */}
           <div className="md:col-span-5 md:pr-6">
             <h2 className="text-3xl font-bold leading-tight tracking-tight text-white">
@@ -274,16 +322,22 @@ function FounderStory() {
             </h2>
             <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-cream/80">
               <p>
-                In 2016, our founder, Suyash Bhatt, visited the university campuses of MIT, Harvard and Stanford. Engaging with the vibrant student and innovation communities there was a turning point.
+                In 2016, our founder, Suyash Bhatt, visited the university campuses of MIT, Harvard
+                and Stanford. Engaging with the vibrant student and innovation communities there was
+                a turning point.
               </p>
               <p>
-                The energy, curiosity and entrepreneurial spirit he witnessed inspired a clear vision — to bring such transformative opportunities to learners and leaders back home in India and beyond.
+                The energy, curiosity and entrepreneurial spirit he witnessed inspired a clear
+                vision — to bring such transformative opportunities to learners and leaders back
+                home in India and beyond.
               </p>
               <p>
-                That inspiration drove him to Cambridge, and in 2022, it became the foundation of Global Education Lab.
+                That inspiration drove him to Cambridge, and in 2022, it became the foundation of
+                Global Education Lab.
               </p>
               <p>
-                Today, GEL connects the Cambridge ecosystem with the world — empowering individuals, organisations and communities to thrive.
+                Today, GEL connects the Cambridge ecosystem with the world — empowering individuals,
+                organisations and communities to thrive.
               </p>
             </div>
           </div>
@@ -294,35 +348,52 @@ function FounderStory() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                 <GraduationCap className="h-5 w-5" />
               </div>
-              <p className="text-[15px] font-medium text-cream leading-tight">Cambridge Judge Business School,<br />University of Cambridge</p>
+              <p className="text-[15px] font-medium text-cream leading-tight">
+                Cambridge Judge Business School,
+                <br />
+                University of Cambridge
+              </p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                 <Globe2 className="h-5 w-5" />
               </div>
-              <p className="text-[15px] font-medium text-cream leading-tight">14+ Years of Global<br />Experience</p>
+              <p className="text-[15px] font-medium text-cream leading-tight">
+                14+ Years of Global
+                <br />
+                Experience
+              </p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                 <Users className="h-5 w-5" />
               </div>
-              <p className="text-[15px] font-medium text-cream leading-tight">Education Innovator &<br />Ecosystem Builder</p>
+              <p className="text-[15px] font-medium text-cream leading-tight">
+                Education Innovator &<br />
+                Ecosystem Builder
+              </p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                 <Lightbulb className="h-5 w-5" />
               </div>
-              <p className="text-[15px] font-medium text-cream leading-tight">Passionate about People,<br />Purpose and Possibilities</p>
+              <p className="text-[15px] font-medium text-cream leading-tight">
+                Passionate about People,
+                <br />
+                Purpose and Possibilities
+              </p>
             </div>
           </div>
 
           {/* Right: Image */}
           <div className="md:col-span-4">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
-              <img src={founderImg}
+              <img
+                src={founderImg}
                 alt="Suyash Bhatt"
                 className="w-full h-[360px] object-cover object-top"
-              loading="lazy" />
+                loading="lazy"
+              />
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-bold text-white">Suyash Bhatt</h3>
@@ -336,12 +407,16 @@ function FounderStory() {
                     <Linkedin className="h-4 w-4 fill-current text-white" />
                   </a>
                 </div>
-                <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">Founder & Director, GEL</p>
-                <p className="text-[15px] italic text-cream/70 mt-1">Alumnus & Honorary Fellow, Cambridge Judge Business School, University of Cambridge</p>
+                <p className="text-[15px] font-bold uppercase tracking-[0.15em] text-gold mt-1">
+                  Founder & Director, GEL
+                </p>
+                <p className="text-[15px] italic text-cream/70 mt-1">
+                  Alumnus & Honorary Fellow, Cambridge Judge Business School, University of
+                  Cambridge
+                </p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -356,25 +431,52 @@ function Journey() {
         <div className="mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">Our Journey</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              Our Journey
+            </span>
             <div className="h-px w-10 bg-gold" />
           </div>
           <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
             Milestones along the way
           </h2>
         </div>
-        
+
         <div className="relative max-w-5xl mx-auto">
           {/* Timeline line */}
           <div className="absolute top-10 left-10 right-10 h-px bg-gold/40 hidden md:block"></div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
             {[
-              { year: "2022", label: "Mentoring", icon: Users, desc: "Launched with small scale informal startup mentoring support" },
-              { year: "2023", label: "K12 Learning", icon: BookOpen, desc: "Launched experiential programmes for K12 Schools in the UK" },
-              { year: "2024", label: "Global Reach", icon: Globe2, desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India" },
-              { year: "2025", label: "Graduate Pathways", icon: GraduationCap, desc: "Expanded to University graduates & Entrepreneurship showcase" },
-              { year: "2026", label: "Innovation Growth", icon: Rocket, desc: "Launched Zero-to-One and expanded to Executive education, Global ventures" },
+              {
+                year: "2022",
+                label: "Mentoring",
+                icon: Users,
+                desc: "Launched with small scale informal startup mentoring support",
+              },
+              {
+                year: "2023",
+                label: "K12 Learning",
+                icon: BookOpen,
+                desc: "Launched experiential programmes for K12 Schools in the UK",
+              },
+              {
+                year: "2024",
+                label: "Global Reach",
+                icon: Globe2,
+                desc: "Expanded experiential programmes to Finland, Estonia, Indonesia and India",
+              },
+              {
+                year: "2025",
+                label: "Graduate Pathways",
+                icon: GraduationCap,
+                desc: "Expanded to University graduates & Entrepreneurship showcase",
+              },
+              {
+                year: "2026",
+                label: "Innovation Growth",
+                icon: Rocket,
+                desc: "Launched Zero-to-One and expanded to Executive education, Global ventures",
+              },
             ].map((item, idx) => (
               <div key={item.label} className="flex flex-col items-center text-center px-2">
                 <div className="relative mb-6">
@@ -384,9 +486,13 @@ function Journey() {
                   {/* Small gold dot indicator */}
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-gold"></div>
                 </div>
-                <div className="text-gold font-bold text-sm tracking-widest uppercase mb-1">{item.year}</div>
+                <div className="text-gold font-bold text-sm tracking-widest uppercase mb-1">
+                  {item.year}
+                </div>
                 <h3 className="text-xl font-bold text-forest-deep">{item.label}</h3>
-                <p className="mt-3 text-[15px] text-forest-deep/80 leading-relaxed max-w-[150px] mx-auto">{item.desc}</p>
+                <p className="mt-3 text-[15px] text-forest-deep/80 leading-relaxed max-w-[150px] mx-auto">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -402,79 +508,92 @@ function OurPeople() {
       name: "Margaret Serna CBE",
       title: "Chief Advisor – UK Education",
       img: personMargaret,
-      quote: "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
+      quote:
+        "Highly experienced UK education leader, recognised with a CBE for services to Further Education.",
     },
     {
       name: "Santosh Huralikoppi",
       title: "Advisor – Startups & Investments",
       img: personSantosh,
-      quote: "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
+      quote:
+        "Higher education advisor and seasoned angel investor with experience supporting multiple startups.",
     },
     {
       name: "Andrew Hatcher",
       title: "Advisor – Entrepreneurship",
       img: person4,
-      quote: "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
+      quote:
+        "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
     },
     {
       name: "Dr Yves Gaspar",
       title: "Advisor – STEM",
       img: person6,
-      quote: "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation.",
+      quote:
+        "Astrophysicist and Visiting Scholar at the University of Cambridge, bringing deep expertise in science, research and innovation.",
     },
     {
       name: "Guy Doza",
       title: "Leadership & Communications Coach",
       img: person1,
-      quote: "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
+      quote:
+        "Author, TEDx speaker and professional speechwriter, supporting leaders in communication, influence and public speaking.",
     },
     {
       name: "Serish Gandikota",
       title: "Advisor – Frugal AI",
       img: personSerish,
-      quote: "Co-founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
+      quote:
+        "Co-founder of the Frugal AI Hub at Cambridge Judge Business School, advising on practical and accessible AI innovation.",
     },
     {
       name: "Tim Vinopal",
       title: "Partner – Americas",
       img: person12,
-      quote: "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL’s engagement across the Americas.",
+      quote:
+        "Former U.S. Navy Officer and alumnus of Cambridge Judge Business School, supporting GEL’s engagement across the Americas.",
     },
     {
       name: "Nim Wichienkuer",
       title: "Partner – Gamified Learning",
       img: person7,
-      quote: "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning.",
+      quote:
+        "Product strategist and Cambridge Judge Business School alumna, specialising in gamified and experiential learning.",
     },
     {
       name: "Professor Jaideep Prabhu",
       title: "Programme Director – GILP",
       img: person11,
-      quote: "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme.",
+      quote:
+        "Professor of Marketing at Cambridge Judge Business School and Programme Director for the Global India Leadership Programme.",
     },
     {
       name: "Sayara Thompson",
       title: "Programme Manager",
       img: personSayara,
-      quote: "Experienced programme manager with over three decades of experience leading and managing experiential learning programmes in Cambridge.",
+      quote:
+        "Experienced programme manager with over three decades of experience leading and managing experiential learning programmes in Cambridge.",
     },
     {
       name: "Khushboo Kundra",
       title: "L&D Manager – APAC",
       img: person2,
-      quote: "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region.",
+      quote:
+        "Experienced talent and learning partner with a background supporting high-growth scale-ups across the APAC region.",
     },
     {
       name: "Akshay Kumar",
       title: "Business Development – APAC",
       img: person5,
-      quote: "Strategic partnerships specialist focused on higher education, institutional collaboration and APAC market development.",
+      quote:
+        "Strategic partnerships specialist focused on higher education, institutional collaboration and APAC market development.",
     },
     {
       name: "Gurmeet Kaur",
       title: "Social Media & Marketing",
       img: person10,
-      quote: "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth.",
+      quote:
+        "Experienced advertising and marketing leader with over a decade of experience in digital campaigns and brand growth.",
     },
   ];
 
@@ -485,7 +604,9 @@ function OurPeople() {
         <div className="mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">Our People</span>
+            <span className="text-[15px] font-bold uppercase tracking-[0.25em] text-gold">
+              Our People
+            </span>
             <div className="h-px w-10 bg-gold" />
           </div>
           <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-forest-deep leading-tight">
@@ -495,23 +616,32 @@ function OurPeople() {
 
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-y-12">
           {people.map((person) => (
-            <div key={person.name} className="group relative pt-14 h-full w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]">
+            <div
+              key={person.name}
+              className="group relative pt-14 h-full w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]"
+            >
               <div className="relative flex h-full flex-col items-center justify-start rounded-[2rem] bg-white p-6 pb-8 text-center shadow-lg shadow-forest-deep/5 ring-1 ring-forest-deep/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-forest-deep/10 hover:ring-gold/30">
-                
                 {/* Overlapping Avatar */}
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2">
                   <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative h-28 w-28 overflow-hidden rounded-full border-[5px] border-white bg-[#F7F5F0] shadow-sm transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
                     {person.img ? (
-                      <img src={person.img} 
-                        alt={person.name} 
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                      loading="lazy" />
+                      <img
+                        src={person.img}
+                        alt={person.name}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
                     ) : (
                       <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-forest-deep to-forest text-white transition-transform duration-700 group-hover:scale-110">
                         <Users className="h-7 w-7 text-gold mb-0.5" />
                         <span className="text-[13px] font-bold tracking-wider text-cream/90 uppercase">
-                          {person.name.split(' ').map((n) => n[0]).filter(Boolean).slice(0, 2).join('')}
+                          {person.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .filter(Boolean)
+                            .slice(0, 2)
+                            .join("")}
                         </span>
                       </div>
                     )}
@@ -521,13 +651,18 @@ function OurPeople() {
                 {/* Content */}
                 <div className="mt-14 flex h-full flex-col items-center justify-start w-full">
                   <div>
-                    <h4 className="text-[17px] font-bold text-forest-deep transition-colors duration-300 group-hover:text-gold">{person.name}</h4>
+                    <h4 className="text-[17px] font-bold text-forest-deep transition-colors duration-300 group-hover:text-gold">
+                      {person.name}
+                    </h4>
                     <div className="mx-auto mt-2 mb-2 h-[2px] w-8 rounded-full bg-gold/30 transition-all duration-500 group-hover:w-16 group-hover:bg-gold" />
                   </div>
-                  <p className="text-[13px] font-bold text-forest-deep/90 leading-relaxed">{person.title}</p>
-                  <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2">"{person.quote}"</p>
+                  <p className="text-[13px] font-bold text-forest-deep/90 leading-relaxed">
+                    {person.title}
+                  </p>
+                  <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2">
+                    "{person.quote}"
+                  </p>
                 </div>
-                
               </div>
             </div>
           ))}
@@ -568,10 +703,17 @@ function Impact() {
                 {/* Stats */}
                 <div className="flex items-center gap-16 md:gap-24">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="flex flex-col items-center text-center shrink-0">
+                    <div
+                      key={stat.label}
+                      className="flex flex-col items-center text-center shrink-0"
+                    >
                       <stat.icon className="h-6 w-6 text-cream/70 mb-3" />
-                      <span className="text-3xl font-bold tracking-tight text-gold">{stat.num}</span>
-                      <span className="text-[15px] font-medium text-cream/75 mt-1.5 leading-tight">{stat.label}</span>
+                      <span className="text-3xl font-bold tracking-tight text-gold">
+                        {stat.num}
+                      </span>
+                      <span className="text-[15px] font-medium text-cream/75 mt-1.5 leading-tight">
+                        {stat.label}
+                      </span>
                     </div>
                   ))}
                 </div>

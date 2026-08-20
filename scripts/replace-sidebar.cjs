@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const file = 'src/routes/ventures.$slug.tsx';
-let content = fs.readFileSync(file, 'utf8');
+const file = "src/routes/ventures.$slug.tsx";
+let content = fs.readFileSync(file, "utf8");
 
 const newMainContent = `function MainContent({ v }: { v: Venture }) {
   const cards = [
@@ -225,13 +225,13 @@ const newMainContent = `function MainContent({ v }: { v: Venture }) {
 }
 `;
 
-const startIndex = content.indexOf('function MainContent({ v }: { v: Venture }) {');
-const endIndex = content.indexOf('function GelsRole({ v }: { v: Venture }) {');
+const startIndex = content.indexOf("function MainContent({ v }: { v: Venture }) {");
+const endIndex = content.indexOf("function GelsRole({ v }: { v: Venture }) {");
 
 if (startIndex !== -1 && endIndex !== -1) {
   content = content.substring(0, startIndex) + newMainContent + content.substring(endIndex);
-  fs.writeFileSync(file, content, 'utf8');
-  console.log('Successfully replaced MainContent!');
+  fs.writeFileSync(file, content, "utf8");
+  console.log("Successfully replaced MainContent!");
 } else {
-  console.log('Error: Could not find markers.', { startIndex, endIndex });
+  console.log("Error: Could not find markers.", { startIndex, endIndex });
 }

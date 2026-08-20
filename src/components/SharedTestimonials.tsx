@@ -1,11 +1,11 @@
 import cambridgeImg from "@/assets/hero-classroom.jpg";
-import rosalindHowell from '@/assets/people/rosalind_howell.jpg';
-import samTully from '@/assets/people/sam_tully.jpg';
-import yvonneWalburga from '@/assets/people/yvonne_walburga.jpg';
+import rosalindHowell from "@/assets/people/rosalind_howell.jpg";
+import samTully from "@/assets/people/sam_tully.jpg";
+import yvonneWalburga from "@/assets/people/yvonne_walburga.jpg";
 
-import danImg from '@/assets/Dan.jpeg';
-import charlieImg from '@/assets/Roddie_Charles.jpg';
-import samvrithaImg from '@/assets/people/samvritha.png';
+import danImg from "@/assets/Dan.jpeg";
+import charlieImg from "@/assets/Roddie_Charles.jpg";
+import samvrithaImg from "@/assets/people/samvritha.png";
 
 type TestimonialProps = {
   q: string;
@@ -18,10 +18,10 @@ type TestimonialProps = {
 
 export function SharedTestimonials({
   customTestimonials,
-  featuredBgImage = cambridgeImg
+  featuredBgImage = cambridgeImg,
 }: {
-  customTestimonials?: TestimonialProps[],
-  featuredBgImage?: string
+  customTestimonials?: TestimonialProps[];
+  featuredBgImage?: string;
 }) {
   const testimonials = customTestimonials || [
     {
@@ -47,7 +47,7 @@ export function SharedTestimonials({
       tag: "University of Cambridge",
       img: yvonneWalburga,
       featured: false,
-    }
+    },
   ];
 
   const [featured, ...rest] = testimonials;
@@ -57,24 +57,23 @@ export function SharedTestimonials({
       <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">What They Say</span>
+              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
+                What They Say
+              </span>
             </div>
             <h2 className="text-[2.75rem] md:text-[3.25rem] font-bold text-forest-deep leading-tight tracking-tight">
-              Voices from Our{" "}
-              <span className="italic font-serif text-forest">Community</span>
+              Voices from Our <span className="italic font-serif text-forest">Community</span>
             </h2>
           </div>
         </div>
 
         {/* Asymmetric Layout */}
         <div className="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[4fr_5fr] gap-6">
-
           {/* Featured Card — White background */}
           <div className="group relative rounded-3xl bg-white p-10 md:p-12 border border-forest/8 min-h-[520px] flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
             <div>
@@ -82,7 +81,9 @@ export function SharedTestimonials({
               <div className="flex items-center justify-between mb-8">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-gold text-xl">★</span>
+                    <span key={i} className="text-gold text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <span className="bg-forest-deep text-white text-[15px] font-bold uppercase tracking-[0.18em] px-4 py-2 rounded-full shadow-sm">
@@ -91,7 +92,9 @@ export function SharedTestimonials({
               </div>
 
               {/* Big quote mark */}
-              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">"</span>
+              <span className="block text-[5rem] text-gold/40 font-serif leading-none -mt-2 -ml-2 select-none group-hover:text-gold/60 transition-colors duration-300">
+                "
+              </span>
 
               {/* Quote text - Adjusted size for better balance */}
               <p className="text-[18px] md:text-[20px] text-forest-deep/90 leading-[1.65] font-medium -mt-4 mb-8 max-w-xl">
@@ -110,7 +113,12 @@ export function SharedTestimonials({
               <div className="relative shrink-0">
                 <div className="w-14 h-14 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-xl overflow-hidden group-hover:border-gold/40 transition-colors duration-300">
                   {featured.img ? (
-                    <img src={featured.img} alt={featured.a} className="w-full h-full object-cover" loading="lazy" />
+                    <img
+                      src={featured.img}
+                      alt={featured.a}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   ) : (
                     featured.a[0]
                   )}
@@ -119,7 +127,9 @@ export function SharedTestimonials({
               </div>
               <div>
                 <p className="text-[16px] font-bold text-forest-deep">{featured.a}</p>
-                <p className="text-[13px] text-forest/70 uppercase tracking-[0.15em] mt-0.5">{featured.r}</p>
+                <p className="text-[13px] text-forest/70 uppercase tracking-[0.15em] mt-0.5">
+                  {featured.r}
+                </p>
               </div>
             </div>
           </div>
@@ -136,7 +146,9 @@ export function SharedTestimonials({
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, si) => (
-                        <span key={si} className="text-gold text-[15px]">★</span>
+                        <span key={si} className="text-gold text-[15px]">
+                          ★
+                        </span>
                       ))}
                     </div>
                     <span className="bg-forest-deep text-white text-[11.5px] font-bold uppercase tracking-[0.14em] px-3.5 py-1.5 rounded-full shrink-0">
@@ -145,7 +157,9 @@ export function SharedTestimonials({
                   </div>
 
                   {/* Big gold quote */}
-                  <span className="block text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">"</span>
+                  <span className="block text-[3.5rem] text-gold/80 font-serif leading-none -mt-1 -ml-1 select-none group-hover:text-gold/80 transition-colors duration-300">
+                    "
+                  </span>
 
                   {/* Quote text */}
                   <p className="text-[16px] text-forest-deep/95 leading-[1.75] -mt-5 mb-6 font-normal">
@@ -164,21 +178,27 @@ export function SharedTestimonials({
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-forest-deep/10 border border-forest/15 flex items-center justify-center text-forest-deep font-bold text-[15px] shrink-0 group-hover:border-gold/40 transition-colors duration-300 overflow-hidden">
                       {t.img ? (
-                        <img src={t.img} alt={t.a} className="w-full h-full object-cover" loading="lazy" />
+                        <img
+                          src={t.img}
+                          alt={t.a}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
                       ) : (
                         t.a[0]
                       )}
                     </div>
                     <div>
                       <p className="text-[15px] font-bold text-forest-deep leading-tight">{t.a}</p>
-                      <p className="text-[12.5px] font-semibold text-forest/80 uppercase tracking-[0.12em] mt-0.5 leading-snug">{t.r}</p>
+                      <p className="text-[12.5px] font-semibold text-forest/80 uppercase tracking-[0.12em] mt-0.5 leading-snug">
+                        {t.r}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
