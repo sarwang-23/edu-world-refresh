@@ -33,18 +33,18 @@ import { Footer } from "./index";
 
 // Images from assets
 import cambridgeHeroImg from "@/assets/cambridge.jpg";
-import cambridgePuntingImg from "@/assets/cambridge_7.jpg";
-import businessAudienceImg from "@/assets/business-leaders.jpg";
+import cambridgePuntingImg from "@/assets/america-forward-hero.jpg";
+import businessAudienceImg from "@/assets/af-audience.jpg";
 import timVinopalImg from "@/assets/person12.jpg";
 import andrewHatcherImg from "@/assets/person4.jpg";
 
 // Module images
-import module1Img from "@/assets/business_simulation_session.jpg";
-import module2Img from "@/assets/frugal-ai-yellow-hq.jpg";
-import module3Img from "@/assets/portfolio-img1.jpg";
-import module4Img from "@/assets/Public speaking.jpg";
-import module5Img from "@/assets/gilp_thinking_horizon.jpg";
-import module6Img from "@/assets/cambridge_cslp_new.jpg";
+import module1Img from "@/assets/af-leadership.jpg";
+import module2Img from "@/assets/af-ai.jpg";
+import module3Img from "@/assets/af-branding.jpg";
+import module4Img from "@/assets/af-public-speaking.jpg";
+import module5Img from "@/assets/af-finance.jpg";
+import module6Img from "@/assets/af-cambridge.jpg";
 
 export const Route = createFileRoute("/programmes/america-forward")({
   head: () => buildMeta("/programmes/america-forward"),

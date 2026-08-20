@@ -29,6 +29,9 @@ export function Footer() {
               {[["Partner with GEL", "/partner-with-gel"], ["Institutional Solutions", "/school-leaders"], ["Collaborate", "/contact"]].map(([label, href]) => (
                 <li key={label}><Link to={href} className="hover:text-forest transition-colors">{label}</Link></li>
               ))}
+              <li>
+                <a href="https://jobs.hellorecruiter.ai/globaledulab" target="_blank" rel="noreferrer" className="hover:text-forest transition-colors">Careers</a>
+              </li>
             </ul>
           </div>
           <div className="lg:col-span-2 lg:border-l lg:border-[#c5ccc7] lg:pl-4 xl:pl-8">
