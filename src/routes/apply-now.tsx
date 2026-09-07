@@ -98,70 +98,107 @@ function ApplyNowPage() {
     <div className="min-h-screen font-sans bg-white selection:bg-gold/30">
       <section className="min-h-screen flex flex-col lg:flex-row">
         {/* LEFT PANEL — Bespoke Immersive Experience */}
-        <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] flex flex-col justify-between overflow-hidden bg-forest-deep">
+        <div className="relative lg:w-[45%] xl:w-[42%] min-h-[600px] lg:min-h-screen bg-forest-deep flex flex-col justify-between overflow-hidden">
+          {/* High-res Cambridge Architecture background with subtle zoom */}
           <img
             src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
             alt="Cambridge architecture"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-30 mix-blend-luminosity scale-105"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-25 mix-blend-luminosity scale-105 pointer-events-none"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/95 via-forest-deep/80 to-forest-deep/95" />
+          {/* Multi-layer luxury dark gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/98 via-forest-deep/90 to-forest-deep/98 pointer-events-none" />
+          <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold/10 blur-[100px]" />
+          <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-gold/5 blur-[120px]" />
 
-          {/* Subtle noise texture */}
-          <div
-            className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-            style={{
-              backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")',
-            }}
-          ></div>
+          {/* Decorative divider line on right */}
+          <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/30 to-transparent pointer-events-none" />
 
-          <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
-          <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-forest-deep/50 to-transparent" />
-
-          <div className="relative z-10 px-10 md:px-14 pt-24 pb-12 flex flex-col justify-between h-full">
+          {/* Main Content Area */}
+          <div className="relative z-10 px-8 sm:px-12 lg:px-14 pt-12 md:pt-16 pb-12 flex flex-col justify-between h-full">
             <div>
-              <div className="flex items-center gap-4 mb-12">
-                <div className="flex items-center justify-center h-8 w-8 rounded-full bg-gold/10 border border-gold/30">
-                  <Sparkles className="w-3.5 h-3.5 text-gold" />
-                </div>
-                <span className="text-[15px] font-bold tracking-[0.3em] text-gold uppercase">
-                  Admissions
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-sm mb-8">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+                <span className="text-[13px] font-bold tracking-[0.25em] text-gold uppercase">
+                  Global Admissions Desk
                 </span>
               </div>
 
-              <h1 className="text-[2.8rem] md:text-[3.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
+              {/* Headline */}
+              <h1 className="text-[2.6rem] sm:text-[3.2rem] lg:text-[3.5rem] font-bold text-white leading-[1.06] tracking-tight mb-5">
                 Curating <br />
-                <em className="font-serif italic font-normal text-gold not-italic">
+                <span className="font-serif italic font-normal text-gold">
                   global leaders.
-                </em>
+                </span>
               </h1>
 
-              <div className="space-y-6 text-[15px] text-white/80 leading-[1.8] max-w-[380px] font-normal">
-                <p>Thank you for your interest in our premium educational experiences.</p>
-                <p>
-                  We develop and execute bespoke programmes for business leaders, educators, and
-                  outstanding students. We would be delighted to partner with you to deliver these
-                  transformative experiences.
+              {/* Subtitle */}
+              <p className="text-[15px] sm:text-[16px] text-white/80 leading-[1.75] max-w-[440px] font-light mb-8">
+                Join our bespoke programmes engineered in Cambridge for ambitious founders, business leaders, educators, and exceptional researchers.
+              </p>
+
+              {/* What to Expect / Process Card */}
+              <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 backdrop-blur-md space-y-4 mb-8 max-w-[460px]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold">
+                  Admissions Process
                 </p>
-                <p className="text-white/80 font-medium pt-2 border-t border-white/10 mt-6">
-                  Please express your interest below, and our Cambridge desk will be in touch with
-                  the next steps.
-                </p>
+                <div className="space-y-3.5">
+                  <div className="flex items-start gap-3.5">
+                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-gold/20 text-gold text-[12px] font-bold shrink-0 mt-0.5 border border-gold/40">
+                      1
+                    </div>
+                    <div>
+                      <p className="text-[14px] font-semibold text-white">Express Your Interest</p>
+                      <p className="text-[13px] text-white/60 leading-snug">Submit your profile and programme preferences.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3.5">
+                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-gold/20 text-gold text-[12px] font-bold shrink-0 mt-0.5 border border-gold/40">
+                      2
+                    </div>
+                    <div>
+                      <p className="text-[14px] font-semibold text-white">Cohort Alignment Review</p>
+                      <p className="text-[13px] text-white/60 leading-snug">Our Cambridge desk reviews your application within 24 hours.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3.5">
+                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-gold/20 text-gold text-[12px] font-bold shrink-0 mt-0.5 border border-gold/40">
+                      3
+                    </div>
+                    <div>
+                      <p className="text-[14px] font-semibold text-white">Formal Invitation & Briefing</p>
+                      <p className="text-[13px] text-white/60 leading-snug">Receive your bespoke onboarding package and dates.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Trust Indicators / Stats */}
+              <div className="grid grid-cols-2 gap-4 max-w-[460px]">
+                <div className="bg-white/[0.03] border border-white/8 rounded-xl p-4">
+                  <p className="text-2xl font-bold text-white font-serif mb-0.5">24h</p>
+                  <p className="text-[12px] text-white/70 uppercase tracking-wider">Review Turnaround</p>
+                </div>
+                <div className="bg-white/[0.03] border border-white/8 rounded-xl p-4">
+                  <p className="text-2xl font-bold text-gold font-serif mb-0.5">Selective</p>
+                  <p className="text-[12px] text-white/70 uppercase tracking-wider">Cohort Standard</p>
+                </div>
               </div>
             </div>
 
-            {/* Watermark Logo */}
-            <div className="mt-12">
-              <div className="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <div className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 bg-forest-deep shadow-inner">
-                  <span className="text-[15px] font-serif italic text-gold">G·E·L</span>
+            {/* Bottom Footer Badge */}
+            <div className="pt-8 mt-10 border-t border-white/10 flex items-center justify-between">
+              <div className="flex items-center gap-3.5">
+                <div className="h-11 w-11 rounded-full border border-gold/40 flex items-center justify-center shrink-0 bg-white/5 shadow-inner">
+                  <span className="text-[14px] font-serif italic text-gold font-bold">G·E·L</span>
                 </div>
                 <div>
-                  <p className="text-[15px] uppercase tracking-[0.2em] text-white/80 mb-0.5">
-                    Established
+                  <p className="text-[11px] uppercase tracking-[0.25em] text-gold font-bold">
+                    Global Education Lab
                   </p>
-                  <p className="text-[15px] text-white/90 tracking-wide font-serif italic">
-                    Excellence in Global Education
+                  <p className="text-[13px] text-white/80 font-serif italic">
+                    Cambridge · United Kingdom
                   </p>
                 </div>
               </div>

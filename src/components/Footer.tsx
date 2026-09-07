@@ -28,6 +28,7 @@ export function Footer() {
             <ul className="space-y-4 text-[14.5px] font-medium text-[#333]">
               {[
                 ["Programmes", "/programmes"],
+                ["AI for Manufacturers", "/ai-for-manufacturers"],
                 ["Entrepreneurship", "/entrepreneurship"],
                 ["Our Impact", "/our-impact"],
                 ["About Us", "/about"],

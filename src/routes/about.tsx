@@ -45,6 +45,7 @@ import personSerish from "@/assets/faculty-serish.jpg";
 import personSantosh from "@/assets/santosh_huralikoppi.jpg";
 import personSayara from "@/assets/sayara.jpg";
 import personMargaret from "@/assets/margaret_serna.jpeg";
+import personNare from "@/assets/nare_bandaranayake.jpg";
 import { Voices } from "@/components/Voices";
 
 export const Route = createFileRoute("/about")({
@@ -526,6 +527,13 @@ function OurPeople() {
         "Experienced investor, entrepreneur with multiple exits, and leadership coach supporting founders and growth-stage ventures.",
     },
     {
+      name: "Nare Bandaranayake",
+      title: "Advisor – Finance & GTM",
+      img: personNare,
+      quote:
+        "University of Cambridge and Stanford GSB alumna with expertise in finance, go-to-market strategy and supporting the growth of early-stage ventures.",
+    },
+    {
       name: "Dr Yves Gaspar",
       title: "Advisor – STEM",
       img: person6,
@@ -614,13 +622,13 @@ function OurPeople() {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-y-12">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-16">
           {people.map((person) => (
             <div
               key={person.name}
-              className="group relative pt-14 h-full w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]"
+              className="group relative pt-14 flex w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]"
             >
-              <div className="relative flex h-full flex-col items-center justify-start rounded-[2rem] bg-white p-6 pb-8 text-center shadow-lg shadow-forest-deep/5 ring-1 ring-forest-deep/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-forest-deep/10 hover:ring-gold/30">
+              <div className="relative flex w-full min-h-[320px] flex-col items-center justify-start rounded-[2rem] bg-white p-6 pb-8 text-center shadow-lg shadow-forest-deep/5 ring-1 ring-forest-deep/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-forest-deep/10 hover:ring-gold/30">
                 {/* Overlapping Avatar */}
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2">
                   <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -649,16 +657,18 @@ function OurPeople() {
                 </div>
 
                 {/* Content */}
-                <div className="mt-14 flex h-full flex-col items-center justify-start w-full">
-                  <div>
+                <div className="mt-14 flex flex-1 flex-col items-center justify-start w-full">
+                  <div className="w-full">
                     <h4 className="text-[17px] font-bold text-forest-deep transition-colors duration-300 group-hover:text-gold">
                       {person.name}
                     </h4>
                     <div className="mx-auto mt-2 mb-2 h-[2px] w-8 rounded-full bg-gold/30 transition-all duration-500 group-hover:w-16 group-hover:bg-gold" />
                   </div>
-                  <p className="text-[13px] font-bold text-forest-deep/90 leading-relaxed">
-                    {person.title}
-                  </p>
+                  <div className="min-h-[38px] flex items-center justify-center w-full">
+                    <p className="text-[13px] font-bold text-forest-deep/90 leading-snug">
+                      {person.title}
+                    </p>
+                  </div>
                   <p className="text-[13px] italic text-forest/70 leading-relaxed max-w-[220px] mt-3 px-2">
                     "{person.quote}"
                   </p>

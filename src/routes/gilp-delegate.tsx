@@ -257,7 +257,7 @@ function GilpDelegatePage() {
     <div className="min-h-screen font-sans bg-white selection:bg-gold/30">
       <section className="min-h-screen flex flex-col lg:flex-row">
         {/* ─── LEFT PANEL ─── */}
-        <div className="relative lg:w-[45%] lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] bg-forest-deep overflow-hidden">
+        <div className="relative lg:w-[45%] lg:sticky lg:top-0 lg:h-screen bg-forest-deep overflow-y-auto [&::-webkit-scrollbar]:hidden">
           {/* BG image */}
           <img
             src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"

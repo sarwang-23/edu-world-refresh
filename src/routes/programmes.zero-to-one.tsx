@@ -28,7 +28,6 @@ import cambridgeImg from "../assets/cambridge_7.jpg";
 import businessLeadersImg from "../assets/business-leaders.jpg";
 import zeroToOneImg from "../assets/zero-to-one.png";
 import foodAgriImg from "../assets/food-agri-theme.jpg";
-import alumniImpactImg from "../assets/alumni-impact.jpg";
 import z21Gallery1 from "../assets/z21_gallery_1.jpg";
 import z21Gallery2 from "../assets/z21_gallery_2.jpg";
 import z21Gallery3 from "../assets/z21_gallery_3.jpg";
@@ -63,9 +62,9 @@ function ZeroToOne() {
       <StatsMarquee />
       <WhatIsZTO />
       <ThemeSection />
-      <SuccessStory />
-      <ProgrammeFormat />
       <WhoShouldApply />
+      <BeyondTheWeekend />
+      <ProgrammeFormat />
       <CohortGallery />
       <ZeroToOneTestimonials />
       <BottomCTA />
@@ -73,14 +72,15 @@ function ZeroToOne() {
 
       {/* Floating Sign Up Button */}
       <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500 fill-mode-both">
-        <Link
-          to="/apply-now"
-          search={{ source: "Zero-to-One Ideation Weekend (Floating)" }}
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSemAO0dB2CXIv4uDhsOEdp-9k4cDijcyyPOsuRFYOcqRiP1_Q/viewform?usp=sharing&ouid=111821060941100572450"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center justify-center gap-2 rounded-full bg-forest-deep px-6 md:px-8 py-4 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-2xl shadow-forest/40 whitespace-nowrap hover:-translate-y-1"
         >
           Sign Up Now
           <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-        </Link>
+        </a>
       </div>
     </div>
   );
@@ -156,14 +156,15 @@ function Hero() {
             </div>
 
             <div className="mt-8 flex gap-3.5 flex-wrap sm:flex-nowrap items-center">
-              <Link
-                to="/apply-now"
-                search={{ source: "Zero-to-One Ideation Weekend (Hero)" }}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSemAO0dB2CXIv4uDhsOEdp-9k4cDijcyyPOsuRFYOcqRiP1_Q/viewform?usp=sharing&ouid=111821060941100572450"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-forest-deep px-6 sm:px-8 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest/25 whitespace-nowrap shrink-0"
               >
                 Sign Up Now
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-              </Link>
+              </a>
               <a
                 href="#format"
                 className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/50 px-6 sm:px-7 py-4 text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep backdrop-blur-sm hover:border-forest-deep hover:bg-white transition-all duration-300 whitespace-nowrap shrink-0"
@@ -335,56 +336,86 @@ function WhatIsZTO() {
 /* ─── THEME SECTION ──────────────────────────────────────────────────────────── */
 function ThemeSection() {
   const ventureAreas = [
-    "AI for personalised food & nutrition",
-    "Food waste circularity & supply chains",
-    "Climate-smart agriculture",
-    "Regenerative biology & soil health",
-    "Alternative proteins & cellular agriculture",
-    "AgriTech & precision farming",
-    "Consumer health behaviour change",
-    "Sustainable packaging & distribution",
+    {
+      title: "AI + PERSONALISED FOOD",
+      desc: "AI for nutrition, personalised food and new consumer experiences.",
+    },
+    {
+      title: "FOOD WASTE + CIRCULARITY",
+      desc: "Waste reduction, circular supply chains and smarter use of resources.",
+    },
+    {
+      title: "CLIMATE-SMART AGRICULTURE",
+      desc: "Farm productivity, resilience, data and climate adaptation.",
+    },
+    {
+      title: "REGENERATIVE SYSTEMS",
+      desc: "Regenerative agriculture, biodiversity and soil health.",
+    },
+    {
+      title: "NEW INGREDIENTS",
+      desc: "Alternative proteins, sustainable ingredients and new food formats.",
+    },
+    {
+      title: "BEHAVIOUR + HEALTH",
+      desc: "Consumer health, behaviour change and healthier food choices.",
+    },
+    {
+      title: "AGRITECH + PRECISION",
+      desc: "AI, sensing, automation and data-enabled farming.",
+    },
+    {
+      title: "PACKAGING + DISTRIBUTION",
+      desc: "Sustainable packaging, logistics and distribution innovation.",
+    },
   ];
   return (
-    <section id="theme" className="py-32 bg-forest-deep relative overflow-hidden">
+    <section id="theme" className="pt-12 md:pt-16 pb-10 md:pb-12 bg-forest-deep relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-[600px] w-[600px] rounded-full bg-gold/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3 mb-3">
               <div className="h-px w-8 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
+              <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">
                 October Theme
               </span>
             </div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-cream/60 border border-white/15 bg-white/5 px-3 py-1 rounded-full">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-cream/60 border border-white/15 bg-white/5 px-2.5 py-0.5 rounded-full">
                 📅 23–25 October, 2026
               </span>
             </div>
-            <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-white mb-6 leading-tight">
+            <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white mb-4 leading-tight">
               Food, Agriculture &<br />
               Planetary Health
             </h2>
-            <p className="text-[15px] text-cream/75 leading-[1.8] mb-10 max-w-lg">
-              A timely theme connecting health, climate, biology, food systems, sustainability,
-              agriculture, AI, supply chains, behaviour change and commercial innovation. One of the
-              most pressing systems challenges of our era — and an enormous venture opportunity.
+            <p className="text-[14.5px] text-cream/75 leading-[1.7] mb-6 max-w-lg">
+              We are in the midst of a climate emergency, and our agrifood systems urgently need
+              impactful innovations to mitigate and adapt to growing challenges. This venture-creation
+              theme brings together health, climate, biology, food systems, sustainability, agriculture,
+              AI, supply chains, behaviour change and commercial innovation to develop practical
+              solutions with the potential for meaningful real-world impact.
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {ventureAreas.map((area, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 px-5 py-4 cursor-default"
+                  className="rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] border-l-[3px] border-l-gold transition-all duration-300 p-3.5 cursor-default flex flex-col justify-center"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0 shadow-[0_0_8px_rgba(255,215,0,0.6)]" />
-                  <span className="text-[15px] text-white/90 leading-snug font-medium">{area}</span>
+                  <h4 className="text-[12.5px] font-bold uppercase tracking-[0.06em] text-white">
+                    {area.title}
+                  </h4>
+                  <p className="text-[12px] text-cream/75 leading-relaxed mt-1">
+                    {area.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative h-full min-h-[480px]">
+          <div className="relative h-full min-h-[440px]">
             <div className="h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-black/40 border border-white/10 relative group">
               <img
                 src={foodAgriImg}
@@ -393,14 +424,14 @@ function ThemeSection() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-10">
-                <div className="inline-flex items-center gap-2 mb-4 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3.5 py-1.5 rounded-full">
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="inline-flex items-center gap-2 mb-3 bg-gold/15 backdrop-blur-sm border border-gold/30 px-3 py-1 rounded-full">
                   <Sprout className="h-4 w-4 text-gold" />
-                  <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold">
+                  <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold">
                     Why This Theme
                   </p>
                 </div>
-                <p className="text-white text-[15px] leading-[1.7] font-medium">
+                <p className="text-white text-[14.5px] leading-[1.6] font-medium">
                   Global food systems are under pressure from climate change, population growth, and
                   shifting consumer expectations — creating the largest venture opportunity of the
                   decade.
@@ -409,84 +440,145 @@ function ThemeSection() {
             </div>
           </div>
         </div>
+
+        {/* 3 Pillars / System Drivers */}
+        <div className="mt-8 pt-6 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] p-4.5 border-l-[4px] border-l-[#4CAF50] transition-all duration-300">
+            <h4 className="text-[12.5px] font-bold uppercase tracking-[0.12em] text-[#81C784] mb-1.5">
+              System Pressure
+            </h4>
+            <p className="text-[13.5px] text-cream/80 leading-relaxed">
+              Food systems face climate, health, and resource constraints and need to balance conservation of biodiversity.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] p-4.5 border-l-[4px] border-l-[#AB47BC] transition-all duration-300">
+            <h4 className="text-[12.5px] font-bold uppercase tracking-[0.12em] text-[#CE93D8] mb-1.5">
+              Cambridge Talent
+            </h4>
+            <p className="text-[13.5px] text-cream/80 leading-relaxed">
+              Research and entrepreneurial talent can generate scientific, commercial and social impact.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] p-4.5 border-l-[4px] border-l-[#4CAF50] transition-all duration-300">
+            <h4 className="text-[12.5px] font-bold uppercase tracking-[0.12em] text-[#81C784] mb-1.5">
+              Real Problems
+            </h4>
+            <p className="text-[13.5px] text-cream/80 leading-relaxed">
+              Industry challenges can help teams focus on relevant, deployable and impactful opportunities.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
-/* ─── SUCCESS STORY ──────────────────────────────────────────────────────────── */
-function SuccessStory() {
+/* ─── BEYOND THE WEEKEND ─────────────────────────────────────────────────────── */
+function BeyondTheWeekend() {
   return (
-    <section className="py-32 bg-[#F4EFE6] relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-32 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-gold/8 blur-[120px]" />
+    <section className="bg-white py-24 md:py-28 border-t border-forest/5 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-5">
+        {/* Section Header */}
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
-              Alumni Impact
+            <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">
+              Beyond The Weekend
             </span>
-            <div className="h-px w-8 bg-gold" />
+            <div className="h-px w-8 bg-gold md:hidden" />
           </div>
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">
-            From challenge to incubation.
+          <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold text-forest-deep leading-[1.12] mb-5 max-w-4xl tracking-tight">
+            A 48-hour programme designed to create a{" "}
+            <span className="font-serif italic text-gold">beginning.</span>
           </h2>
+          <p className="text-[16px] md:text-[17px] text-forest/75 leading-[1.75] max-w-3xl">
+            The strongest teams can leave Zero-to-One with a clearer route into mentoring, incubation,
+            partnerships, pilots and further venture development.
+          </p>
         </div>
-        <div className="bg-white rounded-[2.5rem] p-10 lg:p-14 border border-forest/8 shadow-[0_16px_60px_rgba(26,53,35,0.08)]">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-[15px] text-forest/75 leading-[1.8] mb-6">
-                Four of the ten ideas that emerged from the inaugural Zero-to-One weekend were
-                offered places on the{" "}
-                <strong className="text-forest-deep font-bold">
-                  Spark Incubator at the University of Cambridge
-                </strong>
-                , while two other teams are now receiving active support to develop early-stage
-                partnerships and explore pilot opportunities.
-              </p>
-              <p className="text-[15px] text-forest/75 leading-[1.8] mb-10">
-                The programme doesn't just end with an idea — it creates a pathway. Participants
-                walk away with a team, a validated direction, and a warm introduction to Cambridge's
-                innovation ecosystem.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-                {[
-                  { val: "4", label: "Ideas on Spark Incubator" },
-                  { val: "2", label: "Teams in active pilot support" },
-                  { val: "100%", label: "Participants form real teams" },
-                ].map((s, i) => (
-                  <div
-                    key={i}
-                    className="text-center bg-[#F4EFE6] rounded-2xl p-6 border border-forest/8 hover:border-gold/30 hover:shadow-md transition-all duration-300"
-                  >
-                    <p className="text-2xl font-bold text-forest-deep">{s.val}</p>
-                    <p className="text-[15px] text-forest/80 mt-1 leading-[1.5] uppercase tracking-wide font-bold">
-                      {s.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Image frame — dimensions unchanged (aspect-[16/10]) */}
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[16/10] shadow-xl border border-forest/8">
-              <img
-                src={alumniImpactImg}
-                alt="Zero to One outcome"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-forest-deep/30" />
-              <div className="absolute bottom-6 left-6">
-                <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-gold drop-shadow-md">
-                  The Experience
-                </p>
-                <p className="text-white text-[15px] font-bold mt-1 drop-shadow-md">
-                  Zero-To-One Highlights
-                </p>
-              </div>
+        {/* 2 Opportunity Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {/* Card 1: Accelerate Cambridge Mentoring */}
+          <div className="group relative bg-white rounded-2xl p-7 md:p-8 border border-forest/10 border-t-4 border-t-emerald-700 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <h3 className="text-[19px] md:text-[21px] font-bold text-forest-deep mb-3 leading-snug">
+                Accelerate Cambridge mentoring
+              </h3>
+              <p className="text-[14.5px] text-forest/75 leading-[1.65] mb-5">
+                The winning team will receive mentoring sessions from Accelerate Cambridge mentors to help develop a post-Venture Creation Action Plan.
+              </p>
             </div>
+            <div className="p-3.5 rounded-xl bg-[#EDF5F0] border-l-2 border-emerald-600 text-[13px] font-semibold text-forest-deep">
+              That plan may include applying to a future Accelerate cohort.
+            </div>
+          </div>
+
+          {/* Card 2: King's E-Lab Spark Opportunity */}
+          <div className="group relative bg-white rounded-2xl p-7 md:p-8 border border-forest/10 border-t-4 border-t-[#5B2068] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <h3 className="text-[19px] md:text-[21px] font-bold text-forest-deep mb-3 leading-snug">
+                King's E-Lab Spark opportunity
+              </h3>
+              <p className="text-[14.5px] text-forest/75 leading-[1.65] mb-5">
+                A further award offers the chance to win a place on the King's E-Lab Spark Incubator, creating another pathway for a promising venture to continue after the weekend.
+              </p>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#F5EDF7] border-l-2 border-[#5B2068] text-[13px] font-semibold text-forest-deep">
+              Creating another pathway for a promising venture to continue after the weekend.
+            </div>
+          </div>
+        </div>
+
+        {/* Proven Pathway Stats Card */}
+        <div className="mb-8">
+          <div className="text-center md:text-left mb-3">
+            <span className="text-[12px] md:text-[13px] font-bold uppercase tracking-[0.22em] text-[#5B2068]">
+              Proven Pathway From The Inaugural Zero-To-One
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 rounded-2xl overflow-hidden border border-forest/10 shadow-sm">
+            {/* Col 1 */}
+            <div className="bg-[#EDF5F0] p-6 md:p-8 text-center flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-forest/10">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-serif text-forest-deep mb-2 font-normal">
+                10
+              </span>
+              <p className="text-[13.5px] text-forest/80 font-medium leading-snug max-w-[200px]">
+                venture ideas emerged
+              </p>
+            </div>
+            {/* Col 2 */}
+            <div className="bg-[#F5EDF7] p-6 md:p-8 text-center flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-forest/10">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#5B2068] mb-2 font-normal">
+                4
+              </span>
+              <p className="text-[13.5px] text-forest/80 font-medium leading-snug max-w-[200px]">
+                offered places on the Spark Incubator
+              </p>
+            </div>
+            {/* Col 3 */}
+            <div className="bg-[#FCF8EE] p-6 md:p-8 text-center flex flex-col items-center justify-center border-t-2 md:border-t-0 border-[#D97706]/40">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#92400E] mb-2 font-normal">
+                2
+              </span>
+              <p className="text-[13.5px] text-forest/80 font-medium leading-snug max-w-[220px]">
+                teams supported toward partnerships and pilots
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* The Weekend is the Starting Line Banner */}
+        <div className="rounded-2xl bg-[#08180E] py-7 px-6 md:py-8 md:px-10 text-center text-white relative overflow-hidden shadow-lg border border-forest/25">
+          <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h3 className="text-[15px] md:text-[17px] font-bold uppercase tracking-[0.2em] text-gold mb-2">
+              The Weekend Is The Starting Line.
+            </h3>
+            <p className="text-[13.5px] md:text-[14.5px] text-white/85 leading-relaxed font-normal">
+              Build something credible enough to know what the next experiment, mentor conversation or application should be.
+            </p>
           </div>
         </div>
       </div>
@@ -581,62 +673,65 @@ function ProgrammeFormat() {
   return (
     <section
       id="format"
-      className="bg-white py-32 border-t border-forest/5 relative overflow-hidden"
+      className="bg-forest-deep py-24 md:py-32 relative overflow-hidden text-white"
     >
-      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/6 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[140px]" />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
+            <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">
               Programme Format
             </span>
           </div>
-          <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-forest-deep leading-[1.1]">
-            48 hours — structured for velocity.
+          <h2 className="text-[2.2rem] md:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
+            48 hours — structured for <span className="font-serif italic text-gold">velocity.</span>
           </h2>
         </div>
+
         <div className="flex gap-4 mb-10 flex-wrap">
           {schedule.map((d, i) => (
             <button
               key={i}
               onClick={() => setActiveDay(i)}
               className={
-                "rounded-full px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " +
+                "rounded-full px-7 py-3.5 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " +
                 (activeDay === i
-                  ? "bg-forest-deep text-gold shadow-[0_8px_24px_rgba(26,53,35,0.2)]"
-                  : "bg-[#F4EFE6] border border-forest/10 text-forest/80 hover:border-gold/40 hover:text-forest-deep shadow-sm")
+                  ? "bg-gold text-forest-deep shadow-[0_8px_24px_rgba(197,160,89,0.3)] scale-[1.02]"
+                  : "bg-white/5 border border-white/15 text-white/80 hover:border-gold/50 hover:bg-white/10 hover:text-white backdrop-blur-sm")
               }
             >
               {d.day.split(" · ")[0]}
             </button>
           ))}
         </div>
-        <div className="bg-[#F4EFE6] rounded-[2.5rem] p-10 lg:p-12 border border-forest/8 shadow-[0_8px_40px_rgba(26,53,35,0.06)] relative overflow-hidden">
-          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/8 blur-[60px]" />
 
-          <div className="mb-10 flex items-baseline gap-4 relative z-10">
-            <h3 className="text-[22px] font-bold text-forest-deep">{day.day}</h3>
-            <p className="text-[15px] text-gold font-bold uppercase tracking-wider">{day.date}</p>
+        <div className="bg-[#0c2014]/90 rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-[0_16px_50px_rgba(0,0,0,0.35)] relative overflow-hidden backdrop-blur-md">
+          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[70px]" />
+
+          <div className="mb-8 flex items-baseline gap-4 relative z-10">
+            <h3 className="text-[22px] md:text-[24px] font-bold text-white">{day.day}</h3>
+            <p className="text-[14px] md:text-[15px] text-gold font-bold uppercase tracking-widest">{day.date}</p>
           </div>
 
-          <div className="flex flex-col gap-5 relative z-10">
+          <div className="flex flex-col gap-4 relative z-10">
             {day.sessions.map((s, i) => (
               <div
                 key={i}
-                className="group flex flex-col md:flex-row gap-5 md:gap-8 bg-white rounded-2xl p-6 border border-forest/5 hover:border-gold/30 hover:shadow-md transition-all duration-300"
+                className="group flex flex-col md:flex-row gap-4 md:gap-8 bg-white/[0.05] hover:bg-white/[0.09] rounded-2xl p-6 border border-white/10 hover:border-gold/40 hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="md:w-32 shrink-0 pt-0.5">
-                  <p className="text-[15px] font-bold text-gold uppercase tracking-[0.15em]">
+                  <p className="text-[14px] md:text-[15px] font-bold text-gold uppercase tracking-[0.15em]">
                     {s.time}
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-[15px] font-bold text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">
+                  <h4 className="text-[16px] md:text-[17px] font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">
                     {s.title}
                   </h4>
-                  <p className="text-[15px] text-forest/70 leading-[1.65]">{s.desc}</p>
+                  <p className="text-[14.5px] text-cream/70 leading-[1.65] font-light">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -651,69 +746,78 @@ function ProgrammeFormat() {
 function WhoShouldApply() {
   const profiles = [
     {
-      icon: <FlaskConical className="h-6 w-6" />,
-      title: "Researchers",
-      desc: "Scientists and academics who have insights or findings that could translate into real-world impact.",
-      color: "bg-forest-deep",
+      title: "RESEARCHERS + SCIENTISTS",
+      desc: "Explore how research insight or an important problem might translate into real-world impact.",
+      border: "border-l-[#2E7D32]",
+      titleColor: "text-[#2E7D32]",
     },
     {
-      icon: <Globe2 className="h-6 w-6" />,
-      title: "Business Students",
-      desc: "MBA and master's students looking to build real-world venture experience alongside their studies.",
-      color: "bg-[#B47C35]",
+      title: "STUDENTS + ALUMNI",
+      desc: "Contribute fresh thinking, sector knowledge, research or business skills.",
+      border: "border-l-[#7B1FA2]",
+      titleColor: "text-[#7B1FA2]",
     },
     {
-      icon: <Lightbulb className="h-6 w-6" />,
-      title: "Early Founders",
-      desc: "Those with early ideas who want to stress-test, refine and build with like-minded collaborators.",
-      color: "bg-[#1A365D]",
+      title: "ASPIRING + EARLY-STAGE FOUNDERS",
+      desc: "Challenge an early direction before investing heavily in it.",
+      border: "border-l-[#2E7D32]",
+      titleColor: "text-[#2E7D32]",
     },
     {
-      icon: <Rocket className="h-6 w-6" />,
-      title: "Builders & Makers",
-      desc: "Technologists, designers and product people who want to channel their skills into a new venture.",
-      color: "bg-forest",
+      title: "OPERATORS + INDUSTRY PROFESSIONALS",
+      desc: "Bring real-world context, customer understanding and sector experience.",
+      border: "border-l-[#7B1FA2]",
+      titleColor: "text-[#7B1FA2]",
+    },
+    {
+      title: "TECHNICAL BUILDERS + AI TALENT",
+      desc: "Prototype quickly and test what technology can make possible.",
+      border: "border-l-[#2E7D32]",
+      titleColor: "text-[#2E7D32]",
+    },
+    {
+      title: "DESIGN + COMMERCIAL TALENT",
+      desc: "Shape users, value propositions, business models and compelling pitches.",
+      border: "border-l-[#7B1FA2]",
+      titleColor: "text-[#7B1FA2]",
     },
   ];
+
   return (
-    <section className="bg-forest-deep py-32 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-      <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/8 blur-[120px]" />
-      <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-5">
+    <section className="bg-[#F4EFE6] py-20 md:py-24 relative overflow-hidden border-t border-forest/5">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:48px_48px]" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/10 blur-[120px]" />
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
-              Who Should Apply
+            <span className="text-[14px] font-bold uppercase tracking-[0.25em] text-gold">
+              Who Should Apply?
             </span>
-            <div className="h-px w-8 bg-gold" />
+            <div className="h-px w-8 bg-gold md:hidden" />
           </div>
-          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-white mb-5">
-            Built for curious, driven people.
+          <h2 className="text-[2.2rem] md:text-[2.85rem] font-bold text-forest-deep leading-tight mb-5 max-w-3xl">
+            Bring your expertise, curiosity or an important problem.
           </h2>
-          <p className="mt-4 text-[15px] text-cream/80 max-w-xl mx-auto leading-[1.7]">
-            You don't need the perfect idea. You need curiosity, drive, and the desire to think like
-            a founder.
+          <p className="text-[15px] md:text-[16px] text-forest/80 leading-[1.8] max-w-4xl">
+            Zero-to-One is designed to bring together diverse disciplines, experiences and perspectives.
+            Participants may arrive with an early interest, a research insight, lived experience of a challenge,
+            or simply a desire to contribute to an emerging venture. The programme creates a collaborative
+            space to explore, challenge and develop ambitious ideas with the potential to become
+            game-changing solutions for the future of our agrifood system.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {profiles.map((p, i) => (
             <div
               key={i}
-              className="group rounded-[1.75rem] border border-white/12 bg-white/6 backdrop-blur-sm overflow-hidden hover:border-gold/40 hover:bg-white/10 hover:shadow-[0_16px_48px_rgba(0,0,0,0.2)] hover:-translate-y-2 transition-all duration-400"
+              className={`rounded-2xl border border-forest/8 bg-white hover:border-gold/30 hover:shadow-md shadow-sm p-6 border-l-[4px] ${p.border} transition-all duration-300 flex flex-col justify-center`}
             >
-              <div className={`h-1.5 w-full ${p.color}`} />
-              <div className="p-8 pb-10">
-                <div
-                  className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${p.color} text-white shadow-sm ring-2 ring-white/10 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {p.icon}
-                </div>
-                <h3 className="text-[17px] font-bold text-white mb-3 leading-tight group-hover:text-gold transition-colors duration-300">
-                  {p.title}
-                </h3>
-                <p className="text-[15px] text-cream/80 leading-[1.6]">{p.desc}</p>
-              </div>
+              <h3 className={`text-[13px] font-bold uppercase tracking-[0.08em] ${p.titleColor} mb-2`}>
+                {p.title}
+              </h3>
+              <p className="text-[14px] text-forest/75 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -822,14 +926,15 @@ function BottomCTA() {
         </p>
 
         <div className="mt-12 flex gap-4 justify-center flex-wrap">
-          <Link
-            to="/apply-now"
-            search={{ source: "Zero-to-One Ideation Weekend (Bottom CTA)" }}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemAO0dB2CXIv4uDhsOEdp-9k4cDijcyyPOsuRFYOcqRiP1_Q/viewform?usp=sharing&ouid=111821060941100572450"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 text-[15px] font-bold uppercase tracking-[0.18em] text-forest-deep hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-gold/25"
           >
             Sign Up Now
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-          </Link>
+          </a>
           <Link
             to="/contact"
             search={{ source: "Zero-to-One Ideation Weekend (Bottom CTA)" }}
