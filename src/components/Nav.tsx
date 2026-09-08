@@ -38,7 +38,9 @@ export function Nav() {
               className={`text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-forest ${
                 location.pathname.startsWith("/programmes") ||
                 location.pathname.startsWith("/students") ||
-                location.pathname.startsWith("/past-programmes")
+                location.pathname.startsWith("/past-programmes") ||
+                location.pathname === "/indialeadership" ||
+                location.pathname === "/ai-for-manufacturers"
                   ? "text-forest"
                   : "text-forest/75"
               }`}
@@ -118,6 +120,15 @@ export function Nav() {
                       >
                         Global India Leadership Programme
                       </Link>
+                      <Link
+                        to="/ai-for-manufacturers"
+                        className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest flex items-center justify-between"
+                      >
+                        <span>AI for Manufacturers</span>
+                        <span className="text-[10px] font-bold tracking-wider uppercase bg-gold/20 text-[#A67C2E] px-2 py-0.5 rounded-full">
+                          Webinar
+                        </span>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -185,7 +196,6 @@ export function Nav() {
                 location.pathname === "/insights" ||
                 location.pathname === "/our-impact" ||
                 location.pathname === "/partner-with-gel" ||
-                location.pathname === "/ai-for-manufacturers" ||
                 location.pathname.startsWith("/blog")
                   ? "text-forest"
                   : "text-forest/75"
@@ -197,15 +207,6 @@ export function Nav() {
             <div className="absolute top-[100%] right-0 hidden w-64 flex-col group-hover:flex">
               <div className="h-2 w-full"></div>
               <div className="flex flex-col rounded-xl border border-forest/10 bg-white p-2 shadow-lg mt-0">
-                <Link
-                  to="/ai-for-manufacturers"
-                  className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest flex items-center justify-between"
-                >
-                  <span>AI for Manufacturers</span>
-                  <span className="text-[10.5px] font-bold tracking-wider uppercase bg-gold/20 text-gold-deep px-2 py-0.5 rounded-full">
-                    Webinar
-                  </span>
-                </Link>
                 <Link
                   to="/our-impact"
                   className="rounded-lg px-4 py-2.5 text-[15px] font-medium text-forest/75 transition-colors hover:bg-forest/5 hover:text-forest"
@@ -381,6 +382,16 @@ export function Nav() {
                     >
                       Global India Leadership Programme
                     </Link>
+                    <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      to="/ai-for-manufacturers"
+                      className="p-3 text-[14px] font-medium text-forest/80 hover:bg-forest/5 rounded-lg flex items-center justify-between"
+                    >
+                      <span>AI for Manufacturers</span>
+                      <span className="text-[10px] font-bold tracking-wider uppercase bg-gold/20 text-[#A67C2E] px-2 py-0.5 rounded-full">
+                        Webinar
+                      </span>
+                    </Link>
                   </div>
                 </details>
 
@@ -445,16 +456,6 @@ export function Nav() {
                 <ChevronDown className="h-4 w-4 transition-transform group-open/explore:rotate-180" />
               </summary>
               <div className="pl-4 flex flex-col gap-1 mt-1">
-                <Link
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  to="/ai-for-manufacturers"
-                  className="p-3 text-[15px] font-medium text-forest/90 hover:bg-forest/5 rounded-lg flex items-center justify-between"
-                >
-                  <span>AI for Manufacturers</span>
-                  <span className="text-[10.5px] font-bold tracking-wider uppercase bg-gold/20 text-gold-deep px-2 py-0.5 rounded-full">
-                    Webinar
-                  </span>
-                </Link>
                 <Link
                   onClick={() => setIsMobileMenuOpen(false)}
                   to="/our-impact"

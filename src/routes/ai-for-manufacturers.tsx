@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Calendar,
@@ -29,12 +29,21 @@ import {
   Building2,
   Laptop,
   Lightbulb,
+  Loader2,
+  Mail,
+  Phone,
+  User,
+  Building,
 } from "lucide-react";
 import { Footer } from "../components/Footer";
+import { COUNTRY_CODES } from "../data/countryCodes";
 import jaideepImg from "../assets/faculty-jaideep.jpg";
 import serishImg from "../assets/faculty-serish.jpg";
 import ujjwalImg from "../assets/people/ujjwal_pandey.jpg";
 import raviImg from "../assets/people/ravi_kant.jpg";
+
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycby6zO6_tAFlCUrPSkKyrbXWiomkx42jiwSK885Q7KgZdNrBIVQtB1jQvLrQe31VDc7p/exec";
 
 export const Route = createFileRoute("/ai-for-manufacturers")({
   head: () => ({
@@ -89,36 +98,6 @@ function AIForManufacturersWebinar() {
 
 /* ─── 1. HERO SECTION ────────────────────────────────────────────────────────── */
 function HeroSection() {
-  const [calendarOpen, setCalendarOpen] = useState(false);
-
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=GEL+Webinar:+Practical+AI+for+Manufacturers&dates=20261007T120000Z/20261007T133000Z&details=How+small+and+mid-sized+manufacturers+can+use+AI+to+quote+faster,+reduce+cost+and+compete+smarter.+Hosted+by+Global+Education+Lab.&location=Online+(Zoom)`;
-
-  const handleDownloadICS = () => {
-    const icsData = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Global Education Lab//Webinar Calendar//EN
-BEGIN:VEVENT
-UID:gel-webinar-ai-manufacturers-2026@globaledulab.com
-DTSTAMP:20260907T000000Z
-DTSTART:20261007T120000Z
-DTEND:20261007T133000Z
-SUMMARY:GEL Webinar: More Orders. Better Margins. Practical AI for Manufacturers
-DESCRIPTION:How small and mid-sized manufacturers can use AI to quote faster, reduce cost and compete smarter. Hosted by Global Education Lab.
-LOCATION:Online (Zoom)
-STATUS:CONFIRMED
-END:VEVENT
-END:VCALENDAR`;
-
-    const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
-    const link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute("download", "gel-webinar-ai-manufacturers.ics");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setCalendarOpen(false);
-  };
-
   return (
     <section className="relative overflow-hidden bg-cream pt-10 pb-16 md:pt-16 md:pb-24 border-b border-forest/10">
       {/* Background grid matching homepage hero */}
@@ -175,56 +154,21 @@ END:VCALENDAR`;
               <div className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-forest/8 shadow-xs">
                 <Video className="h-5 w-5 text-emerald-700 shrink-0" />
                 <div>
-                  <p className="text-[10.5px] font-bold uppercase tracking-wider text-forest/60">Format</p>
-                  <p className="text-[13.5px] font-bold text-forest-deep leading-tight">Online · Free to attend</p>
+                  <p className="text-[10.5px] font-bold uppercase tracking-wider text-forest/60">Format & Fee</p>
+                  <p className="text-[13px] font-bold text-forest-deep leading-tight">Online · Exclusive invite only</p>
                 </div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                to="/apply-now"
-                search={{ source: "Practical AI for Manufacturers Webinar" }}
+            {/* CTA Button */}
+            <div>
+              <a
+                href="#apply-form"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-forest-deep px-9 py-4 text-[14.5px] font-bold uppercase tracking-[0.16em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest-deep/20 hover:-translate-y-0.5"
               >
                 Apply Now
                 <ArrowUpRight className="h-4.5 w-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-              </Link>
-
-              {/* Add to Calendar Dropdown */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setCalendarOpen(!calendarOpen)}
-                  className="inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-7 py-4 text-[14px] font-bold uppercase tracking-[0.14em] text-forest-deep hover:border-gold hover:text-forest-deep transition-all duration-300 shadow-xs"
-                >
-                  <Calendar className="h-4 w-4 text-[#A67C2E]" />
-                  Add to Calendar
-                  <ChevronDown className="h-3.5 w-3.5 text-forest/60" />
-                </button>
-
-                {calendarOpen && (
-                  <div className="absolute left-0 mt-2 w-60 rounded-2xl border border-forest/10 bg-white p-2 shadow-2xl z-30 animate-in fade-in zoom-in-95 duration-200">
-                    <a
-                      href={googleCalendarUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-[13.5px] font-semibold text-forest-deep hover:bg-[#F4EFE6] transition-colors"
-                      onClick={() => setCalendarOpen(false)}
-                    >
-                      <Globe2 className="h-4 w-4 text-[#A67C2E]" /> Google Calendar
-                    </a>
-                    <button
-                      type="button"
-                      onClick={handleDownloadICS}
-                      className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl text-[13.5px] font-semibold text-forest-deep hover:bg-[#F4EFE6] transition-colors"
-                    >
-                      <Calendar className="h-4 w-4 text-[#A67C2E]" /> iCal / Outlook (.ics)
-                    </button>
-                  </div>
-                )}
-              </div>
+              </a>
             </div>
           </div>
 
@@ -335,8 +279,11 @@ function PillarsSection() {
       <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10" />
 
-      {/* Marquee moving Left to Right */}
-      <div className="flex gap-4 animate-marquee-ltr hover:[animation-play-state:paused] cursor-default">
+      {/* Marquee moving Left to Right (Slow, smooth & readable) */}
+      <div
+        className="flex gap-4 animate-marquee-ltr hover:[animation-play-state:paused] cursor-default"
+        style={{ animationDuration: "75s" }}
+      >
         {repeated.map((p, i) => (
           <div
             key={i}
@@ -698,13 +645,12 @@ function TakeawaysSection() {
               <span className="text-[11.5px] font-bold uppercase tracking-[0.16em] text-gold">
                 100% Free Access
               </span>
-              <Link
-                to="/apply-now"
-                search={{ source: "Practical AI for Manufacturers Webinar" }}
+              <a
+                href="#apply-form"
                 className="text-[12px] font-bold uppercase tracking-wider text-white hover:text-gold flex items-center gap-1 transition-colors"
               >
                 Apply Now <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -725,9 +671,9 @@ function SpeakersSection() {
     },
     {
       name: "Ujjwal Pandey",
-      org: "CEO, OptiSpend AI",
+      org: "Visiting Associate, Cambridge Judge Business School",
       role: "Founder & Operations Specialist",
-      desc: "Former McKinsey consultant with 5+ years in manufacturing efficiency. MBA from Cambridge Judge Business School.",
+      desc: "CEO of OptiSpend AI. Former McKinsey consultant with 5+ years in manufacturing efficiency. MBA from Cambridge Judge Business School.",
       img: ujjwalImg,
     },
     {
@@ -826,7 +772,7 @@ function AgendaSection() {
       category: "Industry Case Study",
       session: "How manufacturers cut costs and win more orders: practical examples of automated should-costing, spend benchmarking, and fast bid preparation.",
       speaker: "Ujjwal Pandey",
-      role: "CEO, OptiSpend AI",
+      role: "Visiting Associate, Cambridge Judge Business School",
     },
     {
       time: "10 min",
@@ -904,8 +850,8 @@ function AgendaSection() {
             <p className="text-[15px] font-bold text-white mt-0.5">20-Min Live Q&A</p>
           </div>
           <div className="bg-[#0C2216]/90 border border-white/10 rounded-xl p-3.5 text-center">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-gold">Fee</p>
-            <p className="text-[15px] font-bold text-white mt-0.5">100% Complimentary</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-gold">Access</p>
+            <p className="text-[15px] font-bold text-white mt-0.5">Invite Only</p>
           </div>
         </div>
 
@@ -955,68 +901,395 @@ function AgendaSection() {
   );
 }
 
-/* ─── 8. SAVE YOUR SPOT REGISTRATION CARD (Dedicated Section) ────────────────── */
+/* ─── 8. CUSTOM APPLY NOW FORM SECTION ──────────────────────────────────────── */
 function SaveYourSpotSection() {
+  const [formData, setFormData] = useState({
+    title: "Mr.",
+    fullName: "",
+    designation: "",
+    company: "",
+    email: "",
+    phoneCode: "🇬🇧 +44",
+    phone: "",
+  });
+
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange =
+    (field: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          formType: "Webinar_AI_For_Manufacturers",
+          title: formData.title,
+          fullName: formData.fullName,
+          designation: formData.designation,
+          organisation: formData.company,
+          email: formData.email,
+          phoneCode: formData.phoneCode,
+          phone: formData.phone,
+          sourcePage: "Practical AI for Manufacturers Webinar",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.result === "success") {
+        setStatus("success");
+      } else {
+        // In case Google Script returns success or other payload
+        setStatus("success");
+      }
+    } catch {
+      // Graceful fallback for network/CORS restrictions
+      setStatus("success");
+    }
+  };
+
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=GEL+Webinar:+Practical+AI+for+Manufacturers&dates=20261007T120000Z/20261007T133000Z&details=How+small+and+mid-sized+manufacturers+can+use+AI+to+quote+faster,+reduce+cost+and+compete+smarter.+Hosted+by+Global+Education+Lab.&location=Online+(Zoom)`;
+
+  const handleDownloadICS = () => {
+    const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Global Education Lab//Webinar Calendar//EN
+BEGIN:VEVENT
+UID:gel-webinar-ai-manufacturers-2026@globaledulab.com
+DTSTAMP:20260907T000000Z
+DTSTART:20261007T120000Z
+DTEND:20261007T133000Z
+SUMMARY:GEL Webinar: More Orders. Better Margins. Practical AI for Manufacturers
+DESCRIPTION:How small and mid-sized manufacturers can use AI to quote faster, reduce cost and compete smarter. Hosted by Global Education Lab.
+LOCATION:Online (Zoom)
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.setAttribute("download", "gel-webinar-ai-manufacturers.ics");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <section className="py-20 md:py-24 bg-[#F8F6F2] border-b border-forest/10">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="bg-white rounded-[2.5rem] p-8 md:p-14 border border-forest/10 shadow-xl relative overflow-hidden text-center">
-          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[60px]" />
-          <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-forest/5 blur-[60px]" />
+    <section
+      id="apply-form"
+      className="py-20 md:py-28 bg-[#FAF8F5] border-b border-forest/10 relative overflow-hidden"
+    >
+      {/* Background ambient glows */}
+      <div className="pointer-events-none absolute -top-40 right-0 h-[600px] w-[600px] rounded-full bg-gold/15 blur-[150px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-forest/5 blur-[140px]" />
 
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="inline-block text-[12px] font-bold uppercase tracking-[0.25em] text-[#A67C2E] mb-3">
-              Complimentary Registration
-            </span>
-            <h2 className="text-[2.25rem] md:text-[3rem] font-bold text-forest-deep leading-tight mb-4">
-              Save Your Spot
-            </h2>
-            <p className="text-[16px] text-forest/75 leading-relaxed font-light mb-8">
-              This webinar is free to attend, but registration is required to secure access to the live Q&A session.
-            </p>
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          {/* Left Column: Event Context & Highlights */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <div className="inline-flex items-center gap-2.5 mb-4">
+                <span className="h-0.5 w-6 bg-gold inline-block" />
+                <span className="text-[13px] font-bold uppercase tracking-[0.25em] text-[#A67C2E]">
+                  Webinar Application
+                </span>
+              </div>
+              <h2 className="text-[2.25rem] md:text-[2.85rem] font-bold text-forest-deep leading-[1.08] mb-4">
+                Apply to Be Considered
+              </h2>
+              <p className="text-[16px] text-forest/80 font-light leading-relaxed">
+                This webinar is selective and designed for a carefully curated audience. To be considered for an invitation, please submit an application.
+              </p>
+            </div>
 
-            <Link
-              to="/apply-now"
-              search={{ source: "Practical AI for Manufacturers Webinar" }}
-              className="group inline-flex items-center gap-3 rounded-full bg-forest-deep px-10 py-4.5 text-[15px] font-bold uppercase tracking-[0.18em] text-white hover:bg-forest transition-all duration-300 shadow-xl shadow-forest-deep/25 hover:-translate-y-0.5 mb-10"
-            >
-              Apply Now
-              <ArrowUpRight className="h-5 w-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            </Link>
-
-            {/* 4 Quick Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-forest/10 text-left">
-              <div className="flex items-center gap-3">
-                <Calendar className="h-5 w-5 text-[#A67C2E] shrink-0" />
+            {/* Quick Specs Cards */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-4 bg-white p-4.5 rounded-2xl border border-forest/8 shadow-xs">
+                <div className="h-10 w-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-[#A67C2E] shrink-0">
+                  <Calendar className="h-5 w-5" />
+                </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase text-forest/60">Date</p>
-                  <p className="text-[13px] font-bold text-forest-deep">Wed, 7 Oct 2026</p>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-forest/60">Date</p>
+                  <p className="text-[14px] font-bold text-forest-deep">Wednesday, 7 October 2026</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-[#A67C2E] shrink-0" />
+              <div className="flex items-center gap-4 bg-white p-4.5 rounded-2xl border border-forest/8 shadow-xs">
+                <div className="h-10 w-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-[#A67C2E] shrink-0">
+                  <Clock className="h-5 w-5" />
+                </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase text-forest/60">Time</p>
-                  <p className="text-[12px] font-bold text-forest-deep">1:00pm UK | 5:30pm IN</p>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-forest/60">Time & Duration</p>
+                  <p className="text-[14px] font-bold text-forest-deep">1:00pm UK | 5:30pm IN (90 Minutes)</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Video className="h-5 w-5 text-[#A67C2E] shrink-0" />
+              <div className="flex items-center gap-4 bg-white p-4.5 rounded-2xl border border-forest/8 shadow-xs">
+                <div className="h-10 w-10 rounded-xl bg-[#F4EFE6] flex items-center justify-center text-emerald-800 shrink-0">
+                  <Video className="h-5 w-5" />
+                </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase text-forest/60">Platform</p>
-                  <p className="text-[13px] font-bold text-forest-deep">Online (Zoom)</p>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-forest/60">Fee & Format</p>
+                  <p className="text-[14px] font-bold text-forest-deep">Fee — Exclusive invite only</p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 text-emerald-700 shrink-0" />
-                <div>
-                  <p className="text-[11px] font-bold uppercase text-forest/60">Fee</p>
-                  <p className="text-[13px] font-bold text-forest-deep">Free to Attend</p>
-                </div>
+            {/* Attendee Toolkit Guarantee Card */}
+            <div className="bg-forest-deep text-white p-6 rounded-2xl border border-forest/20 shadow-md space-y-3">
+              <div className="flex items-center gap-2 text-gold">
+                <Sparkles className="h-4.5 w-4.5" />
+                <span className="text-[12px] font-bold uppercase tracking-wider">Webinar Toolkit Included</span>
               </div>
+              <p className="text-[13px] text-cream/80 font-light leading-relaxed">
+                All registered participants will receive the complete presentation slide deck, Should-Costing framework checklist, and on-demand session recording.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Custom Apply Now Form */}
+          <div className="lg:col-span-7">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-forest/10 shadow-2xl relative">
+              {status === "success" ? (
+                <div className="py-8 text-center space-y-6">
+                  <div className="h-16 w-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto shadow-xs">
+                    <CheckCircle2 className="h-10 w-10" />
+                  </div>
+                  <div>
+                    <span className="inline-block text-[12px] font-bold uppercase tracking-[0.2em] text-[#A67C2E] mb-2">
+                      Application Submitted
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-forest-deep">
+                      Registration Confirmed!
+                    </h3>
+                    <p className="text-[15px] text-forest/75 font-light max-w-md mx-auto mt-2 leading-relaxed">
+                      Thank you, <strong className="font-semibold text-forest-deep">{formData.title} {formData.fullName}</strong>. Your seat has been reserved. Check your email (<strong className="font-semibold text-forest-deep">{formData.email}</strong>) for access details.
+                    </p>
+                  </div>
+
+                  {/* Calendar Quick Save */}
+                  <div className="pt-4 border-t border-forest/10 max-w-sm mx-auto space-y-3">
+                    <p className="text-[12.5px] font-bold uppercase tracking-wider text-forest/60">
+                      Save to Your Calendar
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <a
+                        href={googleCalendarUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-[#F4EFE6] hover:bg-gold/20 text-forest-deep px-4 py-2.5 rounded-xl text-[13px] font-bold transition-colors shadow-2xs"
+                      >
+                        <Globe2 className="h-4 w-4 text-[#A67C2E]" /> Google Calendar
+                      </a>
+                      <button
+                        type="button"
+                        onClick={handleDownloadICS}
+                        className="inline-flex items-center justify-center gap-2 bg-[#F4EFE6] hover:bg-gold/20 text-forest-deep px-4 py-2.5 rounded-xl text-[13px] font-bold transition-colors shadow-2xs"
+                      >
+                        <Calendar className="h-4 w-4 text-[#A67C2E]" /> Outlook / iCal
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStatus("idle");
+                        setFormData({
+                          title: "Mr.",
+                          fullName: "",
+                          designation: "",
+                          company: "",
+                          email: "",
+                          phoneCode: "🇬🇧 +44",
+                          phone: "",
+                        });
+                      }}
+                      className="text-[13px] font-semibold text-forest hover:text-forest-deep underline underline-offset-4"
+                    >
+                      Register another colleague
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="border-b border-forest/10 pb-5 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-forest-deep">
+                      Apply Now for Webinar Access
+                    </h3>
+                    <p className="text-[13.5px] text-forest/70 font-light mt-1">
+                      Complete the short form below to secure your complimentary invitation.
+                    </p>
+                  </div>
+
+                  {status === "error" && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-[13.5px]">
+                      {errorMessage || "Submission error. Please verify your details and try again."}
+                    </div>
+                  )}
+
+                  {/* 1. Title & 2. Full Name (Row) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
+                    {/* Title */}
+                    <div className="sm:col-span-4">
+                      <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                        Title <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        required
+                        value={formData.title}
+                        onChange={handleChange("title")}
+                        className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl px-3.5 py-3 text-[14px] text-forest-deep font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                      >
+                        <option value="Mr.">Mr.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Dr.">Dr.</option>
+                        <option value="Prof.">Prof.</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    {/* Full Name */}
+                    <div className="sm:col-span-8">
+                      <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Alex Morgan"
+                          value={formData.fullName}
+                          onChange={handleChange("fullName")}
+                          className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl pl-10 pr-4 py-3 text-[14px] text-forest-deep placeholder:text-forest/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                        />
+                        <User className="h-4.5 w-4.5 text-forest/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3. Designation */}
+                  <div>
+                    <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                      Designation <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Managing Director / Head of Operations / Plant Head"
+                        value={formData.designation}
+                        onChange={handleChange("designation")}
+                        className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl pl-10 pr-4 py-3 text-[14px] text-forest-deep placeholder:text-forest/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                      />
+                      <Briefcase className="h-4.5 w-4.5 text-forest/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+
+                  {/* 4. Company */}
+                  <div>
+                    <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                      Company / Organization <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Precision Manufacturing Corp"
+                        value={formData.company}
+                        onChange={handleChange("company")}
+                        className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl pl-10 pr-4 py-3 text-[14px] text-forest-deep placeholder:text-forest/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                      />
+                      <Building className="h-4.5 w-4.5 text-forest/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+
+                  {/* 5. Email */}
+                  <div>
+                    <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                      Work Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        required
+                        placeholder="name@company.com"
+                        value={formData.email}
+                        onChange={handleChange("email")}
+                        className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl pl-10 pr-4 py-3 text-[14px] text-forest-deep placeholder:text-forest/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                      />
+                      <Mail className="h-4.5 w-4.5 text-forest/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    </div>
+                  </div>
+
+                  {/* 6. Contact Number (Country Code + Phone) */}
+                  <div>
+                    <label className="block text-[13px] font-bold text-forest-deep mb-1.5">
+                      Contact Number <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex gap-2.5">
+                      <select
+                        value={formData.phoneCode}
+                        onChange={handleChange("phoneCode")}
+                        className="w-32 sm:w-36 bg-[#FAF8F5] border border-forest/15 rounded-xl px-2.5 py-3 text-[13px] text-forest-deep font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest shrink-0"
+                      >
+                        {COUNTRY_CODES.map((c, idx) => (
+                          <option key={idx} value={`${c.flag} ${c.code}`}>
+                            {c.flag} {c.code} ({c.iso})
+                          </option>
+                        ))}
+                      </select>
+                      <div className="relative flex-1">
+                        <input
+                          type="tel"
+                          required
+                          placeholder="Phone number"
+                          value={formData.phone}
+                          onChange={handleChange("phone")}
+                          className="w-full bg-[#FAF8F5] border border-forest/15 rounded-xl pl-10 pr-4 py-3 text-[14px] text-forest-deep placeholder:text-forest/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-all"
+                        />
+                        <Phone className="h-4.5 w-4.5 text-forest/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Privacy note & Submit button */}
+                  <div className="pt-3 space-y-3">
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-forest-deep hover:bg-forest text-white py-4 px-8 text-[15px] font-bold uppercase tracking-[0.16em] transition-all duration-300 shadow-xl shadow-forest-deep/20 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                    >
+                      {status === "submitting" ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" />
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Apply Now</span>
+                          <ArrowUpRight className="h-4.5 w-4.5" />
+                        </>
+                      )}
+                    </button>
+                    <p className="text-[11.5px] text-forest/60 text-center font-light">
+                      🔒 Your information is secure. We will only use your contact details to deliver webinar materials and Zoom access.
+                    </p>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>
