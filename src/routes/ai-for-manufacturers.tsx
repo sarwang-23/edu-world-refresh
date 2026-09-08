@@ -663,7 +663,7 @@ function SpeakersSection() {
       name: "Ujjwal Pandey",
       org: "Visiting Associate, Cambridge Judge Business School",
       role: "Founder & Operations Specialist",
-      desc: "CEO of OptiSpend AI. Former McKinsey consultant with 5+ years in manufacturing efficiency. MBA from Cambridge Judge Business School.",
+      desc: "Former McKinsey consultant with 5+ years in manufacturing efficiency. MBA from Cambridge Judge Business School.",
       img: ujjwalImg,
     },
     {
