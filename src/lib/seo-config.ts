@@ -39,6 +39,14 @@ export const seoConfig: Record<string, SeoEntry> = {
     image: "/images/frugal-ai.jpg",
     indexable: true,
   },
+  "/ai-for-manufacturers": {
+    title: "More Orders. Better Margins. Practical AI for Manufacturers | GEL Webinar",
+    socialTitle: "More Orders. Better Margins. Practical AI for Manufacturers – GEL Webinar",
+    description:
+      "How small and mid-sized manufacturers can use AI to quote faster, reduce cost and compete smarter. A practical executive webinar by Global Education Lab featuring Cambridge faculty & manufacturing leaders.",
+    image: "/images/ai-for-manufacturers-og.jpg",
+    indexable: true,
+  },
   "/business-leaders": {
     title: "Executive Programmes for Business Leaders | Global Education Lab",
     socialTitle: "Executive Education for Business Leaders & CXOs at Cambridge",

@@ -41,23 +41,13 @@ import jaideepImg from "../assets/faculty-jaideep.jpg";
 import serishImg from "../assets/faculty-serish.jpg";
 import ujjwalImg from "../assets/people/ujjwal_pandey.jpg";
 import raviImg from "../assets/people/ravi_kant.jpg";
+import { buildMeta } from "@/lib/seo";
 
 const WEB_APP_URL =
   "https://script.google.com/macros/s/AKfycby6zO6_tAFlCUrPSkKyrbXWiomkx42jiwSK885Q7KgZdNrBIVQtB1jQvLrQe31VDc7p/exec";
 
 export const Route = createFileRoute("/ai-for-manufacturers")({
-  head: () => ({
-    meta: [
-      {
-        title: "More Orders. Better Margins. Practical AI for Manufacturers | GEL Webinar",
-      },
-      {
-        name: "description",
-        content:
-          "How small and mid-sized manufacturers can use AI to quote faster, reduce cost and compete smarter. A practical webinar by Global Education Lab featuring Cambridge faculty & manufacturing leaders.",
-      },
-    ],
-  }),
+  head: () => buildMeta("/ai-for-manufacturers"),
   component: AIForManufacturersWebinar,
 });
 
@@ -686,7 +676,6 @@ function SpeakersSection() {
     {
       name: "Ravi Kant",
       org: "Former Vice Chairman and CEO, Tata Motors",
-      pending: "(to be confirmed)",
       role: "Automotive Industry Leader",
       desc: "Led one of India's largest global automotive manufacturers through transformative periods of industrial modernization.",
       img: raviImg,
@@ -786,7 +775,7 @@ function AgendaSection() {
       category: "Leadership Perspectives",
       session: "Executive leadership in periods of technological transformation: strategic imperatives for industrial suppliers.",
       speaker: "Ravi Kant",
-      role: "Former Vice Chairman & CEO, Tata Motors (TBC)",
+      role: "Former Vice Chairman & CEO, Tata Motors",
     },
     {
       time: "10 min",
