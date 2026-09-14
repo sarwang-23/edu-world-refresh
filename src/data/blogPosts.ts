@@ -2116,11 +2116,8 @@ export const blogPosts: BlogPost[] = [
     author: "Suyash Bhatt",
     featured: false,
     content: [
-      {
-        type: "image",
-        src: "/blog-images/finland-and-estonia-2024_inline_1_bf78a9_79d7057fd4394c96a2032b07c0c4ca4e_mv2.jpg",
-        caption: "Indian educators in Finland",
-      },
+
+
       {
         type: "paragraph",
         text: "Our delegation arrives in Finland",
