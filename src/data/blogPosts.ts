@@ -28,7 +28,8 @@ export type BlogBlock =
         quote: string;
         cardImage?: string | boolean;
       }[];
-    };
+    }
+  | { type: "video"; src: string; caption?: string };
 
 export interface SeoMetadata {
   title: string;
@@ -1087,6 +1088,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: "paragraph",
         text: "So, to anyone hesitating right now: don’t wait for someone else to push you. Be the one who pushes yourself. Take the leap. Because your future is not built on certainty - it’s built on courage. And courage, once you choose it, will take you further than you ever imagined. For me, that leap was Cambridge. For you, it might be something else. Either way, take it.",
+      },
+      {
+        type: "video",
+        src: "https://www.youtube.com/embed/w7eJOde69Q8",
+        caption:
+          "Girton College Summer Programme Student Experience | Student Story ft. Jivika",
       },
     ],
     rawHtml:

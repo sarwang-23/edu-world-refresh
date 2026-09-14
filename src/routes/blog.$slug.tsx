@@ -321,6 +321,39 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
                 dangerouslySetInnerHTML={{ __html: (block as any).content }}
               />
             );
+          case "video": {
+            const videoSrc = block.src || "";
+            let embedUrl = videoSrc;
+            if (videoSrc.includes("youtube.com/watch?v=")) {
+              const id = videoSrc.split("watch?v=")[1]?.split("&")[0];
+              embedUrl = `https://www.youtube.com/embed/${id}`;
+            } else if (videoSrc.includes("youtube.com/shorts/")) {
+              const id = videoSrc.split("/shorts/")[1]?.split("?")[0];
+              embedUrl = `https://www.youtube.com/embed/${id}`;
+            } else if (videoSrc.includes("youtu.be/")) {
+              const id = videoSrc.split("youtu.be/")[1]?.split("?")[0];
+              embedUrl = `https://www.youtube.com/embed/${id}`;
+            }
+
+            return (
+              <figure key={i} className="my-8 w-full flex flex-col items-center">
+                <div className="w-full aspect-video overflow-hidden rounded-2xl bg-black shadow-md border border-black/5">
+                  <iframe
+                    src={embedUrl}
+                    title={block.caption || "YouTube video"}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                {block.caption && (
+                  <figcaption className="mt-3.5 text-center text-sm sm:text-[15px] text-[#111111] font-medium leading-relaxed max-w-2xl">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          }
           default:
             return null;
         }
