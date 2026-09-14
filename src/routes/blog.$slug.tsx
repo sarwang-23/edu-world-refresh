@@ -447,69 +447,70 @@ function TestimonialsCarousel({
 
   return (
     <div className="my-8 w-full">
-      <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
-        <CarouselContent>
-          {items.map((item, index) => (
-            <CarouselItem key={index}>
-              {/* Outer wrapper with Cambridge background */}
-              <div
-                className="relative w-full rounded-2xl overflow-hidden"
-                style={{
-                  backgroundImage:
-                    "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center bottom",
-                  minHeight: "420px",
-                }}
-              >
-                {/* Blur overlay on background */}
-                <div className="absolute inset-0 backdrop-blur-sm bg-white/10" />
-
-                {/* White Card */}
+      <div className="relative w-full">
+        <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
+          <CarouselContent>
+            {items.map((item, index) => (
+              <CarouselItem key={index}>
+                {/* Outer wrapper with Cambridge background */}
                 <div
-                  className="relative z-10 mx-auto my-8 bg-white/95 rounded-2xl shadow-xl overflow-visible"
-                  style={{ maxWidth: "88%", padding: "2rem 2rem 2rem 2.5rem" }}
+                  className="relative w-full rounded-2xl overflow-hidden"
+                  style={{
+                    backgroundImage:
+                      "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center bottom",
+                  }}
                 >
-                  {/* Top section: name, role, divider */}
-                  <div style={{ paddingLeft: item.photo ? "0" : "0" }}>
-                    <h3 className="text-[22px] sm:text-[26px] font-extrabold text-[#1A3C2B] leading-tight mb-1">
-                      {item.name}
-                    </h3>
-                    <p className="text-[13.5px] sm:text-[14.5px] italic text-[#1A3C2B] font-medium leading-snug mb-3">
-                      {item.role}
-                    </p>
-                    <div className="w-10 h-[3px] bg-[#1A3C2B] rounded-full mb-4" />
-                  </div>
+                  {/* Blur overlay on background */}
+                  <div className="absolute inset-0 backdrop-blur-sm bg-white/10" />
 
-                  {/* Bottom section: quote left, photo right (or inline) */}
-                  <div className="flex items-end gap-5">
-                    {/* Quote text */}
-                    <p className="flex-1 text-[14.5px] sm:text-[15px] leading-[1.75] text-[#1C1C1C]">
-                      {item.quote}
-                    </p>
+                  {/* White Card */}
+                  <div
+                    className="relative z-10 mx-auto my-8 bg-white/95 rounded-2xl shadow-xl overflow-visible"
+                    style={{ maxWidth: "88%", padding: "2rem 2rem 2rem 2.5rem" }}
+                  >
+                    {/* Top section: name, role, divider */}
+                    <div style={{ paddingLeft: item.photo ? "0" : "0" }}>
+                      <h3 className="text-[22px] sm:text-[26px] font-extrabold text-[#1A3C2B] leading-tight mb-1">
+                        {item.name}
+                      </h3>
+                      <p className="text-[13.5px] sm:text-[14.5px] italic text-[#1A3C2B] font-medium leading-snug mb-3">
+                        {item.role}
+                      </p>
+                      <div className="w-10 h-[3px] bg-[#1A3C2B] rounded-full mb-4" />
+                    </div>
 
-                    {/* Circular Photo — bottom-right inside card */}
-                    {item.photo && (
-                      <div
-                        className="flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg"
-                        style={{ width: "140px", height: "140px" }}
-                      >
-                        <img
-                          src={item.photo}
-                          alt={item.name}
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
+                    {/* Bottom section: quote left, photo right (or inline) */}
+                    <div className="flex items-end gap-5">
+                      {/* Quote text */}
+                      <p className="flex-1 text-[14.5px] sm:text-[15px] leading-[1.75] text-[#1C1C1C]">
+                        {item.quote}
+                      </p>
+
+                      {/* Circular Photo — bottom-right inside card */}
+                      {item.photo && (
+                        <div
+                          className="flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg"
+                          style={{ width: "140px", height: "140px" }}
+                        >
+                          <img
+                            src={item.photo}
+                            alt={item.name}
+                            className="w-full h-full object-cover object-top"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
-        {/* Prev/Next Buttons */}
+        {/* Prev/Next Buttons — positioned over the carousel */}
         <div className="absolute inset-y-0 left-1 flex items-center z-20">
           <button
             onClick={() => api?.scrollPrev()}
@@ -526,10 +527,10 @@ function TestimonialsCarousel({
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
-      </Carousel>
+      </div>
 
       {/* Dot indicators */}
-      <div className="flex justify-center gap-1.5 mt-5">
+      <div className="flex justify-center gap-1.5 mt-3">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
