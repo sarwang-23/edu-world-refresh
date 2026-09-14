@@ -1189,7 +1189,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 17, 2025",
     rawDateIso: "2025-03-17T14:01:30.739Z",
     readTime: "4 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -1355,7 +1355,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jan 19, 2025",
     rawDateIso: "2025-01-18T19:34:26.169Z",
     readTime: "3 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -1480,8 +1480,7 @@ export const blogPosts: BlogPost[] = [
     updatedDate: "Jul 18, 2025",
     rawDateIso: "2025-01-04T12:54:15.078Z",
     readTime: "6 min read",
-    author: "Suyash Bhatt",
-    authorImage: "/founder_hd.png",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -1704,7 +1703,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 29, 2024",
     rawDateIso: "2024-12-29T10:12:44.732Z",
     readTime: "5 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -1923,7 +1922,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 17, 2024",
     rawDateIso: "2024-12-17T12:41:14.543Z",
     readTime: "4 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -2109,7 +2108,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jul 31, 2024",
     rawDateIso: "2024-07-31T15:40:18.821Z",
     readTime: "4 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
 
@@ -2364,7 +2363,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jun 17, 2024",
     rawDateIso: "2024-06-17T07:39:20.329Z",
     readTime: "3 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -2505,7 +2504,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 14, 2024",
     rawDateIso: "2024-03-14T11:33:10.126Z",
     readTime: "2 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -2634,7 +2633,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 5, 2023",
     rawDateIso: "2023-12-05T10:54:07.420Z",
     readTime: "1 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -2763,7 +2762,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 5, 2023",
     rawDateIso: "2023-12-05T08:25:44.793Z",
     readTime: "4 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
@@ -3105,7 +3104,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 5, 2023",
     rawDateIso: "2023-12-05T06:32:15.267Z",
     readTime: "2 min read",
-    author: "Suyash Bhatt",
+    author: "Global Education Lab",
     featured: false,
     content: [
       {
