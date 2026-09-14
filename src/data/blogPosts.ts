@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     featured: true,
     content: [
       {
-        type: "paragraph",
+        type: "heading",
         text: "The Imperative for Continuous Upskilling for Business Leaders",
       },
       {

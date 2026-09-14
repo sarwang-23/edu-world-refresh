@@ -273,7 +273,7 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
             );
           case "heading":
             return (
-              <h2 key={i} className="text-xl sm:text-[22px] md:text-[24px] font-bold text-[#111111] mt-8 mb-2 leading-snug">
+              <h2 key={i} className={`text-xl sm:text-[22px] md:text-[24px] font-bold text-[#111111] ${i === 0 ? "mt-0" : "mt-8"} mb-2 leading-snug`}>
                 {block.text}
               </h2>
             );
