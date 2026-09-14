@@ -432,97 +432,135 @@ function TestimonialsCarousel({
 }: {
   items: Array<{ name: string; role: string; quote: string; photo?: string }>;
 }) {
-  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isFading, setIsFading] = useState(false);
 
-  useEffect(() => {
-    if (!api) return;
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
+  const total = items.length;
+
+  const goTo = (index: number) => {
+    if (index === current) return;
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrent(index);
+      setIsFading(false);
+    }, 150);
+  };
+
+  const prev = () => {
+    goTo((current - 1 + total) % total);
+  };
+
+  const next = () => {
+    goTo((current + 1) % total);
+  };
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      next();
+    } else if (distance < -minSwipeDistance) {
+      prev();
+    }
+  };
+
+  const item = items[current];
+  if (!item) return null;
 
   return (
-    <div className="my-8 w-full">
-      <div className="relative w-full">
-        <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
-          <CarouselContent>
-            {items.map((item, index) => (
-              <CarouselItem key={index}>
-                {/* Outer wrapper with Cambridge background */}
+    <div className="my-8 w-full select-none">
+      <div
+        className="relative w-full"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* Outer wrapper with Cambridge background */}
+        <div
+          className="relative w-full rounded-2xl overflow-hidden transition-all duration-300"
+          style={{
+            backgroundImage:
+              "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center bottom",
+          }}
+        >
+          {/* Blur overlay on background */}
+          <div className="absolute inset-0 backdrop-blur-sm bg-white/10" />
+
+          {/* White Card */}
+          <div
+            className={`relative z-10 mx-auto my-6 sm:my-8 bg-white/95 rounded-2xl shadow-xl overflow-visible transition-opacity duration-150 ${
+              isFading ? "opacity-0" : "opacity-100"
+            }`}
+            style={{ maxWidth: "88%", padding: "2rem 2rem 2rem 2.5rem" }}
+          >
+            {/* Top section: name, role, divider */}
+            <div>
+              <h3 className="text-[22px] sm:text-[26px] font-extrabold text-[#1A3C2B] leading-tight mb-1">
+                {item.name}
+              </h3>
+              <p className="text-[13.5px] sm:text-[14.5px] italic text-[#1A3C2B] font-medium leading-snug mb-3">
+                {item.role}
+              </p>
+              <div className="w-10 h-[3px] bg-[#1A3C2B] rounded-full mb-4" />
+            </div>
+
+            {/* Bottom section: quote left, photo right (or inline) */}
+            <div className="flex flex-col sm:flex-row sm:items-end gap-5">
+              {/* Quote text */}
+              <p className="flex-1 text-[14.5px] sm:text-[15px] leading-[1.75] text-[#1C1C1C]">
+                {item.quote}
+              </p>
+
+              {/* Circular Photo — bottom-right inside card */}
+              {item.photo && (
                 <div
-                  className="relative w-full rounded-2xl overflow-hidden"
-                  style={{
-                    backgroundImage:
-                      "url('/blog-images/inside-the-global-india-leadership-programme-redefining-leadership-in-the-ai-era_cover_7e2606_db3e1e7992fd4a529c58da1780816a16_mv2.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center bottom",
-                  }}
+                  className="flex-shrink-0 self-center sm:self-end rounded-full overflow-hidden border-4 border-white shadow-lg"
+                  style={{ width: "130px", height: "130px" }}
                 >
-                  {/* Blur overlay on background */}
-                  <div className="absolute inset-0 backdrop-blur-sm bg-white/10" />
-
-                  {/* White Card */}
-                  <div
-                    className="relative z-10 mx-auto my-8 bg-white/95 rounded-2xl shadow-xl overflow-visible"
-                    style={{ maxWidth: "88%", padding: "2rem 2rem 2rem 2.5rem" }}
-                  >
-                    {/* Top section: name, role, divider */}
-                    <div style={{ paddingLeft: item.photo ? "0" : "0" }}>
-                      <h3 className="text-[22px] sm:text-[26px] font-extrabold text-[#1A3C2B] leading-tight mb-1">
-                        {item.name}
-                      </h3>
-                      <p className="text-[13.5px] sm:text-[14.5px] italic text-[#1A3C2B] font-medium leading-snug mb-3">
-                        {item.role}
-                      </p>
-                      <div className="w-10 h-[3px] bg-[#1A3C2B] rounded-full mb-4" />
-                    </div>
-
-                    {/* Bottom section: quote left, photo right (or inline) */}
-                    <div className="flex items-end gap-5">
-                      {/* Quote text */}
-                      <p className="flex-1 text-[14.5px] sm:text-[15px] leading-[1.75] text-[#1C1C1C]">
-                        {item.quote}
-                      </p>
-
-                      {/* Circular Photo — bottom-right inside card */}
-                      {item.photo && (
-                        <div
-                          className="flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg"
-                          style={{ width: "140px", height: "140px" }}
-                        >
-                          <img
-                            src={item.photo}
-                            alt={item.name}
-                            className="w-full h-full object-cover object-top"
-                            loading="lazy"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <img
+                    src={item.photo}
+                    alt={item.name}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+              )}
+            </div>
+          </div>
+        </div>
 
         {/* Prev/Next Buttons — positioned over the carousel */}
         <div className="absolute inset-y-0 left-1 flex items-center z-20">
           <button
-            onClick={() => api?.scrollPrev()}
-            className="h-9 w-9 flex items-center justify-center bg-white/80 hover:bg-white text-[#1A3C2B] rounded-full shadow-md transition-colors"
+            type="button"
+            onClick={prev}
+            aria-label="Previous testimonial"
+            className="h-9 w-9 flex items-center justify-center bg-white/80 hover:bg-white text-[#1A3C2B] rounded-full shadow-md transition-colors cursor-pointer"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
         </div>
         <div className="absolute inset-y-0 right-1 flex items-center z-20">
           <button
-            onClick={() => api?.scrollNext()}
-            className="h-9 w-9 flex items-center justify-center bg-white/80 hover:bg-white text-[#1A3C2B] rounded-full shadow-md transition-colors"
+            type="button"
+            onClick={next}
+            aria-label="Next testimonial"
+            className="h-9 w-9 flex items-center justify-center bg-white/80 hover:bg-white text-[#1A3C2B] rounded-full shadow-md transition-colors cursor-pointer"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -530,12 +568,14 @@ function TestimonialsCarousel({
       </div>
 
       {/* Dot indicators */}
-      <div className="flex justify-center gap-1.5 mt-3">
-        {Array.from({ length: count }).map((_, index) => (
+      <div className="flex justify-center gap-1.5 mt-4">
+        {items.map((_, index) => (
           <button
             key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            type="button"
+            onClick={() => goTo(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
               current === index ? "bg-[#1A3C2B] w-6" : "bg-[#1A3C2B]/30 w-2"
             }`}
           />
