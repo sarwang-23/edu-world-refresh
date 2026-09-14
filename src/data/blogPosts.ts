@@ -1200,11 +1200,7 @@ export const blogPosts: BlogPost[] = [
         type: "paragraph",
         text: "With a firm belief in the power of education to empower individuals and communities, Dr. Harshita and her team are on a mission to not only provide exceptional learning experiences but to also transform the educational ecosystem itself. The school’s focus on leadership, innovation, and global best practices is helping to raise the standard of literacy and academic excellence across, which also provided Suyash with a fertile ground to speak to their students about nurturing entrepreneurial mindsets.",
       },
-      {
-        type: "image",
-        src: "/blog-images/brainstorm-international-school-pioneering-transformational-education-in-india_inline_1_7e2606_80b83371f834477d83c543b04e96aa83_mv2.jpeg",
-        caption: "",
-      },
+
       {
         type: "paragraph",
         text: "Education as a Continuous Experience",
