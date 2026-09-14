@@ -49,6 +49,8 @@ export interface BlogPost {
   rawDateIso?: string;
   readTime: string;
   author: string;
+  authorImage?: string;
+  updatedDate?: string;
   featured?: boolean;
   content: BlogBlock[];
   rawHtml?: string;
@@ -492,7 +494,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_1_7e2606_a872837d58d04d07954d3cdcff75b13d_mv2.png",
         caption: "",
       },
       {
@@ -513,7 +515,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_2_7e2606_0befec4869264607b8c30c38fa6553c5_mv2.png",
         caption: "",
       },
       {
@@ -522,7 +524,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_3_7e2606_9e0dcf994fc2485aac50ce4cdbf2021c_mv2.png",
         caption: "",
       },
       {
@@ -531,7 +533,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_4_7e2606_c16897763d3142d3a20bde3e63264e00_mv2.png",
         caption: "",
       },
       {
@@ -548,7 +550,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_5_7e2606_966cc9aec1d5419d9e124d4c2ded6db3_mv2.png",
         caption: "",
       },
       {
@@ -565,7 +567,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_6_7e2606_46cab47c88cb4716841acb39b1a3686a_mv2.png",
         caption: "",
       },
       {
@@ -574,7 +576,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_7_7e2606_247af018f16743f5967c6b98526ecba3_mv2.png",
         caption: "",
       },
       {
@@ -583,12 +585,12 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_8_7e2606_470e18ae8cfb4aac972e7eb55d474f0a_mv2.png",
         caption: "",
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_9_7e2606_14b9e641c55549ecba2966962d9b828e_mv2.png",
         caption: "",
       },
       {
@@ -625,7 +627,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_10_7e2606_11b71be864ad45f4a3de728ca60dda15_mv2.png",
         caption: "",
       },
       {
@@ -805,7 +807,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_1_bf78a9_04181b6815d64c878bae478492957285_mv2.jpg",
         caption: "",
       },
       {
@@ -870,7 +872,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_2_bf78a9_98555b0a1e4e49038bef651a1687032c_mv2.png",
         caption: "",
       },
       {
@@ -899,7 +901,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_3_bf78a9_625ac8b32a13476a9d2e51440da556e5_mv2.png",
         caption: "",
       },
       {
@@ -932,7 +934,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_4_bf78a9_4e3179a2fafa4f358e939e57b5bf02ee_mv2.png",
         caption: "",
       },
       {
@@ -989,7 +991,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_5_bf78a9_6035cbf5d5bb46b8b844d8ab255244e5_mv2.png",
         caption: "",
       },
       {
@@ -1026,7 +1028,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_6_bf78a9_2fc83ad58b974c0bbcc43c6098c64601_mv2.png",
         caption: "",
       },
       {
@@ -1079,7 +1081,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/how-my-cambridge-summer-became-a-turning-point_inline_7_bf78a9_82a2e46f17f44ee180bdd21d76031b65_mv2.jpg",
         caption: "",
       },
       {
@@ -1200,7 +1202,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/brainstorm-international-school-pioneering-transformational-education-in-india_inline_1_7e2606_80b83371f834477d83c543b04e96aa83_mv2.jpeg",
         caption: "",
       },
       {
@@ -1281,7 +1283,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/brainstorm-international-school-pioneering-transformational-education-in-india_inline_2_7e2606_c25ae2df4fd642208d5982ad29c26536_mv2.jpg",
         caption: "",
       },
     ],
@@ -1362,7 +1364,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/connecting-mind-body-and-soul-through-education-the-purpose-as-described-by-swadhaa_inline_1_7e2606_1ffbfdc76d6749b2a451157f038c72da_mv2.png",
         caption:
           "Suyash (middle) is pictured with the founders of Swadhaa - R Swaminathan and Shefali Kosta",
       },
@@ -1396,7 +1398,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/connecting-mind-body-and-soul-through-education-the-purpose-as-described-by-swadhaa_inline_2_7e2606_616abee37c9948a092271fd8eb9a7906_mv2.png",
         caption: "",
       },
       {
@@ -1477,18 +1479,15 @@ export const blogPosts: BlogPost[] = [
     category: "Education tourism",
     tags: ["Education", "Education tourism"],
     cover:
-      "/blog-images/a-journey-of-transformation-the-cambridge-education-lab-impact-tour_cover_7e2606_ce01a236e97b4f658dcc00726081a6a7_mv2.jpeg",
+      "/blog-images/a-journey-of-transformation-the-cambridge-education-lab-impact-tour_cover.jpg",
     date: "Jan 4, 2025",
+    updatedDate: "Jul 18, 2025",
     rawDateIso: "2025-01-04T12:54:15.078Z",
     readTime: "6 min read",
     author: "Suyash Bhatt",
+    authorImage: "/founder_hd.png",
     featured: false,
     content: [
-      {
-        type: "image",
-        src: "https://video.wixstatic.com/video/7e2606_5e5a148476254dc7a91cd42507626f5c/1080p/mp4/file.mp4",
-        caption: "",
-      },
       {
         type: "paragraph",
         text: "In the fast-paced, hyper-competitive world we live in today, where success is often measured by grades, exams, and rankings, it's easy to forget that education is not just about competition—it’s about growth, learning, and becoming well-rounded individuals. Over the past 10 days, we had the privilege of visiting schools across India, each one integrating global best practices learned from the Cambridge Education Lab’s (CEL) international programmes in Finland, Estonia, and Cambridge. The experience was not just about observing innovative educational practices, but about seeing firsthand how schools are transforming the way they nurture their students—helping them find their own purpose, build entrepreneurial mindsets, and prepare for a future where collaboration and compassion matter just as much as competition.",
@@ -1507,7 +1506,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/a-journey-of-transformation-the-cambridge-education-lab-impact-tour_inline_1_7e2606_ce01a236e97b4f658dcc00726081a6a7_mv2.jpeg",
         caption:
           "Suyash, along with Mr. Srinivas Kollu, interacted with students at MSR Central School.",
       },
@@ -1545,7 +1544,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/a-journey-of-transformation-the-cambridge-education-lab-impact-tour_inline_2_7e2606_ceb8d9e2b72b414bac906927a913429d_mv2.jpeg",
         caption: "Digital labs at Priyadarshani School, Pune.",
       },
       {
@@ -1614,7 +1613,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/a-journey-of-transformation-the-cambridge-education-lab-impact-tour_inline_3_7e2606_dee7551feaf0405fbffd4ea55744a694_mv2.jpeg",
         caption:
           "Suyash interacting and sharing valuable insights about entrepreneurship at DCM School",
       },
@@ -1714,7 +1713,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/doon-valley-public-school-a-vision-for-sustainability-and-holistic-education-in-himachal-pradesh_inline_1_7e2606_6fc15192890e4903b1166311f3a25c0a_mv2.jpeg",
         caption: "Suyash shares a moment with the founders of the school",
       },
       {
@@ -1731,7 +1730,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/doon-valley-public-school-a-vision-for-sustainability-and-holistic-education-in-himachal-pradesh_inline_2_7e2606_3e92ef9889bf4551aff8e76be4e6faa3_mv2.jpeg",
         caption:
           "A strikingly green campus that instills in students a deep sense of commitment to sustainability",
       },
@@ -1769,7 +1768,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/doon-valley-public-school-a-vision-for-sustainability-and-holistic-education-in-himachal-pradesh_inline_3_7e2606_6b925fd1561a4f0397f0378de719e4e0_mv2.jpeg",
         caption:
           "Young children are given spaces to enjoy their school routine in the most fun and colourful environment",
       },
@@ -1803,7 +1802,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/doon-valley-public-school-a-vision-for-sustainability-and-holistic-education-in-himachal-pradesh_inline_4_bf78a9_e7d6dc73178345fe9588bf0868ece9fe_mv2.jpeg",
         caption: "Innovation is taught in practise and not just in theory",
       },
       {
@@ -1832,7 +1831,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/doon-valley-public-school-a-vision-for-sustainability-and-holistic-education-in-himachal-pradesh_inline_5_7e2606_845bff4bbe63403ab45e0213f0ac6d7a_mv2.jpeg",
         caption:
           "Suyash spends a moment with the students of the school, speaking to them about unpacking entrepreneurial skills",
       },
@@ -1933,7 +1932,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/dcm-young-entrepreneurs-school-pioneering-entrepreneurship-education-in-india_inline_1_7e2606_9ab062207a384c51a3d56145cf9babfb_mv2.jpeg",
         caption: "Suyash speaks to students about his entrepreneurial journey",
       },
       {
@@ -1962,7 +1961,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/dcm-young-entrepreneurs-school-pioneering-entrepreneurship-education-in-india_inline_2_7e2606_b007c10ae9a64da8bd9cb80d8d83d0f5_mv2.jpeg",
         caption:
           "A student confidently expresses his views on the session, sparking fair degree of intrigue in Suyash",
       },
@@ -2012,7 +2011,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/dcm-young-entrepreneurs-school-pioneering-entrepreneurship-education-in-india_inline_3_7e2606_068cb51b3c504a14a1b955de30bdc84f_mv2.jpeg",
         caption:
           "Colourful classrooms outline the school’s vision to make learning spaces more engaging for students, right from an early age",
       },
@@ -2119,7 +2118,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_1_bf78a9_79d7057fd4394c96a2032b07c0c4ca4e_mv2.jpg",
         caption: "Indian educators in Finland",
       },
       {
@@ -2140,7 +2139,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_2_bf78a9_91f14befcfc24c9bb19bcc0820f78beb_mv2.jpg",
         caption: "Indian School owners at Finnish National agency",
       },
       {
@@ -2153,7 +2152,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_3_bf78a9_f260642585ef4e8c939a7d0679932497_mv2.jpg",
         caption: "Indian School leaders at Finnish Kindergarten",
       },
       {
@@ -2166,7 +2165,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_4_bf78a9_c8c4368df7cc411fa46391d3419f888d_mv2.jpg",
         caption: "Indian School leaders observing Finnish school",
       },
       {
@@ -2179,7 +2178,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_5_bf78a9_4ca6617426e64320bfe2b601b0e7190a_mv2.jpg",
         caption: "Indian school leaders observing use of technology at schools in Finland",
       },
       {
@@ -2192,7 +2191,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_6_bf78a9_6e4c2481cf5644fe8c9b7fad41731f2c_mv2.jpg",
         caption: "Finnish experts explaining their education system to Indian teacher",
       },
       {
@@ -2205,7 +2204,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_7_bf78a9_858ec59367064365ae3cde6d697a3540_mv2.jpg",
         caption: "Indian School owners at a school in Estonia",
       },
       {
@@ -2226,7 +2225,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_8_bf78a9_b7d908fe4c9341c2a48221d41a766722_mv2.jpg",
         caption: "Indian School leaders in live classroom in Estonian School",
       },
       {
@@ -2251,7 +2250,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland-and-estonia-2024_inline_9_bf78a9_e69da7461d3e4c009dd18047c98381d2_mv2.jpg",
         caption: "Session about using game design principles in school",
       },
       {
@@ -2377,7 +2376,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/greenschool2024_inline_1_bf78a9_b3f434c14a0b4af1b66943e02d02b13a_mv2.jpg",
         caption: "",
       },
       {
@@ -2394,7 +2393,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/greenschool2024_inline_2_bf78a9_159b09c45f844d9fa41e84c5c3427eee_mv2.jpg",
         caption: "",
       },
       {
@@ -2403,7 +2402,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/greenschool2024_inline_3_bf78a9_68ee514e19954f06b7d1f6863b65138e_mv2.png",
         caption: "",
       },
       {
@@ -2412,12 +2411,12 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/greenschool2024_inline_4_bf78a9_61a6fdd5ab0c4d67aab9dca68ddacbbe_mv2.png",
         caption: "",
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/greenschool2024_inline_5_bf78a9_896c50e8e11a405288de1b3782b2771b_mv2.jpg",
         caption: "",
       },
       {
@@ -2517,11 +2516,6 @@ export const blogPosts: BlogPost[] = [
     featured: false,
     content: [
       {
-        type: "image",
-        src: "true",
-        caption: "",
-      },
-      {
         type: "paragraph",
         text: "Cambridge Education Lab’s first delegation of academicians on their learning tour to Finland, 2023",
       },
@@ -2568,11 +2562,6 @@ export const blogPosts: BlogPost[] = [
       {
         type: "image",
         src: "/blog-images/finlandeducation_inline_2_bf78a9_40a82d05499d4f38bdbc64e696e80dd0_mv2.jpg",
-        caption: "",
-      },
-      {
-        type: "image",
-        src: "true",
         caption: "",
       },
       {
@@ -2786,7 +2775,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland2023_inline_1_bf78a9_70a70b1a2e594d099dca6809265365cd_mv2.jpg",
         caption: "",
       },
       {
@@ -2888,7 +2877,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland2023_inline_4_bf78a9_8c51708d36a843718cc0940d336719a7_mv2.jpg",
         caption: "",
       },
       {
@@ -2897,7 +2886,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/finland2023_inline_6_bf78a9_1c3bf5dbb03946f981ae1421958259cc_mv2.jpg",
         caption: "",
       },
     ],
@@ -3132,7 +3121,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/cambridge-school-leadership-conference-transforming-indian-education_inline_1_bf78a9_05f016cb645d4a03b4502048b673fcce_mv2.jpg",
         caption: "",
       },
       {
@@ -3154,7 +3143,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/cambridge-school-leadership-conference-transforming-indian-education_inline_4_bf78a9_4d102cc0b4c540e09acbe195aaa19eb0_mv2.jpg",
         caption: "",
       },
       {
@@ -3163,7 +3152,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/cambridge-school-leadership-conference-transforming-indian-education_inline_6_bf78a9_1c0c93ff20a04c60a704925006a0a4b7_mv2.jpg",
         caption: "",
       },
       {
@@ -3172,7 +3161,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "true",
+        src: "/blog-images/cambridge-school-leadership-conference-transforming-indian-education_inline_8_bf78a9_ab243be33c864cc092a457fa424c4221_mv2.jpg",
         caption: "",
       },
       {

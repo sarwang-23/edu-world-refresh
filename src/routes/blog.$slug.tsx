@@ -3,7 +3,6 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
 import { useState, useEffect, useCallback } from "react";
 import {
-  MoreVertical,
   Facebook,
   Linkedin,
   Link2,
@@ -14,6 +13,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Maximize2,
+  ArrowRight,
 } from "lucide-react";
 import {
   Carousel,
@@ -24,6 +24,7 @@ import {
 import { getRelatedPosts, type BlogPost, blogPosts } from "@/data/blogPosts";
 import { Footer } from "./index";
 import logoImg from "@/assets/Logo png.png";
+import founderImg from "@/assets/founder_hd.png";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -65,6 +66,13 @@ function BlogPostPage() {
   const [hasLiked, setHasLiked] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const isAuthorPhoto = Boolean(
+    post.authorImage || post.author.toLowerCase().includes("suyash")
+  );
+  const authorAvatarSrc =
+    post.authorImage ||
+    (post.author.toLowerCase().includes("suyash") ? founderImg : logoImg);
+
   const handleLike = () => {
     if (hasLiked) {
       setLikes((l) => l - 1);
@@ -85,9 +93,9 @@ function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans text-[#111111]">
-      {/* Top Outer Navigation Container matching Wix Page Structure */}
-      <div className="mx-auto max-w-[760px] px-4 sm:px-6 pt-6 pb-3">
-        {/* Category Filter Navigation Bar directly above Post Card */}
+      {/* Top Outer Navigation Container */}
+      <div className="mx-auto max-w-[780px] px-4 sm:px-6 pt-6 pb-3">
+        {/* Category Filter Navigation Bar */}
         <div className="flex items-center gap-6 text-[14px] font-medium text-[#2D2D2D] overflow-x-auto no-scrollbar py-2">
           <Link to="/blog" className="hover:text-forest transition-colors whitespace-nowrap">
             All Posts
@@ -107,45 +115,61 @@ function BlogPostPage() {
         </div>
       </div>
 
-      {/* Main White Post Card Container (Matching Wix Ricos Template) */}
-      <main className="mx-auto max-w-[760px] px-4 sm:px-6 mb-12">
-        <article className="bg-white border border-[#E5E7EB] shadow-[0_2px_12px_rgba(0,0,0,0.03)] p-6 sm:p-10 md:p-12 rounded-xs">
+      {/* Main Post Card Container */}
+      <main className="mx-auto max-w-[780px] px-4 sm:px-6 mb-12">
+        <article className="bg-white border border-[#E5E7EB] shadow-[0_2px_12px_rgba(0,0,0,0.03)] p-6 sm:p-10 md:p-12 rounded-lg">
           {/* Post Top Metadata Bar */}
-          <div className="flex items-center justify-between text-[13.5px] text-[#555555] mb-6">
-            <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-forest/10 overflow-hidden border border-forest/20">
+          <div className="flex items-center text-[14px] text-[#555555] mb-5">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden border border-gray-200 bg-gray-100 shrink-0">
                 <img
-                  src={logoImg}
+                  src={authorAvatarSrc}
                   alt={post.author}
-                  className="h-4.5 w-4.5 object-contain"
+                  className={isAuthorPhoto ? "h-full w-full object-cover object-top" : "h-4.5 w-4.5 object-contain"}
                   loading="lazy"
                 />
               </div>
-              <span className="font-medium text-[#111111]">{post.author}</span>
+              <span className="font-semibold text-[#111111]">{post.author}</span>
               <span className="text-gray-400">·</span>
               <span>{post.date}</span>
               <span className="text-gray-400">·</span>
               <span>{post.readTime}</span>
             </div>
-
-            <button
-              className="text-neutral-400 hover:text-neutral-700 transition-colors p-1"
-              title="More options"
-            >
-              <MoreVertical className="h-4 w-4" />
-            </button>
           </div>
 
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-[36px] md:text-[40px] font-extrabold text-[#111111] leading-[1.2] tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-[36px] md:text-[42px] font-extrabold text-[#111111] leading-[1.22] tracking-tight mb-3">
             {post.title}
           </h1>
 
           {/* Updated Subline */}
-          <p className="text-[13px] text-[#757575] font-normal mb-8">Updated: {post.date}</p>
+          <p className="text-[13px] text-[#757575] font-normal mb-8">
+            Updated: {post.updatedDate || post.date}
+          </p>
 
           {/* Article Rendered Body */}
           <ArticleBlocksContent post={post} />
+
+          {/* Apply Now Banner inside Blog Article */}
+          <div className="mt-10 mb-2 p-6 sm:p-8 rounded-2xl bg-[#04341B] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md border border-[#04341B]">
+            <div className="text-center sm:text-left">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#F5D166]">
+                Global Education Lab
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1 leading-tight">
+                Ready to Join Our Next Cohort?
+              </h3>
+              <p className="text-sm text-white/80 mt-1 max-w-md">
+                Take the next step in global experiential education. Applications are open.
+              </p>
+            </div>
+            <Link
+              to="/apply-now"
+              className="inline-flex items-center gap-2 rounded-full bg-[#F5D166] px-8 py-3.5 text-[#04341B] font-bold text-sm hover:bg-amber-300 transition-all hover:scale-105 shrink-0 shadow-sm"
+            >
+              Apply Now <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
           {/* Social Share Icon Bar */}
           <div className="mt-10 pt-6 border-t border-[#E5E7EB]">
@@ -212,14 +236,14 @@ function BlogPostPage() {
           {/* Comments Section Box */}
           <div className="mt-10 pt-6 border-t border-[#E5E7EB]">
             <h3 className="text-base font-bold text-[#111111] mb-4">Comments</h3>
-            <div className="w-full border border-[#D1D5DB] bg-[#FAFAFA] p-4 rounded-xs text-sm text-gray-400">
+            <div className="w-full border border-[#D1D5DB] bg-[#FAFAFA] p-4 rounded-md text-sm text-gray-400">
               Write a comment...
             </div>
           </div>
         </article>
       </main>
 
-      {/* Recent Posts Section (Matching Wix 3-Column Footer Layout) */}
+      {/* Recent Posts Section */}
       {related.length > 0 && <RecentPostsGrid posts={related} />}
 
       {/* Let's Get In Touch CTA Banner */}
@@ -233,23 +257,28 @@ function BlogPostPage() {
 
 function ArticleBlocksContent({ post }: { post: BlogPost }) {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 text-[#1a1a1a]">
       {post.cover && (
-        <div className="my-6 overflow-hidden">
-          <img src={post.cover} alt={post.title} className="w-full object-cover" loading="lazy" />
+        <div className="my-4 overflow-hidden rounded-xl bg-black/5">
+          <img
+            src={post.cover}
+            alt={post.title}
+            className="w-full h-auto max-h-[75vh] object-cover rounded-xl"
+            loading="lazy"
+          />
         </div>
       )}
       {post.content.map((block, i) => {
         switch (block.type) {
           case "paragraph":
             return (
-              <p key={i} className="text-[16.5px] leading-[1.8] text-[#161616]">
+              <p key={i} className="text-[17px] leading-[1.8] text-[#222222] font-normal">
                 {block.text}
               </p>
             );
           case "heading":
             return (
-              <h2 key={i} className="text-xl md:text-[22px] font-bold text-[#D89B27] mt-8 mb-4">
+              <h2 key={i} className="text-xl sm:text-[22px] md:text-[24px] font-bold text-[#111111] mt-8 mb-2 leading-snug">
                 {block.text}
               </h2>
             );
@@ -257,22 +286,29 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
             return (
               <blockquote
                 key={i}
-                className="my-6 border-l-4 border-[#111111] pl-6 italic text-[#111111]"
+                className="my-6 border-l-4 border-forest pl-6 py-2 italic text-[#111111] bg-forest/5 rounded-r-lg"
               >
                 <p className="text-lg leading-relaxed">{block.text}</p>
+                {block.attribution && (
+                  <cite className="block mt-2 text-sm font-semibold not-italic text-forest">
+                    — {block.attribution}
+                  </cite>
+                )}
               </blockquote>
             );
           case "image":
             return (
-              <figure key={i} className="my-8">
-                <img
-                  src={block.src}
-                  alt={block.caption ?? ""}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
+              <figure key={i} className="my-6 w-full flex flex-col items-center">
+                <div className="w-full overflow-hidden rounded-xl bg-black/5">
+                  <img
+                    src={block.src}
+                    alt={block.caption ?? ""}
+                    className="w-full h-auto max-h-[75vh] object-cover rounded-xl"
+                    loading="lazy"
+                  />
+                </div>
                 {block.caption && (
-                  <figcaption className="mt-2 text-center text-sm text-neutral-500">
+                  <figcaption className="mt-2.5 text-center text-sm text-[#666666] italic max-w-xl">
                     {block.caption}
                   </figcaption>
                 )}
@@ -286,7 +322,7 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
             return (
               <div
                 key={i}
-                className="my-6 w-full"
+                className="my-6 w-full prose max-w-none text-[#222222]"
                 dangerouslySetInnerHTML={{ __html: (block as any).content }}
               />
             );
@@ -320,7 +356,7 @@ function ArticleGallery({ images }: { images: string[] }) {
                 <img
                   src={src}
                   alt="Gallery"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
@@ -355,7 +391,7 @@ function ArticleGallery({ images }: { images: string[] }) {
               current === index ? "ring-2 ring-forest opacity-100" : "opacity-60 hover:opacity-100"
             }`}
           >
-            <img src={src} alt="Thumbnail" className="w-full h-full object-cover" loading="lazy" />
+            <img src={src} alt="Thumbnail" className="w-full h-full object-contain" loading="lazy" />
           </button>
         ))}
       </div>
@@ -573,12 +609,20 @@ function GetInTouchCTA() {
           Can't find what you're looking for? Please contact us and we'll get back to you as soon as
           possible.
         </p>
-        <Link
-          to="/contact"
-          className="inline-block rounded-md bg-[#F5D166] px-8 py-3.5 text-[#04341B] font-bold text-sm tracking-wide hover:bg-amber-300 transition-colors shadow-sm"
-        >
-          Contact Us
-        </Link>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/apply-now"
+            className="inline-flex items-center gap-2 rounded-md bg-[#F5D166] px-8 py-3.5 text-[#04341B] font-bold text-sm tracking-wide hover:bg-amber-300 transition-colors shadow-sm"
+          >
+            Apply Now <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-block rounded-md border border-[#F5D166]/40 px-8 py-3.5 text-white font-bold text-sm tracking-wide hover:bg-white/10 transition-colors shadow-sm"
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </section>
   );
