@@ -3380,3 +3380,4 @@ export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
     )
     .slice(0, limit);
 }
+

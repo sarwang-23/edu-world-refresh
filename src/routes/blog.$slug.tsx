@@ -24,7 +24,6 @@ import {
 import { getRelatedPosts, type BlogPost, blogPosts } from "@/data/blogPosts";
 import { Footer } from "./index";
 import logoImg from "@/assets/Logo png.png";
-import founderImg from "@/assets/founder_hd.png";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -66,12 +65,8 @@ function BlogPostPage() {
   const [hasLiked, setHasLiked] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const isAuthorPhoto = Boolean(
-    post.authorImage || post.author.toLowerCase().includes("suyash")
-  );
-  const authorAvatarSrc =
-    post.authorImage ||
-    (post.author.toLowerCase().includes("suyash") ? founderImg : logoImg);
+  // Always use the GEL logo as the author avatar (all posts authored by Global Education Lab)
+  const authorAvatarSrc = post.authorImage || logoImg;
 
   const handleLike = () => {
     if (hasLiked) {
@@ -121,11 +116,11 @@ function BlogPostPage() {
           {/* Post Top Metadata Bar */}
           <div className="flex items-center text-[14px] text-[#555555] mb-5">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden border border-gray-200 bg-gray-100 shrink-0">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full overflow-hidden border border-gray-200 bg-white shrink-0 p-1">
                 <img
                   src={authorAvatarSrc}
                   alt={post.author}
-                  className={isAuthorPhoto ? "h-full w-full object-cover object-top" : "h-4.5 w-4.5 object-contain"}
+                  className="h-full w-full object-contain mix-blend-multiply"
                   loading="lazy"
                 />
               </div>
