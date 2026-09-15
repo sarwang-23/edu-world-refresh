@@ -463,6 +463,7 @@ export const blogPosts: BlogPost[] = [
       "Written by Samvritha (Grade 9), participant of the Summer Programme at CambridgeIt’s wild how two weeks can stretch into what feels like an entire new chapter of your life. When I first got on the plane to London for the GEL Global Young Leaders Summer Camp 2025, I was excited, but also wondering: What if everyone’s super strict? What if it’s just school with a British accent and tighter rules?Spoiler: it wasn’t. It was better. Way better.From Strangers to People Who Just... Get You The first ti",
     category: "Education tourism",
     tags: ["Education", "Education tourism"],
+    cover: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_1_7e2606_a872837d58d04d07954d3cdcff75b13d_mv2.png",
     date: "Jan 23, 2026",
     rawDateIso: "2026-01-23T08:48:46.027Z",
     readTime: "5 min read",
