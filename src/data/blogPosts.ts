@@ -34,6 +34,7 @@ export type BlogBlock =
         cardImage?: string | boolean;
       }[];
     }
+  | { type: "list"; items: string[] }
   | { type: "video"; src: string; caption?: string };
 
 export interface SeoMetadata {
@@ -462,8 +463,6 @@ export const blogPosts: BlogPost[] = [
       "Written by Samvritha (Grade 9), participant of the Summer Programme at CambridgeIt’s wild how two weeks can stretch into what feels like an entire new chapter of your life. When I first got on the plane to London for the GEL Global Young Leaders Summer Camp 2025, I was excited, but also wondering: What if everyone’s super strict? What if it’s just school with a British accent and tighter rules?Spoiler: it wasn’t. It was better. Way better.From Strangers to People Who Just... Get You The first ti",
     category: "Education tourism",
     tags: ["Education", "Education tourism"],
-    cover:
-      "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_cover_7e2606_a872837d58d04d07954d3cdcff75b13d_mv2.png",
     date: "Jan 23, 2026",
     rawDateIso: "2026-01-23T08:48:46.027Z",
     readTime: "5 min read",
@@ -472,18 +471,18 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "paragraph",
-        text: "Written by Samvritha (Grade 9), participant of the Summer Programme at Cambridge",
+        text: "📌 Written by Samvritha (Grade 9), participant of the Summer Programme at Cambridge",
       },
       {
         type: "paragraph",
-        text: "It’s wild how two weeks can stretch into what feels like an entire new chapter of your life. When I first got on the plane to London for the GEL Global Young Leaders Summer Camp 2025, I was excited, but also wondering: What if everyone’s super strict? What if it’s just school with a British accent and tighter rules?",
+        text: "It’s wild how two weeks can stretch into what feels like an entire new chapter of your life. When I first got on the plane to London for the **GEL Global Young Leaders Summer Camp 2025**, I was excited, but also wondering: What if everyone’s super strict? What if it’s just school with a British accent and tighter rules?",
       },
       {
         type: "paragraph",
         text: "Spoiler: it wasn’t. It was better. Way better.",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "From Strangers to People Who Just... Get You",
       },
       {
@@ -508,7 +507,7 @@ export const blogPosts: BlogPost[] = [
         text: "We had this silent thing going, especially when this one guy in our group would go on one of his rants – we’d look at each other while simultaneously suppressing a laugh, and we’d just know what the other was thinking. The same thing happened in English class with Tavanesh across the room - our group’s expressions said everything.",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "The Classes Hit Different",
       },
       {
@@ -516,12 +515,9 @@ export const blogPosts: BlogPost[] = [
         text: "One of the best aspects of this program was how seriously the academic aspects were taken, without ever being overwhelming. The classes didn’t feel like school; they felt like experiences. Every session had something that made me sit up and actually want to listen.",
       },
       {
-        type: "image",
+        type: "image_with_text",
         src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_2_7e2606_0befec4869264607b8c30c38fa6553c5_mv2.png",
         caption: "",
-      },
-      {
-        type: "paragraph",
         text: "From STEM lectures to public speaking workshops, every topic was taught by people who knew what they were talking about - not just academically, but also practically. At Judge Business School, we had sessions with Suyash sir (who’s done so much, it’s hard to sum it up), and guest experts like Soniya Gupta, Lana Thornycroft, Dr. Arjun Vijeyta, and Dr. Yves Gaspar. At St. John’s Innovation Centre, we got to meet James Brown and Matt, who were working on tech to help dementia patients, and I asked them every single question I could think of.",
       },
       {
@@ -547,7 +543,7 @@ export const blogPosts: BlogPost[] = [
         text: "And then there were English classes with Lola, who had this quiet kindness that somehow made summary-writing and skim reading feel not just doable, but fun. I even started enjoying academic reading - something I never thought I’d say.",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "Friends, Pitches, and Park Talks",
       },
       {
@@ -561,7 +557,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Hajra - or “Haji,” as I called her - was my comfort person. Every morning, without fail she greeted me with a “Brooo Sammm!” followed by a hug. She made everything brighter.",
+        text: "Hajra - or “Haji,” as I called her - was my comfort person. Every morning, without fail she greeted me with a *“Brooo Sammm!”* followed by a hug. She made everything brighter.",
       },
       {
         type: "paragraph",
@@ -573,7 +569,7 @@ export const blogPosts: BlogPost[] = [
         caption: "",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "Cambridge Outings (aka the Best Weekend Ever)",
       },
       {
@@ -591,11 +587,6 @@ export const blogPosts: BlogPost[] = [
         caption: "",
       },
       {
-        type: "image",
-        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_9_7e2606_14b9e641c55549ecba2966962d9b828e_mv2.png",
-        caption: "",
-      },
-      {
         type: "paragraph",
         text: "Also, gelato runs. On the second-last day, Eshanvi, Suyash, Shveta ma’am, and I had this mini outing after classes that was so random and so fun.",
       },
@@ -604,7 +595,12 @@ export const blogPosts: BlogPost[] = [
         text: "Then Suyash took us to this quiet spot to see the sunset, which made for the best photos and a perfect end-of-trip moment.",
       },
       {
-        type: "paragraph",
+        type: "image",
+        src: "/blog-images/just-two-weeks-my-summer-at-cambridge-with-global-education-lab_inline_9_7e2606_14b9e641c55549ecba2966962d9b828e_mv2.png",
+        caption: "",
+      },
+      {
+        type: "heading",
         text: "Why Cambridge Feels Like a Second Home Now",
       },
       {
@@ -613,10 +609,10 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "And I miss the 10-minute car rides every morning when Suyash and Shveta ma’am would pick me and Eshanvi up. Those little chats before a long day? Underrated.",
+        text: "And I miss the **10-minute car rides** every morning when Suyash and Shveta ma’am would pick me and Eshanvi up. Those little chats before a long day? Underrated.",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "The People Who Made It",
       },
       {
@@ -624,7 +620,7 @@ export const blogPosts: BlogPost[] = [
         text: 'Suyash Sir made everyone feel seen. I once sat in his car just asking him about taxes and startups, and he answered everything like I was an equal. I learned so much more than just "business" from him. He and Shveta ma’am were the heart of the trip, always taking photos, cheering us on, and making sure not a single memory was missed. Especially Shveta ma’am, she somehow captured every moment on her camera, even the boring ones (thanks for that).',
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "Final Day Feelings",
       },
       {
@@ -641,7 +637,7 @@ export const blogPosts: BlogPost[] = [
         text: "I kept thinking, I’ll never get these exact two weeks again. These people may never all be in one room again. And yet… they changed me in ways they’ll never know.",
       },
       {
-        type: "paragraph",
+        type: "heading",
         text: "What I Took Home",
       },
       {
@@ -653,6 +649,19 @@ export const blogPosts: BlogPost[] = [
         text: "This trip showed me that growth doesn’t only come from classrooms. It happens in:",
       },
       {
+        type: "list",
+        items: [
+          "A failed debate and a quiet park chat",
+          "Sharing gelato and chasing sunsets",
+          "Learning CPR and battling stage fright",
+          "Friends who laugh with you, teachers who believe in you, and roommates who read your mind with just a glance",
+          "The shaky first speeches and loud public debates",
+          "Hugs from friends who just get you",
+          "Listening instead of judging",
+          "And believing in yourself a little more than you did yesterday",
+        ],
+      },
+      {
         type: "paragraph",
         text: "I left Cambridge with more confidence, new friendships, and priceless memories I’ll never trade.",
       },
@@ -662,7 +671,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "I went in wondering if it would be like school. I came back wishing every school felt like this.",
+        text: "I went in wondering if it would be like school. **I came back wishing every school felt like this.**",
       },
     ],
     rawHtml:

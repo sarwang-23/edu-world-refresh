@@ -250,6 +250,47 @@ function BlogPostPage() {
   );
 }
 
+function FormattedText({ text }: { text: string }) {
+  if (!text) return null;
+  // Support **bold**, *italic*, and [link](url)
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g);
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("**") && part.endsWith("**") && part.length >= 4) {
+          return (
+            <strong key={index} className="font-bold text-[#111111]">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        if (part.startsWith("*") && part.endsWith("*") && part.length >= 2) {
+          return (
+            <em key={index} className="italic">
+              {part.slice(1, -1)}
+            </em>
+          );
+        }
+        const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
+        if (linkMatch) {
+          return (
+            <a
+              key={index}
+              href={linkMatch[2]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1A6AFF] underline hover:text-[#0047cc]"
+            >
+              {linkMatch[1]}
+            </a>
+          );
+        }
+        return part;
+      })}
+    </>
+  );
+}
+
 function ArticleBlocksContent({ post }: { post: BlogPost }) {
   return (
     <div className="flex flex-col gap-6 text-[#1a1a1a]">
@@ -268,13 +309,13 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
           case "paragraph":
             return (
               <p key={i} className="text-[17px] leading-[1.8] text-[#222222] font-normal">
-                {block.text}
+                <FormattedText text={block.text} />
               </p>
             );
           case "heading":
             return (
               <h2 key={i} className={`text-xl sm:text-[22px] md:text-[24px] font-bold text-[#111111] ${i === 0 ? "mt-0" : "mt-8"} mb-2 leading-snug`}>
-                {block.text}
+                <FormattedText text={block.text} />
               </h2>
             );
           case "quote":
@@ -283,13 +324,38 @@ function ArticleBlocksContent({ post }: { post: BlogPost }) {
                 key={i}
                 className="my-6 border-l-4 border-forest pl-6 py-2 italic text-[#111111] bg-forest/5 rounded-r-lg"
               >
-                <p className="text-lg leading-relaxed">{block.text}</p>
+                <p className="text-lg leading-relaxed"><FormattedText text={block.text} /></p>
                 {block.attribution && (
                   <cite className="block mt-2 text-sm font-semibold not-italic text-forest">
                     — {block.attribution}
                   </cite>
                 )}
               </blockquote>
+            );
+          case "image_with_text":
+            return (
+              <div key={i} className="my-6 overflow-hidden">
+                <img
+                  src={block.src}
+                  alt={block.caption ?? ""}
+                  className="float-left mr-6 mb-3 w-[45%] max-w-[300px] rounded-xl object-cover"
+                  loading="lazy"
+                />
+                <p className="text-[17px] leading-[1.8] text-[#222222] font-normal">
+                  <FormattedText text={(block as any).text} />
+                </p>
+                <div className="clear-both" />
+              </div>
+            );
+          case "list":
+            return (
+              <ul key={i} className="my-2 list-disc pl-6 space-y-2 text-[17px] leading-[1.8] text-[#222222]">
+                {(block as any).items.map((item: string, idx: number) => (
+                  <li key={idx}>
+                    <FormattedText text={item} />
+                  </li>
+                ))}
+              </ul>
             );
           case "image":
             return (
