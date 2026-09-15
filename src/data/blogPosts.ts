@@ -1,4 +1,9 @@
 /* src/data/blogPosts.ts */
+import bidishaImg from "@/assets/people/bidisha_banerjee.jpg";
+import alumniAashishImg from "@/assets/alumni-aashish.jpg";
+import alumniAnandImg from "@/assets/alumni-anand.jpg";
+import alumniFatinImg from "@/assets/alumni-fatin.jpg";
+import alumniSamwerImg from "@/assets/alumni-samwer.jpg";
 // ---------------------------------------------------------------------------
 //  Blog data & helpers for the GEL blog feature (Migrated from Wix)
 // ---------------------------------------------------------------------------
@@ -269,39 +274,35 @@ export const blogPosts: BlogPost[] = [
           {
             name: "Johannes Samwer",
             role: "Managing Director, Rhenus Lub, Germany",
-            photo: "/blog-images/gilp_testimonial_johannes_samwer_portrait.png",
+            photo: alumniSamwerImg,
             quote:
               '"The session on Rhetoric and Communication techniques was very exciting. The group discussion on using language in the best way to influence others was intriguing with participants offering many takeaways as well. We also examined how great world leaders use these communication tools! It\'s been really fascinating and insightful. I highly recommend joining this programme."',
           },
           {
             name: "Dr Aashish Chaudhry",
             role: "Orthopaedic Surgeon & Managing Director, Aakash Healthcare, India",
-            photo: "/blog-images/gilp_testimonial_aashish_chaudhry.jpg",
-            cardImage: true,
+            photo: alumniAashishImg,
             quote:
               "\"Frugal innovation is not an abstract concept, it is a necessity. India's healthcare sector is underserved and price-sensitive. Unless innovation reaches the last mile affordably, it isn't sustainable. The fact that jugaad entered the conversation at Cambridge tells you everything. Frugal innovation isn't just for developing economies - it belongs on the global stage. The Global India Leadership Programme started with exactly the right message.\"",
           },
           {
             name: "Anand Rao",
             role: "Partner, Tiger Analytics, UK",
-            photo: "/blog-images/gilp_testimonial_anand_rao.jpg",
-            cardImage: true,
+            photo: alumniAnandImg,
             quote:
               '"A week among Cambridge\'s ancient courts, restless ideas, case clinics during the Global India Leadership Programme offered a timely vantage on leadership in an era where AI, Quantum Technology, Sustainability, Capital Stewardship, Supply Chain and Geopolitics increasingly shape economic outcomes. In conversations with CEOs, Entrepreneurs, Distinguished Fellows and Professors, including Lord Karan Bilimoria, a simple conclusion surfaced: the leaders who will prevail will combine technological literacy with disciplined capital allocation and responsible stewardship of institutions and the planet. Working across emerging technologies and sustainability, I found myself both sharing perspectives and learning in equal measure. One truth quietly resurfaced: experience is often the dividend of difficult judgement. Cambridge leaves one slightly less certain and rather more curious about the work ahead."',
           },
           {
             name: "Dr Fatin Al Zadjali",
             role: "Head of Learning & Development, BankDhofar, Oman",
-            photo: "/blog-images/gilp_testimonial_fatin_al_zadjali.jpg",
-            cardImage: true,
+            photo: alumniFatinImg,
             quote:
               '"The Global India Leadership Programme at Cambridge Judge Business School was an enriching experience. This programme brought together a diverse group of leaders from various sectors, united by a common goal: to drive positive change and foster innovation in India and beyond. Key topics discussed included Frugal Innovation, Agentic AI, Governance and Board Dynamics, Speech Writing and Storytelling, and Brand Creation. The programme also gave us actionable strategies and networking opportunities. The diversity within the cohort further enriched the experience, bringing in a wide range of insights."',
           },
           {
             name: "Bidisha Banerjee",
             role: "Co-Founder and Partner, Talent Element, India",
-            photo: "/blog-images/gilp_testimonial_bidisha_banerjee.jpg",
-            cardImage: true,
+            photo: bidishaImg,
             quote:
               '"Over the week at the Global India Leadership Programme, an extraordinary faculty challenged the way we think about leadership, strategy and the future of business in an AI-shaped world. But the most powerful learning did not happen only in the sessions. It happened between the conversations. Between curiosity and disagreement. Between unlearning and re-learning. I realised something profound: The most powerful classrooms are not defined by the curriculum - but by the curiosity in the room. Strangers became companions in thought. Ideas travelled across cultures, experiences and perspectives. And somewhere in those exchanges, a quiet possibility returned. I left Cambridge not just with notes and insights, but with something far more."',
           },
