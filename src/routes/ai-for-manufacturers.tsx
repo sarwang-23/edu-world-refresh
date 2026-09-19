@@ -40,7 +40,9 @@ import { COUNTRY_CODES } from "../data/countryCodes";
 import jaideepImg from "../assets/faculty-jaideep.jpg";
 import serishImg from "../assets/faculty-serish.jpg";
 import ujjwalImg from "../assets/people/ujjwal_pandey.jpg";
-import raviImg from "../assets/people/ravi_kant.jpg";
+import jmlLogo from "../assets/partners/jml-industries.jpg";
+import lensgateLogo from "../assets/partners/lensgate.jpg";
+import ergoLogo from "../assets/partners/ergo.jpg";
 import { buildMeta } from "@/lib/seo";
 
 const WEB_APP_URL =
@@ -58,6 +60,9 @@ function AIForManufacturersWebinar() {
     <div className="min-h-screen bg-white font-sans selection:bg-gold/30 text-[#122619] antialiased">
       {/* 1. Hero Section */}
       <HeroSection />
+
+      {/* Partnership Strip */}
+      <PartnershipStrip />
 
       {/* 2. 4 Core Value Pillars */}
       <PillarsSection />
@@ -228,6 +233,82 @@ function HeroSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── 1.5. PARTNERSHIP STRIP ─────────────────────────────────────────────────── */
+function PartnershipStrip() {
+  const partners = [
+    {
+      name: "JML Industries",
+      logo: jmlLogo,
+      type: "custom-jml",
+    },
+    {
+      name: "Lensgate",
+      logo: lensgateLogo,
+      type: "standard-white",
+      className: "h-6 sm:h-7 md:h-8 w-auto object-contain mix-blend-multiply",
+    },
+    {
+      name: "Ergo",
+      logo: ergoLogo,
+      type: "standard-white",
+      className: "h-5 sm:h-6 md:h-6.5 w-auto object-contain mix-blend-multiply",
+    },
+  ];
+
+  return (
+    <section className="bg-[#FAF7F2] border-b border-forest/10 py-4.5 px-6 relative z-10">
+      <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-8 md:gap-12">
+        <div className="flex items-center gap-2.5 text-[11px] sm:text-[11.5px] font-bold uppercase tracking-[0.22em] text-forest/50 shrink-0">
+          <span className="h-px w-4 bg-gold/50 hidden sm:inline-block" />
+          <span>In partnership with</span>
+          <span className="h-px w-4 bg-gold/50 hidden sm:inline-block" />
+        </div>
+
+        <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-10 flex-wrap">
+          {/* JML Industries */}
+          <div
+            className="flex items-center justify-center opacity-85 hover:opacity-100 transition-opacity duration-200"
+            title="JML Industries"
+          >
+            <img
+              src={jmlLogo}
+              alt="JML Industries"
+              className="h-6 sm:h-7 md:h-7.5 w-auto aspect-[3.2/1] object-cover object-center rounded shadow-xs"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Lensgate */}
+          <div
+            className="flex items-center justify-center opacity-85 hover:opacity-100 transition-opacity duration-200"
+            title="Lensgate"
+          >
+            <img
+              src={lensgateLogo}
+              alt="Lensgate"
+              className="h-6 sm:h-7 md:h-8 w-auto object-contain mix-blend-multiply"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Ergo */}
+          <div
+            className="flex items-center justify-center opacity-85 hover:opacity-100 transition-opacity duration-200"
+            title="ERGO"
+          >
+            <img
+              src={ergoLogo}
+              alt="ERGO"
+              className="h-5 sm:h-6 md:h-6.5 w-auto object-contain mix-blend-multiply"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -673,13 +754,6 @@ function SpeakersSection() {
       desc: "Works across frugal innovation, sustainability and impact investing. Focuses on making AI more resource-efficient and scalable.",
       img: serishImg,
     },
-    {
-      name: "Ravi Kant",
-      org: "Former Vice Chairman and CEO, Tata Motors",
-      role: "Automotive Industry Leader",
-      desc: "Led one of India's largest global automotive manufacturers through transformative periods of industrial modernization.",
-      img: raviImg,
-    },
   ];
 
   return (
@@ -701,7 +775,7 @@ function SpeakersSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {speakers.map((s, i) => (
             <div
               key={i}
@@ -769,13 +843,6 @@ function AgendaSection() {
       session: "Frugal AI for engineering MSMEs: getting started with small budgets, lean teams, and imperfect legacy data.",
       speaker: "Serish Venkata Gandikota",
       role: "Co-Director, Frugal AI Hub",
-    },
-    {
-      time: "10 min",
-      category: "Leadership Perspectives",
-      session: "Executive leadership in periods of technological transformation: strategic imperatives for industrial suppliers.",
-      speaker: "Ravi Kant",
-      role: "Former Vice Chairman & CEO, Tata Motors",
     },
     {
       time: "10 min",
