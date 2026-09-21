@@ -921,7 +921,7 @@ function BottomCTA() {
           Turn your curiosity into a venture.
         </h2>
         <p className="mt-5 text-[15px] text-cream/70 leading-[1.75] max-w-xl mx-auto">
-          Join Zero-to-One this June at Cambridge and build a venture from the ground up in 48
+          Join Zero-to-One this October at Cambridge and build a venture from the ground up in 48
           hours.
         </p>
 
