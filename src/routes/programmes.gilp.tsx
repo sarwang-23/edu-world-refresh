@@ -1557,26 +1557,38 @@ function CohortProfileSection() {
             A SELECTION OF ORGANISATIONS REPRESENTED
           </span>
 
-          <div className="relative flex w-full overflow-hidden">
-            <div className="flex w-max animate-marquee-ltr whitespace-nowrap items-center gap-12 sm:gap-16" style={{ animationDuration: "12s" }}>
-              {[...Array(2)].map((_, idx) => (
-                <div key={idx} className="flex items-center gap-12 sm:gap-16 shrink-0">
-                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[52px] w-auto object-contain" />
-                  <img src={logoAakash} alt="Aakash Healthcare" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoPratham} alt="Pratham UK" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoTmf} alt="TMF Group" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoKao} alt="Kao Corporation" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoEfl} alt="EFL" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoGodrej} alt="Godrej" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoRhenus} alt="Rhenus Logistics" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoRs} alt="RS" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoMetro} alt="Metro Heart Institute" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoHsbc} alt="HSBC" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoScms} alt="SCMS" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoGalgotias} alt="Galgotias University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoThakorji} alt="Thakorji" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoBankdhofar} alt="Bank Dhofar" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoIrm} alt="IRM" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+          <style>{`
+            @keyframes gilp-marquee {
+              0%   { transform: translateX(0); }
+              100% { transform: translateX(-33.333%); }
+            }
+            .gilp-marquee-track {
+              display: flex;
+              width: max-content;
+              animation: gilp-marquee 12s linear infinite;
+            }
+          `}</style>
+
+          <div className="relative w-full overflow-hidden">
+            <div className="gilp-marquee-track items-center">
+              {[...Array(3)].map((_, idx) => (
+                <div key={idx} className="flex items-center gap-10 sm:gap-14 shrink-0 pr-10 sm:pr-14">
+                  <img src={logoBennett} alt="Bennett University" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoAakash} alt="Aakash Healthcare" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoPratham} alt="Pratham UK" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoTmf} alt="TMF Group" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoKao} alt="Kao Corporation" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoEfl} alt="EFL" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoGodrej} alt="Godrej" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoRhenus} alt="Rhenus Logistics" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoRs} alt="RS" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoMetro} alt="Metro Heart Institute" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoHsbc} alt="HSBC" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoScms} alt="SCMS" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoGalgotias} alt="Galgotias University" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoThakorji} alt="Thakorji" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoBankdhofar} alt="Bank Dhofar" className="h-9 sm:h-12 w-auto object-contain" />
+                  <img src={logoIrm} alt="IRM" className="h-9 sm:h-12 w-auto object-contain" />
                 </div>
               ))}
             </div>
