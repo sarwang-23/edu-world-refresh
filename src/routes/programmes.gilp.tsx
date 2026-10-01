@@ -2512,76 +2512,39 @@ function DayDetailModal({
     {
       title: string;
       subtitle: string;
-      faculty: string;
-      venue: string;
       highlights: string[];
       img: string;
     }
   > = {
     1: {
-      title: "DAY 01 — Arriving at Cambridge",
-      subtitle: "Collegiate Arrival, Punting on the Cam & Strategic Charter",
-      faculty: "Prof. Jaideep Prabhu & GEL Leadership Directorate",
-      venue: "King's College & Trinity Backs, Cambridge",
-      highlights: [
-        "Arrival at historic Cambridge colleges and check-in to executive lodgings",
-        "Executive cohort orientation and setting the confidential strategic charter",
-        "Private punting on the River Cam through historic college backs and bridges",
-        "Cambridge Welcome Banquet in the Fellow's Garden",
-      ],
-      img: cambridgeBridgeImg,
+      title: "Step outside the everyday.",
+      subtitle: "Arrive in Cambridge, connect deeply, and begin an immersive leadership journey.",
+      highlights: ["Leadership", "Perspective", "Peer Learning"],
+      img: day01ArrivalImg,
     },
     2: {
-      title: "DAY 02 — Technology, Economics and Innovation",
-      subtitle: "Frontier AI, Macroeconomic Shifts & Global Disruption",
-      faculty: "Prof. Shasha Lu, Prof. Kamiar Mohaddes, Dr. Elizabeth Osta",
-      venue: "Cambridge Judge Business School Lecture Chambers",
-      highlights: [
-        "Deciphering AI beyond the hype: Operational & Strategic deployment",
-        "Macroeconomic turbulence, currency volatility and resilient strategy",
-        "Interactive case simulation on digital transformation at scale",
-        "Formal Hall Dinner discussion inside historic Cambridge college dining hall",
-      ],
+      title: "Understand the forces reshaping leadership.",
+      subtitle: "Explore the forces reshaping leadership through technology, economics, innovation and debate.",
+      highlights: ["AI", "Economics", "Innovation"],
       img: guyDozaImg,
     },
     3: {
-      title: "DAY 03 — Governance, Strategy and Brand",
-      subtitle: "Boardroom Dynamics, Fiduciary Accountability & Brand Sovereignty",
-      faculty: "Prof. Raghavendra Rau, Prof. Lionel Paolella, Prof. Eden Yin",
-      venue: "Cambridge Judge Executive Boardroom",
-      highlights: [
-        "Modern corporate governance & boardroom decision frameworks",
-        "Competitive strategy: Building long-term defensible enterprise moats",
-        "Brand architecture, positioning and reputation in high-stakes markets",
-        "Cohort breakout strategic challenge workshop addressing live peer problems",
-      ],
-      img: glipClassroomImg,
+      title: "Governance. Strategy. Brand.",
+      subtitle: "Dive into governance, strategy and branding through practical frameworks and reflection.",
+      highlights: ["Governance", "Strategy", "Branding"],
+      img: day03ClassroomImg,
     },
     4: {
-      title: "DAY 04 — Leadership at Lord's",
-      subtitle: "Signature Off-Site Day at Lord's Cricket Ground, London",
-      faculty: "Julian Metherell, Guy Doza, Lord Uday Nagaraju, Rt Hon Paul Scully",
-      venue: "The Pavilion & Long Room, Lord's Cricket Ground, London",
-      highlights: [
-        "Private executive boardroom sessions inside Lord's Pavilion, London",
-        "Leadership lessons from elite sport, high performance & pressure management",
-        "Executive rhetoric, persuasion and influence language masterclass",
-        "Tech governance & policy dialogue with UK parliamentarians and ministers",
-      ],
-      img: lordCricketImg,
+      title: "Leadership left the classroom.",
+      subtitle: "Experience leadership beyond campus through sport, policy, communication and shared insight.",
+      highlights: ["Sport", "Policy", "Communication"],
+      img: day04LordsImg,
     },
     5: {
-      title: "DAY 05 — From Leadership to Global Opportunity",
-      subtitle: "Frugal Innovation, Diplomatic Roundtable & Cambridge Graduation",
-      faculty: "Prof. Jaideep Prabhu, Prof. Thomas Roulet, H.E. Kumaran Periasamy",
-      venue: "Cambridge Judge Business School & Bilateral Chambers",
-      highlights: [
-        "Frugal Innovation: Multiplying enterprise impact with disciplined capital",
-        "Executive wellbeing, mental stamina and enduring organizational health",
-        "Special bilateral dialogue with H.E. Kumaran Periasamy, Indian High Commissioner to the UK",
-        "Formal Cambridge graduation ceremony and conferral of CJBS Certificate",
-      ],
-      img: personHighCommImg,
+      title: "From leadership to global opportunity.",
+      subtitle: "Translate learning into global opportunity, wellbeing, innovation and lasting impact.",
+      highlights: ["Wellbeing", "Innovation", "Global Impact"],
+      img: day05DinnerImg,
     },
   };
 
@@ -2610,7 +2573,7 @@ function DayDetailModal({
           </button>
           <div className="absolute bottom-4 left-6 right-6">
             <span className="text-[11px] font-bold tracking-[0.2em] text-gold uppercase bg-black/60 px-2.5 py-1 rounded">
-              PROGRAMME CURRICULUM
+              DAY {dayIndex < 10 ? `0${dayIndex}` : dayIndex}
             </span>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">
               {current.title}
@@ -2623,16 +2586,9 @@ function DayDetailModal({
             <p className="text-base font-serif italic text-forest/85 font-medium">
               {current.subtitle}
             </p>
-            <p className="text-xs font-bold text-gold-deep uppercase tracking-wider mt-1.5">
-              Key Facilitators: {current.faculty}
-            </p>
-            <p className="text-xs text-forest/70 font-medium mt-0.5">Venue: {current.venue}</p>
           </div>
 
           <div className="space-y-3 pt-3 border-t border-forest/10">
-            <h4 className="text-[13px] font-bold uppercase tracking-wider text-forest-deep">
-              Day Highlights & Sessions
-            </h4>
             <ul className="space-y-2.5">
               {current.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-3 text-[14px] text-forest/85">
