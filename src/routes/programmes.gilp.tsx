@@ -86,6 +86,11 @@ import gilpGallery10Img from "../assets/gilp-gallery-10.jpg";
 import gilpGallery11Img from "../assets/gilp-gallery-11.jpg";
 import gilpGallery12Img from "../assets/gilp-gallery-12.jpg";
 import gilpGallery13Img from "../assets/gilp-gallery-13.jpg";
+import gilpGallery14Img from "../assets/gilp-gallery-14.jpg";
+import gilpGallery15Img from "../assets/gilp-gallery-15.jpg";
+import gilpGallery16Img from "../assets/gilp-gallery-16.jpg";
+import gilpGallery17Img from "../assets/gilp-gallery-17.jpg";
+import gilpGallery18Img from "../assets/gilp-gallery-18.jpg";
 
 // Perspectives Leaders
 import leaderKumaranImg from "../assets/leader_kumaran.jpg";
@@ -2305,6 +2310,21 @@ function ProgrammeGallerySection() {
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
                 <img src={gilpGallery13Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery14Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery15Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery16Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery17Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery18Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
             </>
           )}
