@@ -243,13 +243,13 @@ export default function GILPPage() {
       {/* 11. Participant Evidence Strip */}
       <ParticipantEvidenceStrip />
 
-      {/* 12. Programme Gallery */}
-      <ProgrammeGallerySection />
-
-      {/* 13. Priority Application & Dossier Acquisition Section */}
+      {/* 12. Priority Application & Dossier Acquisition Section */}
       <PriorityApplicationSection />
 
-      {/* 13. Site Footer */}
+      {/* 13. Programme Gallery */}
+      <ProgrammeGallerySection />
+
+      {/* 14. Site Footer */}
       <Footer />
 
       {/* Floating Action Trigger */}
