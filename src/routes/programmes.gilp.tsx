@@ -76,6 +76,11 @@ import day05DinnerImg from "../assets/gilp_day05_dinner.jpg";
 import gilpGallery1Img from "../assets/gilp-gallery-1.jpg";
 import gilpGallery2Img from "../assets/gilp-gallery-2.jpg";
 import gilpGallery3Img from "../assets/gilp-gallery-3.jpg";
+import gilpGallery4Img from "../assets/gilp-gallery-4.jpg";
+import gilpGallery5Img from "../assets/gilp-gallery-5.jpg";
+import gilpGallery6Img from "../assets/gilp-gallery-6.jpg";
+import gilpGallery7Img from "../assets/gilp-gallery-7.jpg";
+import gilpGallery8Img from "../assets/gilp-gallery-8.jpg";
 
 // Perspectives Leaders
 import leaderKumaranImg from "../assets/leader_kumaran.jpg";
@@ -2232,6 +2237,8 @@ function PriorityApplicationSection() {
    PROGRAMME GALLERY
 ───────────────────────────────────────────────────────────── */
 function ProgrammeGallerySection() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section id="programme-gallery" className="py-16 sm:py-20 lg:py-24 bg-white border-t border-stone-200/80">
       <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
@@ -2249,7 +2256,7 @@ function ProgrammeGallerySection() {
           </h2>
         </div>
 
-        {/* 3-Column Image Grid */}
+        {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
             <img src={gilpGallery1Img} alt="GILP Action" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
@@ -2260,14 +2267,40 @@ function ProgrammeGallerySection() {
           <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
             <img src={gilpGallery3Img} alt="GILP Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
+          
+          {/* Extra photos revealed on click */}
+          {showMore && (
+            <>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery4Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery5Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery6Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery7Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+                <img src={gilpGallery8Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+            </>
+          )}
         </div>
 
         {/* Load More Button */}
-        <div className="flex justify-center">
-          <button className="inline-flex items-center gap-2 rounded-full bg-[#0E2B14] px-6 sm:px-8 py-3.5 sm:py-4 text-[12px] sm:text-[13px] font-bold tracking-[0.1em] text-white hover:bg-[#1A3E22] transition-colors shadow-lg">
-            LOAD MORE PHOTOS <ArrowUpRight className="h-4 w-4" />
-          </button>
-        </div>
+        {!showMore && (
+          <div className="flex justify-center">
+            <button 
+              onClick={() => setShowMore(true)}
+              className="inline-flex items-center gap-2 rounded-full bg-[#0E2B14] px-6 sm:px-8 py-3.5 sm:py-4 text-[12px] sm:text-[13px] font-bold tracking-[0.1em] text-white hover:bg-[#1A3E22] transition-colors shadow-lg"
+            >
+              LOAD MORE PHOTOS <ArrowUpRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
