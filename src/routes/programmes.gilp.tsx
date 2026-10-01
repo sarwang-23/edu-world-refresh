@@ -513,8 +513,8 @@ function ExecutiveDistinctionSection() {
       <div 
         className="absolute bottom-0 left-0 w-full sm:w-[90%] lg:w-[65%] h-[60%] sm:h-[80%] z-0 pointer-events-none"
         style={{
-          WebkitMaskImage: 'radial-gradient(100% 100% at 0% 100%, black 30%, transparent 100%)',
-          maskImage: 'radial-gradient(100% 100% at 0% 100%, black 30%, transparent 100%)'
+          WebkitMaskImage: 'radial-gradient(100% 100% at 0% 100%, black 20%, transparent 80%)',
+          maskImage: 'radial-gradient(100% 100% at 0% 100%, black 20%, transparent 80%)'
         }}
       >
         <img
@@ -562,24 +562,26 @@ function ExecutiveDistinctionSection() {
 
           {/* Right Column: Quote Box */}
           <div className="lg:col-span-3 lg:border-l lg:border-stone-200/80 lg:pl-10 xl:pl-12">
-            <div className="mb-12">
-              <span className="text-[4.5rem] font-serif leading-[0.5] select-none block font-medium mb-5 text-[#D4AF37]">
-                “
-              </span>
-              <blockquote className="font-serif italic text-[20px] sm:text-[22px] text-stone-800 leading-[1.35] pr-2 font-light">
-                Executive education should change more than what you know. It should change what becomes possible next.
-              </blockquote>
-            </div>
+            <div className="rounded-xl bg-white/80 backdrop-blur-sm p-5 sm:p-6 shadow-sm border border-stone-200/60 lg:bg-transparent lg:rounded-none lg:p-0 lg:shadow-none lg:border-0 lg:backdrop-blur-none">
+              <div className="mb-6">
+                <span className="text-[4.5rem] font-serif leading-[0.5] select-none block font-medium mb-5 text-[#D4AF37]">
+                  “
+                </span>
+                <blockquote className="font-serif italic text-[18px] sm:text-[20px] text-stone-900 leading-[1.4] font-medium">
+                  Executive education should change more than what you know. It should change what becomes possible next.
+                </blockquote>
+              </div>
 
-            <div className="h-px w-10 bg-[#D4AF37] mb-6" />
+              <div className="h-px w-10 bg-[#D4AF37] mb-5" />
 
-            <div>
-              <p className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.22em] uppercase text-[#8C7A58] mb-2">
-                GLOBAL INDIA LEADERSHIP PROGRAMME
-              </p>
-              <p className="font-serif italic text-[14px] text-stone-500 font-light">
-                Ideas. People. Possibilities.
-              </p>
+              <div>
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.22em] uppercase text-[#8C7A58] mb-2">
+                  GLOBAL INDIA LEADERSHIP PROGRAMME
+                </p>
+                <p className="font-serif italic text-[14px] text-stone-600 font-medium">
+                  Ideas. People. Possibilities.
+                </p>
+              </div>
             </div>
           </div>
 
