@@ -73,14 +73,9 @@ import day04LordsImg from "../assets/gilp_day04_lords.jpg";
 import day05DinnerImg from "../assets/gilp_day05_dinner.jpg";
 
 // Programme Gallery images
-import gilpCohort1Img from "../assets/gilp_cohort_1.jpg";
-import gilpCohort2Img from "../assets/gilp_cohort_2.jpg";
-import gilpCohort3Img from "../assets/gilp_cohort_3.jpg";
-import gilpCohort4Img from "../assets/gilp_cohort_4.jpg";
-import gilpCohort5Img from "../assets/gilp_cohort_5.jpg";
-import gilpCohort6Img from "../assets/gilp_cohort_6.jpg";
-import gilpCohort7Img from "../assets/gilp_cohort_7.jpg";
-import gilpCohort8Img from "../assets/gilp_cohort_8.jpg";
+import gilpGallery1Img from "../assets/gilp-gallery-1.jpg";
+import gilpGallery2Img from "../assets/gilp-gallery-2.jpg";
+import gilpGallery3Img from "../assets/gilp-gallery-3.jpg";
 
 // Perspectives Leaders
 import leaderKumaranImg from "../assets/leader_kumaran.jpg";
@@ -2257,13 +2252,13 @@ function ProgrammeGallerySection() {
         {/* 3-Column Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-            <img src={gilpCohort1Img} alt="GILP Cohort" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+            <img src={gilpGallery1Img} alt="GILP Action" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-            <img src={gilpCohort2Img} alt="GILP Group" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+            <img src={gilpGallery2Img} alt="GILP Audience" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-            <img src={gilpCohort4Img} alt="GILP Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+            <img src={gilpGallery3Img} alt="GILP Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
         </div>
 
