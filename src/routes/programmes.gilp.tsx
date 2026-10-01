@@ -72,6 +72,16 @@ import day03ClassroomImg from "../assets/gilp_day03_classroom.jpg";
 import day04LordsImg from "../assets/gilp_day04_lords.jpg";
 import day05DinnerImg from "../assets/gilp_day05_dinner.jpg";
 
+// Programme Gallery images
+import gilpCohort1Img from "../assets/gilp_cohort_1.jpg";
+import gilpCohort2Img from "../assets/gilp_cohort_2.jpg";
+import gilpCohort3Img from "../assets/gilp_cohort_3.jpg";
+import gilpCohort4Img from "../assets/gilp_cohort_4.jpg";
+import gilpCohort5Img from "../assets/gilp_cohort_5.jpg";
+import gilpCohort6Img from "../assets/gilp_cohort_6.jpg";
+import gilpCohort7Img from "../assets/gilp_cohort_7.jpg";
+import gilpCohort8Img from "../assets/gilp_cohort_8.jpg";
+
 // Perspectives Leaders
 import leaderKumaranImg from "../assets/leader_kumaran.jpg";
 import leaderKaranImg from "../assets/leader_karan.jpg";
@@ -233,7 +243,10 @@ export default function GILPPage() {
       {/* 11. Participant Evidence Strip */}
       <ParticipantEvidenceStrip />
 
-      {/* 12. Priority Application & Dossier Acquisition Section */}
+      {/* 12. Programme Gallery */}
+      <ProgrammeGallerySection />
+
+      {/* 13. Priority Application & Dossier Acquisition Section */}
       <PriorityApplicationSection />
 
       {/* 13. Site Footer */}
@@ -2219,6 +2232,68 @@ function PriorityApplicationSection() {
     </section>
   );
 }
+
+/* ─────────────────────────────────────────────────────────────
+   PROGRAMME GALLERY
+───────────────────────────────────────────────────────────── */
+function ProgrammeGallerySection() {
+  const galleryImages = [
+    { src: gilpCohort1Img, alt: "GILP Cohort Moment", span: "col-span-2 row-span-2" },
+    { src: gilpCohort2Img, alt: "GILP Group Discussion" },
+    { src: gilpCohort3Img, alt: "GILP Cambridge Campus" },
+    { src: gilpCohort4Img, alt: "GILP Networking" },
+    { src: gilpCohort5Img, alt: "GILP Session" },
+    { src: gilpCohort6Img, alt: "GILP Delegates" },
+    { src: gilpCohort7Img, alt: "GILP Cohort Experience" },
+    { src: gilpCohort8Img, alt: "GILP Cambridge" },
+  ];
+
+  return (
+    <section id="programme-gallery" className="py-16 sm:py-20 lg:py-24 bg-[#FAF9F6] border-t border-stone-200/80">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+
+        {/* Header */}
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="h-px w-8 bg-[#D4AF37]" />
+            <span className="text-[11px] sm:text-[12px] font-extrabold tracking-[0.25em] uppercase text-[#99730E]">
+              Programme Gallery
+            </span>
+          </div>
+          <h2 className="text-[1.85rem] sm:text-[2.5rem] lg:text-[3rem] font-serif font-semibold text-gray-900 leading-tight tracking-tight">
+            Moments from GILP
+          </h2>
+          <p className="mt-3 text-stone-500 text-[15px] sm:text-[16px] max-w-2xl leading-relaxed">
+            Moments from cohort experiences across Cambridge, London, and beyond.
+          </p>
+        </div>
+
+        {/* Masonry-style grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          {/* Large feature image */}
+          <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-auto sm:h-[420px]">
+            <img src={gilpCohort1Img} alt="GILP Cohort" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          {/* Smaller images */}
+          {[
+            { src: gilpCohort2Img, alt: "GILP Group" },
+            { src: gilpCohort3Img, alt: "GILP Cambridge" },
+            { src: gilpCohort4Img, alt: "GILP Networking" },
+            { src: gilpCohort5Img, alt: "GILP Session" },
+            { src: gilpCohort6Img, alt: "GILP Delegates" },
+            { src: gilpCohort8Img, alt: "GILP Cambridge Grounds" },
+          ].map((img, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden aspect-square sm:h-[200px] lg:h-[200px]">
+              <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────────
    MODALS & FLOATING CONTROLS
