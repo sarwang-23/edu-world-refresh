@@ -1525,27 +1525,29 @@ function CohortProfileSection() {
             </div>
           </div>
 
-          {/* Right Column (4 cols): Overlapping Images */}
-          <div className="lg:col-span-4 relative h-[380px] sm:h-[480px] lg:h-[540px] w-full flex items-center">
-            
-            {/* Top/Back Image (Trees) */}
-            <div className="absolute top-0 left-0 sm:top-2 sm:-left-2 w-[84%] aspect-[3/2] z-0 shadow-xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[-2deg]">
-              <img
-                src={cohortTreesImg}
-                alt="GILP Cohort with Trees"
-                className="w-full h-full object-cover"
-              />
+          {/* Right Column (4 cols): Images — stacked on mobile, overlapping on desktop */}
+          <div className="lg:col-span-4 relative">
+            {/* Mobile: Simple stacked images */}
+            <div className="flex flex-col gap-4 lg:hidden">
+              <div className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                <img src={cohortBuildingImg} alt="GILP Cohort Building" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-full aspect-[3/2] rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                <img src={cohortTreesImg} alt="GILP Cohort with Trees" className="w-full h-full object-cover" />
+              </div>
             </div>
 
-            {/* Bottom/Front Image (Building) */}
-            <div className="absolute bottom-8 right-0 sm:bottom-10 sm:-right-4 w-[88%] aspect-[4/3] z-10 shadow-2xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[1deg]">
-              <img
-                src={cohortBuildingImg}
-                alt="GILP Cohort Building"
-                className="w-full h-full object-cover"
-              />
+            {/* Desktop: Overlapping layout */}
+            <div className="hidden lg:block relative h-[540px] w-full">
+              {/* Top/Back Image (Trees) */}
+              <div className="absolute top-2 -left-2 w-[84%] aspect-[3/2] z-0 shadow-xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[-2deg]">
+                <img src={cohortTreesImg} alt="GILP Cohort with Trees" className="w-full h-full object-cover" />
+              </div>
+              {/* Bottom/Front Image (Building) */}
+              <div className="absolute bottom-10 -right-4 w-[88%] aspect-[4/3] z-10 shadow-2xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[1deg]">
+                <img src={cohortBuildingImg} alt="GILP Cohort Building" className="w-full h-full object-cover" />
+              </div>
             </div>
-
           </div>
         </div>
 
@@ -1555,11 +1557,11 @@ function CohortProfileSection() {
             A SELECTION OF ORGANISATIONS REPRESENTED
           </span>
 
-          <div className="relative flex w-full overflow-hidden mix-blend-multiply">
+          <div className="relative flex w-full overflow-hidden">
             <div className="flex w-max animate-marquee-ltr whitespace-nowrap items-center gap-12 sm:gap-16" style={{ animationDuration: "12s" }}>
               {[...Array(2)].map((_, idx) => (
                 <div key={idx} className="flex items-center gap-12 sm:gap-16 shrink-0">
-                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[52px] w-auto object-contain" />
                   <img src={logoAakash} alt="Aakash Healthcare" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoPratham} alt="Pratham UK" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoTmf} alt="TMF Group" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
@@ -1695,10 +1697,10 @@ function TestimonialsSection({
                 VOICES FROM OUR COMMUNITY
               </span>
             </div>
-            <h2 className="text-[2.25rem] sm:text-[3rem] lg:text-[3.25rem] xl:text-[3.5rem] font-bold leading-[1.05] tracking-tight mb-5">
-              <span className="text-white whitespace-nowrap block sm:inline">45 leaders have experienced GILP.</span>
-              <br className="hidden sm:block" />
-              <span style={{ color: "#D4AF37" }} className="whitespace-nowrap block sm:inline mt-1 sm:mt-0">This is what stayed with them.</span>
+            <h2 className="text-[1.75rem] sm:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.5rem] font-bold leading-[1.1] tracking-tight mb-5">
+              <span className="text-white block">45 leaders have experienced GILP.</span>
+              <br />
+              <span style={{ color: "#D4AF37" }} className="block mt-1">This is what stayed with them.</span>
             </h2>
             <p className="text-stone-300 text-[15px] sm:text-[16px] leading-relaxed max-w-2xl font-light">
               From powerful classroom discussions to unforgettable experiences beyond Cambridge, here is what participants from our first two cohorts had to say.
