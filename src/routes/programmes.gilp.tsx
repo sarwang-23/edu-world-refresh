@@ -117,6 +117,13 @@ import personHighCommImg from "../assets/person8.jpg";
 import personKeesImg from "../assets/person6.jpg";
 import guyDozaSpeakerImg from "../assets/speaker10.jpg";
 
+// Speaker Modal Images
+import gilpSpeaker1 from "../assets/gilp_speaker_1.jpg";
+import gilpSpeaker2 from "../assets/gilp_speaker_2.jpg";
+import gilpSpeaker3 from "../assets/gilp_speaker_3.jpg";
+import gilpSpeaker4 from "../assets/gilp_speaker_4.jpg";
+import gilpSpeaker5 from "../assets/gilp_speaker_5.jpg";
+
 // Testimonial alumni
 import alumniSnigdha from "../assets/alumni-snigdha.jpg";
 import alumniFatin from "../assets/alumni-fatin.jpg";
@@ -1305,6 +1312,7 @@ function PerspectivesBeyondAcademiaSection({
       role: "Indian High Commissioner to the UK",
       note: "Trade, education, skills and the role of leadership in strengthening bilateral ties.",
       img: leaderKumaranImg,
+      modalImg: gilpSpeaker4,
       imgClass: "scale-[1.3] object-[center_20%] origin-top",
       bio: "Indian High Commissioner to the UK. Key strategic architect of India-UK bilateral corridors spanning trade, education, talent mobility, and technology investment.",
       institution: "High Commission of India, London",
@@ -1315,36 +1323,40 @@ function PerspectivesBeyondAcademiaSection({
       role: "Member of the House of Lords and Founder, Cobra Beer",
       note: "Fireside conversation during the first GILP cohort.",
       img: leaderKaranImg,
+      modalImg: gilpSpeaker2,
       bio: "Crossbench Peer in the UK House of Lords, Chancellor of the University of Birmingham, and Founder & Chairman of Cobra Beer. Former President of the Confederation of British Industry (CBI).",
       institution: "House of Lords & CBI",
       expertise: "Entrepreneurship & Global Business",
     },
     {
       name: "Julian Metherell",
-      role: "Business & Sports Leadership",
-      note: "Chair, London Spirit; Incoming MCC President; Chair, CJBS Advisory Board.",
+      role: "President, MCC; Chair, London Spirit & CJBS Advisory Board",
+      note: "Lord's Cricket Ground \nConnecting Sport, Business & Academia",
       img: leaderJulianImg,
-      bio: "Senior corporate and energy leader. Incoming President of Marylebone Cricket Club (Lord's), Chair of London Spirit, and Chair of Cambridge Judge Business School Advisory Board. Former Head of European Energy at Goldman Sachs.",
+      modalImg: gilpSpeaker3,
+      bio: "Senior corporate and energy leader. President of Marylebone Cricket Club (Lord's), Chair of London Spirit, and Chair of Cambridge Judge Business School Advisory Board. Former Head of European Energy at Goldman Sachs.",
       institution: "MCC (Lord's) & CJBS Advisory Board",
-      expertise: "Business & Sports Leadership",
+      expertise: "Connecting Sport, Business & Academia",
     },
     {
       name: "Lord Uday Nagaraju",
       role: "Member of the House of Lords, Founder, AI Policy Labs",
       note: "Perspectives on responsible technology and policy.",
       img: leaderUdayImg,
+      modalImg: gilpSpeaker1,
       bio: "Member of the UK House of Lords and global advisor on artificial intelligence governance, technology ethics, and international digital public policy.",
       institution: "UK House of Lords & AI Policy",
       expertise: "AI Governance & Digital Policy",
     },
     {
       name: "Paul Scully",
-      role: "Technology & Human Leadership",
-      note: "Former Minister for Tech & the Digital Economy.",
+      role: "Former UK Minister for Tech & the Digital Economy",
+      note: "Policy & Human-Centric AI",
       img: leaderPaulImg,
+      modalImg: gilpSpeaker5,
       bio: "Former UK Minister for Tech and the Digital Economy, and former Minister for London. Led nationwide initiatives on digital innovation, tech regulation, and economic modernization.",
       institution: "UK Government (Former Tech Minister)",
-      expertise: "Technology & Human Leadership",
+      expertise: "Policy & Human-Centric AI",
     },
   ];
 
@@ -1419,7 +1431,7 @@ function PerspectivesBeyondAcademiaSection({
                 <p className="text-[13px] sm:text-[14px] text-[#5A7C9A] font-medium leading-snug mb-3">
                   {l.role}
                 </p>
-                <p className="text-[12px] sm:text-[13px] text-stone-600 leading-relaxed font-light line-clamp-4">
+                <p className="text-[12px] sm:text-[13px] text-stone-600 leading-relaxed font-light line-clamp-4 whitespace-pre-line">
                   {l.note}
                 </p>
               </div>
@@ -1538,22 +1550,22 @@ function CohortProfileSection() {
         </div>
 
         {/* Bottom Logo Strip — Marquee Logos */}
-        <div className="mt-10 pt-7 sm:mt-12 sm:pt-8 border-t border-stone-200/80 flex flex-col lg:flex-row lg:items-center gap-6 overflow-hidden">
-          <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.18em] text-stone-400 uppercase max-w-[200px] leading-snug shrink-0 z-10 bg-[#FAF9F6] pr-4">
+        <div className="mt-12 pt-8 sm:mt-16 sm:pt-12 border-t border-stone-200/80 flex flex-col items-center gap-8 overflow-hidden">
+          <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] text-stone-400 uppercase text-center w-full z-10">
             A SELECTION OF ORGANISATIONS REPRESENTED
           </span>
 
-          <div className="relative flex flex-1 overflow-hidden mix-blend-multiply">
-            <div className="flex w-max animate-marquee whitespace-nowrap items-center gap-12 sm:gap-16">
+          <div className="relative flex w-full overflow-hidden mix-blend-multiply">
+            <div className="flex w-max animate-marquee-ltr whitespace-nowrap items-center gap-12 sm:gap-16" style={{ animationDuration: "12s" }}>
               {[...Array(2)].map((_, idx) => (
                 <div key={idx} className="flex items-center gap-12 sm:gap-16 shrink-0">
-                  <img src={logoGodrej} alt="Godrej" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoAakash} alt="Aakash Healthcare" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoPratham} alt="Pratham UK" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoTmf} alt="TMF Group" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoKao} alt="Kao Corporation" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoEfl} alt="EFL" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
-                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoGodrej} alt="Godrej" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoRhenus} alt="Rhenus Logistics" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoRs} alt="RS" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
                   <img src={logoMetro} alt="Metro Heart Institute" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
@@ -1974,7 +1986,7 @@ function PriorityApplicationSection() {
           <div className="flex flex-wrap gap-3 mb-8">
             {[
               { val: "5", label: "Days in Cambridge & London" },
-              { val: "25", label: "C-Suite Leaders Only" },
+              { val: "Limited Spaces", label: "C-Suite Leaders Only" },
               { val: "100%", label: "CJBS Certified" },
             ].map((s) => (
               <div
@@ -1996,9 +2008,9 @@ function PriorityApplicationSection() {
           <ul className="space-y-3.5 max-w-lg">
             {[
               { icon: <Award className="h-4 w-4" />, text: "Cambridge Judge Business School Certificate" },
-              { icon: <Landmark className="h-4 w-4" />, text: "Lord's Pavilion · House of Lords · King's College" },
-              { icon: <Globe2 className="h-4 w-4" />, text: "Bilateral dialogue — Indian High Commissioner" },
-              { icon: <Network className="h-4 w-4" />, text: "Exclusive network of India's top CXOs" },
+              { icon: <Landmark className="h-4 w-4" />, text: "Exclusive access beyond the traditional classroom" },
+              { icon: <Globe2 className="h-4 w-4" />, text: "Global perspectives from policy, diplomacy & business" },
+              { icon: <Network className="h-4 w-4" />, text: "Curated peer network of senior leaders & CXOs" },
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3">
                 <span
@@ -2027,7 +2039,7 @@ function PriorityApplicationSection() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-px w-6" style={{ background: "#D4AF37" }} />
                 <span className="text-[11px] font-extrabold tracking-[0.22em] uppercase" style={{ color: "#D4AF37" }}>
-                  Priority Registration Open
+                  Join the Priority Application List
                 </span>
               </div>
               <p className="text-white font-bold text-xl sm:text-2xl font-serif leading-tight">
@@ -2054,8 +2066,7 @@ function PriorityApplicationSection() {
                 </div>
                 <p className="text-forest-deep font-bold text-lg mb-2">Registration Received</p>
                 <p className="text-forest/75 text-sm sm:text-base leading-relaxed">
-                  Our programme office will be in touch within 48 hours with a personalised
-                  invitation for Cohort III consideration.
+                  Our programme office will review your details and be in touch with further information regarding consideration for the next cohort.
                 </p>
               </div>
             ) : (
@@ -2170,36 +2181,18 @@ function PriorityApplicationSection() {
                     color: "#0A1F0D",
                   }}
                 >
-                  {status === "submitting" ? "Submitting…" : "Secure My Priority Position —"}
+                  {status === "submitting" ? "Submitting…" : "Get Early Application Access —"}
                 </button>
 
                 {/* Sub-text row */}
                 <div className="flex items-center justify-between pt-1">
                   <p className="text-stone-400 text-[11px] flex items-center gap-1.5">
                     <CheckCircle2 className="h-3.5 w-3.5 text-forest/50" />
-                    No formal application. Priority updates only.
+                    Submitting this form does not guarantee admission to the programme.
                   </p>
-                  <button type="button" className="text-stone-400 text-[11px] flex items-center gap-1 cursor-pointer hover:text-forest-deep">
-                    <Share2 className="h-3.5 w-3.5" />
-                    Share
-                  </button>
                 </div>
 
-                {/* Trust badges */}
-                <div
-                  className="flex items-center justify-around pt-3.5"
-                  style={{ borderTop: "1px solid #f3f4f6" }}
-                >
-                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" /> No payment required
-                  </span>
-                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
-                    <ShieldCheck className="h-3.5 w-3.5 text-green-600" /> Confidential
-                  </span>
-                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
-                    <Award className="h-3.5 w-3.5 text-green-600" /> CJBS Endorsed
-                  </span>
-                </div>
+
               </form>
             )}
           </div>
@@ -2603,7 +2596,18 @@ function FacultyModal({ faculty, onClose }: { faculty: any | null; onClose: () =
             Academic & Leadership Profile
           </span>
           <p className="text-[14.5px] sm:text-[15.5px] text-forest/85 leading-relaxed">{faculty.bio}</p>
-          <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-forest/10">
+          
+          {faculty.modalImg && (
+            <div className="pt-2 pb-1">
+              <img 
+                src={faculty.modalImg} 
+                alt={`${faculty.name} at GILP`}
+                className="w-full h-[200px] sm:h-[260px] object-cover rounded-xl border border-stone-200/60 shadow-sm"
+              />
+            </div>
+          )}
+
+          <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-forest/10 mt-2">
             <span className="text-[11px] font-bold text-gold-deep uppercase tracking-wider block mb-1">
               Core Specialty & Sessions
             </span>
