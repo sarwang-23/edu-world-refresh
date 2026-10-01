@@ -2510,40 +2510,40 @@ function DayDetailModal({
   const dayDetails: Record<
     number,
     {
-      title: string;
-      subtitle: string;
-      highlights: string[];
+      headline: string;
+      summary: string;
+      keyTopics: string[];
       img: string;
     }
   > = {
     1: {
-      title: "Step outside the everyday.",
-      subtitle: "Arrive in Cambridge, connect deeply, and begin an immersive leadership journey.",
-      highlights: ["Leadership", "Perspective", "Peer Learning"],
+      headline: "Step outside the everyday.",
+      summary: "Arrive in Cambridge, connect deeply, and begin an immersive leadership journey.",
+      keyTopics: ["Leadership", "Perspective", "Peer Learning"],
       img: day01ArrivalImg,
     },
     2: {
-      title: "Understand the forces reshaping leadership.",
-      subtitle: "Explore the forces reshaping leadership through technology, economics, innovation and debate.",
-      highlights: ["AI", "Economics", "Innovation"],
+      headline: "Understand the forces reshaping leadership.",
+      summary: "Explore the forces reshaping leadership through technology, economics, innovation and debate.",
+      keyTopics: ["AI", "Economics", "Innovation"],
       img: guyDozaImg,
     },
     3: {
-      title: "Governance. Strategy. Brand.",
-      subtitle: "Dive into governance, strategy and branding through practical frameworks and reflection.",
-      highlights: ["Governance", "Strategy", "Branding"],
+      headline: "Governance. Strategy. Brand.",
+      summary: "Dive into governance, strategy and branding through practical frameworks and reflection.",
+      keyTopics: ["Governance", "Strategy", "Branding"],
       img: day03ClassroomImg,
     },
     4: {
-      title: "Leadership left the classroom.",
-      subtitle: "Experience leadership beyond campus through sport, policy, communication and shared insight.",
-      highlights: ["Sport", "Policy", "Communication"],
+      headline: "Leadership left the classroom.",
+      summary: "Experience leadership beyond campus through sport, policy, communication and shared insight.",
+      keyTopics: ["Sport", "Policy", "Communication"],
       img: day04LordsImg,
     },
     5: {
-      title: "From leadership to global opportunity.",
-      subtitle: "Translate learning into global opportunity, wellbeing, innovation and lasting impact.",
-      highlights: ["Wellbeing", "Innovation", "Global Impact"],
+      headline: "From leadership to global opportunity.",
+      summary: "Translate learning into global opportunity, wellbeing, innovation and lasting impact.",
+      keyTopics: ["Wellbeing", "Innovation", "Global Impact"],
       img: day05DinnerImg,
     },
   };
@@ -2562,7 +2562,7 @@ function DayDetailModal({
         <div className="relative aspect-[21/9] bg-forest-deep">
           <img
             src={current.img}
-            alt={current.title}
+            alt={current.headline}
             className="w-full h-full object-cover opacity-65"
           />
           <button
@@ -2572,11 +2572,11 @@ function DayDetailModal({
             <X className="h-4 w-4" />
           </button>
           <div className="absolute bottom-4 left-6 right-6">
-            <span className="text-[11px] font-bold tracking-[0.2em] text-gold uppercase bg-black/60 px-2.5 py-1 rounded">
-              DAY {dayIndex < 10 ? `0${dayIndex}` : dayIndex}
+            <span className="text-[11px] font-bold tracking-[0.2em] text-gold uppercase bg-black/60 px-2.5 py-1 rounded inline-block">
+              DAY 0{dayIndex}
             </span>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">
-              {current.title}
+              {current.headline}
             </h3>
           </div>
         </div>
@@ -2584,16 +2584,19 @@ function DayDetailModal({
         <div className="p-6 sm:p-8 space-y-5">
           <div>
             <p className="text-base font-serif italic text-forest/85 font-medium">
-              {current.subtitle}
+              {current.summary}
             </p>
           </div>
 
           <div className="space-y-3 pt-3 border-t border-forest/10">
+            <h4 className="text-[13px] font-bold uppercase tracking-wider text-forest-deep">
+              Key Topics
+            </h4>
             <ul className="space-y-2.5">
-              {current.highlights.map((h, i) => (
+              {current.keyTopics.map((topic, i) => (
                 <li key={i} className="flex items-start gap-3 text-[14px] text-forest/85">
                   <span className="h-2 w-2 rounded-full bg-gold-deep mt-2 shrink-0" />
-                  <span>{h}</span>
+                  <span>{topic}</span>
                 </li>
               ))}
             </ul>
