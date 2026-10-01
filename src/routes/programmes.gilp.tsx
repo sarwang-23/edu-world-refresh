@@ -445,12 +445,12 @@ function Hero({
                 <span className="text-[11px] sm:text-[12px] font-medium text-stone-300">Days</span>
               </div>
               <div className="w-px h-8 sm:h-10 bg-white/20 shrink-0 hidden sm:block" />
-              <div className="shrink-0 hidden sm:block mt-4 -ml-6 sm:-ml-8">
+              <div className="shrink-0 mt-4 -ml-2 sm:-ml-8">
                 <div className="flex flex-col items-center">
                   <img
                     src={logoJbsClean}
                     alt="Cambridge Judge Business School"
-                    className="h-20 sm:h-24 lg:h-28 w-auto object-contain object-center"
+                    className="h-16 sm:h-24 lg:h-28 w-auto object-contain object-center"
                   />
                 </div>
               </div>
