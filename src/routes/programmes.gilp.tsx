@@ -1,95 +1,158 @@
 import { buildMeta } from "@/lib/seo";
-import { gilpCourseSchema } from "@/lib/schema-org";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
+  ArrowRight,
   ArrowUpRight,
-  Calendar,
-  MapPin,
-  ChevronDown,
-  ChevronUp,
-  CheckCircle2,
-  Star,
-  Quote,
-  Globe2,
-  Cpu,
-  Briefcase,
-  Award,
-  BarChart3,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  X,
+  Lightbulb,
+  Key,
   Users,
-  Utensils,
+  Compass,
+  TrendingUp,
+  CheckCircle2,
+  Calendar,
+  Globe2,
+  Quote,
+  Building2,
+  Share2,
+  Award,
+  Sparkles,
   Landmark,
-  Castle,
+  ShieldCheck,
+  GraduationCap,
+  Briefcase,
+  ChevronDown,
+  ChevronRight,
+  Clock,
+  MapPin,
+  FileDown,
+  Star,
+  Layers,
+  HelpCircle,
+  BookOpen,
+  Network,
+  Target,
+  Cpu,
+  MessageSquare,
+  Globe,
 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import { COUNTRY_CODES } from "@/data/countryCodes";
+import { useState, useEffect, useRef } from "react";
 import { Footer } from "./index";
-import newCertificateImg from "../assets/new-certificate.png";
-import gilpBannerImg from "../assets/gilp-banner.png";
-import gilpHeroPremiumImg from "../assets/gilp_hero_premium.png";
-import gilpThinkingHorizonImg from "../assets/gilp_thinking_horizon.png";
-import gilpClassroomFinalImg from "../assets/glip_final_classroom.jpg";
+
+// Image assets
 import logoJBS from "../assets/logo-cambridge-jbs.png";
-import graduateImg from "../assets/graduate_cambridge.jpg";
-import hiltonImg from "../assets/hilton_cambridge.jpg";
-import hotelDuVinImg from "../assets/hotel_du_vin.jpg";
-import universityArmsImg from "../assets/university_arms.jpg";
-import speaker1Img from "../assets/speaker1.jpg";
-import speaker2Img from "../assets/speaker2.jpg";
-import speaker3Img from "../assets/speaker3.jpg";
-import speaker4Img from "../assets/speaker4.jpg";
-import speaker5Img from "../assets/speaker5.jpg";
-import speaker6Img from "../assets/speaker6.jpg";
-import speaker7Img from "../assets/speaker7.jpg";
-import speaker8Img from "../assets/speaker8.jpg";
-import speaker9Img from "../assets/speaker9.jpg";
-import speaker10Img from "../assets/speaker10.jpg";
-import speakerNickImg from "../assets/nick_ford_young.png";
-import speakerThomasImg from "../assets/faculty-thomas-roulet.jpg";
+import logoJbsClean from "../assets/logo-cambridge-jbs-white-text.png";
+import logoJbsBackup from "../assets/logo-cambridge-jbs-backup.png";
+import logoGEL from "../assets/logo-gel.jpg";
+import cambridgeJbsOfficial from "../assets/cambridge_jbs_official.png";
+import kingsCrest from "../assets/kings-college-crest.png";
+import gilpHeroImg from "../assets/gilp_hero_new_bg.jpg";
+import cambridgeBridgeImg from "../assets/cambridge_7.jpg";
+import glipClassroomImg from "../assets/glip_final_classroom.jpg";
+import lordCricketImg from "../assets/site visit.jpg";
+import lordKaranImg from "../assets/house_of_lords_group.jpg";
+import guyDozaImg from "../assets/gilp_guy_doza_session.jpg";
+import jaideepLectureImg from "../assets/gilp_jaideep_prabhu_lecture.jpg";
+import cohortWalkImg from "../assets/gilp_cohort_11.jpg";
+import cohortDinnerImg from "../assets/gilp-dinner.png";
+import certificateImg from "../assets/new-certificate.png";
+import gilpCommunityFullImg from "../assets/gilp-community-full.png";
+import gilpCommunityNetworkImg from "../assets/gilp_cohort_1.jpg";
+import welcomePackImg from "../assets/gilp_welcome_pack_table.jpg";
+import cambridgeSkylineImg from "../assets/cambridge.jpg";
+import gilpPremiumBg from "../assets/gilp_premium_bg.jpg";
+import cohortTreesImg from "../assets/cohort_trees.jpg";
+import cohortBuildingImg from "../assets/cohort_building.jpg";
+import day01ArrivalImg from "../assets/gilp_day01_arrival.jpg";
+import day03ClassroomImg from "../assets/gilp_day03_classroom.jpg";
+import day04LordsImg from "../assets/gilp_day04_lords.jpg";
+import day05DinnerImg from "../assets/gilp_day05_dinner.jpg";
 
-import alumniBidishaImg from "../assets/alumni-bidisha.jpg";
-import alumniSamImg from "../assets/alumni-sam.jpg";
-import alumniRamaImg from "../assets/alumni-ramashankar.jpg";
-import alumniAnandImg from "../assets/alumni-anand.jpg";
-import alumniParagImg from "../assets/alumni-parag.jpg";
-import speakerLakshmiImg from "../assets/speaker-lakshmi.png";
-import alumni1Img from "../assets/alumni1.jpg";
-import alumni2Img from "../assets/alumni2.jpg";
-import alumni3Img from "../assets/alumni3.jpg";
-import alumni4Img from "../assets/alumni4.jpg";
-import alumni5Img from "../assets/alumni5.jpg";
-import cohort1Img from "../assets/IMG_0719.jpg";
-import cohort2Img from "../assets/IMG_4915.jpg";
-import cohort3Img from "../assets/IMG_4929.jpg";
-import cohort4Img from "../assets/IMG_5105.jpg";
-import cohort5Img from "../assets/IMG_5138_2.jpg";
-import cohort6Img from "../assets/IMG_5277.jpg";
-import cohort7Img from "../assets/YusufH.jpg";
-import cohort8Img from "../assets/STEM1.jpg";
-import cohort9Img from "../assets/site visit.jpg";
-import gilpCohort1 from "../assets/gilp_cohort_1.jpg";
-import gilpCohort2 from "../assets/gilp_cohort_2.jpg";
-import gilpCohort3 from "../assets/gilp_cohort_3.jpg";
-import gilpCohort4 from "../assets/gilp_cohort_4.jpg";
-import gilpCohort5 from "../assets/gilp_cohort_5.jpg";
-import gilpCohort6 from "../assets/gilp_cohort_6.jpg";
-import gilpCohort7 from "../assets/gilp_cohort_7.jpg";
-import gilpCohort8 from "../assets/gilp_cohort_8.jpg";
-import gilpCohort9 from "../assets/gilp_cohort_9.jpg";
-import gilpCohort10 from "../assets/gilp_cohort_10.jpg";
-import gilpCohort11 from "../assets/gilp_cohort_11.jpg";
-import gilpCohort12 from "../assets/gilp_cohort_12.jpg";
-import gilpCohort13 from "../assets/gilp_cohort_13.jpg";
-import gilpCohort14 from "../assets/gilp_cohort_14.jpg";
-import gilpCohort15 from "../assets/gilp_cohort_15.jpg";
-import gilpCohort16 from "../assets/gilp_cohort_16.jpg";
-import gilpCohort17 from "../assets/gilp_cohort_17.jpg";
+// Perspectives Leaders
+import leaderKumaranImg from "../assets/leader_kumaran.jpg";
+import leaderKaranImg from "../assets/leader_karan.jpg";
+import leaderJulianImg from "../assets/leader_julian.jpg";
+import leaderUdayImg from "../assets/leader_uday.jpg";
+import leaderPaulImg from "../assets/leader_paul.jpg";
 
-// TODO: paste your deployed Apps Script Web App URL here (must end in /exec)
+// Signature Moments
+import momentKaranImg from "../assets/moment_karan.jpg";
+import momentLordsImg from "../assets/moment_lords.jpg";
+import momentIndiaUkImg from "../assets/moment_india_uk.jpg";
+import momentLiveChallengesImg from "../assets/moment_live_challenges.jpg";
+import momentCambridgeImg from "../assets/moment_cambridge.jpg";
+import momentConversationsImg from "../assets/moment_conversations.jpg";
+
+// 5 Dimensions images
+import dimThinkImg from "../assets/dim_think.jpg";
+import dimConnectImg from "../assets/dim_connect.jpg";
+import dimExperienceImg from "../assets/dim_experience.jpg";
+import dimActImg from "../assets/dim_act.jpg";
+import dimAccessImg from "../assets/dim_access.jpg";
+
+
+// Faculty portraits
+import newJaideepImg from "../assets/faculty-jaideep.jpg";
+import newShashaImg from "../assets/faculty-shasha.jpg";
+import newLionelImg from "../assets/faculty-lionel.jpg";
+import newRaghavendraImg from "../assets/faculty-raghavendra.jpg";
+import newEdenImg from "../assets/faculty-eden.jpg";
+import newOguzhanImg from "../assets/faculty-oguzhan.jpg";
+import newKamiarImg from "../assets/faculty-kamiar.jpg";
+import newElizabethImg from "../assets/faculty-elizabeth.jpg";
+import newSerishImg from "../assets/faculty-serish.jpg";
+import newGuyImg from "../assets/faculty-guy.jpg";
+import newNickImg from "../assets/nick_ford_young.jpg";
+import newThomasImg from "../assets/faculty-thomas-roulet.jpg";
+
+// Guest leaders
+import personJulianImg from "../assets/person2.jpg";
+import personUdayImg from "../assets/person10.jpg";
+import personScullyImg from "../assets/person4.jpg";
+import personHighCommImg from "../assets/person8.jpg";
+import personKeesImg from "../assets/person6.jpg";
+import guyDozaSpeakerImg from "../assets/speaker10.jpg";
+
+// Testimonial alumni
+import alumniSnigdha from "../assets/alumni-snigdha.jpg";
+import alumniFatin from "../assets/alumni-fatin.jpg";
+import alumniSamwer from "../assets/alumni-samwer.jpg";
+import alumniAashish from "../assets/alumni-aashish.jpg";
+import alumniAnand from "../assets/alumni-anand.jpg";
+import alumniBidisha from "../assets/alumni-bidisha.jpg";
+import alumniRamashankar from "../assets/alumni-ramashankar.jpg";
+import alumniSam from "../assets/alumni-sam.jpg";
+import alumniHersh from "../assets/alumni-hersh.jpg";
+import alumniGhanshyam from "../assets/alumni-ghanshyam.png";
+import alumniAshwini from "../assets/alumni-ashwini.jpg";
+import alumniMario from "../assets/alumni-mario.jpg";
+import alumniParag from "../assets/alumni-parag.jpg";
+
+import logoGodrej from "../assets/logo-godrej.jpg";
+import logoAakash from "../assets/logo-aakash.jpg";
+import logoPratham from "../assets/logo-pratham.png";
+import logoTmf from "../assets/logo-tmf.jpg";
+import logoKao from "../assets/logo-kao.jpg";
+import logoEfl from "../assets/logo-efl.jpg";
+import logoBennett from "../assets/logo-bennett.jpg";
+import logoRhenus from "../assets/logo-rhenus.jpg";
+import logoRs from "../assets/logo-rs.png";
+import logoMetro from "../assets/logo-metro.jpg";
+import logoHsbc from "../assets/logo-hsbc.png";
+import logoScms from "../assets/logo-scms.png";
+import logoGalgotias from "../assets/logo-galgotias.png";
+import logoThakorji from "../assets/logo-thakorji.png";
+import logoBankdhofar from "../assets/logo-bankdhofar.png";
+import logoIrm from "../assets/logo-irm.png";
+
+// Apps Script Backend
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwj73LbWCG6B8NrfW_F5vT6jY8xn4bcAnxwoCGzw4jzPyfB8FAlAt2UJMTkWKogWhf81w/exec";
+  "https://script.google.com/macros/s/AKfycbwanNP4Tmv6xhmsEbwyk_Qbmw-L7PN9cjL-oomO7u6TTvXmvrouO4GuwV9nPelXdKRndA/exec";
 
-// Fires a form submission to the GILP Apps Script backend.
-// Uses no-cors + urlencoded body so it works without any CORS setup on the Apps Script side.
 async function submitToGILP(formType: string, data: Record<string, string>) {
   const body = new URLSearchParams({ formType, ...data });
   await fetch(APPS_SCRIPT_URL, {
@@ -102,85 +165,2089 @@ async function submitToGILP(formType: string, data: Record<string, string>) {
 
 export const Route = createFileRoute("/programmes/gilp")({
   head: () => buildMeta("/programmes/gilp"),
-  component: Page,
+  component: GILPPage,
 });
 
-function Page() {
+export default function GILPPage() {
+  const [dayModalIndex, setDayModalIndex] = useState<number | null>(null);
+  const [selectedMoment, setSelectedMoment] = useState<any | null>(null);
+  const [selectedFaculty, setSelectedFaculty] = useState<any | null>(null);
+  const [selectedTestimonial, setSelectedTestimonial] = useState<any | null>(null);
   const [brochureOpen, setBrochureOpen] = useState(false);
+
+  const scrollToApply = () => {
+    const el = document.getElementById("priority-application");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToCurriculum = () => {
+    const el = document.getElementById("curriculum-journey");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <Hero onDownloadBrochure={() => setBrochureOpen(true)} />
-      <BrochureModal open={brochureOpen} onClose={() => setBrochureOpen(false)} />
-      <ProgrammeOverview />
-      <LordsCricket />
-      <LordsMarquee />
-      <CertificateSection />
-      <Curriculum />
-      <ProgrammeStructure />
-      <Outcomes />
-      <ProfessorQuote />
-      <WhoShouldAttend />
-      <Packages />
-      <AccommodationSection />
-      <FacultyGrid />
-      <AlumniTestimonials />
-      <CancellationPolicy />
-      <ContactSection />
-      <ApplyNow />
-      <FAQ />
-      <CohortGallery />
-      <CTA />
+    <div className="flex min-h-screen flex-col bg-cream font-sans text-foreground selection:bg-gold/30 selection:text-forest-deep">
+
+      {/* 2. Hero Section with Video Immersion Player & Trust Metrics */}
+      <Hero
+        onDownloadBrochure={() => setBrochureOpen(true)}
+        onNextCohort={scrollToApply}
+        onExploreCurriculum={scrollToCurriculum}
+      />
+
+      {/* 3. The Executive Distinction (Beyond the Traditional Executive Classroom) */}
+      <ExecutiveDistinctionSection />
+
+      {/* 4. Five Dimensions of Executive Mastery */}
+      <FiveDimensionsSection />
+
+      {/* 5. The 5-Day Interactive Executive Itinerary */}
+      <FiveDaysInteractiveSection onOpenDayModal={(idx) => setDayModalIndex(idx)} />
+
+      {/* 5b. Signature Moments Across GILP */}
+      <SignatureMomentsSection onSelectMoment={(m) => setSelectedMoment(m)} />
+
+      {/* 5c. What Leaders Actually Learned */}
+      <WhatLeadersLearnedSection />
+
+      {/* 6. Faculty Who Have Shaped GILP */}
+      <FacultyShowcaseSection onSelectFaculty={(f) => setSelectedFaculty(f)} />
+
+      {/* 7. Perspectives Beyond Academia */}
+      <PerspectivesBeyondAcademiaSection onSelectLeader={(l) => setSelectedFaculty(l)} />
+
+      {/* 8. Cohort Composition & Elite Peer Community */}
+      <CohortProfileSection />
+
+      {/* 9. Executive Testimonials & Participant Voices */}
+      <TestimonialsSection onOpenTestimonial={(t) => setSelectedTestimonial(t)} />
+
+
+      {/* 11. Participant Evidence Strip */}
+      <ParticipantEvidenceStrip />
+
+      {/* 12. Priority Application & Dossier Acquisition Section */}
+      <PriorityApplicationSection />
+
+      {/* 13. Site Footer */}
       <Footer />
-      <FloatingApplyButton />
+
+      {/* Floating Action Trigger */}
+      <FloatingApplyButton onClick={scrollToApply} />
+
+      {/* Interactive Modals */}
+      <BrochureModal open={brochureOpen} onClose={() => setBrochureOpen(false)} />
+      <DayDetailModal dayIndex={dayModalIndex} onClose={() => setDayModalIndex(null)} />
+      <MomentModal moment={selectedMoment} onClose={() => setSelectedMoment(null)} />
+      <FacultyModal faculty={selectedFaculty} onClose={() => setSelectedFaculty(null)} />
+      <TestimonialModal
+        testimonial={selectedTestimonial}
+        onClose={() => setSelectedTestimonial(null)}
+      />
     </div>
   );
 }
 
-function FloatingApplyButton() {
-  const [isVisible, setIsVisible] = useState(true);
+/* ─────────────────────────────────────────────────────────────
+   1. ANNOUNCEMENT & SECONDARY NAV BAR
+───────────────────────────────────────────────────────────── */
+function TopAnnouncementBar({ onNextCohort }: { onNextCohort: () => void }) {
+  return (
+    <div className="bg-forest-deep text-white border-b border-forest/30 py-3 px-4 text-center text-[12.5px] sm:text-[13.5px] font-medium tracking-wide">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] flex items-center justify-center gap-2.5 sm:gap-4 flex-wrap">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 text-gold px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider border border-gold/30">
+          <Sparkles className="h-3.5 w-3.5" />
+          Cohort III Admissions
+        </span>
+        <span className="text-stone-200 font-normal">
+          Global India Leadership Programme | Cambridge Judge Business School & London
+        </span>
+        <button
+          onClick={onNextCohort}
+          className="text-gold hover:text-white font-semibold underline underline-offset-4 ml-1 cursor-pointer transition-colors inline-flex items-center gap-1.5"
+        >
+          <span>Register for Priority Consideration</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function GILPSecondaryNav({
+  onNextCohort,
+  onDownloadBrochure,
+}: {
+  onNextCohort: () => void;
+  onDownloadBrochure: () => void;
+}) {
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const applyNowSection = document.getElementById("apply-now");
-      if (applyNowSection) {
-        const rect = applyNowSection.getBoundingClientRect();
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-          setIsVisible(false);
-          return;
-        }
-      }
-      setIsVisible(true);
+      setScrolled(window.scrollY > 60);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!isVisible) return null;
+  return (
+    <header
+      className={`sticky top-0 z-40 transition-all duration-300 border-b ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3.5 border-forest/10"
+          : "bg-[#FAF8F5] py-4.5 border-forest/10"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl 2xl:max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5">
+            <span className="text-2xl sm:text-[26px] font-serif font-bold text-forest-deep tracking-tight">
+              GILP
+            </span>
+            <span className="h-5 w-px bg-forest/20 hidden sm:block" />
+            <div className="hidden sm:flex flex-col">
+              <span className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-forest-deep">
+                Global India Leadership Programme
+              </span>
+              <span className="text-[10.5px] text-forest/70 font-medium">
+                University of Cambridge Judge Business School × GEL
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <nav className="hidden xl:flex items-center gap-8 text-[14px] font-semibold tracking-wide text-forest/80">
+          <a href="#distinction" className="hover:text-gold-deep transition-colors">
+            The Distinction
+          </a>
+          <a href="#dimensions" className="hover:text-gold-deep transition-colors">
+            5 Dimensions
+          </a>
+          <a href="#curriculum-journey" className="hover:text-gold-deep transition-colors">
+            5-Day Immersion
+          </a>
+          <a href="#moments" className="hover:text-gold-deep transition-colors">
+            Signature Moments
+          </a>
+          <a href="#faculty" className="hover:text-gold-deep transition-colors">
+            Dual Faculty
+          </a>
+          <a href="#cohort-profile" className="hover:text-gold-deep transition-colors">
+            The Cohort
+          </a>
+          <a href="#testimonials" className="hover:text-gold-deep transition-colors">
+            Impact
+          </a>
+          <a href="#faqs" className="hover:text-gold-deep transition-colors">
+            FAQs
+          </a>
+        </nav>
+
+        <div className="flex items-center gap-3.5">
+          <button
+            onClick={onDownloadBrochure}
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white px-5 py-2.5 text-[13.5px] font-semibold text-forest-deep shadow-xs hover:border-gold hover:text-gold-deep transition-all cursor-pointer"
+          >
+            <FileDown className="h-4 w-4 text-gold-deep" />
+            <span>Brochure</span>
+          </button>
+
+          <button
+            onClick={onNextCohort}
+            className="inline-flex items-center gap-2.5 rounded-full bg-forest-deep px-6 py-2.5 text-[13.5px] sm:text-[14px] font-semibold text-white shadow-sm hover:bg-forest transition-all hover:scale-105 active:scale-95 cursor-pointer"
+          >
+            <span className="text-gold font-bold">Apply</span>
+            <span className="hidden sm:inline">Priority Access</span>
+            <ArrowRight className="h-3.5 w-3.5 text-gold" />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. HERO SECTION WITH VIDEO PLAYER & TRUST BADGES
+───────────────────────────────────────────────────────────── */
+function Hero({
+  onDownloadBrochure,
+  onNextCohort,
+  onExploreCurriculum,
+}: {
+  onDownloadBrochure: () => void;
+  onNextCohort: () => void;
+  onExploreCurriculum: () => void;
+}) {
+  return (
+    <section className="relative flex flex-col justify-start pt-14 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-black">
+      {/* Full-width Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={gilpHeroImg}
+          alt="Global India Leadership Programme"
+          className="w-full h-full object-cover object-[center_30%]"
+        />
+        {/* Dark overlay — strong black filter over background image */}
+        <div className="absolute inset-0 bg-black/65 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+      </div>
+
+      {/* Content Container */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+
+          {/* Left Column: Narrative & Stats */}
+          <div className="lg:col-span-7">
+
+
+
+            {/* Top subtitle */}
+            <div className="mb-3 sm:mb-4 text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.25em] uppercase text-[#D4AF37]">
+              CAMBRIDGE JUDGE BUSINESS SCHOOL × GLOBAL EDUCATION LAB
+            </div>
+
+            {/* Title */}
+            <h1 className="text-[2rem] sm:text-4xl lg:text-[4rem] xl:text-[4.5rem] font-serif font-bold leading-[1.08] text-white mb-4 sm:mb-6 drop-shadow-xl tracking-tight">
+              Global India<br />
+              Leadership Programme<br />
+              <span className="text-[#D4AF37] font-medium italic pr-2">Beyond the Classroom.</span>
+            </h1>
+
+            {/* Paragraph — hidden on small mobile to save space */}
+            <p className="hidden sm:block text-[14px] sm:text-[15.5px] lg:text-[17px] leading-[1.7] text-stone-200 max-w-[620px] mb-6 sm:mb-10 font-light">
+              GILP brings together world-class academic thinking, extraordinary access, powerful peer learning and experiences designed to create value long after the classroom ends.
+            </p>
+
+            {/* Stats Row */}
+            <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 overflow-x-auto pb-1">
+              <div className="text-white shrink-0">
+                <span className="block text-2xl sm:text-3xl lg:text-[2.25rem] font-serif font-medium text-[#D4AF37] mb-0.5 leading-none">2</span>
+                <span className="text-[11px] sm:text-[12px] font-medium text-stone-300">Cohorts</span>
+              </div>
+              <div className="w-px h-8 sm:h-10 bg-white/20 shrink-0" />
+              <div className="text-white shrink-0">
+                <span className="block text-2xl sm:text-3xl lg:text-[2.25rem] font-serif font-medium text-[#D4AF37] mb-0.5 leading-none">45</span>
+                <span className="text-[11px] sm:text-[12px] font-medium text-stone-300">Senior Leaders</span>
+              </div>
+              <div className="w-px h-8 sm:h-10 bg-white/20 shrink-0" />
+              <div className="text-white shrink-0">
+                <span className="block text-2xl sm:text-3xl lg:text-[2.25rem] font-serif font-medium text-[#D4AF37] mb-0.5 leading-none">5</span>
+                <span className="text-[11px] sm:text-[12px] font-medium text-stone-300">Days</span>
+              </div>
+              <div className="w-px h-8 sm:h-10 bg-white/20 shrink-0 hidden sm:block" />
+              <div className="shrink-0 hidden sm:block mt-4 -ml-6 sm:-ml-8">
+                <div className="flex flex-col items-center">
+                  <img
+                    src={logoJbsClean}
+                    alt="Cambridge Judge Business School"
+                    className="h-20 sm:h-24 lg:h-28 w-auto object-contain object-center"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <button
+                onClick={onNextCohort}
+                className="inline-flex items-center gap-2.5 sm:gap-3 rounded bg-[#E4C87F] px-5 sm:px-7 lg:px-9 py-3.5 sm:py-4 text-[13px] sm:text-[14px] lg:text-[15px] font-semibold text-black hover:bg-[#F5DE9B] hover:-translate-y-0.5 transition-all shadow-lg w-full sm:w-auto justify-center sm:justify-start"
+              >
+                <span>Apply for Next Cohort</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: Embedded Video */}
+          <div className="lg:col-span-5 relative lg:flex lg:justify-end mt-6 sm:mt-8 lg:mt-0">
+            <div className="relative aspect-video w-full lg:w-[115%] xl:w-[125%] max-w-[700px] overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.6)] sm:shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10 bg-black lg:origin-right transform transition-all duration-700 hover:shadow-[0_0_80px_rgba(212,175,55,0.15)] hover:border-white/20">
+              <video
+                src="/Globalindialeadershipprogramme.mp4"
+                className="h-full w-full object-cover"
+                controls
+                playsInline
+                preload="none"
+                poster={gilpHeroImg}
+              />
+            </div>
+
+            {/* Editorial Tag — desktop only */}
+            <div className="absolute -bottom-12 right-0 lg:-right-4 z-10 hidden lg:block text-right">
+              <p className="font-serif italic text-[18px] text-white/95 mb-1.5 drop-shadow-lg">
+                Ideas. People. Possibilities.
+              </p>
+              <div className="flex items-center justify-end gap-3">
+                <div className="h-px w-8 bg-[#D4AF37]" />
+                <p className="text-[13px] text-stone-300 font-serif tracking-wide drop-shadow-md">
+                  A stronger India. A more connected world.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   3. THE QUESTION THAT STARTED IT (EXECUTIVE DISTINCTION)
+───────────────────────────────────────────────────────────── */
+function ExecutiveDistinctionSection() {
+  return (
+    <section id="distinction" className="relative py-24 sm:py-28 lg:py-32 bg-[#F9F8F6] border-b border-stone-200/80 overflow-hidden">
+      
+      {/* Background Blended Image - Perfectly faded using a radial mask */}
+      <div 
+        className="absolute bottom-0 left-0 w-full sm:w-[90%] lg:w-[65%] h-[60%] sm:h-[80%] z-0 pointer-events-none"
+        style={{
+          WebkitMaskImage: 'radial-gradient(100% 100% at 0% 100%, black 30%, transparent 100%)',
+          maskImage: 'radial-gradient(100% 100% at 0% 100%, black 30%, transparent 100%)'
+        }}
+      >
+        <img
+          src={cambridgeSkylineImg}
+          alt="University of Cambridge"
+          className="w-full h-full object-cover object-bottom"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-start">
+          
+          {/* Left Column: Heading */}
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#8C7A58] uppercase">
+                THE QUESTION THAT STARTED IT
+              </span>
+              <div className="h-px w-10 bg-[#D4AF37]" />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-serif font-semibold text-gray-900 leading-[1.12] mb-8 tracking-[-0.02em]">
+              What should a C-suite leader really take away from executive education?
+            </h2>
+          </div>
+
+          {/* Middle Column: Beyond List */}
+          <div className="lg:col-span-4 lg:pt-1">
+            <div className="space-y-3.5 text-[17px] sm:text-[18px] text-stone-800 font-serif font-medium mb-10">
+              <p>Beyond frameworks.</p>
+              <p>Beyond a certificate.</p>
+              <p>Beyond a powerful network.</p>
+              <p>Beyond classroom discussions.</p>
+            </div>
+
+            <div className="h-px w-12 bg-[#D4AF37] mb-8" />
+
+            <p className="text-[14px] sm:text-[15px] text-stone-600 leading-[1.8] font-light lg:pr-6">
+              GILP was created to explore a more ambitious answer — combining academic depth with
+              extraordinary access, powerful peer learning and experiences that continue long after
+              participants leave Cambridge.
+            </p>
+          </div>
+
+          {/* Right Column: Quote Box */}
+          <div className="lg:col-span-3 lg:border-l lg:border-stone-200/80 lg:pl-10 xl:pl-12">
+            <div className="mb-12">
+              <span className="text-[4.5rem] font-serif leading-[0.5] select-none block font-medium mb-5 text-[#D4AF37]">
+                “
+              </span>
+              <blockquote className="font-serif italic text-[20px] sm:text-[22px] text-stone-800 leading-[1.35] pr-2 font-light">
+                Executive education should change more than what you know. It should change what becomes possible next.
+              </blockquote>
+            </div>
+
+            <div className="h-px w-10 bg-[#D4AF37] mb-6" />
+
+            <div>
+              <p className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.22em] uppercase text-[#8C7A58] mb-2">
+                GLOBAL INDIA LEADERSHIP PROGRAMME
+              </p>
+              <p className="font-serif italic text-[14px] text-stone-500 font-light">
+                Ideas. People. Possibilities.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. FIVE DIMENSIONS OF EXECUTIVE MASTERY
+───────────────────────────────────────────────────────────── */
+function FiveDimensionsSection() {
+  const dimensions = [
+    {
+      num: "01",
+      name: "THINK",
+      theme: "Intellectual Rigour & Horizon Scanning",
+      headline: "Challenge how you frame complex strategic dilemmas.",
+      text: "Deconstruct macroeconomic turbulence, frontier AI strategy, corporate governance, and branding with Cambridge faculty who advise Fortune 500 boards and global governments.",
+      takeaway: "Master mental models to foresee disruption before competitors.",
+      icon: Lightbulb,
+      img: dimThinkImg,
+      location: "Judge Business School Lecture Chambers",
+    },
+    {
+      num: "02",
+      name: "ACCESS",
+      theme: "Unprecedented Global Power Corridors",
+      headline: "Enter conversations that never take place in standard classrooms.",
+      text: "Step inside private boardrooms at Lord's Cricket Ground, historic Cambridge college high tables, and bilateral policy chambers with British parliamentarians and High Commissioners.",
+      takeaway: "Direct dialogue with leaders who shape international policy and trade.",
+      icon: Key,
+      img: dimAccessImg,
+      location: "Lord's Pavilion & Bilateral Chambers, London",
+    },
+    {
+      num: "03",
+      name: "CONNECT",
+      theme: "Unfiltered Peer Intelligence",
+      headline: "Learn from the fellow CXO sitting directly beside you.",
+      text: "45 senior leaders across two cohorts brought real acquisitions, succession dilemmas, digital pivots, and market entries into closed-door Chatham House discussions.",
+      takeaway: "Build a lifelong trusted circle of boardroom peers and allies.",
+      icon: Users,
+      img: dimConnectImg,
+      location: "Cohort Executive Strategy Room",
+    },
+    {
+      num: "04",
+      name: "EXPERIENCE",
+      theme: "Lived Leadership & Immersive Rituals",
+      headline: "Some leadership lessons must be experienced, not lectured.",
+      text: "High-pressure rhetoric workshops, elite sporting leadership insights from MCC chairs, and traditional Cambridge collegiate dinners immerse leaders in high-impact executive presence.",
+      takeaway: "Refine executive persuasion, resilience, and personal gravity.",
+      icon: Compass,
+      img: dimExperienceImg,
+      location: "Historic College Halls & Punting on Cam",
+    },
+    {
+      num: "05",
+      name: "ACT",
+      theme: "Translating Vision into Global Scale",
+      headline: "What happens when you return to your enterprise on Monday?",
+      text: "Apply Frugal Innovation and organizational health frameworks to unlock exponential value with disciplined capital, driving immediate transformations across your enterprise.",
+      takeaway: "A tangible, actionable blueprint ready for immediate implementation.",
+      icon: TrendingUp,
+      img: dimActImg,
+      location: "Enterprise Scaling Strategy Labs",
+    },
+  ];
+
+  return (
+    <section id="dimensions" className="py-24 sm:py-28 lg:py-32 bg-white border-b border-stone-200/80">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 sm:mb-16">
+          <div>
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="h-px w-6 bg-[#99730E]" />
+              <span className="text-[11.5px] sm:text-[12px] font-extrabold tracking-[0.24em] text-[#99730E] uppercase">
+                WHAT GILP OFFERS
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-serif font-bold text-gray-900 leading-tight">
+              Five dimensions. One leadership experience.
+            </h2>
+          </div>
+          <p className="text-[14px] sm:text-[15px] text-stone-500 max-w-md md:text-right font-normal leading-relaxed">
+            GILP brings together world-class academic thinking, extraordinary access, powerful peer learning and experiences designed to create value long after the classroom ends.
+          </p>
+        </div>
+
+        {/* 5 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 xl:gap-6">
+          {dimensions.map((dim, i) => {
+            const Icon = dim.icon;
+            return (
+              <div
+                key={i}
+                className="group relative bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-[0_4px_20px_rgba(20,30,20,0.05)] hover:shadow-[0_20px_40px_rgba(20,35,25,0.12)] hover:border-[#D4AF37] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between"
+              >
+                {/* Permanent Gold Metallic Top Accent */}
+                <div className="h-[3px] w-full bg-gradient-to-r from-[#D4AF37]/40 via-[#F5DE9B] to-[#99730E]/40 group-hover:from-[#D4AF37] group-hover:via-[#FDE9A6] group-hover:to-[#D4AF37] transition-all duration-500" />
+
+                {/* Background Watermark Numeral */}
+                <span className="absolute right-3 top-[46%] text-6xl font-serif font-black text-stone-100 select-none pointer-events-none group-hover:text-amber-100/50 transition-colors duration-500">
+                  {dim.num}
+                </span>
+
+                <div className="relative z-10 flex flex-col flex-1">
+                  {/* Photo Container */}
+                  <div className="relative aspect-[16/11] overflow-hidden bg-stone-900">
+                    <img
+                      src={dim.img}
+                      alt={dim.name}
+                      className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out brightness-[0.97] group-hover:brightness-100"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15 pointer-events-none" />
+
+                    {/* Luxury Glass Pill Badge */}
+                    <div className="absolute top-3.5 left-3.5 bg-[#0E1C12]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37]/50 flex items-center gap-1.5 text-[11px] font-bold text-[#F5DE9B] shadow-md">
+                      <Icon className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      <span>{dim.num}</span>
+                    </div>
+
+                    {/* Location hover tag */}
+                    <div className="absolute bottom-3 right-3 max-w-[85%] truncate text-[10px] text-stone-200/90 font-medium px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-xs border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {dim.location}
+                    </div>
+                  </div>
+
+                  {/* Body Content */}
+                  <div className="p-5 sm:p-6 flex flex-col gap-3 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                      <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#99730E]">
+                        {dim.name}
+                      </span>
+                    </div>
+
+                    <h3 className="text-[15px] sm:text-[15.5px] font-semibold text-gray-900 leading-snug tracking-[-0.01em] group-hover:text-[#8C6D23] transition-colors duration-300">
+                      {dim.headline}
+                    </h3>
+
+                    <p className="text-[12px] text-stone-500 leading-relaxed font-normal tracking-[0.01em]">
+                      {dim.text}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Core Executive Outcome Box */}
+                <div className="px-5 sm:px-6 py-4 border-t border-[#EFEAE2] bg-gradient-to-b from-[#FBF9F5] to-[#F5F1EA] mt-auto relative z-10">
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <Sparkles className="h-3 w-3 text-[#99730E]" />
+                    <span className="text-[9.5px] font-bold uppercase tracking-[0.18em] text-[#8C7A58]">
+                      Core Executive Outcome
+                    </span>
+                  </div>
+                  <p className="text-[12px] font-semibold text-[#0E2A18] leading-snug tracking-[-0.005em]">
+                    {dim.takeaway}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. THE 5-DAY INTERACTIVE EXECUTIVE ITINERARY
+───────────────────────────────────────────────────────────── */
+function FiveDaysInteractiveSection({ onOpenDayModal }: { onOpenDayModal: (idx: number) => void }) {
+  const days = [
+    {
+      num: 1,
+      tag: "DAY 01",
+      headline: "Step outside the everyday.",
+      summary: "Arrive in Cambridge, connect deeply, and begin an immersive leadership journey.",
+      keyTopics: ["Leadership", "Perspective", "Peer Learning"],
+      img: day01ArrivalImg,
+    },
+    {
+      num: 2,
+      tag: "DAY 02",
+      headline: "Understand the forces reshaping leadership.",
+      summary: "Explore the forces reshaping leadership through technology, economics, innovation and debate.",
+      keyTopics: ["AI", "Economics", "Innovation"],
+      img: guyDozaImg,
+    },
+    {
+      num: 3,
+      tag: "DAY 03",
+      headline: "Governance. Strategy. Brand.",
+      summary: "Dive into governance, strategy and branding through practical frameworks and reflection.",
+      keyTopics: ["Governance", "Strategy", "Branding"],
+      img: day03ClassroomImg,
+    },
+    {
+      num: 4,
+      tag: "DAY 04",
+      headline: "Leadership left the classroom.",
+      summary: "Experience leadership beyond campus through sport, policy, communication and shared insight.",
+      keyTopics: ["Sport", "Policy", "Communication"],
+      img: day04LordsImg,
+    },
+    {
+      num: 5,
+      tag: "DAY 05",
+      headline: "From leadership to global opportunity.",
+      summary: "Translate learning into global opportunity, wellbeing, innovation and lasting impact.",
+      keyTopics: ["Wellbeing", "Innovation", "Global Impact"],
+      img: day05DinnerImg,
+    },
+  ];
+
+  return (
+    <section
+      id="curriculum-journey"
+      className="py-24 sm:py-28 lg:py-32 bg-[#0E1C12] border-b border-white/10"
+    >
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header */}
+        <div className="mb-14 sm:mb-16">
+          <div className="flex items-center gap-2 mb-2.5">
+            <div className="h-px w-6 bg-[#D4AF37]" />
+            <span className="text-[12px] font-bold tracking-[0.24em] text-[#D4AF37] uppercase">
+              FIVE DAYS
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-serif font-bold text-white leading-tight mb-4">
+            Five Days. Far more than five days of classes.
+          </h2>
+          <p className="text-[14px] sm:text-[15px] text-stone-300 max-w-2xl leading-relaxed font-light">
+            A look inside the September 2026 GILP experience. Programme experiences, faculty and
+            speakers have evolved between cohorts.
+          </p>
+        </div>
+
+        {/* 5 Cards Grid Layout for Desktop & Responsive View */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 xl:gap-6 mb-16">
+          {days.map((d) => (
+            <div
+              key={d.num}
+              onClick={() => onOpenDayModal(d.num)}
+              className="group cursor-pointer flex flex-col rounded-2xl overflow-hidden bg-white/95 border border-white/10 shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Photo */}
+              <div className="relative aspect-[16/11] overflow-hidden bg-stone-100 shrink-0">
+                <img
+                  src={d.img}
+                  alt={d.headline}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                {/* Gold top accent line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#E5C158] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Day Tag Badge */}
+                <div className="absolute bottom-2.5 left-3 bg-black/70 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-bold text-[#F5DE9B] tracking-wider">
+                  {d.tag}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-5 flex flex-col gap-2.5 flex-1 justify-between">
+                <div className="space-y-2.5">
+                  <h3 className="text-[15px] font-semibold text-gray-900 leading-snug tracking-[-0.01em] group-hover:text-[#99730E] transition-colors">
+                    {d.headline}
+                  </h3>
+                  <p className="text-[12px] text-stone-500 leading-relaxed line-clamp-3 font-normal tracking-[0.01em]">
+                    {d.summary}
+                  </p>
+                </div>
+
+                {/* Topics List */}
+                <div className="pt-3 border-t border-stone-100 space-y-1.5 mt-auto">
+                  {d.keyTopics.map((t, ti) => (
+                    <div key={ti} className="flex items-center gap-2 text-[11px] text-stone-500">
+                      <span className="h-1 w-1 rounded-full bg-[#D4AF37] shrink-0" />
+                      <span className="font-medium tracking-[0.02em]">{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5B. SIGNATURE MOMENTS ACROSS GILP
+───────────────────────────────────────────────────────────────────────────── */
+function SignatureMomentsSection({
+  onSelectMoment,
+}: {
+  onSelectMoment: (m: any) => void;
+}) {
+  const moments = [
+    {
+      title: "A fireside with Lord Karan Bilimoria",
+      sub: "King's College Immersion",
+      desc: "An intimate conversation at King's College during the first GILP cohort on entrepreneurship, leadership and building globally recognised businesses.",
+      img: momentKaranImg,
+    },
+    {
+      title: "Leadership at Lord's",
+      sub: "Iconic Institutions",
+      desc: "Exploring leadership through business, sport, policy, communication and technology in one of the world's most iconic sporting institutions.",
+      img: momentLordsImg,
+    },
+    {
+      title: "India–UK dialogue",
+      sub: "Diplomatic & Trade Insights",
+      desc: "A closing conversation with H.E. Kumaran Periasamy, Indian High Commissioner to the UK, on trade, education, skills and the role of leaders in strengthening bilateral ties.",
+      img: momentIndiaUkImg,
+    },
+    {
+      title: "Live organisational challenges",
+      sub: "Applied Executive Learning",
+      desc: "Moving from theoretical frameworks to real business challenges, with examples from organisations represented within the cohort.",
+      img: momentLiveChallengesImg,
+    },
+    {
+      title: "Cambridge beyond CJBS",
+      sub: "The Historic Ecosystem",
+      desc: "Experiencing the intellectual and cultural ecosystem of Cambridge — where ideas, innovation and impact have been shaped for centuries.",
+      img: momentCambridgeImg,
+    },
+    {
+      title: "The conversations after class",
+      sub: "Cohort Camaraderie",
+      desc: "Some of the most valuable learning happened outside the lecture theatre — over dinner, during walks through Cambridge and in candid discussions with fellow leaders.",
+      img: momentConversationsImg,
+    },
+  ];
+
+  return (
+    <section
+      id="moments"
+      className="py-24 sm:py-28 lg:py-32 bg-[#F5EFE4] text-[#0E1C12] border-b border-stone-300/60"
+    >
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header Block */}
+        <div className="mb-14 sm:mb-16">
+          <div className="flex items-center gap-2.5 mb-2.5">
+            <span className="text-[11.5px] sm:text-[12px] font-extrabold tracking-[0.22em] text-[#99730E] uppercase">
+              SIGNATURE MOMENTS ACROSS GILP
+            </span>
+            <div className="h-0.5 w-10 bg-gradient-to-r from-[#D4AF37] to-[#E5C158]" />
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-serif font-bold text-gray-950 leading-tight tracking-tight mb-4">
+            Some moments cannot be captured in a syllabus.
+          </h2>
+
+          <p className="text-[14px] sm:text-[15px] leading-relaxed text-stone-600 font-normal max-w-2xl">
+            Across two cohorts, GILP has taken leaders beyond the traditional classroom — into
+            institutions, conversations and experiences that bring new perspectives to leadership.
+          </p>
+        </div>
+
+        {/* 6 Moments Grid — Premium Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {moments.map((m, i) => (
+            <div
+              key={i}
+              onClick={() => onSelectMoment(m)}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-end min-h-[360px] sm:min-h-[400px] lg:min-h-[440px] bg-stone-900 shadow-md hover:shadow-2xl transition-all duration-500 ring-1 ring-black/5 hover:ring-[#D4AF37]/60"
+              style={{ transform: "translateZ(0)" }}
+            >
+              {/* Photo */}
+              <img
+                src={m.img}
+                alt={m.title}
+                className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
+
+              {/* Layered gradient: strong at bottom, soft vignette at top */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 pointer-events-none" />
+
+              {/* Gold top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#D4AF37] via-[#E5C158] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+              {/* Sub-label pill */}
+              <div className="absolute top-4 left-4">
+                <span className="text-[10.5px] font-bold tracking-[0.18em] uppercase text-white/90 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 shadow-sm">
+                  {m.sub}
+                </span>
+              </div>
+
+              {/* Content at bottom */}
+              <div className="relative p-6 sm:p-7 text-white flex flex-col gap-2">
+                <h3 className="text-[17px] sm:text-[19px] font-semibold text-white group-hover:text-[#F3E5AB] transition-colors duration-300 leading-snug tracking-[-0.01em]">
+                  {m.title}
+                </h3>
+                <p className="text-[12px] sm:text-[13px] text-stone-300/90 font-normal leading-relaxed line-clamp-3 tracking-[0.01em]">
+                  {m.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5C. WHAT LEADERS ACTUALLY LEARNED
+───────────────────────────────────────────────────────────────────────────── */
+function WhatLeadersLearnedSection() {
+  const learnings = [
+    {
+      num: "01",
+      title: "Lead through complexity",
+      desc: "Make better decisions when there is no obvious right answer.",
+      icon: Landmark,
+    },
+    {
+      num: "02",
+      title: "Think strategically",
+      desc: "Move beyond frameworks towards sharper organisational choices.",
+      icon: Target,
+    },
+    {
+      num: "03",
+      title: "Govern responsibly",
+      desc: "Understand board dynamics, incentives and the growing responsibilities of leaders.",
+      icon: ShieldCheck,
+    },
+    {
+      num: "04",
+      title: "Navigate AI",
+      desc: "Separate AI hype from where technology can genuinely create value.",
+      icon: Cpu,
+    },
+    {
+      num: "05",
+      title: "Innovate differently",
+      desc: "Explore frugal innovation, experimentation and customer-led innovation.",
+      icon: Lightbulb,
+    },
+    {
+      num: "06",
+      title: "Build enduring brands",
+      desc: "Understand how leadership decisions shape identity, positioning and trust.",
+      icon: Users,
+    },
+    {
+      num: "07",
+      title: "Communicate with influence",
+      desc: "Use rhetoric, storytelling and human judgement to move people and organisations.",
+      icon: MessageSquare,
+    },
+    {
+      num: "08",
+      title: "Think beyond your organisation",
+      desc: "Understand how business interacts with policy, society and international opportunity.",
+      icon: Globe,
+    },
+  ];
+
+  return (
+    <section
+      id="learned"
+      className="py-24 sm:py-28 lg:py-32 bg-white text-[#0E1C12] border-b border-stone-200/80"
+    >
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header */}
+        <div className="mb-14 sm:mb-16">
+          <div className="flex items-center gap-2.5 mb-2.5">
+            <span className="text-[11.5px] sm:text-[12px] font-extrabold tracking-[0.22em] text-[#99730E] uppercase">
+              WHAT LEADERS ACTUALLY LEARNED
+            </span>
+            <div className="h-0.5 w-10 bg-gradient-to-r from-[#D4AF37] to-[#E5C158]" />
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-serif font-bold text-gray-950 leading-tight tracking-tight mb-4">
+            Five days later, what had leaders explored?
+          </h2>
+
+          <p className="text-[14px] sm:text-[15px] leading-relaxed text-stone-600 font-normal max-w-2xl">
+            GILP brought together academic depth, real-world perspective and leadership experiences
+            to help participants examine the opportunities and responsibilities shaping their
+            decisions.
+          </p>
+        </div>
+
+        {/* 8 Cards Grid (4 cols x 2 rows on desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+          {learnings.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="relative bg-white rounded-2xl p-6 sm:p-7 border border-stone-100 shadow-sm hover:shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col gap-4 text-left group overflow-hidden justify-between"
+              >
+                {/* Subtle gold top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl bg-gradient-to-r from-[#D4AF37] to-[#E5C158] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="flex items-center justify-between">
+                  <div className="h-12 w-12 rounded-xl bg-[#0E1C12] text-[#D4AF37] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-[14px] font-serif font-bold text-stone-300 tracking-wider select-none">
+                    {item.num}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-[16px] sm:text-[17px] font-bold text-gray-900 leading-snug group-hover:text-[#99730E] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[13px] sm:text-[13.5px] text-stone-600 leading-relaxed font-normal mt-2">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   6. FACULTY WHO HAVE SHAPED GILP (THE MINDS THAT HAVE SHAPED GILP)
+───────────────────────────────────────────────────────────────────────────── */
+function FacultyShowcaseSection({
+  onSelectFaculty,
+}: {
+  onSelectFaculty: (f: any) => void;
+}) {
+  const faculty = [
+    {
+      name: "Prof. Jaideep Prabhu",
+      role: "Vice-Dean for Faculty\nCambridge Judge\nBusiness School",
+      img: newJaideepImg,
+      bio: "Jawaharlal Nehru Professor of Indian Business and Enterprise at CJBS. Globally renowned author of Jugaad Innovation and Frugal Innovation. Advisor to global corporations and governments on low-cost high-impact scaling.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Frugal Innovation & Programme Leadership",
+    },
+    {
+      name: "Prof. Shasha Lu",
+      role: "Associate Professor\nin Marketing\nCambridge Judge\nBusiness School",
+      img: newShashaImg,
+      bio: "Associate Professor in Marketing & Analytics at CJBS. Pioneer in applying multimodal AI, video analytics, and machine learning to customer decision-making and digital channels.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Innovation & AI",
+    },
+    {
+      name: "Prof. Lionel Paolella",
+      role: "Professor of Social\nSciences & Organisations\nCambridge Judge\nBusiness School",
+      img: newLionelImg,
+      bio: "Associate Professor in Strategy & Organisation at CJBS. Award-winning researcher focusing on strategic decision-making, market positioning, and competitive advantage.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Competitive Strategy",
+    },
+    {
+      name: "Prof. Raghavendra Rau",
+      role: "Professor of Finance &\nFounder, CCAF\nCambridge Judge\nBusiness School",
+      img: newRaghavendraImg,
+      bio: "Sir Evelyn de Rothschild Professor of Finance at CJBS. Former President of European Finance Association. Global authority on corporate governance, board accountability, and market design.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Corporate Governance & Finance",
+    },
+    {
+      name: "Prof. Eden Yin",
+      role: "Associate Professor\nin Marketing\nCambridge Judge\nBusiness School",
+      img: newEdenImg,
+      bio: "Associate Professor in Marketing at CJBS. Expert in global brand architecture, high-tech marketing, market entry strategy, and customer lifetime value.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Branding & Marketing",
+    },
+    {
+      name: "Prof. Oğuzhan Karakaş",
+      role: "Associate Professor\nin Finance\nCambridge Judge\nBusiness School",
+      img: newOguzhanImg,
+      bio: "Associate Professor in Finance at CJBS. Expert on corporate governance structures, private equity ownership models, and voting mechanisms in high-stakes boardroom battles.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Boardroom Dynamics & Governance",
+    },
+    {
+      name: "Prof. Thomas Roulet",
+      role: "Professor of Organisational\nSociology & Leadership\nCambridge Judge\nBusiness School",
+      img: newThomasImg,
+      bio: "Professor of Organisational Sociology and Fellow at King's College, Cambridge. Regular contributor to Harvard Business Review, MIT Sloan, and FT on executive wellbeing, mental stamina, and leadership culture.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Organisational Behaviour",
+    },
+    {
+      name: "Prof. Kamiar Mohaddes",
+      role: "Associate Professor\nin Economics & Policy\nCambridge Judge\nBusiness School",
+      img: newKamiarImg,
+      bio: "Associate Professor in Economics & Policy at CJBS. Specialist in global macroeconomics, energy transitions, currency dynamics, and climate-macro financial risk.",
+      institution: "Cambridge Judge Business School",
+      expertise: "Economics & Global Macro",
+    },
+    {
+      name: "Elizabeth Osta",
+      role: "Visiting Fellow &\nCo-Lead, Frugal AI Hub\nCambridge Judge\nBusiness School",
+      img: newElizabethImg,
+      bio: "Senior strategy and technology advisor specializing in enterprise AI integration, frontier innovation systems, and agile organizational transformation.",
+      institution: "Cambridge Innovation Faculty",
+      expertise: "AI & Enterprise Innovation",
+    },
+    {
+      name: "Serish Venkata Gandikota",
+      role: "Visiting Fellow\nCambridge Judge\nBusiness School",
+      img: newSerishImg,
+      bio: "Distinguished practitioner, venture builder, and innovator focusing on lean, scalable artificial intelligence architectures and sustainable technological transformation.",
+      institution: "Cambridge Innovation Network",
+      expertise: "Frugal AI & Scalable Tech",
+    },
+    {
+      name: "Guy Doza",
+      role: "Public Speaking, Influence\n& Executive\nCommunication Coach",
+      img: newGuyImg,
+      bio: "Cambridge rhetoric expert and speechwriter. Advises FTSE-100 chairs, CEOs, and prime ministers on high-impact persuasion, linguistic framing, and commanding the room under pressure.",
+      institution: "Cambridge Judge Business School (Affiliated)",
+      expertise: "Executive Communication & Rhetoric",
+    },
+    {
+      name: "Nick Ford-Young",
+      role: "Co-CEO, Boldspace &\nBrand Strategy\nArchitect",
+      img: newNickImg,
+      bio: "Visionary CEO of Boldstream. Expert in digital transformation, high-impact scaling, and modern entrepreneurial leadership.",
+      institution: "Boldstream",
+      expertise: "Digital Transformation & Scaling",
+    },
+  ];
+
+  return (
+    <section
+      id="faculty"
+      className="py-16 sm:py-20 lg:py-24 border-b border-stone-800"
+      style={{ background: "linear-gradient(160deg, #0E1C12 0%, #162B1C 50%, #0A1508 100%)" }}
+    >
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header */}
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-2.5 mb-3">
+            <span className="text-[11px] sm:text-[12px] font-extrabold tracking-[0.25em] uppercase text-[#D4AF37]">
+              FACULTY WHO HAVE SHAPED GILP
+            </span>
+            <div className="h-0.5 w-10 bg-[#D4AF37]" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-serif font-bold text-white leading-tight tracking-tight mb-4 sm:mb-5">
+            The minds that have shaped{" "}
+            <span className="font-serif font-black text-[#D4AF37]">GILP.</span>
+          </h2>
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-stone-300">
+            GILP has been delivered by faculty from Cambridge Judge Business School and
+            distinguished experts who bring deep academic knowledge and real-world perspective to
+            the programme.
+          </p>
+        </div>
+
+        {/* Faculty Grid — 6 columns desktop, 3 tablet, 2 mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8 sm:gap-x-5 sm:gap-y-10">
+          {faculty.map((f, i) => (
+            <div
+              key={i}
+              onClick={() => onSelectFaculty(f)}
+              className="group cursor-pointer flex flex-col bg-white rounded-[24px] p-2.5 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              {/* Photo Frame */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[16px] mb-3 sm:mb-4 bg-stone-100">
+                <img
+                  src={f.img}
+                  alt={f.name}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Name & Role */}
+              <div className="px-1 pb-1 sm:pb-2 text-center flex flex-col items-center">
+                <h3 className="text-[14px] sm:text-[15px] font-bold text-[#002B49] leading-tight mb-1">
+                  {f.name}
+                </h3>
+                <div className="w-6 sm:w-8 h-[1.5px] bg-[#D4AF37] opacity-80 my-1.5 rounded-full" />
+                <p className="text-[9.5px] sm:text-[10.5px] text-[#C09623] font-medium tracking-wide leading-[1.3] whitespace-pre-line">
+                  {f.role}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Note & Link */}
+        <div className="mt-10 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+          <div className="flex items-center gap-2.5 text-stone-400 font-serif italic text-[13px] sm:text-[13.5px]">
+            <div className="h-0.5 w-6 bg-[#D4AF37]" />
+            <span>Faculty participation and programme content have evolved across cohorts.</span>
+          </div>
+          <a
+            href="#priority-application"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-300 hover:text-[#D4AF37] transition-colors whitespace-nowrap"
+          >
+            <span>Learn more about our faculty</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   7. PERSPECTIVES BEYOND ACADEMIA (GLOBAL TITANS & DISTINGUISHED LEADERS)
+───────────────────────────────────────────────────────────────────────────── */
+function PerspectivesBeyondAcademiaSection({
+  onSelectLeader,
+}: {
+  onSelectLeader: (l: any) => void;
+}) {
+  const leaders = [
+    {
+      name: "H.E. Kumaran Periasamy",
+      role: "Indian High Commissioner to the UK",
+      note: "Trade, education, skills and the role of leadership in strengthening bilateral ties.",
+      img: leaderKumaranImg,
+      imgClass: "scale-[1.3] object-[center_20%] origin-top",
+      bio: "Indian High Commissioner to the UK. Key strategic architect of India-UK bilateral corridors spanning trade, education, talent mobility, and technology investment.",
+      institution: "High Commission of India, London",
+      expertise: "India–UK Opportunity & Bilateral Trade",
+    },
+    {
+      name: "Lord Karan Bilimoria",
+      role: "Member of the House of Lords and Founder, Cobra Beer",
+      note: "Fireside conversation during the first GILP cohort.",
+      img: leaderKaranImg,
+      bio: "Crossbench Peer in the UK House of Lords, Chancellor of the University of Birmingham, and Founder & Chairman of Cobra Beer. Former President of the Confederation of British Industry (CBI).",
+      institution: "House of Lords & CBI",
+      expertise: "Entrepreneurship & Global Business",
+    },
+    {
+      name: "Julian Metherell",
+      role: "Business & Sports Leadership",
+      note: "Chair, London Spirit; Incoming MCC President; Chair, CJBS Advisory Board.",
+      img: leaderJulianImg,
+      bio: "Senior corporate and energy leader. Incoming President of Marylebone Cricket Club (Lord's), Chair of London Spirit, and Chair of Cambridge Judge Business School Advisory Board. Former Head of European Energy at Goldman Sachs.",
+      institution: "MCC (Lord's) & CJBS Advisory Board",
+      expertise: "Business & Sports Leadership",
+    },
+    {
+      name: "Lord Uday Nagaraju",
+      role: "Member of the House of Lords, Founder, AI Policy Labs",
+      note: "Perspectives on responsible technology and policy.",
+      img: leaderUdayImg,
+      bio: "Member of the UK House of Lords and global advisor on artificial intelligence governance, technology ethics, and international digital public policy.",
+      institution: "UK House of Lords & AI Policy",
+      expertise: "AI Governance & Digital Policy",
+    },
+    {
+      name: "Paul Scully",
+      role: "Technology & Human Leadership",
+      note: "Former Minister for Tech & the Digital Economy.",
+      img: leaderPaulImg,
+      bio: "Former UK Minister for Tech and the Digital Economy, and former Minister for London. Led nationwide initiatives on digital innovation, tech regulation, and economic modernization.",
+      institution: "UK Government (Former Tech Minister)",
+      expertise: "Technology & Human Leadership",
+    },
+  ];
+
+  return (
+    <section
+      id="perspectives"
+      className="py-24 sm:py-28 lg:py-32 bg-[#E8E1D3] text-[#0E1C12] relative overflow-hidden"
+    >
+      <div className="relative mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        {/* Top Header Block & Right Quote */}
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
+          {/* Left Title & Subtext */}
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="text-[12px] sm:text-[14px] font-extrabold tracking-[0.2em] text-[#99730E] uppercase">
+                PERSPECTIVES BEYOND ACADEMIA
+              </span>
+              <div className="h-px w-16 bg-[#D4AF37]/80" />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.9rem] font-serif font-bold text-gray-950 leading-[1.15] tracking-tight mb-6">
+              Because leadership is too important
+              <br />
+              to be understood through academia alone.
+            </h2>
+
+            <p className="text-[17px] sm:text-[19px] text-stone-700 leading-relaxed max-w-2xl font-light">
+              GILP has brought together distinguished leaders from business, government, sport and
+              society to share perspectives that challenge, inspire and broaden thinking.
+            </p>
+          </div>
+
+          {/* Right Quote Callout */}
+          <div className="lg:max-w-[280px] shrink-0 pt-4 flex gap-4 lg:border-l border-[#D4AF37]/30 lg:pl-8">
+            <div>
+              <span className="text-6xl font-serif text-[#D4AF37] leading-none select-none block -mt-4 mb-2 opacity-90">
+                “
+              </span>
+              <p className="text-[21px] sm:text-[23px] font-serif italic text-stone-800 leading-snug">
+                Different worlds.
+                <br />
+                One leadership
+                <br />
+                experience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 5 Guest Leaders — Grid layout */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 border-t border-[#D4AF37]/30 pt-8">
+          {leaders.map((l, i) => (
+            <div
+              key={i}
+              onClick={() => onSelectLeader(l)}
+              className="group cursor-pointer flex flex-col text-left transition-all duration-300 bg-white rounded-xl shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#D4AF37]/50 overflow-hidden"
+            >
+              <div className="relative aspect-square w-full overflow-hidden bg-stone-200 border-b border-stone-100">
+                <img
+                  src={l.img}
+                  alt={l.name}
+                  className={`w-full h-full object-cover transition-transform duration-700 ease-out ${l.imgClass || ""} group-hover:scale-[1.05]`}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+              </div>
+
+              <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                <h3 className="text-[15.5px] sm:text-[16.5px] font-bold text-gray-900 leading-snug group-hover:text-[#99730E] transition-colors mb-1">
+                  {l.name}
+                </h3>
+                <p className="text-[13px] sm:text-[14px] text-[#5A7C9A] font-medium leading-snug mb-3">
+                  {l.role}
+                </p>
+                <p className="text-[12px] sm:text-[13px] text-stone-600 leading-relaxed font-light line-clamp-4">
+                  {l.note}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   8. COHORT COMPOSITION & ELITE PEER COMMUNITY
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+function CohortProfileSection() {
+  const stats = [
+    { value: "45", label: "C-suite & senior leaders" },
+    { value: "2", label: "Completed cohorts" },
+    { value: "10+", label: "Countries represented" },
+    { value: "Multiple", label: "Industries & disciplines", isText: true },
+  ];
+
+  return (
+    <section
+      id="cohort-profile"
+      className="py-20 sm:py-24 lg:py-28 bg-[#FAF9F6] text-[#0E1C12] border-b border-stone-200/80 overflow-hidden"
+    >
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 relative">
+        
+        {/* Subtle background decorative circle */}
+        <div className="absolute top-1/2 -right-40 -translate-y-1/2 w-[500px] h-[500px] border-[1px] border-[#D4AF37]/10 rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[350px] h-[350px] bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
+
+        {/* 3-Column Balanced Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-center relative z-10">
+          
+          {/* Left Column (5 cols): Description & Quote */}
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
+            
+            <div className="mb-4">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[12px] sm:text-[13px] font-bold tracking-[0.2em] text-[#99730E] uppercase">
+                  THE GILP COMMUNITY
+                </span>
+                <div className="h-px w-10 bg-[#99730E]" />
+              </div>
+              
+              <h2 className="text-[2.2rem] sm:text-[2.5rem] lg:text-[3rem] font-serif font-medium text-gray-900 leading-[1.1] tracking-tight">
+                45 leaders. Two cohorts. One growing community.
+              </h2>
+            </div>
+
+            <p className="text-stone-600 text-[15px] sm:text-[16px] leading-relaxed font-normal pr-4">
+              GILP has brought together C-suite and senior leaders from business, education,
+              healthcare, finance, technology and entrepreneurship — creating an extraordinary peer
+              group united by curiosity, experience and a shared commitment to making a difference.
+            </p>
+
+            <div className="pt-6 border-t border-stone-300/80 pr-4 mt-2">
+              <p className="text-[15px] font-serif italic text-stone-600 leading-snug mb-3">
+                “Leadership Learning That Feels Like a Rolls Royce”
+              </p>
+              <p className="text-[10px] font-bold tracking-[0.15em] text-stone-400 uppercase">
+                — SAM TULLY, GILP DELEGATE
+              </p>
+            </div>
+          </div>
+
+          {/* Middle Column (3 cols): 2x2 Stats Grid */}
+          <div className="lg:col-span-3 flex items-center justify-center">
+            <div className="grid grid-cols-2 gap-px bg-stone-200/60 rounded-[20px] overflow-hidden border border-stone-200/80 shadow-sm w-full h-[220px]">
+              {stats.map((s, i) => (
+                <div
+                  key={i}
+                  className="bg-white p-4 flex flex-col justify-center items-center text-center transition-colors h-full"
+                >
+                  <div className="-mt-3 sm:-mt-4">
+                    <span
+                      className={`block font-serif font-medium text-[#B8860B] leading-none mb-1.5 sm:mb-2 ${
+                        s.isText ? "text-xl sm:text-[22px]" : "text-3xl sm:text-[38px]"
+                      }`}
+                    >
+                      {s.value}
+                    </span>
+                    <span className="text-[11.5px] sm:text-[12.5px] text-stone-600 font-normal leading-snug">
+                      {s.label}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column (4 cols): Overlapping Images */}
+          <div className="lg:col-span-4 relative h-[380px] sm:h-[480px] lg:h-[540px] w-full flex items-center">
+            
+            {/* Top/Back Image (Trees) */}
+            <div className="absolute top-0 left-0 sm:top-2 sm:-left-2 w-[84%] aspect-[3/2] z-0 shadow-xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[-2deg]">
+              <img
+                src={cohortTreesImg}
+                alt="GILP Cohort with Trees"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Bottom/Front Image (Building) */}
+            <div className="absolute bottom-8 right-0 sm:bottom-10 sm:-right-4 w-[88%] aspect-[4/3] z-10 shadow-2xl rounded-xl overflow-hidden border-[6px] border-white transform rotate-[1deg]">
+              <img
+                src={cohortBuildingImg}
+                alt="GILP Cohort Building"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+          </div>
+        </div>
+
+        {/* Bottom Logo Strip — Marquee Logos */}
+        <div className="mt-10 pt-7 sm:mt-12 sm:pt-8 border-t border-stone-200/80 flex flex-col lg:flex-row lg:items-center gap-6 overflow-hidden">
+          <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.18em] text-stone-400 uppercase max-w-[200px] leading-snug shrink-0 z-10 bg-[#FAF9F6] pr-4">
+            A SELECTION OF ORGANISATIONS REPRESENTED
+          </span>
+
+          <div className="relative flex flex-1 overflow-hidden mix-blend-multiply">
+            <div className="flex w-max animate-marquee whitespace-nowrap items-center gap-12 sm:gap-16">
+              {[...Array(2)].map((_, idx) => (
+                <div key={idx} className="flex items-center gap-12 sm:gap-16 shrink-0">
+                  <img src={logoGodrej} alt="Godrej" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoAakash} alt="Aakash Healthcare" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoPratham} alt="Pratham UK" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoTmf} alt="TMF Group" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoKao} alt="Kao Corporation" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoEfl} alt="EFL" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoBennett} alt="Bennett University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoRhenus} alt="Rhenus Logistics" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoRs} alt="RS" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoMetro} alt="Metro Heart Institute" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoHsbc} alt="HSBC" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoScms} alt="SCMS" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoGalgotias} alt="Galgotias University" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoThakorji} alt="Thakorji" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoBankdhofar} alt="Bank Dhofar" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                  <img src={logoIrm} alt="IRM" className="h-10 sm:h-[56px] lg:h-[64px] w-auto object-contain hover:opacity-90 transition-opacity" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   9. EXECUTIVE TESTIMONIALS & PARTICIPANT VOICES
+───────────────────────────────────────────────────────────── */
+function _getInitials(name: string) {
+  return name.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+}
+function _avatarBg(name: string) {
+  const palette = [
+    { bg: "#1B4332", text: "#D4AF37" },
+    { bg: "#2D6A4F", text: "#ffffff" },
+    { bg: "#0E1C12", text: "#D4AF37" },
+    { bg: "#4A4E69", text: "#D4AF37" },
+    { bg: "#6B4226", text: "#ffffff" },
+    { bg: "#374151", text: "#D4AF37" },
+    { bg: "#1F2D3D", text: "#D4AF37" },
+  ];
+  let h = 0;
+  for (const c of name) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
+  return palette[h % palette.length];
+}
+
+function TestimonialsSection({
+  onOpenTestimonial,
+}: {
+  onOpenTestimonial: (t: any) => void;
+}) {
+  const testimonials = [
+    {
+      name: "Sam Tully",
+      role: "Trustee",
+      org: "Pratham (UK)",
+      quote: "A week of intensive, high-quality learning across innovation, AI, governance, and strategy. Structure, faculty expertise, and diverse perspectives made it deeply impactful. It provided both big-picture insights and practical takeaways for navigating global business. It felt like a Rolls Royce.",
+      cohort: "September 2026 Cohort",
+      img: alumniSam,
+    },
+    {
+      name: "Dr. Fatin Al Zadjali",
+      role: "L&D Head",
+      org: "Bank Dhofar (Oman)",
+      quote: "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
+      cohort: "September 2026 Cohort",
+      img: alumniFatin,
+    },
+    {
+      name: "Hersh Shah",
+      role: "CEO",
+      org: "IRM India Affiliate",
+      quote: "Great meeting industry leaders, government officials, leading academicians from Cambridge University and entrepreneurs. A deeply enriching week at the prestigious University of Cambridge. Honoured to be invited to the 'Global India Leadership Programme' by Global Education Lab and Cambridge Judge Business School.",
+      cohort: "September 2026 Cohort",
+      img: alumniHersh,
+      linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7508526229084372992/",
+    },
+    {
+      name: "Dr. Aashish Chaudhry",
+      role: "MD",
+      org: "Aakash Healthcare (India)",
+      quote: "Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing 'jugaad' discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.",
+      cohort: "September 2026 Cohort",
+      img: alumniAashish,
+    },
+    {
+      name: "Ghanshyam Tiwari",
+      role: "Founder & Chief Business Officer",
+      org: "Samajwadi Party | GoodEd Technologies",
+      quote: "It was a privilege to meet professors with thought leadership and professionals with global experience at the University of Cambridge. The opportunity to learn from diverse perspectives and engage with such accomplished leaders made the week truly enriching and memorable.",
+      cohort: "September 2026 Cohort",
+      img: alumniGhanshyam,
+      linkedin: "https://lnkd.in/p/dD6pBeMa",
+    },
+    {
+      name: "Johannes Samwer",
+      role: "MD",
+      org: "Rhenus Lub (Germany)",
+      quote: "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
+      cohort: "September 2026 Cohort",
+      img: alumniSamwer,
+    },
+    {
+      name: "Ashwini Ramakrishna",
+      role: "Associate Director - Amazon (eCommerce), EMEA",
+      org: "Kao Corporation",
+      quote: "What happens when academia, entrepreneurship and corporate leadership come together in one room? I got to experience exactly that through the Global India Leadership Programme at Cambridge Judge Business School. I was thrilled to be accepted and invited to the Executive Programme, and the five days were a wonderful opportunity to step away from the day-to-day, challenge my thinking and learn alongside an inspiring group of leaders.",
+      cohort: "September 2026 Cohort",
+      img: alumniAshwini,
+      linkedin: "https://lnkd.in/p/dfCvPzaU",
+    },
+    {
+      name: "Dr. Johannes Mario Schmidt",
+      role: "MD",
+      org: "Lingel Windows and Doors Technologies (India)",
+      quote: "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.",
+      cohort: "September 2026 Cohort",
+      img: alumniMario,
+    },
+  ];
+
+
+  return (
+    <section id="testimonials" className="pt-24 sm:pt-28 pb-16 sm:pb-20 border-b border-forest/10" style={{ background: "linear-gradient(160deg, #0E1C12 0%, #162B1C 50%, #0A1508 100%)" }}>
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-12 sm:mb-14">
+          <div className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8" style={{ background: "#D4AF37" }} />
+              <span className="text-[11.5px] sm:text-[12px] font-extrabold tracking-[0.25em] uppercase" style={{ color: "#D4AF37" }}>
+                VOICES FROM OUR COMMUNITY
+              </span>
+            </div>
+            <h2 className="text-[2.25rem] sm:text-[3rem] lg:text-[3.25rem] xl:text-[3.5rem] font-bold leading-[1.05] tracking-tight mb-5">
+              <span className="text-white whitespace-nowrap block sm:inline">45 leaders have experienced GILP.</span>
+              <br className="hidden sm:block" />
+              <span style={{ color: "#D4AF37" }} className="whitespace-nowrap block sm:inline mt-1 sm:mt-0">This is what stayed with them.</span>
+            </h2>
+            <p className="text-stone-300 text-[15px] sm:text-[16px] leading-relaxed max-w-2xl font-light">
+              From powerful classroom discussions to unforgettable experiences beyond Cambridge, here is what participants from our first two cohorts had to say.
+            </p>
+          </div>
+          <div className="shrink-0 lg:pb-1">
+            <a
+              href="/gilp-stories"
+              className="inline-flex items-center gap-2 rounded-xl px-7 py-4 text-[14px] font-bold transition-all hover:-translate-y-0.5 hover:shadow-xl whitespace-nowrap"
+              style={{ background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.4)", color: "#D4AF37" }}
+            >
+              Read more stories <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        {/* Testimonials Grid — 4 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5">
+          {testimonials.map((t, i) => {
+            const color = _avatarBg(t.name);
+            return (
+              <div
+                key={i}
+                onClick={() => onOpenTestimonial && onOpenTestimonial(t)}
+                className="bg-white rounded-[1.25rem] overflow-hidden flex flex-row cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group border border-stone-200/60 shadow-md"
+              >
+                {/* ── Left: Photo or Initials Avatar ── */}
+                <div className="w-[35%] shrink-0 relative overflow-hidden border-r border-stone-100 bg-stone-50">
+                  {(t as any).img ? (
+                    <img
+                      src={(t as any).img}
+                      alt={t.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden"
+                      style={{ background: color.bg }}
+                    >
+                      {/* Subtle premium glow */}
+                      <div
+                        className="absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-60"
+                        style={{ backgroundImage: "radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 60%)" }}
+                      />
+                      <div
+                        className="absolute inset-0 opacity-30"
+                        style={{ backgroundImage: "radial-gradient(circle at bottom left, rgba(0,0,0,0.2) 0%, transparent 60%)" }}
+                      />
+                      {/* Monogram */}
+                      <span
+                        className="relative select-none font-medium text-[2.5rem] sm:text-[3rem] leading-none"
+                        style={{ color: color.text, fontFamily: "'Inter', sans-serif", letterSpacing: "-0.04em" }}
+                      >
+                        {_getInitials(t.name)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* ── Right: Content ── */}
+                <div className="flex flex-col flex-1 p-3.5 sm:p-4 relative bg-gradient-to-br from-white to-stone-50/50">
+                  {/* Gold quote mark */}
+                  <span
+                    className="text-[2.2rem] font-serif leading-none mb-0.5 select-none opacity-80"
+                    style={{ color: "#D4AF37", fontFamily: "'Georgia', serif" }}
+                  >
+                    "
+                  </span>
+
+                  {/* Quote */}
+                  <div className="flex-1 mb-2.5">
+                    <p className="text-[11.5px] sm:text-[12px] text-stone-700 leading-[1.5] italic line-clamp-4 font-light">
+                      {t.quote}
+                    </p>
+                  </div>
+
+                  {/* Footer: name / role / org / cohort */}
+                  <div className="mt-auto pt-2.5 border-t border-stone-100/80">
+                    <p className="text-[11.5px] font-bold text-gray-900 leading-tight tracking-tight">{t.name}</p>
+                    <p className="text-[9.5px] text-stone-500 mt-0.5 leading-tight font-medium uppercase tracking-wider">{t.role}</p>
+                    {t.org && (
+                      <p className="text-[9.5px] text-stone-500 leading-tight mt-0.5">{t.org}</p>
+                    )}
+                    <div className="mt-2.5">
+                      <span className="inline-flex items-center gap-1 text-[10.5px] text-[#D4AF37] font-bold group-hover:underline">
+                        Read more <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   11. PARTICIPANT EVIDENCE STRIP (MARQUEE)
+───────────────────────────────────────────────────────────────────────────── */
+function ParticipantEvidenceStrip() {
+  const stats = [
+    { val: "4.8/5", label: "Overall learning experience" },
+    { val: "96%", label: "Rated faculty Exceptional / Very Good" },
+    { val: "94%", label: "Would recommend GILP" },
+    { val: "92%", label: "Found peer learning highly valuable" },
+  ];
+
+  const marqueeItem = (
+    <div className="flex items-center gap-12 shrink-0 pr-12">
+      {/* Label */}
+      <div className="border-r pr-12 shrink-0 border-stone-200">
+        <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.22em] text-[#0E1C12]">
+          What participants told us.
+        </p>
+        <p className="text-[12px] text-stone-600 mt-1 max-w-[240px] leading-snug whitespace-normal font-normal">
+          Two cohorts have given us something more useful than assumptions: evidence.
+        </p>
+      </div>
+      {/* Stats */}
+      <div className="flex gap-x-14 sm:gap-x-16">
+        {stats.map((s, i) => (
+          <div key={i} className="shrink-0 min-w-[150px] whitespace-normal">
+            <p className="text-[30px] sm:text-[34px] font-extrabold font-sans leading-none" style={{ color: "#B8860B" }}>
+              {s.val}
+            </p>
+            <p className="text-[12px] sm:text-[13px] text-stone-600 mt-2 font-medium leading-tight max-w-[140px]">
+              {s.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <section
+      className="pt-0 pb-0 w-full relative overflow-hidden bg-white"
+    >
+      <style>
+        {`
+          @keyframes scroll-marquee {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+          }
+          .animate-marquee-slow {
+            animation: scroll-marquee 35s linear infinite;
+          }
+        `}
+      </style>
+      <div
+        className="w-full py-7 sm:py-9 overflow-hidden relative bg-white border-y border-stone-200/80 shadow-xs"
+      >
+        {/* Gradient masks for smooth fade on edges */}
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 z-10 pointer-events-none" style={{ background: "linear-gradient(to right, #ffffff, transparent)" }} />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 z-10 pointer-events-none" style={{ background: "linear-gradient(to left, #ffffff, transparent)" }} />
+
+        <div className="flex w-max animate-marquee-slow hover:[animation-play-state:paused] cursor-default">
+          {/* We duplicate the item twice to allow seamless 50% scrolling */}
+          <div className="flex shrink-0 pr-16">
+            {marqueeItem}
+          </div>
+          <div className="flex shrink-0 pr-16">
+            {marqueeItem}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   12. PRIORITY APPLICATION â€” FULL LUXURY SPLIT SCREEN
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+function PriorityApplicationSection() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [workEmail, setWorkEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [organisation, setOrganisation] = useState("");
+  const [role, setRole] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!firstName || !workEmail || !organisation || !role) return;
+    setStatus("submitting");
+    try {
+      await submitToGILP("next-chapter-priority", {
+        fullName: `${firstName} ${lastName}`.trim(),
+        email: workEmail,
+        phone,
+        company: organisation,
+        designation: role,
+      });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section
+      id="priority-application"
+      className="relative overflow-hidden py-14 sm:py-20 lg:py-28"
+    >
+      {/* ═══════════ FULL BLEED BACKGROUND ═══════════ */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={gilpPremiumBg}
+          alt="University of Cambridge"
+          className="w-full h-full object-cover object-[center_35%]"
+        />
+        {/* Strong dark overlay on LEFT side for text legibility, atmospheric depth on right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(3,14,7,0.96) 0%, rgba(3,14,7,0.88) 40%, rgba(3,14,7,0.62) 70%, rgba(3,14,7,0.35) 100%)",
+          }}
+        />
+        {/* Subtle dark vignette on top and bottom */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 80% 50%, transparent 40%, rgba(2,10,5,0.7) 100%)",
+          }}
+        />
+        {/* Gold top and bottom accent lines */}
+        <div
+          className="absolute inset-x-0 top-0 h-[2px]"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, #D4AF37 30%, #F5D97A 50%, #D4AF37 70%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-[1px]"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.35) 50%, transparent 100%)",
+          }}
+        />
+      </div>
+
+      {/* ═══════════ CONTENT ═══════════ */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1440px] px-6 sm:px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+
+        {/* ── LEFT: Bold narrative column ── */}
+        <div className="flex-1 flex flex-col justify-center">
+
+          {/* Programme badge */}
+          <div className="flex items-center gap-3 mb-4">
+            <span
+              className="h-px w-10"
+              style={{ background: "linear-gradient(90deg, #D4AF37, transparent)" }}
+            />
+            <span
+              className="text-[12px] font-extrabold tracking-[0.3em] uppercase"
+              style={{ color: "#D4AF37" }}
+            >
+              Cohort III · Priority Registration
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h2
+            className="font-sans font-extrabold text-white leading-[1.08] tracking-[-0.02em] mb-4"
+            style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
+          >
+            Be Among<br />
+            <span style={{ color: "#D4AF37" }}>India's Next</span><br />
+            Global Leaders.
+          </h2>
+
+          <p className="text-stone-300 leading-relaxed mb-8 max-w-lg font-normal text-base sm:text-lg">
+            The next GILP cohort at Cambridge Judge Business School is being curated.
+            Secure priority consideration before public announcement.
+          </p>
+
+          {/* Programme stat pills */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            {[
+              { val: "5", label: "Days in Cambridge & London" },
+              { val: "25", label: "C-Suite Leaders Only" },
+              { val: "100%", label: "CJBS Certified" },
+            ].map((s) => (
+              <div
+                key={s.val}
+                className="rounded-2xl px-5 py-3"
+                style={{
+                  background: "rgba(212,175,55,0.12)",
+                  border: "1px solid rgba(212,175,55,0.35)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <p className="text-xl sm:text-2xl font-bold font-sans" style={{ color: "#D4AF37" }}>{s.val}</p>
+                <p className="text-[11px] sm:text-[12px] text-stone-300 font-medium mt-0.5 leading-tight">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature list */}
+          <ul className="space-y-3.5 max-w-lg">
+            {[
+              { icon: <Award className="h-4 w-4" />, text: "Cambridge Judge Business School Certificate" },
+              { icon: <Landmark className="h-4 w-4" />, text: "Lord's Pavilion · House of Lords · King's College" },
+              { icon: <Globe2 className="h-4 w-4" />, text: "Bilateral dialogue — Indian High Commissioner" },
+              { icon: <Network className="h-4 w-4" />, text: "Exclusive network of India's top CXOs" },
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <span
+                  className="shrink-0 flex h-7 w-7 items-center justify-center rounded-lg"
+                  style={{ background: "rgba(212,175,55,0.18)", color: "#D4AF37" }}
+                >
+                  {item.icon}
+                </span>
+                <span className="text-[13.5px] sm:text-[14.5px] font-medium text-stone-200 leading-snug">{item.text}</span>
+              </li>
+            ))}
+          </ul>
+
+        </div>
+
+        {/* ── RIGHT: Registration Form Card (spacious desktop) ── */}
+        <div className="w-full lg:max-w-[480px] xl:max-w-[520px] shrink-0">
+          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-white border border-forest/10">
+
+            {/* Dark green card header */}
+            <div
+              className="px-6 sm:px-8 pt-6 pb-6"
+              style={{ background: "linear-gradient(135deg, #0E2B14 0%, #1A3E22 100%)" }}
+            >
+              {/* Top label row */}
+              <div className="flex items-center gap-2 mb-3">
+                <span className="h-px w-6" style={{ background: "#D4AF37" }} />
+                <span className="text-[11px] font-extrabold tracking-[0.22em] uppercase" style={{ color: "#D4AF37" }}>
+                  Priority Registration Open
+                </span>
+              </div>
+              <p className="text-white font-bold text-xl sm:text-2xl font-serif leading-tight">
+                Global India
+              </p>
+              <p className="font-bold text-xl sm:text-2xl font-serif leading-tight" style={{ color: "#D4AF37" }}>
+                Leadership Programme
+              </p>
+              <p className="text-stone-300 text-xs sm:text-sm mt-1.5 font-sans">
+                Cambridge Judge Business School × GEL
+              </p>
+              {/* Two gold lines */}
+              <div className="flex gap-1.5 mt-3.5">
+                <div className="h-[3px] w-10 rounded-full" style={{ background: "#D4AF37" }} />
+                <div className="h-[3px] w-4 rounded-full" style={{ background: "rgba(212,175,55,0.35)" }} />
+              </div>
+            </div>
+
+            {/* Form body — white background */}
+            {status === "success" ? (
+              <div className="px-6 sm:px-8 py-10 text-center bg-white">
+                <div className="mx-auto mb-4 h-16 w-16 rounded-full flex items-center justify-center bg-green-50">
+                  <CheckCircle2 className="h-8 w-8 text-green-600" />
+                </div>
+                <p className="text-forest-deep font-bold text-lg mb-2">Registration Received</p>
+                <p className="text-forest/75 text-sm sm:text-base leading-relaxed">
+                  Our programme office will be in touch within 48 hours with a personalised
+                  invitation for Cohort III consideration.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="px-6 sm:px-8 py-6 sm:py-7 space-y-4 bg-white">
+                {/* Row 1: First + Last Name */}
+                <div className="grid grid-cols-2 gap-3.5">
+                  <div>
+                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Rajesh"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      style={{ border: "1px solid #e5e7eb" }}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Sharma"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      style={{ border: "1px solid #e5e7eb" }}
+                    />
+                  </div>
+                </div>
+
+                {/* Work Email */}
+                <div>
+                  <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                    Work Email *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="you@company.com"
+                    value={workEmail}
+                    onChange={(e) => setWorkEmail(e.target.value)}
+                    className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                    style={{ border: "1px solid #e5e7eb" }}
+                  />
+                </div>
+
+                {/* Organisation */}
+                <div>
+                  <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                    Organisation *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Company / Institution"
+                    value={organisation}
+                    onChange={(e) => setOrganisation(e.target.value)}
+                    className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                    style={{ border: "1px solid #e5e7eb" }}
+                  />
+                </div>
+
+                {/* Row 3: Current Role + Contact Number */}
+                <div className="grid grid-cols-2 gap-3.5">
+                  <div>
+                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                      Current Role *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Managing Director"
+                      value={role}
+                      onChange={(e) => setRole(e.target.value)}
+                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      style={{ border: "1px solid #e5e7eb" }}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                      Contact Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+91 98765 43210"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      style={{ border: "1px solid #e5e7eb" }}
+                    />
+                  </div>
+                </div>
+
+                {status === "error" && (
+                  <p className="text-red-500 text-xs">Something went wrong. Please try again.</p>
+                )}
+
+                {/* CTA Button */}
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="w-full rounded-xl py-4 text-[14.5px] font-bold tracking-wide transition-all duration-200 hover:opacity-95 active:scale-[0.99] cursor-pointer disabled:opacity-60 shadow-lg mt-2"
+                  style={{
+                    background: "linear-gradient(90deg, #C9A227 0%, #F0D060 50%, #C9A227 100%)",
+                    color: "#0A1F0D",
+                  }}
+                >
+                  {status === "submitting" ? "Submitting…" : "Secure My Priority Position —"}
+                </button>
+
+                {/* Sub-text row */}
+                <div className="flex items-center justify-between pt-1">
+                  <p className="text-stone-400 text-[11px] flex items-center gap-1.5">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-forest/50" />
+                    No formal application. Priority updates only.
+                  </p>
+                  <button type="button" className="text-stone-400 text-[11px] flex items-center gap-1 cursor-pointer hover:text-forest-deep">
+                    <Share2 className="h-3.5 w-3.5" />
+                    Share
+                  </button>
+                </div>
+
+                {/* Trust badges */}
+                <div
+                  className="flex items-center justify-around pt-3.5"
+                  style={{ borderTop: "1px solid #f3f4f6" }}
+                >
+                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" /> No payment required
+                  </span>
+                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
+                    <ShieldCheck className="h-3.5 w-3.5 text-green-600" /> Confidential
+                  </span>
+                  <span className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
+                    <Award className="h-3.5 w-3.5 text-green-600" /> CJBS Endorsed
+                  </span>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MODALS & FLOATING CONTROLS
+───────────────────────────────────────────────────────────────────────────── */
+function FloatingApplyButton({ onClick }: { onClick: () => void }) {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShow(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!show) return null;
 
   return (
     <button
-      onClick={() => document.getElementById("apply-now")?.scrollIntoView({ behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-forest px-6 py-3.5 text-sm font-semibold text-white shadow-2xl shadow-forest/40 ring-2 ring-gold/40 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-forest-deep hover:shadow-gold/20 animate-float group cursor-pointer"
-      aria-label="Apply Now"
+      onClick={onClick}
+      className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 rounded-full bg-forest-deep text-white px-6 py-3.5 shadow-2xl border border-gold/60 hover:bg-gold hover:text-forest-deep transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
     >
       <span className="relative flex h-2.5 w-2.5">
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
       </span>
-      <span>Apply Now</span>
-      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <span className="text-[13.5px] font-bold tracking-wide">Apply for Next Cohort</span>
+      <ArrowUpRight className="h-4 w-4" />
     </button>
   );
 }
 
-/* ─── BROCHURE MODAL — captures name+email, then downloads the PDF ─── */
-// TODO: replace with the real hosted brochure PDF URL
 const BROCHURE_PDF_URL = "/gilp-brochure_final.pdf";
 
 function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
 
   if (!open) return null;
@@ -190,80 +2257,104 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
     if (!fullName || !email) return;
     setStatus("submitting");
     try {
-      await submitToGILP("brochure", { fullName, email });
-      // trigger the actual PDF download
+      await submitToGILP("brochure", { fullName, email, company });
       const link = document.createElement("a");
       link.href = BROCHURE_PDF_URL;
-      link.download = "GILP-Brochure.pdf";
+      link.download = "GILP-Executive-Brochure.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       setFullName("");
       setEmail("");
+      setCompany("");
       setStatus("idle");
       onClose();
-    } catch (err) {
+    } catch {
       setStatus("error");
     }
   };
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+        className="bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden border border-forest/10"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-forest-deep px-7 py-5 flex items-center justify-between">
-          <p className="text-white font-bold text-[16px]">Download the GILP Brochure</p>
+        <div className="bg-forest-deep px-7 py-6 flex items-center justify-between text-white">
+          <div>
+            <p className="font-bold text-lg font-serif">Download GILP Programme Dossier</p>
+            <p className="text-xs text-stone-300 mt-0.5">University of Cambridge Executive Immersion</p>
+          </div>
           <button
             type="button"
             onClick={onClose}
-            className="text-white/70 hover:text-white text-[20px] leading-none"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white hover:text-forest-deep transition-colors cursor-pointer"
           >
-            ×
+            <X className="h-4 w-4" />
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="p-7 space-y-4">
-          <p className="text-[13.5px] text-forest/80 leading-relaxed">
-            Enter your details and the brochure will download instantly. We'll also email you with
-            next steps.
+
+        <form onSubmit={handleSubmit} className="p-7 sm:p-8 space-y-4">
+          <p className="text-[14px] text-forest/80 leading-relaxed">
+            Enter your details below and the comprehensive 24-page GILP Executive Brochure will
+            download immediately.
           </p>
+
           <div>
-            <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-              Full name <span className="text-red-400">*</span>
+            <label className="block text-[13px] font-semibold text-forest-deep mb-1.5">
+              Full Name *
             </label>
             <input
               type="text"
               required
+              placeholder="e.g. Anita Sharma"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+              className="w-full border border-forest/20 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-cream/40 focus:outline-none focus:border-gold"
             />
           </div>
+
           <div>
-            <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-              Email address <span className="text-red-400">*</span>
+            <label className="block text-[13px] font-semibold text-forest-deep mb-1.5">
+              Work Email *
             </label>
             <input
               type="email"
               required
+              placeholder="anita@enterprise.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
+              className="w-full border border-forest/20 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-cream/40 focus:outline-none focus:border-gold"
             />
           </div>
+
+          <div>
+            <label className="block text-[13px] font-semibold text-forest-deep mb-1.5">
+              Company / Organisation
+            </label>
+            <input
+              type="text"
+              placeholder="Company Name"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="w-full border border-forest/20 rounded-xl px-4 py-3 text-[14px] text-forest-deep bg-cream/40 focus:outline-none focus:border-gold"
+            />
+          </div>
+
           {status === "error" && (
-            <p className="text-[12.5px] text-red-500">Something went wrong. Please try again.</p>
+            <p className="text-[13px] text-red-500">Something went wrong. Please try again.</p>
           )}
+
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md disabled:opacity-60"
+            className="w-full bg-forest-deep text-white rounded-xl py-3.5 text-[14px] font-bold uppercase tracking-wider hover:bg-forest transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 mt-2"
           >
-            {status === "submitting" ? "Please wait…" : "Download Brochure"}
+            <FileDown className="h-4 w-4 text-gold" />
+            <span>{status === "submitting" ? "Preparing Dossier…" : "Download Brochure Now"}</span>
           </button>
         </form>
       </div>
@@ -271,2131 +2362,340 @@ function BrochureModal({ open, onClose }: { open: boolean; onClose: () => void }
   );
 }
 
-/* ─── 1. HERO — matches other pages' aesthetic ─── */
-function Hero({ onDownloadBrochure }: { onDownloadBrochure: () => void }) {
-  return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-cream pb-0">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(var(--forest)_1px,transparent_1px),linear-gradient(90deg,var(--forest)_1px,transparent_1px)] [background-size:64px_64px]" />
+function DayDetailModal({
+  dayIndex,
+  onClose,
+}: {
+  dayIndex: number | null;
+  onClose: () => void;
+}) {
+  if (!dayIndex) return null;
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 md:px-6 pb-8 lg:grid-cols-12 lg:gap-12 pt-0 mt-0">
-        <div className="lg:col-span-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-background px-3 py-1 text-[13px] md:text-[15px] font-semibold uppercase tracking-[0.18em] text-forest/70 mt-3 md:mt-2">
-            <Globe2 className="h-3.5 w-3.5 text-gold" /> For Senior Leaders &amp; CXOs
-          </span>
-          <h1 className="mt-4 md:mt-6 text-[25px] min-[390px]:text-[28px] sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight text-forest lg:text-[2.75rem] xl:text-[3.25rem]">
-            <span className="whitespace-nowrap">Global India Leadership</span>
-            <br />
-            <span>Programme.</span>
-          </h1>
-          <div className="mt-2 md:mt-3 flex items-center gap-3 text-[11px] md:text-[13px] font-bold uppercase tracking-[0.22em] text-forest/70">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 md:w-10 bg-forest/30" />
-              <span>CERTIFIED BY</span>
-            </div>
-            <img
-              src={logoJBS}
-              alt="University of Cambridge Judge Business School"
-              className="h-24 md:h-32 w-auto mix-blend-multiply opacity-90 object-contain -my-4 md:-my-8"
-              loading="lazy"
-            />
-          </div>
-          <div className="mt-1 md:mt-2 flex items-center gap-3 relative z-10">
-            <Calendar className="h-6 w-6 text-forest-deep opacity-90" />
-            <span className="text-[17px] md:text-[21px] font-bold text-forest-deep tracking-tight">
-              14-18 September, 2026
-            </span>
-          </div>
-          <p className="mt-3 md:mt-4 text-xl md:text-2xl lg:text-[2rem] font-serif italic text-gold leading-tight">
-            "Leadership grows where perspective widens."
-          </p>
-          <p className="mt-4 md:mt-8 max-w-xl text-[15px] md:text-[17px] leading-[1.65] text-forest/80 md:text-lg">
-            Designed for board members, CEOs, founders, and senior leaders, this immersive 5-day
-            experience at Cambridge equips you with cutting-edge insights in AI, strategy, and
-            leadership to navigate complexity and lead with confidence in a rapidly evolving global
-            landscape.
-          </p>
-          <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
-            <button
-              onClick={onDownloadBrochure}
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-5 md:px-7 py-3 md:py-3.5 text-[14px] md:text-[15px] font-medium tracking-wide text-primary-foreground transition-all hover:bg-forest-deep"
-            >
-              Download Brochure
-            </button>
-            <button
-              onClick={() =>
-                document.getElementById("apply-now")?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 md:px-7 py-3 md:py-3.5 text-[14px] md:text-[15px] font-semibold tracking-wide text-forest-deep transition-all hover:bg-gold-deep shadow-md shadow-gold/20 hover:shadow-xl hover:-translate-y-1 animate-float cursor-pointer"
-            >
-              Apply Now <ArrowUpRight className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-
-        <div className="relative lg:col-span-6 mt-8 lg:mt-0">
-          <div className="relative aspect-video overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-2xl shadow-forest/20 bg-black">
-            <style>{`video::-webkit-media-text-track-display { display: none !important; } video::cue { visibility: hidden; }`}</style>
-            <video
-              src="/Globalindialeadershipprogramme.mp4"
-              poster={gilpHeroPremiumImg}
-              className="h-full w-full object-cover"
-              controls
-              loop
-              muted
-              playsInline
-              onLoadedMetadata={(e) => {
-                const video = e.currentTarget;
-                for (let i = 0; i < video.textTracks.length; i++) {
-                  video.textTracks[i].mode = "hidden";
-                }
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
-/* ─── 2. PROGRAMME OVERVIEW + VIDEO ─── */
-function ProgrammeOverview() {
-  return (
-    <section className="bg-[#FAF8F5] py-24 relative border-t border-forest/5">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
-          {/* LEFT — Premium Editorial Text */}
-          <div className="max-w-[540px]">
-            {/* Section Header inline */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-10 bg-gold" />
-              <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
-                About the Programme
-              </span>
-            </div>
-
-            <h2 className="text-[2.2rem] md:text-[2.6rem] font-bold text-forest-deep leading-[1.15] mb-4">
-              Challenge your thinking.
-              <br />
-              <span className="text-forest-deep/80 font-medium italic">Expand your horizons.</span>
-            </h2>
-
-            <div className="mt-8 space-y-6">
-              <p className="text-[17px] font-medium text-forest-deep/90 leading-relaxed">
-                Held over five transformative days across Cambridge Judge Business School &amp;
-                Lord's Cricket Ground, GILP offers business leaders the space to step back, reflect,
-                and reimagine their approach to leadership.
-              </p>
-
-              <div className="pl-5 border-l-2 border-gold/30 space-y-5">
-                <p className="text-[15px] text-forest/75 leading-relaxed">
-                  Co-created with Cambridge Judge Business School, the programme blends cutting-edge
-                  academic insights with practical frameworks tailored for the Indian business
-                  context. Explore how to lead in an AI-driven world, leverage innovation, and build
-                  sustainable global strategies.
-                </p>
-                <p className="text-[15px] text-forest/75 leading-relaxed">
-                  Return to your organisation with fresh ideas, a renewed sense of purpose, and a{" "}
-                  <strong className="italic text-forest-deep font-bold">Cambridge-certified</strong>{" "}
-                  edge to lead with impact.
-                </p>
-              </div>
-            </div>
-
-            {/* Stat pills — refined and minimal */}
-            <div className="mt-10 flex flex-wrap gap-6 pt-6 border-t border-forest/10">
-              {[
-                { val: "5", label: "Days Residential" },
-                { val: "6", label: "Core Modules" },
-              ].map((s, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="text-[22px] font-bold text-forest-deep">{s.val}</span>
-                  <span className="text-[15px] uppercase tracking-wider text-forest/80 font-medium mt-0.5">
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT — Premium video card */}
-          <div className="relative w-full">
-            {/* soft shadow glow */}
-            <div className="absolute -inset-4 bg-gold/10 rounded-3xl blur-2xl pointer-events-none" />
-
-            <div className="relative bg-white rounded-2xl shadow-[0_8px_40px_rgba(10,48,29,0.08)] overflow-hidden ring-1 ring-forest/5">
-              <div className="relative w-full aspect-[5/4] group">
-                <img
-                  src={gilpClassroomFinalImg}
-                  alt="Business leaders expanding their horizons at Cambridge"
-                  className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* bottom label strip */}
-              <div className="px-6 py-4 flex items-center justify-between border-t border-forest/6 bg-white">
-                <div className="flex items-center gap-2.5">
-                  <div className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
-                  </div>
-                  <span className="text-[15px] font-bold text-forest/70 uppercase tracking-wider">
-                    Transformative Experience
-                  </span>
-                </div>
-                <img
-                  src="https://static.wixstatic.com/media/bf78a9_63184a68c2974142a13024cf634f6d33~mv2.png"
-                  alt="Cambridge Judge"
-                  className="h-6 w-auto object-contain opacity-40 grayscale transition-all hover:grayscale-0 hover:opacity-100"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 3. OUTCOMES ─── */
-function Outcomes() {
-  const items = [
+  const dayDetails: Record<
+    number,
     {
-      icon: <Globe2 className="h-6 w-6" />,
-      title: "Gain Cambridge Insights",
-      desc: "Learn cutting-edge leadership frameworks shaped by Cambridge expertise, designed for the Indian business environment.",
-    },
-    {
-      icon: <Cpu className="h-6 w-6" />,
-      title: "Master AI & Innovation",
-      desc: "Discover how to use AI, digital strategy, and frugal innovation to stay competitive in fast-changing markets.",
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Expand Your Global Network",
-      desc: "Connect with peers, academics, and organisations across the UK–India corridor to unlock new opportunities.",
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6" />,
-      title: "Elevate Your Leadership Presence",
-      desc: "Sharpen your communication, negotiation, and financial strategy skills to lead with confidence.",
-    },
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: "Get Certified by World's Leading University",
-      desc: "Earn a prestigious Cambridge certification, enhancing your credibility and global leadership profile.",
-    },
-    {
-      icon: <Briefcase className="h-6 w-6" />,
-      title: "Leverage India-UK Free Trade Agreement",
-      desc: "Position your business to seize India-UK free trade opportunities, driving cross-border growth.",
-    },
-  ];
-  return (
-    <section className="bg-forest-deep py-24 relative overflow-hidden">
-      {/* decorative dark grid for premium feel */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-8 bg-gold" />
-            <span className="text-[15px] font-bold uppercase tracking-[0.3em] text-gold">
-              Programme Outcomes
-            </span>
-            <div className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white leading-tight">
-            As a GILP participant, you will
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((item, i) => (
-            <div
-              key={i}
-              className="group bg-[#F5EFD8] rounded-2xl p-7 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-[#FDFBF7] transition-all duration-300"
-            >
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-gold-deep mb-5 group-hover:bg-gold/25 group-hover:scale-110 transition-all duration-300">
-                {item.icon}
-              </div>
-              <h3 className="text-[17px] font-bold text-forest-deep mb-3">{item.title}</h3>
-              <p className="text-[14.5px] text-forest/75 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 4. CURRICULUM ─── */
-function Curriculum() {
-  const modules = [
-    {
-      num: "Module 1",
-      title: "Leadership & Strategy",
-      items: [
-        "Discover leadership styles and frameworks in the Indian and global context",
-        "Master strategic frameworks built for the AI-driven business era",
-        "Use AI simulations to model business scenarios and growth opportunities",
-        "Design and implement blue ocean strategies for sustainable advantage",
+      title: string;
+      subtitle: string;
+      faculty: string;
+      venue: string;
+      highlights: string[];
+      img: string;
+    }
+  > = {
+    1: {
+      title: "DAY 01 — Arriving at Cambridge",
+      subtitle: "Collegiate Arrival, Punting on the Cam & Strategic Charter",
+      faculty: "Prof. Jaideep Prabhu & GEL Leadership Directorate",
+      venue: "King's College & Trinity Backs, Cambridge",
+      highlights: [
+        "Arrival at historic Cambridge colleges and check-in to executive lodgings",
+        "Executive cohort orientation and setting the confidential strategic charter",
+        "Private punting on the River Cam through historic college backs and bridges",
+        "Cambridge Welcome Banquet in the Fellow's Garden",
       ],
+      img: cambridgeBridgeImg,
     },
-    {
-      num: "Module 2",
-      title: "AI & Frugal Innovation",
-      items: [
-        "Explore practical AI applications for cost-effective innovation",
-        'Learn how to "do more with less" through lean AI strategies',
-        "Develop responsible, ethical AI adoption practices",
-        "Build scalable, budget-conscious AI roadmaps for your organisation",
+    2: {
+      title: "DAY 02 — Technology, Economics and Innovation",
+      subtitle: "Frontier AI, Macroeconomic Shifts & Global Disruption",
+      faculty: "Prof. Shasha Lu, Prof. Kamiar Mohaddes, Dr. Elizabeth Osta",
+      venue: "Cambridge Judge Business School Lecture Chambers",
+      highlights: [
+        "Deciphering AI beyond the hype: Operational & Strategic deployment",
+        "Macroeconomic turbulence, currency volatility and resilient strategy",
+        "Interactive case simulation on digital transformation at scale",
+        "Formal Hall Dinner discussion inside historic Cambridge college dining hall",
       ],
+      img: guyDozaImg,
     },
-    {
-      num: "Module 3",
-      title: "Branding, Marketing & Digital Innovation",
-      items: [
-        "Harness the power of storytelling to strengthen brand equity",
-        "Design customer-centric innovation strategies that fuel growth",
-        "Leverage data, analytics, and AI to create measurable business value",
-        "Explore ESG marketing and emerging technology trends shaping the future",
+    3: {
+      title: "DAY 03 — Governance, Strategy and Brand",
+      subtitle: "Boardroom Dynamics, Fiduciary Accountability & Brand Sovereignty",
+      faculty: "Prof. Raghavendra Rau, Prof. Lionel Paolella, Prof. Eden Yin",
+      venue: "Cambridge Judge Executive Boardroom",
+      highlights: [
+        "Modern corporate governance & boardroom decision frameworks",
+        "Competitive strategy: Building long-term defensible enterprise moats",
+        "Brand architecture, positioning and reputation in high-stakes markets",
+        "Cohort breakout strategic challenge workshop addressing live peer problems",
       ],
+      img: glipClassroomImg,
     },
-    {
-      num: "Module 4",
-      title: "Public Speaking & The Art of Negotiation",
-      items: [
-        "Master public speaking, pitching, and persuasive communication",
-        "Learn storytelling techniques for impact and engagement",
-        "Participate in strategic negotiation role-plays to refine deal-making skills",
-        "Build confidence to communicate vision and strategy across stakeholders",
+    4: {
+      title: "DAY 04 — Leadership at Lord's",
+      subtitle: "Signature Off-Site Day at Lord's Cricket Ground, London",
+      faculty: "Julian Metherell, Guy Doza, Lord Uday Nagaraju, Rt Hon Paul Scully",
+      venue: "The Pavilion & Long Room, Lord's Cricket Ground, London",
+      highlights: [
+        "Private executive boardroom sessions inside Lord's Pavilion, London",
+        "Leadership lessons from elite sport, high performance & pressure management",
+        "Executive rhetoric, persuasion and influence language masterclass",
+        "Tech governance & policy dialogue with UK parliamentarians and ministers",
       ],
+      img: lordCricketImg,
     },
-    {
-      num: "Module 5",
-      title: "Finance, Governance & Boardroom Dynamics",
-      items: [
-        "Understand corporate governance as an information and decision-making challenge",
-        "Navigate boardroom dynamics with confidence and influence",
-        "Link brand strategy to financial performance for shareholder value",
-        "Design financial strategies for global expansion and sustainable growth",
+    5: {
+      title: "DAY 05 — From Leadership to Global Opportunity",
+      subtitle: "Frugal Innovation, Diplomatic Roundtable & Cambridge Graduation",
+      faculty: "Prof. Jaideep Prabhu, Prof. Thomas Roulet, H.E. Kumaran Periasamy",
+      venue: "Cambridge Judge Business School & Bilateral Chambers",
+      highlights: [
+        "Frugal Innovation: Multiplying enterprise impact with disciplined capital",
+        "Executive wellbeing, mental stamina and enduring organizational health",
+        "Special bilateral dialogue with H.E. Kumaran Periasamy, Indian High Commissioner to the UK",
+        "Formal Cambridge graduation ceremony and conferral of CJBS Certificate",
       ],
+      img: personHighCommImg,
     },
-    {
-      num: "Module 6",
-      title: "Cambridge Traditions & Global Networking",
-      items: [
-        "Explore Cambridge's history and culture through guided experiences like punting",
-        "Engage with world-renowned academics during exclusive formal dinners",
-        "Build a global peer network of CXOs and thought leaders",
-        "Reflect and recharge in an environment that fosters big-picture thinking",
-      ],
-    },
-  ];
-  return (
-    <section className="bg-[#F5F0E0] py-20">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="mb-12">
-          <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-forest-deep">
-            Programme Curriculum
-          </h2>
-          <p className="mt-3 text-[15px] text-forest/80 max-w-2xl leading-relaxed">
-            Six core modules delivering the complete toolkit for Indian CXOs leading high-growth
-            organisations in a global, AI-driven landscape.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {modules.map((m, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1.5 transition-all duration-500 relative overflow-hidden border border-forest/5"
-            >
-              {/* Premium top accent */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold to-gold/40 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+  };
 
-              {/* Header section */}
-              <div className="mb-6 pb-5 border-b border-forest/5">
-                <div className="flex items-center gap-2.5 mb-3">
-                  <div className="h-px w-4 bg-gold" />
-                  <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold">
-                    {m.num}
-                  </p>
-                </div>
-                <h3 className="text-[18px] font-bold text-forest-deep leading-snug group-hover:text-gold-deep transition-colors duration-300">
-                  {m.title}
-                </h3>
-              </div>
-
-              {/* List items */}
-              <ul className="space-y-3.5">
-                {m.items.map((item, k) => (
-                  <li
-                    key={k}
-                    className="flex items-start gap-3 text-[14.5px] text-forest/75 leading-relaxed"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold/60 shrink-0 group-hover:bg-gold transition-colors duration-300" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 5. LORD'S CRICKET ─── */
-function LordsCricket() {
-  return (
-    <section className="bg-forest-deep py-20 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold mb-3">
-              Signature Experience
-            </p>
-            <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-white leading-tight mb-5">
-              Leadership at Lord's Cricket Ground
-            </h2>
-            <p className="text-[15px] text-cream/75 leading-relaxed mb-8">
-              Gather at the Home of Cricket for an exclusive leadership session, private tour and
-              networking lunch. The programme includes a leadership session inspired by the
-              principles of high-performance sport, a private networking lunch with senior business
-              leaders and academics, and an exclusive behind-the-scenes tour of the Home of Cricket.
-            </p>
-            <div className="grid grid-cols-2 gap-3 mb-8">
-              {[
-                { t: "High-Performance Leadership", d: "Lessons from elite sport" },
-                { t: "Private Tour", d: "Exclusive access to Lord's" },
-                { t: "Senior Networking", d: "Business leaders & academics" },
-                { t: "Signature Day", d: "A leadership experience with impact" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[15px] font-bold text-gold mb-1">{item.t}</p>
-                  <p className="text-[15px] text-white/80">{item.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[340px]">
-            <img
-              src="https://static.wixstatic.com/media/bf78a9_f7d441ce1b8844f5937f3f3b085080b4~mv2.jpg"
-              alt="Lord's Cricket Ground — Home of Cricket"
-              className="w-full h-full object-cover min-h-[340px] hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 to-transparent" />
-            <div className="absolute bottom-5 left-5">
-              <p className="text-[13px] font-bold uppercase tracking-[0.25em] text-gold mb-1">
-                Lord's Cricket Ground
-              </p>
-              <p className="text-white text-[14px] font-semibold">
-                London, UK · A signature leadership day
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 5.5 LORDS MARQUEE ─── */
-function LordsMarquee() {
-  const items = [
-    {
-      icon: <Quote className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />,
-      text: "Signature Leadership Day",
-    },
-    {
-      icon: <Users className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />,
-      text: "Leadership Session",
-    },
-    {
-      icon: <Utensils className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />,
-      text: "Networking Lunch",
-    },
-    {
-      icon: <Landmark className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />,
-      text: "Private Tour",
-    },
-    {
-      icon: <Castle className="h-11 w-11 mx-auto text-gold mb-3 stroke-[1.5]" />,
-      text: "Iconic Venue",
-    },
-  ];
-  // animate-marquee translates by -33.33%, so we need 3 sets to scroll infinitely without gap
-  const repeatedItems = [...items, ...items, ...items];
+  const current = dayDetails[dayIndex] || dayDetails[1];
 
   return (
-    <section className="bg-white py-12 border-b border-forest/10 overflow-hidden relative">
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-      <div className="animate-marquee flex items-center">
-        {repeatedItems.map((item, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center justify-center shrink-0 w-[260px] px-4 border-r border-forest/10"
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-3xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-forest/10"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative aspect-[21/9] bg-forest-deep">
+          <img
+            src={current.img}
+            alt={current.title}
+            className="w-full h-full object-cover opacity-65"
+          />
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white hover:bg-white hover:text-black transition-colors cursor-pointer"
           >
-            {item.icon}
-            <p className="text-[15px] font-bold text-forest-deep uppercase tracking-[0.1em] text-center">
-              {item.text}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ─── 6. PROFESSOR QUOTE ─── */
-function ProfessorQuote() {
-  return (
-    <section className="bg-[#F7EED5] py-20 border-b border-forest/5">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-12">
-          From the Programme Director
-        </h2>
-        <div className="grid md:grid-cols-[260px_1fr] gap-12 items-center">
-          <div className="w-56 h-56 mx-auto md:mx-0 rounded-full overflow-hidden border-[6px] border-white/40 shadow-xl shrink-0">
-            <img
-              src="https://static.wixstatic.com/media/bf78a9_088f72ce32904001b0be82d287f69ba0~mv2.jpg"
-              alt="Prof. Jaideep Prabhu"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <span className="text-[4rem] text-forest-deep leading-none font-serif block h-10 -mt-8 mb-4">
-              “
+            <X className="h-4 w-4" />
+          </button>
+          <div className="absolute bottom-4 left-6 right-6">
+            <span className="text-[11px] font-bold tracking-[0.2em] text-gold uppercase bg-black/60 px-2.5 py-1 rounded">
+              PROGRAMME CURRICULUM
             </span>
-            <blockquote className="text-[16px] md:text-[17px] text-forest-deep leading-relaxed mb-6 font-medium">
-              The Global India Leadership Programme is about more than learning — it's about
-              transformation. At Cambridge Judge Business School, we give leaders the tools to think
-              creatively, harness AI and innovation, and shape the future of their organisations in
-              a rapidly changing world.
-            </blockquote>
-            <p className="text-[15px] text-forest-deep font-semibold italic">
-              — Prof. Jaideep Prabhu, Vice Dean & Jawaharlal Nehru Professor of Business &
-              Enterprise, Cambridge Judge Business School
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 7. PROGRAMME STRUCTURE ─── */
-function ProgrammeStructure() {
-  const phases = [
-    {
-      num: "01",
-      phase: "Pre-Programme Assessment",
-      date: "Prior to Programme",
-      color: "bg-gold",
-      items: [
-        "An initial assessment by GEL's academic researchers to tailor AI sessions for participants",
-        "Pre reading material and pre-programme assessment shared prior to programme start",
-        "Cohort onboarding & introductions",
-      ],
-    },
-    {
-      num: "02",
-      phase: "Residential Week",
-      date: "5-Day Immersive",
-      color: "bg-forest",
-      items: [
-        "14–18 September — 5-day residential week at Cambridge Judge Business School",
-        "A dynamic week packed with academic insights and global networking opportunities",
-        "Day 4 (17 Sept): Leadership session at Lord's Cricket Ground, London",
-      ],
-    },
-    {
-      num: "03",
-      phase: "Post-Programme Report",
-      date: "6 Months Post-Programme",
-      color: "bg-forest-deep",
-      items: [
-        "6 Months Post-Programme - GEL will measure the impact on your organisation's growth",
-        "Receive a comprehensive assessment report to help in your leadership journey",
-        "Continued access to Cambridge alumni network",
-      ],
-    },
-  ];
-  return (
-    <section className="bg-[#FAF8F5] py-24 border-y border-forest/5">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="mb-14 text-center">
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep">
-            Three phases, one transformation.
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {phases.map((ph, i) => (
-            <div
-              key={i}
-              className="group rounded-2xl bg-white shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 overflow-hidden hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1.5 transition-all duration-500 relative"
-            >
-              {/* Thicker premium top accent */}
-              <div
-                className={`h-1.5 w-full ${ph.color} opacity-90 group-hover:opacity-100 transition-opacity`}
-              />
-
-              <div className="p-8 relative">
-                {/* Premium Watermark Number */}
-                <div className="absolute top-4 right-6 text-[4.5rem] font-bold text-forest/5 font-serif leading-none select-none group-hover:text-gold/10 transition-colors duration-500">
-                  {ph.num}
-                </div>
-
-                <div className="relative z-10">
-                  <h3 className="text-[19px] font-bold text-forest-deep mb-1.5 group-hover:text-gold-deep transition-colors duration-300">
-                    {ph.phase}
-                  </h3>
-                  <p className="text-[13.5px] uppercase tracking-wide text-gold font-bold mb-6">
-                    {ph.date}
-                  </p>
-
-                  <ul className="space-y-4">
-                    {ph.items.map((item, k) => (
-                      <li
-                        key={k}
-                        className="flex items-start gap-3 text-[14.5px] text-forest/75 leading-relaxed"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold/60 shrink-0 group-hover:bg-gold transition-colors duration-300" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 8. FACULTY ─── */
-function Faculty() {
-  const faculty = [
-    {
-      img: "https://static.wixstatic.com/media/bf78a9_356aa9f0ffc943199a9db3d6b68c9b64~mv2.jpg",
-      name: "Prof. Jaideep Prabhu",
-      role: "Programme Director & Faculty – Frugal Innovation",
-    },
-    {
-      img: "https://static.wixstatic.com/media/ff608f_0b9dd7af10ee485baf6441b9fef2416e~mv2.jpg",
-      name: "Cambridge Faculty",
-      role: "Facilitator – Customer-Centric Innovation in the AI Era",
-    },
-    {
-      img: "https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg",
-      name: "Cambridge Faculty",
-      role: "Facilitator – Leadership & Strategy",
-    },
-    {
-      img: "https://static.wixstatic.com/media/bf78a9_23c128d7b28c45d2970bedb4a85b2927~mv2.jpeg",
-      name: "Cambridge Faculty",
-      role: "Facilitator – Corporate Governance",
-    },
-    {
-      img: "https://static.wixstatic.com/media/bf78a9_ca1aa471265b4f4eabc1cda72c39b667~mv2.jpg",
-      name: "Cambridge Faculty",
-      role: "Facilitator – Building Branding Strategy",
-    },
-    {
-      img: "https://static.wixstatic.com/media/bf78a9_902fda2ddbb34a3bb49561c9721950a7~mv2.jpg",
-      name: "Cambridge Faculty",
-      role: "Facilitator – Boardroom Dynamics",
-    },
-  ];
-  const repeatedFaculty = [...faculty, ...faculty, ...faculty];
-
-  return (
-    <section className="bg-forest-deep py-12 border-t border-forest/20 overflow-hidden relative">
-      <div className="text-center mb-10 relative z-20">
-        <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-white">
-          Learn from Cambridge's finest
-        </h2>
-        <p className="mt-3 text-[15px] font-medium text-white/70 max-w-lg mx-auto">
-          World-class academics and practitioners from Cambridge Judge Business School.
-        </p>
-      </div>
-
-      <div className="relative flex">
-        <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-forest-deep via-forest-deep/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-forest-deep via-forest-deep/90 to-transparent z-10 pointer-events-none" />
-
-        <div className="animate-[marquee_40s_linear_infinite] flex items-start">
-          {repeatedFaculty.map((f, i) => (
-            <div key={i} className="group text-center shrink-0 w-[280px] px-6">
-              <div className="w-28 h-28 mx-auto mb-5 rounded-full overflow-hidden border-[5px] border-white/10 shadow-lg group-hover:border-gold/50 transition-colors duration-300 relative">
-                <img
-                  src={f.img}
-                  alt={f.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <h3 className="text-[16px] font-bold text-white">{f.name}</h3>
-              <p className="text-[13.5px] text-gold font-semibold mt-1.5 leading-snug">{f.role}</p>
-              <p className="text-[12.5px] text-white/80 mt-1.5 font-medium">
-                Cambridge Judge Business School
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 9. ADMISSION CRITERIA & DEADLINES ─── */
-function WhoShouldAttend() {
-  return (
-    <section className="bg-[#FAF8F5] py-24 border-y border-forest/5 relative overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="text-center mb-16">
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-5">
-            Admission Criteria & Next Steps
-          </h2>
-          <p className="text-[15px] font-medium text-forest/70 italic max-w-2xl mx-auto">
-            “The right opportunity often starts with the right conversation.”
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Next Steps Card */}
-          <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/80 to-gold transition-opacity duration-300" />
-            <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">
-              Next Steps
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">
+              {current.title}
             </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
-                <span className="text-[14.5px] font-bold text-forest-deep">Step 1</span>
-                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">
-                  Connect with our team
-                </span>
-              </li>
-              <li className="flex items-center justify-between p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 transition-colors group-hover:border-gold/20">
-                <span className="text-[14.5px] font-bold text-forest-deep">Step 2</span>
-                <span className="text-[14px] font-bold text-gold-deep bg-gold/10 px-3 py-1 rounded-full">
-                  Receive tailored guidance
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Who Should Attend Card */}
-          <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500 md:col-span-2">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-forest-deep transition-opacity duration-300" />
-            <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">
-              Who Should Attend
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
-              {[
-                "Board members & CXOs scaling globally",
-                "Founders entering new markets",
-                "Family Business Leaders navigating succession and growth",
-                "Government Agencies engaging with private sector development",
-                "Senior Management targeting Leadership roles in private sector",
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                  <p className="text-[14.5px] font-medium text-forest/75 leading-relaxed">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Selective Criteria Card */}
-          <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(10,48,29,0.08)] hover:-translate-y-1 transition-all duration-500 md:col-span-3">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-forest/80 transition-opacity duration-300" />
-            <h3 className="text-[19px] font-bold text-forest-deep mb-7 pb-4 border-b border-forest/5">
-              Admission is selective and based on:
-            </h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                "Professional achievement",
-                "Organisational responsibility",
-                "Alignment with the programme's objectives",
-                "Space availability",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-[#FAF8F5] border border-forest/5 group-hover:bg-white group-hover:border-forest/10 transition-all duration-300"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-gold shrink-0" />
-                  <p className="text-[15px] font-bold text-forest-deep leading-snug">{item}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ─── 10. PACKAGES ─── */
-function Packages() {
-  const packages = [
-    {
-      name: "Package 1",
-      subtitle: "Basic Programme",
-      price: "£5100",
-      priceNote: "(inclusive of all taxes)",
-      detail: "– Without accommodation",
-      suitability: "suitable for individuals",
-      highlight: false,
-    },
-    {
-      name: "Package 2",
-      subtitle: "Programme + Accommodation",
-      price: "£6300",
-      priceNote: "(inclusive of all taxes)",
-      detail: "– With Single accommodation (4-star or equivalent)",
-      suitability: "suitable for individuals",
-      highlight: true,
-    },
-    {
-      name: "Package 3",
-      subtitle: "Programme + Accommodation (double)",
-      price: "£6500",
-      priceNote: "(inclusive of all taxes)",
-      detail: "– With Double accommodation (4-star or equivalent)",
-      suitability: "suitable if bringing spouse",
-      highlight: false,
-    },
-  ];
-
-  const inclusions = [
-    "Tuition fee",
-    "Cambridge traditional Formal dinner invite – 1",
-    "Snacks/Tea/Coffee and Lunch on all days",
-    "Sight seeing, cultural activities in Cambridge",
-    "Participation certificate from Cambridge Judge Business School",
-  ];
-
-  return (
-    <section className="bg-[#EDE0C4] py-24 border-t border-[#C8B89A]/40">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="mb-16">
-          <p className="text-[11.5px] font-bold uppercase tracking-[0.3em] text-gold/80 mb-4">
-            Cambridge Judge Business School
-          </p>
-          <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-forest-deep leading-tight">
-            Programme packages
-            <br className="hidden md:block" /> and Inclusions
-          </h2>
-          <div className="mt-5 h-px w-16 bg-gold/60" />
-          <p className="mt-5 text-[15px] italic text-forest/70">
-            *Programme fees are tailored based on package options and group size.
-          </p>
-        </div>
-
-        {/* Package cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
-          {packages.map((pkg, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(10,48,29,0.08)] transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(10,48,29,0.14)] bg-white ${pkg.highlight ? "ring-2 ring-gold" : ""}`}
-            >
-              <div
-                className={`h-1 w-full ${pkg.highlight ? "bg-gradient-to-r from-gold via-amber-400 to-gold" : "bg-forest-deep/10"}`}
-              />
-              <div className="p-8 relative">
-                <span className="absolute top-6 right-6 text-gold/80 text-3xl select-none font-serif">
-                  ✦
-                </span>
-                <p className="text-[10.5px] font-bold uppercase tracking-[0.35em] text-gold mb-4">
-                  {pkg.name}
-                </p>
-                <h3 className="text-[17px] font-bold text-forest-deep mb-5 leading-snug pr-6">
-                  {pkg.subtitle}
-                </h3>
-                <div className="border-t border-forest/8 pt-5 mb-5">
-                  <p className="text-[28px] font-bold text-forest-deep tracking-tight">
-                    {pkg.price}
-                  </p>
-                  <p className="text-[15px] text-forest/80 mt-1 font-medium">{pkg.priceNote}</p>
-                </div>
-                <p className="text-[15px] text-forest/80 mt-1 leading-relaxed">{pkg.detail}</p>
-                <p className="text-[15px] text-gold font-bold italic mt-4">{pkg.suitability}</p>
-                <Link
-                  to="/contact"
-                  search={{ source: "GILP — Enquire Now" }}
-                  className={`mt-8 w-full inline-flex items-center justify-center gap-2 rounded-lg py-3.5 text-[12.5px] font-bold uppercase tracking-[0.18em] transition-all duration-200 ${pkg.highlight ? "bg-forest-deep text-white hover:bg-forest shadow-md" : "border-2 border-forest-deep/20 text-forest-deep hover:border-gold hover:bg-[#EDE0C4]"}`}
-                >
-                  Enquire Now <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Inclusions + photos */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16 bg-white/50 rounded-3xl p-10 shadow-[0_4px_30px_rgba(10,48,29,0.05)] border border-white/80 backdrop-blur-sm">
+        <div className="p-6 sm:p-8 space-y-5">
           <div>
-            <h3 className="text-[20px] font-bold text-forest-deep mb-6">
-              Basic Programme Inclusions
-            </h3>
-            <ul className="space-y-3">
-              {inclusions.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-[14.5px] text-forest/75 leading-relaxed"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  {item}
+            <p className="text-base font-serif italic text-forest/85 font-medium">
+              {current.subtitle}
+            </p>
+            <p className="text-xs font-bold text-gold-deep uppercase tracking-wider mt-1.5">
+              Key Facilitators: {current.faculty}
+            </p>
+            <p className="text-xs text-forest/70 font-medium mt-0.5">Venue: {current.venue}</p>
+          </div>
+
+          <div className="space-y-3 pt-3 border-t border-forest/10">
+            <h4 className="text-[13px] font-bold uppercase tracking-wider text-forest-deep">
+              Day Highlights & Sessions
+            </h4>
+            <ul className="space-y-2.5">
+              {current.highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-3 text-[14px] text-forest/85">
+                  <span className="h-2 w-2 rounded-full bg-gold-deep mt-2 shrink-0" />
+                  <span>{h}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Overlapping photos */}
-          <div className="relative h-[320px]">
-            <img
-              src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
-              alt="Cambridge programme"
-              className="absolute top-0 left-6 w-[62%] aspect-[4/3] object-cover rounded-xl shadow-lg border-4 border-white"
-              loading="lazy"
-            />
-            <img
-              src="https://static.wixstatic.com/media/bf78a9_6f1c40ca8e404151a86715668099233c~mv2.jpg"
-              alt="Cambridge formal dinner"
-              className="absolute bottom-0 right-0 w-[62%] aspect-[4/3] object-cover rounded-xl shadow-xl border-4 border-white"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 10b. ACCOMMODATION IN CAMBRIDGE ─── */
-function AccommodationSection() {
-  const hotels = [
-    {
-      src: graduateImg,
-      alt: "Graduate by Hilton",
-      name: "Graduate by Hilton",
-      walk: "6 mins walk",
-      stars: "★★★★",
-      link: "https://www.hilton.com/en/hotels/stngagu-graduate-cambridge/",
-    },
-    {
-      src: hiltonImg,
-      alt: "Hilton Cambridge City Centre",
-      name: "Hilton Cambridge City Centre",
-      walk: "7 mins walk",
-      stars: "★★★★",
-      link: "https://www.hilton.com/en/hotels/stnhchi-hilton-cambridge-city-centre/",
-    },
-    {
-      src: hotelDuVinImg,
-      alt: "Hotel du Vin",
-      name: "Hotel du Vin",
-      walk: "2 mins walk",
-      stars: "★★★★",
-      link: "https://www.hotelduvin.com/locations/cambridge/",
-    },
-    {
-      src: universityArmsImg,
-      alt: "University Arms Hotel",
-      name: "University Arms Hotel",
-      walk: "11 mins walk",
-      stars: "★★★★",
-      link: "https://universityarms.com/",
-    },
-  ];
-
-  return (
-    <section className="bg-[#FAF8F5] py-24 border-y border-forest/5 relative overflow-hidden">
-      {/* Decorative background blobs */}
-      <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-forest/5 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-4">
-            Packages 2 &amp; 3
-          </span>
-          <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-forest-deep mb-4">
-            Accommodation in Cambridge
-          </h2>
-          <p className="text-[15px] text-forest/80 leading-relaxed max-w-2xl mx-auto">
-            Accommodation will be booked based on availability in 4-star hotels in close proximity
-            to Cambridge Judge Business School.
-          </p>
-        </div>
-
-        {/* Hotel cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {hotels.map((hotel, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(10,48,29,0.06)] border border-forest/5 hover:shadow-[0_20px_50px_rgba(10,48,29,0.12)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col"
-            >
-              {/* Gold accent top bar */}
-              <div className="h-1 w-full bg-gradient-to-r from-gold/70 via-gold to-gold/50" />
-
-              {/* Hotel image */}
-              <div className="relative overflow-hidden">
-                <img
-                  src={hotel.src}
-                  alt={hotel.alt}
-                  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Card body */}
-              <div className="p-5 flex flex-col flex-1">
-                <p className="text-[13px] text-gold tracking-widest mb-1">{hotel.stars}</p>
-                <h3 className="text-[15px] font-bold text-forest-deep leading-snug mb-4">
-                  {hotel.name}
-                </h3>
-
-                {/* Walk badge */}
-                <div className="bg-forest-deep text-white text-[13px] font-medium px-3.5 py-2.5 rounded-xl flex items-center justify-center gap-2 mb-4 shadow-sm">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 shrink-0 text-gold"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
-                  </svg>
-                  <span className="truncate">{hotel.walk} from Judge Business School</span>
-                </div>
-
-                <a
-                  href={hotel.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-forest-deep/15 text-forest-deep text-[15px] font-bold uppercase tracking-[0.12em] py-2.5 hover:bg-forest-deep hover:text-white hover:border-forest-deep transition-all duration-300"
-                >
-                  Check Hotel Website
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3.5 w-3.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <p className="text-center text-[15px] text-forest/80 mt-10 italic">
-          * Accommodation is subject to availability. Hotel allocation confirmed upon enrolment.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 10.5. COHORT GALLERY ─── */
-function CohortGallery() {
-  const allImages = [
-    gilpCohort1,
-    gilpCohort2,
-    gilpCohort3,
-    gilpCohort4,
-    gilpCohort5,
-    gilpCohort6,
-    gilpCohort7,
-    gilpCohort8,
-    gilpCohort9,
-    gilpCohort10,
-    gilpCohort11,
-    gilpCohort12,
-    gilpCohort13,
-    gilpCohort14,
-    gilpCohort15,
-    gilpCohort16,
-    gilpCohort17,
-    cohort1Img,
-    cohort2Img,
-    cohort3Img,
-    cohort4Img,
-    cohort5Img,
-    cohort6Img,
-    cohort7Img,
-    cohort8Img,
-    cohort9Img,
-  ];
-  const [visibleCount, setVisibleCount] = useState(6);
-
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 6, allImages.length));
-  };
-
-  return (
-    <section className="bg-white py-24 border-t border-forest/5 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.24em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-3">
-              Featured Cohort Highlights
-            </span>
-            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold text-forest-deep leading-tight">
-              Moments from Cambridge Judge Business School
-            </h2>
-          </div>
-          <p className="text-[15px] text-forest/75 max-w-md">
-            Capturing our delegates, board members and distinguished guests during the Global India
-            Leadership Programme.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allImages.slice(0, visibleCount).map((img, idx) => (
-            <div
-              key={idx}
-              className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-forest/8 aspect-[4/3] bg-forest-deep/5"
-            >
-              <img
-                src={img}
-                alt={`GILP Cohort ${idx + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <span className="text-white text-[13px] font-bold tracking-wider uppercase bg-gold/90 text-forest-deep px-3 py-1 rounded-full backdrop-blur-sm shadow">
-                  Cambridge Judge
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {visibleCount < allImages.length && (
-          <div className="mt-12 text-center">
+          <div className="pt-4 border-t border-forest/10 flex justify-end">
             <button
-              onClick={handleLoadMore}
-              className="inline-flex items-center gap-2 bg-forest-deep text-white px-8 py-3.5 rounded-full text-[14px] font-bold uppercase tracking-[0.15em] hover:bg-gold hover:text-forest-deep transition-all duration-300 shadow-md hover:shadow-xl"
+              onClick={onClose}
+              className="rounded-xl bg-forest-deep text-white px-7 py-2.5 text-sm font-semibold hover:bg-forest transition-colors cursor-pointer"
             >
-              Load More Photos <ArrowUpRight className="h-4 w-4" />
+              Close
             </button>
           </div>
-        )}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 
-/* ─── 11. ALUMNI TESTIMONIALS ─── */
-function AlumniTestimonials() {
-  const alumni = [
-    {
-      name: "Snigdha Manchanda",
-      role: "Founder, TeaTrunk (India)",
-      quote:
-        "This programme helped articulate something critical: leadership is also about language. It equips founders to translate their journey into frameworks that resonate with investors and stakeholders. That shift, from building to being understood, unlocks the next level of growth and influence.",
-      img: alumni1Img,
-    },
-    {
-      name: "Dr. Fatin Al Zadjali",
-      role: "L&D Head - Bank Dhofar (Oman)",
-      quote:
-        "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
-      img: alumni2Img,
-    },
-    {
-      name: "Johannes Samwer",
-      role: "MD, Rhenus Lub (Germany)",
-      quote:
-        "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
-      img: alumni3Img,
-    },
-    {
-      name: "Dr. Aashish Chaudhry",
-      role: "MD, Aakash Healthcare (India)",
-      quote:
-        'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.',
-      img: alumni4Img,
-    },
-    {
-      name: "Dr. Johannes Mario Schmidt",
-      role: "MD, Lingel Windows and Doors Technologies (India)",
-      quote:
-        "A dynamic and engaging programme that brings together like-minded global leaders. The blend of sessions and discussion creates continuous learning opportunities. Even early into the programme, the value of connections and insights is clear, highly recommend joining if you get the chance.",
-      img: alumni5Img,
-    },
-    {
-      name: "Bidisha Bannerjee",
-      role: "Partner, TalentElement (India)",
-      quote:
-        "Beyond classroom learning, the programme transformed how I see leadership. The real impact came through conversations, diverse perspectives, and shared curiosity. It reinforced that meaningful learning happens in exchange and reflection, where ideas evolve and new possibilities quietly take shape.",
-      img: alumniBidishaImg,
-    },
-    {
-      name: "Sam Tully",
-      role: "Trustee, Pratham (UK)",
-      quote:
-        "A week of intensive, high-quality learning across innovation, AI, governance, and strategy. The programme's structure, faculty expertise, and diverse perspectives made it deeply impactful. It provided both big-picture insights and practical takeaways for navigating global business. It felt like a Rolls Royce.",
-      img: alumniSamImg,
-    },
-    {
-      name: "Rama Shankar Pandey",
-      role: "MD, Work With Dignity (India)",
-      quote:
-        "Walking through Cambridge's historic corridors is a humbling reminder of the power of ideas and lifelong learning. The programme reinforced that true leadership comes from curiosity, diverse perspectives, and purpose-driven collaboration. It's an experience that inspires you to keep questioning, learning, and growing.",
-      img: alumniRamaImg,
-    },
-    {
-      name: "Anand Rao",
-      role: "Partner, Tiger Analytics (UK)",
-      quote:
-        "The programme offered a powerful lens on leadership shaped by AI, sustainability, and geopolitics. Engaging with global peers and faculty, one insight stood out: future leaders must blend technological fluency with disciplined capital stewardship. Cambridge leaves you more curious, reflective, and prepared for complex decisions ahead.",
-      img: alumniAnandImg,
-    },
-    {
-      name: "Parag Bawdekar",
-      role: "MD, Pacific Blue Cargo Pvt Ltd",
-      quote:
-        "The programme strengthened the leadership and AI capabilities needed to succeed in a fast-changing global business environment. It offered valuable perspectives on strategic decision-making, communication, innovation, and responsible technology adoption, equipping me with the skills to guide teams, and lead with greater confidence.",
-      img: alumniParagImg,
-    },
-  ];
-
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const onMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollRef.current?.scrollLeft || 0);
-  };
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 1.5;
-    if (scrollRef.current) scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-  const onMouseUp = () => setIsDragging(false);
+function MomentModal({ moment, onClose }: { moment: any | null; onClose: () => void }) {
+  if (!moment) return null;
 
   return (
-    <section className="bg-white py-24 border-t border-forest/5">
-      <div className="mx-auto w-[96%] xl:max-w-[1400px]">
-        <div className="text-center mb-16">
-          <h2 className="text-[2rem] md:text-[2.2rem] font-bold text-forest-deep mb-2">
-            What Our Alumni Say
-          </h2>
-          <p className="text-[1.3rem] md:text-[1.5rem] text-forest/80 font-normal">
-            "Leadership Learning That Feels Like a Rolls Royce"
-          </p>
-          <p className="text-[13px] text-forest/50 mt-3 flex items-center justify-center gap-1.5">
-            <span>←</span> Drag to explore <span>→</span>
-          </p>
-        </div>
-        <div
-          ref={scrollRef}
-          className={`flex gap-6 overflow-x-auto pb-4 select-none scrollbar-hide ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
-        >
-          {alumni.map((a, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center text-center flex-shrink-0 w-[220px] md:w-[240px]"
-            >
-              <div className="h-[90px] w-[90px] rounded-full overflow-hidden mb-5 shadow-sm border border-forest/10">
-                <img
-                  src={a.img}
-                  alt={a.name}
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                  loading="lazy"
-                />
-              </div>
-              <span className="text-[2.5rem] text-forest-deep leading-none font-serif block h-6 mb-3">
-                "
-              </span>
-              <h3 className="text-[13.5px] font-bold text-forest-deep leading-tight mb-1">
-                {a.name}
-              </h3>
-              <p className="text-[11.5px] text-forest/80 mb-5">{a.role}</p>
-              <p className="text-[12.5px] text-forest-deep/80 leading-[1.7] hyphens-auto">
-                {a.quote}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 12. FAQ ─── */
-function FAQ() {
-  const faqs = [
-    {
-      q: "Who should apply to GILP?",
-      a: "GILP is designed for board members, CEOs, founders, senior leaders, and government officials from India who are looking to scale globally, navigate AI disruption, and reimagine their leadership approach through a Cambridge lens.",
-    },
-    {
-      q: "What is included in the programme fee?",
-      a: "The basic programme fee includes all teaching, workshops and seminars, breakfast and daytime catering, the Lord's Cricket Ground session and private tour, a Cambridge college formal dinner, pre-programme materials and assessment, post-programme impact report, Cambridge certificate, and lifelong alumni network access.",
-    },
-    {
-      q: "Where is the programme held?",
-      a: "The programme takes place at Cambridge Judge Business School over five residential days, with a special off-site leadership experience at Lord’s Cricket Ground in London.",
-    },
-    {
-      q: "Will I receive a certificate?",
-      a: "Yes. Upon successful completion, you will earn a verified Cambridge Judge Business School certificate — a prestigious recognition of your learning journey.",
-    },
-    {
-      q: "What accommodation options are available?",
-      a: "Package 2 and Package 3 include 5-night accommodation in a 4-star hotel in close proximity to Cambridge Judge Business School (options range from 2–11 minutes walk). Accommodation will be booked based on availability.",
-    },
-    {
-      q: "When are applications due?",
-      a: "Applications are reviewed on a rolling, space-available basis. Early applications are strongly encouraged. Please apply early to secure your preferred dates.",
-    },
-    {
-      q: "What is the cohort size?",
-      a: "GILP maintains a deliberately small, curated cohort of senior leaders to ensure high-quality peer interaction, personalised faculty attention, and a premium learning experience.",
-    },
-  ];
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <section className="bg-white py-20 border-t border-forest/5">
-      <div className="mx-auto max-w-4xl px-6 md:px-10">
-        <div className="text-center mb-12">
-          <h2 className="text-[1.8rem] md:text-[2.2rem] font-bold text-forest-deep">
-            Frequently asked questions
-          </h2>
-        </div>
-        <div className="space-y-2">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-forest/10 bg-[#F5F0E0] overflow-hidden"
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left hover:bg-[#EDE8D5] transition-colors duration-150"
-              >
-                <span className="text-[15px] font-bold text-forest-deep">{faq.q}</span>
-                {open === i ? (
-                  <ChevronUp className="h-5 w-5 text-gold shrink-0" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-forest/80 shrink-0" />
-                )}
-              </button>
-              {open === i && (
-                <div className="px-6 pb-5 text-[15px] text-forest/70 leading-relaxed border-t border-forest/8 bg-white">
-                  <p className="pt-4">{faq.a}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 13. CERTIFICATE ─── */
-function CertificateSection() {
-  return (
-    <section className="bg-forest-deep py-24 relative overflow-hidden">
-      {/* Warm decorative blobs only — no grid */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#C9913D]/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#C9913D]/8 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-2 gap-16 items-start lg:pt-8">
-          {/* LEFT — Text content */}
-          <div>
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-[#C9913D] bg-[#C9913D]/15 px-4 py-1.5 rounded-full mb-6 border border-[#C9913D]/20">
-              Upon Completion
-            </span>
-            <h2 className="text-[2rem] md:text-[2.6rem] font-bold text-[#F5E6CC] mb-5 leading-tight">
-              Earn a Recognised Certificate
-            </h2>
-            <div className="space-y-5">
-              <div className="bg-[#3D2C14]/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C9913D]/20 relative overflow-hidden group hover:border-[#C9913D]/40 hover:bg-[#3D2C14] transition-all duration-300">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#C9913D]/70 via-[#C9913D] to-[#C9913D]/50" />
-                <h3 className="text-[16px] font-bold text-[#F5E6CC] mb-2">
-                  University of Cambridge–certified
-                </h3>
-                <p className="text-[15px] text-[#C9A87C]/80 leading-relaxed">
-                  Earn a verified Cambridge Judge Business School certificate upon successful
-                  completion of the programme — a testament to your dedication, skills, and learning
-                  journey.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: "🏛️", label: "Cambridge Verified", sub: "Issued by CJBS" },
-                  { icon: "🌍", label: "Globally Recognised", sub: "Top-tier credential" },
-                ].map((feat, i) => (
-                  <div
-                    key={i}
-                    className="bg-[#3D2C14]/80 rounded-xl p-4 border border-[#C9913D]/15 hover:border-[#C9913D]/35 hover:bg-[#3D2C14] transition-all duration-300 flex items-start gap-3"
-                  >
-                    <span className="text-[1.4rem]">{feat.icon}</span>
-                    <div>
-                      <p className="text-[15px] font-bold text-[#F5E6CC]">{feat.label}</p>
-                      <p className="text-[11.5px] text-[#C9A87C]/60">{feat.sub}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          {/* RIGHT — Certificate mock */}
-          <div className="flex flex-col items-center justify-start mt-8 lg:mt-12">
-            {/* Certificate image */}
-            <div className="relative flex justify-center w-full max-w-sm lg:max-w-md">
-              <div className="absolute -inset-6 bg-[#C9913D]/15 rounded-3xl blur-2xl" />
-              <img
-                src={newCertificateImg}
-                alt="Cambridge Judge Business School Certificate"
-                className="relative w-full max-h-[500px] rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-[#C9913D]/30 object-contain bg-white"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 14. FACULTY GRID (detailed) ─── */
-function FacultyGrid() {
-  const faculty = [
-    {
-      img: speaker1Img,
-      name: "Prof. Jaideep Prabhu",
-      role: "Programme Director & Faculty – Frugal Innovation",
-      bio: "Jaideep Prabhu, Jawaharlal Nehru Professor of Business & Enterprise at Cambridge Judge Business School, is a global authority on frugal innovation. His work demonstrates how organisations can create impactful, resource-efficient solutions under constraints — a mindset he brings to help delegates turn constraints into strategy.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speaker2Img,
-      name: "Prof. Shasha Lu",
-      role: "Facilitator – Customer-Centric Innovation in the AI Era",
-      bio: "Associate Professor in Marketing at Cambridge Judge, Shasha Lu applies machine learning to enhance customer insight. Her research on artificial empathy and decision marketing empowers leaders to craft AI-driven, customer-centric innovation strategies that resonate in complex fast-moving markets.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-    {
-      img: speaker3Img,
-      name: "Prof. Lionel Paolella",
-      role: "Facilitator – Leadership & Strategy",
-      bio: "Lionel Paolella, Associate Professor in Strategy & Organisational Behaviour at Cambridge Judge, explores organisational strategy, social evaluation, and inclusion. With a deep understanding of how leadership shapes culture and performance, he equips participants to lead with strategic clarity and inclusivity.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speaker4Img,
-      name: "Prof. Raghavendra Rau",
-      role: "Facilitator – Corporate Governance",
-      bio: "Sir Brahmana Ratcheloval Professor of Finance at Cambridge Judge, Raghavendra Rau leads research in corporate governance, scenario finance, and market transparency. He brings a rigorous lens to governance, treating it as a mechanism for managing information flows and accountability within firms.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-    {
-      img: speaker5Img,
-      name: "Prof. Eden Yin",
-      role: "Facilitator – Building Branding Strategy",
-      bio: "Associate Professor in Marketing at Cambridge Judge, Eden Yin specialises in building global brands — particularly Chinese firms expanding internationally. His expertise spans digital-era branding, innovation strategy, and high-tech product growth, offering delegates practical insights to elevate brand equity in dynamic markets.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speaker6Img,
-      name: "Prof. Oğuzhan Karakaş",
-      role: "Facilitator – Boardroom Dynamics",
-      bio: "Associate Professor in Finance at Cambridge Judge, Oğuzhan Karakaş focuses on corporate governance, ownership, private equity, and CSR. His rigorous insight into boardroom dynamics illuminates how governance structures and stakeholder control drive organisational integrity and strategic outcomes.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-    {
-      img: speaker7Img,
-      name: "Prof. Kamiar Mohaddes",
-      role: "Facilitator – Leadership for a Sustainable World",
-      bio: "Associate Professor in Economics & Policy at Cambridge Judge and Director of the climaTRACES Lab, Kamiar Mohaddes specialises in the macroeconomics of climate change. He guides leaders on embedding sustainability within economic strategy, helping them steer organisations toward resilience and responsibility.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speaker8Img,
-      name: "Elizabeth Osta",
-      role: "Facilitator – AI Frameworks & Digital Innovation",
-      bio: "Elizabeth is the Co-lead at the Frugal AI Hub at Cambridge Judge Business School. She is a digital and data strategist advising CXOs on AI, innovation, and responsible data use. As a former Chief Data Officer at HEINEKEN, she also founded Digital Forward and holds leadership experience across banking, consumer goods, and social impact.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-    {
-      img: speaker9Img,
-      name: "Serish Venkata Gandikota",
-      role: "Facilitator – AI Frameworks & Digital Innovation",
-      bio: "Serish is the Co-lead at the Frugal AI Hub at Cambridge Judge Business School. He is an innovation strategist, impact & climate fund adviser, entrepreneur, and researcher focused on frugal innovation, sustainability, and impact investing. He has led EU-funded projects and launched ventures across social enterprise and technology.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speaker10Img,
-      name: "Guy Doza",
-      role: "Facilitator – Public Speaking & Art of Negotiation",
-      bio: "Guy Doza is a renowned author and TEDx speaker who advises top politicians and global CEOs on leadership, persuasion, and negotiation. A leading expert in rhetoric, he blends ancient wisdom with modern science to help leaders communicate with clarity, inspire audiences, and negotiate with impact.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-    {
-      img: speakerNickImg,
-      name: "Nick Ford-Young",
-      role: "CEO of Boldstream",
-      bio: "Nick is the CEO of Boldstream within the Boldspace Group, and is now at the forefront of redesigning the marketing operating model through the practical application of AI, with clients including Virgin Atlantic, British Heart Foundation and Rathbones. A respected voice in marketing and brand strategy, Nick has been a guest lecturer on the Cambridge Judge Business School MBA programme, as well as at NYU in New York.",
-      accent: "from-gold/70 via-gold to-gold/50",
-    },
-    {
-      img: speakerThomasImg,
-      name: "Prof. Thomas Roulet",
-      role: "Faculty – Organisational Behaviour",
-      bio: "Professor of Organisational Sociology and Leadership at Cambridge Judge Business School and Fellow and Director of Studies in Psychology & Behavioural Science at King's College, Thomas Roulet specialises in leadership, organisational change and workplace dynamics. His research helps leaders understand how organisations can adapt to uncertainty, lead social change and build healthier, more resilient workplaces in a rapidly evolving world.",
-      accent: "from-forest/70 via-forest to-forest/50",
-    },
-  ];
-
-  return (
-    <section className="bg-[#F7F5F1] py-24 border-t border-forest/5 relative overflow-hidden">
-      {/* Subtle decorative elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-forest/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
-
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10 z-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <span className="h-px w-8 bg-gold" />
-            <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gold">
-              World-Class Academics
-            </span>
-            <span className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="text-[2.4rem] md:text-[3rem] font-bold text-forest-deep mb-4 leading-tight">
-            Faculty & <span className="font-serif italic font-normal text-forest/80">Speakers</span>
-          </h2>
-          <p className="text-[15px] text-forest/80 max-w-2xl mx-auto">
-            Learn from Cambridge Judge Business School's finest academics and global practitioners.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {faculty.map((f, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(10,48,29,0.04)] border border-forest/5 hover:shadow-[0_32px_64px_rgba(10,48,29,0.12)] hover:border-gold/30 hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-700 flex flex-col relative"
-            >
-              <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden m-2 mb-0 rounded-[1rem] sm:rounded-[1.5rem]">
-                <img
-                  src={f.img}
-                  alt={f.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-forest-deep/0 group-hover:bg-forest-deep/10 transition-colors duration-700 mix-blend-overlay" />
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              </div>
-
-              <div className="p-3 sm:p-5 lg:p-6 flex flex-col flex-1 relative z-10 bg-white">
-                <div className="mb-2 sm:mb-4">
-                  <h3 className="text-[13px] sm:text-[16px] lg:text-[19px] font-bold text-forest-deep tracking-tight mb-1 group-hover:text-gold-deep transition-colors duration-500 leading-snug">
-                    {f.name}
-                  </h3>
-                  <p className="text-[10px] sm:text-[12px] font-bold text-gold/90 tracking-wide uppercase leading-snug">
-                    {f.role}
-                  </p>
-                </div>
-                <div className="h-px w-full bg-gradient-to-r from-forest/10 to-transparent mb-2 sm:mb-4 transition-all duration-500 group-hover:from-gold/40" />
-                <p className="hidden sm:block text-[12.5px] sm:text-[13.5px] text-forest/70 leading-[1.65]">
-                  {f.bio}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 15. CANCELLATION & REFUND POLICY ─── */
-function CancellationPolicy() {
-  const policies = [
-    {
-      date: "Up to 90 days before start",
-      refund: "50% refund",
-      color: "bg-emerald-500/10 border-emerald-500/30",
-      badge: "bg-emerald-500/20 text-emerald-300",
-      icon: "✓",
-      iconColor: "text-emerald-400",
-    },
-    {
-      date: "30 to 90 days before start",
-      refund: "25% refund",
-      color: "bg-amber-500/10 border-amber-500/30",
-      badge: "bg-amber-500/20 text-amber-300",
-      icon: "◑",
-      iconColor: "text-amber-400",
-    },
-    {
-      date: "Less than 30 days before start",
-      refund: "No refund",
-      color: "bg-red-500/10 border-red-500/30",
-      badge: "bg-red-500/20 text-red-300",
-      icon: "✕",
-      iconColor: "text-red-400",
-    },
-  ];
-
-  return (
-    <section className="bg-forest-deep py-24 relative overflow-hidden">
-      <div className="pointer-events-none absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full bg-gold/10 blur-[120px]" />
-      <div className="pointer-events-none absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-forest/30 blur-[100px]" />
-      <div className="relative mx-auto max-w-5xl px-6 md:px-10">
-        <div className="text-center mb-14">
-          <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold bg-gold/10 px-4 py-1.5 rounded-full mb-4">
-            Important Policy
-          </span>
-          <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-3">
-            Cancellation &amp; Refund Policy
-          </h2>
-          <p className="text-[15px] text-white/80 max-w-xl mx-auto">
-            We understand that plans can change, and we aim to be as flexible as possible.
-          </p>
-        </div>
-
-        {/* Refund tiers */}
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
-          {policies.map((p, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl border p-6 ${p.color} hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg backdrop-blur-sm relative overflow-hidden`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              <div className="relative z-10 flex items-center justify-between mb-4">
-                <span className={`text-[2rem] font-bold ${p.iconColor}`}>{p.icon}</span>
-                <span className={`text-[15px] font-bold px-3 py-1 rounded-full ${p.badge}`}>
-                  {p.refund}
-                </span>
-              </div>
-              <p className="relative z-10 text-[15px] font-semibold text-white">Cancellation</p>
-              <p className="relative z-10 text-[15px] text-white/70 mt-1">{p.date}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Policy cards */}
-        <div className="grid md:grid-cols-2 gap-5">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-7 shadow-lg border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/70 via-gold to-gold/50" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-            <h3 className="relative z-10 text-[16px] font-bold text-white mb-3">How to Cancel</h3>
-            <p className="relative z-10 text-[15px] text-white/80 leading-relaxed">
-              All cancellations must be submitted in writing to the programme team at{" "}
-              <a
-                href="mailto:info@globaledulab.com"
-                className="text-gold/90 underline hover:text-gold transition-colors"
-              >
-                info@globaledulab.com
-              </a>
-              . Refunds (where applicable) will be processed within{" "}
-              <strong className="text-white">14 working days</strong> of receiving your cancellation
-              request.
-            </p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-7 shadow-lg border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-white/20" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-            <h3 className="relative z-10 text-[16px] font-bold text-white mb-3">
-              ⚠️ Currency Note
-            </h3>
-            <p className="relative z-10 text-[15px] text-white/80 leading-relaxed">
-              <strong className="text-white">
-                Refunds are processed only in GBP (British Pounds).
-              </strong>{" "}
-              If you paid in another currency, the final amount you receive may vary depending on
-              the prevailing exchange rate and any charges applied by your payment provider or bank
-              at the time of refund.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 16. CONTACT INFORMATION ─── */
-function ContactSection() {
-  return (
-    <section className="bg-white py-24 border-t border-forest/5">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="flex flex-col md:flex-row gap-14">
-          {/* Left: contact info */}
-          <div className="flex-1">
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">
-              Get in Touch
-            </span>
-            <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-forest-deep mb-6">
-              Contact Information
-            </h2>
-            <p className="text-[15px] text-forest/80 leading-relaxed mb-10 max-w-md">
-              Have questions about the programme? Our team is here to help you make the right
-              decision.
-            </p>
-            <div className="space-y-5">
-              <div className="group flex items-center gap-5 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 hover:border-gold/30 hover:shadow-[0_20px_50px_rgba(196,148,50,0.1)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gold"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[12.5px] font-bold uppercase tracking-[0.2em] text-gold-deep mb-1">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:info@globaledulab.com"
-                    className="text-[17px] font-bold text-forest-deep hover:text-gold transition-colors"
-                  >
-                    info@globaledulab.com
-                  </a>
-                </div>
-              </div>
-              <div className="group flex items-center gap-5 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 hover:border-gold/30 hover:shadow-[0_20px_50px_rgba(196,148,50,0.1)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gold"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[12.5px] font-bold uppercase tracking-[0.2em] text-gold-deep mb-1">
-                    UK
-                  </p>
-                  <a
-                    href="tel:+441223362994"
-                    className="text-[17px] font-bold text-forest-deep hover:text-gold transition-colors"
-                  >
-                    +44 (01223) 362994
-                  </a>
-                </div>
-              </div>
-              <div className="group flex items-center gap-5 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(10,48,29,0.04)] border border-forest/5 hover:border-gold/30 hover:shadow-[0_20px_50px_rgba(196,148,50,0.1)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="h-14 w-14 rounded-2xl bg-forest-deep flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gold"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[12.5px] font-bold uppercase tracking-[0.2em] text-gold-deep mb-1">
-                    Location
-                  </p>
-                  <p className="text-[17px] font-bold text-forest-deep">
-                    Cambridge Judge Business School, UK
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: image — aligned to top of left content */}
-          <div className="flex-1 rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(10,48,29,0.12)] relative">
-            <img
-              src="https://static.wixstatic.com/media/bf78a9_2f15e96675344d8c9a2ef70d1d015137~mv2.jpg"
-              alt="Cambridge programme session"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 min-h-[300px]"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <p className="text-[15px] font-bold uppercase tracking-widest text-gold mb-1">
-                Cambridge Judge Business School
-              </p>
-              <p className="text-white text-[15px] font-semibold">Flexible Dates</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 17. APPLY NOW ─── */
-function ApplyNow() {
-  const [form, setForm] = useState({
-    fullName: "",
-    email: "",
-    designation: "",
-    organisation: "",
-    phoneCode: "🇮🇳 +91",
-    phone: "",
-    linkedin: "",
-    funding: "",
-    package: "",
-  });
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
-    setForm((f) => ({ ...f, [key]: e.target.value }));
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("submitting");
-    try {
-      await submitToGILP("apply", {
-        fullName: form.fullName,
-        email: form.email,
-        designation: form.designation,
-        organisation: form.organisation,
-        phone: `${form.phoneCode} ${form.phone}`,
-        linkedin: form.linkedin,
-        funding: form.funding,
-        package: form.package,
-      });
-      setStatus("success");
-    } catch (err) {
-      setStatus("error");
-    }
-  };
-
-  return (
-    <section
-      id="apply-now"
-      className="bg-[#FAF8F5] py-24 border-t border-forest/5 relative overflow-hidden"
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      onClick={onClose}
     >
-      <div className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-forest/5 blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid md:grid-cols-[1fr_1.1fr] gap-14 items-start">
-          {/* Left: info */}
-          <div>
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[0.22em] text-gold-deep bg-gold/10 px-4 py-1.5 rounded-full mb-5">
-              Limited Seats
-            </span>
-            <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-forest-deep mb-4 leading-tight">
-              Apply Now
-            </h2>
-            <h3 className="text-[1.15rem] font-bold text-forest/80 mb-2">
-              Global India Leadership Programme at Cambridge
-            </h3>
-            <div className="flex items-center gap-2 mb-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-forest/50"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              <span className="text-[14px] text-forest/60">
-                A Cambridge-led, executive leadership journey
-              </span>
-            </div>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-[15px] text-forest/70 font-medium">In Partnership with</span>
-              <img
-                src={logoJBS}
-                alt="Cambridge Judge Business School"
-                className="h-28 w-auto object-contain mix-blend-multiply"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-[2rem] p-8 shadow-[0_12px_40px_rgba(10,48,29,0.06)] border border-forest/5 mb-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/80 via-gold to-gold/50" />
-              <p className="text-[15.5px] text-forest/80 leading-[1.8] mb-5 font-normal">
-                We invite you to submit your application for the Global India Leadership Programme.
-                This is your opportunity to learn from Cambridge Judge Business School faculty,
-                network with peers across the UK–India corridor, and gain cutting-edge insights into
-                leadership, AI, and innovation.
-              </p>
-              <div className="bg-forest/5 p-4 rounded-xl border border-forest/10">
-                <p className="text-[14.5px] font-bold text-forest-deep leading-relaxed">
-                  Please note:{" "}
-                  <span className="font-normal text-forest/80">
-                    Submitting an application on this page does not guarantee a confirmed place.
-                    Applications are reviewed by our programme team using a selective admission
-                    model.
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div className="space-y-3 pl-2">
-              {[
-                "Professional achievement — your track record of impact and leadership",
-                "Organisational responsibility — the level of influence you hold in your organisation",
-                "Alignment with programme objectives — how this experience supports your goals",
-                "Space availability — limited seats to ensure a high-quality, personalised experience",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="group flex items-start gap-4 p-3 rounded-xl hover:bg-white hover:shadow-sm border border-transparent hover:border-forest/5 transition-all duration-300"
-                >
-                  <div className="mt-1 h-2 w-2 rounded-full bg-gold shrink-0 group-hover:scale-125 transition-transform" />
-                  <p className="text-[14px] font-medium text-forest/80 leading-snug">{item}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-[15px] text-forest/80 mt-5 italic">
-              Successful applicants will receive a confirmation email within 7 working days with
-              instructions for securing their place by paying the programme fee.
-            </p>
-          </div>
+      <div
+        className="relative w-full max-w-2xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-forest/10"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative aspect-[16/10] bg-forest-deep">
+          <img src={moment.img} alt={moment.title} className="w-full h-full object-cover" />
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white hover:bg-white hover:text-black transition-colors cursor-pointer"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
 
-          {/* Right: form */}
-          <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(10,48,29,0.1)] border border-forest/5 overflow-hidden">
-            <div className="bg-forest-deep px-8 py-5">
-              <p className="text-white font-bold text-[15px]">
-                You are currently applying to Round 1 application
-              </p>
-              <p className="text-white/80 text-[15px] mt-0.5">
-                Please ensure you provide accurate information
-              </p>
-            </div>
-            <form onSubmit={handleSubmit} className="p-8 space-y-5">
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Full name <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={form.fullName}
-                  onChange={update("fullName")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Email address <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={update("email")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Current Designation <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={form.designation}
-                  onChange={update("designation")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Organisation <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={form.organisation}
-                  onChange={update("organisation")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Your contact number <span className="text-red-400">*</span>
-                </label>
-                <div className="flex gap-2">
-                  <select
-                    value={form.phoneCode}
-                    onChange={update("phoneCode")}
-                    className="border border-forest/15 rounded-xl px-3 py-3 text-[15px] font-medium text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200 min-w-[125px] cursor-pointer"
-                  >
-                    {COUNTRY_CODES.map((c) => (
-                      <option key={`${c.iso}-${c.code}`} value={`${c.flag} ${c.code}`}>
-                        {c.flag} {c.country} ({c.code})
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    type="tel"
-                    required
-                    value={form.phone}
-                    onChange={update("phone")}
-                    className="flex-1 border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Your LinkedIn profile (if available)
-                </label>
-                <input
-                  type="url"
-                  value={form.linkedin}
-                  onChange={update("linkedin")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest-deep bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Programme funding
-                </label>
-                <select
-                  value={form.funding}
-                  onChange={update("funding")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                >
-                  <option value="">Choose who is funding your programme participation</option>
-                  <option>Self-funded</option>
-                  <option>Employer-funded</option>
-                  <option>Scholarship / Grant</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-[15px] font-semibold text-forest/70 mb-1.5">
-                  Package options <span className="text-red-400">*</span>
-                </label>
-                <select
-                  required
-                  value={form.package}
-                  onChange={update("package")}
-                  className="w-full border border-forest/15 rounded-xl px-4 py-3 text-[15px] text-forest/80 bg-[#FAF8F5] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/10 transition-all duration-200"
-                >
-                  <option value="">Check above for package offerings</option>
-                  <option>Package 1 (Basic Programme)</option>
-                  <option>Package 2 (Programme + Single Accommodation)</option>
-                  <option>Package 3 (Programme + Double Accommodation)</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                disabled={status === "submitting"}
-                className="w-full inline-flex items-center justify-center gap-2 bg-forest-deep text-white rounded-xl py-4 text-[15px] font-bold uppercase tracking-[0.15em] hover:bg-forest transition-all duration-200 shadow-md hover:shadow-lg mt-2 disabled:opacity-60"
-              >
-                {status === "submitting" ? (
-                  "Submitting…"
-                ) : (
-                  <>
-                    Apply for GILP <ArrowUpRight className="h-4 w-4" />
-                  </>
-                )}
-              </button>
-              {status === "success" && (
-                <p className="text-center text-[15px] font-semibold text-forest-deep mt-1">
-                  ✓ Application received — check your email for confirmation.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-center text-[15px] font-semibold text-red-500 mt-1">
-                  Something went wrong. Please try again.
-                </p>
-              )}
-              <p className="text-center text-[11.5px] text-forest/70 mt-1">
-                Applications reviewed on a rolling basis. Early applications strongly encouraged.
-              </p>
-            </form>
+        <div className="p-6 sm:p-8 space-y-4">
+          <span className="text-[11px] font-bold tracking-[0.2em] text-gold-deep uppercase bg-cream px-3 py-1 rounded-full">
+            {moment.sub}
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-forest-deep leading-snug">
+            {moment.title}
+          </h3>
+          <p className="text-[15px] sm:text-[16px] text-forest/85 leading-relaxed">{moment.desc}</p>
+          <div className="pt-4 border-t border-forest/10 flex justify-end">
+            <button
+              onClick={onClose}
+              className="rounded-xl bg-forest-deep text-white px-7 py-2.5 text-sm font-semibold hover:bg-forest transition-colors cursor-pointer"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
-/* ─── 18. CTA ─── */
-function CTA() {
+function FacultyModal({ faculty, onClose }: { faculty: any | null; onClose: () => void }) {
+  if (!faculty) return null;
+
   return (
-    <section className="bg-forest-deep py-20 text-center relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:40px_40px]" />
-      <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-gold/10 blur-[120px]" />
-      <div className="relative mx-auto max-w-2xl px-6">
-        <h2 className="text-[1.8rem] md:text-[2.4rem] font-bold text-white leading-tight mb-3">
-          Let's Get in Touch
-        </h2>
-        <p className="text-[15px] text-cream/70 leading-relaxed mb-8 max-w-md mx-auto">
-          “It is not about timing the opportunity. It is about preparing to lead through it.”
-        </p>
-        <div className="flex gap-4 justify-center flex-wrap">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-forest/10 p-6 sm:p-8 space-y-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-4">
+            <img
+              src={faculty.img}
+              alt={faculty.name}
+              className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl object-cover border border-forest/15 shadow"
+            />
+            <div>
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-forest-deep">{faculty.name}</h3>
+              <p className="text-xs sm:text-sm font-semibold text-gold-deep">{faculty.role}</p>
+              <p className="text-xs sm:text-sm text-forest/70">{faculty.institution}</p>
+            </div>
+          </div>
           <button
-            onClick={() =>
-              document.getElementById("apply-now")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-forest-deep hover:bg-amber-400 transition-colors duration-200 shadow-lg"
+            onClick={onClose}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 text-stone-600 hover:bg-forest-deep hover:text-white transition-colors cursor-pointer"
           >
-            Apply for GILP <ArrowUpRight className="h-4 w-4" />
+            <X className="h-4 w-4" />
           </button>
-          <Link
-            to="/contact"
-            search={{ source: "GILP — Bottom CTA" }}
-            className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 text-[15px] font-bold uppercase tracking-[0.15em] text-white hover:border-white/50 transition-colors duration-200"
+        </div>
+
+        <div className="space-y-3">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
+            Academic & Leadership Profile
+          </span>
+          <p className="text-[14.5px] sm:text-[15.5px] text-forest/85 leading-relaxed">{faculty.bio}</p>
+          <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-forest/10">
+            <span className="text-[11px] font-bold text-gold-deep uppercase tracking-wider block mb-1">
+              Core Specialty & Sessions
+            </span>
+            <p className="text-[13px] sm:text-[14px] text-forest-deep font-medium">{faculty.expertise}</p>
+          </div>
+        </div>
+
+        <div className="pt-2 border-t border-forest/10 flex justify-end">
+          <button
+            onClick={onClose}
+            className="rounded-xl bg-forest-deep text-white px-7 py-2.5 text-sm font-semibold hover:bg-forest transition-colors cursor-pointer"
           >
-            Contact Us
-          </Link>
+            Close
+          </button>
         </div>
       </div>
-    </section>
+    </div>
+  );
+}
+
+function TestimonialModal({
+  testimonial,
+  onClose,
+}: {
+  testimonial: any | null;
+  onClose: () => void;
+}) {
+  if (!testimonial) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 p-6 sm:p-8 space-y-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <img
+              src={testimonial.img}
+              alt={testimonial.name}
+              className="h-16 w-16 sm:h-18 sm:w-18 rounded-full object-cover ring-2 ring-[#D4AF37]/35 shadow-md bg-stone-100 shrink-0"
+            />
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold font-sans text-gray-900 tracking-tight leading-tight">
+                {testimonial.name}
+              </h3>
+              <p className="text-[13px] sm:text-[14px] font-medium text-teal-800/90 mt-0.5">
+                {testimonial.role}
+              </p>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#D4AF37]/15 text-[#99730E] uppercase tracking-wider mt-1.5">
+                {testimonial.cohort}
+              </span>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-100 text-stone-500 hover:bg-stone-200 hover:text-gray-900 transition-colors cursor-pointer shrink-0"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="relative bg-stone-50/90 rounded-2xl p-5 sm:p-6 border border-stone-200/60">
+          <p className="text-[15px] sm:text-[16px] text-stone-800 font-normal leading-relaxed">
+            “{testimonial.quote}”
+          </p>
+        </div>
+
+        <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
+          <div>
+            {testimonial.linkedin && (
+              <a
+                href={testimonial.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#0077B5] hover:underline"
+              >
+                View on LinkedIn <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+          </div>
+          <button
+            onClick={onClose}
+            className="rounded-xl bg-[#0E1C12] text-white px-7 py-2.5 text-[14px] font-semibold hover:bg-forest transition-colors cursor-pointer shadow-sm"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -21,6 +21,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EntrepreneurshipRouteImport } from './routes/entrepreneurship'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GilpDelegateRouteImport } from './routes/gilp-delegate'
+import { Route as GilpStoriesRouteImport } from './routes/gilp-stories'
 import { Route as GlobalVenturesRouteImport } from './routes/global-ventures'
 import { Route as GspRouteImport } from './routes/gsp'
 import { Route as IndialeadershipRouteImport } from './routes/indialeadership'
@@ -120,6 +121,11 @@ const GalleryRoute = GalleryRouteImport.update({
 const GilpDelegateRoute = GilpDelegateRouteImport.update({
   id: '/gilp-delegate',
   path: '/gilp-delegate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GilpStoriesRoute = GilpStoriesRouteImport.update({
+  id: '/gilp-stories',
+  path: '/gilp-stories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlobalVenturesRoute = GlobalVenturesRouteImport.update({
@@ -343,6 +349,7 @@ export interface FileRoutesByFullPath {
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
+  '/gilp-stories': typeof GilpStoriesRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/gsp': typeof GspRoute
   '/indialeadership': typeof IndialeadershipRoute
@@ -396,6 +403,7 @@ export interface FileRoutesByTo {
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
+  '/gilp-stories': typeof GilpStoriesRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/gsp': typeof GspRoute
   '/indialeadership': typeof IndialeadershipRoute
@@ -450,6 +458,7 @@ export interface FileRoutesById {
   '/entrepreneurship': typeof EntrepreneurshipRoute
   '/gallery': typeof GalleryRoute
   '/gilp-delegate': typeof GilpDelegateRoute
+  '/gilp-stories': typeof GilpStoriesRoute
   '/global-ventures': typeof GlobalVenturesRoute
   '/gsp': typeof GspRoute
   '/indialeadership': typeof IndialeadershipRoute
@@ -506,6 +515,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship'
     | '/gallery'
     | '/gilp-delegate'
+    | '/gilp-stories'
     | '/global-ventures'
     | '/gsp'
     | '/indialeadership'
@@ -559,6 +569,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship'
     | '/gallery'
     | '/gilp-delegate'
+    | '/gilp-stories'
     | '/global-ventures'
     | '/gsp'
     | '/indialeadership'
@@ -612,6 +623,7 @@ export interface FileRouteTypes {
     | '/entrepreneurship'
     | '/gallery'
     | '/gilp-delegate'
+    | '/gilp-stories'
     | '/global-ventures'
     | '/gsp'
     | '/indialeadership'
@@ -667,6 +679,7 @@ export interface RootRouteChildren {
   EntrepreneurshipRoute: typeof EntrepreneurshipRoute
   GalleryRoute: typeof GalleryRoute
   GilpDelegateRoute: typeof GilpDelegateRoute
+  GilpStoriesRoute: typeof GilpStoriesRoute
   GlobalVenturesRoute: typeof GlobalVenturesRoute
   GspRoute: typeof GspRoute
   IndialeadershipRoute: typeof IndialeadershipRoute
@@ -778,6 +791,13 @@ declare module '@tanstack/react-router' {
       path: '/gilp-delegate'
       fullPath: '/gilp-delegate'
       preLoaderRoute: typeof GilpDelegateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gilp-stories': {
+      id: '/gilp-stories'
+      path: '/gilp-stories'
+      fullPath: '/gilp-stories'
+      preLoaderRoute: typeof GilpStoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/global-ventures': {
@@ -1124,6 +1144,7 @@ const rootRouteChildren: RootRouteChildren = {
   EntrepreneurshipRoute: EntrepreneurshipRoute,
   GalleryRoute: GalleryRoute,
   GilpDelegateRoute: GilpDelegateRoute,
+  GilpStoriesRoute: GilpStoriesRoute,
   GlobalVenturesRoute: GlobalVenturesRoute,
   GspRoute: GspRoute,
   IndialeadershipRoute: IndialeadershipRoute,

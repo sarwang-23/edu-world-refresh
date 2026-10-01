@@ -19,9 +19,9 @@ import houseOfLordsImg from "../assets/house_of_lords_group.jpg";
 import cambridgeImg from "../assets/cambridge_2.jpg";
 import { Footer } from "./index";
 import { useState } from "react";
-import alumni2Img from "../assets/alumni2.jpg";
-import alumni3Img from "../assets/alumni3.jpg";
-import alumni4Img from "../assets/alumni4.jpg";
+import alumniFatinImg from "../assets/alumni-fatin.jpg";
+import alumniSamwerImg from "../assets/alumni-samwer.jpg";
+import alumniAashishImg from "../assets/alumni-aashish.jpg";
 
 export const Route = createFileRoute("/programmes/house-of-lords")({
   head: () => buildMeta("/programmes/house-of-lords"),
@@ -346,21 +346,21 @@ function PastEditions() {
       role: "L&D Head - Bank Dhofar (Oman)",
       quote:
         "An enriching experience that combined frugal innovation, AI, governance, and storytelling into actionable leadership insights. The diverse cohort and engaging discussions made learning deeply practical. I left with new strategies, and renewed clarity on leading with purpose and impact.",
-      img: alumni2Img,
+      img: alumniFatinImg,
     },
     {
       name: "Johannes Samwer",
       role: "MD, Rhenus Lub (Germany)",
       quote:
         "The programme offered insights into leadership communication and influence. Sessions on rhetoric and group discussions were particularly impactful, providing practical tools used by global leaders. A highly engaging experience that I would strongly recommend to anyone looking to enhance leadership effectiveness.",
-      img: alumni3Img,
+      img: alumniSamwerImg,
     },
     {
       name: "Dr. Aashish Chaudhry",
       role: "MD, Aakash Healthcare (India)",
       quote:
         'Frugal innovation came alive during the programme as a practical necessity, not theory. It reinforced that sustainable impact lies in affordable, last-mile solutions. Seeing "jugaad" discussed at Cambridge affirmed that frugal innovation is globally relevant, and that the programme sets exactly the right foundation.',
-      img: alumni4Img,
+      img: alumniAashishImg,
     },
   ];
   return (

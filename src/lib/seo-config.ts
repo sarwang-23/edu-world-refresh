@@ -223,11 +223,11 @@ export const seoConfig: Record<string, SeoEntry> = {
     indexable: true,
   },
   "/programmes/gilp": {
-    title: "Global India Leadership Programme at Cambridge | 14-18 Sept 2026",
-    socialTitle: "Global India Leadership Programme – Cambridge Judge Business School",
+    title: "Global India Leadership Programme | Cambridge Judge Business School",
+    socialTitle: "Global India Leadership Programme – Cambridge Judge Business School × Global Education Lab",
     description:
-      "The Global India Leadership Programme (GILP) is a premier 5-day executive leadership experience (14-18 September 2026) at Cambridge Judge Business School for Board Members, CXOs, and Founders focusing on AI, frugal innovation, strategy, and global growth.",
-    image: "/gilp-banner.png",
+      "Global India Leadership Programme at Cambridge Judge Business School brought together 45 C-suite and senior leaders in 2026. Applications are now open for the 2027 cohorts, offering five days of leadership, strategy, AI, governance and global perspectives.",
+    image: "/gilp-og-image.jpg",
     indexable: true,
   },
   "/programmes/graduate": {
