@@ -2237,58 +2237,42 @@ function PriorityApplicationSection() {
    PROGRAMME GALLERY
 ───────────────────────────────────────────────────────────── */
 function ProgrammeGallerySection() {
-  const galleryImages = [
-    { src: gilpCohort1Img, alt: "GILP Cohort Moment", span: "col-span-2 row-span-2" },
-    { src: gilpCohort2Img, alt: "GILP Group Discussion" },
-    { src: gilpCohort3Img, alt: "GILP Cambridge Campus" },
-    { src: gilpCohort4Img, alt: "GILP Networking" },
-    { src: gilpCohort5Img, alt: "GILP Session" },
-    { src: gilpCohort6Img, alt: "GILP Delegates" },
-    { src: gilpCohort7Img, alt: "GILP Cohort Experience" },
-    { src: gilpCohort8Img, alt: "GILP Cambridge" },
-  ];
-
   return (
-    <section id="programme-gallery" className="py-16 sm:py-20 lg:py-24 bg-[#FAF9F6] border-t border-stone-200/80">
+    <section id="programme-gallery" className="py-16 sm:py-20 lg:py-24 bg-white border-t border-stone-200/80">
       <div className="mx-auto max-w-7xl 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-
-        {/* Header */}
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="h-px w-8 bg-[#D4AF37]" />
-            <span className="text-[11px] sm:text-[12px] font-extrabold tracking-[0.25em] uppercase text-[#99730E]">
+        <div className="flex flex-col items-center text-center">
+          {/* Pill Label */}
+          <div className="mb-4 inline-flex items-center rounded-full bg-[#F5F2E9] px-4 py-1.5">
+            <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.2em] uppercase text-[#0E2B14]">
               Programme Gallery
             </span>
           </div>
-          <h2 className="text-[1.85rem] sm:text-[2.5rem] lg:text-[3rem] font-serif font-semibold text-gray-900 leading-tight tracking-tight">
+
+          {/* Headline */}
+          <h2 className="text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem] font-bold text-[#0E2B14] leading-tight tracking-tight mb-10 sm:mb-14 font-sans">
             Moments from GILP
           </h2>
-          <p className="mt-3 text-stone-500 text-[15px] sm:text-[16px] max-w-2xl leading-relaxed">
-            Moments from cohort experiences across Cambridge, London, and beyond.
-          </p>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-          {/* Large feature image */}
-          <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-auto sm:h-[420px]">
+        {/* 3-Column Image Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
+          <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
             <img src={gilpCohort1Img} alt="GILP Cohort" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
-          {/* Smaller images */}
-          {[
-            { src: gilpCohort2Img, alt: "GILP Group" },
-            { src: gilpCohort3Img, alt: "GILP Cambridge" },
-            { src: gilpCohort4Img, alt: "GILP Networking" },
-            { src: gilpCohort5Img, alt: "GILP Session" },
-            { src: gilpCohort6Img, alt: "GILP Delegates" },
-            { src: gilpCohort8Img, alt: "GILP Cambridge Grounds" },
-          ].map((img, i) => (
-            <div key={i} className="rounded-2xl overflow-hidden aspect-square sm:h-[200px] lg:h-[200px]">
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
-            </div>
-          ))}
+          <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+            <img src={gilpCohort2Img} alt="GILP Group" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
+            <img src={gilpCohort4Img} alt="GILP Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
         </div>
 
+        {/* Load More Button */}
+        <div className="flex justify-center">
+          <button className="inline-flex items-center gap-2 rounded-full bg-[#0E2B14] px-6 sm:px-8 py-3.5 sm:py-4 text-[12px] sm:text-[13px] font-bold tracking-[0.1em] text-white hover:bg-[#1A3E22] transition-colors shadow-lg">
+            LOAD MORE PHOTOS <ArrowUpRight className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </section>
   );
