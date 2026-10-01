@@ -1590,7 +1590,7 @@ function CohortProfileSection() {
             .gilp-marquee-track {
               display: flex;
               width: max-content;
-              animation: gilp-marquee 12s linear infinite;
+              animation: gilp-marquee 35s linear infinite;
             }
           `}</style>
 
