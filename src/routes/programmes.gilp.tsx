@@ -86,10 +86,6 @@ import gilpGallery10Img from "../assets/gilp-gallery-10.jpg";
 import gilpGallery11Img from "../assets/gilp-gallery-11.jpg";
 import gilpGallery12Img from "../assets/gilp-gallery-12.jpg";
 import gilpGallery13Img from "../assets/gilp-gallery-13.jpg";
-import gilpGallery14Img from "../assets/gilp-gallery-14.jpg";
-import gilpGallery15Img from "../assets/gilp-gallery-15.jpg";
-import gilpGallery16Img from "../assets/gilp-gallery-16.jpg";
-import gilpGallery17Img from "../assets/gilp-gallery-17.jpg";
 import gilpGallery18Img from "../assets/gilp-gallery-18.jpg";
 
 // Perspectives Leaders
@@ -1920,6 +1916,7 @@ function PriorityApplicationSection() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [workEmail, setWorkEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+44");
   const [phone, setPhone] = useState("");
   const [organisation, setOrganisation] = useState("");
   const [role, setRole] = useState("");
@@ -1933,7 +1930,7 @@ function PriorityApplicationSection() {
       await submitToGILP("next-chapter-priority", {
         fullName: `${firstName} ${lastName}`.trim(),
         email: workEmail,
-        phone,
+        phone: `(${countryCode}) ${phone}`.trim(),
         company: organisation,
         designation: role,
       });
@@ -2174,33 +2171,68 @@ function PriorityApplicationSection() {
                   />
                 </div>
 
-                {/* Row 3: Current Role + Contact Number */}
-                <div className="grid grid-cols-2 gap-3.5">
-                  <div>
-                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
-                      Current Role *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Managing Director"
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                {/* Current Role — full width */}
+                <div>
+                  <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                    Current Role *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Managing Director"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                    style={{ border: "1px solid #e5e7eb" }}
+                  />
+                </div>
+
+                {/* Contact Number — country code selector + number input */}
+                <div>
+                  <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
+                    Contact Number *
+                  </label>
+                  <div className="flex gap-2">
+                    {/* Country code dropdown */}
+                    <select
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      className="shrink-0 w-[110px] rounded-xl px-3 py-3 text-[13px] text-forest-deep bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50 cursor-pointer"
                       style={{ border: "1px solid #e5e7eb" }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[11px] font-bold text-stone-500 mb-1.5 uppercase tracking-widest">
-                      Contact Number *
-                    </label>
+                      aria-label="Country code"
+                    >
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+60">🇲🇾 +60</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+968">🇴🇲 +968</option>
+                      <option value="+973">🇧🇭 +973</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+81">🇯🇵 +81</option>
+                      <option value="+86">🇨🇳 +86</option>
+                      <option value="+82">🇰🇷 +82</option>
+                      <option value="+27">🇿🇦 +27</option>
+                      <option value="+234">🇳🇬 +234</option>
+                      <option value="+254">🇰🇪 +254</option>
+                      <option value="+94">🇱🇰 +94</option>
+                      <option value="+880">🇧🇩 +880</option>
+                      <option value="+92">🇵🇰 +92</option>
+                      <option value="+977">🇳🇵 +977</option>
+                    </select>
+                    {/* Phone number */}
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="98765 43210"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      className="flex-1 min-w-0 rounded-xl px-3.5 py-3 text-[13.5px] text-forest-deep placeholder-stone-400 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-gold/50"
                       style={{ border: "1px solid #e5e7eb" }}
                     />
                   </div>
@@ -2310,18 +2342,6 @@ function ProgrammeGallerySection() {
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
                 <img src={gilpGallery13Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-                <img src={gilpGallery14Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-                <img src={gilpGallery15Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-                <img src={gilpGallery16Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
-                <img src={gilpGallery17Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-stone-100">
                 <img src={gilpGallery18Img} alt="GILP Moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
