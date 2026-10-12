@@ -590,86 +590,211 @@ function BeyondTheWeekend() {
 function ProgrammeFormat() {
   const schedule = [
     {
-      day: "Day 1 · Friday",
-      date: "Day 1",
+      day: "Friday · 23 October",
+      date: "Inspiration & Ideation",
       sessions: [
         {
-          time: "Evening",
-          title: "Arrival & Registration",
-          desc: "Check-in at Cambridge Judge Business School. Opening reception with mentors and peers.",
+          time: "6:00 pm",
+          title: "Registration at Judge Business School",
+          desc: "Arrive, collect your welcome pack and settle into the Cambridge Judge Business School environment.",
         },
         {
-          time: "Night",
-          title: "Networking",
-          desc: "Meet your cohort, mentors and Cambridge ecosystem leaders.",
-        },
-      ],
-    },
-    {
-      day: "Day 2 · Saturday",
-      date: "Day 2",
-      sessions: [
-        {
-          time: "9:00am",
-          title: "Problem-Finding Sprints",
-          desc: "Facilitated sessions to surface real problems within the theme. Move from interest to insight.",
+          time: "6:30 pm",
+          title: "Welcome & Introduction to the Weekend",
+          desc: "Opening session setting out the programme, the theme, and what the 48 hours will demand of you.",
         },
         {
-          time: "12:00pm",
-          title: "Team Formation",
-          desc: "Form interdisciplinary teams of 3–5. Chemistry over credentials.",
-        },
-        {
-          time: "2:00pm",
-          title: "AI Prototyping Workshop",
-          desc: "Use AI tools to rapidly prototype product concepts, business models and user journeys.",
-        },
-        {
-          time: "5:00pm",
-          title: "Mentor Clinics",
-          desc: "One-to-one and small group sessions with Cambridge academics and venture mentors.",
-        },
-        {
-          time: "Evening",
-          title: "Team Working Sessions",
-          desc: "Open workshop space with facilitated support. Build your pitch narrative.",
-        },
-      ],
-    },
-    {
-      day: "Day 3 · Sunday",
-      date: "Day 3",
-      sessions: [
-        {
-          time: "9:00am",
-          title: "Final Preparation",
-          desc: "Polish your venture story. Final mentor feedback rounds.",
-        },
-        {
-          time: "11:00am",
+          time: "6:45 pm",
           title: "Venture Pitches",
-          desc: "Present your venture direction to a panel of investors, academics and ecosystem leaders.",
+          desc: "Seed pitches from invited founders and practitioners to inspire the challenge ahead.",
         },
         {
-          time: "2:00pm",
-          title: "Panel Feedback & Awards",
-          desc: "Structured feedback from the panel. Recognition of standout ventures.",
+          time: "7:30 pm",
+          title: "Weekend Agenda & Organisation",
+          desc: "Walk-through of the full weekend structure, team dynamics and evaluation criteria.",
         },
         {
-          time: "3:30pm",
-          title: "Ecosystem Introductions",
-          desc: "Warm introductions to the Cambridge incubation ecosystem, including Spark Incubator.",
+          time: "7:55 pm",
+          title: "Selected Ideas & Team Allocation",
+          desc: "Ideas are shortlisted; teams are formed around the most promising directions.",
         },
         {
-          time: "4:30pm",
-          title: "Closing Celebration",
-          desc: "Celebrate the work done and the relationships built.",
+          time: "9:00 pm",
+          title: "End",
+          desc: "Close of Day 1. Teams begin informal conversations and early ideation.",
+        },
+      ],
+    },
+    {
+      day: "Saturday · 24 October",
+      date: "Build, Test & Validate",
+      sessions: [
+        {
+          time: "8:30 am",
+          title: "Arrival & Networking",
+          desc: "Morning check-in. Reconnect with your team and grab coffee before the day kicks off.",
+        },
+        {
+          time: "9:00 am",
+          title: "Venture Canvas Introduction",
+          desc: "Structured session introducing the Venture Canvas framework for rapid business model thinking.",
+        },
+        {
+          time: "9:30 am",
+          title: "Teams Work on Problem & Solution",
+          desc: "Focused team sprints to define the core problem, solution hypothesis and early assumptions.",
+        },
+        {
+          time: "10:15 am",
+          title: "Target Customer / Market Size",
+          desc: "Facilitated workshop: who are you building for and how large is the opportunity?",
+        },
+        {
+          time: "10:45 am",
+          title: "Coffee/Tea with Pastries",
+          desc: "Short networking break to recharge and cross-pollinate ideas with other teams.",
+        },
+        {
+          time: "11:00 am",
+          title: "Teams Work on Their Ideas",
+          desc: "Open working session with mentors circulating for on-demand support.",
+        },
+        {
+          time: "12:00 pm",
+          title: "Defining Product/Service — Benefit & Value",
+          desc: "Expert-led session on articulating clear product benefits and differentiated value propositions.",
+        },
+        {
+          time: "12:30 pm",
+          title: "Lunch",
+          desc: "Catered lunch — informal chance to connect with mentors and fellow participants.",
+        },
+        {
+          time: "1:30 pm",
+          title: "Teams Work on Product",
+          desc: "Afternoon sprint focused on defining the MVP and core product features.",
+        },
+        {
+          time: "2:30 pm",
+          title: "Financials — Revenues & Costs",
+          desc: "Workshop on building initial revenue models, cost structures and financial assumptions.",
+        },
+        {
+          time: "3:00 pm",
+          title: "Teams Work Plus Mentor Rounds",
+          desc: "Structured mentor rotations: each team receives direct feedback from a domain expert.",
+        },
+        {
+          time: "3:30 pm",
+          title: "Coffee/Tea with Biscuits",
+          desc: "Afternoon break to refuel before the final push of Day 2.",
+        },
+        {
+          time: "4:30 pm",
+          title: "Teams Work Plus Mentor Rounds",
+          desc: "Second round of mentor clinics focusing on traction, validation and go-to-market.",
+        },
+        {
+          time: "6:30 pm",
+          title: "Round Up & Needs",
+          desc: "Each team shares progress and calls out what they still need before Day 3.",
+        },
+        {
+          time: "8:00 pm",
+          title: "End",
+          desc: "Close of Day 2. Teams continue working independently through the evening.",
+        },
+      ],
+    },
+    {
+      day: "Sunday · 25 October",
+      date: "Refine & Pitch",
+      sessions: [
+        {
+          time: "8:30 am",
+          title: "Arrival & Networking",
+          desc: "Final day begins. Morning coffee and last-minute team alignment before pitch preparation.",
+        },
+        {
+          time: "9:00 am",
+          title: "Marketing, Branding & Communications",
+          desc: "Session on how to position and communicate your venture for maximum impact.",
+        },
+        {
+          time: "9:30 am",
+          title: "Teams Work on MBC",
+          desc: "Apply the morning session: develop messaging, branding and communications for your venture.",
+        },
+        {
+          time: "10:30 am",
+          title: "Coffee/Tea with Pastries",
+          desc: "Mid-morning break before the final resource and pitch-prep sessions.",
+        },
+        {
+          time: "11:00 am",
+          title: "Resources & Partners",
+          desc: "Understanding what funding, partnerships and support resources are available post-weekend.",
+        },
+        {
+          time: "11:30 am",
+          title: "Teams Work on Resources",
+          desc: "Teams map out what they need to take their venture forward after the weekend.",
+        },
+        {
+          time: "12:30 pm",
+          title: "Lunch",
+          desc: "Final catered lunch of the weekend — reflect, recharge and sharpen your pitch.",
+        },
+        {
+          time: "1:30 pm",
+          title: "How to Pitch",
+          desc: "Practical coaching session on pitch structure, storytelling and delivery under pressure.",
+        },
+        {
+          time: "2:00 pm",
+          title: "Team Work",
+          desc: "Dedicated time to finalise slides, rehearse delivery and run through Q&A preparation.",
+        },
+        {
+          time: "3:00 pm",
+          title: "Pitch Try-Outs",
+          desc: "Practice pitches in a safe environment with peer and mentor feedback.",
+        },
+        {
+          time: "3:30 pm",
+          title: "Coffee/Tea with Biscuits (During Try-Outs)",
+          desc: "Refreshment break running concurrently with ongoing pitch rehearsal sessions.",
+        },
+        {
+          time: "4:30 pm",
+          title: "Final Presentations",
+          desc: "Teams present their ventures to the full judging panel — investors, academics and practitioners.",
+        },
+        {
+          time: "6:00 pm",
+          title: "Presentation from Celeb During Judging",
+          desc: "Special address from an invited industry leader while judges deliberate.",
+        },
+        {
+          time: "6:15 pm",
+          title: "Winners Announced & Awards Presented",
+          desc: "Recognition of the standout teams with awards, prizes and next-step opportunities.",
+        },
+        {
+          time: "6:45 pm",
+          title: "Closing & Networking Reception",
+          desc: "Celebrate the weekend's work. Connect with judges, mentors and your new community.",
         },
       ],
     },
   ];
   const [activeDay, setActiveDay] = useState(0);
   const day = schedule[activeDay];
+  const mid = Math.ceil(day.sessions.length / 2);
+  const leftSessions = day.sessions.slice(0, mid);
+  const rightSessions = day.sessions.slice(mid);
+  const isMultiCol = day.sessions.length > 6;
+
   return (
     <section
       id="format"
@@ -679,7 +804,8 @@ function ProgrammeFormat() {
       <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[140px]" />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-        <div className="mb-14">
+        {/* Section heading */}
+        <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gold" />
             <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-gold">
@@ -691,16 +817,17 @@ function ProgrammeFormat() {
           </h2>
         </div>
 
-        <div className="flex gap-4 mb-10 flex-wrap">
+        {/* Day selector tabs */}
+        <div className="flex gap-3 mb-8 flex-wrap">
           {schedule.map((d, i) => (
             <button
               key={i}
               onClick={() => setActiveDay(i)}
               className={
-                "rounded-full px-7 py-3.5 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.15em] transition-all duration-300 " +
+                "rounded-full px-7 py-3 text-[13px] md:text-[14px] font-bold uppercase tracking-[0.18em] transition-all duration-300 border " +
                 (activeDay === i
-                  ? "bg-gold text-forest-deep shadow-[0_8px_24px_rgba(197,160,89,0.3)] scale-[1.02]"
-                  : "bg-white/5 border border-white/15 text-white/80 hover:border-gold/50 hover:bg-white/10 hover:text-white backdrop-blur-sm")
+                  ? "bg-gold text-forest-deep border-gold shadow-[0_6px_20px_rgba(197,160,89,0.35)]"
+                  : "bg-transparent border-white/25 text-white/70 hover:border-gold/50 hover:text-white")
               }
             >
               {d.day.split(" · ")[0]}
@@ -708,37 +835,66 @@ function ProgrammeFormat() {
           ))}
         </div>
 
-        <div className="bg-[#0c2014]/90 rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-[0_16px_50px_rgba(0,0,0,0.35)] relative overflow-hidden backdrop-blur-md">
-          <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-gold/10 blur-[70px]" />
+        {/* Schedule card */}
+        <div className="bg-[#0b1e12] rounded-2xl border border-white/[0.08] overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.5)]">
 
-          <div className="mb-8 flex items-baseline gap-4 relative z-10">
-            <h3 className="text-[22px] md:text-[24px] font-bold text-white">{day.day}</h3>
-            <p className="text-[14px] md:text-[15px] text-gold font-bold uppercase tracking-widest">{day.date}</p>
+          {/* Card header */}
+          <div className="px-7 md:px-10 py-5 border-b border-white/[0.08] flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <h3 className="text-[19px] md:text-[21px] font-bold text-white">
+              {day.day}
+            </h3>
+            <span className="text-[12px] font-bold uppercase tracking-[0.22em] text-gold">
+              {day.date}
+            </span>
           </div>
 
-          <div className="flex flex-col gap-4 relative z-10">
-            {day.sessions.map((s, i) => (
-              <div
-                key={i}
-                className="group flex flex-col md:flex-row gap-4 md:gap-8 bg-white/[0.05] hover:bg-white/[0.09] rounded-2xl p-6 border border-white/10 hover:border-gold/40 hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-              >
-                <div className="md:w-32 shrink-0 pt-0.5">
-                  <p className="text-[14px] md:text-[15px] font-bold text-gold uppercase tracking-[0.15em]">
-                    {s.time}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-[16px] md:text-[17px] font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">
-                    {s.title}
-                  </h4>
-                  <p className="text-[14.5px] text-cream/70 leading-[1.65] font-light">{s.desc}</p>
-                </div>
+          {/* Sessions — 2-col grid for many sessions, single col for few */}
+          {isMultiCol ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/[0.06]">
+              {/* Left column */}
+              <div className="divide-y divide-white/[0.06]">
+                {leftSessions.map((s, i) => (
+                  <SessionRow key={i} s={s} />
+                ))}
               </div>
-            ))}
-          </div>
+              {/* Right column */}
+              <div className="divide-y divide-white/[0.06]">
+                {rightSessions.map((s, i) => (
+                  <SessionRow key={i} s={s} />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="divide-y divide-white/[0.06]">
+              {day.sessions.map((s, i) => (
+                <SessionRow key={i} s={s} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
+  );
+}
+
+function SessionRow({ s }: { s: { time: string; title: string; desc: string } }) {
+  return (
+    <div className="group flex items-center hover:bg-white/[0.04] transition-colors duration-150">
+      {/* Time */}
+      <div className="w-[100px] md:w-[120px] shrink-0 flex items-center px-5 md:px-7 py-3.5">
+        <span className="text-[12px] md:text-[12.5px] font-bold text-gold tracking-[0.06em] uppercase whitespace-nowrap">
+          {s.time}
+        </span>
+      </div>
+      {/* Divider */}
+      <div className="w-px self-stretch shrink-0 bg-white/[0.09] group-hover:bg-gold/25 transition-colors duration-200" />
+      {/* Title */}
+      <div className="flex-1 px-5 md:px-7 py-3.5">
+        <p className="text-[13.5px] md:text-[14px] font-semibold text-white group-hover:text-gold/90 transition-colors duration-200 leading-snug">
+          {s.title}
+        </p>
+      </div>
+    </div>
   );
 }
 
